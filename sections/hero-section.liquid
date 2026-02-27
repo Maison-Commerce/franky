@@ -1,0 +1,854 @@
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Hero Card Settings"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_color",
+      "label": "Hero Background Color",
+      "default": "#F8FFF6"
+    },
+    {
+      "type": "range",
+      "id": "hero_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Hero Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "hero_padding_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero Padding (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "hero_padding_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Hero Padding (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "hero_gap_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Hero Content Gap (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "hero_gap_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Hero Content Gap (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "content_width_desktop",
+      "min": 400,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Content Width (Desktop)",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+ reviews</strong>.</p>"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Font Size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "badge_gap",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Gap",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Make your morning routine work"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 32,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_desktop",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height (Desktop)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_mobile",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height (Mobile)",
+      "default": 1.2
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_uppercase",
+      "label": "Title Uppercase",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Description Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Simply select any 20-pack, 30-pack, or bundle of your choice and add it to your cart. After that, include the Glow Up item, and you'll see the discount applied automatically at checkout!"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "description_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Description Opacity",
+      "default": 75
+    },
+    {
+      "type": "select",
+      "id": "description_align",
+      "label": "Description Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Content Gap Settings"
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Gap",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "features_gap",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Features Gap",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position (Desktop)",
+      "options": [
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Feature Icon Settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
+      "default": "#F9F9F9"
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Text Gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "feature_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "feature_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Feature Text Color",
+      "default": "#2C2926"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Feature Text",
+          "default": "Sustained energy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Sustained energy"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Complete nutrition"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Zero compromise"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="hero-section" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="hero-section__container">
+    <div class="hero-section__hero" style="background-color: {{ section.settings.hero_bg_color }}; border-radius: {{ section.settings.hero_border_radius }}px; padding: {{ section.settings.hero_padding_desktop }}px;">
+      <div class="hero-section__content-wrapper">
+        <div class="hero-section__content" style="width: {{ section.settings.content_width_desktop }}px;">
+          {% if section.settings.badge_text != blank %}
+            <div class="hero-section__badge">
+              <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.68335 1.52997C7.71257 1.47094 7.7577 1.42126 7.81365 1.38652C7.86961 1.35178 7.93416 1.33337 8.00002 1.33337C8.06588 1.33337 8.13043 1.35178 8.18638 1.38652C8.24234 1.42126 8.28747 1.47094 8.31669 1.52997L9.85669 4.6493C9.95814 4.85461 10.1079 5.03224 10.2931 5.16694C10.4783 5.30164 10.6934 5.38938 10.92 5.42264L14.364 5.92664C14.4293 5.93609 14.4906 5.96362 14.541 6.0061C14.5914 6.04859 14.629 6.10434 14.6494 6.16704C14.6698 6.22975 14.6722 6.29691 14.6564 6.36093C14.6406 6.42495 14.6072 6.48327 14.56 6.5293L12.0694 8.95464C11.9051 9.1147 11.7822 9.31229 11.7112 9.53039C11.6403 9.74849 11.6234 9.98056 11.662 10.2066L12.25 13.6333C12.2615 13.6985 12.2545 13.7657 12.2297 13.8271C12.2049 13.8885 12.1633 13.9417 12.1097 13.9806C12.0561 14.0196 11.9927 14.0426 11.9266 14.0472C11.8605 14.0518 11.7945 14.0378 11.736 14.0066L8.65735 12.388C8.4545 12.2815 8.22881 12.2258 7.99969 12.2258C7.77057 12.2258 7.54487 12.2815 7.34202 12.388L4.26402 14.0066C4.20557 14.0376 4.13962 14.0515 4.07365 14.0468C4.00769 14.0421 3.94437 14.019 3.89088 13.9801C3.8374 13.9412 3.79591 13.8881 3.77112 13.8268C3.74634 13.7655 3.73926 13.6984 3.75069 13.6333L4.33802 10.2073C4.37682 9.98112 4.36001 9.7489 4.28904 9.53067C4.21808 9.31243 4.09509 9.11474 3.93069 8.95464L1.44002 6.52997C1.39242 6.48399 1.35868 6.42557 1.34266 6.36135C1.32664 6.29714 1.32898 6.22971 1.34941 6.16676C1.36983 6.10381 1.40753 6.04786 1.4582 6.00529C1.50888 5.96272 1.57049 5.93524 1.63602 5.92597L5.07935 5.42264C5.30619 5.38964 5.52161 5.30201 5.70708 5.16729C5.89254 5.03258 6.04249 4.85482 6.14402 4.6493L7.68335 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.6834 1.52997C23.7126 1.47094 23.7577 1.42126 23.8137 1.38652C23.8696 1.35178 23.9342 1.33337 24 1.33337C24.0659 1.33337 24.1304 1.35178 24.1864 1.38652C24.2423 1.42126 24.2875 1.47094 24.3167 1.52997L25.8567 4.6493C25.9581 4.85461 26.1079 5.03224 26.2931 5.16694C26.4783 5.30164 26.6934 5.38938 26.92 5.42264L30.364 5.92664C30.4293 5.93609 30.4906 5.96362 30.541 6.0061C30.5914 6.04859 30.629 6.10434 30.6494 6.16704C30.6698 6.22975 30.6722 6.29691 30.6564 6.36093C30.6406 6.42495 30.6072 6.48327 30.56 6.5293L28.0694 8.95464C27.9051 9.1147 27.7822 9.31229 27.7112 9.53039C27.6403 9.74849 27.6234 9.98056 27.662 10.2066L28.25 13.6333C28.2615 13.6985 28.2545 13.7657 28.2297 13.8271C28.2049 13.8885 28.1633 13.9417 28.1097 13.9806C28.0561 14.0196 27.9927 14.0426 27.9266 14.0472C27.8605 14.0518 27.7945 14.0378 27.736 14.0066L24.6574 12.388C24.4545 12.2815 24.2288 12.2258 23.9997 12.2258C23.7706 12.2258 23.5449 12.2815 23.342 12.388L20.264 14.0066C20.2056 14.0376 20.1396 14.0515 20.0737 14.0468C20.0077 14.0421 19.9444 14.019 19.8909 13.9801C19.8374 13.9412 19.7959 13.8881 19.7711 13.8268C19.7463 13.7655 19.7393 13.6984 19.7507 13.6333L20.338 10.2073C20.3768 9.98112 20.36 9.7489 20.289 9.53067C20.2181 9.31243 20.0951 9.11474 19.9307 8.95464L17.44 6.52997C17.3924 6.48399 17.3587 6.42557 17.3427 6.36135C17.3266 6.29714 17.329 6.22971 17.3494 6.16676C17.3698 6.10381 17.4075 6.04786 17.4582 6.00529C17.5089 5.96272 17.5705 5.93524 17.636 5.92597L21.0794 5.42264C21.3062 5.38964 21.5216 5.30201 21.7071 5.16729C21.8925 5.03258 22.0425 4.85482 22.144 4.6493L23.6834 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M39.6834 1.52997C39.7126 1.47094 39.7577 1.42126 39.8137 1.38652C39.8696 1.35178 39.9342 1.33337 40 1.33337C40.0659 1.33337 40.1304 1.35178 40.1864 1.38652C40.2423 1.42126 40.2875 1.47094 40.3167 1.52997L41.8567 4.6493C41.9581 4.85461 42.1079 5.03224 42.2931 5.16694C42.4783 5.30164 42.6934 5.38938 42.92 5.42264L46.364 5.92664C46.4293 5.93609 46.4906 5.96362 46.541 6.0061C46.5914 6.04859 46.629 6.10434 46.6494 6.16704C46.6698 6.22975 46.6722 6.29691 46.6564 6.36093C46.6406 6.42495 46.6072 6.48327 46.56 6.5293L44.0694 8.95464C43.9051 9.1147 43.7822 9.31229 43.7112 9.53039C43.6403 9.74849 43.6234 9.98056 43.662 10.2066L44.25 13.6333C44.2615 13.6985 44.2545 13.7657 44.2297 13.8271C44.2049 13.8885 44.1633 13.9417 44.1097 13.9806C44.0561 14.0196 43.9927 14.0426 43.9266 14.0472C43.8605 14.0518 43.7945 14.0378 43.736 14.0066L40.6574 12.388C40.4545 12.2815 40.2288 12.2258 39.9997 12.2258C39.7706 12.2258 39.5449 12.2815 39.342 12.388L36.264 14.0066C36.2056 14.0376 36.1396 14.0515 36.0737 14.0468C36.0077 14.0421 35.9444 14.019 35.8909 13.9801C35.8374 13.9412 35.7959 13.8881 35.7711 13.8268C35.7463 13.7655 35.7393 13.6984 35.7507 13.6333L36.338 10.2073C36.3768 9.98112 36.36 9.7489 36.289 9.53067C36.2181 9.31243 36.0951 9.11474 35.9307 8.95464L33.44 6.52997C33.3924 6.48399 33.3587 6.42557 33.3427 6.36135C33.3266 6.29714 33.329 6.22971 33.3494 6.16676C33.3698 6.10381 33.4075 6.04786 33.4582 6.00529C33.5089 5.96272 33.5705 5.93524 33.636 5.92597L37.0794 5.42264C37.3062 5.38964 37.5216 5.30201 37.7071 5.16729C37.8925 5.03258 38.0425 4.85482 38.144 4.6493L39.6834 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M55.6834 1.52997C55.7126 1.47094 55.7577 1.42126 55.8137 1.38652C55.8696 1.35178 55.9342 1.33337 56 1.33337C56.0659 1.33337 56.1304 1.35178 56.1864 1.38652C56.2423 1.42126 56.2875 1.47094 56.3167 1.52997L57.8567 4.6493C57.9581 4.85461 58.1079 5.03224 58.2931 5.16694C58.4783 5.30164 58.6934 5.38938 58.92 5.42264L62.364 5.92664C62.4293 5.93609 62.4906 5.96362 62.541 6.0061C62.5914 6.04859 62.629 6.10434 62.6494 6.16704C62.6698 6.22975 62.6722 6.29691 62.6564 6.36093C62.6406 6.42495 62.6072 6.48327 62.56 6.5293L60.0694 8.95464C59.9051 9.1147 59.7822 9.31229 59.7112 9.53039C59.6403 9.74849 59.6234 9.98056 59.662 10.2066L60.25 13.6333C60.2615 13.6985 60.2545 13.7657 60.2297 13.8271C60.2049 13.8885 60.1633 13.9417 60.1097 13.9806C60.0561 14.0196 59.9927 14.0426 59.9266 14.0472C59.8605 14.0518 59.7945 14.0378 59.736 14.0066L56.6574 12.388C56.4545 12.2815 56.2288 12.2258 55.9997 12.2258C55.7706 12.2258 55.5449 12.2815 55.342 12.388L52.264 14.0066C52.2056 14.0376 52.1396 14.0515 52.0737 14.0468C52.0077 14.0421 51.9444 14.019 51.8909 13.9801C51.8374 13.9412 51.7959 13.8881 51.7711 13.8268C51.7463 13.7655 51.7393 13.6984 51.7507 13.6333L52.338 10.2073C52.3768 9.98112 52.36 9.7489 52.289 9.53067C52.2181 9.31243 52.0951 9.11474 51.9307 8.95464L49.44 6.52997C49.3924 6.48399 49.3587 6.42557 49.3427 6.36135C49.3266 6.29714 49.329 6.22971 49.3494 6.16676C49.3698 6.10381 49.4075 6.04786 49.4582 6.00529C49.5089 5.96272 49.5705 5.93524 49.636 5.92597L53.0794 5.42264C53.3062 5.38964 53.5216 5.30201 53.7071 5.16729C53.8925 5.03258 54.0425 4.85482 54.144 4.6493L55.6834 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M71.6834 1.52997C71.7126 1.47094 71.7577 1.42126 71.8137 1.38652C71.8696 1.35178 71.9342 1.33337 72 1.33337C72.0659 1.33337 72.1304 1.35178 72.1864 1.38652C72.2423 1.42126 72.2875 1.47094 72.3167 1.52997L73.8567 4.6493C73.9581 4.85461 74.1079 5.03224 74.2931 5.16694C74.4783 5.30164 74.6934 5.38938 74.92 5.42264L78.364 5.92664C78.4293 5.93609 78.4906 5.96362 78.541 6.0061C78.5914 6.04859 78.629 6.10434 78.6494 6.16704C78.6698 6.22975 78.6722 6.29691 78.6564 6.36093C78.6406 6.42495 78.6072 6.48327 78.56 6.5293L76.0694 8.95464C75.9051 9.1147 75.7822 9.31229 75.7112 9.53039C75.6403 9.74849 75.6234 9.98056 75.662 10.2066L76.25 13.6333C76.2615 13.6985 76.2545 13.7657 76.2297 13.8271C76.2049 13.8885 76.1633 13.9417 76.1097 13.9806C76.0561 14.0196 75.9927 14.0426 75.9266 14.0472C75.8605 14.0518 75.7945 14.0378 75.736 14.0066L72.6574 12.388C72.4545 12.2815 72.2288 12.2258 71.9997 12.2258C71.7706 12.2258 71.5449 12.2815 71.342 12.388L68.264 14.0066C68.2056 14.0376 68.1396 14.0515 68.0737 14.0468C68.0077 14.0421 67.9444 14.019 67.8909 13.9801C67.8374 13.9412 67.7959 13.8881 67.7711 13.8268C67.7463 13.7655 67.7393 13.6984 67.7507 13.6333L68.338 10.2073C68.3768 9.98112 68.36 9.7489 68.289 9.53067C68.2181 9.31243 68.0951 9.11474 67.9307 8.95464L65.44 6.52997C65.3924 6.48399 65.3587 6.42557 65.3427 6.36135C65.3266 6.29714 65.329 6.22971 65.3494 6.16676C65.3698 6.10381 65.4075 6.04786 65.4582 6.00529C65.5089 5.96272 65.5705 5.93524 65.636 5.92597L69.0794 5.42264C69.3062 5.38964 69.5216 5.30201 69.7071 5.16729C69.8925 5.03258 70.0425 4.85482 70.144 4.6493L71.6834 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>                
+              <span class="hero-section__badge-text">{{ section.settings.badge_text | replace: '<p>', '' | replace: '</p>', '' }}</span>
+            </div>
+          {% endif %}
+
+          {% if section.settings.title != blank %}
+            <h1 class="hero-section__title" style="text-align: {{ section.settings.title_align }};">
+              {{ section.settings.title }}
+            </h1>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <p class="hero-section__description" style="text-align: {{ section.settings.description_align }};">
+              {{ section.settings.description }}
+            </p>
+          {% endif %}
+
+          {% if section.blocks.size > 0 %}
+            <div class="hero-section__features">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'feature' %}
+                    <div class="hero-section__feature" {{ block.shopify_attributes }}>
+                      <div class="hero-section__feature-icon">
+                        <svg width="{{ section.settings.icon_size_desktop }}" height="{{ section.settings.icon_size_desktop }}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_8125_28789)">
+                            <rect width="24" height="24" fill="#F9F9F9"/>
+                            <path d="M11.9995 0.250977C5.51016 0.250977 0.249512 5.51163 0.249512 12.001C0.249512 18.4903 5.51016 23.751 11.9995 23.751C18.4889 23.751 23.7495 18.4903 23.7495 12.001C23.7495 5.51163 18.4889 0.250977 11.9995 0.250977Z" fill="#B9FCAB"/>
+                            <path d="M17.3329 7.90332L9.99959 15.2367L6.66626 11.9033" stroke="#2E432F" stroke-width="1.6875" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_8125_28789">
+                              <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <span class="hero-section__feature-text">{{ block.settings.text }}</span>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if section.settings.image != blank %}
+          <div class="hero-section__image-wrapper">
+            {{
+              section.settings.image
+              | image_url: width: 1440
+              | image_tag: loading: 'lazy', alt: section.settings.title, class: 'hero-section__image'
+            }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 749px) {
+    .hero-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .hero-section__container {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-section__hero {
+    background-color: {{ section.settings.hero_bg_color }};
+    border-radius: {{ section.settings.hero_border_radius }}px;
+    padding: {{ section.settings.hero_padding_desktop }}px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__hero {
+      padding: 32px 20px !important;
+    }
+  }
+
+  .hero-section__content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: {{ section.settings.hero_gap_desktop }}px;
+    position: relative;
+  }
+
+  {% if section.settings.image_position == 'left' %}
+    .hero-section__content-wrapper {
+      flex-direction: row-reverse;
+    }
+  {% elsif section.settings.image_position == 'top' %}
+    .hero-section__content-wrapper {
+      flex-direction: column;
+    }
+  {% elsif section.settings.image_position == 'bottom' %}
+    .hero-section__content-wrapper {
+      flex-direction: column-reverse;
+    }
+  {% endif %}
+
+  @media (max-width: 749px) {
+    .hero-section__content-wrapper {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-section__image-wrapper {
+      display: none !important;
+    }
+  }
+
+  .hero-section__content {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.content_gap }}px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__content {
+      width: 100% !important;
+      gap: 8px;
+    }
+  }
+
+  .hero-section__badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: {{ section.settings.badge_gap }}px;
+    width: fit-content;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__badge {
+      justify-content: center;
+      width: 100%;
+      height: 20px;
+    }
+  }
+
+  .hero-section__badge-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.badge_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.badge_text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__badge-text {
+      font-size: {{ section.settings.badge_font_size_mobile }}px;
+    }
+  }
+
+  .hero-section__title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: {{ section.settings.title_line_height_desktop }};
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    {% if section.settings.title_uppercase %}
+      text-transform: uppercase;
+    {% endif %}
+    text-wrap-style: balance;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      line-height: {{ section.settings.title_line_height_mobile }};
+      text-align: center !important;
+    }
+  }
+
+  .hero-section__description {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.description_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.description_color }};
+    opacity: {{ section.settings.description_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__description {
+      font-size: {{ section.settings.description_font_size_mobile }}px;
+      text-align: center !important;
+      font-weight: 500;
+    }
+  }
+
+  .hero-section__features {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: {{ section.settings.features_gap }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__features {
+      justify-content: space-between;
+    }
+
+    .hero-section__features .hero-section__feature:last-child {
+      display: none !important;
+    }
+  }
+
+  .hero-section__feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ section.settings.icon_text_gap }}px;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__feature {
+      gap: 8px;
+    }
+  }
+
+  .hero-section__feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__feature-icon {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+    }
+  }
+
+  .hero-section__feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-section__feature-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.feature_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.feature_text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__feature-text {
+      font-size: {{ section.settings.feature_font_size_mobile }}px;
+    }
+  }
+
+  .hero-section__image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__image-wrapper {
+      width: 100%;
+    }
+  }
+
+  .hero-section__image {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: {{ section.settings.image_border_radius }}px {{ section.settings.image_border_radius }}px 0 0;
+  }
+
+  @media (max-width: 749px) {
+    .hero-section__image {
+      border-radius: {{ section.settings.image_border_radius }}px;
+    }
+  }
+</style>
+

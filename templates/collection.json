@@ -1,0 +1,305 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "hero_section_iMayec": {
+      "type": "hero-section",
+      "blocks": {
+        "feature_6XLGDX": {
+          "type": "feature",
+          "settings": {
+            "text": "Sustained energy"
+          }
+        },
+        "feature_HdVjP7": {
+          "type": "feature",
+          "settings": {
+            "text": "Complete nutrition"
+          }
+        },
+        "feature_yjQLXW": {
+          "type": "feature",
+          "settings": {
+            "text": "Zero compromise"
+          }
+        }
+      },
+      "block_order": [
+        "feature_6XLGDX",
+        "feature_HdVjP7",
+        "feature_yjQLXW"
+      ],
+      "name": "Hero Section",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_left_desktop": 20,
+        "padding_right_desktop": 20,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10,
+        "padding_left_mobile": 10,
+        "padding_right_mobile": 10,
+        "hero_bg_color": "#f8fff6",
+        "hero_border_radius": 8,
+        "hero_padding_desktop": 60,
+        "hero_padding_mobile": 24,
+        "hero_gap_desktop": 80,
+        "hero_gap_mobile": 32,
+        "content_width_desktop": 600,
+        "badge_text": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "badge_font_size_desktop": 14,
+        "badge_font_size_mobile": 12,
+        "badge_text_color": "#2c2926",
+        "badge_gap": 8,
+        "title": "Make your morning routine work",
+        "title_font_size_desktop": 48,
+        "title_font_size_mobile": 32,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.2,
+        "title_color": "#2c2926",
+        "title_uppercase": false,
+        "title_align": "left",
+        "description": "Simply select any 20-pack, 30-pack, or bundle of your choice and add it to your cart. After that, include the Glow Up item, and you'll see the discount applied automatically at checkout!",
+        "description_font_size_desktop": 18,
+        "description_font_size_mobile": 14,
+        "description_color": "#2f3936",
+        "description_opacity": 75,
+        "description_align": "left",
+        "content_gap": 18,
+        "features_gap": 24,
+        "image": "shopify://shop_images/Vitality_Boost_Renders.png",
+        "image_border_radius": 32,
+        "image_position": "right",
+        "icon_size_desktop": 24,
+        "icon_size_mobile": 18,
+        "icon_bg_color": "#f9f9f9",
+        "icon_text_gap": 12,
+        "feature_font_size_desktop": 18,
+        "feature_font_size_mobile": 14,
+        "feature_text_color": "#2c2926"
+      }
+    },
+    "collection_navigation_NcefxY": {
+      "type": "collection-navigation",
+      "blocks": {
+        "collection_button_r8Qpcw": {
+          "type": "collection_button",
+          "settings": {
+            "label": "All Products",
+            "collection": "all-products-dev"
+          }
+        },
+        "collection_button_gXQjay": {
+          "type": "collection_button",
+          "settings": {
+            "label": "Energy & Focus",
+            "collection": "frontpage"
+          }
+        },
+        "collection_button_GtpyCB": {
+          "type": "collection_button",
+          "settings": {
+            "label": "Sleep & Calm",
+            "collection": ""
+          }
+        },
+        "collection_button_4hGRcx": {
+          "type": "collection_button",
+          "settings": {
+            "label": "Passion & Libido",
+            "collection": ""
+          }
+        },
+        "collection_button_trRHL8": {
+          "type": "collection_button",
+          "settings": {
+            "label": "Beauty & Glow",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_button_r8Qpcw",
+        "collection_button_gXQjay",
+        "collection_button_GtpyCB",
+        "collection_button_4hGRcx",
+        "collection_button_trRHL8"
+      ],
+      "name": "Collection Navigation",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "button_gap": 12,
+        "button_padding_vertical": 12,
+        "button_padding_horizontal": 16,
+        "button_border_radius": 12,
+        "button_active_bg_color": "#2e432f",
+        "button_active_text_color": "#fbfbfb",
+        "button_inactive_bg_color": "rgba(0,0,0,0)",
+        "button_inactive_text_color": "#32432e",
+        "button_font_size": 14
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-c7656904-3575-45df-a6bb-c0462f554d39",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "image_no_crop": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_scroll_tags": false,
+        "show_product_description": false,
+        "description_font_size": 14,
+        "description_word_limit": 20,
+        "quick_add": "standard",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "show_product_banner": true,
+        "banner_image": "shopify://shop_images/e7f2338924a7fb6acef60f59fe009e545660d9f1.png",
+        "banner_rating": "4.8",
+        "banner_text": "<p>Rated <strong>4.8/5 </strong>based on <strong>8,450+ </strong>reviews.</p>",
+        "banner_overlay_text_1": "One sold every minute",
+        "banner_overlay_text_2": "BUY 2, GET 3",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "maison_faq_VTX9GP": {
+      "type": "maison-faq",
+      "blocks": {
+        "faq_item_CUU6EW": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much protein per serving?",
+            "answer": "<p>Each serving delivers 25g of premium whey protein isolate - the optimal amount for muscle recovery, sustained satiety, and metabolic support. This is equivalent to eating 4 eggs or a 4oz chicken breast, but infinitely more convenient.</p>"
+          }
+        },
+        "faq_item_LKK3EP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this make me jittery?",
+            "answer": "<p>No. Unlike regular coffee that spikes your system, AROSE combines 150mg of natural caffeine with 25g of protein and healthy fats. The protein buffers the caffeine absorption, giving you smooth, sustained energy without the jitters, anxiety, or heart-racing feeling you get from coffee alone.</p>"
+          }
+        },
+        "faq_item_cL4Fzp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this for weight loss?",
+            "answer": "<p>Absolutely. While AROSE isn't marketed as a weight-loss product, the science is clear: high protein intake (25g per serving) increases satiety hormones, reduces hunger throughout the day, and supports a healthy metabolism. Many customers report naturally eating less and losing weight without trying because they're finally satisfied in the morning. You're replacing empty-calorie coffee drinks with complete nutrition.</p>"
+          }
+        },
+        "faq_item_ghVQGC": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long until I feel results?",
+            "answer": "<p>Most people feel the difference immediately - stable energy that lasts 4-6 hours instead of crashing after 2. Within 3-5 days, you'll notice you're not reaching for snacks mid-morning. By week 2-3, the sustained energy becomes your new normal and you'll wonder how you ever functioned without it.</p>"
+          }
+        },
+        "faq_item_cRrQAK": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Caffeine content?",
+            "answer": "<p>150mg of natural caffeine per serving - equivalent to about 1.5 cups of coffee. It's the sweet spot: enough to energize and enhance focus, but not so much that you crash or can't sleep at night. And because it's paired with protein, it releases gradually for sustained alertness without the spike-and-crash cycle.</p>"
+          }
+        },
+        "faq_item_Bbrt93": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I drink daily?",
+            "answer": "<p>Yes - AROSE is designed as your daily morning ritual. It's perfectly safe for long-term use and contains only natural, food-based ingredients. Most customers make it their permanent breakfast replacement and actually look forward to it every morning. Think of it as upgrading from regular coffee to functional coffee that actually nourishes you.</p>"
+          }
+        },
+        "faq_item_rnfrcb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I'm lactose intolerant—can I use this?",
+            "answer": "<p>Most likely, yes. AROSE uses whey protein isolate, which has 90%+ of lactose removed during processing. The majority of people with lactose intolerance tolerate whey isolate without issues. That said, if you have severe dairy sensitivity, we recommend starting with a half serving to test tolerance, or consulting your doctor first.</p>"
+          }
+        },
+        "faq_item_HjCwjg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from adding protein powder to coffee?",
+            "answer": "<p>Great question. Most protein powders curdle, clump, or create a chalky mess when mixed with hot coffee. AROSE is specifically formulated to blend instantly and smoothly - whether hot or cold - with a taste profile designed to complement coffee, not fight it. Plus, we've optimized the protein-to-caffeine ratio based on research for maximum energy stability. It's not just protein + coffee thrown together - it's an engineered system that actually works.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_CUU6EW",
+        "faq_item_LKK3EP",
+        "faq_item_cL4Fzp",
+        "faq_item_ghVQGC",
+        "faq_item_cRrQAK",
+        "faq_item_Bbrt93",
+        "faq_item_rnfrcb",
+        "faq_item_HjCwjg"
+      ],
+      "name": "Maison FAQ",
+      "settings": {
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "heading": "<p>Everything You Need To Know <em>About Arose</em></p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#2f3936",
+        "image": "shopify://shop_images/4a3868dfe30778291d8b8dded6fc44ed1cd22891_088f7e95-f093-4527-86a3-76f441c76625.png",
+        "image_width_desktop": 600,
+        "image_border_radius": 16,
+        "faq_gap_desktop": 80,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "question_gap": 24,
+        "border_color": "#2f393633",
+        "toggle_icon_size": 32
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "hero_section_iMayec",
+    "collection_navigation_NcefxY",
+    "product-grid",
+    "maison_faq_VTX9GP"
+  ]
+}

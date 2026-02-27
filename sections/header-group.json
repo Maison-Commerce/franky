@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "maison_announcement_bar_M4jRT6": {
+      "type": "maison-announcement-bar",
+      "blocks": {
+        "announcement_nkgiw6": {
+          "type": "announcement",
+          "settings": {
+            "text": "Stronger Potent Doses"
+          }
+        },
+        "announcement_V467FF": {
+          "type": "announcement",
+          "settings": {
+            "text": "Vegan, Keto, Gluten and Dairy Free"
+          }
+        },
+        "announcement_gNWpnm": {
+          "type": "announcement",
+          "settings": {
+            "text": "Quality Ingredients - made in the USA"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_nkgiw6",
+        "announcement_V467FF",
+        "announcement_gNWpnm"
+      ],
+      "name": "Maison Announcement Bar",
+      "settings": {
+        "bar_bg_color": "#cbfdc1",
+        "padding_top_desktop": 8,
+        "padding_bottom_desktop": 8,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "text_font_size_desktop": 14,
+        "text_font_size_mobile": 12,
+        "text_color": "#2e432f",
+        "icon_color": "#2e432f",
+        "scroll_delay": 3,
+        "scroll_speed": 0.5
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [],
+      "settings": {
+        "enable_transparent-header": false,
+        "enable_hover_animation": false,
+        "color-transparent": "#261b33",
+        "color-hover-background": "#ffffff",
+        "color-hover-text": "#212121",
+        "logo_position": "middle-center",
+        "menu": "maison-header-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "always",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "background-2",
+        "enable_country_selector": true,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "maison_announcement_bar_M4jRT6",
+    "header"
+  ]
+}

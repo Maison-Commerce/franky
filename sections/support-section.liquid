@@ -1,0 +1,897 @@
+{% schema %}
+{
+  "name": "Support Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FEFDEE"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How can we help you?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Real support from guys who get it. No judgment, just help."
+    },
+    {
+      "type": "range",
+      "id": "title_gap",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Gap",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "title_section_gap_desktop",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Title Section Gap (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_section_gap_mobile",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Section Gap (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 24,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_desktop",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height (Desktop)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "title_line_height_mobile",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height (Mobile)",
+      "default": 1.4
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Subtitle Opacity",
+      "default": 75
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Gap (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_width_desktop",
+      "min": 300,
+      "max": 500,
+      "step": 20,
+      "unit": "px",
+      "label": "Card Width (Desktop)",
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Content Gap",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "icon_gap",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon Gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "min": 40,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon Size (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 36,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon Size (Mobile)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius_desktop",
+      "min": 4,
+      "max": 16,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Icon Border Radius (Desktop)",
+      "default": 9.5
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius_mobile",
+      "min": 4,
+      "max": 16,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Icon Border Radius (Mobile)",
+      "default": 8.0
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Card Typography"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_desktop",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Title Font Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_mobile",
+      "min": 16,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Title Font Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_title_line_height_desktop",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Card Title Line Height (Desktop)",
+      "default": 1.4
+    },
+    {
+      "type": "range",
+      "id": "card_title_line_height_mobile",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Card Title Line Height (Mobile)",
+      "default": 1.4
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "card_description_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Description Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_description_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Description Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Card Description Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "card_description_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Card Description Opacity",
+      "default": 75
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "range",
+      "id": "button_width",
+      "min": 150,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Button Width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Height",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#2E432F"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "support_option",
+      "name": "Support Option",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Chat With Us"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Live support available Mon-Fri, 9am-8pm GMT. Connect instantly with our support team."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Start Chat Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "button_action",
+          "label": "Button Action",
+          "options": [
+            {
+              "value": "link",
+              "label": "Link"
+            },
+            {
+              "value": "copy_email",
+              "label": "Copy Email"
+            },
+            {
+              "value": "call",
+              "label": "Call Phone"
+            }
+          ],
+          "default": "link"
+        },
+        {
+          "type": "text",
+          "id": "email_to_copy",
+          "label": "Email to Copy",
+          "info": "Only used if Button Action is 'Copy Email'"
+        },
+        {
+          "type": "text",
+          "id": "phone_number",
+          "label": "Phone Number",
+          "info": "Only used if Button Action is 'Call Phone'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support Section",
+      "blocks": [
+        {
+          "type": "support_option",
+          "settings": {
+            "title": "Chat With Us",
+            "description": "Live support available Mon-Fri, 9am-8pm GMT. Connect instantly with our support team.",
+            "button_text": "Start Chat Now",
+            "button_action": "link"
+          }
+        },
+        {
+          "type": "support_option",
+          "settings": {
+            "title": "Email Support",
+            "description": "24/7 ticket system for all your inquiries. Email us at support@vitalityboost.co.uk anytime.",
+            "button_text": "Copy Email",
+            "button_action": "copy_email",
+            "email_to_copy": "support@vitalityboost.co.uk"
+          }
+        },
+        {
+          "type": "support_option",
+          "settings": {
+            "title": "Call Us",
+            "description": "Speak directly with our experts at 0800-123-4567. Best time to call: 9am-8pm GMT.",
+            "button_text": "Call Now",
+            "button_action": "call",
+            "phone_number": "0800-123-4567"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="support-section" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="support-section__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="support-section__header">
+        {% if section.settings.title != blank %}
+          <h2 class="support-section__title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="support-section__subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="support-section__grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'support_option' %}
+              <div class="support-section__card" {{ block.shopify_attributes }}>
+                <div class="support-section__card-content">
+                  {% if block.settings.icon != blank %}
+                    <div class="support-section__icon-wrapper">
+                      {{
+                        block.settings.icon
+                        | image_url: width: 200
+                        | image_tag: loading: 'lazy', alt: block.settings.title, class: 'support-section__icon'
+                      }}
+                    </div>
+                  {% endif %}
+                  <div class="support-section__card-text">
+                    {% if block.settings.title != blank %}
+                      <h3 class="support-section__card-title">
+                        {{ block.settings.title }}
+                      </h3>
+                    {% endif %}
+                    {% if block.settings.description != blank %}
+                      <p class="support-section__card-description">
+                        {{ block.settings.description }}
+                      </p>
+                    {% endif %}
+
+                    {% if block.settings.button_text != blank %}
+                      {% if block.settings.button_action == 'copy_email' %}
+                        <button
+                          type="button"
+                          class="support-section__button"
+                          onclick="copyToClipboard('{{ block.settings.email_to_copy }}', this)"
+                        >
+                          {{ block.settings.button_text }}
+                        </button>
+                      {% elsif block.settings.button_action == 'call' %}
+                        <a
+                          href="tel:{{ block.settings.phone_number }}"
+                          class="support-section__button"
+                        >
+                          {{ block.settings.button_text }}
+                        </a>
+                      {% else %}
+                        <a
+                          href="{{ block.settings.button_link }}"
+                          class="support-section__button"
+                        >
+                          {{ block.settings.button_text }}
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="support-section__empty">
+        <p>Please add support options to display.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .support-section {
+    margin: 20px;
+    width: calc(100% - 40px);
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 749px) {
+    .support-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+      margin: 10px;
+      width: calc(100% - 20px);
+    }
+  }
+
+  .support-section__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.title_section_gap_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__container {
+      gap: {{ section.settings.title_section_gap_mobile }}px;
+    }
+  }
+
+  .support-section__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.title_gap }}px;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .support-section__title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: {{ section.settings.title_line_height_desktop }};
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      line-height: {{ section.settings.title_line_height_mobile }};
+    }
+  }
+
+  .support-section__subtitle {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color }};
+    opacity: {{ section.settings.subtitle_opacity | divided_by: 100.0 }};
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__subtitle {
+      font-family: "Cabin", sans-serif;
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+  }
+
+  .support-section__grid {
+    display: flex;
+    flex-direction: row;
+    gap: {{ section.settings.card_gap_desktop }}px;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__grid {
+      flex-direction: column;
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .support-section__card {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.card_content_gap }}px;
+    padding: {{ section.settings.card_padding }}px;
+    width: {{ section.settings.card_width_desktop }}px;
+    flex: 1;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__card {
+      width: 100%;
+    }
+  }
+
+  .support-section__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.icon_gap }}px;
+    flex: 1;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__card-content {
+      flex-direction: row;
+    }
+  }
+
+  .support-section__icon-wrapper {
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+    background-color: {{ section.settings.icon_bg_color }};
+    border-radius: {{ section.settings.icon_border_radius_desktop }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__icon-wrapper {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+      border-radius: {{ section.settings.icon_border_radius_mobile }}px;
+    }
+  }
+
+  .support-section__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .support-section__card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .support-section__card-title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.card_title_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: {{ section.settings.card_title_line_height_desktop }};
+    color: {{ section.settings.card_title_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__card-title {
+      font-size: {{ section.settings.card_title_font_size_mobile }}px;
+      line-height: {{ section.settings.card_title_line_height_mobile }};
+    }
+  }
+
+  .support-section__card-description {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.card_description_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.card_description_color }};
+    opacity: {{ section.settings.card_description_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__card-description {
+      font-size: {{ section.settings.card_description_font_size_mobile }}px;
+    }
+  }
+
+  .support-section__button {
+    width: {{ section.settings.button_width }}px;
+    height: {{ section.settings.button_height }}px;
+    border-radius: {{ section.settings.button_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: underline;
+    gap: 8px;
+    padding: 8px 0;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.button_text_color }};
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 14px;
+  }
+
+  @media (max-width: 749px) {
+    .support-section__button {
+      margin-top: 0;
+    }
+  }
+
+  .support-section__button:hover {
+    opacity: 0.8;
+  }
+
+  .support-section__empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #98A2B3;
+  }
+</style>
+
+<script>
+  function copyToClipboard(text, button) {
+    navigator.clipboard.writeText(text).then(function() {
+      const originalText = button.textContent;
+      button.textContent = 'Copied!';
+      setTimeout(function() {
+        button.textContent = originalText;
+      }, 2000);
+    }).catch(function(err) {
+      console.error('Failed to copy text: ', err);
+    });
+  }
+</script>
+

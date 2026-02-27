@@ -1,0 +1,720 @@
+{% schema %}
+{
+  "name": "Maison Ingredients",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Premium Ingredients"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Settings"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Complete Mushroom and Botanical Formula for Your Natural Glow"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "CTA Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Get My Gummies"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_color",
+      "label": "Button Background Color",
+      "default": "#C4FCB8"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Button Text Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#F8FAF3"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding_desktop",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "min": 12,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_desktop",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_mobile",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "card_text_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Text Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_text_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Text Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Text Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "min": 60,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "label": "Image Size (Desktop)",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "min": 60,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "label": "Image Size (Mobile)",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ingredient Name"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Ingredient description and benefits.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Collagen",
+            "description": "<p>BPA and phthalates in plastic containers can disrupt hormone balance and raise estrogen levels with each sip.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Vitamin E, B5 + B12",
+            "description": "<p>Vitamins E, B5, and B12 nourish hair, skin, and nails, enhancing moisture and resilience for a healthy glow.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Reishi Mushroom",
+            "description": "<p>Reishi, the \"Mushroom of Immortality,\" is prized for its antioxidants that support hydration and overall scalp health.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Tremella Mushroom",
+            "description": "<p>Mucuna Pruriens promotes better mood by enhancing dopamine synthesis & serotonin signaling.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Vitamin C",
+            "description": "<p>Vitamin C aids collagen production, maintaining skin glow and benefiting hair and nails.</p>"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Biotin",
+            "description": "<p>Biotin supports strong hair, healthy skin, and resilient nails - promoting growth, repair, and your natural glow.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_ingredients" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_ingredients__container">
+    {% if section.settings.heading != blank %}
+      <h2 class="maison_commerce_ingredients__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="maison_commerce_ingredients__subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="maison_commerce_ingredients__grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'ingredient' %}
+              <div class="maison_commerce_ingredients__card" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <div class="maison_commerce_ingredients__card-image-wrapper">
+                    <img 
+                      src="{{ block.settings.image | image_url: width: 200 }}" 
+                      alt="{{ block.settings.image.alt | default: block.settings.title | escape }}"
+                      class="maison_commerce_ingredients__card-image"
+                      width="{{ section.settings.image_size_desktop }}"
+                      height="{{ section.settings.image_size_desktop }}"
+                      loading="lazy"
+                    />
+                  </div>
+                {% endif %}
+                
+                <div class="maison_commerce_ingredients__card-content">
+                  {% if block.settings.title != blank %}
+                    <h3 class="maison_commerce_ingredients__card-title">
+                      {{ block.settings.title }}
+                    </h3>
+                  {% endif %}
+                  
+                  {% if block.settings.description != blank %}
+                    <div class="maison_commerce_ingredients__card-description">
+                      {{ block.settings.description }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+      <div class="maison_commerce_ingredients__cta-wrapper">
+        <a href="{{ section.settings.cta_url }}" class="maison_commerce_ingredients__cta-button">
+          {{ section.settings.cta_text }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <g clip-path="url(#clip0_8191_1126331)">
+              <path d="M17.7825 8.46764L14.1975 4.88264C14.092 4.77858 13.9581 4.70808 13.8126 4.68005C13.6671 4.65202 13.5166 4.66771 13.38 4.72514C13.243 4.78141 13.1258 4.87696 13.043 4.99975C12.9603 5.12254 12.9157 5.26708 12.915 5.41514V7.66514C12.915 7.71487 12.8952 7.76256 12.8601 7.79773C12.8249 7.83289 12.7772 7.85264 12.7275 7.85264H1.125C0.826631 7.85264 0.540483 7.97117 0.329505 8.18215C0.118526 8.39313 0 8.67928 0 8.97764C0 9.27601 0.118526 9.56216 0.329505 9.77314C0.540483 9.98412 0.826631 10.1026 1.125 10.1026H12.75C12.7997 10.1026 12.8474 10.1224 12.8826 10.1576C12.9177 10.1927 12.9375 10.2404 12.9375 10.2901V12.5401C12.9375 12.7391 13.0165 12.9298 13.1572 13.0705C13.2978 13.2111 13.4886 13.2901 13.6875 13.2901C13.7867 13.2897 13.8849 13.2696 13.9763 13.231C14.0677 13.1924 14.1505 13.136 14.22 13.0651L17.805 9.48764C17.9239 9.35224 17.9927 9.18017 18 9.00014C18.0006 8.90144 17.9817 8.80359 17.9443 8.71221C17.907 8.62084 17.852 8.53772 17.7825 8.46764Z" fill="currentColor"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_8191_1126331">
+                <rect width="18" height="18" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .maison_commerce_ingredients {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_ingredients__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .maison_commerce_ingredients__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 12px 0;
+    text-align: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .maison_commerce_ingredients__subtitle {
+    font-family: "Geist", sans-serif;
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color | hex_to_rgba: 0.75 }};
+    margin: 0 0 44px 0;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  }
+
+  .maison_commerce_ingredients__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ section.settings.card_gap_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__grid {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_ingredients__card {
+    background-color: {{ section.settings.card_bg_color }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: {{ section.settings.card_padding_desktop }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .maison_commerce_ingredients__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__card {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      text-align: left;
+      padding: {{ section.settings.card_padding_mobile }}px 4px {{ section.settings.card_padding_mobile }}px {{ section.settings.card_padding_mobile }}px;
+      gap: 16px;
+    }
+  }
+
+  .maison_commerce_ingredients__card-image-wrapper {
+    width: 100%;
+    max-width: {{ section.settings.image_size_desktop }}px;
+    height: auto;
+    aspect-ratio: 1 / 0.75;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__card-image-wrapper {
+      width: {{ section.settings.image_size_mobile }}px;
+      height: {{ section.settings.image_size_mobile }}px;
+      margin-bottom: 0;
+    }
+  }
+
+  .maison_commerce_ingredients__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .maison_commerce_ingredients__card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .maison_commerce_ingredients__card-title {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.card_title_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    color: {{ section.settings.card_title_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__card-title {
+      font-size: {{ section.settings.card_title_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_ingredients__card-description {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.card_text_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    color: {{ section.settings.card_text_color | hex_to_rgba: 0.75 }};
+    margin: 0;
+  }
+
+  .maison_commerce_ingredients__card-description p{
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__card-description {
+      font-size: {{ section.settings.card_text_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_ingredients__cta-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__cta-wrapper {
+      display: none;
+    }
+  }
+
+  .maison_commerce_ingredients__cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: {{ section.settings.cta_bg_color }};
+    color: {{ section.settings.cta_text_color }};
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.cta_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .maison_commerce_ingredients__cta-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .maison_commerce_ingredients__cta-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_ingredients__cta-button {
+      font-size: {{ section.settings.cta_font_size_mobile }}px;
+      padding: 12px 24px;
+    }
+  }
+</style>
+

@@ -1,0 +1,733 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "support_section_LrKkHV": {
+      "type": "support-section",
+      "blocks": {
+        "support_option_NrA8YN": {
+          "type": "support_option",
+          "settings": {
+            "icon": "shopify://shop_images/Ai-Chat-Spark--Streamline-Ultimate.svg",
+            "title": "Chat With Us",
+            "description": "Live support available Mon-Fri, 9am-8pm GMT. Connect instantly with our support team.",
+            "button_text": "Start Chat Now",
+            "button_link": "#",
+            "button_action": "link",
+            "email_to_copy": "",
+            "phone_number": ""
+          }
+        },
+        "support_option_xYVMzK": {
+          "type": "support_option",
+          "settings": {
+            "icon": "shopify://shop_images/Send-Email-1--Streamline-Ultimate.svg",
+            "title": "Email Support",
+            "description": "24/7 ticket system for all your inquiries. Email us at support@vitalityboost.co.uk anytime.",
+            "button_text": "Copy Email",
+            "button_link": "",
+            "button_action": "copy_email",
+            "email_to_copy": "support@vitalityboost.co.uk",
+            "phone_number": ""
+          }
+        },
+        "support_option_CnQNJJ": {
+          "type": "support_option",
+          "settings": {
+            "icon": "shopify://shop_images/Phone-Actions-24-Support--Streamline-Ultimate.svg",
+            "title": "Call Us",
+            "description": "Speak directly with our experts at 0800-123-4567. Best time to call: 9am-8pm GMT.",
+            "button_text": "Call Now",
+            "button_link": "",
+            "button_action": "call",
+            "email_to_copy": "",
+            "phone_number": "0800-123-4567"
+          }
+        }
+      },
+      "block_order": [
+        "support_option_NrA8YN",
+        "support_option_xYVMzK",
+        "support_option_CnQNJJ"
+      ],
+      "name": "Support Section",
+      "settings": {
+        "section_bg_color": "#fefdee",
+        "padding_top_desktop": 44,
+        "padding_bottom_desktop": 44,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "title": "How can we help you?",
+        "subtitle": "Real support from guys who get it. No judgment, just help.",
+        "title_gap": 16,
+        "title_section_gap_desktop": 32,
+        "title_section_gap_mobile": 20,
+        "title_font_size_desktop": 40,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2c2926",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#2f3936",
+        "subtitle_opacity": 75,
+        "card_gap_desktop": 32,
+        "card_gap_mobile": 32,
+        "card_width_desktop": 380,
+        "card_padding": 18,
+        "card_content_gap": 18,
+        "icon_gap": 12,
+        "icon_size_desktop": 60,
+        "icon_size_mobile": 44,
+        "icon_border_radius_desktop": 9.5,
+        "icon_border_radius_mobile": 8,
+        "icon_bg_color": "#ffffff",
+        "card_title_font_size_desktop": 24,
+        "card_title_font_size_mobile": 20,
+        "card_title_line_height_desktop": 1.4,
+        "card_title_line_height_mobile": 1.4,
+        "card_title_color": "#2c2926",
+        "card_description_font_size_desktop": 16,
+        "card_description_font_size_mobile": 14,
+        "card_description_color": "#2f3936",
+        "card_description_opacity": 75,
+        "button_width": 200,
+        "button_height": 32,
+        "button_border_radius": 12,
+        "button_font_size": 14,
+        "button_text_color": "#2e432f"
+      }
+    },
+    "navigation_buttons_34pQYc": {
+      "type": "navigation-buttons",
+      "blocks": {
+        "nav_button_zwJRy7": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Ecology-Leaf--Streamline-Ultimate.svg",
+            "label": "Products",
+            "section_id": "products"
+          }
+        },
+        "nav_button_9iHGrb": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Award-Trophy-Star-1--Streamline-Ultimate.svg",
+            "label": "Results",
+            "section_id": "results"
+          }
+        },
+        "nav_button_PGGGbA": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Pill-Timer--Streamline-Ultimate.svg",
+            "label": "Usage",
+            "section_id": "usage"
+          }
+        },
+        "nav_button_MfimTj": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Shipment-Upload--Streamline-Ultimate_1.svg",
+            "label": "Shipping",
+            "section_id": "shipping"
+          }
+        },
+        "nav_button_JapEdM": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Certified-Ribbon-1--Streamline-Ultimate.svg",
+            "label": "Guarantee",
+            "section_id": "guarantee"
+          }
+        },
+        "nav_button_bFfg9t": {
+          "type": "nav_button",
+          "settings": {
+            "icon": "shopify://shop_images/Button-Refresh-Arrow--Streamline-Ultimate.svg",
+            "label": "Subscription",
+            "section_id": "subscription"
+          }
+        }
+      },
+      "block_order": [
+        "nav_button_zwJRy7",
+        "nav_button_9iHGrb",
+        "nav_button_PGGGbA",
+        "nav_button_MfimTj",
+        "nav_button_JapEdM",
+        "nav_button_bFfg9t"
+      ],
+      "name": "Navigation Buttons",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 32,
+        "padding_bottom_desktop": 32,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 16,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "button_gap_desktop": 12,
+        "button_gap_mobile": 8,
+        "button_row_gap_mobile": 8,
+        "button_padding_vertical_desktop": 12,
+        "button_padding_horizontal_desktop": 16,
+        "button_padding_vertical_mobile": 8,
+        "button_padding_horizontal_mobile": 12,
+        "button_border_radius": 8,
+        "button_bg_color": "#f2feef",
+        "button_text_color": "#2f3936",
+        "icon_size": 16,
+        "icon_text_gap": 8,
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "scroll_offset": 0
+      }
+    },
+    "faq_accordion_KpFrMh": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_kJtwLa": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes AROSE different from other protein coffees?",
+            "answer": "<p>Real coffee taste (not that weird protein shake flavor), grass-fed whey that won't bloat you, and a protein-to-caffeine ratio designed by actual nutritionists. Most protein coffees taste like punishment. AROSE tastes like a $6 latte and actually works.</p>"
+          }
+        },
+        "faq_item_FnK3tU": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the energy-blocking mechanism work?",
+            "answer": "<p>It's not blocking — it's buffering. The 20g of protein slows caffeine absorption so you get smooth, sustained energy instead of a spike and crash. Think of protein as a time-release mechanism for caffeine. You get 6+ hours of focus instead of 90 minutes of jitters.</p>"
+          }
+        },
+        "faq_item_p6JKzb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this the same as DIY protein+coffee mixes at home?",
+            "answer": "<p>Nope. Dumping whey into hot coffee = clumpy disaster. We use cold-brew extract and specific ratios tested over 2 years to actually mix smooth and taste good. Plus MCT oil, collagen, and adaptogens you'd never add yourself.</p>"
+          }
+        },
+        "faq_item_kEt6g4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take this with other supplements?",
+            "answer": "<p>Yes. AROSE is food + coffee, not a medication. Stack it with your multivitamin, creatine, whatever. Just watch total caffeine intake if you're taking pre-workout later (we have 150mg per serving).</p>"
+          }
+        },
+        "faq_item_Rp47MT": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's actually in each capsule?",
+            "answer": "<p>We don't use capsules — it's a powder. Each scoop has: 20g grass-fed whey protein, 150mg caffeine from real cold-brew coffee, 2g MCT oil, 5g collagen peptides, plus adaptogens and prebiotics. Full nutrition label on every product page.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kJtwLa",
+        "faq_item_FnK3tU",
+        "faq_item_p6JKzb",
+        "faq_item_kEt6g4",
+        "faq_item_Rp47MT"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "The Product & How It Works",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": true,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "products"
+      }
+    },
+    "faq_accordion_ieGUJc": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_gRdCBm": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How quickly will I see results?",
+            "answer": "<p>Day 1: You'll notice no crash. Week 1: Better sleep, fewer snack attacks. Week 4: Sustained focus becomes your baseline. Month 3: Your coworkers ask what you're doing differently. This isn't a miracle pill — it's a better routine that compounds.</p>"
+          }
+        },
+        "faq_item_XqGDgd": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this make me put on or lose weight?",
+            "answer": "<p>It's not a weight loss product. But: 20g protein keeps you full (less snacking), replaces a breakfast you might skip (more stable energy), and has way fewer calories than a Starbucks latte. Many customers lose 5-10 lbs without trying because they stop the crash-snack cycle.</p>"
+          }
+        },
+        "faq_item_DHQ4mn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I don't see results?",
+            "answer": "<p>If you finish the entire bag and don't feel sharper, sleep better, and stop crashing by 3PM — we refund you. Full bag. No return shipping. We're that confident because 89% reorder within 30 days.</p>"
+          }
+        },
+        "faq_item_7J3AVq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do results last after I stop taking it?",
+            "answer": "<p>You'll go back to whatever you were doing before. AROSE isn't changing your metabolism permanently — it's giving you better fuel. Like premium gas in your car. Stop using it, go back to regular gas results.</p>"
+          }
+        },
+        "faq_item_cyAWqY": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What results can actually be realistic?",
+            "answer": "<p>Realistic: Steady energy, no 3PM crash, better focus, sleeping through the night, fewer sugar cravings. Not realistic: Six-pack abs from coffee, becoming a genius, never being tired again. This fixes your morning fuel — not your entire life.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_gRdCBm",
+        "faq_item_XqGDgd",
+        "faq_item_DHQ4mn",
+        "faq_item_7J3AVq",
+        "faq_item_cyAWqY"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "Results & Expectations",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": true,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "results"
+      }
+    },
+    "faq_accordion_rPDPxR": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_dnzpxY": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I take AROSE?",
+            "answer": "<p>One scoop in 8-12oz cold water or milk. Shake for 30 seconds. Drink. That's it. Works hot or cold, but cold mixes smoother. Best taken in the morning to replace breakfast + coffee.</p>"
+          }
+        },
+        "faq_item_VJTJcf": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any side effects?",
+            "answer": "<p>If you're not used to caffeine: you might feel energized (that's the point). If you're lactose intolerant: we use whey isolate which is 99% lactose-free, but some sensitivity is possible. If you drink coffee at 6PM: you might not sleep well. Use common sense.</p>"
+          }
+        },
+        "faq_item_Mdk9Jm": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this safe for long-term use?",
+            "answer": "<p>Yes. It's protein and coffee. People have been consuming both for centuries. Our oldest customer has been drinking it daily for 3+ years. Just stay hydrated and don't go crazy with additional caffeine.</p>"
+          }
+        },
+        "faq_item_LceN3X": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take this if I'm on medication?",
+            "answer": "<p>Check with your doctor. We can't give medical advice. That said: it's whey protein, coffee, and vitamins. If you currently drink coffee and eat protein, you're probably fine. But seriously — ask your doctor if you're on meds.</p>"
+          }
+        },
+        "faq_item_VFkTWg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What age is this appropriate for?",
+            "answer": "<p>18+. Not because it's dangerous, but because we formulated it for adults with full-time jobs. Kids and teens don't need 150mg of caffeine and 20g of protein for breakfast.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_dnzpxY",
+        "faq_item_VJTJcf",
+        "faq_item_Mdk9Jm",
+        "faq_item_LceN3X",
+        "faq_item_VFkTWg"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "Usage & Safety",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": true,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "usage"
+      }
+    },
+    "faq_accordion_mGwgfm": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_kf7WKc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is shipping delayed?",
+            "answer": "<p>Nope. Orders placed before 2PM EST ship same day. You'll have it in 2-5 business days depending on where you live. We ship from the US, not overseas.</p>"
+          }
+        },
+        "faq_item_HYDRRx": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How fast will my order arrive?",
+            "answer": "<p>2-5 business days in the US. Sometimes faster. We ship USPS Priority or UPS Ground depending on your location. You get tracking the day it ships.</p>"
+          }
+        },
+        "faq_item_THwrEV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>US only right now. We're working on Canada and UK. If you're international and want to be notified when we expand, email us at <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a></p>"
+          }
+        },
+        "faq_item_WNdJaY": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>Credit cards (Visa, Mastercard, Amex, Discover), Apple Pay, Google Pay, Shop Pay. We don't accept PayPal because they held our money hostage once and we're petty.</p>"
+          }
+        },
+        "faq_item_aLmRim": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I modify or cancel my order?",
+            "answer": "<p>Email us ASAP at <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a>. If we haven't shipped it yet (within 24 hours usually), we can change or cancel. After it ships, you'll need to use our return policy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_kf7WKc",
+        "faq_item_HYDRRx",
+        "faq_item_THwrEV",
+        "faq_item_WNdJaY",
+        "faq_item_aLmRim"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "Ordering & Shipping",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": true,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "shipping"
+      }
+    },
+    "faq_accordion_dhdXgK": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_XNiLT6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does your guarantee work?",
+            "answer": "<p>90 days. Drink the entire bag. All 30 servings. If you don't feel the difference, email us. We refund you. No return shipping required. No photos of your empty bag. No interrogation. We just refund you.</p>"
+          }
+        },
+        "faq_item_zBpxYJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I want to return an unopened bottle?",
+            "answer": "<p>Unopened bags get full refunds within 90 days. Just email us. We'll send you a prepaid return label. You ship it back. We refund you when we receive it. Easy.</p>"
+          }
+        },
+        "faq_item_diKU3d": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I get a refund?",
+            "answer": "<p>Email <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a> with your order number and why you want a refund. We process it within 1-2 business days. Money hits your account in 5-7 business days depending on your bank.</p>"
+          }
+        },
+        "faq_item_UmKzHG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you really honor the guarantee?",
+            "answer": "<p>Yes. We've refunded hundreds of people. We don't fight you. We don't ask invasive questions. You say it didn't work, we refund you. Our refund rate is under 3% because the product works. But when someone asks, we honor it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_XNiLT6",
+        "faq_item_zBpxYJ",
+        "faq_item_diKU3d",
+        "faq_item_UmKzHG"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "Guarantee & Returns",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": true,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "guarantee"
+      }
+    },
+    "faq_accordion_3cJE8w": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_cNfniY": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Subscribe & Save work?",
+            "answer": "<p>Pick your flavor and frequency (every 20, 30, or 40 days). Get 15% off every order. Free shipping. Pause, skip, or cancel anytime from your account. No phone calls required. No hidden fees. No 'call to cancel' BS.</p>"
+          }
+        },
+        "faq_item_GmW3HE": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I pause or cancel my subscription?",
+            "answer": "<p>Yes. Log into your account. Click 'Manage Subscription.' Pause, skip next order, change frequency, or cancel. Takes 30 seconds. No phone calls. No retention team trying to guilt you.</p>"
+          }
+        },
+        "faq_item_gPpmLB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I change my delivery schedule?",
+            "answer": "<p>Yep. Adjust your delivery date, skip a shipment, or change frequency anytime. Just log into your account or email us if you need help.</p>"
+          }
+        },
+        "faq_item_wzh4rx": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there bulk discounts?",
+            "answer": "<p>Subscribe & Save is 15% off forever. We also have bundles (2-bag, 3-bag) with additional savings. The more you buy, the less per serving. Check the shop page for current bundle deals.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_cNfniY",
+        "faq_item_GmW3HE",
+        "faq_item_gPpmLB",
+        "faq_item_wzh4rx"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "content_gap_desktop": 80,
+        "content_gap_mobile": 24,
+        "title_width_desktop": 600,
+        "title": "Subscription & Savings",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.4,
+        "title_color": "#2f3936",
+        "title_padding_vertical": 24,
+        "accordion_padding_vertical": 24,
+        "question_padding_vertical": 20,
+        "question_gap": 24,
+        "border_color": "#2f3936",
+        "border_opacity": 10,
+        "show_border_bottom": false,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "icon_size_desktop": 20,
+        "icon_size_mobile": 16,
+        "icon_color": "#2f3936",
+        "answer_font_size_desktop": 18,
+        "answer_font_size_mobile": 16,
+        "answer_color": "#2f3936",
+        "answer_opacity": 80,
+        "answer_padding_bottom": 20,
+        "scroll_offset": 0,
+        "section_id": "subscription"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "support_section_LrKkHV",
+    "navigation_buttons_34pQYc",
+    "faq_accordion_KpFrMh",
+    "faq_accordion_ieGUJc",
+    "faq_accordion_rPDPxR",
+    "faq_accordion_mGwgfm",
+    "faq_accordion_dhdXgK",
+    "faq_accordion_3cJE8w"
+  ]
+}

@@ -1,0 +1,294 @@
+{%- liquid
+  assign product = product | default: blank
+  assign show_best_seller = show_best_seller | default: false
+  
+  if product == blank
+    echo '<!-- Product card: No product provided -->'
+    break
+  endif
+
+  assign current_variant = product.selected_or_first_available_variant
+  assign compare_at_price = current_variant.compare_at_price
+  assign price = current_variant.price
+  assign savings = 0
+  if compare_at_price > price
+    assign savings = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round
+  endif
+
+  assign has_reviews = false
+  assign rating = 0
+  assign review_count = 0
+  
+  if product.metafields.reviews.rating.value != blank
+    assign rating = product.metafields.reviews.rating.value.rating | floor
+    assign has_reviews = true
+  elsif product.metafields.custom.rating != blank
+    assign rating = product.metafields.custom.rating | floor
+    assign has_reviews = true
+  endif
+  
+  if product.metafields.reviews.rating_count != blank
+    assign review_count = product.metafields.reviews.rating_count
+    assign has_reviews = true
+  elsif product.metafields.custom.review_count != blank
+    assign review_count = product.metafields.custom.review_count
+    assign has_reviews = true
+  endif
+
+  assign filled_stars = rating
+  if filled_stars > 5
+    assign filled_stars = 5
+  endif
+  if filled_stars < 0
+    assign filled_stars = 0
+  endif
+
+  assign show_best_seller_badge = false
+  if product.tags contains 'best-seller' or show_best_seller
+    assign show_best_seller_badge = true
+  endif
+-%}
+
+<div class="maison-product-card">
+  <a href="{{ product.url }}" class="maison-product-card-link">
+    <div class="maison-product-card-image-wrapper">
+      {% if product.featured_image %}
+        {{
+          product.featured_image
+          | image_url: width: 600
+          | image_tag: loading: 'lazy', 
+          class: 'maison-product-card-image',
+          alt: product.featured_image.alt | escape
+        }}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'maison-product-card-image maison-product-card-image--placeholder' }}
+      {% endif %}
+
+      {% if show_best_seller_badge %}
+        <div class="maison-product-card-badge">
+          <span>🔥 BEST SELLER</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="maison-product-card-content">
+      <div class="maison-product-card-content-main">
+        {% if has_reviews %}
+          <div class="maison-product-card-rating">
+            <div class="maison-product-card-stars">
+              {% for i in (1..5) %}
+                {% if i <= filled_stars %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M7.68332 1.52997C7.71254 1.47094 7.75767 1.42126 7.81362 1.38652C7.86958 1.35178 7.93413 1.33337 7.99999 1.33337C8.06585 1.33337 8.1304 1.35178 8.18635 1.38652C8.24231 1.42126 8.28744 1.47094 8.31666 1.52997L9.85666 4.6493C9.95811 4.85461 10.1079 5.03224 10.2931 5.16694C10.4783 5.30164 10.6934 5.38938 10.92 5.42264L14.364 5.92664C14.4292 5.93609 14.4906 5.96362 14.541 6.0061C14.5914 6.04859 14.6289 6.10434 14.6493 6.16704C14.6697 6.22975 14.6722 6.29691 14.6564 6.36093C14.6406 6.42495 14.6072 6.48327 14.56 6.5293L12.0693 8.95464C11.9051 9.1147 11.7822 9.31229 11.7112 9.53039C11.6403 9.74849 11.6234 9.98056 11.662 10.2066L12.25 13.6333C12.2615 13.6985 12.2545 13.7657 12.2297 13.8271C12.2048 13.8885 12.1633 13.9417 12.1097 13.9806C12.0561 14.0196 11.9926 14.0426 11.9266 14.0472C11.8605 14.0518 11.7945 14.0378 11.736 14.0066L8.65732 12.388C8.45447 12.2815 8.22878 12.2258 7.99966 12.2258C7.77054 12.2258 7.54484 12.2815 7.34199 12.388L4.26399 14.0066C4.20554 14.0376 4.13959 14.0515 4.07362 14.0468C4.00766 14.0421 3.94433 14.019 3.89085 13.9801C3.83737 13.9412 3.79588 13.8881 3.77109 13.8268C3.74631 13.7655 3.73923 13.6984 3.75066 13.6333L4.33799 10.2073C4.37679 9.98112 4.35998 9.7489 4.28901 9.53067C4.21805 9.31243 4.09506 9.11474 3.93066 8.95464L1.43999 6.52997C1.39239 6.48399 1.35865 6.42557 1.34263 6.36135C1.32661 6.29714 1.32895 6.22971 1.34938 6.16676C1.3698 6.10381 1.4075 6.04786 1.45817 6.00529C1.50885 5.96272 1.57046 5.93524 1.63599 5.92597L5.07932 5.42264C5.30616 5.38964 5.52158 5.30201 5.70705 5.16729C5.89251 5.03258 6.04246 4.85482 6.14399 4.6493L7.68332 1.52997Z" fill="#FF8C00" stroke="#FF8C00" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M7.68332 1.52997C7.71254 1.47094 7.75767 1.42126 7.81362 1.38652C7.86958 1.35178 7.93413 1.33337 7.99999 1.33337C8.06585 1.33337 8.1304 1.35178 8.18635 1.38652C8.24231 1.42126 8.28744 1.47094 8.31666 1.52997L9.85666 4.6493C9.95811 4.85461 10.1079 5.03224 10.2931 5.16694C10.4783 5.30164 10.6934 5.38938 10.92 5.42264L14.364 5.92664C14.4292 5.93609 14.4906 5.96362 14.541 6.0061C14.5914 6.04859 14.6289 6.10434 14.6493 6.16704C14.6697 6.22975 14.6722 6.29691 14.6564 6.36093C14.6406 6.42495 14.6072 6.48327 14.56 6.5293L12.0693 8.95464C11.9051 9.1147 11.7822 9.31229 11.7112 9.53039C11.6403 9.74849 11.6234 9.98056 11.662 10.2066L12.25 13.6333C12.2615 13.6985 12.2545 13.7657 12.2297 13.8271C12.2048 13.8885 12.1633 13.9417 12.1097 13.9806C12.0561 14.0196 11.9926 14.0426 11.9266 14.0472C11.8605 14.0518 11.7945 14.0378 11.736 14.0066L8.65732 12.388C8.45447 12.2815 8.22878 12.2258 7.99966 12.2258C7.77054 12.2258 7.54484 12.2815 7.34199 12.388L4.26399 14.0066C4.20554 14.0376 4.13959 14.0515 4.07362 14.0468C4.00766 14.0421 3.94433 14.019 3.89085 13.9801C3.83737 13.9412 3.79588 13.8881 3.77109 13.8268C3.74631 13.7655 3.73923 13.6984 3.75066 13.6333L4.33799 10.2073C4.37679 9.98112 4.35998 9.7489 4.28901 9.53067C4.21805 9.31243 4.09506 9.11474 3.93066 8.95464L1.43999 6.52997C1.39239 6.48399 1.35865 6.42557 1.34263 6.36135C1.32661 6.29714 1.32895 6.22971 1.34938 6.16676C1.3698 6.10381 1.4075 6.04786 1.45817 6.00529C1.50885 5.96272 1.57046 5.93524 1.63599 5.92597L5.07932 5.42264C5.30616 5.38964 5.52158 5.30201 5.70705 5.16729C5.89251 5.03258 6.04246 4.85482 6.14399 4.6493L7.68332 1.52997Z" fill="none" stroke="#E0E0E0" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <span class="maison-product-card-reviews">({{ review_count | number_with_delimiter }} Reviews)</span>
+          </div>
+        {% endif %}
+
+        <h3 class="maison-product-card-title">{{ product.title }}</h3>
+      </div>
+
+      <div class="maison-product-card-price">
+        <span class="maison-product-card-price-current">{{ price | money }}</span>
+        {% if compare_at_price > price %}
+          <span class="maison-product-card-price-compare">{{ compare_at_price | money }}</span>
+          {% if savings > 0 %}
+            <span class="maison-product-card-savings">You Save {{ savings }}%</span>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .maison-product-card {
+    width: 296px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .maison-product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .maison-product-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(47, 57, 54, 0.10);
+    position: relative;
+  }
+
+  .maison-product-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .maison-product-card-image-wrapper:hover .maison-product-card-image{
+    width: 102%;
+    height: 102%;
+    top: -1%;
+    left: -1%;
+  }
+
+  .maison-product-card-image--placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .maison-product-card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, rgba(180,35,24,1) 0%, rgba(210,52,40,1) 50%, rgba(240,68,56,1) 100%);
+    padding: 0px 8px;
+    border-radius: 90px;
+    z-index: 1;
+    display: flex;
+  }
+
+  .maison-product-card-badge span {
+    color: #FFFFFF;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  .maison-product-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 16px;
+  }
+
+  @media (max-width: 950px) {
+    .maison-product-card-content {
+      gap: 8px;
+      padding-top: 16px;
+    }
+  }
+
+  .maison-product-card-content-main{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .maison-product-card-rating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .maison-product-card-stars {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .maison-product-card-stars svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison-product-card-stars svg path[stroke="#E0E0E0"] {
+    fill: none;
+  }
+
+  .maison-product-card-reviews {
+    color: rgba(44, 41, 38, 0.75);
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .maison-product-card-title {
+    color: #2F3936;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 950px) {
+    .maison-product-card-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  .maison-product-card-price {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .maison-product-card-price-current {
+    color: #2E432F;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .maison-product-card-price-compare {
+    color: #98A2B3;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: line-through;
+  }
+
+  .maison-product-card-savings {
+    background-color: #FAF59B;
+    color: #2E432F;
+    font-family: "Avenir Next";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 2px 8px;
+    border-radius: 90px;
+    white-space: nowrap;
+  }
+</style>
+

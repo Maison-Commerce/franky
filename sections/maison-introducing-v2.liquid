@@ -1,0 +1,965 @@
+{% schema %}
+{
+  "name": "Maison Introducing V2",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFEF3"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_desktop",
+      "label": "Product Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_mobile",
+      "label": "Product Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Why Over 300,000 people start their day with <em>Aims</em></p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height_desktop",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Heading Line Height (Desktop)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height_mobile",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Heading Line Height (Mobile)",
+      "default": 1.3
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Heading Accent Color (for italic text)",
+      "default": "#739D6A"
+    },
+    {
+      "type": "header",
+      "content": "Social Proof Settings"
+    },
+    {
+      "type": "text",
+      "id": "social_proof_text",
+      "label": "Social Proof Text",
+    },
+    {
+      "type": "text",
+      "id": "social_proof_count",
+      "label": "Social Proof Count",
+      "default": "8,450+ other men"
+    },
+    {
+      "type": "text",
+      "id": "social_proof_suffix",
+      "label": "Social Proof Suffix",
+      "default": "took control of their morning"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_1",
+      "label": "Avatar 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_2",
+      "label": "Avatar 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_3",
+      "label": "Avatar 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_4",
+      "label": "Avatar 4"
+    },
+    {
+      "type": "range",
+      "id": "social_proof_font_size_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Social Proof Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "social_proof_font_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Social Proof Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "social_proof_color",
+      "label": "Social Proof Text Color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Take Control of My Mood"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_top",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_bottom",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Bottom",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_left",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Padding Left",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_padding_right",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Padding Right",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Trust Badge Settings"
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Trust Badge Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Trust Badge Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "trust_badge_color",
+      "label": "Trust Badge Text Color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_gap",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Trust Badge Gap",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "content_gap_desktop",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Gap (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Gap (Mobile)",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Benefit Text",
+          "default": "<p>You've got sh*t to do - and <strong>need to actually lock in</strong></p>"
+        }
+      ]
+    },
+    {
+      "type": "trust_badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "GMP-Certified Facility"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Introducing V2",
+      "blocks": [
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "trust_badge"
+        },
+        {
+          "type": "trust_badge"
+        },
+        {
+          "type": "trust_badge"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_introducing_v2" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_introducing_v2__container">
+    <div class="maison_commerce_introducing_v2__content">
+      <div class="maison_commerce_introducing_v2__text-content">
+        {% if section.settings.heading != blank %}
+          <h2 class="maison_commerce_introducing_v2__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        <div class="maison_commerce_introducing_v2__benefits">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'benefit' %}
+                <div class="maison_commerce_introducing_v2__benefit" {{ block.shopify_attributes }}>
+                  <div class="maison_commerce_introducing_v2__benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <g clip-path="url(#clip0_8125_28085{{ forloop.index }})">
+                            <rect width="16" height="16" fill="#F9F9F9"/>
+                            <path d="M7.99999 0.166504C3.67376 0.166504 0.166656 3.6736 0.166656 7.99984C0.166656 12.3261 3.67376 15.8332 7.99999 15.8332C12.3262 15.8332 15.8333 12.3261 15.8333 7.99984C15.8333 3.6736 12.3262 0.166504 7.99999 0.166504Z" fill="#2E432F"/>
+                            <path d="M11.5558 5.26807L6.66695 10.157L4.44473 7.93473" stroke="#B9FCAB" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_8125_28085{{ forloop.index }}">
+                            <rect width="16" height="16" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                  </div>
+                  <div class="maison_commerce_introducing_v2__benefit-text">
+                    {{ block.settings.text }}
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+
+        <div class="maison_commerce_introducing_v2__bottom_content">
+             <div class="maison_commerce_introducing_v2__social-proof">
+                <div class="maison_commerce_introducing_v2__avatars">
+                    {% if section.settings.avatar_1 != blank %}
+                    <div class="maison_commerce_introducing_v2__avatar">
+                        {{
+                        section.settings.avatar_1
+                        | image_url: width: 100
+                        | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing_v2__avatar-img'
+                        }}
+                    </div>
+                    {% endif %}
+                    {% if section.settings.avatar_2 != blank %}
+                    <div class="maison_commerce_introducing_v2__avatar">
+                        {{
+                        section.settings.avatar_2
+                        | image_url: width: 100
+                        | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing_v2__avatar-img'
+                        }}
+                    </div>
+                    {% endif %}
+                    {% if section.settings.avatar_3 != blank %}
+                    <div class="maison_commerce_introducing_v2__avatar">
+                        {{
+                        section.settings.avatar_3
+                        | image_url: width: 100
+                        | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing_v2__avatar-img'
+                        }}
+                    </div>
+                    {% endif %}
+                    {% if section.settings.avatar_4 != blank %}
+                    <div class="maison_commerce_introducing_v2__avatar">
+                        {{
+                        section.settings.avatar_4
+                        | image_url: width: 100
+                        | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing_v2__avatar-img'
+                        }}
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="maison_commerce_introducing_v2__social-proof-text">
+                    {% if section.settings.social_proof_text != blank %}
+                    <span>{{ section.settings.social_proof_text }}</span>
+                    {% endif %}
+                    {% if section.settings.social_proof_count != blank %}
+                    <strong>{{ section.settings.social_proof_count }}</strong>
+                    {% endif %}
+                    {% if section.settings.social_proof_suffix != blank %}
+                    <span>{{ section.settings.social_proof_suffix }}</span>
+                    {% endif %}
+                </p>
+                </div>
+
+                <div class="maison_commerce_introducing_v2__cta">
+                {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+                    <a href="{{ section.settings.button_link }}" class="maison_commerce_introducing_v2__button">
+                    <span class="maison_commerce_introducing_v2__button-text">{{ section.settings.button_text }}</span>
+                    <svg class="maison_commerce_introducing_v2__button-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                {% endif %}
+
+                <div class="maison_commerce_introducing_v2__trust-badges">
+                    {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'trust_badge' %}
+                        <div class="maison_commerce_introducing_v2__trust-badge" {{ block.shopify_attributes }}>
+                            {% if block.settings.icon != blank %}
+                            <div class="maison_commerce_introducing_v2__trust-badge-icon">
+                                {{
+                                block.settings.icon
+                                | image_url: width: 50
+                                | image_tag: loading: 'lazy', alt: block.settings.text, class: 'maison_commerce_introducing_v2__trust-badge-icon-img'
+                                }}
+                            </div>
+                            {% endif %}
+                            {% if block.settings.text != blank %}
+                            <p class="maison_commerce_introducing_v2__trust-badge-text">{{ block.settings.text }}</p>
+                            {% endif %}
+                        </div>
+                    {% endcase %}
+                    {% endfor %}
+                </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="maison_commerce_introducing_v2__image-content">
+        {% if section.settings.product_image_desktop != blank %}
+          <div class="maison_commerce_introducing_v2__image-wrapper maison_commerce_introducing_v2__image-wrapper--desktop">
+            {{
+              section.settings.product_image_desktop
+              | image_url: width: 800
+              | image_tag: loading: 'lazy', alt: 'Product', class: 'maison_commerce_introducing_v2__image'
+            }}
+          </div>
+        {% endif %}
+        {% if section.settings.product_image_mobile != blank %}
+          <div class="maison_commerce_introducing_v2__image-wrapper maison_commerce_introducing_v2__image-wrapper--mobile">
+            {{
+              section.settings.product_image_mobile
+              | image_url: width: 600
+              | image_tag: loading: 'lazy', alt: 'Product', class: 'maison_commerce_introducing_v2__image'
+            }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}{
+    padding: 20px;
+  }
+  .maison_commerce_introducing_v2 {
+    width: 100%;
+    border-radius: 24px;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2 {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+
+    #shopify-section-{{ section.id }}{
+        padding: 10px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .maison_commerce_introducing_v2__content {
+    display: flex;
+    justify-content: space-between;
+    gap: {{ section.settings.content_gap_desktop }}px;
+    align-items: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__content {
+      flex-direction: column;
+      gap: {{ section.settings.content_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__text-content {
+      gap: 20px;
+      max-width: 100%;
+    }
+  }
+
+  .maison_commerce_introducing_v2__heading {
+    font-family: "Swarsh Daisy";
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: {{ section.settings.heading_line_height_desktop }};
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  .maison_commerce_introducing_v2__heading p{
+    margin: 0;
+  }
+
+  .maison_commerce_introducing_v2__heading em {
+    font-style: italic;
+    color: {{ section.settings.heading_accent_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: {{ section.settings.heading_line_height_mobile }};
+    }
+  }
+
+  .maison_commerce_introducing_v2__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .maison_commerce_introducing_v2__bottom_content{
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__bottom_content{
+      margin-top: 12px;
+      gap: 16px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__benefit {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_introducing_v2__benefit-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+  }
+
+  .maison_commerce_introducing_v2__benefit-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #2C2C2C;
+    margin: 0;
+  }
+
+  .maison_commerce_introducing_v2__benefit-text p{
+    margin: 0;
+  }
+
+  .maison_commerce_introducing_v2__benefit-text strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__benefit-text {
+      font-size: 14px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .maison_commerce_introducing_v2__avatars {
+    display: flex;
+    align-items: center;
+    margin-right: -8px;
+  }
+
+  .maison_commerce_introducing_v2__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #FFFEF3;
+    margin-left: -8px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_introducing_v2__avatar:first-child {
+    margin-left: 0;
+  }
+
+  .maison_commerce_introducing_v2__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .maison_commerce_introducing_v2__social-proof-text {
+    font-family: "Geist", sans-serif;
+    font-size: {{ section.settings.social_proof_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.social_proof_color }};
+    margin: 0;
+  }
+
+  .maison_commerce_introducing_v2__social-proof-text strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__social-proof-text {
+      font-size: {{ section.settings.social_proof_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__cta {
+      gap: 8px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__button {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    padding: {{ section.settings.button_padding_top }}px {{ section.settings.button_padding_right }}px {{ section.settings.button_padding_bottom }}px {{ section.settings.button_padding_left }}px;
+    border-radius: {{ section.settings.button_border_radius }}px;
+    font-family: "Geist", sans-serif;
+    font-size: {{ section.settings.button_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_introducing_v2__button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__button {
+      font-size: {{ section.settings.button_font_size_mobile }}px;
+      padding: 10.5px 24px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__button-text {
+    white-space: nowrap;
+  }
+
+  .maison_commerce_introducing_v2__button-arrow {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__button-arrow {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__trust-badges {
+    display: flex;
+    gap: {{ section.settings.trust_badge_gap }}px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__trust-badges {
+      gap: 32px;
+    }
+  }
+
+  .maison_commerce_introducing_v2__trust-badge {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_introducing_v2__trust-badge-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__trust-badge-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .maison_commerce_introducing_v2__trust-badges .maison_commerce_introducing_v2__trust-badge:nth-child(3){
+        display: none;
+    }
+  }
+
+  .maison_commerce_introducing_v2__trust-badge-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .maison_commerce_introducing_v2__trust-badge-text {
+    font-family: "Geist", sans-serif;
+    font-size: {{ section.settings.trust_badge_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.trust_badge_color }};
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__trust-badge-text {
+      font-size: {{ section.settings.trust_badge_font_size_mobile }}px;
+      font-weight: 400;
+    }
+  }
+
+  .maison_commerce_introducing_v2__image-content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .maison_commerce_introducing_v2__image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .maison_commerce_introducing_v2__image-wrapper--desktop {
+    display: block;
+  }
+
+  .maison_commerce_introducing_v2__image-wrapper--mobile {
+    display: none;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_introducing_v2__image-content {
+      max-width: 100%;
+    }
+    .maison_commerce_introducing_v2__image-wrapper--desktop {
+      display: none;
+    }
+
+    .maison_commerce_introducing_v2__image-wrapper--mobile {
+      display: block;
+    }
+  }
+
+  .maison_commerce_introducing_v2__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+</style>
+

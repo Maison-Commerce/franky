@@ -1,0 +1,575 @@
+{% schema %}
+{
+  "name": "Maison Collection Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading_part1",
+      "label": "Section Heading Part 1",
+      "default": "Top"
+    },
+    {
+      "type": "text",
+      "id": "section_heading_part2",
+      "label": "Section Heading Part 2",
+      "default": "this month"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 4,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2F3936"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_best_seller_badge",
+          "label": "Show Best Seller Badge",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Collection Slider",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{%- liquid
+  assign use_collection = false
+  assign use_blocks = false
+  
+  if section.settings.collection != blank
+    assign use_collection = true
+  elsif section.blocks.size > 0
+    assign use_blocks = true
+  endif
+-%}
+
+<div class="maison-collection-slider-section" style="padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison-collection-slider-section-wrapper">
+    <div class="maison-collection-slider-section-header">
+      {% if section.settings.section_heading_part1 != blank or section.settings.section_heading_part2 != blank %}
+        <h2 class="maison-collection-slider-section-heading">
+          {% if section.settings.section_heading_part1 != blank %}
+            <em>{{ section.settings.section_heading_part1 }}</em>
+          {% endif %}
+          {% if section.settings.section_heading_part2 != blank %}
+            {{ section.settings.section_heading_part2 }}
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      <div class="maison-collection-slider-section-nav maison-collection-slider-section-nav--desktop">
+        <button class="maison-collection-slider-section-nav-button maison-collection-slider-section-nav-button--prev" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="maison-collection-slider-section-nav-button maison-collection-slider-section-nav-button--next" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 8L22 12M22 12L18 16M22 12H2" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    {% if use_collection or use_blocks %}
+      <div class="swiper maison-collection-slider-section-swiper">
+        <div class="swiper-wrapper">
+          {%- if use_collection -%}
+            {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+              {%- if product.tags contains 'hide_product' -%}
+                {%- continue -%}
+              {%- endif -%}
+              <div class="swiper-slide maison-collection-slider-section-slide">
+                {% render 'maison-product-card', product: product, show_best_seller: false %}
+              </div>
+            {%- endfor -%}
+          {%- elsif use_blocks -%}
+            {%- for block in section.blocks -%}
+              {%- if block.settings.product != blank -%}
+                <div class="swiper-slide maison-collection-slider-section-slide" {{ block.shopify_attributes }}>
+                  {% render 'maison-product-card', product: block.settings.product, show_best_seller: block.settings.show_best_seller_badge %}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+
+        <div class="maison-collection-slider-section-pagination"></div>
+      </div>
+
+      <div class="maison-collection-slider-section-nav maison-collection-slider-section-nav--mobile">
+        <button class="maison-collection-slider-section-nav-button maison-collection-slider-section-nav-button--prev" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="maison-collection-slider-section-pagination-mobile"></div>
+        <button class="maison-collection-slider-section-nav-button maison-collection-slider-section-nav-button--next" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 8L22 12M22 12L18 16M22 12H2" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    {% else %}
+      <div class="maison-collection-slider-section-empty">
+        <p>Please select a collection or add products to display.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiperContainer = document.querySelector('.maison-collection-slider-section-swiper');
+    
+    if (swiperContainer) {
+      const desktopPagination = document.querySelector('.maison-collection-slider-section-pagination');
+      const mobilePagination = document.querySelector('.maison-collection-slider-section-pagination-mobile');
+      
+      // Determine which pagination to use based on screen size
+      const isDesktop = window.innerWidth >= 950;
+      const paginationEl = isDesktop ? desktopPagination : mobilePagination;
+
+      const swiper = new Swiper('.maison-collection-slider-section-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 18,
+        loop: false,
+        navigation: {
+          nextEl: '.maison-collection-slider-section-nav-button--next',
+          prevEl: '.maison-collection-slider-section-nav-button--prev',
+        },
+        pagination: {
+          el: paginationEl,
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        breakpoints: {
+          640: {
+            spaceBetween: 18,
+          },
+          950: {
+            spaceBetween: 32,
+          },
+        },
+        on: {
+          init: function() {
+            syncPagination();
+          },
+          slideChange: function() {
+            syncPagination();
+          },
+        },
+      });
+
+      function syncPagination() {
+        const activeEl = window.innerWidth >= 950 ? desktopPagination : mobilePagination;
+        const syncEl = window.innerWidth >= 950 ? mobilePagination : desktopPagination;
+        
+        if (activeEl && syncEl) {
+          const bullets = activeEl.querySelectorAll('.swiper-pagination-bullet');
+          syncEl.innerHTML = '';
+          bullets.forEach((bullet, index) => {
+            const clone = bullet.cloneNode(true);
+            clone.addEventListener('click', function() {
+              swiper.slideTo(index);
+            });
+            syncEl.appendChild(clone);
+          });
+        }
+      }
+
+      // Handle clicks on both pagination elements
+      if (desktopPagination) {
+        desktopPagination.addEventListener('click', function(e) {
+          const bullet = e.target.closest('.swiper-pagination-bullet');
+          if (bullet) {
+            const index = Array.from(desktopPagination.querySelectorAll('.swiper-pagination-bullet')).indexOf(bullet);
+            if (index !== -1) {
+              swiper.slideTo(index);
+            }
+          }
+        });
+      }
+
+      if (mobilePagination) {
+        mobilePagination.addEventListener('click', function(e) {
+          const bullet = e.target.closest('.swiper-pagination-bullet');
+          if (bullet) {
+            const index = Array.from(mobilePagination.querySelectorAll('.swiper-pagination-bullet')).indexOf(bullet);
+            if (index !== -1) {
+              swiper.slideTo(index);
+            }
+          }
+        });
+      }
+
+      // Update pagination on resize
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          const newIsDesktop = window.innerWidth >= 950;
+          const newPaginationEl = newIsDesktop ? desktopPagination : mobilePagination;
+          
+          if (swiper.params.pagination.el !== newPaginationEl) {
+            swiper.params.pagination.el = newPaginationEl;
+            swiper.pagination.destroy();
+            swiper.pagination.init();
+            swiper.pagination.render();
+            swiper.pagination.update();
+            syncPagination();
+          }
+        }, 250);
+      });
+    }
+  });
+</script>
+
+<style>
+  .maison-collection-slider-section {
+    width: 100%;
+    background: #FFF;
+  }
+
+  .maison-collection-slider-section-swiper .swiper-wrapper{
+    display: flex;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison-collection-slider-section-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section-wrapper {
+      gap: 24px;
+    }
+  }
+
+  .maison-collection-slider-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section-header {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .maison-collection-slider-section-heading {
+    color: {{ section.settings.heading_color }};
+    font-family: "Swarsh Daisy", serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .maison-collection-slider-section-heading em {
+    font-style: italic;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section-heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  .maison-collection-slider-section-nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .maison-collection-slider-section-nav--desktop {
+    display: flex;
+  }
+
+  .maison-collection-slider-section-nav--mobile {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section-nav--desktop {
+      display: none;
+    }
+
+    .maison-collection-slider-section-nav--mobile {
+      display: flex;
+    }
+  }
+
+  .maison-collection-slider-section-nav-button {
+    border: 1.5px solid #E9EBE9;
+    background: transparent;
+    border-radius: 90px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .maison-collection-slider-section-nav-button:hover {
+    background-color: #F8FFF6;
+    border-color: #2E432F;
+  }
+
+  @media (max-width: 950px) {
+    .maison-collection-slider-section-nav-button {
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+  }
+
+  .maison-collection-slider-section-nav-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .maison-collection-slider-section-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison-collection-slider-section-slide {
+    height: auto;
+    flex-shrink: initial!important;
+    width: fit-content!important;
+  }
+
+  .maison-collection-slider-section-pagination {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 949px) {
+    .maison-collection-slider-section-pagination {
+      display: none;
+    }
+  }
+
+  .maison-collection-slider-section-pagination .swiper-pagination-bullet {
+    width: 24px;
+    height: 4px;
+    border-radius: 42px;
+    background-color: #0C1C25;
+    opacity: 0.1;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    cursor: pointer;
+  }
+
+  .maison-collection-slider-section-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .maison-collection-slider-section-pagination-mobile {
+    display: none;
+    gap: 4px;
+    align-items: center;
+    width: fit-content!important;
+  }
+
+  @media (max-width: 949px) {
+    .maison-collection-slider-section-pagination-mobile {
+      display: flex;
+    }
+  }
+
+  .maison-collection-slider-section-pagination-mobile .swiper-pagination-bullet {
+    width: 16px;
+    height: 4px;
+    border-radius: 42px;
+    background-color: #2F3936;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+
+  .maison-collection-slider-section-pagination-mobile .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .maison-collection-slider-section-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #98A2B3;
+  }
+</style>
+

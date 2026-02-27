@@ -1,0 +1,1379 @@
+{% schema %}
+{
+  "name": "Maison Video Review",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg_gradient",
+      "label": "Section Background Gradient",
+      "default": "linear-gradient(180deg, #F8FAF3 0%, #FFFFFF 100%)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Join The Productivity</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 32,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "header",
+      "content": "Rating Settings"
+    },
+    {
+      "type": "range",
+      "id": "overall_rating",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "label": "Overall Rating",
+      "default": 4.8
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "8,450+"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#FF8C00"
+    },
+    {
+      "type": "range",
+      "id": "rating_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Rating Text Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "rating_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Rating Text Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "rating_text_color",
+      "label": "Rating Text Color",
+      "default": "#3A3631"
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "range",
+      "id": "video_gap_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Videos (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "video_gap_mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Videos (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Video Border Radius",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "video_padding",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Video Padding",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "play_button_bg_color",
+      "label": "Play Button Background Color",
+      "default": "#FAF59B"
+    },
+    {
+      "type": "range",
+      "id": "play_button_size",
+      "min": 40,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Play Button Size",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Review Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Gap (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Gap (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_width_desktop",
+      "min": 280,
+      "max": 380,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Width (Desktop)",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "card_width_mobile",
+      "min": 220,
+      "max": 320,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Width (Mobile)",
+      "default": 300
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "select",
+          "id": "slider_position",
+          "label": "Slider Position",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top Slider"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom Slider"
+            }
+          ],
+          "default": "top"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "purchase_date",
+          "label": "Purchase Date",
+          "default": "Purchased on 9 April 2025"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "<p>Review text here</p>"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Patty, 48"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified_buyer",
+          "label": "Verified Buyer",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Video Review",
+      "blocks": [
+        {
+          "type": "video"
+        },
+        {
+          "type": "video"
+        },
+        {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>AROSE set me up with a routine that totally fits my life better than any strict plan ever could.</p>",
+            "reviewer_name": "Patty, 48",
+            "verified_buyer": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 July 2025",
+            "review_text": "<p>Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_video_review" style="background: {{ section.settings.section_bg_gradient }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_video_review__container">
+    <div class="maison_commerce_video_review_gen-text">
+        {% if section.settings.overall_rating > 0 %}
+            <div class="maison_commerce_video_review__rating">
+                <div class="maison_commerce_video_review__stars">
+                {% if section.settings.overall_rating > 4.5 %}
+                    {% comment %} Show all 5 stars filled if rating > 4.5 {% endcomment %}
+                    {% for i in (1..5) %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="#FF8C00"/>
+                        </svg>
+                    {% endfor %}
+                {% else %}
+                    {% comment %} Normal star display logic for ratings <= 4.5 {% endcomment %}
+                    {% assign full_stars = section.settings.overall_rating | floor %}
+                    {% assign has_half_star = section.settings.overall_rating | minus: full_stars | times: 10 %}
+                    {% assign next_star = full_stars | plus: 1 %}
+                    {% for i in (1..5) %}
+                        {% if i <= full_stars %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="#FF8C00"/>
+                            </svg>
+                        {% elsif has_half_star >= 5 and i == next_star %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <defs>
+                                <linearGradient id="half-star-card-{{ block.id }}-{{ i }}">
+                                <stop offset="50%" stop-color="#FF8C00"/>
+                                <stop offset="50%" stop-color="#E0E0E0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="url(#half-star-card-{{ block.id }}-{{ i }})"/>
+                        </svg>
+                        {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="#E0E0E0"/>
+                        </svg>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                </div>
+                <p class="maison_commerce_video_review__rating-text">
+                Rated <strong>{{ section.settings.overall_rating }}</strong>/5 based on <strong>{{ section.settings.review_count }}</strong> reviews.
+                </p>
+            </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+            <h2 class="maison_commerce_video_review__heading">
+                {{ section.settings.heading | remove: '<p>' | remove: '</p>' }}
+            </h2>
+            {% endif %}
+    </div>
+
+    {% assign video_blocks = section.blocks | where: 'type', 'video' %}
+    {% if video_blocks.size > 0 %}
+      <div class="maison_commerce_video_review__videos">
+        <div class="swiper maison_commerce_video_review__videos-swiper">
+          <div class="swiper-wrapper">
+            {% comment %} First set of videos {% endcomment %}
+            {% for block in video_blocks %}
+              {% if block.settings.video != blank %}
+                <div class="swiper-slide maison_commerce_video_review__video-slide" {{ block.shopify_attributes }}>
+                  <div class="maison_commerce_video_review__video-wrapper">
+                    <div class="maison_commerce_video_review__video-container" data-video-id="{{ forloop.index0 }}">
+                      <video
+                        class="maison_commerce_video_review__video-element"
+                        data-video-index="{{ forloop.index0 }}"
+                        preload="metadata"
+                        poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
+                        playsinline
+                      >
+                        {% for source in block.settings.video.sources %}
+                          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                        {% endfor %}
+                      </video>
+                      <button class="maison_commerce_video_review__play-button maison_commerce_video_review__play-button--play" data-video-index="{{ forloop.index0 }}" aria-label="Play video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+                      <button class="maison_commerce_video_review__play-button maison_commerce_video_review__play-button--pause" data-video-index="{{ forloop.index0 }}" aria-label="Pause video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            {% comment %} Duplicate set for seamless loop {% endcomment %}
+            {% for block in video_blocks %}
+              {% if block.settings.video != blank %}
+                {% assign duplicate_index = forloop.index0 | plus: video_blocks.size %}
+                <div class="swiper-slide maison_commerce_video_review__video-slide">
+                  <div class="maison_commerce_video_review__video-wrapper">
+                    <div class="maison_commerce_video_review__video-container" data-video-id="{{ duplicate_index }}">
+                      <video
+                        class="maison_commerce_video_review__video-element"
+                        data-video-index="{{ forloop.index0 }}"
+                        preload="metadata"
+                        poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
+                        playsinline
+                      >
+                        {% for source in block.settings.video.sources %}
+                          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                        {% endfor %}
+                      </video>
+                      <button class="maison_commerce_video_review__play-button maison_commerce_video_review__play-button--play" data-video-index="{{ forloop.index0 }}" aria-label="Play video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+                      <button class="maison_commerce_video_review__play-button maison_commerce_video_review__play-button--pause" data-video-index="{{ forloop.index0 }}" aria-label="Pause video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% assign review_blocks = section.blocks | where: 'type', 'review' %}
+    {% if review_blocks.size > 0 %}
+      {% assign has_top_reviews = false %}
+      {% assign has_bottom_reviews = false %}
+      {% for review in review_blocks %}
+        {% if review.settings.slider_position == 'top' %}
+          {% assign has_top_reviews = true %}
+        {% elsif review.settings.slider_position == 'bottom' %}
+          {% assign has_bottom_reviews = true %}
+        {% endif %}
+      {% endfor %}
+
+      <div class="maison_commerce_video_review__reviews-desktop">
+        {% if has_top_reviews %}
+          <div class="swiper maison_commerce_video_review__slider maison_commerce_video_review__slider--top">
+            <div class="swiper-wrapper">
+              {% for review in review_blocks %}
+                {% if review.settings.slider_position == 'top' %}
+                  <div class="swiper-slide maison_commerce_video_review__slide">
+                    <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
+                      <div class="maison_commerce_video_review__card-container">
+                        {% render 'maison-review-card', review: review, star_color: section.settings.star_color %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+              {% for review in review_blocks %}
+                {% if review.settings.slider_position == 'top' %}
+                  <div class="swiper-slide maison_commerce_video_review__slide">
+                    <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
+                      <div class="maison_commerce_video_review__card-container">
+                        {% render 'maison-review-card', review: review, star_color: section.settings.star_color %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if has_bottom_reviews %}
+          <div dir="rtl" class="swiper maison_commerce_video_review__slider maison_commerce_video_review__slider--bottom">
+            <div class="swiper-wrapper">
+              {% for review in review_blocks %}
+                {% if review.settings.slider_position == 'top' %}
+                  <div class="swiper-slide maison_commerce_video_review__slide">
+                    <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
+                      <div class="maison_commerce_video_review__card-container">
+                        {% render 'maison-review-card', review: review, star_color: section.settings.star_color %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+              {% for review in review_blocks %}
+                {% if review.settings.slider_position == 'top' %}
+                  <div class="swiper-slide maison_commerce_video_review__slide">
+                    <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
+                      <div class="maison_commerce_video_review__card-container">
+                        {% render 'maison-review-card', review: review, star_color: section.settings.star_color %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="maison_commerce_video_review__reviews-mobile">
+        <div class="swiper maison_commerce_video_review__swiper maison_commerce_video_review__swiper-mobile">
+          <div class="swiper-wrapper">
+            {% for review in review_blocks limit: 4 %}
+              <div class="swiper-slide maison_commerce_video_review__slide">
+                <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
+                   <div class="maison_commerce_video_review__card-container">
+                    {% render 'maison-review-card', review: review, star_color: section.settings.star_color %}
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="maison_commerce_video_review__mobile-nav">
+          <button class="maison_commerce_video_review__button-prev" aria-label="Previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="swiper-pagination maison_commerce_video_review__pagination"></div>
+          <button class="maison_commerce_video_review__button-next" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 8L22 12M22 12L18 16M22 12H2" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  (function() {
+    function initVideoReview() {
+      const section = document.querySelector('.maison_commerce_video_review');
+      if (!section) return;
+
+      // Initialize video slider
+      const videosSwiperContainer = section.querySelector('.maison_commerce_video_review__videos-swiper');
+      const videosSectionContainer = section.querySelector('.maison_commerce_video_review__videos');
+      
+      if (videosSwiperContainer) {
+        let videosSwiper;
+        let isVideosHovered = false;
+        let isVideoPlaying = false;
+        const videoElements = videosSwiperContainer.querySelectorAll('.maison_commerce_video_review__video-element');
+        const videoPlayButtons = videosSwiperContainer.querySelectorAll('.maison_commerce_video_review__play-button');
+
+        // Initialize Swiper without autoplay - we'll use CSS animation instead
+        videosSwiper = new Swiper('.maison_commerce_video_review__videos-swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: {{ section.settings.video_gap_desktop }},
+          loop: true,
+          allowTouchMove: false,
+          breakpoints: {
+            640: {
+              spaceBetween: {{ section.settings.video_gap_mobile }},
+            },
+            950: {
+              spaceBetween: {{ section.settings.video_gap_desktop }},
+            },
+          },
+        });
+
+        // Initialize video event listeners
+        function initializeVideos() {
+          videoElements.forEach(function(video) {
+            const videoIndex = parseInt(video.dataset.videoIndex);
+            const videoWrapper = video.closest('.maison_commerce_video_review__video-wrapper');
+            
+            // Ensure video starts paused
+            video.pause();
+            
+            // Make video clickable to pause
+            video.addEventListener('click', function() {
+              if (!this.paused) {
+                this.pause();
+              }
+            });
+            
+            // Add click handler to video wrapper for fullscreen
+            if (videoWrapper) {
+              videoWrapper.addEventListener('click', function(e) {
+                // Don't trigger if clicking on play/pause buttons
+                if (e.target.closest('.maison_commerce_video_review__play-button')) {
+                  return;
+                }
+                
+                // Request fullscreen
+                if (video.requestFullscreen) {
+                  video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                  video.webkitRequestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                  video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) {
+                  video.msRequestFullscreen();
+                }
+              });
+            }
+            
+            // Add event listeners
+            video.addEventListener('play', function() {
+              handleVideoStateChange(videoIndex, true);
+            });
+            
+            video.addEventListener('pause', function() {
+              handleVideoStateChange(videoIndex, false);
+            });
+            
+            video.addEventListener('ended', function() {
+              handleVideoStateChange(videoIndex, false);
+            });
+          });
+          
+          // Handle fullscreen change event to pause video when exiting fullscreen
+          document.addEventListener('fullscreenchange', handleFullscreenChange);
+          document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+          document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+          document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+        }
+        
+        // Handle fullscreen change
+        function handleFullscreenChange() {
+          const isFullscreen = !!(
+            document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement
+          );
+          
+          if (!isFullscreen) {
+            // Exit fullscreen - pause all videos
+            videoElements.forEach(function(video) {
+              if (!video.paused) {
+                video.pause();
+              }
+            });
+          }
+        }
+
+        // Handle video state changes
+        function handleVideoStateChange(videoIndex, isPlaying) {
+          const playButton = videosSwiperContainer.querySelector(`.maison_commerce_video_review__play-button--play[data-video-index="${videoIndex}"]`);
+          const pauseButton = videosSwiperContainer.querySelector(`.maison_commerce_video_review__play-button--pause[data-video-index="${videoIndex}"]`);
+          const videoContainer = videosSwiperContainer.querySelector(`.maison_commerce_video_review__video-container[data-video-id="${videoIndex}"]`);
+          
+          if (isPlaying) {
+            // Pause all other videos
+            videoElements.forEach(function(video) {
+              const idx = parseInt(video.dataset.videoIndex);
+              if (idx !== videoIndex && !video.paused) {
+                video.pause();
+              }
+            });
+
+            // Hide play button, pause button will show on hover via CSS
+            if (playButton) {
+              playButton.style.display = 'none';
+            }
+            
+            if (videoContainer) {
+              videoContainer.classList.add('is-playing');
+            }
+
+            // Stop slider scrolling by pausing CSS animation
+            const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
+            if (wrapper) {
+              wrapper.classList.add('paused');
+            }
+            isVideoPlaying = true;
+          } else {
+            // Show play button always, hide pause button
+            if (playButton) {
+              playButton.style.display = 'flex';
+            }
+            
+            if (videoContainer) {
+              videoContainer.classList.remove('is-playing');
+            }
+
+            // Check if any video is still playing
+            checkAllVideosPaused();
+          }
+        }
+
+        // Check if all videos are paused
+        function checkAllVideosPaused() {
+          let anyPlaying = false;
+          
+          videoElements.forEach(function(video) {
+            if (!video.paused) {
+              anyPlaying = true;
+            }
+          });
+
+          if (!anyPlaying) {
+            isVideoPlaying = false;
+            // Resume CSS animation if not hovered
+            if (!isVideosHovered) {
+              const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
+              if (wrapper) {
+                wrapper.classList.remove('paused');
+              }
+            }
+          }
+        }
+
+        // Play/Pause button click handlers
+        videoPlayButtons.forEach(function(button) {
+          button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const videoIndex = parseInt(this.dataset.videoIndex);
+            const video = videosSwiperContainer.querySelector(`.maison_commerce_video_review__video-element[data-video-index="${videoIndex}"]`);
+            
+            if (video) {
+              if (this.classList.contains('maison_commerce_video_review__play-button--play')) {
+                video.play();
+                // Open fullscreen when play button is clicked
+                if (video.requestFullscreen) {
+                  video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                  video.webkitRequestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                  video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) {
+                  video.msRequestFullscreen();
+                }
+              } else if (this.classList.contains('maison_commerce_video_review__play-button--pause')) {
+                video.pause();
+              }
+            }
+          });
+        });
+
+        // Track hover state for video play logic
+        if (videosSectionContainer) {
+          videosSectionContainer.addEventListener('mouseenter', function() {
+            isVideosHovered = true;
+          });
+
+          videosSectionContainer.addEventListener('mouseleave', function() {
+            isVideosHovered = false;
+            // Resume animation if no videos are playing
+            if (!isVideoPlaying) {
+              const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
+              if (wrapper) {
+                wrapper.classList.remove('paused');
+              }
+            }
+          });
+        }
+        
+        videosSwiperContainer.addEventListener('mouseenter', function() {
+          isVideosHovered = true;
+        });
+
+        videosSwiperContainer.addEventListener('mouseleave', function() {
+          isVideosHovered = false;
+          // Resume animation if no videos are playing
+          if (!isVideoPlaying) {
+            const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
+            if (wrapper) {
+              wrapper.classList.remove('paused');
+            }
+          }
+        });
+
+        // Initialize videos
+        initializeVideos();
+      }
+
+      // Initialize desktop testimonial sliders
+      const topSlider = section.querySelector('.maison_commerce_video_review__slider--top');
+      const bottomSlider = section.querySelector('.maison_commerce_video_review__slider--bottom');
+
+      if (topSlider) {
+        const topSwiperInstance = new Swiper('.maison_commerce_video_review__slider--top', {
+          slidesPerView: 'auto',
+          spaceBetween: {{ section.settings.card_gap_desktop }},
+          autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          speed: 2500,
+          breakpoints: {
+            950: {
+              spaceBetween: {{ section.settings.card_gap_desktop }},
+            },
+          },
+        });
+
+        // Pause on hover
+        topSlider.addEventListener('mouseenter', function() {
+          if (topSwiperInstance.autoplay) {
+            topSwiperInstance.autoplay.stop();
+          }
+        });
+
+        topSlider.addEventListener('mouseleave', function() {
+          if (topSwiperInstance.autoplay) {
+            topSwiperInstance.autoplay.start();
+          }
+        });
+      }
+
+      if (bottomSlider) {
+        const bottomSwiperInstance = new Swiper('.maison_commerce_video_review__slider--bottom', {
+          slidesPerView: 'auto',
+          spaceBetween: {{ section.settings.card_gap_desktop }},
+          autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          speed: 2500,
+          loop: true,
+          breakpoints: {
+            950: {
+              spaceBetween: {{ section.settings.card_gap_desktop }},
+            },
+          },
+        });
+
+        // Pause on hover
+        bottomSlider.addEventListener('mouseenter', function() {
+          if (bottomSwiperInstance.autoplay) {
+            bottomSwiperInstance.autoplay.stop();
+          }
+        });
+
+        bottomSlider.addEventListener('mouseleave', function() {
+          if (bottomSwiperInstance.autoplay) {
+            bottomSwiperInstance.autoplay.start();
+          }
+        });
+      }
+
+      // Initialize mobile Swiper for reviews
+      const mobileSwiper = section.querySelector('.maison_commerce_video_review__swiper');
+      if (mobileSwiper) {
+        new Swiper('.maison_commerce_video_review__swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: {{ section.settings.card_gap_mobile }},
+          loop: true,
+          navigation: {
+            nextEl: '.maison_commerce_video_review__button-next',
+            prevEl: '.maison_commerce_video_review__button-prev',
+            disabledClass: 'swiper-button-disabled',
+          },
+          pagination: {
+            el: '.maison_commerce_video_review__pagination',
+            clickable: true,
+          },
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initVideoReview);
+    } else {
+      initVideoReview();
+    }
+  })();
+</script>
+
+<style>
+  .maison_commerce_video_review {
+    width: 100%;
+    background: {{ section.settings.section_bg_gradient }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_video_review__container {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .maison_commerce_video_review__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_video_review_gen-text{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding: 0 24px;
+    text-wrap-style: balance;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review_gen-text{
+        gap: 8px;
+    }
+  }
+
+  .maison_commerce_video_review__rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .maison_commerce_video_review__stars {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+  }
+
+  .maison_commerce_video_review__rating-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.rating_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.rating_text_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__rating-text {
+      font-size: {{ section.settings.rating_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_video_review__swiper-mobile .swiper-wrapper{
+    display: flex;
+  }
+
+  .maison_commerce_video_review__videos {
+    width: 100%;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__videos {
+      margin-bottom: 32px;
+    }
+  }
+
+  .maison_commerce_video_review__videos-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_review__videos-swiper .swiper-wrapper {
+    display: flex;
+    animation: maison_commerce_video_review_videos_scroll_{{ section.id }} 30s linear infinite;
+  }
+
+  .maison_commerce_video_review__videos:hover .swiper-wrapper,
+  .maison_commerce_video_review__videos-swiper:hover .swiper-wrapper {
+    animation-play-state: paused;
+  }
+
+  .maison_commerce_video_review__videos-swiper .swiper-wrapper.paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes maison_commerce_video_review_videos_scroll_{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .maison_commerce_video_review__video-slide {
+    height: auto;
+    width: 241.6px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__video-slide {
+      width: 163.248px;
+    }
+  }
+
+  .maison_commerce_video_review__video-wrapper {
+    width: 241.6px;
+    height: 379px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__video-wrapper {
+      height: 256px;
+      width: 163.248px;
+    }
+  }
+
+  .maison_commerce_video_review__video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: {{ section.settings.video_padding }}px;
+    border-radius: {{ section.settings.video_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_review__video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ section.settings.video_border_radius }}px;
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Fullscreen video styles with contain */
+  .maison_commerce_video_review__video-element:-webkit-full-screen {
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .maison_commerce_video_review__video-element:-moz-full-screen {
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .maison_commerce_video_review__video-element:-ms-fullscreen {
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .maison_commerce_video_review__video-element:fullscreen {
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .maison_commerce_video_review__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: {{ section.settings.play_button_size }}px;
+    height: {{ section.settings.play_button_size }}px;
+    background-color: {{ section.settings.play_button_bg_color }};
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_video_review__play-button:hover {
+    opacity: 0.9;
+  }
+
+  .maison_commerce_video_review__play-button--pause {
+    display: none;
+  }
+
+  .maison_commerce_video_review__video-container.is-playing:hover .maison_commerce_video_review__play-button--pause {
+    display: flex;
+  }
+
+  .maison_commerce_video_review__play-button svg {
+    width: 24px;
+    height: 24px;
+    color: #000000;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__play-button {
+      width: 34px;
+      height: 34px;
+      padding: 5.4px;
+    }
+
+    .maison_commerce_video_review__play-button svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .maison_commerce_video_review__reviews-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__reviews-desktop {
+      display: none;
+    }
+  }
+
+  .maison_commerce_video_review__reviews-mobile {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__reviews-mobile {
+      display: block;
+    }
+  }
+
+  .maison_commerce_video_review__slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_review__slider .swiper-wrapper {
+    display: flex;
+  }
+
+  .maison_commerce_video_review__slider .swiper-slide {
+    width: auto;
+    height: auto;
+    display: flex;
+  }
+
+  .maison_commerce_video_review__card {
+    width: {{ section.settings.card_width_desktop }}px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__card {
+      width: {{ section.settings.card_width_mobile }}px;
+    }
+  }
+
+  .maison_commerce_video_review__card-container{
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__card-container{
+        gap: 8px;
+    }
+  }
+
+  .maison_commerce_video_review__mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  .maison_commerce_video_review__swiper {
+    position: relative;
+    width: 100%;
+  }
+
+  .maison_commerce_video_review__slide {
+    height: auto;
+    display: flex;
+    flex-shrink: initial!important;
+  }
+
+  .maison_commerce_video_review__button-prev,
+  .maison_commerce_video_review__button-next {
+    border: 1.5px solid #E9EBE9;
+    background: transparent;
+    border-radius: 90px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .maison_commerce_video_review__button-prev:hover,
+  .maison_commerce_video_review__button-next:hover {
+    background-color: #F8FFF6;
+    border-color: #2E432F;
+  }
+
+  .maison_commerce_video_review__button-prev svg,
+  .maison_commerce_video_review__button-next svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__button-prev,
+    .maison_commerce_video_review__button-next {
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+
+    .maison_commerce_video_review__button-prev svg,
+    .maison_commerce_video_review__button-next svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .maison_commerce_video_review__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    right: auto!important;
+    left: auto!important;
+    top: auto!important;
+    bottom: auto!important;
+    position: relative!important;
+    width: fit-content!important;
+  }
+
+  .maison_commerce_video_review__pagination .swiper-pagination-bullet {
+    width: 16px;
+    height: 4px;
+    background-color: rgba(46, 67, 47, 0.3);
+    border-radius: 42px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .maison_commerce_video_review__pagination .swiper-pagination-bullet-active {
+    background-color: #2E432F;
+  }
+</style>
+

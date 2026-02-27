@@ -1,0 +1,901 @@
+{% schema %}
+{
+  "name": "Bundle Promo Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "section_bg_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "section_bg_repeat",
+      "label": "Background Repeat",
+      "options": [
+        {
+          "value": "no-repeat",
+          "label": "No Repeat"
+        },
+        {
+          "value": "repeat",
+          "label": "Repeat"
+        },
+        {
+          "value": "repeat-x",
+          "label": "Repeat X"
+        },
+        {
+          "value": "repeat-y",
+          "label": "Repeat Y"
+        }
+      ],
+      "default": "no-repeat"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Customer Badge Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "customer_avatars",
+      "label": "Customer Avatars"
+    },
+    {
+      "type": "text",
+      "id": "customer_badge_text",
+      "label": "Customer Badge Text",
+      "default": "8,450+ Customers trust AROSE | Rated 4.8/5"
+    },
+    {
+      "type": "range",
+      "id": "customer_badge_font_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Customer Badge Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "customer_badge_font_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Customer Badge Font Size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Free Gift Badge Settings"
+    },
+    {
+      "type": "text",
+      "id": "free_gift_text",
+      "label": "Free Gift Text",
+      "default": "+ Free Shaker Bottle With Every Bundle"
+    },
+    {
+      "type": "color",
+      "id": "free_gift_bg_color",
+      "label": "Free Gift Badge Background Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "color",
+      "id": "free_gift_text_color",
+      "label": "Free Gift Badge Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Start Your Morning Right"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 32,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 24,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "Promo Text Settings"
+    },
+    {
+      "type": "text",
+      "id": "promo_text_before",
+      "label": "Promo Text Before",
+      "default": "Buy 3,"
+    },
+    {
+      "type": "text",
+      "id": "promo_text_after",
+      "label": "Promo Text After",
+      "default": "Get 1 FREE"
+    },
+    {
+      "type": "color",
+      "id": "promo_text_accent_color",
+      "label": "Promo Text Accent Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Claim Your Bundle Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#CBFDC1"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Warning Message Settings"
+    },
+    {
+      "type": "text",
+      "id": "warning_text",
+      "label": "Warning Text",
+      "default": "⚡ 1,200+ bundles sold in the last 5 days - stock running low"
+    },
+    {
+      "type": "color",
+      "id": "warning_text_color",
+      "label": "Warning Text Color",
+      "default": "#7A271A"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Bottom Image (Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "bottom_image_height_mobile",
+      "min": 150,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Image Height (Mobile)",
+      "default": 190
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "20g premium whey protein per serving"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Promo Section",
+      "blocks": [
+        {
+          "type": "feature_item",
+          "settings": {
+            "text": "20g premium whey protein per serving"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "text": "Real coffee for smooth, sustained energy"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "text": "14-day money-back guarantee"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="bundle-promo-section">
+  <div class="bundle-promo-section__container" style="padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px;">
+    <div class="bundle-promo-section__content">
+      <div class="bundle-promo-section__top">
+        {% if section.settings.customer_badge_text != blank %}
+          <div class="bundle-promo-section__customer-badge">
+            {% if section.settings.customer_avatars != blank %}
+              <div class="bundle-promo-section__avatars">
+                {{
+                  section.settings.customer_avatars
+                  | image_url: width: 100
+                  | image_tag: loading: 'lazy', alt: '', class: 'bundle-promo-section__avatar'
+                }}
+              </div>
+            {% endif %}
+            <span class="bundle-promo-section__customer-text">{{ section.settings.customer_badge_text }}</span>
+          </div>
+        {% endif %}
+
+        <div class="bundle-promo-section__badges">
+          {% if section.settings.free_gift_text != blank %}
+            <div class="bundle-promo-section__free-gift-badge">
+              <span>{{ section.settings.free_gift_text }}</span>
+            </div>
+          {% endif %}
+
+          <div class="bundle-promo-section__headings">
+            {% if section.settings.heading != blank %}
+              <h2 class="bundle-promo-section__heading">{{ section.settings.heading }}</h2>
+            {% endif %}
+            <div class="bundle-promo-section__promo-text">
+              {% if section.settings.promo_text_before != blank %}
+                <span class="bundle-promo-section__promo-before">{{ section.settings.promo_text_before }}</span>
+              {% endif %}
+              {% if section.settings.promo_text_after != blank %}
+                <span class="bundle-promo-section__promo-after">{{ section.settings.promo_text_after }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bundle-promo-section__features">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature_item' %}
+            <div class="bundle-promo-section__feature-item" {{ block.shopify_attributes }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z" fill="#12B76A"/>
+              </svg>
+              <span class="bundle-promo-section__feature-text">{{ block.settings.text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="bundle-promo-section__actions">
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link | default: '#' }}" class="bundle-promo-section__button">
+            <span>{{ section.settings.button_text }}</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_8174_9991)">
+                <path d="M23.71 11.2899L18.93 6.50987C18.7894 6.37111 18.6108 6.27711 18.4168 6.23974C18.2228 6.20236 18.0221 6.22329 17.84 6.29987C17.6574 6.37489 17.5011 6.50228 17.3907 6.666C17.2804 6.82972 17.221 7.02244 17.22 7.21987V10.2199C17.22 10.2862 17.1937 10.3498 17.1468 10.3966C17.0999 10.4435 17.0363 10.4699 16.97 10.4699H1.5C1.10218 10.4699 0.720644 10.6279 0.43934 10.9092C0.158035 11.1905 0 11.572 0 11.9699C0 12.3677 0.158035 12.7492 0.43934 13.0305C0.720644 13.3118 1.10218 13.4699 1.5 13.4699H17C17.0663 13.4699 17.1299 13.4962 17.1768 13.5431C17.2237 13.59 17.25 13.6536 17.25 13.7199V16.7199C17.25 16.9851 17.3554 17.2394 17.5429 17.427C17.7304 17.6145 17.9848 17.7199 18.25 17.7199C18.3823 17.7193 18.5132 17.6925 18.6351 17.641C18.7569 17.5895 18.8674 17.5144 18.96 17.4199L23.74 12.6499C23.8985 12.4693 23.9902 12.2399 24 11.9999C24.0008 11.8683 23.9755 11.7378 23.9258 11.616C23.876 11.4941 23.8027 11.3833 23.71 11.2899Z" fill="#2E432F"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_8174_9991">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        {% endif %}
+
+        {% if section.settings.warning_text != blank %}
+          <div class="bundle-promo-section__warning">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_8174_9995)">
+                <path d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25Z" fill="#FDA29B"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9441 6.12445C10.3139 6.28285 10.0233 6.9204 10.0691 7.56855C10.1645 8.9165 10.3465 11.2578 10.5434 12.5702C10.6083 13.0026 10.8686 13.3745 11.2996 13.4472C11.484 13.4783 11.7147 13.5 11.9995 13.5C12.2844 13.5 12.5151 13.4783 12.6995 13.4472C13.1305 13.3745 13.3908 13.0026 13.4557 12.5702C13.6525 11.2578 13.8346 8.9165 13.93 7.56855C13.9758 6.9204 13.6852 6.28285 13.055 6.12445C12.7684 6.0524 12.4166 6 11.9995 6C11.5825 6 11.2307 6.0524 10.9441 6.12445ZM11.9995 18.5C12.966 18.5 13.7495 17.7165 13.7495 16.75C13.7495 15.7835 12.966 15 11.9995 15C11.033 15 10.2495 15.7835 10.2495 16.75C10.2495 17.7165 11.033 18.5 11.9995 18.5Z" fill="#7A271A"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_8174_9995">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="bundle-promo-section__warning-text">{{ section.settings.warning_text }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.left_image != blank %}
+      <div class="bundle-promo-section__left-image">
+        {{
+          section.settings.left_image
+          | image_url: width: 800
+          | image_tag: loading: 'lazy', alt: '', class: 'bundle-promo-section__image'
+        }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.right_image != blank %}
+      <div class="bundle-promo-section__right-image">
+        {{
+          section.settings.right_image
+          | image_url: width: 800
+          | image_tag: loading: 'lazy', alt: '', class: 'bundle-promo-section__image'
+        }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.bottom_image != blank %}
+    <div class="bundle-promo-section__bottom-image">
+      {{
+        section.settings.bottom_image
+        | image_url: width: 800
+        | image_tag: loading: 'lazy', alt: '', class: 'bundle-promo-section__image'
+      }}
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .bundle-promo-section {
+    width: 100%;
+    {% if section.settings.section_bg_image != blank %}
+      background-image: url('{{ section.settings.section_bg_image | image_url: width: 2000 }}');
+      background-size: 100% 100%;
+      background-position: {{ section.settings.section_bg_position }};
+      background-repeat: {{ section.settings.section_bg_repeat }};
+    {% else %}
+      background: linear-gradient(180deg, #FFFFFF 0%, #FDFBDD 100%);
+    {% endif %}
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+      background-size: cover;
+      background-position: bottom;
+    }
+  }
+
+  .bundle-promo-section__container {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 80px;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__container {
+      padding: 0 !important;
+    }
+  }
+
+  .bundle-promo-section__left-image,
+  .bundle-promo-section__right-image {
+    position: absolute;
+    top: 0;
+    width: 364px;
+    height: 644px;
+    z-index: 0;
+  }
+
+  .bundle-promo-section__left-image {
+    left: 0;
+  }
+
+  .bundle-promo-section__right-image {
+    right: 0;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__left-image,
+    .bundle-promo-section__right-image {
+      display: none;
+    }
+  }
+
+  .bundle-promo-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .bundle-promo-section__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 600px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__content {
+      width: 100%;
+      gap: 32px;
+    }
+  }
+
+  .bundle-promo-section__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__top {
+      gap: 20px;
+    }
+  }
+
+  .bundle-promo-section__customer-badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
+    background-color: #FFFFFF;
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__customer-badge {
+      padding: 4px 12px 4px 4px;
+    }
+  }
+
+  .bundle-promo-section__avatars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .bundle-promo-section__avatar {
+    width: 84px;
+    height: 32px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__avatar {
+      width: 60px;
+      height: 24px;
+    }
+  }
+
+  .bundle-promo-section__customer-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.customer_badge_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #2F3936;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__customer-text {
+      font-size: {{ section.settings.customer_badge_font_size_mobile }}px;
+    }
+  }
+
+  .bundle-promo-section__badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__badges {
+      gap: 8px;
+    }
+  }
+
+  .bundle-promo-section__free-gift-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background-color: {{ section.settings.free_gift_bg_color }};
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  .bundle-promo-section__free-gift-badge span {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.free_gift_text_color }};
+  }
+
+  .bundle-promo-section__headings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .bundle-promo-section__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .bundle-promo-section__promo-text {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__promo-text {
+      gap: 4px;
+    }
+  }
+
+  .bundle-promo-section__promo-before {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__promo-before {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .bundle-promo-section__promo-after {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.promo_text_accent_color }};
+
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 8%; /* 3.2px */
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__promo-after {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .bundle-promo-section__features {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .bundle-promo-section__feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background-color: #FFFFFF;
+    border: 1px dashed rgba(44, 41, 38, 0.12);
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  .bundle-promo-section__feature-item svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .bundle-promo-section__feature-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #2F3936;
+  }
+
+  .bundle-promo-section__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 480px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__actions {
+      width: 100%;
+    }
+  }
+
+  .bundle-promo-section__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 32px;
+    background-color: {{ section.settings.button_bg_color }};
+    border-radius: {{ section.settings.button_border_radius }}px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .bundle-promo-section__button:hover {
+    opacity: 0.9;
+  }
+
+  .bundle-promo-section__button span {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.button_text_color }};
+  }
+
+  .bundle-promo-section__button svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: {{ section.settings.button_text_color }};
+  }
+
+  .bundle-promo-section__warning {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #FFFFFF;
+    border: 1px dashed rgba(44, 41, 38, 0.12);
+    border-radius: 999px;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__warning {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .bundle-promo-section__warning svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .bundle-promo-section__warning-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.warning_text_color }};
+    flex: 1;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__warning-text {
+      font-size: 14px;
+    }
+  }
+
+  .bundle-promo-section__bottom-image {
+    width: 100%;
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .bundle-promo-section__bottom-image {
+      display: block;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-top: 40px;
+      aspect-ratio: 1500 / 801;
+    }
+  }
+
+  .bundle-promo-section__bottom-image .bundle-promo-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+

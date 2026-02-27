@@ -1,0 +1,1127 @@
+{% schema %}
+{
+  "name": "Maison Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "footer_bg_color",
+      "label": "Footer Background Color",
+      "default": "#273928"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image_bg",
+      "label": "Logo Image Bottom"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image_shape",
+      "label": "Logo Image Bottom Shape"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_desktop",
+      "min": 100,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "label": "Logo Width (Desktop)",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile",
+      "min": 80,
+      "max": 180,
+      "step": 1,
+      "unit": "px",
+      "label": "Logo Width (Mobile)",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Settings"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "Join And Get 10% Off"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_subheading",
+      "label": "Newsletter Subheading",
+      "default": "Sign up for updates and exclusive offers!"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "range",
+      "id": "newsletter_heading_font_size_desktop",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Newsletter Heading Font Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "newsletter_heading_font_size_mobile",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Newsletter Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "newsletter_text_color",
+      "label": "Newsletter Text Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_input_bg_color",
+      "label": "Email Input Background Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_input_text_color",
+      "label": "Email Input Text Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_button_bg_color",
+      "label": "Submit Button Background Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_button_icon_color",
+      "label": "Submit Button Icon Color",
+      "default": "#273928"
+    },
+    {
+      "type": "header",
+      "content": "Social Media Settings"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "social_pinterest_url",
+      "label": "Pinterest URL"
+    },
+    {
+      "type": "color",
+      "id": "social_icon_color",
+      "label": "Social Icon Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Background Logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background_logo",
+      "label": "Show Background Logo",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_logo_color",
+      "label": "Background Logo Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "range",
+      "id": "background_logo_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Background Logo Opacity",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Heading Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 16,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Heading Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Section Heading Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "range",
+      "id": "link_font_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Link Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "link_font_size_mobile",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Link Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#E9EBE9"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link Hover Color",
+      "default": "#B9FCAB"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Link List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Navigate"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "Select a menu for this link list"
+        }
+      ]
+    },
+    {
+      "type": "custom_link_list",
+      "name": "Custom Link List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shipping & Returns"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "Select a menu for this link list"
+        }
+      ]
+    },
+    {
+      "type": "customer_support",
+      "name": "Customer Support",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p><a href=\"mailto:support@drinkarose.com\">support@drinkarose.com</a></p><p><a href=\"#\">Live Chat</a></p><p><a href=\"tel:1-800-XXX-XXXX\">1-800-XXX-XXXX</a></p><p>Avg response: 2 hours</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_payment_methods",
+          "label": "Show Payment Methods",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Privacy Policy"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Maison Footer",
+      "blocks": [
+        {
+          "type": "link_list",
+          "settings": {
+            "heading": "Navigate"
+          }
+        },
+        {
+          "type": "custom_link_list",
+          "settings": {
+            "heading": "Shipping & Returns"
+          }
+        },
+        {
+          "type": "customer_support",
+          "settings": {
+            "show_payment_methods": true
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "link_text": "Privacy Policy",
+            "link_url": "/policies/privacy-policy"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "link_text": "Terms of Service",
+            "link_url": "/policies/terms-of-service"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "link_text": "Refund Policy",
+            "link_url": "/policies/refund-policy"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "link_text": "Shipping & Returns",
+            "link_url": "/policies/shipping-policy"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_footer-top-divider"></div>
+<footer class="maison_commerce_footer">
+  <div class="maison_commerce_footer__container" style="padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+    <div class="maison_commerce_footer__content">
+      <div class="maison_commerce_footer__left">
+        <div class="maison_commerce_footer__left-top-content">
+            {% if section.settings.logo_image != blank %}
+            <div class="maison_commerce_footer__logo">
+                {{
+                section.settings.logo_image
+                | image_url: width: 300
+                | image_tag: loading: 'lazy', alt: 'Logo', class: 'maison_commerce_footer__logo-img'
+                }}
+            </div>
+            {% endif %}
+
+            <div class="maison_commerce_footer__left-top-content-text">
+                {% if section.settings.newsletter_heading != blank %}
+                <h2 class="maison_commerce_footer__newsletter-heading">
+                    {{ section.settings.newsletter_heading }}
+                </h2>
+                {% endif %}
+
+                {% if section.settings.newsletter_subheading != blank %}
+                <p class="maison_commerce_footer__newsletter-subheading">
+                    {{ section.settings.newsletter_subheading }}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="maison_commerce_footer__social">
+          {% if section.settings.social_youtube_url != blank %}
+            <a href="{{ section.settings.social_youtube_url }}" class="maison_commerce_footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12.2439 3.47266C12.778 3.4756 14.1143 3.48852 15.5341 3.54539L16.0375 3.56734C17.467 3.63502 18.8953 3.75064 19.6037 3.94816C20.5486 4.21361 21.2913 4.98816 21.5423 5.96998C21.942 7.52907 21.992 10.5721 21.9982 11.3085L21.9991 11.4611V11.4718C21.9991 11.4718 21.9991 11.4755 21.9991 11.4826L21.9982 11.6352C21.992 12.3716 21.942 15.4146 21.5423 16.9737C21.2878 17.9591 20.5451 18.7337 19.6037 18.9955C18.8953 19.193 17.467 19.3086 16.0375 19.3763L15.5341 19.3982C14.1143 19.4551 12.778 19.468 12.2439 19.471L12.0095 19.4718H11.9991C11.9991 19.4718 11.9956 19.4718 11.9887 19.4718L11.7545 19.471C10.6241 19.4648 5.89772 19.4137 4.39451 18.9955C3.4496 18.73 2.70692 17.9555 2.45587 16.9737C2.0562 15.4146 2.00624 12.3716 2 11.6352V11.3085C2.00624 10.5721 2.0562 7.52907 2.45587 5.96998C2.7104 4.98452 3.45308 4.20998 4.39451 3.94816C5.89772 3.52989 10.6241 3.47888 11.7545 3.47266H12.2439ZM9.99911 7.9718V14.9718L15.9991 11.4718L9.99911 7.9718Z" fill="#DDFED6"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_instagram_url != blank %}
+            <a href="{{ section.settings.social_instagram_url }}" class="maison_commerce_footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13.0281 1.47266C14.1535 1.47452 14.7238 1.48048 15.2166 1.49515L15.4107 1.50149C15.6349 1.50946 15.8561 1.51946 16.1228 1.53196C17.1869 1.58113 17.9128 1.74946 18.5503 1.99696C19.2094 2.25113 19.7661 2.59446 20.3219 3.1503C20.8769 3.70613 21.2203 4.26446 21.4753 4.92196C21.7219 5.55863 21.8903 6.2853 21.9403 7.34946C21.9522 7.61613 21.9618 7.83733 21.9697 8.06157L21.976 8.25566C21.9906 8.7484 21.9973 9.31879 21.9994 10.4442L22.0002 11.1898C22.0003 11.2809 22.0003 11.3749 22.0003 11.4719L22.0002 11.754L21.9996 12.4997C21.9977 13.6251 21.9918 14.1955 21.9771 14.6882L21.9707 14.8823C21.9628 15.1066 21.9528 15.3278 21.9403 15.5944C21.8911 16.6586 21.7219 17.3844 21.4753 18.0219C21.2211 18.6811 20.8769 19.2378 20.3219 19.7936C19.7661 20.3486 19.2069 20.6919 18.5503 20.9469C17.9128 21.1936 17.1869 21.3619 16.1228 21.4119C15.8561 21.4238 15.6349 21.4335 15.4107 21.4413L15.2166 21.4476C14.7238 21.4623 14.1535 21.4689 13.0281 21.4711L12.2824 21.4719C12.1913 21.4719 12.0973 21.4719 12.0003 21.4719H11.7182L10.9725 21.4712C9.8471 21.4694 9.27672 21.4634 8.78397 21.4487L8.58989 21.4424C8.36564 21.4344 8.14444 21.4244 7.87778 21.4119C6.81361 21.3628 6.08861 21.1936 5.45028 20.9469C4.79194 20.6928 4.23444 20.3486 3.67861 19.7936C3.12278 19.2378 2.78028 18.6786 2.52528 18.0219C2.27778 17.3844 2.11028 16.6586 2.06028 15.5944C2.0484 15.3278 2.03871 15.1066 2.03086 14.8823L2.02457 14.6882C2.00994 14.1955 2.00327 13.6251 2.00111 12.4997L2.00098 10.4442C2.00284 9.31879 2.00879 8.7484 2.02346 8.25566L2.02981 8.06157C2.03778 7.83733 2.04778 7.61613 2.06028 7.34946C2.10944 6.28446 2.27778 5.55946 2.52528 4.92196C2.77944 4.26363 3.12278 3.70613 3.67861 3.1503C4.23444 2.59446 4.79278 2.25196 5.45028 1.99696C6.08778 1.74946 6.81278 1.58196 7.87778 1.53196C8.14444 1.52009 8.36564 1.5104 8.58989 1.50255L8.78397 1.49626C9.27672 1.48162 9.8471 1.47495 10.9725 1.47279L13.0281 1.47266ZM12.0003 6.47196C9.23738 6.47196 7.00028 8.71149 7.00028 11.4719C7.00028 14.2348 9.23981 16.4719 12.0003 16.4719C14.7632 16.4719 17.0003 14.2324 17.0003 11.4719C17.0003 8.70906 14.7607 6.47196 12.0003 6.47196ZM12.0003 8.47196C13.6572 8.47196 15.0003 9.81463 15.0003 11.4719C15.0003 13.1288 13.6576 14.4719 12.0003 14.4719C10.3434 14.4719 9.00028 13.1293 9.00028 11.4719C9.00028 9.81503 10.3429 8.47196 12.0003 8.47196ZM17.2503 4.97196C16.561 4.97196 16.0003 5.53187 16.0003 6.22111C16.0003 6.91036 16.5602 7.47113 17.2503 7.47113C17.9395 7.47113 18.5003 6.91123 18.5003 6.22111C18.5003 5.53187 17.9386 4.9711 17.2503 4.97196Z" fill="#DDFED6"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_facebook_url != blank %}
+            <a href="{{ section.settings.social_facebook_url }}" class="maison_commerce_footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15.4024 20.4727V13.5071H17.7347L18.0838 10.7992H15.4024V9.07031C15.4024 8.2863 15.62 7.752 16.7443 7.752L18.1783 7.75133V5.32942C17.9302 5.29648 17.0791 5.22272 16.0888 5.22272C14.0213 5.22272 12.606 6.48464 12.606 8.80218V10.7992H10.2677V13.5071H12.606V20.4727H4C3.44772 20.4727 3 20.025 3 19.4727V3.47266C3 2.92038 3.44772 2.47266 4 2.47266H20C20.5523 2.47266 21 2.92038 21 3.47266V19.4727C21 20.025 20.5523 20.4727 20 20.4727H15.4024Z" fill="#DDFED6"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_tiktok_url != blank %}
+            <a href="{{ section.settings.social_tiktok_url }}" class="maison_commerce_footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M16 7.71803V14.9727C16 18.5626 13.0899 21.4727 9.5 21.4727C5.91015 21.4727 3 18.5626 3 14.9727C3 11.3828 5.91015 8.47266 9.5 8.47266C10.0163 8.47266 10.5185 8.53285 11 8.64659V11.8095C10.5454 11.5935 10.0368 11.4727 9.5 11.4727C7.567 11.4727 6 13.0397 6 14.9727C6 16.9057 7.567 18.4727 9.5 18.4727C11.433 18.4727 13 16.9057 13 14.9727V1.47266H16C16 4.23408 18.2386 6.47266 21 6.47266V9.47266C19.1081 9.47266 17.3696 8.81594 16 7.71803Z" fill="#DDFED6"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_pinterest_url != blank %}
+            <a href="{{ section.settings.social_pinterest_url }}" class="maison_commerce_footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13.3717 1.56708C8.42512 0.885338 3.73383 3.95771 2.38064 8.76522C1.02745 13.5728 3.42711 18.6419 8.00271 20.6416C7.94264 19.8735 7.99735 19.1007 8.16502 18.3488C8.34964 17.5101 9.46121 12.8859 9.46121 12.8859C9.23971 12.39 9.12893 11.8517 9.13659 11.3086C9.13659 9.82356 9.99353 8.71561 11.0597 8.71561C11.4472 8.70984 11.8181 8.87294 12.0758 9.16247C12.3335 9.452 12.4526 9.83936 12.402 10.2237C12.402 11.1239 11.8236 12.4858 11.5228 13.763C11.4014 14.2383 11.5131 14.743 11.8237 15.1227C12.1343 15.5023 12.6069 15.7116 13.0967 15.6866C14.9944 15.6866 16.2675 13.2552 16.2675 10.3853C16.2675 8.18471 14.8098 6.53816 12.1243 6.53816C10.826 6.48797 9.56388 6.97226 8.63223 7.87809C7.70057 8.78392 7.18084 10.0322 7.19423 11.3317C7.16563 12.0449 7.39566 12.7444 7.84194 13.3014C8.01361 13.4291 8.07985 13.6552 8.00425 13.8554C7.9581 14.04 7.84194 14.4786 7.79578 14.6402C7.77632 14.7507 7.70559 14.8455 7.60516 14.8955C7.50473 14.9456 7.38651 14.9451 7.28654 14.8941C5.9019 14.3401 5.24957 12.8166 5.24957 11.0778C5.24957 8.23088 7.63424 4.82236 12.4036 4.82236C16.1998 4.82236 18.723 7.59996 18.723 10.5699C18.723 14.4786 16.5468 17.4178 13.3298 17.4178C12.3526 17.4488 11.4273 16.9788 10.8759 16.1713C10.8759 16.1713 10.2974 18.4873 10.1835 18.9258C9.95101 19.6826 9.60779 20.4008 9.16505 21.0571C10.0877 21.337 11.0471 21.4771 12.0113 21.4727C14.6636 21.4744 17.2078 20.4211 19.0829 18.5447C20.958 16.6684 22.0099 14.1231 22.0069 11.4702C22.004 6.47572 18.3183 2.24882 13.3717 1.56708Z" fill="#DDFED6"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+
+        {% form 'customer', class: 'maison_commerce_footer__newsletter-form' %}
+          <input 
+            type="hidden" 
+            name="contact[tags]" 
+            value="newsletter"
+          />
+          <input 
+            type="email" 
+            name="contact[email]" 
+            placeholder="{{ section.settings.newsletter_placeholder | default: 'Enter your email' }}"
+            class="maison_commerce_footer__newsletter-input"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit" class="maison_commerce_footer__newsletter-button" aria-label="Subscribe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        {% endform %}
+      </div>
+
+      <div class="maison_commerce_footer__middle">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'link_list' %}
+              {% if block.settings.heading != blank %}
+                <div class="maison_commerce_footer__link-group" {{ block.shopify_attributes }}>
+                  <h3 class="maison_commerce_footer__link-group-heading">
+                    {{ block.settings.heading }}
+                  </h3>
+                  {% if block.settings.menu != blank %}
+                    <ul class="maison_commerce_footer__link-list">
+                      {% for link in linklists[block.settings.menu].links %}
+                        <li>
+                          <a href="{{ link.url }}" class="maison_commerce_footer__link">
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+        <div class="maison_commerce_footer__right">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'custom_link_list' %}
+                    {% if block.settings.heading != blank %}
+                        <div class="maison_commerce_footer__link-group" {{ block.shopify_attributes }}>
+                        <h3 class="maison_commerce_footer__link-group-heading">
+                            {{ block.settings.heading }}
+                        </h3>
+                        {% if block.settings.menu != blank %}
+                            <ul class="maison_commerce_footer__link-list">
+                            {% for link in linklists[block.settings.menu].links %}
+                                <li>
+                                <a href="{{ link.url }}" class="maison_commerce_footer__link">
+                                    {{ link.title }}
+                                </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        </div>
+                    {% endif %}
+                    {% when 'customer_support' %}
+                    <div class="maison_commerce_footer__support" {{ block.shopify_attributes }}>
+                        <h3 class="maison_commerce_footer__link-group-heading">
+                        Customer Support
+                        </h3>
+                        {% if block.settings.content != blank %}
+                        <div class="maison_commerce_footer__support-content">
+                            {{ block.settings.content }}
+                        </div>
+                        {% endif %}
+                        {% if block.settings.show_payment_methods %}
+                        <div class="maison_commerce_footer__payments">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.68111 8.5L3.5 15.7467H7.30824L7.78035 14.5913H8.85949L9.3316 15.7467H13.5234V14.8649L13.8969 15.7467H16.0652L16.4387 14.8462V15.7467H25.1566L26.2166 14.6213L27.2092 15.7467L31.6868 15.7561L28.4957 12.1436L31.6868 8.5H27.2786L26.2467 9.60463L25.2854 8.5H15.8016L14.9872 10.3704L14.1537 8.5H10.3534V9.35186L9.93068 8.5H6.68111ZM19.6994 9.52905H24.7055L26.2367 11.2316L27.8172 9.52905H29.3484L27.0219 12.1426L29.3484 14.726H27.7477L26.2166 13.0036L24.628 14.726H19.6994V9.52905ZM20.9356 11.555V10.6057V10.6048H24.0593L25.4223 12.1229L23.9989 13.6493H20.9356V12.613H23.6667V11.555H20.9356ZM7.41799 9.52905H9.2743L11.3843 14.4431V9.52905H13.4178L15.0476 13.0524L16.5496 9.52905H18.573V14.7291H17.3418L17.3317 10.6544L15.5368 14.7291H14.4355L12.6305 10.6544V14.7291H10.0977L9.61756 13.5633H7.02338L6.54421 14.728H5.18717L7.41799 9.52905ZM7.46634 12.4856L8.32101 10.4089L9.1747 12.4856H7.46634Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path d="M22.5029 8.93994C23.7425 8.94003 24.9109 10.0569 24.918 12.106C24.918 14.3457 23.7639 15.3636 22.4961 15.3638C21.873 15.3638 21.4972 15.1022 21.2422 14.9185L21.2344 16.9175L19.4639 17.2925V9.05322H21.0225L21.1143 9.4917C21.3622 9.26559 21.8088 8.93994 22.5029 8.93994ZM7.39453 8.93994C7.98216 8.93998 8.56276 9.03215 9.15039 9.26514V10.9263C8.61221 10.6367 7.93274 10.4742 7.39453 10.4741C7.01925 10.4741 6.79216 10.5796 6.79199 10.855C6.79199 11.6463 9.4906 11.2722 9.49805 13.3774C9.49805 14.6422 8.48502 15.3706 7.01172 15.3706C6.40256 15.3706 5.73686 15.2499 5.07812 14.9673V13.2856C5.67312 13.6107 6.42381 13.8511 7.01172 13.8511C7.40829 13.8511 7.69132 13.7453 7.69141 13.4204C7.69141 12.5796 5 12.8902 5 10.9399C5.00007 9.68934 5.95666 8.93994 7.39453 8.93994ZM11.5732 9.06006H12.9189V10.5659H11.5732V13.0737C11.5732 14.1195 12.6922 13.7945 12.9189 13.7026V15.1372C12.6852 15.2644 12.2604 15.3706 11.6797 15.3706C10.6313 15.3706 9.84473 14.6 9.84473 13.5542L9.85156 7.89502L11.5801 7.52686L11.5732 9.06006ZM27.9424 8.93994C29.621 8.93994 30.4999 10.3675 30.5 12.1763C30.5 12.3456 30.4854 12.7128 30.4854 12.8052H27.0225C27.1004 13.639 27.7094 13.8794 28.3965 13.8794C29.0976 13.8794 29.6502 13.7309 30.1318 13.4907V14.9038C29.6502 15.1723 29.0126 15.3637 28.1699 15.3638C26.4416 15.3638 25.2373 14.2894 25.2373 12.1626C25.2373 10.368 26.2568 8.94022 27.9424 8.93994ZM15.1221 9.5835C15.54 8.82036 16.369 8.97527 16.5957 9.06006V10.686C16.3761 10.6083 15.6679 10.5093 15.25 11.0532V15.2437H13.4785V9.06006H15.0088L15.1221 9.5835ZM18.8057 15.2437H17.0273V9.06006H18.8057V15.2437ZM22.0781 10.5093C21.6744 10.5093 21.4185 10.6501 21.2344 10.855L21.2422 13.4771C21.4122 13.6606 21.6604 13.8091 22.0781 13.8091C22.7295 13.8088 23.1688 13.1023 23.1689 12.1558C23.1689 11.2303 22.7225 10.5095 22.0781 10.5093ZM27.9355 10.3745C27.4894 10.3746 27.001 10.707 27.001 11.5054H28.8281C28.8281 10.7069 28.3676 10.3745 27.9355 10.3745ZM18.8057 8.14209L17.0273 8.52393V7.08154L18.8057 6.70752V8.14209Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path d="M17.8423 4.95605C23.5013 4.95621 25.6762 8.04885 25.6763 11.958C25.6763 16.6344 22.6366 18.9852 17.8423 18.9854H9.51324V4.95605H17.8423ZM10.3043 18.1943H17.8414C22.3887 18.1943 24.8609 16.066 24.8609 11.9834C24.8609 7.77699 22.1911 5.79785 17.8414 5.79785H10.3043V18.1943ZM13.7398 17.1553H11.3179V12.8496H13.7398V17.1553ZM12.5289 9.1875C13.3612 9.18778 14.0357 9.86384 14.0357 10.6973C14.0353 11.5304 13.361 12.2058 12.5289 12.2061C11.6965 12.2061 11.0214 11.5306 11.0211 10.6973C11.0211 9.86367 11.6963 9.1875 12.5289 9.1875Z" fill="#B9FCAB"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1175 9.3108H22.8095V11.3893H23.8228C23.5509 7.60349 20.5605 6.76221 17.8419 6.76221H14.9504V9.3108H15.3705C16.1614 9.3108 16.6309 9.83041 16.6309 10.6964C16.6309 11.5625 16.1614 12.0821 15.3952 12.0821H14.9504V17.1545H17.8419C22.2658 17.1545 23.7733 15.1008 23.8475 12.0821H22.1175V9.3108ZM18.7811 11.3893V12.0821H17.0511V9.3108H18.7316V10.0036H17.7431V10.3253H18.6822V11.0181H17.7678V11.3893H18.7811ZM19.0776 12.0821L19.9179 9.3108H20.9064L21.7467 12.0821H21.03L20.8817 11.5625H19.9673L19.819 12.0821H19.0776ZM20.1728 10.8449H20.165V10.8696L20.1728 10.8449ZM20.1728 10.8449H20.6593L20.4369 10.0778H20.4122L20.1728 10.8449ZM14.9504 11.3892V10.0036H15.3705C15.6424 10.0036 15.9389 10.0778 15.9389 10.6964C15.9389 11.315 15.6671 11.3892 15.3705 11.3892H14.9504Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path d="M14.041 10.8447C14.5133 10.8447 14.9516 10.9946 15.3145 11.249V10.9668H16.5996V15.3779H15.3145V15.0957C14.9516 15.3501 14.5134 15.5 14.041 15.5C12.791 15.4998 11.7775 14.458 11.7773 13.1729C11.7773 11.8875 12.7909 10.845 14.041 10.8447ZM27.5938 10.8447C28.0662 10.8447 28.5043 10.9945 28.8672 11.249V10.9668H30.1514V15.3779H28.8672V15.0957C28.5043 15.3501 28.0662 15.5 27.5938 15.5C26.3435 15.5 25.3303 14.4581 25.3301 13.1729C25.3301 11.8874 26.3434 10.8447 27.5938 10.8447ZM31.5156 13.8135C31.9605 13.8137 32.3211 14.1842 32.3213 14.6416C32.3213 15.0991 31.9607 15.4705 31.5156 15.4707C31.0704 15.4707 30.709 15.0992 30.709 14.6416C30.7092 14.184 31.0706 13.8135 31.5156 13.8135ZM5.42383 9V15.3799H4V9H5.42383ZM8.97949 9C8.97949 10.3811 8.45629 11.6661 7.52344 12.6211L9.49121 15.3799H7.73242L5.59375 12.3818L6.14648 11.957C7.06185 11.2521 7.58691 10.174 7.58691 9H8.97949ZM11.251 15.3779H9.90625V9.00098H11.251V15.3779ZM18.5869 11.541C18.8445 11.1966 19.3242 10.9668 19.8457 10.9668V12.251C19.8405 12.2509 19.8353 12.25 19.8301 12.25C19.3218 12.2501 18.5899 12.6237 18.5898 13.3184V15.3779H17.2715V10.9668H18.5869V11.541ZM23.0469 10.8486C24.0817 10.8486 24.876 11.5467 24.876 12.5732V15.3779H23.5928V13.0508C23.5927 12.4075 23.2677 12.0605 22.7031 12.0605C22.1766 12.0607 21.7394 12.3893 21.7393 13.0596V15.3779H20.4443V10.9668H21.7236V11.4639C22.0483 11.0121 22.5338 10.8487 23.0469 10.8486ZM14.1465 12.0381C13.5039 12.0383 12.9834 12.5462 12.9834 13.1729C12.9835 13.7994 13.5039 14.3074 14.1465 14.3076C14.7893 14.3076 15.3104 13.7995 15.3105 13.1729C15.3105 12.5461 14.7894 12.0381 14.1465 12.0381ZM27.6992 12.0381C27.0563 12.0381 26.5352 12.5461 26.5352 13.1729C26.5353 13.7995 27.0564 14.3076 27.6992 14.3076C28.342 14.3076 28.8631 13.7995 28.8633 13.1729C28.8633 12.5461 28.3421 12.0381 27.6992 12.0381Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path d="M27.4976 14.3188H27.5151L28.9741 10.6558H30.0005L26.8462 18.0005H25.8735L27.0454 15.4312L24.9771 10.6558H26.0024L27.4976 14.3188ZM22.562 10.4897C23.2593 10.4898 23.81 10.6797 24.2144 11.0542C24.6188 11.4288 24.8188 11.9527 24.8188 12.6128V15.7583H23.9155V15.0503H23.8745C23.4819 15.633 22.9664 15.9242 22.3159 15.9243C21.7649 15.9243 21.2955 15.7583 20.9263 15.4253C20.5629 15.1161 20.3579 14.658 20.3696 14.1763C20.3697 13.6471 20.5687 13.2307 20.9614 12.9155C21.3541 12.6004 21.8821 12.4458 22.5386 12.4458C23.1011 12.4458 23.558 12.5532 23.9214 12.7554V12.5347C23.9213 12.2078 23.7807 11.8991 23.5347 11.6851C23.2827 11.4591 22.9605 11.3336 22.6265 11.3335C22.0989 11.3335 21.6822 11.5603 21.3774 12.0122L20.5454 11.4829C20.9909 10.8228 21.6652 10.4897 22.562 10.4897ZM18.0894 8.30127C18.6931 8.28939 19.2796 8.52057 19.7075 8.94873C20.5632 9.75739 20.6157 11.1195 19.813 11.9937L19.7075 12.1011C19.2679 12.5233 18.7282 12.7368 18.0894 12.7368H16.5298V15.7583H15.5864V8.30127H18.0894ZM22.6851 13.2192C22.3041 13.2193 21.982 13.3143 21.7241 13.4985C21.4721 13.6828 21.3424 13.9145 21.3423 14.1938C21.3423 14.4436 21.4603 14.6761 21.6538 14.8188C21.8648 14.9851 22.1226 15.0738 22.3862 15.0679C22.7849 15.0679 23.1664 14.908 23.4478 14.6226C23.7584 14.3253 23.9165 13.9741 23.9165 13.5698C23.6234 13.332 23.2127 13.2133 22.6851 13.2192ZM16.5298 11.8218H18.1128C18.4645 11.8337 18.805 11.6908 19.0454 11.4351C19.5378 10.9177 19.5261 10.085 19.0161 9.58545C18.7758 9.34758 18.4528 9.21631 18.1128 9.21631H16.5298V11.8218Z" fill="#B9FCAB"/>
+                                <path d="M13.2721 12.0831C13.2721 11.7917 13.2486 11.5003 13.2017 11.2148H9.22174V12.8621H11.5019C11.4081 13.3914 11.1033 13.8671 10.6578 14.1644V15.2349H12.0177C12.8149 14.4915 13.2721 13.3914 13.2721 12.0831Z" fill="#B9FCAB"/>
+                                <path d="M9.22192 16.2696C10.3591 16.2696 11.3204 15.889 12.0179 15.2349L10.658 14.1645C10.277 14.4261 9.79049 14.5748 9.22192 14.5748C8.11995 14.5748 7.18796 13.8195 6.85385 12.8086H5.45294V13.9147C6.16805 15.3598 7.62758 16.2696 9.22192 16.2696Z" fill="#B9FCAB"/>
+                                <path d="M6.85401 12.8088C6.67814 12.2796 6.67814 11.7027 6.85401 11.1675V10.0674H5.45288C4.84904 11.2746 4.84904 12.7018 5.45288 13.909L6.85401 12.8088Z" fill="#B9FCAB"/>
+                                <path d="M9.22192 9.40114C9.82566 9.38925 10.406 9.62117 10.8397 10.0434L12.0472 8.81836C11.2793 8.09285 10.2711 7.69442 9.22192 7.70631C7.62758 7.70631 6.16805 8.62211 5.45294 10.0672L6.85385 11.1733C7.18796 10.1564 8.11995 9.40114 9.22192 9.40114Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.3462 8.93296C8.81624 8.97261 9.28628 8.69506 9.58006 8.34316C9.86894 7.98135 10.0599 7.49563 10.0109 7C9.59475 7.01983 9.08064 7.27755 8.78686 7.63936C8.51757 7.95161 8.28745 8.45715 8.3462 8.93296ZM13.9377 15.3167V7.58981H16.8021C18.2807 7.58981 19.3138 8.62072 19.3138 10.1274C19.3138 11.6342 18.2611 12.675 16.7629 12.675H15.1226V15.3167H13.9377ZM10.006 9.02714C9.5919 9.00301 9.21406 9.1532 8.90886 9.27451C8.71246 9.35257 8.54614 9.41868 8.41961 9.41868C8.27762 9.41868 8.10444 9.34904 7.90999 9.27085C7.65521 9.16839 7.36392 9.05125 7.05845 9.05687C6.35829 9.06679 5.70709 9.46825 5.34966 10.1076C4.61522 11.3863 5.1587 13.2796 5.86866 14.3205C6.2163 14.8359 6.63248 15.4009 7.18086 15.3811C7.42211 15.3719 7.59566 15.2974 7.77526 15.2202C7.98203 15.1314 8.19683 15.0391 8.53223 15.0391C8.85599 15.0391 9.0614 15.129 9.25858 15.2152C9.44606 15.2973 9.62611 15.376 9.89339 15.3712C10.4614 15.3613 10.8188 14.8557 11.1664 14.3403C11.5416 13.7871 11.7064 13.2471 11.7314 13.1652L11.7344 13.1557C11.7338 13.1551 11.7291 13.153 11.721 13.1492C11.5956 13.0911 10.637 12.6469 10.6278 11.4557C10.6186 10.4559 11.3881 9.94937 11.5093 9.86963L11.5093 9.86962C11.5166 9.86477 11.5216 9.8615 11.5238 9.85979C11.0342 9.12626 10.2704 9.04696 10.006 9.02714ZM21.478 15.3761C22.2223 15.3761 22.9126 14.9945 23.226 14.3898H23.2505V15.3166H24.3472V11.4706C24.3472 10.3554 23.4659 9.63672 22.1096 9.63672C20.8513 9.63672 19.921 10.3653 19.8867 11.3665H20.9541C21.0423 10.8907 21.478 10.5784 22.0754 10.5784C22.8 10.5784 23.2064 10.9204 23.2064 11.5499V11.9761L21.7277 12.0653C20.3519 12.1496 19.6077 12.7195 19.6077 13.7108C19.6077 14.712 20.3764 15.3761 21.478 15.3761ZM21.7962 14.4592C21.1646 14.4592 20.7631 14.1519 20.7631 13.6811C20.7631 13.1954 21.1499 12.9129 21.8893 12.8683L23.2063 12.784V13.2202C23.2063 13.9438 22.5992 14.4592 21.7962 14.4592ZM27.9851 15.619C27.5102 16.9721 26.9667 17.4181 25.8112 17.4181C25.7231 17.4181 25.4293 17.4082 25.3607 17.3884V16.4616C25.4342 16.4715 25.6153 16.4814 25.7084 16.4814C26.2323 16.4814 26.526 16.2584 26.7072 15.6785L26.8149 15.3365L24.8075 9.71108H26.0462L27.4416 14.2758H27.4661L28.8616 9.71108H30.066L27.9851 15.619ZM15.1225 8.60087H16.4886C17.5168 8.60087 18.1044 9.15598 18.1044 10.1324C18.1044 11.1088 17.5168 11.6688 16.4837 11.6688H15.1225V8.60087Z" fill="#B9FCAB"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path d="M22.1758 5C25.9444 5 29 8.09091 29 11.9033C28.9998 15.7156 25.9443 18.8057 22.1758 18.8057C20.4864 18.8056 18.9416 18.1832 17.75 17.1543C16.5584 18.1832 15.0137 18.8056 13.3242 18.8057C9.55566 18.8057 6.50018 15.7156 6.5 11.9033C6.5 8.09091 9.55555 5 13.3242 5C15.0134 5.00011 16.5584 5.62186 17.75 6.65039C18.9416 5.62185 20.4866 5.00011 22.1758 5Z" fill="#B9FCAB"/>
+                                <path d="M22.1758 5C25.9444 5 29 8.09091 29 11.9033C28.9998 15.7156 25.9443 18.8057 22.1758 18.8057C20.4863 18.8056 18.9416 18.1832 17.75 17.1543C19.2164 15.8882 20.1474 14.0064 20.1475 11.9033C20.1475 9.79982 19.2168 7.91652 17.75 6.65039C18.9416 5.62185 20.4866 5.00011 22.1758 5Z" fill="#B9FCAB"/>
+                                <path d="M17.75 6.65088C19.2166 7.917 20.1475 9.79949 20.1475 11.9028C20.1475 14.0059 19.2163 15.8877 17.75 17.1538C16.2837 15.8877 15.3525 14.0059 15.3525 11.9028C15.3525 9.79951 16.2834 7.917 17.75 6.65088Z" fill="#1F2E20"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="24" viewBox="0 0 35 24" fill="none">
+                                <rect width="35" height="24" rx="4" fill="#1F2E20"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6253 16.2582H8.50494L6.91495 10.1924C6.83949 9.91334 6.67925 9.66667 6.44354 9.5504C5.85531 9.25823 5.20712 9.0257 4.5 8.90843V8.6749H7.91567C8.38708 8.6749 8.74064 9.0257 8.79957 9.43313L9.62454 13.8086L11.7438 8.6749H13.8052L10.6253 16.2582ZM14.9838 16.2582H12.9813L14.6302 8.6749H16.6327L14.9838 16.2582ZM19.2234 10.7757C19.2823 10.3673 19.6359 10.1337 20.0483 10.1337C20.6965 10.0751 21.4026 10.1924 21.9919 10.4835L22.3454 8.85081C21.7562 8.61727 21.108 8.5 20.5198 8.5C18.5762 8.5 17.162 9.55041 17.162 11.0082C17.162 12.1173 18.1637 12.6996 18.8708 13.0504C19.6359 13.4002 19.9305 13.6338 19.8716 13.9835C19.8716 14.5082 19.2823 14.7418 18.6941 14.7418C17.9869 14.7418 17.2798 14.5669 16.6327 14.2747L16.2791 15.9085C16.9862 16.1996 17.7512 16.3169 18.4584 16.3169C20.6376 16.3745 21.9919 15.3251 21.9919 13.75C21.9919 11.7665 19.2234 11.6502 19.2234 10.7757ZM29 16.2582L27.41 8.6749H25.7022C25.3486 8.6749 24.9951 8.90843 24.8772 9.25823L21.9329 16.2582H23.9943L24.4058 15.1502H26.9386L27.1743 16.2582H29ZM25.9968 10.7171L26.585 13.5751H24.9361L25.9968 10.7171Z" fill="#B9FCAB"/>
+                            </svg>
+                        </div>
+                        {% endif %}
+                    </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.show_background_logo and section.settings.logo_image_bg != blank %}
+    <div class="maison_commerce_footer__background-logo">
+      {{
+        section.settings.logo_image_bg
+        | image_url: width: 1440
+        | image_tag: loading: 'lazy', alt: 'Background Logo', class: 'maison_commerce_footer__background-logo-img'
+      }}
+    </div>
+  {% endif %}
+  {% if section.settings.logo_image_shape != blank %}
+    {{
+        section.settings.logo_image_shape
+        | image_url: width: 1440
+        | image_tag: loading: 'lazy', alt: 'Background Logo', class: 'maison_commerce_footer__background-logo-img-shape'
+    }}
+  {% endif %}
+</footer>
+
+<style>
+  .maison_commerce_footer-top-divider{
+    display: flex!important;
+    border-radius: 32px 32px 0 0;
+    background: #2E432F;
+    width: 100%;
+    height: 80px;
+    margin-top: -16px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer-top-divider{
+        height: 20px;
+        margin-top: -8px;
+    }
+  }
+
+  .maison_commerce_footer {
+    position: relative;
+    width: 100%;
+    background-color: {{ section.settings.footer_bg_color }};
+    overflow: hidden;
+  }
+
+  .maison_commerce_footer__background-logo-img-shape{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .maison_commerce_footer__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__background-logo-img-shape{
+        max-height: 55vw;
+    }
+
+    .maison_commerce_footer__container {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_footer__content {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__content {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+
+  .maison_commerce_footer__left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 365px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__left {
+      gap: 18px;
+      max-width: 100%;
+    }
+  }
+
+  .maison_commerce_footer__left-top-content{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__left-top-content{
+        gap: 18px;
+        align-items: center;
+    }
+  }
+
+  .maison_commerce_footer__left-top-content-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__left-top-content-text{
+        align-items: center;
+    }
+  }
+
+  .maison_commerce_footer__logo {
+    margin: 0;
+  }
+
+  .maison_commerce_footer__logo-img {
+    width: {{ section.settings.logo_width_desktop }}px;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__logo-img {
+      width: {{ section.settings.logo_width_mobile }}px;
+    }
+  }
+
+  .maison_commerce_footer__newsletter-heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.newsletter_heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.newsletter_text_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__newsletter-heading {
+      font-size: {{ section.settings.newsletter_heading_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_footer__newsletter-subheading {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #E9EBE9;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__newsletter-subheading {
+      font-size: 16px;
+    }
+  }
+
+  .maison_commerce_footer__payments{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_footer__payments svg{
+    width: 35px;
+    height: 24px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__payments{
+        gap: 8px;
+    }
+
+    .maison_commerce_footer__payments svg{
+        width: 33.558px;
+        height: 23.011px;
+    }
+  }
+
+  .maison_commerce_footer__newsletter-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 12px 12px 12px 16px;
+    border-radius: 8px;
+    background: var(--Color-Brand-1-2300, #273928);
+  }
+
+  .maison_commerce_footer__newsletter-input {
+    flex: 1;
+    background-color: {{ section.settings.newsletter_input_bg_color }};
+    color: {{ section.settings.newsletter_input_text_color }};
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .maison_commerce_footer__newsletter-input::placeholder {
+    color: {{ section.settings.newsletter_input_text_color | color_modify: 'alpha', 0.6 }};
+  }
+
+  .maison_commerce_footer__newsletter-input:focus {
+    outline: none;
+  }
+
+  .maison_commerce_footer__newsletter-button {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    background-color: {{ section.settings.newsletter_button_bg_color }};
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: {{ section.settings.newsletter_button_icon_color }};
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_footer__newsletter-button:hover {
+    opacity: 0.9;
+  }
+
+  .maison_commerce_footer__newsletter-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__newsletter-form {
+      gap: 8px;
+    }
+
+    .maison_commerce_footer__newsletter-input {
+      font-size: 14px;
+    }
+  }
+
+  .maison_commerce_footer__newsletter-input:focus-visible{
+    outline: none;
+    outline-offset: initial;
+    box-shadow: none;
+  }
+
+  .maison_commerce_footer__social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__social {
+        order: 2;
+        justify-content: center;
+    }
+  }
+
+  .maison_commerce_footer__social-link {
+    color: {{ section.settings.social_icon_color }};
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_footer__social-link:hover {
+    opacity: 0.8;
+  }
+
+  .maison_commerce_footer__social-link svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .maison_commerce_footer__middle{
+    display: flex;
+    gap: 64px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_footer__right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 367px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__middle,
+    .maison_commerce_footer__right {
+      gap: 18px;
+    }
+  }
+
+  .maison_commerce_footer__link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 178px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__link-group {
+      gap: 8px;
+      max-width: 158.5px;
+    }
+  }
+
+  .maison_commerce_footer__link-group-heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__link-group-heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_footer__link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: {{ section.settings.link_color }};
+    transition: all 0.3s ease;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .maison_commerce_footer__link-list li{
+    padding: 8px 0;
+  }
+
+  .maison_commerce_footer__link-list:hover{
+    color: {{ section.settings.link_color_hover }};
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__link-list li{
+      padding: 4px 0;
+    }
+  }
+
+  .maison_commerce_footer__support{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .maison_commerce_footer__support-content {
+    font-family: 'Geist', sans-serif;
+    font-size: {{ section.settings.link_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.link_color }};
+  }
+
+  .maison_commerce_footer__support-content p {
+    margin: 0;
+  }
+
+  .maison_commerce_footer__support-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .maison_commerce_footer__support-content a {
+    color: {{ section.settings.link_color }};
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .maison_commerce_footer__support-content a:hover {
+    color: {{ section.settings.link_hover_color }};
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__support-content {
+      font-size: {{ section.settings.link_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_footer__link {
+    font-family: "Avenir Next", sans-serif;
+    font-size: {{ section.settings.link_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.link_color }};
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .maison_commerce_footer__link:hover {
+    color: {{ section.settings.link_hover_color }};
+  }
+
+
+  @media (max-width: 1050px) {
+    .maison_commerce_footer__link {
+      font-size: {{ section.settings.link_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_footer__payment-icons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .maison_commerce_footer__payment-icon {
+    background-color: {{ section.settings.footer_bg_color }};
+    border: 1px solid {{ section.settings.link_color | color_modify: 'alpha', 0.2 }};
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: {{ section.settings.link_color }};
+    white-space: nowrap;
+  }
+
+  .maison_commerce_footer__background-logo {
+    position: relative;
+    width: 100%;
+    mix-blend-mode: difference;
+    z-index: 1;
+    display: flex;
+  }
+
+  .maison_commerce_footer__background-logo-img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+

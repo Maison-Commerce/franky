@@ -1,0 +1,582 @@
+{% schema %}
+{
+  "name": "Maison Video Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "video_gap_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Videos (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "video_gap_mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Videos (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Video Border Radius",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "video_padding",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Video Padding",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "play_button_bg_color",
+      "label": "Play Button Background Color",
+      "default": "#FAF59B"
+    },
+    {
+      "type": "range",
+      "id": "play_button_size",
+      "min": 40,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Play Button Size",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "min": 2000,
+      "max": 8000,
+      "step": 500,
+      "unit": "ms",
+      "label": "Autoplay Delay (when paused)",
+      "default": 3000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Video Slider",
+      "blocks": [
+        {
+          "type": "video"
+        },
+        {
+          "type": "video"
+        },
+        {
+          "type": "video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_video_slider" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_video_slider__container">
+    {% if section.blocks.size > 0 %}
+      <div class="swiper maison_commerce_video_slider__swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'video' %}
+                {% if block.settings.video != blank %}
+                  <div class="swiper-slide maison_commerce_video_slider__slide" {{ block.shopify_attributes }}>
+                    <div class="maison_commerce_video_slider__video-wrapper">
+                      <div class="maison_commerce_video_slider__video-container" data-video-id="{{ forloop.index0 }}">
+                        <video
+                          class="maison_commerce_video_slider__video-element"
+                          data-video-index="{{ forloop.index0 }}"
+                          preload="metadata"
+                          playsinline
+                          poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
+                        >
+                          {% for source in block.settings.video.sources %}
+                            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                          {% endfor %}
+                        </video>
+                        <button class="maison_commerce_video_slider__play-button maison_commerce_video_slider__play-button--play" data-video-index="{{ forloop.index0 }}" aria-label="Play video">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                          </svg>
+                        </button>
+                        <button class="maison_commerce_video_slider__play-button maison_commerce_video_slider__play-button--pause" data-video-index="{{ forloop.index0 }}" aria-label="Pause video">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="maison_commerce_video_slider__empty">
+        <p>Please add videos to display.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function() {
+    function initVideoSlider() {
+      const swiperContainer = document.querySelector('.maison_commerce_video_slider__swiper');
+      const sectionContainer = document.querySelector('.maison_commerce_video_slider');
+      if (!swiperContainer) return;
+
+      let swiper;
+      let isHovered = false;
+      let isVideoPlaying = false;
+      const videoElements = swiperContainer.querySelectorAll('.maison_commerce_video_slider__video-element');
+      const playButtons = swiperContainer.querySelectorAll('.maison_commerce_video_slider__play-button');
+
+      // Initialize Swiper without autoplay - we'll use CSS animation instead
+      swiper = new Swiper('.maison_commerce_video_slider__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: {{ section.settings.video_gap_desktop }},
+        loop: true,
+        allowTouchMove: false,
+        breakpoints: {
+          640: {
+            spaceBetween: {{ section.settings.video_gap_mobile }},
+          },
+          950: {
+            spaceBetween: {{ section.settings.video_gap_desktop }},
+          },
+        },
+      });
+
+      // Initialize video event listeners
+      function initializeVideos() {
+        videoElements.forEach(function(video) {
+          const videoIndex = parseInt(video.dataset.videoIndex);
+          
+          // Ensure video starts paused
+          video.pause();
+          
+          // Make video clickable to pause
+          video.addEventListener('click', function() {
+            if (!this.paused) {
+              this.pause();
+            }
+          });
+          
+          // Add event listeners
+          video.addEventListener('play', function() {
+            handleVideoStateChange(videoIndex, true);
+          });
+          
+          video.addEventListener('pause', function() {
+            handleVideoStateChange(videoIndex, false);
+          });
+          
+          video.addEventListener('ended', function() {
+            handleVideoStateChange(videoIndex, false);
+          });
+        });
+      }
+
+      // Handle video state changes
+      function handleVideoStateChange(videoIndex, isPlaying) {
+        const playButton = swiperContainer.querySelector(`.maison_commerce_video_slider__play-button--play[data-video-index="${videoIndex}"]`);
+        const pauseButton = swiperContainer.querySelector(`.maison_commerce_video_slider__play-button--pause[data-video-index="${videoIndex}"]`);
+        const videoContainer = swiperContainer.querySelector(`.maison_commerce_video_slider__video-container[data-video-id="${videoIndex}"]`);
+        
+        if (isPlaying) {
+          // Pause all other videos
+          videoElements.forEach(function(video) {
+            const idx = parseInt(video.dataset.videoIndex);
+            if (idx !== videoIndex && !video.paused) {
+              video.pause();
+            }
+          });
+
+          // Hide play button, pause button will show on hover via CSS
+          if (playButton) {
+            playButton.style.display = 'none';
+          }
+          
+          if (videoContainer) {
+            videoContainer.classList.add('is-playing');
+          }
+
+          // Stop slider scrolling by pausing CSS animation
+          const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+          if (wrapper) {
+            wrapper.classList.add('paused');
+          }
+          isVideoPlaying = true;
+        } else {
+          // Show play button always, hide pause button
+          if (playButton) {
+            playButton.style.display = 'flex';
+          }
+          
+          if (videoContainer) {
+            videoContainer.classList.remove('is-playing');
+          }
+
+          // Check if any video is still playing
+          checkAllVideosPaused();
+        }
+      }
+
+      // Check if all videos are paused
+      function checkAllVideosPaused() {
+        let anyPlaying = false;
+        
+        videoElements.forEach(function(video) {
+          if (!video.paused) {
+            anyPlaying = true;
+          }
+        });
+
+        if (!anyPlaying) {
+          isVideoPlaying = false;
+          // Resume CSS animation if not hovered
+          if (!isHovered) {
+            const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+            if (wrapper) {
+              wrapper.classList.remove('paused');
+            }
+          }
+        }
+      }
+
+      // Play/Pause button click handlers
+      playButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const videoIndex = parseInt(this.dataset.videoIndex);
+          const video = swiperContainer.querySelector(`.maison_commerce_video_slider__video-element[data-video-index="${videoIndex}"]`);
+          
+          if (video) {
+            if (this.classList.contains('maison_commerce_video_slider__play-button--play')) {
+              video.play();
+            } else if (this.classList.contains('maison_commerce_video_slider__play-button--pause')) {
+              video.pause();
+            }
+          }
+        });
+      });
+
+      // Track hover state for video play logic
+      if (sectionContainer) {
+        sectionContainer.addEventListener('mouseenter', function() {
+          isHovered = true;
+        });
+
+        sectionContainer.addEventListener('mouseleave', function() {
+          isHovered = false;
+          // Resume animation if no videos are playing
+          if (!isVideoPlaying) {
+            const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+            if (wrapper) {
+              wrapper.classList.remove('paused');
+            }
+          }
+        });
+      }
+      
+      swiperContainer.addEventListener('mouseenter', function() {
+        isHovered = true;
+      });
+
+      swiperContainer.addEventListener('mouseleave', function() {
+        isHovered = false;
+        // Resume animation if no videos are playing
+        if (!isVideoPlaying) {
+          const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+          if (wrapper) {
+            wrapper.classList.remove('paused');
+          }
+        }
+      });
+
+      // Initialize videos
+      initializeVideos();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initVideoSlider);
+    } else {
+      initVideoSlider();
+    }
+  })();
+</script>
+
+<style>
+  .maison_commerce_video_slider {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_slider {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_video_slider__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .maison_commerce_video_slider__swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_slider__swiper .swiper-wrapper {
+    display: flex;
+    animation: maison_commerce_video_slider_scroll_{{ section.id }} 30s linear infinite;
+  }
+
+  .maison_commerce_video_slider:hover .swiper-wrapper,
+  .maison_commerce_video_slider__swiper:hover .swiper-wrapper {
+    animation-play-state: paused;
+  }
+
+  .maison_commerce_video_slider__swiper .swiper-wrapper.paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes maison_commerce_video_slider_scroll_{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .maison_commerce_video_slider__slide {
+    height: auto;
+    width: 241.6px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_slider__swiper .swiper-wrapper {
+      display: flex;
+      animation: maison_commerce_video_slider_scroll_{{ section.id }} 10s linear infinite;
+    }
+
+    .maison_commerce_video_slider__slide {
+      width: 163.248px;
+    }
+  }
+
+  .maison_commerce_video_slider__video-wrapper {
+    width: 241.6px;
+    height: 379px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_slider__video-wrapper {
+      height: 256px;
+      width: 163.248px;
+    }
+  }
+
+  .maison_commerce_video_slider__video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: {{ section.settings.video_padding }}px;
+    border-radius: {{ section.settings.video_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_slider__video-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ section.settings.video_border_radius }}px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .maison_commerce_video_slider__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: {{ section.settings.play_button_size }}px;
+    height: {{ section.settings.play_button_size }}px;
+    background-color: {{ section.settings.play_button_bg_color }};
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_video_slider__play-button:hover {
+    opacity: 0.9;
+  }
+
+  .maison_commerce_video_slider__play-button--pause {
+    display: none;
+  }
+
+  .maison_commerce_video_slider__video-container.is-playing:hover .maison_commerce_video_slider__play-button--pause {
+    display: flex;
+  }
+
+  .maison_commerce_video_slider__play-button svg {
+    width: 24px;
+    height: 24px;
+    color: #000000;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_slider__play-button {
+      width: 34px;
+      height: 34px;
+      padding: 5.4px;
+    }
+
+    .maison_commerce_video_slider__play-button svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .maison_commerce_video_slider__empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #98A2B3;
+  }
+</style>
+

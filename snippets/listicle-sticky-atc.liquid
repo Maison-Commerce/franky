@@ -1,0 +1,344 @@
+{% comment %}
+  Renders sticky add to cart bar for listicle page
+  
+  Usage:
+  {% render 'listicle-sticky-atc', section: section %}
+{% endcomment %}
+
+<div 
+  class="listicle-sticky-atc" 
+  x-data="listicleStickyAtc()"
+  x-show="show"
+  x-transition:enter="transition ease-out duration-300"
+  x-transition:enter-start="translate-y-full opacity-0"
+  x-transition:enter-end="translate-y-0 opacity-100"
+  x-transition:leave="transition ease-in duration-200"
+  x-transition:leave-start="translate-y-0 opacity-100"
+  x-transition:leave-end="translate-y-full opacity-0"
+  style="display: none;"
+>
+  <div class="listicle-sticky-atc__container">
+    <div class="listicle-sticky-atc__content">
+      <div class="listicle-sticky-atc__product-info">
+        {% if section.settings.product_list.size > 0 %}
+          {% assign first_product = section.settings.product_list.first %}
+          <div class="listicle-sticky-atc__image-wrapper">
+            <img 
+              :src="currentProduct?.featured_image || '{{ first_product.featured_image | image_url: width: 100 }}'"
+              :alt="currentProduct?.title || '{{ first_product.title }}'"
+              class="listicle-sticky-atc__image"
+              width="80"
+              height="80"
+              x-ref="productImage"
+            >
+          </div>
+          <div class="listicle-sticky-atc__details">
+            <div class="listicle-sticky-atc__title" x-text="currentProduct?.title || '{{ first_product.title }}'"></div>
+            <div class="listicle-sticky-atc__price">
+              <span class="listicle-sticky-atc__price-amount">Now up to 1 FREE! Check availability</span>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="listicle-sticky-atc__actions">
+        <a
+          :href="currentProduct?.url || '{{ first_product.url }}'"
+          class="listicle-sticky-atc__button"
+        >
+          <span class="listicle-sticky-atc__button-text">Check Availability</span>
+          <svg class="listicle-sticky-atc__button-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <g clip-path="url(#clip0_8153_7430)">
+              <path d="M23.71 11.2901L18.93 6.51011C18.7894 6.37135 18.6108 6.27736 18.4168 6.23998C18.2228 6.20261 18.0221 6.22353 17.84 6.30011C17.6574 6.37513 17.5011 6.50253 17.3907 6.66625C17.2804 6.82997 17.221 7.02269 17.22 7.22011V10.2201C17.22 10.2864 17.1937 10.35 17.1468 10.3969C17.0999 10.4438 17.0363 10.4701 16.97 10.4701H1.5C1.10218 10.4701 0.720644 10.6281 0.43934 10.9095C0.158035 11.1908 0 11.5723 0 11.9701C0 12.3679 0.158035 12.7495 0.43934 13.0308C0.720644 13.3121 1.10218 13.4701 1.5 13.4701H17C17.0663 13.4701 17.1299 13.4964 17.1768 13.5433C17.2237 13.5902 17.25 13.6538 17.25 13.7201V16.7201C17.25 16.9853 17.3554 17.2397 17.5429 17.4272C17.7304 17.6148 17.9848 17.7201 18.25 17.7201C18.3823 17.7196 18.5132 17.6928 18.6351 17.6413C18.7569 17.5898 18.8674 17.5146 18.96 17.4201L23.74 12.6501C23.8985 12.4696 23.9902 12.2401 24 12.0001C24.0008 11.8685 23.9755 11.738 23.9258 11.6162C23.876 11.4944 23.8027 11.3836 23.71 11.2901Z" fill="#2E432F"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_8153_7430">
+                <rect width="24" height="24" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .listicle-sticky-atc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc {
+      padding: 0 80px;
+    }
+  }
+
+  .listicle-sticky-atc__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    border-radius: 24px 24px 0 0;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(44, 41, 38, 0.1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc__container {
+      padding: 16px 20px;
+    }
+  }
+
+  .listicle-sticky-atc__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc__content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  .listicle-sticky-atc__product-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 749px) {
+    .listicle-sticky-atc {
+      padding: 0;
+    }
+
+    .listicle-sticky-atc__product-info {
+      display: none;
+    }
+  }
+
+  .listicle-sticky-atc__image-wrapper {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #F5F5F5;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc__image-wrapper {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .listicle-sticky-atc__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .listicle-sticky-atc__details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .listicle-sticky-atc__title {
+    color: var(--Text-Primary, #2C2926);
+    text-overflow: ellipsis;
+    font-family: "Swarsh Daisy";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+  }
+
+  .listicle-sticky-atc__price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .listicle-sticky-atc__price-amount {
+    overflow: hidden;
+    color: var(--Text-Secondary, rgba(44, 41, 38, 0.75));
+    text-overflow: ellipsis;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  .listicle-sticky-atc__price-label {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #12B76A;
+  }
+
+  .listicle-sticky-atc__actions {
+    width: 100%;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc__actions {
+      width: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  .listicle-sticky-atc__button {
+    width: 100%;
+    padding: 12px 24px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    border-radius: 16px;
+    background: #CBFDC1;
+    color: #2E432F;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  @media (min-width: 750px) {
+    .listicle-sticky-atc__button {
+      width: auto;
+      min-width: 160px;
+      padding: 14px 32px;
+    }
+  }
+
+  .listicle-sticky-atc__button:hover {
+    background: #B9FCAB;
+    color: #2E432F;
+  }
+
+  .listicle-sticky-atc__button-text {
+    transition: color 0.3s ease;
+  }
+
+  .listicle-sticky-atc__button-arrow {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .listicle-sticky-atc__button:hover .listicle-sticky-atc__button-arrow {
+    transform: translateX(4px);
+  }
+</style>
+
+<script>
+  function listicleStickyAtc() {
+    return {
+      show: false,
+      mainAtcElement: null,
+      footerElement: null,
+      
+      get currentProduct() {
+        if (typeof window.listicleProducts === 'undefined' || !window.listicleProducts.length) return null;
+        const mainSection = document.querySelector('[x-data*="maisonListicle"]');
+        if (!mainSection) return null;
+        const alpineData = Alpine.$data(mainSection);
+        return alpineData?.currentProduct || null;
+      },
+      
+      get calculatedPrice() {
+        const mainSection = document.querySelector('[x-data*="maisonListicle"]');
+        if (!mainSection) return 0;
+        const alpineData = Alpine.$data(mainSection);
+        return alpineData?.calculatedPrice || 0;
+      },
+      
+      get isSubscription() {
+        const mainSection = document.querySelector('[x-data*="maisonListicle"]');
+        if (!mainSection) return false;
+        const alpineData = Alpine.$data(mainSection);
+        return alpineData?.isSubscription || false;
+      },
+      
+      formatMoney(cents) {
+        const mainSection = document.querySelector('[x-data*="maisonListicle"]');
+        if (!mainSection) return '$0.00';
+        const alpineData = Alpine.$data(mainSection);
+        return alpineData?.formatMoney(cents) || '$0.00';
+      },
+      
+      init() {
+        this.mainAtcElement = document.querySelector('.xxmaison_add-to-cart');
+        this.footerElement = document.querySelector('footer');
+        
+        this.checkVisibility();
+        
+        window.addEventListener('scroll', () => {
+          this.checkVisibility();
+        });
+        
+        window.addEventListener('resize', () => {
+          this.checkVisibility();
+        });
+        
+        const observer = new MutationObserver(() => {
+          this.checkVisibility();
+        });
+        
+        if (this.mainAtcElement) {
+          observer.observe(this.mainAtcElement, {
+            attributes: true,
+            attributeFilter: ['style', 'class']
+          });
+        }
+      },
+      
+      checkVisibility() {
+        if (!this.mainAtcElement) {
+          this.show = false;
+          return;
+        }
+        
+        const mainAtcRect = this.mainAtcElement.getBoundingClientRect();
+        const isMainAtcVisible = mainAtcRect.top >= 0 && mainAtcRect.top <= window.innerHeight;
+        
+        if (this.footerElement) {
+          const footerRect = this.footerElement.getBoundingClientRect();
+          const isFooterVisible = footerRect.top <= window.innerHeight;
+          
+          if (isFooterVisible) {
+            this.show = false;
+            return;
+          }
+        }
+        
+        this.show = !isMainAtcVisible;
+      }
+    };
+  }
+</script>
+
+

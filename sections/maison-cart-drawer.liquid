@@ -1,0 +1,646 @@
+{% schema %}
+{
+  "name": "Maison Cart Drawer",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "upsell_list",
+      "label": "Upsell List",
+      "info": "Select the products to display in the upsell list."
+    },
+    {
+      "type": "header",
+      "content": "Subscribe & Save Upsell Box"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_badge",
+      "label": "Badge Text",
+      "default": "Most Popular"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_title",
+      "label": "Title",
+      "default": "Subscribe & Save an Extra 10%"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_benefit_1",
+      "label": "Benefit 1",
+      "default": "Instantly save more off your first order"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_benefit_2",
+      "label": "Benefit 2",
+      "default": "Our most flexible plan"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_benefit_3",
+      "label": "Benefit 3",
+      "default": "Backed by 30-day money back guarantee"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_button",
+      "label": "Button Text",
+      "default": "Upgrade and Save"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Cart Drawer"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'maison-cart-drawer.css' | asset_url | stylesheet_tag }}
+
+<div x-cloak x-data="maisonCartDrawer()" @click="maisonDispatch('maison:cart-drawer-close')" class="xmaison_cart-overlay">
+  <div class="xmaison_cart-container" @click.stop>
+    <!-- Loading Overlay -->
+    <div class="xmaison_loading-overlay" x-show="loading" x-transition.opacity.duration.200ms></div>
+    <!-- Content Section -->
+    <div class="xmaison_content">
+      <!-- Top Content -->
+      <div class="xmaison_top-content">
+        <!-- Header -->
+        <div class="xmaison_header">
+          <div class="xmaison_header-content">
+            <span class="xmaison_cart-title">My Cart</span>
+            <img src="{{ 'xmaison-icon-dot.svg' | asset_url }}" alt="" class="xmaison_dot">
+            <span class="xmaison_cart-count" x-text="cart.item_count || 0"></span>
+          </div>
+          <button
+            @click="maisonDispatch('maison:cart-drawer-close')"
+            class="xmaison_close-btn"
+          >
+            <img src="{{ 'xmaison-icon-close.svg' | asset_url }}" alt="Close" class="xmaison_close-icon">
+          </button>
+        </div>
+
+        <!-- Progress Bar Section -->
+        <div class="xmaison_progress-section">
+          <div class="xmaison_progress-text-container">
+            <p class="xmaison_progress-text">
+              <template x-if="progressPercentage >= 100">
+                <span>FREE Shipping Unlocked!</span>
+              </template>
+              <template x-if="progressPercentage < 100">
+                <span>Spend <span x-text="m(10000 - (cart.total_price || 0))"></span> more for FREE shipping</span>
+              </template>
+            </p>
+          </div>
+          <div class="xmaison_progress-bar-container">
+            <div class="xmaison_progress-bar-bg"></div>
+            <div class="xmaison_progress-bar-fill" :style="'width: ' + Math.min(progressPercentage, 100) + '%'"></div>
+          </div>
+          <div class="xmaison_shipping-badge">
+            <img src="{{ 'xmaison-icon-shipping.svg' | asset_url }}" alt="" class="xmaison_shipping-icon">
+          </div>
+        </div>
+
+        <!-- Announcement Bar -->
+        <div class="xmaison_cart-announcement">
+          <span>{{ 'now' | date: "%B %d" }}'s Discount Applied – Today Only</span>
+        </div>
+      </div>
+
+      <!-- Cart Items -->
+      <div class="xmaison_cart-items">
+        <!-- Empty Cart State -->
+        <template x-if="!cart.items || cart.items.length === 0">
+          <div class="xmaison_empty-cart">
+            <p>Your cart is empty</p>
+          </div>
+        </template>
+
+        <!-- Cart Items Loop -->
+        <template x-for="item in cart.items" :key="item.key">
+          <div class="xmaison_cart-item-wrapper">
+            <div class="xmaison_product-item">
+              <div class="xmaison_product-content">
+                <div class="xmaison_product-image-container">
+                  <a :href="item.url">
+                    <img
+                      :src="item.featured_image ? item.featured_image.url : item.image"
+                      :alt="item.title"
+                      class="xmaison_product-image"
+                    >
+                  </a>
+                </div>
+                <div class="xmaison_product-details">
+                  <div class="xmaison_product-header">
+                    <div class="xmaison_product-title-section">
+                      <a :href="item.url">
+                        <p class="xmaison_product-name" x-html="item.title"></p>
+                      </a>
+                      <p class="xmaison_product-subtitle" x-show="item.product?.cart_subtitle" x-html="item.product?.cart_subtitle"></p>
+                      <div class="xmaison_product-meta" x-show="item.variant_title">
+                        <span class="xmaison_product-variant" x-text="item.variant_title"></span>
+                      </div>
+                      <div class="xmaison_product-selling-plan" x-show="item.selling_plan_allocation">
+                        <span class="xmaison_selling-plan-name" x-text="item.selling_plan_allocation?.selling_plan?.name"></span>
+                      </div>
+                    </div>
+                    <button
+                      class="xmaison_delete-btn"
+                      @click="updateQuantity(item.key, 0)"
+                      :disabled="loading || item.line_price === 0"
+                    >
+                      <img src="{{ 'xmaison-icon-trash.svg' | asset_url }}" alt="Delete" class="xmaison_trash-icon">
+                    </button>
+                  </div>
+                    <div class="xmaison_product-price">
+                      <template x-if="item.product && item.product.compare_at_price && item.product.compare_at_price > item.product.price">
+                        <span class="xmaison_original-price" x-text="m(item.product.compare_at_price * item.quantity)"></span>
+                      </template>
+                      <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
+                    </div>
+                  <div class="xmaison_product-footer">
+                    <div class="xmaison_quantity-selector">
+                      <button
+                        class="xmaison_qty-btn xmaison_qty-minus"
+                        @click="updateQuantity(item.key, item.quantity - 1)"
+                        :disabled="loading || item.quantity <= 1"
+                      >
+                        <img src="{{ 'xmaison-icon-minus.svg' | asset_url }}" alt="Decrease" class="xmaison_qty-icon">
+                      </button>
+                      <div class="xmaison_qty-value" x-text="item.quantity"></div>
+                      <button
+                        class="xmaison_qty-btn xmaison_qty-plus"
+                        @click="updateQuantity(item.key, item.quantity + 1)"
+                        :disabled="loading || (item.quantity_rule && item.quantity_rule.max && item.quantity >= item.quantity_rule.max)"
+                      >
+                        <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subscribe & Save Upsell Box -->
+              <div class="xmaison_subscribe-upsell" x-show="!item.selling_plan_allocation && item.product?.selling_plan_groups?.length > 0">
+                <div class="xmaison_subscribe-badge">{{ section.settings.subscribe_badge }}</div>
+                <h4 class="xmaison_subscribe-title">{{ section.settings.subscribe_title }}</h4>
+                <ul class="xmaison_subscribe-benefits">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    <span>{{ section.settings.subscribe_benefit_1 }}</span>
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    <span>{{ section.settings.subscribe_benefit_2 }}</span>
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>{{ section.settings.subscribe_benefit_3 }}</span>
+                  </li>
+                </ul>
+                <button 
+                  class="xmaison_subscribe-btn"
+                  @click="upgradeToSubscription(item)"
+                  :disabled="loading"
+                >
+                  {{ section.settings.subscribe_button }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- People Also Got Section -->
+      {% if section.settings.upsell_list.size > 0 %}
+        <div class="xmaison_upsell-section">
+          <div class="xmaison_upsell-container">
+            <div class="xmaison_upsell-header">
+              <span class="xmaison_upsell-title">Try more, choose a favorite</span>
+              <div class="xmaison_carousel-controls">
+                <button class="xmaison_carousel-btn xmaison_carousel-prev">
+                  <img
+                    src="{{ 'xmaison-icon-arrow-prev.svg' | asset_url }}"
+                    alt="Previous"
+                    class="xmaison_carousel-arrow"
+                  >
+                </button>
+                <button class="xmaison_carousel-btn xmaison_carousel-next">
+                  <img src="{{ 'xmaison-icon-arrow-next.svg' | asset_url }}" alt="Next" class="xmaison_carousel-arrow">
+                </button>
+              </div>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper xmaison_products-swiper">
+              <div class="swiper-wrapper">
+                {% for product in section.settings.upsell_list %}
+                  {% assign variant = product.variants.first %}
+                  {% assign current_price = variant.price %}
+                  {% assign compare_price = variant.compare_at_price %}
+                  {% assign has_discount = false %}
+                  {% if compare_price > current_price %}
+                    {% assign has_discount = true %}
+                    {% assign savings_percent = compare_price
+                      | minus: current_price
+                      | times: 100
+                      | divided_by: compare_price
+                    %}
+                  {% endif %}
+
+                  <div class="swiper-slide xmaison_upsell-product">
+                    <div class="xmaison_upsell-product-content">
+                      <div class="xmaison_upsell-product-image">
+                        <a href="{{ product.url }}">
+                          <img
+                            src="{{ product.featured_image | image_url: width: 200 }}"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            class="xmaison_upsell-img"
+                            loading="lazy"
+                          >
+                        </a>
+                      </div>
+                      <div class="xmaison_upsell-product-details">
+                        <div class="xmaison_upsell-product-info">
+                          <a href="{{ product.url }}">
+                            <p class="xmaison_upsell-product-name">{{ product.title }}</p>
+                          </a>
+                          <div class="xmaison_upsell-pricing">
+                            <div class="xmaison_upsell-prices">
+                              <span class="xmaison_upsell-current">{{ current_price | money }}</span>
+                              {% if has_discount %}
+                                <span class="xmaison_upsell-original">{{ compare_price | money }}</span>
+                              {% endif %}
+                            </div>
+                            {% if has_discount %}
+                              <div class="xmaison_save-badge">
+                                <span class="xmaison_save-text">Save {{ savings_percent }}%</span>
+                              </div>
+                            {% endif %}
+                          </div>
+                        </div>
+                        <button
+                          class="xmaison_add-btn"
+                          :disabled="loading"
+                          @click="
+                            loading = true;
+                            fetch('/cart/add.js', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ id: {{ variant.id }}, quantity: 1 })
+                            }).finally(() => fetchCart());
+                          "
+                        >
+                          <img src="{{ 'xmaison-icon-add.svg' | asset_url }}" alt="" class="xmaison_add-icon">
+                          <span class="xmaison_add-text">Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="xmaison_pagination"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <div class="xmaison_footer-wrapper">
+      <div class="xmaison_footer">
+        <div class="xmaison_footer-content">
+          <!-- Total Price Row -->
+          <div class="xmaison_total-row">
+            <span class="xmaison_total-label">Total Price (with savings)</span>
+            <div class="xmaison_total-price">
+              <template x-if="compareAtTotal > cart.total_price">
+                <span class="xmaison_total-original" x-text="m(compareAtTotal)"></span>
+              </template>
+              <span class="xmaison_total-current" x-text="m(cart.total_price || 0)"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkout Section -->
+        <div class="xmaison_checkout-section">
+          <div class="xmaison_checkout-content">
+            <a
+              href="/checkout"
+              class="xmaison_checkout-btn"
+              :class="{ 'xmaison_checkout-btn--disabled': loading || !cart.items || cart.items.length === 0 }"
+            >
+              <span class="xmaison_checkout-text" x-text="loading ? 'Updating...' : 'Secure Checkout'"></span>
+              <img src="{{ 'xmaison-icon-lock.svg' | asset_url }}" alt="" class="xmaison_lock-icon" x-show="!loading">
+            </a>
+
+            <!-- Trust Badges -->
+            <div class="xmaison_trust-badges">
+              <div class="xmaison_trust-badge">
+                <img src="{{ 'xmaison-badge-returns.svg' | asset_url }}" alt="" class="xmaison_badge-icon">
+                <span class="xmaison_badge-text">No Risk - Simple Returns</span>
+              </div>
+              <div class="xmaison_trust-badge">
+                <img src="{{ 'xmaison-badge-secure.svg' | asset_url }}" alt="" class="xmaison_badge-icon">
+                <span class="xmaison_badge-text">Secure checkout</span>
+              </div>
+              <div class="xmaison_trust-badge">
+                <img src="{{ 'xmaison-badge-sold.svg' | asset_url }}" alt="" class="xmaison_badge-icon">
+                <span class="xmaison_badge-text">1.2M sold last year</span>
+              </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="xmaison_payment-methods">
+              {% for payment_method in shop.enabled_payment_types %}
+                <div class="xmaison_payment-icon xmaison_payment-{{ payment_method | handleize }}">
+                  {{ payment_method | payment_type_svg_tag }}
+                </div>
+              {% endfor %}
+              {% comment %}
+                <div class="xmaison_payment-icon xmaison_payment-amex">
+                  <img src="{{ 'xmaison-payment-amex.svg' | asset_url }}" alt="American Express">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-apple">
+                  <img src="{{ 'xmaison-payment-applepay.svg' | asset_url }}" alt="Apple Pay">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-diners">
+                  <img src="{{ 'xmaison-payment-diners.svg' | asset_url }}" alt="Diners Club">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-discover">
+                  <img src="{{ 'xmaison-payment-discover.svg' | asset_url }}" alt="Discover">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-google">
+                  <img src="{{ 'xmaison-payment-googlepay.svg' | asset_url }}" alt="Google Pay">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-maestro">
+                  <img src="{{ 'xmaison-payment-maestro.svg' | asset_url }}" alt="Maestro">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-mastercard">
+                  <img src="{{ 'xmaison-payment-mastercard.svg' | asset_url }}" alt="Mastercard">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-shop">
+                  <img src="{{ 'xmaison-payment-shoppay.svg' | asset_url }}" alt="Shop Pay">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-union">
+                  <img src="{{ 'xmaison-payment-unionpay.svg' | asset_url }}" alt="UnionPay">
+                </div>
+                <div class="xmaison_payment-icon xmaison_payment-visa">
+                  <img src="{{ 'xmaison-payment-visa.svg' | asset_url }}" alt="Visa">
+                </div>
+              {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.maisonDispatch = (str) => {
+    document.dispatchEvent(new CustomEvent(str));
+  };
+
+  function maisonCartDrawer() {
+    return {
+      cart: {},
+      loading: false,
+
+      init() {
+        this.fetchCart();
+
+        document.addEventListener('maison:cart-drawer-open', () => {
+          document.querySelector('html').classList.add('maison-cart-open');
+        });
+
+        document.addEventListener('maison:cart-drawer-close', () => {
+          document.querySelector('html').classList.remove('maison-cart-open');
+        });
+
+        document.addEventListener('maison:cart-drawer-reload', () => {
+          this.fetchCart();
+        });
+      },
+
+      fetchCart() {
+        this.loading = true;
+        fetch('/cart.json')
+          .then((response) => response.json())
+          .then((data) => {
+            const clone = structuredClone(data);
+
+            clone.items.forEach((item) => {
+              item.product = window.productDataBag[item.product_id];
+            });
+
+            this.cart = clone;
+            window.cart = clone;
+
+            this.updateCartBubble();
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+      },
+
+      updateCartBubble() {
+        const bubble = document.querySelector('.cart-count-bubble');
+        if (!bubble) return;
+
+        const count = this.cart?.item_count || 0;
+
+        const visible = bubble.querySelector('[aria-hidden="true"]');
+        const hidden = bubble.querySelector('.visually-hidden');
+
+        if (visible) visible.textContent = count;
+        if (hidden) hidden.textContent = `${count} item${count === 1 ? '' : 's'}`;
+
+        bubble.classList.toggle('hidden', count === 0);
+      },
+
+      updateQuantity(keyOrVariantId, quantity) {
+        if (this.loading) return;
+
+        const item = this.cart.items.find((item) => item.key === keyOrVariantId || item.variant_id === keyOrVariantId);
+
+        // Prevent deletion of free gift items
+        if (item && item.line_price === 0 && quantity === 0) {
+          return;
+        }
+
+        if (item) {
+          item.quantity = quantity;
+          if (quantity === 0) {
+            this.cart.items = this.cart.items.filter(
+              (item) => item.key !== keyOrVariantId && item.variant_id !== keyOrVariantId
+            );
+          }
+        }
+
+        this.loading = true;
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            updates: {
+              [keyOrVariantId]: quantity,
+            },
+          }),
+        }).finally(() => {
+          this.fetchCart();
+        });
+      },
+
+      get progressPercentage() {
+        const freeShippingThreshold = 10000; // ($100.00)
+        return (this.cart.total_price / freeShippingThreshold) * 100;
+      },
+
+      get compareAtTotal() {
+        if (!this.cart.items) return 0;
+        return this.cart.items.reduce((sum, item) => {
+          const comparePrice = item.product?.compare_at_price || item.product?.price || 0;
+          return sum + (comparePrice * item.quantity);
+        }, 0);
+      },
+
+      m(money) {
+        if (Shopify.formatMoney) {
+          return Shopify.formatMoney(money);
+        } else {
+          return (money / 100)
+            .toLocaleString(Shopify.country, {
+              style: 'currency',
+              currency: Shopify.currency.active,
+            })
+            .replace(/\s/, '');
+        }
+      },
+
+      async upgradeToSubscription(item) {
+        if (this.loading) return;
+        
+        this.loading = true;
+        
+        try {
+          // Get the product's selling plans
+          const productData = item.product;
+          if (!productData || !productData.selling_plan_groups || productData.selling_plan_groups.length === 0) {
+            console.error('No selling plans available for this product');
+            this.loading = false;
+            return;
+          }
+          
+          // Get the first selling plan from the first group
+          const sellingPlanGroup = productData.selling_plan_groups[0];
+          const sellingPlan = sellingPlanGroup.selling_plans[0];
+          
+          if (!sellingPlan) {
+            console.error('No selling plan found');
+            this.loading = false;
+            return;
+          }
+          
+          // Remove the current item
+          await fetch('/cart/change.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: item.key,
+              quantity: 0
+            })
+          });
+          
+          // Add the same item with the selling plan
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: item.variant_id,
+              quantity: item.quantity,
+              selling_plan: sellingPlan.id
+            })
+          });
+          
+          // Refresh the cart
+          this.fetchCart();
+        } catch (error) {
+          console.error('Error upgrading to subscription:', error);
+          this.loading = false;
+        }
+      },
+
+      /* get nextGift() {
+        for (const gift of thresholdGifts) {
+          if (this.cart.total_price < gift.threshold) {
+            return gift;
+          }
+        }
+        return null;
+      },
+
+      get previousGift() {
+        let prev = null;
+        for (const gift of thresholdGifts) {
+          if (this.cart.total_price < gift.threshold) {
+            return prev;
+          }
+          prev = gift;
+        }
+
+        return prev;
+      }, */
+    };
+  }
+</script>
+
+<!-- Swiper JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Initialize Swiper
+  const xmaisonSwiper = new Swiper('.xmaison_products-swiper', {
+    // Prevent skipping slides on rapid clicks
+    preventInteractionOnTransition: true,
+    speed: 300,
+    spaceBetween: 12,
+    slidesPerView: 2.5,
+    slidesPerGroup: 1,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.xmaison_carousel-next',
+      prevEl: '.xmaison_carousel-prev',
+    },
+
+    // Pagination
+    pagination: {
+      el: '.xmaison_pagination',
+      clickable: true,
+      bulletClass: 'xmaison_page-dot',
+      bulletActiveClass: 'xmaison_page-dot-active',
+      renderBullet: function (index, className) {
+        return '<div class="' + className + '"></div>';
+      },
+    },
+
+    // Breakpoints for responsive behavior
+    breakpoints: {
+      // Mobile
+      0: {
+        slidesPerView: 1.6,
+        spaceBetween: 12,
+      },
+      // Desktop
+      769: {
+        slidesPerView: 2.5,
+        spaceBetween: 12,
+      },
+    },
+  });
+</script>

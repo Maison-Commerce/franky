@@ -1,0 +1,499 @@
+{% schema %}
+{
+  "name": "Maison Instagram Images",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Explore Our Instagram"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#201C19"
+    },
+    {
+      "type": "range",
+      "id": "heading_gap_desktop",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Below Heading (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_gap_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Below Heading (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "min": 200,
+      "max": 300,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Size (Desktop)",
+      "default": 242
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "min": 140,
+      "max": 180,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Size (Mobile)",
+      "default": 161
+    },
+    {
+      "type": "range",
+      "id": "image_gap_desktop",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Images (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "image_gap_mobile",
+      "min": 6,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Images (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius_desktop",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Radius (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius_mobile",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Radius (Mobile)",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "range",
+      "id": "slider_speed",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Slider Animation Speed (seconds)",
+      "default": 30,
+      "info": "Time for one complete scroll cycle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "instagram_image",
+      "name": "Instagram Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "instagram_url",
+          "label": "Instagram Post URL",
+          "info": "Optional: Link to Instagram post"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Instagram Images",
+      "blocks": [
+        {
+          "type": "instagram_image"
+        },
+        {
+          "type": "instagram_image"
+        },
+        {
+          "type": "instagram_image"
+        },
+        {
+          "type": "instagram_image"
+        },
+        {
+          "type": "instagram_image"
+        },
+        {
+          "type": "instagram_image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_inst_img" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_inst_img__container">
+    {% if section.settings.heading != blank %}
+      <h2 class="maison_commerce_inst_img__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% assign image_blocks = section.blocks | where: 'type', 'instagram_image' %}
+    {% if image_blocks.size > 0 %}
+      {% comment %} Desktop: Auto-scrolling slider {% endcomment %}
+      <div class="maison_commerce_inst_img__slider-desktop">
+        <div class="maison_commerce_inst_img__slider-track">
+          {% comment %} First set of images {% endcomment %}
+          {% for block in image_blocks %}
+            {% if block.settings.image != blank %}
+              <div class="maison_commerce_inst_img__slide" {{ block.shopify_attributes }}>
+                {% if block.settings.instagram_url != blank %}
+                  <a href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" class="maison_commerce_inst_img__link">
+                {% endif %}
+                  <img 
+                    src="{{ block.settings.image | image_url: width: 500 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    class="maison_commerce_inst_img__image"
+                    loading="lazy"
+                    width="{{ section.settings.image_size_desktop }}"
+                    height="{{ section.settings.image_size_desktop }}"
+                  >
+                {% if block.settings.instagram_url != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% comment %} Duplicate set for seamless loop {% endcomment %}
+          {% for block in image_blocks %}
+            {% if block.settings.image != blank %}
+              <div class="maison_commerce_inst_img__slide">
+                {% if block.settings.instagram_url != blank %}
+                  <a href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" class="maison_commerce_inst_img__link">
+                {% endif %}
+                  <img 
+                    src="{{ block.settings.image | image_url: width: 500 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    class="maison_commerce_inst_img__image"
+                    loading="lazy"
+                    width="{{ section.settings.image_size_desktop }}"
+                    height="{{ section.settings.image_size_desktop }}"
+                  >
+                {% if block.settings.instagram_url != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      {% comment %} Mobile: Grid with 4 items visible {% endcomment %}
+      <div class="maison_commerce_inst_img__grid-mobile">
+        {% for block in image_blocks limit: 4 %}
+          {% if block.settings.image != blank %}
+            <div class="maison_commerce_inst_img__grid-item" {{ block.shopify_attributes }}>
+              {% if block.settings.instagram_url != blank %}
+                <a href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" class="maison_commerce_inst_img__link">
+              {% endif %}
+                <img 
+                  src="{{ block.settings.image | image_url: width: 400 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  class="maison_commerce_inst_img__image"
+                  loading="lazy"
+                  width="{{ section.settings.image_size_mobile }}"
+                  height="{{ section.settings.image_size_mobile }}"
+                >
+              {% if block.settings.instagram_url != blank %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .maison_commerce_inst_img {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+    overflow: hidden;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_inst_img__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.heading_gap_desktop }}px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img__container {
+      gap: {{ section.settings.heading_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_inst_img__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.18;
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: 1.4;
+      white-space: normal;
+    }
+  }
+
+  /* Desktop Slider */
+  .maison_commerce_inst_img__slider-desktop {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img__slider-desktop {
+      display: none;
+    }
+  }
+
+  .maison_commerce_inst_img__slider-track {
+    display: flex;
+    gap: {{ section.settings.image_gap_desktop }}px;
+    animation: maison_commerce_inst_img_scroll_{{ section.id }} {{ section.settings.slider_speed }}s linear infinite;
+    width: fit-content;
+  }
+
+  .maison_commerce_inst_img__slider-desktop:hover .maison_commerce_inst_img__slider-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes maison_commerce_inst_img_scroll_{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .maison_commerce_inst_img__slide {
+    flex-shrink: 0;
+    width: {{ section.settings.image_size_desktop }}px;
+    height: {{ section.settings.image_size_desktop }}px;
+  }
+
+  /* Mobile Grid */
+  .maison_commerce_inst_img__grid-mobile {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ section.settings.image_gap_mobile }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img__grid-mobile {
+      display: grid;
+    }
+  }
+
+  .maison_commerce_inst_img__grid-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .maison_commerce_inst_img__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_inst_img__link:hover {
+    opacity: 0.9;
+  }
+
+  .maison_commerce_inst_img__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ section.settings.image_border_radius_desktop }}px;
+    display: block;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_inst_img__image {
+      border-radius: {{ section.settings.image_border_radius_mobile }}px;
+    }
+  }
+</style>
+

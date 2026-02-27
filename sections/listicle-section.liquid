@@ -1,0 +1,1014 @@
+{% schema %}
+{
+  "name": "Image Text Blocks",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#F9F9F4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "min": 300,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Size (Desktop)",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "min": 200,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "label": "Image Height (Mobile)",
+      "default": 335
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "image_content_gap_desktop",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Image Content Gap (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Container Settings"
+    },
+    {
+      "type": "color",
+      "id": "container_bg_color",
+      "label": "Container Background Color",
+      "default": "#F8FAF3"
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius_desktop",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Container Border Radius (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius_mobile",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Container Border Radius (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Container Padding (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Container Padding (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_gap",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Container Content Gap",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_gap_mobile",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Container Content Gap (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Number Badge Settings"
+    },
+    {
+      "type": "text",
+      "id": "number_badge",
+      "label": "Number Badge",
+      "default": "01"
+    },
+    {
+      "type": "range",
+      "id": "number_badge_size_desktop",
+      "min": 40,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Badge Size (Desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "number_badge_size_mobile",
+      "min": 32,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Badge Size (Mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "number_badge_font_size_desktop",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Badge Font Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "number_badge_font_size_mobile",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Badge Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "number_badge_bg_color",
+      "label": "Number Badge Background Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "number_badge_text_color",
+      "label": "Number Badge Text Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "range",
+      "id": "number_title_gap",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Title Gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "number_title_gap_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Number Title Gap (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Because You're Tired of Running on Empty"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "color",
+      "id": "text_secondary_color",
+      "label": "Text Secondary Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "text_secondary_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Text Secondary Opacity",
+      "default": 75
+    },
+    {
+      "type": "color",
+      "id": "text_accent_color",
+      "label": "Text Accent Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Gap",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "List Item Settings"
+    },
+    {
+      "type": "range",
+      "id": "list_item_gap",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "list_item_padding_vertical",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Padding Vertical",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "list_item_padding_horizontal",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Padding Horizontal",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "list_item_icon_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Icon Size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "list_item_icon_text_gap",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Icon Text Gap",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "list_item_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "list_item_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Question Block Settings"
+    },
+    {
+      "type": "range",
+      "id": "question_block_padding_vertical",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Block Padding Vertical",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "question_block_padding_horizontal",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Block Padding Horizontal",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "question_block_border_width",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Block Border Width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "question_block_bg_color",
+      "label": "Question Block Background Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "question_block_bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Question Block Background Opacity",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "question_block_border_color",
+      "label": "Question Block Border Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "range",
+      "id": "question_block_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Block Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "question_block_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Block Font Size (Mobile)",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_type",
+          "label": "Text Type",
+          "options": [
+            {
+              "value": "regular",
+              "label": "Regular"
+            },
+            {
+              "value": "semi_bold",
+              "label": "Semi Bold"
+            },
+            {
+              "value": "accent",
+              "label": "Accent Color"
+            },
+            {
+              "value": "accent_bold",
+              "label": "Accent Bold Color"
+            }
+          ],
+          "default": "regular"
+        }
+      ]
+    },
+    {
+      "type": "list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check Mark"
+            },
+            {
+              "value": "unhappy",
+              "label": "Unhappy Face"
+            },
+            {
+              "value": "cross",
+              "label": "Cross"
+            }
+          ],
+          "default": "check"
+        }
+      ]
+    },
+    {
+      "type": "question_block",
+      "name": "Question Block",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "When's the last time your morning routine actually made you feel better three hours later?"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text Blocks",
+      "blocks": [
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "You know that feeling at 10:30 AM?",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "When your coffee's worn off, your stomach's growling, and you're staring at the vending machine wondering if a granola bar counts as breakfast?",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "That's your body telling you it needed more than caffeine.",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "Protein coffee fixes this.",
+            "text_type": "accent"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "No more choosing between energy and nutrition.",
+            "icon_type": "check"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "No more mid-morning crashes.",
+            "icon_type": "check"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "text": "No more white-knuckling it until lunch.",
+            "icon_type": "check"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "This is how you start your day with both fuel and focus, so you can actually think clearly before noon.",
+            "text_type": "accent"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-text-blocks" style="padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="image-text-blocks__container">
+    <div class="image-text-blocks__wrapper">
+      {% if section.settings.image != blank %}
+        <div class="image-text-blocks__image-wrapper">
+          {{
+            section.settings.image
+            | image_url: width: 1000
+            | image_tag: loading: 'lazy', alt: section.settings.title, class: 'image-text-blocks__image'
+          }}
+        </div>
+      {% endif %}
+
+      <div class="image-text-blocks__content-container">
+        <div class="image-text-blocks__header">
+          {% if section.settings.number_badge != blank %}
+            <div class="image-text-blocks__number-badge">
+              <span class="image-text-blocks__number-text">{{ section.settings.number_badge }}</span>
+            </div>
+          {% endif %}
+          {% if section.settings.title != blank %}
+            <h2 class="image-text-blocks__title">{{ section.settings.title }}</h2>
+          {% endif %}
+        </div>
+
+        <div class="image-text-blocks__content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'text_block' %}
+                {% if block.settings.text_type == 'accent' %}
+                  <p class="image-text-blocks__text image-text-blocks__text--accent">
+                    {{ block.settings.text }}
+                  </p>
+                {% elsif block.settings.text_type == 'accent_bold' %}
+                  <p class="image-text-blocks__text image-text-blocks__text--accent-bold">
+                    {{ block.settings.text }}
+                  </p>
+                {% elsif block.settings.text_type == 'semi_bold' %}
+                  <p class="image-text-blocks__text image-text-blocks__text--semi-bold">
+                    {{ block.settings.text }}
+                  </p>
+                {% else %}
+                  <p class="image-text-blocks__text">
+                    {{ block.settings.text }}
+                  </p>
+                {% endif %}
+
+              {% when 'list_item' %}
+                <div class="image-text-blocks__list-item" {{ block.shopify_attributes }}>
+                  {% if block.settings.icon_type == 'check' %}
+                    <svg width="{{ section.settings.list_item_icon_size }}" height="{{ section.settings.list_item_icon_size }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z" fill="#12B76A"/>
+                    </svg>
+                  {% elsif block.settings.icon_type == 'cross' %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 10.5858L9.17157 7.75736L7.75736 9.17157L10.5858 12L7.75736 14.8284L9.17157 16.2426L12 13.4142L14.8284 16.2426L16.2426 14.8284L13.4142 12L16.2426 9.17157L14.8284 7.75736L12 10.5858Z" fill="#F04438"/>
+                      </svg>                      
+                  {% else %}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM7 17H9C9 15.3431 10.3431 14 12 14C13.6569 14 15 15.3431 15 17H17C17 14.2386 14.7614 12 12 12C9.23858 12 7 14.2386 7 17ZM8 11C8.82843 11 9.5 10.3284 9.5 9.5C9.5 8.67157 8.82843 8 8 8C7.17157 8 6.5 8.67157 6.5 9.5C6.5 10.3284 7.17157 11 8 11ZM16 11C16.8284 11 17.5 10.3284 17.5 9.5C17.5 8.67157 16.8284 8 16 8C15.1716 8 14.5 8.67157 14.5 9.5C14.5 10.3284 15.1716 11 16 11Z" fill="#F04438"/>
+                    </svg>                      
+                  {% endif %}
+                  <span class="image-text-blocks__list-item-text">{{ block.settings.text }}</span>
+                </div>
+
+              {% when 'question_block' %}
+                <div class="image-text-blocks__question-block" {{ block.shopify_attributes }}>
+                  <p class="image-text-blocks__question-text">{{ block.settings.text }}</p>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .image-text-blocks {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .image-text-blocks__container {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .image-text-blocks__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: {{ section.settings.image_content_gap_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__wrapper {
+      flex-direction: column;
+      gap: {{ section.settings.container_gap_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__image-wrapper {
+    flex-shrink: 0;
+    width: {{ section.settings.image_size_desktop }}px;
+    height: {{ section.settings.image_size_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__image-wrapper {
+      width: 100%;
+      height: {{ section.settings.image_height_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__image {
+      border-radius: 16px;
+    }
+  }
+
+  .image-text-blocks__content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.container_gap }}px;
+    padding: {{ section.settings.container_padding_desktop }}px;
+    background-color: {{ section.settings.container_bg_color }};
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: {{ section.settings.container_border_radius_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__content-container {
+      padding: {{ section.settings.container_padding_mobile }}px;
+      gap: {{ section.settings.container_gap_mobile }}px;
+      border-radius: {{ section.settings.container_border_radius_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ section.settings.number_title_gap }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__header {
+      gap: {{ section.settings.number_title_gap_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__number-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ section.settings.number_badge_size_desktop }}px;
+    height: {{ section.settings.number_badge_size_desktop }}px;
+    background-color: {{ section.settings.number_badge_bg_color }};
+    border-radius: 56px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__number-badge {
+      width: {{ section.settings.number_badge_size_mobile }}px;
+      height: {{ section.settings.number_badge_size_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__number-text {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.number_badge_font_size_desktop }}px;
+    height: 26px;
+    font-weight: 400;
+    line-height: 1;
+    color: {{ section.settings.number_badge_text_color }};
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__number-text {
+      font-size: {{ section.settings.number_badge_font_size_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    flex: 1;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      line-height: 1.4;
+    }
+  }
+
+  .image-text-blocks__content {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.content_gap }}px;
+    width: 100%;
+  }
+
+  .image-text-blocks__text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.text_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.text_secondary_color }};
+    opacity: {{ section.settings.text_secondary_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  .image-text-blocks__text--semi-bold {
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+    opacity: 1;
+  }
+
+  .image-text-blocks__text--accent {
+    font-weight: 400;
+    color: {{ section.settings.text_accent_color }};
+    opacity: 1;
+  }
+
+  .image-text-blocks__text--accent-bold {
+    font-weight: 600;
+    color: {{ section.settings.text_accent_color }};
+    opacity: 1;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__text {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ section.settings.list_item_icon_text_gap }}px;
+    padding: {{ section.settings.list_item_padding_vertical }}px {{ section.settings.list_item_padding_horizontal }}px {{ section.settings.list_item_padding_vertical }}px 8px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  .image-text-blocks__list-item svg {
+    width: {{ section.settings.list_item_icon_size }}px;
+    height: {{ section.settings.list_item_icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .image-text-blocks__list-item-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.list_item_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__list-item-text {
+      font-size: {{ section.settings.list_item_font_size_mobile }}px;
+    }
+  }
+
+  .image-text-blocks__question-block {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    padding: {{ section.settings.question_block_padding_vertical }}px {{ section.settings.question_block_padding_horizontal }}px;
+    {% assign opacity_value = section.settings.question_block_bg_opacity | divided_by: 100.0 %}
+    background-color: {{ section.settings.question_block_bg_color | color_modify: 'alpha', opacity_value }};
+    border-left: {{ section.settings.question_block_border_width }}px solid {{ section.settings.question_block_border_color }};
+  }
+
+  .image-text-blocks__question-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.question_block_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .image-text-blocks__question-text {
+      font-size: {{ section.settings.question_block_font_size_mobile }}px;
+    }
+  }
+</style>

@@ -1,0 +1,837 @@
+{% schema %}
+{
+  "name": "Maison Difference",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#F8FAF3"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Why Coffee Alone Sabotages <em>Your Energy</em></p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 32,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 18,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Settings"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "This isn't about discipline. Your body needs fuel, not just stimulation."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "VS Separator Settings"
+    },
+    {
+      "type": "range",
+      "id": "vs_font_size_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "VS Font Size (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "vs_font_size_mobile",
+      "min": 32,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "VS Font Size (Mobile)",
+      "default": 56
+    },
+    {
+      "type": "color",
+      "id": "vs_color",
+      "label": "VS Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding_desktop",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Padding (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_desktop",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_mobile",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "point_font_size_desktop",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Point Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "point_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Point Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "point_text_color",
+      "label": "Point Text Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "min": 100,
+      "max": 200,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Size (Desktop)",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "min": 80,
+      "max": 180,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Size (Mobile)",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison",
+      "name": "Comparison Card",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Coffee"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "check",
+              "label": "Checkmark (Positive)"
+            },
+            {
+              "value": "x",
+              "label": "X (Negative)"
+            }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "color",
+          "id": "icon_bg_color",
+          "label": "Icon Background Color",
+          "default": "#B9FCAB",
+          "info": "For checkmark icons"
+        },
+        {
+          "type": "color",
+          "id": "icon_x_bg_color",
+          "label": "Icon Background Color (X)",
+          "default": "#D6E1B7",
+          "info": "For X icons"
+        }
+      ]
+    },
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Point description"
+        },
+        {
+          "type": "text",
+          "id": "parent_block",
+          "label": "Parent Card Title",
+          "info": "Enter the title of the comparison card this point belongs to (e.g., 'Coffee' or 'MOJO gummies')"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Difference",
+      "blocks": [
+        {
+          "type": "comparison",
+          "settings": {
+            "title": "Coffee",
+            "icon_type": "x",
+            "icon_bg_color": "#D6E1B7",
+            "icon_x_bg_color": "#D6E1B7"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Can cause major crashes or jitters",
+            "parent_block": "Coffee"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Bitter, acidic taste",
+            "parent_block": "Coffee"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Only caffeine stimulation – focus fades",
+            "parent_block": "Coffee"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Just coffee, nothing else",
+            "parent_block": "Coffee"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Dehydrates, stains teeth, upsets stomach",
+            "parent_block": "Coffee"
+          }
+        },
+        {
+          "type": "comparison",
+          "settings": {
+            "title": "MOJO gummies",
+            "icon_type": "check",
+            "icon_bg_color": "#B9FCAB",
+            "icon_x_bg_color": "#D6E1B7"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Zero</strong> crash or jitters",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Delicious</strong> gummy taste",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Energy</strong> and focus support",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Super blend</strong> (mushrooms, nootropics)",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Clean, portable, <strong>anytime</strong>",
+            "parent_block": "MOJO gummies"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_difference" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_difference__container">
+    <div class="maison_commerce_difference__top-text">
+        {% if section.settings.heading != blank %}
+            <div class="maison_commerce_difference__heading">
+                {{ section.settings.heading }}
+            </div>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+            <p class="maison_commerce_difference__subtitle">
+                {{ section.settings.subtitle }}
+            </p>
+        {% endif %}
+    </div>
+
+    {% assign comparison_blocks = section.blocks | where: 'type', 'comparison' %}
+    {% if comparison_blocks.size > 0 %}
+      <div class="maison_commerce_difference__comparison-wrapper">
+        {% for comparison_block in comparison_blocks %}
+          {% assign block_index = forloop.index0 %}
+          {% assign all_points = section.blocks | where: 'type', 'point' %}
+          
+          <div class="maison_commerce_difference__card" {{ comparison_block.shopify_attributes }}>
+            {% if comparison_block.settings.title != blank %}
+              <h3 class="maison_commerce_difference__card-title">
+                {{ comparison_block.settings.title }}
+              </h3>
+            {% endif %}
+
+            <div class="maison_commerce_difference__card-content-main">
+                {% if comparison_block.settings.image != blank %}
+                    <div class="maison_commerce_difference__card-image-wrapper">
+                        <img 
+                        src="{{ comparison_block.settings.image | image_url: width: 400 }}" 
+                        alt="{{ comparison_block.settings.image.alt | default: comparison_block.settings.title | escape }}"
+                        class="maison_commerce_difference__card-image"
+                        width="{{ section.settings.image_size_desktop }}"
+                        height="{{ section.settings.image_size_desktop }}"
+                        loading="lazy"
+                        />
+                    </div>
+                    {% endif %}
+
+                    {% assign has_points = false %}
+                    {% for point in all_points %}
+                    {% if point.settings.parent_block == comparison_block.settings.title %}
+                        {% assign has_points = true %}
+                        {% break %}
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if has_points %}
+                    <ul class="maison_commerce_difference__points-list">
+                        {% for point in all_points %}
+                        {% if point.settings.parent_block == comparison_block.settings.title %}
+                            <li class="maison_commerce_difference__point" {{ point.shopify_attributes }}>
+                            <div class="maison_commerce_difference__point-icon">
+                                {% if comparison_block.settings.icon_type == 'check' %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <g clip-path="url(#clip0_8191_11472{{ block.id }})">
+                                            <path d="M8.00008 0.166504C3.67385 0.166504 0.166748 3.6736 0.166748 7.99984C0.166748 12.3261 3.67385 15.8332 8.00008 15.8332C12.3263 15.8332 15.8334 12.3261 15.8334 7.99984C15.8334 3.6736 12.3263 0.166504 8.00008 0.166504Z" fill="#2E432F"/>
+                                            <path d="M11.5559 5.26807L6.66705 10.157L4.44482 7.93473" stroke="#B9FCAB" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_8191_11472{{ block.id }}">
+                                            <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M7.83333 0C3.5071 0 0 3.5071 0 7.83333C0 12.1596 3.5071 15.6667 7.83333 15.6667C12.1596 15.6667 15.6667 12.1596 15.6667 7.83333C15.6667 3.5071 12.1596 0 7.83333 0Z" fill="#D6E1B7"/>
+                                        <path d="M10.2048 6.49205C10.2466 6.45171 10.28 6.40345 10.3029 6.35009C10.3259 6.29672 10.338 6.23932 10.3385 6.18123C10.3391 6.12314 10.328 6.06552 10.306 6.01174C10.2841 5.95797 10.2516 5.9091 10.2106 5.86801C10.1695 5.82691 10.1207 5.7944 10.0669 5.77238C10.0132 5.75035 9.95555 5.73926 9.89746 5.73973C9.83936 5.74021 9.78195 5.75225 9.72856 5.77516C9.67518 5.79806 9.62688 5.83137 9.58651 5.87313L7.83301 7.62605L6.08009 5.87313C6.04004 5.83015 5.99174 5.79567 5.93807 5.77176C5.8844 5.74785 5.82647 5.73499 5.76773 5.73395C5.70898 5.73292 5.65063 5.74372 5.59616 5.76573C5.54168 5.78773 5.49219 5.82048 5.45065 5.86203C5.40911 5.90357 5.37636 5.95306 5.35435 6.00753C5.33235 6.06201 5.32154 6.12036 5.32258 6.1791C5.32361 6.23785 5.33647 6.29578 5.36038 6.34945C5.3843 6.40311 5.41877 6.45141 5.46176 6.49147L7.21351 8.24497L5.46059 9.99788C5.38331 10.0808 5.34124 10.1905 5.34324 10.3039C5.34524 10.4172 5.39115 10.5253 5.47131 10.6055C5.55147 10.6857 5.65961 10.7316 5.77295 10.7336C5.88629 10.7356 5.99599 10.6935 6.07892 10.6162L7.83301 8.8633L9.58592 10.6168C9.66886 10.6941 9.77855 10.7362 9.89189 10.7342C10.0052 10.7322 10.1134 10.6862 10.1935 10.6061C10.2737 10.5259 10.3196 10.4178 10.3216 10.3044C10.3236 10.1911 10.2815 10.0814 10.2043 9.99847L8.45251 8.24497L10.2048 6.49205Z" fill="#2C2926"/>
+                                    </svg>
+                                {% endif %}
+                            </div>
+                            <span class="maison_commerce_difference__point-text">
+                                {{ point.settings.text }}
+                            </span>
+                            </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+            </div>
+          </div>
+
+          {% unless forloop.last %}
+            <div class="maison_commerce_difference__vs">
+              VS
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #shopify-section-{{ section.id }}{
+    padding: 44px 80px;
+  }
+
+  .maison_commerce_difference {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: {{ section.settings.section_bg_color }};
+    border-radius: 24px;
+  }
+
+  @media (max-width: 950px) {
+    #shopify-section-{{ section.id }}{
+        padding: 32px 20px;
+    }
+
+    .maison_commerce_difference {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_difference__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__container {
+      gap: 12px;
+    }
+  }
+
+  .maison_commerce_difference__top-text{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 496px;
+  }
+
+  .maison_commerce_difference__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  .maison_commerce_difference__heading p{
+    margin: 0;
+  }
+
+  .maison_commerce_difference__heading em {
+    font-style: italic;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__subtitle {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color }};
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__comparison-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: {{ section.settings.card_gap_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 1250px) {
+    .maison_commerce_difference__comparison-wrapper {
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__comparison-wrapper {
+      flex-direction: column;
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__card-content-main{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .maison_commerce_difference__card {
+    background-color: {{ section.settings.card_bg_color }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: {{ section.settings.card_padding_desktop }}px;
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__card {
+      padding: {{ section.settings.card_padding_mobile }}px;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .maison_commerce_difference__card-title {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.card_title_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.card_title_color }};
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__card-title {
+      font-size: {{ section.settings.card_title_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__card-image-wrapper {
+    max-width: {{ section.settings.image_size_desktop }}px;
+    height: auto;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__card-image-wrapper {
+      max-width: {{ section.settings.image_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .maison_commerce_difference__points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__points-list {
+      gap: 4px;
+    }
+  }
+
+  .maison_commerce_difference__point {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .maison_commerce_difference__point-icon {
+    width: 15.6px;
+    height: 15.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_difference__point-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.point_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.point_text_color }};
+    flex: 1;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__point-text {
+      font-size: {{ section.settings.point_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_difference__vs {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.vs_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1;
+    color: {{ section.settings.vs_color }};
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_difference__vs {
+      font-size: {{ section.settings.vs_font_size_mobile }}px;
+    }
+  }
+</style>
+

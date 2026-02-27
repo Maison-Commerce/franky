@@ -1,0 +1,1388 @@
+{% schema %}
+{
+  "name": "Maison PDP Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Rating Badge"
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Rating Score",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "rating_count",
+      "label": "Review Count",
+      "default": "8,450+"
+    },
+    {
+      "type": "header",
+      "content": "Natural Badge"
+    },
+    {
+      "type": "image_picker",
+      "id": "natural_badge_image",
+      "label": "Natural Badge Image"
+    },
+    {
+      "type": "text",
+      "id": "natural_badge_alt",
+      "label": "Natural Badge Alt Text",
+      "default": "100% Natural Ingredients"
+    },
+    {
+      "type": "header",
+      "content": "Pack Size Options"
+    },
+    {
+      "type": "text",
+      "id": "pack_size_label",
+      "label": "Pack Size Label",
+      "default": "30 Gummies"
+    },
+    {
+      "type": "text",
+      "id": "best_value_text",
+      "label": "Best Value Badge Text",
+      "default": "Best Value"
+    },
+    {
+      "type": "header",
+      "content": "Subscription Section"
+    },
+    {
+      "type": "text",
+      "id": "selling_plan_id",
+      "label": "Selling Plan ID",
+      "info": "The ID of the subscription selling plan. Leave blank to disable subscription options."
+    },
+    {
+      "type": "text",
+      "id": "subscription_multiplier",
+      "label": "Subscription Discount Multiplier",
+      "info": "Applied on top of pack discount. 0.8 = additional 20% off",
+      "default": "0.8"
+    },
+    {
+      "type": "checkbox",
+      "id": "subscription_default_selected",
+      "label": "Subscription Selected by Default",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subscription_header_label",
+      "label": "Subscription Header Label",
+      "default": "SUBSCRIBE AND SAVE 15%"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_title",
+      "label": "Subscribe & Save Title",
+      "default": "Subscribe & Save"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_save_badge",
+      "label": "Subscribe Save Badge Text",
+      "default": "You Save 20%"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_popular_tag",
+      "label": "Most Popular Tag Text",
+      "default": "Most Popular"
+    },
+    {
+      "type": "text",
+      "id": "onetime_title",
+      "label": "One-time Purchase Title",
+      "default": "One-time purchase"
+    },
+    {
+      "type": "text",
+      "id": "onetime_price",
+      "label": "One-time Price (fallback)",
+      "default": "$39.90"
+    },
+    {
+      "type": "text",
+      "id": "onetime_price_original",
+      "label": "One-time Original Price",
+      "default": "$79.90"
+    },
+    {
+      "type": "header",
+      "content": "Stock & Shipping"
+    },
+    {
+      "type": "text",
+      "id": "stock_status_text",
+      "label": "Stock Status Text",
+      "default": "In Stock"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping Text",
+      "default": "Ship on Sun from our Ohio warehouse"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to Cart Button Text",
+      "default": "Add To Cart"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_loading_text",
+      "label": "Add to Cart Loading Text",
+      "default": "Adding..."
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_price",
+      "label": "Add to Cart Button Price",
+      "default": "$24.75"
+    },
+    {
+      "type": "header",
+      "content": "Customer Gallery"
+    },
+    {
+      "type": "text",
+      "id": "customer_gallery_title",
+      "label": "Customer Gallery Title",
+      "default": "Join 12,850+ Customers Transforming Their Lives"
+    },
+    {
+      "type": "header",
+      "content": "Related Products"
+    },
+    {
+      "type": "text",
+      "id": "related_products_title",
+      "label": "Related Products Title",
+      "default": "Try both and save big"
+    },
+    {
+      "type": "product_list",
+      "id": "related_products",
+      "label": "Related Products",
+      "info": "Select the products to display in the related products carousel."
+    },
+    {
+      "type": "text",
+      "id": "related_add_button_text",
+      "label": "Add Button Text",
+      "default": "Add"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Flavor List",
+      "info": "Select the flavors to display in the flavor list."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "checkmark",
+              "label": "Checkmark Circle"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "lightning",
+              "label": "Lightning Bolt"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "feature_text_bold",
+          "label": "Bold Text",
+          "default": "Energizes"
+        },
+        {
+          "type": "text",
+          "id": "feature_text_regular",
+          "label": "Regular Text",
+          "default": "with a spark of tart pomegranate"
+        }
+      ]
+    },
+    {
+      "type": "pack_option",
+      "name": "Pack Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pack_name",
+          "label": "Pack Name",
+          "default": "1 Pack"
+        },
+        {
+          "type": "range",
+          "id": "bottle_count",
+          "label": "Number of Bottles to Display",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text (e.g., Save 10%)",
+          "info": "Leave empty for no badge"
+        },
+        {
+          "type": "text",
+          "id": "discount_multiplier",
+          "label": "Discount Multiplier",
+          "info": "1 = no discount, 0.9 = 10% off, 0.97 = 3% off",
+          "default": "1"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_default_selected",
+          "label": "Default Selected",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_best_value",
+          "label": "Show Best Value Tag",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "variant_id",
+          "label": "Variant ID",
+          "info": "The variant ID this pack corresponds to"
+        }
+      ]
+    },
+    {
+      "type": "subscription_benefit",
+      "name": "Subscription Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "checkmark",
+              "label": "Checkmark Circle"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "truck",
+              "label": "Delivery Truck"
+            },
+            {
+              "value": "percent",
+              "label": "Percent"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "benefit_text",
+          "label": "Benefit Text",
+          "default": "Zero commitment — cancel anytime"
+        }
+      ]
+    },
+    {
+      "type": "trust_badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "returns",
+              "label": "Returns / Monitor"
+            },
+            {
+              "value": "shield",
+              "label": "Shield / Secure"
+            },
+            {
+              "value": "star_badge",
+              "label": "Star Badge"
+            },
+            {
+              "value": "truck",
+              "label": "Delivery Truck"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "guarantee",
+              "label": "Guarantee"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "Secure checkout"
+        }
+      ]
+    },
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "accordion_title",
+          "label": "Accordion Title",
+          "default": "Benefits & Ingredients"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_content",
+          "label": "Accordion Content",
+          "default": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients.</p>"
+        }
+      ]
+    },
+    {
+      "type": "customer_video",
+      "name": "Customer Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail",
+          "label": "Thumbnail Image",
+          "info": "Displayed as preview before playing"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "Customer testimonial"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison PDP Hero",
+      "blocks": [
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Energizes",
+            "feature_text_regular": "with a spark of tart pomegranate"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Helps you focus",
+            "feature_text_regular": "during work"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Supports mental",
+            "feature_text_regular": "clarity so you can get \"in the zone\""
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "1 Pack",
+            "bottle_count": 1,
+            "badge_text": "",
+            "discount_multiplier": "1",
+            "is_default_selected": false,
+            "show_best_value": false
+          }
+        },
+
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "2 Packs",
+            "bottle_count": 2,
+            "badge_text": "Save 10%",
+            "discount_multiplier": "0.9",
+            "is_default_selected": false,
+            "show_best_value": false
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "3 Packs",
+            "bottle_count": 3,
+            "badge_text": "Save 15%",
+            "discount_multiplier": "0.85",
+            "is_default_selected": true,
+            "show_best_value": true
+          }
+        },
+        {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "Zero commitment — cancel anytime"
+          }
+        },
+        {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "Best value for consistent results"
+          }
+        },
+        {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "Convenient delivery every 30 days"
+          }
+        },
+        {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "Exclusive Deals"
+          }
+        },
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon_type": "returns",
+            "badge_text": "Simple Returns"
+          }
+        },
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon_type": "shield",
+            "badge_text": "Secure checkout"
+          }
+        },
+        {
+          "type": "trust_badge",
+          "settings": {
+            "icon_type": "star_badge",
+            "badge_text": "1.2M sold last year"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Benefits & Ingredients",
+            "accordion_content": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients including Lion's Mane Mushroom, Bacopa Monnieri, Ginkgo Biloba, and Vitamin B12. Each gummy delivers cognitive support without artificial colors or preservatives.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "How to Enjoy",
+            "accordion_content": "<p>Take 2 gummies daily, preferably in the morning or early afternoon. For best results, take consistently for at least 4-6 weeks. Can be taken with or without food.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Endorsements",
+            "accordion_content": "<p>Recommended by over 500 healthcare professionals. Featured in Forbes, Well+Good, and mindbodygreen. Third-party tested for purity and potency.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Shipping & Returns",
+            "accordion_content": "<p>Free shipping on orders over $50. Standard delivery takes 3-5 business days. We offer a 30-day money-back guarantee if you're not completely satisfied.</p>"
+          }
+        },
+        {
+          "type": "customer_video",
+          "settings": {
+            "alt_text": "Customer testimonial 1"
+          }
+        },
+        {
+          "type": "customer_video",
+          "settings": {
+            "alt_text": "Customer testimonial 2"
+          }
+        },
+        {
+          "type": "customer_video",
+          "settings": {
+            "alt_text": "Customer testimonial 3"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'maison-pdp-hero.css' | asset_url | stylesheet_tag }}
+
+<script>
+  window.product = {{ product | json }};
+  window.defaultPackQuantity = {% assign default_quantity = 1 %}{% assign default_discount = 1 %}{% for block in section.blocks %}{% if block.type == 'pack_option' and block.settings.is_default_selected %}{% assign default_quantity = block.settings.bottle_count %}{% assign default_discount = block.settings.discount_multiplier %}{% endif %}{% endfor %}{{ default_quantity }};
+  window.defaultPackDiscount = parseFloat("{{ default_discount }}") || 1;
+  window.packPricing = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' %}
+        {{ block.settings.bottle_count }}: parseFloat("{{ block.settings.discount_multiplier }}") || 1,
+      {% endif %}
+    {% endfor %}
+  };
+  window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
+  window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
+  window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+</script>
+
+<script>
+  function maisonPdpHero() {
+    return {
+      product: window.product,
+      variantId: window.product.variants[0].id,
+      quantity: window.defaultPackQuantity || 1,
+      currentPackDiscount: window.defaultPackDiscount || 1,
+      loading: false,
+      packPricing: window.packPricing || {},
+      isSubscription: window.subscriptionDefaultSelected,
+      sellingPlanId: window.sellingPlanId,
+      subscriptionMultiplier: window.subscriptionMultiplier,
+      videoModalOpen: false,
+      activeVideoId: null,
+
+      get variant() {
+        return this.product.variants.find((variant) => variant.id === this.variantId);
+      },
+
+      get discountMultiplier() {
+        const packDiscount = this.currentPackDiscount || 1;
+        return this.isSubscription ? packDiscount * this.subscriptionMultiplier : packDiscount;
+      },
+
+      get calculatedPrice() {
+        const basePrice = this.variant?.price || this.product.price;
+        const packDiscount = this.currentPackDiscount || 1;
+        const fullPrice = basePrice * this.quantity;
+        const packDiscountedTotal = Math.round(fullPrice * packDiscount);
+        if (this.isSubscription) {
+          return Math.round(packDiscountedTotal * this.subscriptionMultiplier);
+        }
+        return packDiscountedTotal;
+      },
+
+      get onetimePrice() {
+        const basePrice = this.variant?.price || this.product.price;
+        const packDiscount = this.currentPackDiscount || 1;
+        const fullPrice = basePrice * this.quantity;
+        return Math.round(fullPrice * packDiscount);
+      },
+
+      get subscriptionPrice() {
+        const basePrice = this.variant?.price || this.product.price;
+        const packDiscount = this.currentPackDiscount || 1;
+        const fullPrice = basePrice * this.quantity;
+        const packDiscountedTotal = Math.round(fullPrice * packDiscount);
+        return Math.round(packDiscountedTotal * this.subscriptionMultiplier);
+      },
+
+      getPackSavings(bottleCount, discountMultiplier) {
+        const basePrice = this.variant?.price || this.product.price;
+        const fullPrice = basePrice * bottleCount;
+        const discountedTotal = Math.round(fullPrice * discountMultiplier);
+        return fullPrice - discountedTotal;
+      },
+
+      openVideoModal(videoId) {
+        this.activeVideoId = videoId;
+        this.videoModalOpen = true;
+        document.body.style.overflow = 'hidden';
+      },
+
+      closeVideoModal() {
+        this.videoModalOpen = false;
+        this.activeVideoId = null;
+        document.body.style.overflow = '';
+      },
+
+      formatMoney(cents) {
+        if (window.Shopify?.formatMoney) {
+          return Shopify.formatMoney(cents);
+        }
+        return (cents / 100).toLocaleString(undefined, {
+          style: 'currency',
+          currency: Shopify?.currency?.active || 'USD',
+        });
+      },
+
+      addToCart(variantId = null, qty = null) {
+        if (this.loading) return;
+        this.loading = true;
+
+        const payload = {
+          id: variantId || this.variantId,
+          quantity: qty || this.quantity,
+        };
+
+        // Add selling plan if subscription is selected and we have a selling plan ID
+        if (this.isSubscription && this.sellingPlanId && !variantId) {
+          payload.selling_plan = this.sellingPlanId;
+        }
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+          .then(() => {
+            maisonDispatch('maison:cart-drawer-reload');
+            maisonDispatch('maison:cart-drawer-open');
+          })
+          .finally(() => {
+            this.loading = false;
+          });
+      },
+    };
+  }
+</script>
+
+{%- comment -%} Snippet for rendering feature icons {%- endcomment -%}
+{%- capture feature_icon_checkmark -%}
+<svg class="xmaison_feature-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+  <path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture feature_icon_star -%}
+<svg class="xmaison_feature-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+  <path d="M8 4l1 2 2.2.3-1.6 1.5.4 2.2L8 9l-2 1 .4-2.2-1.6-1.5L7 6l1-2z" fill="white"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture feature_icon_heart -%}
+<svg class="xmaison_feature-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+  <path d="M8 12s-4-2.5-4-5c0-1.5 1-2.5 2.5-2.5S8 5.5 8 6c0-.5.5-1.5 1.5-1.5S12 5.5 12 7c0 2.5-4 5-4 5z" fill="white"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture feature_icon_lightning -%}
+<svg class="xmaison_feature-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+  <path d="M9 4L6 9h2.5l-.5 3 3-5H8.5L9 4z" fill="white"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture feature_icon_leaf -%}
+<svg class="xmaison_feature-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+  <path d="M5 11c0-4 3-6 6-6-1 3-2 5-6 6zm0 0l1-1" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- comment -%} Snippet for rendering subscription benefit icons {%- endcomment -%}
+{%- capture benefit_icon_checkmark -%}
+<svg class="xmaison_benefit-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="9" r="8.5" fill="#2E432F"/>
+  <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture benefit_icon_star -%}
+<svg class="xmaison_benefit-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="9" r="8.5" fill="#2E432F"/>
+  <path d="M9 4.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6L9 10.4l-2.4 1.3.5-2.6-1.9-1.8 2.6-.4L9 4.5z" fill="white"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture benefit_icon_gift -%}
+<svg class="xmaison_benefit-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="9" r="8.5" fill="#2E432F"/>
+  <path d="M5 8h8v5H5V8zm0 0h8M9 8v5M7 8c0-1.5.5-2 2-2s2 .5 2 2" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture benefit_icon_truck -%}
+<svg class="xmaison_benefit-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="9" r="8.5" fill="#2E432F"/>
+  <path d="M4 7h6v4H4V7zm6 0h2l2 2v2h-4V7zm-4.5 5a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z" stroke="white" stroke-width="1" fill="none"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture benefit_icon_percent -%}
+<svg class="xmaison_benefit-check" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="9" r="8.5" fill="#2E432F"/>
+  <path d="M6 12l6-6M7 7a1 1 0 11-2 0 1 1 0 012 0zm6 4a1 1 0 11-2 0 1 1 0 012 0z" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- comment -%} Snippet for rendering trust badge icons {%- endcomment -%}
+{%- capture trust_icon_returns -%}
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_8191_10890)">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.26247 0.65399C4.87383 0.582147 5.83433 0.5154 7.33333 0.5V5.54227C5.32957 5.55237 3.83953 5.60657 2.8598 5.6573C2.56674 5.6725 2.28828 5.7462 2.03886 5.86867C1.89161 6.36643 1.83342 6.90367 1.83341 7.4646L1.83333 10.4392C1.83333 11.6037 1.89084 12.5148 1.95614 13.174C2.00375 13.6547 2.39092 14.0237 2.9222 14.0513C3.98813 14.1065 5.6792 14.1664 8 14.1664C10.3208 14.1664 12.0119 14.1065 13.0778 14.0513C13.6091 14.0237 13.9962 13.6547 14.0439 13.174C14.1092 12.5148 14.1667 11.6037 14.1667 10.4392L14.1666 7.4646C14.1666 6.9036 14.1084 6.3663 13.9611 5.86847C13.7118 5.7461 13.4334 5.67247 13.1405 5.6573C12.1608 5.60653 10.6706 5.55233 8.66667 5.54227V0.5C10.1657 0.5154 11.1262 0.582147 11.7376 0.653993C12.5837 0.753423 13.2227 1.28161 13.5995 1.9515C14.0174 2.69463 14.6386 3.875 15.1064 5.0964C15.404 5.8736 15.4999 6.68707 15.4999 7.46457L15.5 10.4392C15.5 11.6477 15.4403 12.6026 15.3707 13.3055C15.2533 14.4904 14.2867 15.3238 13.1468 15.3828C12.0578 15.4392 10.3438 15.4997 8 15.4997C5.65623 15.4997 3.94217 15.4392 2.85323 15.3828C1.71329 15.3238 0.746667 14.4904 0.629293 13.3055C0.55968 12.6026 0.5 11.6477 0.5 10.4392L0.500077 7.46457C0.500097 6.68703 0.595957 5.8736 0.89362 5.09643C1.36143 3.87503 1.98261 2.69464 2.40052 1.95151C2.77726 1.28162 3.4163 0.753423 4.26247 0.65399ZM8.78623 8.13927C10.5376 8.13927 12.4167 9.51237 12.4167 11.6135V12.0174C12.4167 12.3236 12.259 12.6638 11.9144 12.7872C11.4255 12.9623 10.8737 12.958 10.3469 12.7856C9.98503 12.6672 9.7992 12.3175 9.7992 11.9838V11.6135C9.7992 11.3278 9.64233 11.0922 9.36437 10.9167C9.08253 10.7387 8.69553 10.6384 8.3078 10.6384H8.307H8.304L8.29127 10.6385C8.27987 10.6385 8.26267 10.6387 8.23993 10.639C8.19453 10.6395 8.12707 10.6407 8.03997 10.643C7.91023 10.6464 7.73697 10.6524 7.52793 10.6629C7.51783 10.9339 7.50483 11.1609 7.4906 11.3503C7.46717 11.6628 7.28907 11.9074 7.0316 12.0185C6.77757 12.1282 6.4752 12.0964 6.21413 11.9261C5.92087 11.7347 5.5431 11.473 5.0728 11.1196C4.43957 10.6439 4.05277 10.2741 3.81793 10.0095C3.50517 9.657 3.5051 9.17533 3.8179 8.8228C4.0527 8.55813 4.43953 8.1883 5.0728 7.71263C5.54303 7.35943 5.9207 7.09777 6.21397 6.9064C6.47503 6.73607 6.77747 6.70427 7.03153 6.81393C7.28907 6.92507 7.46717 7.16963 7.49063 7.4822C7.50377 7.6575 7.5159 7.8649 7.52563 8.10947C7.84963 8.12283 8.13683 8.1302 8.35513 8.13427C8.48943 8.13677 8.5975 8.138 8.67187 8.13863C8.70907 8.13893 8.7378 8.1391 8.75717 8.13917L8.7791 8.13923L8.78457 8.13927H8.78587H8.78623Z" fill="#4F6050"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_8191_10890">
+  <rect width="16" height="16" fill="white"/>
+  </clipPath>
+  </defs>
+</svg>
+{%- endcapture -%}
+
+{%- capture trust_icon_shield -%}
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_8191_10895)">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.4793 1.9007C3.27188 1.72349 4.89263 1.50008 8 1.50008C11.1074 1.50008 12.7281 1.72349 13.5207 1.9007C13.7222 1.94576 13.8974 2.11841 13.9336 2.45441C14.0326 3.37401 14.1667 4.93468 14.1667 6.63192C14.1667 6.79372 14.1654 6.95311 14.1632 7.10982C14.1256 9.67855 12.8244 12.0534 10.6538 13.3841C10.1215 13.7105 9.59653 13.996 9.1216 14.1981C8.63393 14.4056 8.2559 14.5001 8 14.5001C7.7441 14.5001 7.36607 14.4056 6.8784 14.1981C6.40347 13.996 5.87853 13.7105 5.34617 13.3841C3.17564 12.0534 1.87443 9.67855 1.83685 7.10982C1.83455 6.95311 1.83333 6.79372 1.83333 6.63192C1.83333 4.93468 1.96744 3.37401 2.06641 2.45441C2.10257 2.11841 2.27775 1.94576 2.4793 1.9007ZM8 0.166748C4.83977 0.166748 3.11216 0.392951 2.18838 0.599491C1.307 0.796548 0.823427 1.54329 0.740727 2.31174C0.638813 3.25875 0.5 4.87045 0.5 6.63192C0.5 6.80038 0.50127 6.96631 0.503653 7.12931C0.547613 10.1339 2.0717 12.9406 4.6493 14.5208C5.213 14.8664 5.79923 15.188 6.3564 15.425C6.90087 15.6567 7.4759 15.8334 8 15.8334C8.5241 15.8334 9.09913 15.6567 9.6436 15.425C10.2008 15.188 10.787 14.8664 11.3507 14.5208C13.9283 12.9406 15.4524 10.1339 15.4963 7.12935C15.4987 6.96631 15.5 6.80042 15.5 6.63192C15.5 4.87045 15.3612 3.25874 15.2593 2.31174C15.1766 1.54329 14.693 0.796548 13.8116 0.599491C12.8878 0.392955 11.1602 0.166748 8 0.166748ZM7.52563 7.70788C7.46267 7.63231 7.37957 7.53361 7.2779 7.41498C7.02623 7.12125 6.66063 6.70501 6.20417 6.21418C5.8378 5.82025 5.2238 5.72608 4.79547 6.09878C4.60067 6.26825 4.38737 6.47895 4.1971 6.72362C3.90643 7.09735 3.97887 7.59768 4.25343 7.93798C5.15767 9.05861 6.03087 9.97371 6.65567 10.5896C7.22917 11.1549 8.13353 11.1089 8.6395 10.4794C9.3201 9.63262 10.4079 8.18602 11.8549 5.96575C12.0584 5.65351 12.1256 5.21925 11.8781 4.88171C11.6223 4.53281 11.301 4.29135 11.0225 4.13025C10.5678 3.86721 10.047 4.07951 9.77287 4.46878C9.04197 5.50655 8.44897 6.36228 8.03863 6.95865C7.83347 7.25685 7.67397 7.49018 7.5657 7.64905L7.52563 7.70788Z" fill="#4F6050"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_8191_10895">
+  <rect width="16" height="16" fill="white"/>
+  </clipPath>
+  </defs>
+</svg>
+{%- endcapture -%}
+
+{%- capture trust_icon_star_badge -%}
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_8191_10900)">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99959 6.66683C2.99959 3.9054 5.23816 1.66683 7.99959 1.66683C10.761 1.66683 12.9996 3.9054 12.9996 6.66683C12.9996 9.42826 10.761 11.6668 7.99959 11.6668C5.23816 11.6668 2.99959 9.42826 2.99959 6.66683ZM7.99959 0.333496C4.50179 0.333496 1.66626 3.16903 1.66626 6.66683C1.66626 8.09346 2.13796 9.40993 2.93392 10.4688C2.03534 12.1679 1.77398 13.6665 1.69778 14.3999C1.64757 14.8832 2.10841 15.1981 2.52892 15.0687L4.19903 14.5548L5.25996 15.4979C5.61666 15.8149 6.17836 15.6671 6.34176 15.2258C6.50366 14.7886 6.79246 14.0382 7.24586 12.9558C7.49303 12.9851 7.74453 13.0002 7.99959 13.0002C8.25463 13.0002 8.50613 12.9851 8.75329 12.9558C9.20666 14.0382 9.49546 14.7886 9.65736 15.2258C9.82076 15.6671 10.3825 15.8149 10.7392 15.4979L11.8001 14.5548L13.4702 15.0687C13.8907 15.1981 14.3516 14.8832 14.3014 14.3999C14.2252 13.6665 13.9638 12.168 13.0652 10.4688C13.8612 9.40996 14.3329 8.0935 14.3329 6.66683C14.3329 3.16903 11.4974 0.333496 7.99959 0.333496ZM7.25979 3.39773C7.57076 2.7982 8.42833 2.7982 8.73929 3.39773L9.42076 4.71156L10.8798 4.99886C11.5144 5.12383 11.771 5.8927 11.3385 6.3737L10.2943 7.53503L10.4849 9.08013C10.5664 9.73986 9.88049 10.2247 9.28573 9.92783L7.99956 9.28586L6.71336 9.92783C6.11863 10.2247 5.43273 9.73986 5.51416 9.08013L5.70483 7.53503L4.66059 6.3737C4.22813 5.8927 4.48466 5.12383 5.11929 4.99886L6.57833 4.71156L7.25979 3.39773Z" fill="#4F6050"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_8191_10900">
+  <rect width="16" height="16" fill="white"/>
+  </clipPath>
+  </defs>
+</svg>
+{%- endcapture -%}
+
+{%- capture trust_icon_truck -%}
+<svg class="xmaison_trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 4h8v7H1V4zm8 0h3l2 3v4h-5V4zM4 12.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" stroke="#2F3936" stroke-opacity="0.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture trust_icon_clock -%}
+<svg class="xmaison_trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="8" cy="8" r="6" stroke="#2F3936" stroke-opacity="0.75" stroke-width="1.5"/>
+  <path d="M8 5v3l2 2" stroke="#2F3936" stroke-opacity="0.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture trust_icon_guarantee -%}
+<svg class="xmaison_trust-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 1l2 2h3v3l2 2-2 2v3h-3l-2 2-2-2H3v-3L1 8l2-2V3h3l2-2z" stroke="#2F3936" stroke-opacity="0.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5.5 8l1.5 1.5L10 6" stroke="#2F3936" stroke-opacity="0.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+<section x-data="maisonPdpHero()" class="xmaison_product-section">
+  <div class="xmaison_product-container">
+    <!-- Product Title & Rating (Mobile: shows first) -->
+    <div class="xmaison_product-header-top">
+      <h1 class="xmaison_product-title">{{ product.title }}</h1>
+      <div class="xmaison_rating-badge">
+        <div class="xmaison_stars">
+          {% for i in (1..5) %}
+            <svg class="xmaison_star" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1.33l1.79 3.62 4 .58-2.9 2.82.68 3.98L8 10.42l-3.57 1.88.68-3.98-2.9-2.82 4-.58L8 1.33z" fill="#FF8C00" stroke="#FF8C00" stroke-width="1"/>
+            </svg>
+          {% endfor %}
+        </div>
+        <span class="xmaison_rating-text"
+          >Rated <strong>{{ section.settings.rating_score }}</strong> based on
+          <strong>{{ section.settings.rating_count }}</strong> reviews.</span
+        >
+      </div>
+    </div>
+
+    <!-- Product Gallery (Mobile: shows second) -->
+    <div class="xmaison_product-gallery">
+      <div class="xmaison_gallery-wrapper">
+        <!-- Main Image Swiper -->
+        <div class="xmaison_gallery-main swiper" id="galleryMain">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                <img src="{{ image | image_url: width: 600 }}" alt="{{ product.title }}">
+              </div>
+            {% endfor %}
+          </div>
+          <div class="xmaison_badge-natural">
+            {% if section.settings.natural_badge_image %}
+              <img
+                src="{{ section.settings.natural_badge_image | image_url: width: 120 }}"
+                alt="{{ section.settings.natural_badge_alt }}"
+              >
+            {% else %}
+              <img src="{{ 'xmaison-badge-natural.png' | asset_url }}" alt="{{ section.settings.natural_badge_alt }}">
+            {% endif %}
+          </div>
+        </div>
+        <!-- Thumbnails Swiper -->
+        <div class="xmaison_gallery-thumbnails swiper" id="galleryThumbs">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide xmaison_thumbnail">
+                <img src="{{ image | image_url: width: 80 }}" alt="{{ product.title }}">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Navigation Buttons -->
+      <div class="xmaison_gallery-nav">
+        <button class="xmaison_gallery-nav-btn xmaison_gallery-prev" aria-label="Previous image">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="xmaison_gallery-nav-btn xmaison_gallery-next" aria-label="Next image">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Info (Mobile: shows third) -->
+    <div class="xmaison_product-info">
+      <!-- Product Description & Features -->
+      <div class="xmaison_product-header">
+        <p class="xmaison_product-description">
+          {{ product.description }}
+        </p>
+        <div class="xmaison_feature-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature_item' %}
+              <div class="xmaison_feature-item" {{ block.shopify_attributes }}>
+                {% case block.settings.icon_type %}
+                  {% when 'checkmark' %}
+                    {{ feature_icon_checkmark }}
+                  {% when 'star' %}
+                    {{ feature_icon_star }}
+                  {% when 'heart' %}
+                    {{ feature_icon_heart }}
+                  {% when 'lightning' %}
+                    {{ feature_icon_lightning }}
+                  {% when 'leaf' %}
+                    {{ feature_icon_leaf }}
+                {% endcase %}
+                <span class="xmaison_feature-text"
+                  ><strong>{{ block.settings.feature_text_bold }}</strong> {{ block.settings.feature_text_regular -}}
+                </span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Product Options -->
+      <div class="xmaison_product-options">
+        <!-- Flavor Selector -->
+        <div class="xmaison_option-group">
+          <div class="xmaison_option-label">
+            <span class="xmaison_option-label-title">Flavor</span>
+            <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
+          </div>
+          <div class="xmaison_flavor-select-wrapper">
+            <select class="xmaison_flavor-select" onchange="if(this.value) window.location.href = this.value;">
+              {% for flavor_product in section.settings.product_list %}
+                <option
+                  value="{{ flavor_product.url }}"
+                  {% if flavor_product.id == product.id %}
+                    selected
+                  {% endif %}
+                >
+                  {{ flavor_product.title | split: '-' | last | strip }}
+                </option>
+              {% endfor %}
+              {% if section.settings.product_list.size == 0 %}
+                <option value="" selected>{{ product.title | split: '-' | last | strip }}</option>
+              {% endif %}
+            </select>
+            <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Pack Size Selector -->
+        <div class="xmaison_pack-size-group">
+          <div class="xmaison_option-label">
+            <span class="xmaison_option-label-title">Pack Size:</span>
+            <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
+          </div>
+          <div class="xmaison_pack-options">
+            {% for block in section.blocks %}
+              {% if block.type == 'pack_option' %}
+                <div
+                  class="xmaison_pack-option"
+                  :class="{ 'xmaison_selected': quantity === {{ block.settings.bottle_count }} }"
+                  @click="quantity = {{ block.settings.bottle_count }}; currentPackDiscount = {{ block.settings.discount_multiplier | default: 1 }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="xmaison_pack-images">
+                    {% for i in (1..block.settings.bottle_count) %}
+                      <img
+                        class="xmaison_pack-image"
+                        src="{{ product.featured_image | image_url: width: 100 }}"
+                        alt="{{ block.settings.pack_name }}"
+                      >
+                    {% endfor %}
+                  </div>
+                  <div class="xmaison_pack-details">
+                    <span class="xmaison_pack-name">{{ block.settings.pack_name }}</span>
+                    {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
+                    {% if discount_multiplier < 1 %}
+                      <div class="xmaison_pack-badge">
+                        <span class="xmaison_pack-badge-text" x-text="'Save ' + formatMoney(getPackSavings({{ block.settings.bottle_count }}, {{ block.settings.discount_multiplier }}))"></span>
+                      </div>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.show_best_value %}
+                    <div class="xmaison_best-value-badge">
+                      <span class="xmaison_best-value-text">{{ section.settings.best_value_text }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Subscription Options -->
+        {% if section.settings.selling_plan_id != blank %}
+          <div class="xmaison_subscription-group">
+            <span class="xmaison_subscription-label">{{ section.settings.subscription_header_label }}</span>
+            <div class="xmaison_subscription-options">
+              <!-- Subscribe & Save Option -->
+              <div
+                class="xmaison_subscription-option xmaison_subscribe"
+                :class="{ 'xmaison_selected': isSubscription }"
+                @click="isSubscription = true"
+              >
+                <div class="xmaison_subscription-content">
+                  <div class="xmaison_subscription-header">
+                    <div class="xmaison_subscription-title-row">
+                      <span class="xmaison_subscription-title">{{ section.settings.subscribe_title }}</span>
+                      <div class="xmaison_save-badge">
+                        <span class="xmaison_save-badge-text">{{ section.settings.subscribe_save_badge }}</span>
+                      </div>
+                    </div>
+                    <div class="xmaison_price-row">
+                      <span class="xmaison_price-current" x-text="formatMoney(subscriptionPrice)"></span>
+                      <span class="xmaison_price-original" x-text="formatMoney(onetimePrice)"></span>
+                    </div>
+                  </div>
+                  <div class="xmaison_subscription-divider"></div>
+                  <div class="xmaison_subscription-benefits">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'subscription_benefit' %}
+                        <div class="xmaison_benefit-item" {{ block.shopify_attributes }}>
+                          {% case block.settings.icon_type %}
+                            {% when 'checkmark' %}
+                              {{ benefit_icon_checkmark }}
+                            {% when 'star' %}
+                              {{ benefit_icon_star }}
+                            {% when 'gift' %}
+                              {{ benefit_icon_gift }}
+                            {% when 'truck' %}
+                              {{ benefit_icon_truck }}
+                            {% when 'percent' %}
+                              {{ benefit_icon_percent }}
+                          {% endcase %}
+                          <span class="xmaison_benefit-text">{{ block.settings.benefit_text }}</span>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="xmaison_most-popular-tag">
+                  <span class="xmaison_most-popular-text">{{ section.settings.subscribe_popular_tag }}</span>
+                </div>
+              </div>
+
+              <!-- One-time Purchase -->
+              <div
+                class="xmaison_subscription-option xmaison_onetime"
+                :class="{ 'xmaison_selected': !isSubscription }"
+                @click="isSubscription = false"
+              >
+                <span class="xmaison_subscription-title">{{ section.settings.onetime_title }}</span>
+                <div class="xmaison_price-row">
+                  <span class="xmaison_price-current" x-text="formatMoney(onetimePrice)"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Add to Cart Section -->
+      <form
+        action="{{ routes.cart_add_url }}"
+        method="post"
+        class="xmaison_add-to-cart-section"
+        @submit.prevent="addToCart()"
+      >
+        <input type="hidden" name="id" :value="variantId">
+        <input type="hidden" name="quantity" :value="quantity">
+
+        <div class="xmaison_stock-status">
+          <span class="xmaison_stock-dot"></span>
+          <span class="xmaison_stock-text">
+            <span class="xmaison_in-stock">{{ section.settings.stock_status_text }}</span> -
+            {{ section.settings.shipping_text }}
+          </span>
+        </div>
+
+        <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading">
+          <span
+            class="xmaison_add-to-cart-text"
+            x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}'"
+          ></span>
+          <span class="xmaison_button-dot" x-show="!loading"></span>
+          <span class="xmaison_button-price" x-show="!loading" x-text="formatMoney(calculatedPrice)"></span>
+        </button>
+
+        <!-- Payment Methods -->
+        <div class="xmaison_payment-methods">
+          {% for payment_method in shop.enabled_payment_types %}
+            <div class="xmaison_payment-icon xmaison_{{ payment_method | handleize }}">
+              {{ payment_method | payment_type_svg_tag }}
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="xmaison_trust-badges">
+          {% for block in section.blocks %}
+            {% if block.type == 'trust_badge' %}
+              <div class="xmaison_trust-badge" {{ block.shopify_attributes }}>
+                {% case block.settings.icon_type %}
+                  {% when 'returns' %}
+                    {{ trust_icon_returns }}
+                  {% when 'shield' %}
+                    {{ trust_icon_shield }}
+                  {% when 'star_badge' %}
+                    {{ trust_icon_star_badge }}
+                  {% when 'truck' %}
+                    {{ trust_icon_truck }}
+                  {% when 'clock' %}
+                    {{ trust_icon_clock }}
+                  {% when 'guarantee' %}
+                    {{ trust_icon_guarantee }}
+                {% endcase %}
+                <span class="xmaison_trust-text">{{ block.settings.badge_text }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </form>
+
+      <!-- Accordions -->
+      <div class="xmaison_accordions">
+        {% for block in section.blocks %}
+          {% if block.type == 'accordion_item' %}
+            <div class="xmaison_accordion-item" {{ block.shopify_attributes }}>
+              <div class="xmaison_accordion-header">
+                <span class="xmaison_accordion-title">{{ block.settings.accordion_title }}</span>
+                <svg
+                  class="xmaison_accordion-toggle"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M5 10h10M10 5v10" stroke="#2F3936" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="xmaison_accordion-content">
+                {{ block.settings.accordion_content }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Customer Gallery -->
+      <div class="xmaison_customer-gallery">
+        <div class="xmaison_section-header">
+          <h3 class="xmaison_section-title">{{ section.settings.customer_gallery_title }}</h3>
+        </div>
+        <div class="xmaison_customer-videos">
+          {% for block in section.blocks %}
+            {% if block.type == 'customer_video' %}
+              {% if block.settings.video %}
+                <div
+                  class="xmaison_customer-video-thumb"
+                  {{ block.shopify_attributes }}
+                  @click="openVideoModal('video-{{ block.id }}')"
+                >
+                  {% if block.settings.thumbnail %}
+                    <img
+                      src="{{ block.settings.thumbnail | image_url: width: 200 }}"
+                      alt="{{ block.settings.alt_text }}"
+                    >
+                  {% else %}
+                    <img
+                      src="{{ block.settings.video.preview_image | image_url: width: 200 }}"
+                      alt="{{ block.settings.alt_text }}"
+                    >
+                  {% endif %}
+                  <div class="xmaison_video-play-overlay">
+                    <svg class="xmaison_play-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="23" fill="rgba(255,255,255,0.9)" stroke="white" stroke-width="2"/>
+                      <path d="M20 16l12 8-12 8V16z" fill="#2E432F"/>
+                    </svg>
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Video Modal -->
+      <div
+        class="xmaison_video-modal"
+        x-show="videoModalOpen"
+        x-transition.opacity
+        @click.self="closeVideoModal()"
+        x-cloak
+      >
+        <div class="xmaison_video-modal-content">
+          <button class="xmaison_video-modal-close" @click="closeVideoModal()">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          {% for block in section.blocks %}
+            {% if block.type == 'customer_video' and block.settings.video %}
+              <div class="xmaison_video-wrapper" x-show="activeVideoId === 'video-{{ block.id }}'">
+                {{ block.settings.video | video_tag: autoplay: true, loop: false, controls: true, muted: false }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="xmaison_related-products">
+        <div class="xmaison_related-header">
+          <h3 class="xmaison_related-title">{{ section.settings.related_products_title }}</h3>
+          <div class="xmaison_carousel-nav">
+            <button class="xmaison_carousel-btn xmaison_related-prev" aria-label="Previous">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#192F06" stroke-width="2"/>
+                <path d="M18 11l-5 5 5 5" stroke="#192F06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="xmaison_carousel-btn xmaison_related-next" aria-label="Next">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15" stroke="#192F06" stroke-width="2"/>
+                <path d="M14 11l5 5-5 5" stroke="#192F06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="xmaison_related-items swiper" id="relatedProducts">
+          <div class="swiper-wrapper">
+            {% for related_product in section.settings.related_products %}
+              <div class="swiper-slide xmaison_related-item" x-data="{ loadingRelated: false }">
+                <div class="xmaison_related-item-content">
+                  <div class="xmaison_related-item-image">
+                    {% if related_product.featured_image %}
+                      <img
+                        src="{{ related_product.featured_image | image_url: width: 150 }}"
+                        alt="{{ related_product.title }}"
+                      >
+                    {% else %}
+                      <img src="{{ 'xmaison-related-product.png' | asset_url }}" alt="{{ related_product.title }}">
+                    {% endif %}
+                  </div>
+                  <div class="xmaison_related-item-details">
+                    <span class="xmaison_related-item-name">{{ related_product.title }}</span>
+                    <div class="xmaison_related-item-rating">
+                      <div class="xmaison_related-stars">
+                        {% for i in (1..5) %}
+                          <svg
+                            class="xmaison_related-star"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M6 1l1.34 2.72 3 .44-2.17 2.11.51 2.99L6 7.81l-2.68 1.41.51-2.99L1.66 4.12l3-.44L6 1z" fill="#FF8C00"/>
+                          </svg>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="xmaison_related-item-price">
+                      {% if related_product.compare_at_price > related_product.price %}
+                        <span class="xmaison_related-price-current">{{ related_product.price | money }}</span>
+                        <span class="xmaison_related-price-original">
+                          {{- related_product.compare_at_price | money -}}
+                        </span>
+                      {% else %}
+                        <span class="xmaison_related-price-current">{{ related_product.price | money }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="xmaison_related-add-btn"
+                  :disabled="loadingRelated"
+                  @click="loadingRelated = true; setTimeout(() => { loadingRelated = false; }, 1000); addToCart({{ related_product.variants.first.id }}, 1)"
+                >
+                  <span
+                    class="xmaison_related-add-text"
+                    x-text="loadingRelated ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.related_add_button_text }}'"
+                  ></span>
+                </button>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Decoration -->
+<div class="xmaison_wave-decoration"></div>
+
+<!-- SwiperJS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Gallery Thumbnails Swiper
+    const galleryThumbs = new Swiper('#galleryThumbs', {
+      spaceBetween: 8,
+      slidesPerView: 6,
+      watchSlidesProgress: true,
+      loop: true,
+      direction: 'vertical',
+      breakpoints: {
+        0: {
+          direction: 'horizontal',
+          slidesPerView: 6,
+          spaceBetween: 8,
+        },
+        1100: {
+          direction: 'vertical',
+          slidesPerView: 6,
+          spaceBetween: 8,
+        },
+      },
+    });
+
+    // Gallery Main Swiper
+    const galleryMain = new Swiper('#galleryMain', {
+      spaceBetween: 0,
+      effect: 'fade',
+      loop: true,
+      fadeEffect: {
+        crossFade: true,
+      },
+      navigation: {
+        nextEl: '.xmaison_gallery-next',
+        prevEl: '.xmaison_gallery-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
+
+    // Related Products Swiper
+    const relatedProducts = new Swiper('#relatedProducts', {
+      spaceBetween: 18,
+      slidesPerView: 2,
+      navigation: {
+        nextEl: '.xmaison_related-next',
+        prevEl: '.xmaison_related-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.15,
+          spaceBetween: 12,
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 12,
+        },
+        1100: {
+          slidesPerView: 2,
+          spaceBetween: 18,
+        },
+      },
+    });
+
+    // Accordions
+    document.querySelectorAll('.xmaison_accordion-header').forEach((header) => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('xmaison_open');
+      });
+    });
+  });
+</script>

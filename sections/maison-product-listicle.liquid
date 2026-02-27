@@ -1,0 +1,823 @@
+{% schema %}
+{
+  "name": "Maison Product Listicle",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "A daily formula designed to support focus, energy, and mental clarity — made with functional mushrooms and botanicals."
+    },
+    {
+      "type": "header",
+      "content": "Rating Badge"
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Rating Score",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "rating_count",
+      "label": "Review Count",
+      "default": "8,450+"
+    },
+    {
+      "type": "header",
+      "content": "Natural Badge"
+    },
+    {
+      "type": "image_picker",
+      "id": "natural_badge_image",
+      "label": "Natural Badge Image"
+    },
+    {
+      "type": "text",
+      "id": "natural_badge_alt",
+      "label": "Natural Badge Alt Text",
+      "default": "100% Natural Ingredients"
+    },
+    {
+      "type": "header",
+      "content": "Flavor/Product List"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Flavor List",
+      "info": "Select the flavors/products to display. The first product will be selected by default."
+    },
+    {
+      "type": "header",
+      "content": "Pack Size Options"
+    },
+    {
+      "type": "text",
+      "id": "pack_size_label",
+      "label": "Pack Size Label",
+      "default": "30 Gummies"
+    },
+    {
+      "type": "text",
+      "id": "best_value_text",
+      "label": "Best Value Badge Text",
+      "default": "Best Value"
+    },
+    {
+      "type": "header",
+      "content": "Subscription Section"
+    },
+    {
+      "type": "text",
+      "id": "selling_plan_id",
+      "label": "Selling Plan ID",
+      "info": "The ID of the subscription selling plan. Leave blank to disable subscription options."
+    },
+    {
+      "type": "text",
+      "id": "subscription_multiplier",
+      "label": "Subscription Discount Multiplier",
+      "info": "Applied on top of pack discount. 0.8 = additional 20% off",
+      "default": "0.8"
+    },
+    {
+      "type": "checkbox",
+      "id": "subscription_default_selected",
+      "label": "Subscription Selected by Default",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subscribe_tab_label",
+      "label": "Subscribe Tab Label",
+      "default": "Subscribe & Save 20%"
+    },
+    {
+      "type": "text",
+      "id": "onetime_tab_label",
+      "label": "One-time Tab Label",
+      "default": "One-time purchase"
+    },
+    {
+      "type": "header",
+      "content": "Stock & Shipping"
+    },
+    {
+      "type": "text",
+      "id": "stock_status_text",
+      "label": "Stock Status Text",
+      "default": "In Stock"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping Text",
+      "default": "Ship on Sun from our Ohio warehouse"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to Cart Button Text",
+      "default": "Add To Cart"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_loading_text",
+      "label": "Add to Cart Loading Text",
+      "default": "Adding..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {
+              "value": "checkmark",
+              "label": "Checkmark Circle"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "lightning",
+              "label": "Lightning Bolt"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "feature_text_bold",
+          "label": "Bold Text",
+          "default": "Energizes"
+        },
+        {
+          "type": "text",
+          "id": "feature_text_regular",
+          "label": "Regular Text",
+          "default": "with a spark of tart pomegranate"
+        }
+      ]
+    },
+    {
+      "type": "pack_option",
+      "name": "Pack Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pack_name",
+          "label": "Pack Name",
+          "default": "1 Pack"
+        },
+        {
+          "type": "range",
+          "id": "bottle_count",
+          "label": "Number of Bottles to Display",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text (e.g., Save 10%)",
+          "info": "Leave empty for no badge"
+        },
+        {
+          "type": "text",
+          "id": "discount_multiplier",
+          "label": "Discount Multiplier",
+          "info": "1 = no discount, 0.9 = 10% off, 0.97 = 3% off",
+          "default": "1"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_default_selected",
+          "label": "Default Selected",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_best_value",
+          "label": "Show Best Value Tag",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "accordion_item",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "accordion_title",
+          "label": "Accordion Title",
+          "default": "Benefits & Ingredients"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_content",
+          "label": "Accordion Content",
+          "default": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Product Listicle",
+      "blocks": [
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Energizes",
+            "feature_text_regular": "with a spark of tart pomegranate"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Helps you focus",
+            "feature_text_regular": "during work"
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Supports mental",
+            "feature_text_regular": "clarity so you can get \"in the zone\""
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "1 Pack",
+            "bottle_count": 1,
+            "badge_text": "",
+            "discount_multiplier": "1",
+            "is_default_selected": false,
+            "show_best_value": false
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "2 Packs",
+            "bottle_count": 2,
+            "badge_text": "Save 10%",
+            "discount_multiplier": "0.9",
+            "is_default_selected": false,
+            "show_best_value": false
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "3 Packs",
+            "bottle_count": 3,
+            "badge_text": "Save 15%",
+            "discount_multiplier": "0.85",
+            "is_default_selected": true,
+            "show_best_value": true
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Benefits & Ingredients",
+            "accordion_content": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients including Lion's Mane Mushroom, Bacopa Monnieri, Ginkgo Biloba, and Vitamin B12.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "How to Enjoy",
+            "accordion_content": "<p>Take 2 gummies daily, preferably in the morning or early afternoon. For best results, take consistently for at least 4-6 weeks.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Endorsements",
+            "accordion_content": "<p>Recommended by over 500 healthcare professionals. Featured in Forbes, Well+Good, and mindbodygreen.</p>"
+          }
+        },
+        {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Shipping & Returns",
+            "accordion_content": "<p>Free shipping on orders over $50. Standard delivery takes 3-5 business days. We offer a 30-day money-back guarantee.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'maison-product-listicle.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Build products array from product_list {%- endcomment -%}
+<script>
+  window.listicleProducts = [
+    {% for product_item in section.settings.product_list %}
+      {
+        id: {{ product_item.id }},
+        title: {{ product_item.title | json }},
+        url: {{ product_item.url | json }},
+        description: {{ product_item.description | strip_html | truncate: 200 | json }},
+        price: {{ product_item.price }},
+        compare_at_price: {{ product_item.compare_at_price | default: 0 }},
+        featured_image: {{ product_item.featured_image | image_url: width: 600 | json }},
+        images: [
+          {% for image in product_item.images %}
+            {
+              src: {{ image | image_url: width: 600 | json }},
+              thumb: {{ image | image_url: width: 100 | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ],
+        variants: {{ product_item.variants | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  window.listicleDefaultQuantity = {% assign default_quantity = 1 %}{% for block in section.blocks %}{% if block.type == 'pack_option' and block.settings.is_default_selected %}{% assign default_quantity = block.settings.bottle_count %}{% endif %}{% endfor %}{{ default_quantity }};
+  
+  window.listiclePackPricing = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' %}
+        {{ block.settings.bottle_count }}: parseFloat("{{ block.settings.discount_multiplier }}") || 1,
+      {% endif %}
+    {% endfor %}
+  };
+  
+  window.listicleSellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
+  window.listicleSubscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
+  window.listicleSubscriptionDefault = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+</script>
+
+<script>
+  function maisonListicle() {
+    return {
+      products: window.listicleProducts || [],
+      selectedProductIndex: 0,
+      quantity: window.listicleDefaultQuantity || 1,
+      loading: false,
+      packPricing: window.listiclePackPricing || {},
+      isSubscription: window.listicleSubscriptionDefault,
+      sellingPlanId: window.listicleSellingPlanId,
+      subscriptionMultiplier: window.listicleSubscriptionMultiplier,
+      activeImageIndex: 0,
+
+      init() {
+        // Initialize Swiper after Alpine is ready
+        this.$nextTick(() => {
+          this.initSwipers();
+        });
+      },
+
+      initSwipers() {
+        if (typeof Swiper === 'undefined') return;
+        
+        // Gallery Thumbnails Swiper
+        this.galleryThumbs = new Swiper('#listicleGalleryThumbs', {
+          spaceBetween: 8,
+          slidesPerView: 6,
+          watchSlidesProgress: true,
+          direction: 'vertical',
+          breakpoints: {
+            0: {
+              direction: 'horizontal',
+              slidesPerView: 6,
+              spaceBetween: 8,
+            },
+            1100: {
+              direction: 'vertical',
+              slidesPerView: 6,
+              spaceBetween: 8,
+            },
+          },
+        });
+
+        // Gallery Main Swiper
+        this.galleryMain = new Swiper('#listicleGalleryMain', {
+          spaceBetween: 0,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          thumbs: {
+            swiper: this.galleryThumbs,
+          },
+        });
+      },
+
+      get currentProduct() {
+        return this.products[this.selectedProductIndex] || null;
+      },
+
+      get currentVariant() {
+        if (!this.currentProduct || !this.currentProduct.variants) return null;
+        return this.currentProduct.variants[0];
+      },
+
+      get variantId() {
+        return this.currentVariant?.id || null;
+      },
+
+      get discountMultiplier() {
+        const packDiscount = this.packPricing[this.quantity] || 1;
+        return this.isSubscription ? packDiscount * this.subscriptionMultiplier : packDiscount;
+      },
+
+      get calculatedPrice() {
+        if (!this.currentProduct) return 0;
+        const basePrice = this.currentVariant?.price || this.currentProduct.price;
+        return Math.round(basePrice * this.quantity * this.discountMultiplier);
+      },
+
+      get onetimePrice() {
+        if (!this.currentProduct) return 0;
+        const basePrice = this.currentVariant?.price || this.currentProduct.price;
+        const packDiscount = this.packPricing[this.quantity] || 1;
+        return Math.round(basePrice * this.quantity * packDiscount);
+      },
+
+      get subscriptionPrice() {
+        if (!this.currentProduct) return 0;
+        const basePrice = this.currentVariant?.price || this.currentProduct.price;
+        const packDiscount = this.packPricing[this.quantity] || 1;
+        return Math.round(basePrice * this.quantity * packDiscount * this.subscriptionMultiplier);
+      },
+
+      get flavorName() {
+        if (!this.currentProduct) return '';
+        // Extract flavor from title (assumes format "Product Name - Flavor")
+        const parts = this.currentProduct.title.split('-');
+        return parts.length > 1 ? parts[parts.length - 1].trim() : this.currentProduct.title;
+      },
+
+      selectProduct(index) {
+        this.selectedProductIndex = index;
+        this.activeImageIndex = 0;
+        // Update swipers after DOM updates with new product images
+        this.$nextTick(() => {
+          if (this.galleryThumbs) this.galleryThumbs.update();
+          if (this.galleryMain) this.galleryMain.update();
+          if (this.galleryMain) this.galleryMain.slideTo(0, 0);
+        });
+      },
+
+      formatMoney(cents) {
+        if (window.Shopify?.formatMoney) {
+          return Shopify.formatMoney(cents);
+        }
+        return (cents / 100).toLocaleString(undefined, { style: 'currency', currency: Shopify?.currency?.active || 'USD' });
+      },
+
+      addToCart() {
+        if (this.loading || !this.variantId) return;
+        this.loading = true;
+
+        const payload = { 
+          id: this.variantId, 
+          quantity: this.quantity 
+        };
+
+        // Add selling plan if subscription is selected and we have a selling plan ID
+        if (this.isSubscription && this.sellingPlanId) {
+          payload.selling_plan = this.sellingPlanId;
+        }
+        
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(() => {
+          if (typeof maisonDispatch === 'function') {
+            maisonDispatch('maison:cart-drawer-reload');
+            maisonDispatch('maison:cart-drawer-open');
+          }
+        }).finally(() => {
+          this.loading = false;
+        });
+      },
+    };
+  }
+</script>
+
+{%- comment -%} Snippet for rendering feature icons {%- endcomment -%}
+{%- capture feature_icon_checkmark -%}
+<div class="xxmaison_check-icon">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+    <path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+{%- endcapture -%}
+
+{%- capture feature_icon_star -%}
+<div class="xxmaison_check-icon">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+    <path d="M8 4l1 2 2.2.3-1.6 1.5.4 2.2L8 9l-2 1 .4-2.2-1.6-1.5L7 6l1-2z" fill="white"/>
+  </svg>
+</div>
+{%- endcapture -%}
+
+{%- capture feature_icon_heart -%}
+<div class="xxmaison_check-icon">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+    <path d="M8 12s-4-2.5-4-5c0-1.5 1-2.5 2.5-2.5S8 5.5 8 6c0-.5.5-1.5 1.5-1.5S12 5.5 12 7c0 2.5-4 5-4 5z" fill="white"/>
+  </svg>
+</div>
+{%- endcapture -%}
+
+{%- capture feature_icon_lightning -%}
+<div class="xxmaison_check-icon">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+    <path d="M9 4L6 9h2.5l-.5 3 3-5H8.5L9 4z" fill="white"/>
+  </svg>
+</div>
+{%- endcapture -%}
+
+{%- capture feature_icon_leaf -%}
+<div class="xxmaison_check-icon">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="7.5" fill="#2E432F"/>
+    <path d="M5 11c0-4 3-6 6-6-1 3-2 5-6 6zm0 0l1-1" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+{%- endcapture -%}
+
+<main x-data="maisonListicle()" x-init="init()" class="xxmaison_product-informations">
+  <!-- Section Title -->
+  <div class="xxmaison_section-title">
+    <div class="xxmaison_badge">
+      <div class="xxmaison_stars">
+        {% for i in (1..5) %}
+        <div class="xxmaison_star">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1.33334L10.06 5.50668L14.6667 6.18001L11.3333 9.42668L12.12 14.0133L8 11.8467L3.88 14.0133L4.66667 9.42668L1.33333 6.18001L5.94 5.50668L8 1.33334Z" fill="#FF8C00" stroke="#FF8C00" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="xxmaison_rating-text">
+        Rated <span class="xxmaison_rating-bold">{{ section.settings.rating_score }} <span class="xxmaison_rating-bold-mobile">based</span></span> on
+        <span class="xxmaison_rating-bold">{{ section.settings.rating_count }}</span> reviews.
+      </p>
+    </div>
+    <h1 class="xxmaison_main-title">Ready To <em>Start</em>?</h1>
+    <p class="xxmaison_subtitle">{{ section.settings.section_subtitle }}</p>
+  </div>
+
+  <!-- Content -->
+  <div class="xxmaison_content">
+    <!-- Product Image Section -->
+    <div class="xxmaison_product-image">
+      <div class="xxmaison_image-gallery">
+        <div class="xxmaison_thumbnail-column swiper" id="listicleGalleryThumbs">
+          <div class="swiper-wrapper">
+            <template x-if="currentProduct && currentProduct.images.length > 0">
+              <template x-for="(image, idx) in currentProduct.images" :key="idx">
+                <div class="swiper-slide xxmaison_thumbnail" :class="{ 'xxmaison_active': idx === activeImageIndex }">
+                  <img :src="image.thumb" :alt="currentProduct.title" width="80" height="80">
+                </div>
+              </template>
+            </template>
+          </div>
+        </div>
+        <div class="xxmaison_main-image-column swiper" id="listicleGalleryMain">
+          <div class="swiper-wrapper">
+            <template x-if="currentProduct && currentProduct.images.length > 0">
+              <template x-for="(image, idx) in currentProduct.images" :key="idx">
+                <div class="swiper-slide xxmaison_main-image">
+                  <img :src="image.src" :alt="currentProduct.title" width="600" height="600">
+                </div>
+              </template>
+            </template>
+          </div>
+          <div class="xxmaison_product-badge">
+            {% if section.settings.natural_badge_image %}
+              <img src="{{ section.settings.natural_badge_image | image_url: width: 90 }}" alt="{{ section.settings.natural_badge_alt }}" width="90" height="90" loading="lazy">
+            {% else %}
+              <img src="{{ 'xmaison-badge-natural.png' | asset_url }}" alt="{{ section.settings.natural_badge_alt }}" width="90" height="90" loading="lazy">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info Section -->
+    <div class="xxmaison_product-info">
+      <!-- Tabs -->
+      {% if section.settings.selling_plan_id != blank %}
+      <div class="xxmaison_tabs">
+        <div 
+          class="xxmaison_tab" 
+          :class="{ 'xxmaison_active': isSubscription }"
+          @click="isSubscription = true"
+        >
+          {{ section.settings.subscribe_tab_label }}
+        </div>
+        <div 
+          class="xxmaison_tab" 
+          :class="{ 'xxmaison_active': !isSubscription }"
+          @click="isSubscription = false"
+        >
+          {{ section.settings.onetime_tab_label }}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Product Description -->
+      <div class="xxmaison_product-description">
+        <!-- Main Card -->
+        <div class="xxmaison_product-card">
+          <div class="xxmaison_product-container">
+            <!-- Flavor Selection -->
+            <div class="xxmaison_flavor-section">
+              <div class="xxmaison_attribute-label">
+                <span class="xxmaison_label-bold">Flavor:</span>
+                <span class="xxmaison_label-light" x-text="flavorName"></span>
+              </div>
+              <div class="xxmaison_select-dropdown">
+                <div class="xxmaison_select-content">
+                  <span class="xxmaison_emoji">🍊</span>
+                  <select 
+                    class="xxmaison_select-text" 
+                    x-model.number="selectedProductIndex"
+                    @change="selectProduct(parseInt($event.target.value))"
+                    style="border: none; background: transparent; font: inherit; color: inherit; cursor: pointer; outline: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%;"
+                  >
+                    {% for product_item in section.settings.product_list %}
+                      <option value="{{ forloop.index0 }}">
+                        {{ product_item.title }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="xxmaison_chevron">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pack Size Selection -->
+            <div class="xxmaison_pack-size-section">
+              <div class="xxmaison_attribute-label">
+                <span class="xxmaison_label-bold">Pack Size:</span>
+                <span class="xxmaison_label-light"> {{ section.settings.pack_size_label }}</span>
+              </div>
+              <div class="xxmaison_pack-options">
+                {% for block in section.blocks %}
+                  {% if block.type == 'pack_option' %}
+                    <div 
+                      class="xxmaison_pack-card"
+                      :class="{ 'xxmaison_selected': quantity === {{ block.settings.bottle_count }} }"
+                      @click="quantity = {{ block.settings.bottle_count }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% if block.settings.show_best_value %}
+                        <div class="xxmaison_best-value-badge">{{ section.settings.best_value_text | upcase }}</div>
+                      {% endif %}
+                      <div class="xxmaison_pack-images">
+                        {% for i in (1..block.settings.bottle_count) %}
+                          <img 
+                            class="xxmaison_pack-image"
+                            :src="currentProduct?.featured_image || ''" 
+                            :alt="'{{ block.settings.pack_name }}'"
+                            width="58"
+                            height="58"
+                          >
+                        {% endfor %}
+                      </div>
+                      <div class="xxmaison_pack-info">
+                        <span class="xxmaison_pack-name">{{ block.settings.pack_name }}</span>
+                        {% if block.settings.badge_text != blank %}
+                          <div class="xxmaison_save-badge">{{ block.settings.badge_text }}</div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- Stock Status & CTA -->
+            <div class="xxmaison_cta-section">
+              <div class="xxmaison_stock-status">
+                <div class="xxmaison_stock-dot"></div>
+                <p class="xxmaison_stock-text">
+                  <span class="xxmaison_in-stock">{{ section.settings.stock_status_text }}</span><span class="xxmaison_stock-separator"> - </span>{{ section.settings.shipping_text }}
+                </p>
+              </div>
+              <button 
+                class="xxmaison_add-to-cart"
+                :disabled="loading || !variantId"
+                @click="addToCart()"
+              >
+                <span class="xxmaison_btn-text-desktop" x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }} — ' + formatMoney(calculatedPrice)"></span>
+                <span class="xxmaison_btn-text-mobile" x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}'"></span>
+                <div class="xxmaison_button-dot" x-show="!loading"></div>
+                <span class="xxmaison_btn-price-mobile" x-show="!loading" x-text="formatMoney(calculatedPrice)"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Benefits List -->
+          <div class="xxmaison_benefits-list">
+            {% for block in section.blocks %}
+              {% if block.type == 'feature_item' %}
+                <div class="xxmaison_benefit-item" {{ block.shopify_attributes }}>
+                  {% case block.settings.icon_type %}
+                    {% when 'checkmark' %}
+                      {{ feature_icon_checkmark }}
+                    {% when 'star' %}
+                      {{ feature_icon_star }}
+                    {% when 'heart' %}
+                      {{ feature_icon_heart }}
+                    {% when 'lightning' %}
+                      {{ feature_icon_lightning }}
+                    {% when 'leaf' %}
+                      {{ feature_icon_leaf }}
+                  {% endcase %}
+                  <p class="xxmaison_benefit-text">
+                    <span class="xxmaison_benefit-bold">{{ block.settings.feature_text_bold }}</span> {{ block.settings.feature_text_regular }}
+                  </p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Accordions -->
+        <div class="xxmaison_accordions">
+          {% for block in section.blocks %}
+            {% if block.type == 'accordion_item' %}
+              <div class="xxmaison_accordion-item" {{ block.shopify_attributes }}>
+                <div class="xxmaison_accordion-header">
+                  <span class="xxmaison_accordion-title">{{ block.settings.accordion_title }}</span>
+                  <svg class="xxmaison_accordion-toggle" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 10h10M10 5v10" stroke="#2F3936" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="xxmaison_accordion-content">
+                  {{ block.settings.accordion_content }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% render 'listicle-sticky-atc', section: section %}
+
+<!-- SwiperJS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Accordions
+    document.querySelectorAll('.xxmaison_product-informations .xxmaison_accordion-header').forEach((header) => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('xxmaison_open');
+      });
+    });
+  });
+</script>

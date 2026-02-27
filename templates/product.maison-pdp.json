@@ -1,0 +1,1402 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumbs_PydcAB": {
+          "type": "breadcrumbs",
+          "settings": {
+            "title_home": "Home",
+            "text_transform": "none",
+            "text_size": 12,
+            "spacing": 1,
+            "padding_top": 0,
+            "padding_top_mb": 0,
+            "padding_bottom": 0,
+            "margin_top": 0,
+            "margin_bottom": 16
+          }
+        },
+        "title_Fnnnm3": {
+          "type": "title",
+          "settings": {
+            "title_size_dt": 24,
+            "title_size_mb": 24,
+            "title_line_height": 1.1,
+            "title_text_transform": "uppercase",
+            "title_letter_spacing": 1,
+            "title_font_weight": 400
+          }
+        },
+        "review_mMj4kD": {
+          "type": "review",
+          "settings": {
+            "lrw_text": "4.8 From 136 Reviews",
+            "text_size": 12,
+            "star_style": "star_bg_2",
+            "star_size": 0.7,
+            "star_rating": 4.5,
+            "lrw_star_color": "#08864e",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_color": "#000000",
+            "margin_top": 12,
+            "margin_bottom": 24
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "hide_tax_shipping": true,
+            "reverse_price": true,
+            "save_text_size": 12,
+            "price_weight": "bold",
+            "price_text_size": 20,
+            "price_text_size_mb": 20,
+            "compare_price": "#868686",
+            "original_price": "#bc1e1e",
+            "show_save_price": true,
+            "save_text": "#ffffff",
+            "save_bg": "#bc1e1e",
+            "save_border": "#bc1e1e",
+            "save_border_thickness": 1,
+            "save_corner_radius": 0,
+            "save_shadow_opacity": 0,
+            "save_shadow_horizontal_offset": 2,
+            "save_shadow_vertical_offset": 2,
+            "save_shadow_blur": 0
+          }
+        },
+        "variant_picker_LNQHHR": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "label_style": "subtitle",
+            "font_size": 12,
+            "font_style": "bold",
+            "swatch_type": "variant_image",
+            "swatch_shape": "square",
+            "swatch_size": 6,
+            "swatch_image_height": "portrait",
+            "swatch_image_custom_radius_value": 0,
+            "size_trigger": "",
+            "chart_id": "Size Chart",
+            "size_page": "",
+            "size_icon": "hanger",
+            "spaced_size": false
+          }
+        },
+        "text_benefits_MezAmm": {
+          "type": "text_benefits",
+          "disabled": true,
+          "settings": {
+            "benefits": "<p>✨ <strong>Body Scrub</strong> included for the next <strong>7 </strong>orders!</p>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "skip_cart": false,
+            "button_padding_top": 12,
+            "button_padding_bottom": 12,
+            "button_custom_style": false,
+            "button_font_size": 24,
+            "button_height": 60,
+            "lm_main_button": "#000000",
+            "lm_main_button_gr": "",
+            "lm_main_text": "#ffffff",
+            "lm_main_text_hover": "#0b57d0",
+            "lm_main_button_hover": "#ffffff",
+            "lm_main_button_gr_hover": "",
+            "lm_main_button_border_width": 0,
+            "lm_main_button_border_color": "#000000"
+          }
+        },
+        "payment_pcDBqV": {
+          "type": "payment",
+          "settings": {
+            "original": "custom",
+            "payment_icon": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
+            "payment_content_alignment": "center",
+            "custom_icon_1_width": 34,
+            "custom_icon_2_width": 34,
+            "custom_icon_3_width": 34
+          }
+        },
+        "feature_4LXVTq": {
+          "type": "feature",
+          "settings": {
+            "alignment": "center",
+            "show_icon": true,
+            "icon_size": 20,
+            "heading": "",
+            "heading_size": 20,
+            "text": "<p><strong>Bestel vóór 23:59</strong> — morgen in huis (NL/BE)</p>",
+            "text_size": 14,
+            "background_color": "",
+            "inner_padding": 0,
+            "border_radius": 0,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_qcaUE7": {
+          "type": "feature",
+          "settings": {
+            "alignment": "center",
+            "show_icon": true,
+            "icon_size": 20,
+            "heading": "",
+            "heading_size": 20,
+            "text": "<p><strong>14 Dagen Garantie</strong> — Gratis Retourneren & Ruilen</p>",
+            "text_size": 14,
+            "background_color": "",
+            "inner_padding": 0,
+            "border_radius": 0,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "feature_TPpkrj": {
+          "type": "feature",
+          "settings": {
+            "alignment": "center",
+            "show_icon": true,
+            "icon_size": 20,
+            "heading": "",
+            "heading_size": 20,
+            "text": "<p><strong>Koop Nu, Betaal Later</strong> — met Klarna</p>",
+            "text_size": 14,
+            "background_color": "",
+            "inner_padding": 0,
+            "border_radius": 0,
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "collapsible_tab_ptCdTk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specificaties",
+            "icon": "none",
+            "content": "<p>If you're unhappy with your purchase, we'll find a solution for you. Most of our products can be returned within 365 days. All returns are subject to a $9.95 return fee deducted from your refund amount. Returns will be refunded to the original payment method or as a store credit. We do our best to make you comfortable, because let's face it, you're the best.</p>",
+            "page": "",
+            "open_by_default": false,
+            "show_product_description": false
+          }
+        },
+        "collapsible_tab_EBKNVc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Materiaal & Care",
+            "icon": "none",
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "page": "",
+            "open_by_default": false,
+            "show_product_description": false
+          }
+        },
+        "collapsible_tab_j8XPyz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Verzending",
+            "icon": "none",
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "page": "",
+            "open_by_default": false,
+            "show_product_description": false
+          }
+        },
+        "collapsible_tab_zf8ijz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Retour & Ruil",
+            "icon": "none",
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "page": "",
+            "open_by_default": false,
+            "show_product_description": false
+          }
+        },
+        "usp_rbUihm": {
+          "type": "usp",
+          "settings": {
+            "usp_1_text": "Fast Shipping",
+            "usp_1_icon": "truck",
+            "usp_2_text": "24/7 support",
+            "usp_2_icon": "chat_bubble",
+            "usp_3_text": "",
+            "usp_3_icon": "none",
+            "padding_top": 16,
+            "padding_bottom": 0,
+            "font_size_desktop": 12,
+            "font_size_mobile": 12,
+            "border_radius": 100,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_width": 1,
+            "border_color": "#e5e5e5"
+          }
+        },
+        "trust_feature_xnRc3U": {
+          "type": "trust-feature",
+          "settings": {
+            "trust_alignment": "center",
+            "layout_mode": "auto",
+            "hide_icon_1": false,
+            "icon_size_1": 36,
+            "heading_1": "Free Shipping",
+            "heading_size_1": 12,
+            "text_1": "<p>First feature description</p>",
+            "text_size_1": 10,
+            "show_background_1": true,
+            "background_1": "#f2f2f2",
+            "border_color_1": "#e5e5e5",
+            "border_radius_1": 8,
+            "hide_second_feature": false,
+            "hide_icon_2": false,
+            "icon_size_2": 36,
+            "heading_2": "24/7 Support",
+            "heading_size_2": 12,
+            "text_2": "<p>Free Global Shipping</p>",
+            "text_size_2": 10,
+            "show_background_2": true,
+            "background_2": "#f2f2f2",
+            "border_color_2": "#e5e5e5",
+            "border_radius_2": 8,
+            "padding_top": 4,
+            "padding_bottom": 24
+          }
+        },
+        "lumin_cross_sells_PdKwRH": {
+          "type": "lumin-cross-sells",
+          "settings": {
+            "metafield": "custom.cross_sells",
+            "color_scheme": "scheme-1",
+            "hue_rotate": 0,
+            "container_border_radius": 0,
+            "img_ratio": "ratio-1x1",
+            "img_border_radius": 0,
+            "btn_style": "button--primary",
+            "title": "Frequently Bought Together",
+            "title_font_size": "fs-lg",
+            "title_text_style": "body",
+            "description": "<p>Save up to 50% with one click!</p>",
+            "description_font_size": "fs-sm"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_PydcAB",
+        "title_Fnnnm3",
+        "review_mMj4kD",
+        "price",
+        "variant_picker_LNQHHR",
+        "text_benefits_MezAmm",
+        "buy_buttons",
+        "payment_pcDBqV",
+        "feature_4LXVTq",
+        "feature_qcaUE7",
+        "feature_TPpkrj",
+        "collapsible_tab_ptCdTk",
+        "collapsible_tab_EBKNVc",
+        "collapsible_tab_j8XPyz",
+        "collapsible_tab_zf8ijz",
+        "usp_rbUihm",
+        "trust_feature_xnRc3U",
+        "lumin_cross_sells_PdKwRH"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "no_scroll": false,
+        "show_feature_image_first": false,
+        "color_scheme": "background-1",
+        "block_padding": 2,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "vertical_left",
+        "hide_slider_buttons": false,
+        "thumbnail_layout": "medium",
+        "thumbnail_size": 54,
+        "thumbnail_radius": 4,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "variant_image_filtering": "none",
+        "filtering_products": [],
+        "mobile_thumbnails": "show",
+        "mobile_slider_height": "portrait",
+        "show_full_image": false,
+        "first_image_size": 100,
+        "second_image_size": 6,
+        "show_container": false,
+        "container_bg": "#ffffff",
+        "container_radius": 10,
+        "container_padding": 20,
+        "container_border_color": "#f2f2f2",
+        "show_container_mb": false,
+        "container_bg_mb": "#ffffff",
+        "container_padding_mb": 20,
+        "container_radius_mb": 8,
+        "container_border_color_mb": "#e6e6e6",
+        "container_text": "This Offer is<strong> For Limited Time </strong><em>Only</em>",
+        "container_text_size": 12,
+        "container_text_bg": "#f9f9f9",
+        "container_text_txt": "#000000",
+        "container_text_animation": true,
+        "container_text_speed": 20,
+        "padding_top": 24,
+        "padding_top_mb": 0,
+        "padding_bottom": 24
+      }
+    },
+    "maison_badge_list_Qxnb7C": {
+      "type": "maison-badge-list",
+      "blocks": {
+        "badge_zwkR7p": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/d8cd28fb22f312155b752637943afe350db7036d.png",
+            "text": "Clean ingredients"
+          }
+        },
+        "badge_XzA84J": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/26bc59e340dc58569c8efeeb2091789969e37832.png",
+            "text": "Cruelty-free"
+          }
+        },
+        "badge_VdXCPA": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/c0b35978375cf02685a3f7ef5d5069d7acd49efd.png",
+            "text": "Vegan"
+          }
+        },
+        "badge_RyTNBC": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/64d4a7de2795f4afe05b57e9ae50b43032184876.png",
+            "text": "Gluten-free"
+          }
+        },
+        "badge_W6YAML": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/b3b5486257dbd7b8b0d2c7d5a183444c9d28273b.png",
+            "text": "Low Sugar"
+          }
+        },
+        "badge_pYKmeY": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/98188caf971591385ed68a2fc9868d203a599554.png",
+            "text": "Non-GMO"
+          }
+        },
+        "badge_XdHaqJ": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/4d3fc75f875f145cd607b91cd385a233274980d4.png",
+            "text": "No fillers"
+          }
+        }
+      },
+      "block_order": [
+        "badge_zwkR7p",
+        "badge_XzA84J",
+        "badge_VdXCPA",
+        "badge_RyTNBC",
+        "badge_W6YAML",
+        "badge_pYKmeY",
+        "badge_XdHaqJ"
+      ],
+      "name": "Maison Badge List",
+      "settings": {
+        "padding_top_desktop": 18,
+        "padding_bottom_desktop": 18,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#2e432f",
+        "badge_text_font_size_desktop": 16,
+        "badge_text_font_size_mobile": 14,
+        "badge_text_color": "#ffffff",
+        "icon_size_desktop": 32,
+        "icon_size_mobile": 24,
+        "badge_gap_desktop": 8,
+        "badge_gap_mobile": 18,
+        "icon_text_gap": 12
+      }
+    },
+    "maison_ingredients_qqPath": {
+      "type": "maison-ingredients",
+      "blocks": {
+        "ingredient_i7pVmw": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/b7e9d0e7ec0c7432778b8f14fcd5b180bf0754fc.png",
+            "title": "Collagen",
+            "description": "<p>BPA and phthalates in plastic containers can disrupt hormone balance and raise estrogen levels with each sip.</p>"
+          }
+        },
+        "ingredient_gjpDeQ": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/f942eeaa847b62d50e2f4d9fb3d751e52fcb0e99.png",
+            "title": "Vitamin E, B5 + B12",
+            "description": "<p>Vitamins E, B5, and B12 nourish hair, skin, and nails, enhancing moisture and resilience for a healthy glow.</p>"
+          }
+        },
+        "ingredient_9TnYeE": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/00ac1f7cbd08f5d132e938210ed3138de0f8872b.png",
+            "title": "Reishi Mushroom",
+            "description": "<p>Reishi, the \"Mushroom of Immortality,\" is prized for its antioxidants that support hydration and overall scalp health.</p>"
+          }
+        },
+        "ingredient_4Unex6": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/c1cddd0602091497e5de9bf79ee3b699c52b3606.png",
+            "title": "Tremella Mushroom",
+            "description": "<p>Mucuna Pruriens promotes better mood by enhancing dopamine synthesis & serotonin signaling.</p>"
+          }
+        },
+        "ingredient_jYaAeN": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/ff2132d978271631b144dff88e1a2c531a1baaee.png",
+            "title": "Vitamin C",
+            "description": "<p>Vitamin C aids collagen production, maintaining skin glow and benefiting hair and nails.</p>"
+          }
+        },
+        "ingredient_YfKYnG": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/3bc91014b647e25b9640f9594121671069d28f50.png",
+            "title": "Biotin",
+            "description": "<p>Biotin supports strong hair, healthy skin, and resilient nails - promoting growth, repair, and your natural glow.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_i7pVmw",
+        "ingredient_gjpDeQ",
+        "ingredient_9TnYeE",
+        "ingredient_4Unex6",
+        "ingredient_jYaAeN",
+        "ingredient_YfKYnG"
+      ],
+      "name": "Maison Ingredients",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "heading": "Premium Ingredients",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#2f3936",
+        "subtitle": "Complete Mushroom and Botanical Formula for Your Natural Glow",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#2f3936",
+        "cta_text": "Get My Gummies",
+        "cta_url": "",
+        "cta_bg_color": "#c4fcb8",
+        "cta_text_color": "#2e432f",
+        "cta_font_size_desktop": 14,
+        "cta_font_size_mobile": 14,
+        "card_gap_desktop": 18,
+        "card_gap_mobile": 12,
+        "card_bg_color": "#f8faf3",
+        "card_border_radius": 16,
+        "card_padding_desktop": 24,
+        "card_padding_mobile": 18,
+        "card_title_font_size_desktop": 20,
+        "card_title_font_size_mobile": 18,
+        "card_title_color": "#2f3936",
+        "card_text_font_size_desktop": 18,
+        "card_text_font_size_mobile": 14,
+        "card_text_color": "#2f3936",
+        "image_size_desktop": 220,
+        "image_size_mobile": 80
+      }
+    },
+    "maison_introducing_DidygV": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_9krNK3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Energy_710c22ba-5c01-4a4b-99b8-381443b6d42a.svg",
+            "title": "Sustained Energy",
+            "description": "Real coffee + 20g protein = no crash, no jitters"
+          }
+        },
+        "feature_kmFwV8": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Nutrition.svg",
+            "title": "Complete Nutrition",
+            "description": "Protein, caffeine, superfoods, micronutrients in one cup"
+          }
+        },
+        "feature_cN9meJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Union.svg",
+            "title": "Effortless Routine",
+            "description": "Replaces breakfast + coffee in 60 seconds"
+          }
+        },
+        "trust_badge_CbdKTU": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
+            "text": "GMP-Certified Facility"
+          }
+        },
+        "trust_badge_6HNUcm": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/la_flag-usa.svg",
+            "text": "Made in USA"
+          }
+        },
+        "trust_badge_NXqHRM": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
+            "text": "Organically Grown Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9krNK3",
+        "feature_kmFwV8",
+        "feature_cN9meJ",
+        "trust_badge_CbdKTU",
+        "trust_badge_6HNUcm",
+        "trust_badge_NXqHRM"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "product_image_desktop": "shopify://shop_images/75e75d0e70c68100a94b3e3fd5b58f6be913c894.png",
+        "badge_image": "shopify://shop_images/Badge.png",
+        "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
+        "social_proof_text": "Join",
+        "social_proof_count": "8,450+ people",
+        "social_proof_suffix": "who've reclaimed their masculinity",
+        "avatar_1": "shopify://shop_images/Users-Img-1.png",
+        "avatar_2": "shopify://shop_images/Users-Img-2.png",
+        "avatar_3": "shopify://shop_images/Users-Img-3.png",
+        "button_text": "Take Control of My Mood",
+        "button_link": "#",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2c2926",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#2f3936",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#2f3936",
+        "button_bg_color": "#cbfdc1",
+        "button_text_color": "#2e432f",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#2c2c2c"
+      }
+    },
+    "maison_scroll_img_wDAFGb": {
+      "type": "maison-scroll-img",
+      "blocks": {
+        "logo_znBWgf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/ecf7c4f664bf214c63d8f40c75bc3842ec855e75.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        },
+        "logo_jG7Eim": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/d5e23ff44dcfbfdf4c14bad658bc6752ad20338d.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        },
+        "logo_ya46Qh": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/1216f1937143dd0c29fb744ddf4b21ef9e9c6fee.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        },
+        "logo_gGdYBR": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/84fcdd90d58a5f904fa6bec39ec7392411a29172.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        },
+        "logo_3Hnj8f": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/68825e751120d37ebb2535884d7802de4726ad99.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        },
+        "logo_Y4mnrW": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/2e0249e942963ea944e876c532627fee9ac503c1.png",
+            "logo_alt": "",
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_znBWgf",
+        "logo_jG7Eim",
+        "logo_ya46Qh",
+        "logo_gGdYBR",
+        "logo_3Hnj8f",
+        "logo_Y4mnrW"
+      ],
+      "name": "Maison Scroll Images",
+      "settings": {
+        "section_bg_color": "#faf6ab",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 22,
+        "padding_bottom_mobile": 22,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "scroll_duration": 30,
+        "scroll_duration_mobile": 30,
+        "pause_on_hover": false,
+        "logo_height_desktop": 60,
+        "logo_height_mobile": 45,
+        "logo_gap_desktop": 50,
+        "logo_gap_mobile": 38
+      }
+    },
+    "maison_difference_MjnCfW": {
+      "type": "maison-difference",
+      "blocks": {
+        "comparison_YHd97V": {
+          "type": "comparison",
+          "settings": {
+            "title": "Coffee",
+            "image": "shopify://shop_images/Rectangle_4927.png",
+            "icon_type": "x",
+            "icon_bg_color": "#d6e1b7",
+            "icon_x_bg_color": "#d6e1b7"
+          }
+        },
+        "point_nfcB3t": {
+          "type": "point",
+          "settings": {
+            "text": "Can cause major crashes or jitters",
+            "parent_block": "Coffee"
+          }
+        },
+        "point_VLpVQJ": {
+          "type": "point",
+          "settings": {
+            "text": "Bitter, acidic taste",
+            "parent_block": "Coffee"
+          }
+        },
+        "point_crJfeF": {
+          "type": "point",
+          "settings": {
+            "text": "Only caffeine stimulation – focus fades",
+            "parent_block": "Coffee"
+          }
+        },
+        "point_xUadRa": {
+          "type": "point",
+          "settings": {
+            "text": "Just coffee, nothing else",
+            "parent_block": "Coffee"
+          }
+        },
+        "point_mkLEmQ": {
+          "type": "point",
+          "settings": {
+            "text": "Dehydrates, stains teeth, upsets stomach",
+            "parent_block": "Coffee"
+          }
+        },
+        "comparison_BrXD9X": {
+          "type": "comparison",
+          "settings": {
+            "title": "MOJO gummies",
+            "image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
+            "icon_type": "check",
+            "icon_bg_color": "#b9fcab",
+            "icon_x_bg_color": "#d6e1b7"
+          }
+        },
+        "point_jBF83D": {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Zero</strong> crash or jitters",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        "point_VQKVyM": {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Delicious</strong> gummy taste",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        "point_qwCAeF": {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Energy</strong> and focus support",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        "point_XAanp7": {
+          "type": "point",
+          "settings": {
+            "text": "<strong>Super blend</strong> (mushrooms, nootropics)",
+            "parent_block": "MOJO gummies"
+          }
+        },
+        "point_pmNhWg": {
+          "type": "point",
+          "settings": {
+            "text": "Clean, portable, <strong>anytime</strong>",
+            "parent_block": "MOJO gummies"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_YHd97V",
+        "point_nfcB3t",
+        "point_VLpVQJ",
+        "point_crJfeF",
+        "point_xUadRa",
+        "point_mkLEmQ",
+        "comparison_BrXD9X",
+        "point_jBF83D",
+        "point_VQKVyM",
+        "point_qwCAeF",
+        "point_XAanp7",
+        "point_pmNhWg"
+      ],
+      "name": "Maison Difference",
+      "settings": {
+        "section_bg_color": "#f8faf3",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_left_desktop": 44,
+        "padding_right_desktop": 44,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 16,
+        "padding_left_mobile": 12,
+        "padding_right_mobile": 12,
+        "heading": "<p>Why Coffee Alone Sabotages <em>Your Energy</em></p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2f3936",
+        "subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#2f3936",
+        "vs_font_size_desktop": 56,
+        "vs_font_size_mobile": 40,
+        "vs_color": "#2f3936",
+        "card_bg_color": "#ffffff",
+        "card_border_radius": 16,
+        "card_padding_desktop": 32,
+        "card_padding_mobile": 24,
+        "card_gap_desktop": 40,
+        "card_gap_mobile": 18,
+        "card_title_font_size_desktop": 18,
+        "card_title_font_size_mobile": 12,
+        "card_title_color": "#2f3936",
+        "point_font_size_desktop": 16,
+        "point_font_size_mobile": 12,
+        "point_text_color": "#2f3936",
+        "image_size_desktop": 200,
+        "image_size_mobile": 86
+      }
+    },
+    "maison_video_review_UWqfGU": {
+      "type": "maison-video-review",
+      "blocks": {
+        "video_hGCtPz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/c55b8a79d3114f848fc666bf2416adb9.mp4"
+          }
+        },
+        "video_b6CnWJ": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/b1982d1db55b4a0ba074b369ff97af42.mp4"
+          }
+        },
+        "video_E6NaUR": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/e5606a2f292e4cab951931a0a59cf051.mp4"
+          }
+        },
+        "video_hnYthk": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/0ee371384c5c495cb1b2498bf9107b78.mp4"
+          }
+        },
+        "video_B8bWKa": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/e88d5a6410184e80b82edc4400907de5.mp4"
+          }
+        },
+        "video_tKJnhR": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/546abc0ae8d74bfc9e32aff597fcc220.mp4"
+          }
+        },
+        "video_3bqHpK": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/1e7b1a1281a84b0aafb5fa93ca94bdf5.mp4"
+          }
+        },
+        "review_FT7eUG": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_z3MKXm": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_FpXG9p": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE set me up with a routine that totally fits my life better than any strict plan ever could.\"</p>",
+            "reviewer_name": "Patty, 48",
+            "verified_buyer": true
+          }
+        },
+        "review_UATFJa": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "reviewer_name": "Patty, 48",
+            "verified_buyer": true
+          }
+        },
+        "review_WyUFjR": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts!\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_fLFXEj": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_4LdLKr": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_W6bmRm": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "reviewer_name": "Verified Buyer",
+            "verified_buyer": true
+          }
+        },
+        "review_KbXRfR": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_XLdtjw": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        }
+      },
+      "block_order": [
+        "video_hGCtPz",
+        "video_b6CnWJ",
+        "video_E6NaUR",
+        "video_hnYthk",
+        "video_B8bWKa",
+        "video_tKJnhR",
+        "video_3bqHpK",
+        "review_FT7eUG",
+        "review_z3MKXm",
+        "review_FpXG9p",
+        "review_UATFJa",
+        "review_WyUFjR",
+        "review_fLFXEj",
+        "review_4LdLKr",
+        "review_W6bmRm",
+        "review_KbXRfR",
+        "review_XLdtjw"
+      ],
+      "name": "Maison Video Review",
+      "settings": {
+        "section_bg_gradient": "linear-gradient(180deg, rgba(234, 240, 219, 1), rgba(255, 255, 255, 1) 100%)",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "heading": "<p>Join The Productivity</p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2e432f",
+        "overall_rating": 4.8,
+        "review_count": "8,450+",
+        "star_color": "#ff8c00",
+        "rating_font_size_desktop": 14,
+        "rating_font_size_mobile": 14,
+        "rating_text_color": "#2e432f",
+        "video_gap_desktop": 18,
+        "video_gap_mobile": 12,
+        "video_border_radius": 18,
+        "video_padding": 12,
+        "play_button_bg_color": "#faf59b",
+        "play_button_size": 50,
+        "card_gap_desktop": 18,
+        "card_gap_mobile": 12,
+        "card_width_desktop": 342,
+        "card_width_mobile": 256
+      }
+    },
+    "maison_faq_badge_CYbCih": {
+      "type": "maison-faq-badge",
+      "blocks": {
+        "badge_M3HHGc": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/Flash-1--Streamline-Ultimate.svg",
+            "title": "Fuel Your Body",
+            "description": "<p><strong>20g</strong> premium protein prevents the blood sugar rollercoaster. Stay satisfied for hours.</p>"
+          }
+        },
+        "badge_cMHVra": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/Empathy-Authentication-Heart-Inside--Streamline-Ultimate.svg",
+            "title": "Energize Your Mind",
+            "description": "<p><strong>150mg</strong> natural caffeine provides mental clarity without anxiety.</p>"
+          }
+        },
+        "badge_8rLwjC": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/Feedback-1--Streamline-Ultimate.svg",
+            "title": "Support Your Performance",
+            "description": "<p>MCTs, adaptogens, collagen boost metabolism and mental clarity.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_M3HHGc",
+        "badge_cMHVra",
+        "badge_8rLwjC"
+      ],
+      "name": "Maison FAQ Badge",
+      "settings": {
+        "heading": "<p>The Science Behind <em>Sustained Energy</em></p>",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 52,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "bg_color_start": "#ffffff",
+        "bg_color_end": "#fdfbdd",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2e432f",
+        "card_padding": 24,
+        "card_border_radius": 24,
+        "card_gap_desktop": 24,
+        "card_gap_mobile": 24,
+        "icon_size_desktop": 80,
+        "icon_size_mobile": 52,
+        "icon_content_gap_desktop": 32,
+        "icon_content_gap_mobile": 18,
+        "title_description_gap": 12,
+        "title_font_size_desktop": 20,
+        "title_font_size_mobile": 18,
+        "title_color": "#2f3936",
+        "description_font_size_desktop": 18,
+        "description_font_size_mobile": 14,
+        "description_color": "#2c2926bf",
+        "background_ball_image": "shopify://shop_images/Group_5126.png"
+      }
+    },
+    "maison_faq_kDGU3k": {
+      "type": "maison-faq",
+      "blocks": {
+        "faq_item_CUU6EW": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much protein per serving?",
+            "answer": "<p>Each serving delivers 25g of premium whey protein isolate - the optimal amount for muscle recovery, sustained satiety, and metabolic support. This is equivalent to eating 4 eggs or a 4oz chicken breast, but infinitely more convenient.</p>"
+          }
+        },
+        "faq_item_LKK3EP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this make me jittery?",
+            "answer": "<p>No. Unlike regular coffee that spikes your system, AROSE combines 150mg of natural caffeine with 25g of protein and healthy fats. The protein buffers the caffeine absorption, giving you smooth, sustained energy without the jitters, anxiety, or heart-racing feeling you get from coffee alone.</p>"
+          }
+        },
+        "faq_item_cL4Fzp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this for weight loss?",
+            "answer": "<p>Absolutely. While AROSE isn't marketed as a weight-loss product, the science is clear: high protein intake (25g per serving) increases satiety hormones, reduces hunger throughout the day, and supports a healthy metabolism. Many customers report naturally eating less and losing weight without trying because they're finally satisfied in the morning. You're replacing empty-calorie coffee drinks with complete nutrition.</p>"
+          }
+        },
+        "faq_item_ghVQGC": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long until I feel results?",
+            "answer": "<p>Most people feel the difference immediately - stable energy that lasts 4-6 hours instead of crashing after 2. Within 3-5 days, you'll notice you're not reaching for snacks mid-morning. By week 2-3, the sustained energy becomes your new normal and you'll wonder how you ever functioned without it.</p>"
+          }
+        },
+        "faq_item_cRrQAK": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Caffeine content?",
+            "answer": "<p>150mg of natural caffeine per serving - equivalent to about 1.5 cups of coffee. It's the sweet spot: enough to energize and enhance focus, but not so much that you crash or can't sleep at night. And because it's paired with protein, it releases gradually for sustained alertness without the spike-and-crash cycle.</p>"
+          }
+        },
+        "faq_item_Bbrt93": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I drink daily?",
+            "answer": "<p>Yes - AROSE is designed as your daily morning ritual. It's perfectly safe for long-term use and contains only natural, food-based ingredients. Most customers make it their permanent breakfast replacement and actually look forward to it every morning. Think of it as upgrading from regular coffee to functional coffee that actually nourishes you.</p>"
+          }
+        },
+        "faq_item_rnfrcb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I'm lactose intolerant—can I use this?",
+            "answer": "<p>Most likely, yes. AROSE uses whey protein isolate, which has 90%+ of lactose removed during processing. The majority of people with lactose intolerance tolerate whey isolate without issues. That said, if you have severe dairy sensitivity, we recommend starting with a half serving to test tolerance, or consulting your doctor first.</p>"
+          }
+        },
+        "faq_item_HjCwjg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from adding protein powder to coffee?",
+            "answer": "<p>Great question. Most protein powders curdle, clump, or create a chalky mess when mixed with hot coffee. AROSE is specifically formulated to blend instantly and smoothly - whether hot or cold - with a taste profile designed to complement coffee, not fight it. Plus, we've optimized the protein-to-caffeine ratio based on research for maximum energy stability. It's not just protein + coffee thrown together - it's an engineered system that actually works.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_CUU6EW",
+        "faq_item_LKK3EP",
+        "faq_item_cL4Fzp",
+        "faq_item_ghVQGC",
+        "faq_item_cRrQAK",
+        "faq_item_Bbrt93",
+        "faq_item_rnfrcb",
+        "faq_item_HjCwjg"
+      ],
+      "name": "Maison FAQ",
+      "settings": {
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "heading": "<p>Everything You Need To Know <em>About Arose</em></p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#2f3936",
+        "image": "shopify://shop_images/4a3868dfe30778291d8b8dded6fc44ed1cd22891.png",
+        "image_width_desktop": 600,
+        "image_border_radius": 16,
+        "faq_gap_desktop": 80,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2f3936",
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "question_gap": 24,
+        "border_color": "#2f393633",
+        "toggle_icon_size": 32
+      }
+    },
+    "maison_collection_slider_icVqir": {
+      "type": "maison-collection-slider",
+      "blocks": {
+        "product_NcJU4C": {
+          "type": "product",
+          "settings": {
+            "product": "brain-boost-gummies-blackberry-plum",
+            "show_best_seller_badge": false
+          }
+        },
+        "product_8kFqQj": {
+          "type": "product",
+          "settings": {
+            "product": "brain-boost-gummies",
+            "show_best_seller_badge": false
+          }
+        },
+        "product_fGWrQJ": {
+          "type": "product",
+          "settings": {
+            "product": "brain-boost-gummies-strawberry-tangerine",
+            "show_best_seller_badge": false
+          }
+        }
+      },
+      "block_order": [
+        "product_NcJU4C",
+        "product_8kFqQj",
+        "product_fGWrQJ"
+      ],
+      "name": "Maison Collection Slider",
+      "settings": {
+        "section_heading_part1": "Top",
+        "section_heading_part2": "this month",
+        "collection": "",
+        "products_to_show": 4,
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2f3936"
+      }
+    },
+    "maison_inst_img_gVTbXa": {
+      "type": "maison-inst-img",
+      "blocks": {
+        "instagram_image_8gjkKw": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/wgagawg.png",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_bfy9ip": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/gawgawgawg.png",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_mfbaL8": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/gawgawgw.jpg",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_kWcwRb": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/gagawgwg.png",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_kTcHR9": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/gawgagwagawgw.png",
+            "instagram_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_image_8gjkKw",
+        "instagram_image_bfy9ip",
+        "instagram_image_mfbaL8",
+        "instagram_image_kWcwRb",
+        "instagram_image_kTcHR9"
+      ],
+      "name": "Maison Instagram Images",
+      "settings": {
+        "padding_top_desktop": 44,
+        "padding_bottom_desktop": 44,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "heading": "Explore Our Instagram",
+        "heading_font_size_desktop": 32,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#201c19",
+        "heading_gap_desktop": 40,
+        "heading_gap_mobile": 32,
+        "image_size_desktop": 242,
+        "image_size_mobile": 161,
+        "image_gap_desktop": 12,
+        "image_gap_mobile": 8,
+        "image_border_radius_desktop": 16,
+        "image_border_radius_mobile": 11,
+        "slider_speed": 30
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Others also bought",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "image_no_crop": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_scroll_tags": false,
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "maison_badge_list_Qxnb7C",
+    "maison_ingredients_qqPath",
+    "maison_introducing_DidygV",
+    "maison_scroll_img_wDAFGb",
+    "maison_difference_MjnCfW",
+    "maison_video_review_UWqfGU",
+    "maison_faq_badge_CYbCih",
+    "maison_faq_kDGU3k",
+    "maison_collection_slider_icVqir",
+    "maison_inst_img_gVTbXa",
+    "related-products"
+  ]
+}

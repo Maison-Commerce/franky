@@ -1,0 +1,1619 @@
+{% schema %}
+{
+  "name": "Content with Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#F9F9F4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_padding_top_desktop",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Padding Top (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_padding_bottom_desktop",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Padding Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_padding_left_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "card_padding_right_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Card Content Gap (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Content Gap (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_avatars",
+      "label": "Badge Avatars"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "8,450+ Customers trust AROSE | Rated 4.8/5"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_desktop",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Font Size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>5 Reasons Why <em>Protein Coffee Is The</em> Morning Upgrade You've Been Looking For</p>"
+    },
+    {
+      "type": "color",
+      "id": "title_accent_color",
+      "label": "Title Accent Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 32,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_line_height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Title Line Height",
+      "default": 1.2
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "title_max_width",
+      "min": 600,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "label": "Title Max Width",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "And why thousands of busy professionals have already made the switch."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Subtitle Opacity",
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "min": 400,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Subtitle Max Width",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_size_desktop",
+      "min": 300,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Size (Desktop)",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "min": 200,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Image Height (Mobile)",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "image_content_gap_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Image Content Gap (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Content Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "content_title",
+      "label": "Content Title",
+      "default": "What Is Protein Coffee?"
+    },
+    {
+      "type": "range",
+      "id": "content_title_font_size_desktop",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Title Font Size (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "content_title_font_size_mobile",
+      "min": 20,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Title Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "content_title_color",
+      "label": "Content Title Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "content_width_desktop",
+      "min": 400,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Content Width (Desktop)",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Gap",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Feature Badge Settings"
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_gap",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_padding_vertical",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Padding Vertical",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_padding_horizontal",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Padding Horizontal",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_icon_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Icon Size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_icon_text_gap",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Icon Text Gap",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "feature_badge_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature Badge Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Step Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "step_card_gap",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Card Gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "step_card_padding",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Step Card Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "step_card_gap_internal",
+      "min": 16,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Step Card Internal Gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "step_card_border_radius",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Step Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "step_card_border_color",
+      "label": "Step Card Border Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "step_card_border_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Step Card Border Opacity",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "step_badge_font_size_desktop",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Badge Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "step_badge_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Badge Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "step_badge_bg_color",
+      "label": "Step Badge Background Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "range",
+      "id": "step_title_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Title Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "step_title_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Title Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "step_description_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Description Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "step_description_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Step Description Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "color",
+      "id": "text_secondary_color",
+      "label": "Text Secondary Color",
+      "default": "#2C2926"
+    },
+    {
+      "type": "range",
+      "id": "text_secondary_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Text Secondary Opacity",
+      "default": 75
+    },
+    {
+      "type": "header",
+      "content": "Accent Heading Settings"
+    },
+    {
+      "type": "range",
+      "id": "accent_heading_font_size_desktop",
+      "min": 20,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent Heading Font Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "accent_heading_font_size_mobile",
+      "min": 18,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent Heading Font Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "accent_heading_color",
+      "label": "Accent Heading Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Bar Settings"
+    },
+    {
+      "type": "color",
+      "id": "announcement_bg_color",
+      "label": "Announcement Background Color",
+      "default": "#FAF6AB"
+    },
+    {
+      "type": "range",
+      "id": "announcement_padding_vertical",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement Padding Vertical",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "announcement_padding_horizontal_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Announcement Padding Horizontal (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "announcement_padding_horizontal_mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Announcement Padding Horizontal (Mobile)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "announcement_height",
+      "min": 50,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Announcement Height",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "announcement_logo_gap",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Announcement Logo Gap",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_badge",
+      "name": "Feature Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "No separate shakes."
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Instant Energy"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "The moment you take your first sip, the caffeine kicks in, smooth, clean energy without the jitters you get from coffee on an empty stomach."
+        }
+      ]
+    },
+    {
+      "type": "result_item",
+      "name": "Result Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "You feel energized."
+        }
+      ]
+    },
+    {
+      "type": "content_text",
+      "name": "Content Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_type",
+          "label": "Text Type",
+          "options": [
+            {
+              "value": "regular",
+              "label": "Regular"
+            },
+            {
+              "value": "semi_bold",
+              "label": "Semi Bold"
+            },
+            {
+              "value": "accent_heading",
+              "label": "Accent Heading"
+            },
+            {
+              "value": "italic_bold",
+              "label": "Italic Bold"
+            }
+          ],
+          "default": "regular"
+        }
+      ]
+    },
+    {
+      "type": "announcement_logo",
+      "name": "Announcement Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content with Image",
+      "blocks": [
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "It's real coffee + premium protein powder blended into one delicious drink.",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "feature_badge",
+          "settings": {
+            "text": "No separate shakes."
+          }
+        },
+        {
+          "type": "feature_badge",
+          "settings": {
+            "text": "No messy meal prep."
+          }
+        },
+        {
+          "type": "feature_badge",
+          "settings": {
+            "text": "No choosing between caffeine and nutrition."
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "Just one scoop that gives you everything your morning needs, energy, focus, and the protein your body's been missing.",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "Here's how it works:",
+            "text_type": "semi_bold"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "title": "Instant Energy",
+            "description": "The moment you take your first sip, the caffeine kicks in, smooth, clean energy without the jitters you get from coffee on an empty stomach."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "title": "Sustained Fuel",
+            "description": "The 20g of premium whey protein gets to work immediately, stabilizing your blood sugar, keeping you full, and stopping that mid-morning crash before it starts."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "title": "All-Day Focus",
+            "description": "No 11 AM energy collapse. No desperate hunt for snacks. Just steady, calm energy that carries you through to lunch and beyond."
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "The result?",
+            "text_type": "semi_bold"
+          }
+        },
+        {
+          "type": "result_item",
+          "settings": {
+            "text": "You feel energized."
+          }
+        },
+        {
+          "type": "result_item",
+          "settings": {
+            "text": "You stay focused."
+          }
+        },
+        {
+          "type": "result_item",
+          "settings": {
+            "text": "And you finally have a morning routine that actually works."
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "So why are thousands of people switching to protein coffee?",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "Because it's not just a drink…",
+            "text_type": "regular"
+          }
+        },
+        {
+          "type": "content_text",
+          "settings": {
+            "text": "Here's why it matters:",
+            "text_type": "accent_heading"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="content-with-image" style="background-color: {{ section.settings.section_bg_color }}; margin-top: {{ section.settings.padding_top_desktop }}px; margin-bottom: {{ section.settings.padding_bottom_desktop }}px; margin-left: {{ section.settings.padding_left_desktop }}px; margin-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="content-with-image__container">
+    <div class="content-with-image__card" style="border-radius: {{ section.settings.card_border_radius }}px; padding-top: {{ section.settings.card_padding_top_desktop }}px; padding-bottom: {{ section.settings.card_padding_bottom_desktop }}px;">
+      <div class="content-with-image__top-content">
+        {% if section.settings.badge_text != blank %}
+          <div class="content-with-image__badge">
+            {% if section.settings.badge_avatars != blank %}
+              <div class="content-with-image__badge-avatars">
+                {{
+                  section.settings.badge_avatars
+                  | image_url: width: 100
+                  | image_tag: loading: 'lazy', alt: '', class: 'content-with-image__badge-avatar'
+                }}
+              </div>
+            {% endif %}
+            <span class="content-with-image__badge-text">{{ section.settings.badge_text }}</span>
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <div class="content-with-image__title-wrapper">
+            <h2 class="content-with-image__title">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+          <p class="content-with-image__subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="content-with-image__main">
+        {% if section.settings.image != blank %}
+          <div class="content-with-image__image-wrapper">
+            {{
+              section.settings.image
+              | image_url: width: 1000
+              | image_tag: loading: 'lazy', alt: section.settings.content_title, class: 'content-with-image__image'
+            }}
+          </div>
+        {% endif %}
+
+        <div class="content-with-image__content-wrapper">
+          {% if section.settings.content_title != blank %}
+            <h3 class="content-with-image__content-title">
+              {{ section.settings.content_title }}
+            </h3>
+          {% endif %}
+
+          <div class="content-with-image__content">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'content_text' %}
+                  {% if block.settings.text_type == 'accent_heading' %}
+                    <h4 class="content-with-image__accent-heading">
+                      {{ block.settings.text }}
+                    </h4>
+                  {% elsif block.settings.text_type == 'semi_bold' %}
+                    <p class="content-with-image__text content-with-image__text--semi-bold">
+                      {{ block.settings.text }}
+                    </p>
+                  {% elsif block.settings.text_type == 'italic_bold' %}
+                    <p class="content-with-image__text content-with-image__text--italic-bold">
+                      {{ block.settings.text }}
+                    </p>
+                  {% else %}
+                    <p class="content-with-image__text">
+                      {{ block.settings.text }}
+                    </p>
+                  {% endif %}
+
+                {% when 'feature_badge' %}
+                  <div class="content-with-image__feature-badge" {{ block.shopify_attributes }}>
+                    <svg width="{{ section.settings.feature_badge_icon_size }}" height="{{ section.settings.feature_badge_icon_size }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 10.5858L9.17157 7.75736L7.75736 9.17157L10.5858 12L7.75736 14.8284L9.17157 16.2426L12 13.4142L14.8284 16.2426L16.2426 14.8284L13.4142 12L16.2426 9.17157L14.8284 7.75736L12 10.5858Z" fill="#F04438"/>
+                    </svg>                        
+                    <span class="content-with-image__feature-badge-text">{{ block.settings.text }}</span>
+                  </div>
+
+                {% when 'step' %}
+                  <div class="content-with-image__step-card" {{ block.shopify_attributes }}>
+                    <div class="content-with-image__step-badge">
+                      <span class="content-with-image__step-badge-text">Step {{ block.settings.step_number }}</span>
+                    </div>
+                    <div class="content-with-image__step-content">
+                      {% if block.settings.title != blank %}
+                        <h4 class="content-with-image__step-title">
+                          {{ block.settings.title }}
+                        </h4>
+                      {% endif %}
+                      {% if block.settings.description != blank %}
+                        <p class="content-with-image__step-description">
+                          {{ block.settings.description }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                {% when 'result_item' %}
+                  <div class="content-with-image__result-item" {{ block.shopify_attributes }}>
+                    <svg width="{{ section.settings.feature_badge_icon_size }}" height="{{ section.settings.feature_badge_icon_size }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM17.4571 9.45711L11 15.9142L6.79289 11.7071L8.20711 10.2929L11 13.0858L16.0429 8.04289L17.4571 9.45711Z" fill="#12B76A"/>
+                    </svg>                        
+                    <span class="content-with-image__result-item-text">{{ block.settings.text }}</span>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        {% assign has_logos = false %}
+        {% for block in section.blocks %}
+          {% if block.type == 'announcement_logo' %}
+            {% assign has_logos = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% if has_logos %}
+          <div class="content-with-image__announcement">
+            <div class="content-with-image__announcement-wrapper">
+              {% for block in section.blocks %}
+                {% if block.type == 'announcement_logo' %}
+                  {% if block.settings.logo != blank %}
+                    <div class="content-with-image__announcement-logo" {{ block.shopify_attributes }}>
+                      {{
+                        block.settings.logo
+                        | image_url: width: 200
+                        | image_tag: loading: 'lazy', alt: '', class: 'content-with-image__announcement-logo-img'
+                      }}
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .content-with-image {
+    width: -webkit-fill-available;
+    background-color: {{ section.settings.section_bg_color }};
+    border-radius: 32px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image {
+      margin: 0 !important;
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+      border-radius: 0;
+    }
+  }
+
+  .content-with-image__container {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .content-with-image__card {
+    background-color: {{ section.settings.section_bg_color }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__card {
+      padding-top: 0 !important;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .content-with-image__top-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.card_gap_desktop }}px;
+    margin-bottom: {{ section.settings.card_gap_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__top-content {
+      gap: {{ section.settings.card_gap_mobile }}px;
+      margin-bottom: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .content-with-image__badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
+    background-color: #FFFFFF;
+    border-radius: 999px;
+    width: fit-content;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__badge {
+      padding: 4px 12px 4px 4px;
+    }
+  }
+
+  .content-with-image__badge-avatars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .content-with-image__badge-avatar {
+    width: 84px;
+    height: 32px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__badge-avatar {
+      width: 60px;
+      height: 24px;
+    }
+  }
+
+  .content-with-image__badge-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.badge_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.badge_text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__badge-text {
+      font-size: {{ section.settings.badge_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: {{ section.settings.title_max_width }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__title-wrapper {
+      gap: 12px;
+    }
+  }
+
+  .content-with-image__title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: {{ section.settings.title_line_height }};
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    text-align: center;
+  }
+
+  .content-with-image__title p {
+    margin: 0;
+  }
+
+  .content-with-image__title em {
+    font-style: italic;
+    color: {{ section.settings.title_accent_color }};
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+      text-transform: capitalize;
+    }
+  }
+
+  .content-with-image__subtitle {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color }};
+    opacity: {{ section.settings.subtitle_opacity | divided_by: 100.0 }};
+    margin: 0;
+    text-align: center;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.image_content_gap_desktop }}px;
+    justify-content: center;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__main {
+      flex-direction: column;
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .content-with-image__image-wrapper {
+    flex-shrink: 0;
+    width: {{ section.settings.image_size_desktop }}px;
+    height: {{ section.settings.image_size_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__image-wrapper {
+      width: 100%;
+      height: {{ section.settings.image_height_mobile }}px;
+    }
+  }
+
+  .content-with-image__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__image {
+      border-radius: 12px;
+    }
+  }
+
+  .content-with-image__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.content_gap }}px;
+    width: {{ section.settings.content_width_desktop }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__content-wrapper {
+      width: 100%;
+    }
+  }
+
+  .content-with-image__content-title {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.content_title_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.18;
+    color: {{ section.settings.content_title_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__content-title {
+      font-size: {{ section.settings.content_title_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__content {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.content_gap }}px;
+  }
+
+  .content-with-image__text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.text_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.text_secondary_color }};
+    opacity: {{ section.settings.text_secondary_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  .content-with-image__text--semi-bold {
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+    opacity: 1;
+  }
+
+  .content-with-image__text--italic-bold {
+    font-weight: 600;
+    font-style: italic;
+    color: {{ section.settings.text_color }};
+    opacity: 1;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__text {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__accent-heading {
+    margin: 0;
+    color: var(--Color-Brand-2-2700, #739D6A);
+    font-family: "Swarsh Daisy";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__accent-heading {
+      font-size: {{ section.settings.accent_heading_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__feature-badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ section.settings.feature_badge_icon_text_gap }}px;
+    padding: {{ section.settings.feature_badge_padding_vertical }}px {{ section.settings.feature_badge_padding_horizontal }}px {{ section.settings.feature_badge_padding_vertical }}px 8px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  .content-with-image__feature-badge svg {
+    width: {{ section.settings.feature_badge_icon_size }}px;
+    height: {{ section.settings.feature_badge_icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .content-with-image__feature-badge-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.feature_badge_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__feature-badge-text {
+      font-size: {{ section.settings.feature_badge_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__step-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: {{ section.settings.step_card_gap_internal }}px;
+    padding: {{ section.settings.step_card_padding }}px;
+    background-color: #FFFFFF;
+    border: 1px dashed rgba(44, 41, 38, 0.12);
+    border-radius: {{ section.settings.step_card_border_radius }}px;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__step-card {
+      flex-direction: column;
+      gap: {{ section.settings.step_card_gap_internal }}px;
+    }
+  }
+
+  .content-with-image__step-badge {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    background-color: {{ section.settings.step_badge_bg_color }};
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .content-with-image__step-badge-text {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.step_badge_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: {{ section.settings.text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__step-badge-text {
+      font-size: {{ section.settings.step_badge_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .content-with-image__step-title {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.step_title_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__step-title {
+      font-size: {{ section.settings.step_title_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__step-description {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.step_description_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.text_secondary_color }};
+    opacity: {{ section.settings.text_secondary_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__step-description {
+      font-size: {{ section.settings.step_description_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__result-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: {{ section.settings.feature_badge_icon_text_gap }}px;
+    padding: {{ section.settings.feature_badge_padding_vertical }}px {{ section.settings.feature_badge_padding_horizontal }}px {{ section.settings.feature_badge_padding_vertical }}px 8px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  .content-with-image__result-item svg {
+    width: {{ section.settings.feature_badge_icon_size }}px;
+    height: {{ section.settings.feature_badge_icon_size }}px;
+    flex-shrink: 0;
+  }
+
+  .content-with-image__result-item-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.feature_badge_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__result-item-text {
+      font-size: {{ section.settings.feature_badge_font_size_mobile }}px;
+    }
+  }
+
+  .content-with-image__announcement {
+    width: 100%;
+    background-color: {{ section.settings.announcement_bg_color }};
+    padding: {{ section.settings.announcement_padding_vertical }}px {{ section.settings.announcement_padding_horizontal_desktop }}px;
+    margin-top: {{ section.settings.card_gap_desktop }}px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 0 0 32px 32px;
+  }
+
+  .content-with-image__announcement::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__announcement {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: 32px;
+      border-radius: 0;
+      margin-left: -20px;
+      width: calc(100% + 40px);
+    }
+  }
+
+  .content-with-image__announcement-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: {{ section.settings.announcement_logo_gap }}px;
+    min-height: {{ section.settings.announcement_height }}px;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  @media (max-width: 749px) {
+    .content-with-image__announcement-wrapper {
+      justify-content: center;
+    }
+  }
+
+  .content-with-image__announcement-logo {
+    flex: 1;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-with-image__announcement-logo-img {
+    object-fit: contain;
+    height: 46px;
+  }
+</style>
+

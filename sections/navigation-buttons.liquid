@@ -1,0 +1,492 @@
+{% schema %}
+{
+  "name": "Navigation Buttons",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "range",
+      "id": "button_gap_desktop",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Gap (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_gap_mobile",
+      "min": 8,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Gap (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_row_gap_mobile",
+      "min": 8,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Row Gap (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical_desktop",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Vertical (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Horizontal (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical_mobile",
+      "min": 6,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Vertical (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal_mobile",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Padding Horizontal (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#F2FEEF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Text Gap",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_desktop",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "scroll_offset",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Scroll Offset",
+      "info": "Additional offset when scrolling to section",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nav_button",
+      "name": "Navigation Button",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button Label",
+          "default": "Products"
+        },
+        {
+          "type": "text",
+          "id": "section_id",
+          "label": "Section ID",
+          "info": "ID of the section to scroll to (without #)",
+          "default": "products"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navigation Buttons",
+      "blocks": [
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Products",
+            "section_id": "products"
+          }
+        },
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Results",
+            "section_id": "results"
+          }
+        },
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Usage",
+            "section_id": "usage"
+          }
+        },
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Shipping",
+            "section_id": "shipping"
+          }
+        },
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Guarantee",
+            "section_id": "guarantee"
+          }
+        },
+        {
+          "type": "nav_button",
+          "settings": {
+            "label": "Subscription",
+            "section_id": "subscription"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="navigation-buttons" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="navigation-buttons__container">
+    {% if section.blocks.size > 0 %}
+      <div class="navigation-buttons__grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'nav_button' %}
+              <button
+                type="button"
+                class="navigation-buttons__button"
+                onclick="scrollToSection('{{ block.settings.section_id }}', {{ section.settings.scroll_offset }})"
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.icon != blank %}
+                  <span class="navigation-buttons__icon">
+                    {{
+                      block.settings.icon
+                      | image_url: width: 100
+                      | image_tag: loading: 'lazy', alt: block.settings.label, class: 'navigation-buttons__icon-img'
+                    }}
+                  </span>
+                {% endif %}
+                {% if block.settings.label != blank %}
+                  <span class="navigation-buttons__label">
+                    {{ block.settings.label }}
+                  </span>
+                {% endif %}
+              </button>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="navigation-buttons__empty">
+        <p>Please add navigation buttons to display.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .navigation-buttons {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 749px) {
+    .navigation-buttons {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .navigation-buttons__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .navigation-buttons__grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: {{ section.settings.button_gap_desktop }}px;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  @media (max-width: 749px) {
+    .navigation-buttons__grid {
+      flex-direction: column;
+      gap: {{ section.settings.button_row_gap_mobile }}px;
+    }
+
+    .navigation-buttons__grid::before {
+      content: '';
+      display: none;
+    }
+  }
+
+  /* Mobile: Create rows of 2 buttons */
+  @media (max-width: 749px) {
+    .navigation-buttons__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: {{ section.settings.button_gap_mobile }}px {{ section.settings.button_gap_mobile }}px;
+      row-gap: {{ section.settings.button_row_gap_mobile }}px;
+    }
+  }
+
+  .navigation-buttons__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.icon_text_gap }}px;
+    padding: {{ section.settings.button_padding_vertical_desktop }}px {{ section.settings.button_padding_horizontal_desktop }}px;
+    background-color: {{ section.settings.button_bg_color }};
+    border-radius: {{ section.settings.button_border_radius }}px;
+    border: none;
+    cursor: pointer;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.button_font_size_desktop }}px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.button_text_color }};
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 749px) {
+    .navigation-buttons__button {
+      padding: {{ section.settings.button_padding_vertical_mobile }}px {{ section.settings.button_padding_horizontal_mobile }}px;
+      font-size: {{ section.settings.button_font_size_mobile }}px;
+      flex: none;
+    }
+  }
+
+  .navigation-buttons__button:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+  }
+
+  .navigation-buttons__button:active {
+    transform: translateY(0);
+  }
+
+  .navigation-buttons__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .navigation-buttons__icon-img {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .navigation-buttons__label {
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .navigation-buttons__empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #98A2B3;
+  }
+</style>
+
+<script>
+  function scrollToSection(sectionId, offset) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset - 65;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      console.warn('Section with ID "' + sectionId + '" not found');
+    }
+  }
+</script>
+

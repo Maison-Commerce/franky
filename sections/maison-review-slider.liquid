@@ -1,0 +1,1072 @@
+{% schema %}
+{
+  "name": "Maison Review Slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "overall_rating",
+      "label": "Overall Rating",
+      "default": "4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "8,450+"
+    },
+    {
+      "type": "range",
+      "id": "overall_star_rating",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "label": "Overall Star Rating",
+      "default": 5.0,
+      "info": "Rating value for star display (0-5)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real Talk, Real Customers"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height_desktop",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Heading Line Height (Desktop)",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height_mobile",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Heading Line Height (Mobile)",
+      "default": 1.3
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "color",
+      "id": "rating_text_color",
+      "label": "Rating Text Color",
+      "default": "#3A3631"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#739D6A"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Empty Star Color",
+      "default": "#E0E0E0"
+    },
+    {
+      "type": "header",
+      "content": "Review Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Gap (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "review_text_font_size_desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Review Text Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "review_text_font_size_mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Review Text Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "review_text_color",
+      "label": "Review Text Color",
+      "default": "#3A3631"
+    },
+    {
+      "type": "color",
+      "id": "date_color",
+      "label": "Purchase Date Color",
+      "default": "#98A2B3"
+    },
+    {
+      "type": "color",
+      "id": "reviewer_name_color",
+      "label": "Reviewer Name Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "color",
+      "id": "verified_badge_bg_color",
+      "label": "Verified Badge Background Color",
+      "default": "#ECFEE9"
+    },
+    {
+      "type": "color",
+      "id": "verified_badge_text_color",
+      "label": "Verified Badge Text Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Settings"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_bg_color",
+      "label": "Navigation Button Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_border_color",
+      "label": "Navigation Button Border Color",
+      "default": "#B9FCAB"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_icon_color",
+      "label": "Navigation Button Icon Color",
+      "default": "#2E432F"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "label": "Star Rating",
+          "default": 5,
+          "info": "Rating for this review (0-5)"
+        },
+        {
+          "type": "text",
+          "id": "purchase_date",
+          "label": "Purchase Date",
+          "default": "Purchased on 18 July 2025"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Hannah"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_profession",
+          "label": "Reviewer Profession",
+          "default": "RN"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_age",
+          "label": "Reviewer Age",
+          "default": "45"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_verified_badge",
+          "label": "Show Verified Buyer Badge",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Review Slider",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_review_slider" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_review_slider__container">
+    <div class="maison_commerce_review_slider__header">
+      <div class="maison_commerce_review_slider__rating-section">
+        <div class="maison_commerce_review_slider__stars">
+          {% assign rating = section.settings.overall_star_rating %}
+          {% assign full_stars = rating | floor %}
+          {% assign has_half_star = rating | modulo: 1 | times: 10 | round %}
+          {% assign next_star = full_stars | plus: 1 %}
+          {% for i in (1..5) %}
+            {% if i <= full_stars %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="#FF8C00"/>
+              </svg>
+            {% elsif i == next_star and has_half_star >= 5 %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <defs>
+                    <linearGradient id="half-star-card-{{ block.id }}-{{ i }}">
+                    <stop offset="50%" stop-color="#FF8C00"/>
+                    <stop offset="50%" stop-color="{{ section.settings.star_empty_color }}"/>
+                    </linearGradient>
+                </defs>
+                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="url(#half-star-card-{{ block.id }}-{{ i }})"/>
+              </svg>
+            {% else %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="{{ section.settings.star_empty_color }}"/>
+              </svg>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p class="maison_commerce_review_slider__rating-text">
+          Rated <strong>{{ section.settings.overall_rating }}</strong> based on <strong>{{ section.settings.review_count }}</strong> reviews.
+        </p>
+      </div>
+      <div class="maison_commerce_review_slider__header-bottom">
+        {% if section.settings.heading != blank %}
+          <h2 class="maison_commerce_review_slider__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        <div class="maison_commerce_review_slider__navigation maison_commerce_review_slider__navigation--desktop">
+          <div class="maison_commerce_review_slider__button-prev swiper-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="maison_commerce_review_slider__button-next swiper-button-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 8L22 12M22 12L18 16M22 12H2" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="swiper maison_commerce_review_slider__swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'review' %}
+                <div class="swiper-slide maison_commerce_review_slider__slide" {{ block.shopify_attributes }}>
+                  <div class="maison_commerce_review_slider__card">
+                    {% if block.settings.product_image != blank %}
+                      <div class="maison_commerce_review_slider__card-image">
+                        {{
+                          block.settings.product_image
+                          | image_url: width: 400
+                          | image_tag: loading: 'lazy', alt: 'Product', class: 'maison_commerce_review_slider__card-image-img'
+                        }}
+                      </div>
+                    {% endif %}
+                    
+                    <div class="maison_commerce_review_slider__card-content">
+                      <div class="maison_commerce_review_slider__card-rating">
+                        <div class="maison_commerce_review_slider__card-stars">
+                          {% assign card_rating = block.settings.star_rating %}
+                          {% assign card_full_stars = card_rating | floor %}
+                          {% assign card_has_half_star = card_rating | modulo: 1 | times: 10 | round %}
+                          {% assign card_next_star = card_full_stars | plus: 1 %}
+                          {% for i in (1..5) %}
+                            {% if i <= card_full_stars %}
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="{{ section.settings.star_color }}"/>
+                              </svg>
+                            {% elsif i == card_next_star and card_has_half_star >= 5 %}
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <defs>
+                                  <linearGradient id="half-star-card-{{ block.id }}-{{ i }}">
+                                    <stop offset="50%" stop-color="{{ section.settings.star_color }}"/>
+                                    <stop offset="50%" stop-color="{{ section.settings.star_empty_color }}"/>
+                                  </linearGradient>
+                                </defs>
+                                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="url(#half-star-card-{{ block.id }}-{{ i }})"/>
+                              </svg>
+                            {% else %}
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M9.60417 1.91274C9.64069 1.83895 9.6971 1.77685 9.76705 1.73342C9.83699 1.69 9.91768 1.66699 10 1.66699C10.0823 1.66699 10.163 1.69 10.233 1.73342C10.3029 1.77685 10.3593 1.83895 10.3958 1.91274L12.3208 5.8119C12.4476 6.06854 12.6348 6.29058 12.8664 6.45895C13.0979 6.62732 13.3668 6.737 13.65 6.77857L17.955 7.40857C18.0366 7.42039 18.1132 7.4548 18.1762 7.5079C18.2393 7.56101 18.2862 7.63069 18.3117 7.70908C18.3372 7.78746 18.3402 7.87141 18.3205 7.95143C18.3008 8.03146 18.259 8.10436 18.2 8.1619L15.0867 11.1936C14.8813 11.3937 14.7277 11.6406 14.639 11.9133C14.5503 12.1859 14.5292 12.476 14.5775 12.7586L15.3125 17.0419C15.3269 17.1234 15.3181 17.2074 15.2871 17.2841C15.2561 17.3609 15.2041 17.4274 15.1371 17.4761C15.0701 17.5247 14.9908 17.5536 14.9082 17.5593C14.8256 17.5651 14.7431 17.5475 14.67 17.5086L10.8217 15.4852C10.5681 15.3521 10.286 15.2825 9.99959 15.2825C9.71319 15.2825 9.43107 15.3521 9.1775 15.4852L5.33 17.5086C5.25694 17.5472 5.1745 17.5646 5.09204 17.5588C5.00959 17.5529 4.93043 17.524 4.86358 17.4754C4.79673 17.4268 4.74486 17.3604 4.71388 17.2838C4.6829 17.2071 4.67405 17.1233 4.68834 17.0419L5.4225 12.7594C5.471 12.4767 5.44999 12.1864 5.36128 11.9136C5.27258 11.6408 5.11884 11.3937 4.91334 11.1936L1.8 8.16274C1.7405 8.10526 1.69833 8.03223 1.6783 7.95197C1.65828 7.8717 1.6612 7.78742 1.68673 7.70873C1.71227 7.63004 1.75939 7.5601 1.82273 7.50689C1.88607 7.45367 1.96309 7.41932 2.045 7.40774L6.34917 6.77857C6.63272 6.73732 6.90199 6.62778 7.13382 6.45939C7.36565 6.291 7.55309 6.0688 7.68 5.8119L9.60417 1.91274Z" fill="{{ section.settings.star_empty_color }}"/>
+                              </svg>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                        {% if block.settings.purchase_date != blank %}
+                          <p class="maison_commerce_review_slider__card-date">{{ block.settings.purchase_date }}</p>
+                        {% endif %}
+                      </div>
+
+                      {% if block.settings.review_text != blank %}
+                        <div class="maison_commerce_review_slider__card-text">
+                          {{ block.settings.review_text }}
+                        </div>
+                      {% endif %}
+
+                      <div class="maison_commerce_review_slider__card-footer">
+                        <div class="maison_commerce_review_slider__card-reviewer">
+                          <p class="maison_commerce_review_slider__card-reviewer-name">
+                            {% if block.settings.reviewer_name != blank %}{{ block.settings.reviewer_name }}{% endif %}
+                            {% if block.settings.reviewer_profession != blank %}, {{ block.settings.reviewer_profession }}{% endif %}
+                            {% if block.settings.reviewer_age != blank %}, {{ block.settings.reviewer_age }}{% endif %}
+                          </p>
+                        </div>
+                        <div class="maison_commerce_review_slider__verified-dot"></div>
+                        {% if block.settings.show_verified_badge %}
+                          <div class="maison_commerce_review_slider__verified-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <g clip-path="url(#clip0_8125_28191{{ forloop.index }})">
+                                    <path d="M15.1467 6.89987L13.92 5.9132C13.8216 5.83469 13.7453 5.73197 13.6986 5.61511C13.6518 5.49824 13.6362 5.37124 13.6533 5.24654L13.82 3.68654C13.8432 3.47925 13.8195 3.26941 13.7507 3.0725C13.6819 2.87559 13.5698 2.69663 13.4226 2.54883C13.2755 2.40102 13.097 2.28814 12.9004 2.21852C12.7038 2.14889 12.4941 2.12429 12.2867 2.14654L10.72 2.3132C10.5953 2.3303 10.4683 2.31471 10.3514 2.26796C10.2346 2.22122 10.1319 2.14492 10.0533 2.04654L9.08667 0.839869C8.9515 0.68441 8.78455 0.559764 8.59709 0.474346C8.40962 0.388928 8.20601 0.344727 8.00001 0.344727C7.794 0.344727 7.59039 0.388928 7.40293 0.474346C7.21547 0.559764 7.04851 0.68441 6.91334 0.839869L5.92667 2.06654C5.84816 2.16492 5.74544 2.24122 5.62858 2.28796C5.51171 2.33471 5.38471 2.3503 5.26001 2.3332L3.71334 2.16654C3.50595 2.14429 3.29622 2.16889 3.09961 2.23852C2.903 2.30814 2.72453 2.42102 2.57736 2.56883C2.4302 2.71663 2.3181 2.89559 2.24932 3.0925C2.18055 3.28941 2.15686 3.49925 2.18001 3.70654L2.34667 5.26654C2.36377 5.39124 2.34818 5.51824 2.30143 5.63511C2.25469 5.75197 2.17839 5.85469 2.08001 5.9332L0.85334 6.89987C0.690655 7.03043 0.559361 7.19585 0.469145 7.38393C0.378928 7.57201 0.332092 7.77794 0.332092 7.98654C0.332092 8.19513 0.378928 8.40107 0.469145 8.58914C0.559361 8.77722 0.690655 8.94264 0.85334 9.0732L2.08001 10.0599C2.17788 10.1388 2.25381 10.2416 2.30051 10.3583C2.34721 10.4751 2.36311 10.6019 2.34667 10.7265L2.18001 12.2932C2.1569 12.5 2.18088 12.7094 2.25015 12.9057C2.31942 13.102 2.43219 13.28 2.58001 13.4265C2.72442 13.5773 2.9022 13.692 3.09905 13.7615C3.2959 13.8309 3.50631 13.8532 3.71334 13.8265L5.28001 13.6599C5.40471 13.6428 5.53171 13.6584 5.64858 13.7051C5.76544 13.7519 5.86816 13.8282 5.94667 13.9265L6.93334 15.1532C7.0639 15.3159 7.22932 15.4472 7.4174 15.5374C7.60548 15.6276 7.81141 15.6744 8.02001 15.6744C8.2286 15.6744 8.43454 15.6276 8.62261 15.5374C8.81069 15.4472 8.97611 15.3159 9.10667 15.1532L10.0933 13.9265C10.1719 13.8282 10.2746 13.7519 10.3914 13.7051C10.5083 13.6584 10.6353 13.6428 10.76 13.6599L12.3267 13.8265C12.5337 13.8532 12.7441 13.8309 12.941 13.7615C13.1378 13.692 13.3156 13.5773 13.46 13.4265C13.6078 13.28 13.7206 13.102 13.7899 12.9057C13.8591 12.7094 13.8831 12.5 13.86 12.2932L13.6933 10.7265C13.6769 10.6019 13.6928 10.4751 13.7395 10.3583C13.7862 10.2416 13.8621 10.1388 13.96 10.0599L15.1867 9.0732C15.3494 8.94264 15.4807 8.77722 15.5709 8.58914C15.6611 8.40107 15.7079 8.19513 15.7079 7.98654C15.7079 7.77794 15.6611 7.57201 15.5709 7.38393C15.4807 7.19585 15.3494 7.03043 15.1867 6.89987H15.1467ZM8.26667 10.0332C8.16394 10.1669 8.03405 10.2773 7.88555 10.3572C7.73705 10.437 7.57331 10.4845 7.40513 10.4964C7.23695 10.5084 7.06814 10.4846 6.90983 10.4266C6.75152 10.3686 6.6073 10.2777 6.48667 10.1599L4.86001 8.5332C4.79785 8.47104 4.74854 8.39725 4.7149 8.31603C4.68126 8.23482 4.66395 8.14777 4.66395 8.05987C4.66395 7.88233 4.73447 7.71207 4.86001 7.58654C4.98554 7.461 5.15581 7.39047 5.33334 7.39047C5.51087 7.39047 5.68114 7.461 5.80667 7.58654L7.33334 9.08654L9.94001 5.6132C10.0461 5.47175 10.204 5.37824 10.3791 5.35324C10.5541 5.32823 10.7319 5.37378 10.8733 5.47987C11.0148 5.58596 11.1083 5.74389 11.1333 5.91892C11.1583 6.09396 11.1128 6.27175 11.0067 6.4132L8.26667 10.0332Z" fill="#301A0E"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8125_28191{{ forloop.index }}">
+                                    <rect width="16" height="16" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>Verified Buyer</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination maison_commerce_review_slider__pagination"></div>
+      </div>
+
+      <div class="maison_commerce_review_slider__navigation maison_commerce_review_slider__navigation--mobile">
+        <div class="maison_commerce_review_slider__button-prev swiper-button-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="maison_commerce_review_slider__pagination-mobile"></div>
+        <div class="maison_commerce_review_slider__button-next swiper-button-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 8L22 12M22 12L18 16M22 12H2" stroke="#2E432F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    {% else %}
+      <div class="maison_commerce_review_slider__empty">
+        <p>Please add reviews to display.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function() {
+    function initReviewSlider() {
+      const swiperContainer = document.querySelector('.maison_commerce_review_slider__swiper');
+      if (!swiperContainer) return;
+
+      const desktopPagination = document.querySelector('.maison_commerce_review_slider__pagination');
+      const mobilePagination = document.querySelector('.maison_commerce_review_slider__pagination-mobile');
+      
+      // Determine which pagination to use based on screen size
+      const isDesktop = window.innerWidth >= 950;
+      const paginationEl = isDesktop ? desktopPagination : mobilePagination;
+
+      const swiper = new Swiper('.maison_commerce_review_slider__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: {{ section.settings.card_gap_mobile }},
+        loop: true,
+        navigation: {
+          nextEl: '.maison_commerce_review_slider__button-next',
+          prevEl: '.maison_commerce_review_slider__button-prev',
+        },
+        pagination: {
+          el: paginationEl,
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        breakpoints: {
+          640: {
+            spaceBetween: {{ section.settings.card_gap_mobile }},
+          },
+          950: {
+            spaceBetween: {{ section.settings.card_gap_desktop }},
+          },
+        },
+        on: {
+          init: function() {
+            syncPagination();
+          },
+          slideChange: function() {
+            syncPagination();
+          },
+        },
+      });
+
+      function syncPagination() {
+        const activeEl = window.innerWidth >= 950 ? desktopPagination : mobilePagination;
+        const syncEl = window.innerWidth >= 950 ? mobilePagination : desktopPagination;
+        
+        if (activeEl && syncEl) {
+          const bullets = activeEl.querySelectorAll('.swiper-pagination-bullet');
+          syncEl.innerHTML = '';
+          bullets.forEach((bullet, index) => {
+            const clone = bullet.cloneNode(true);
+            clone.addEventListener('click', function() {
+              swiper.slideTo(index);
+            });
+            syncEl.appendChild(clone);
+          });
+        }
+      }
+
+      // Handle clicks on both pagination elements
+      if (desktopPagination) {
+        desktopPagination.addEventListener('click', function(e) {
+          const bullet = e.target.closest('.swiper-pagination-bullet');
+          if (bullet) {
+            const index = Array.from(desktopPagination.querySelectorAll('.swiper-pagination-bullet')).indexOf(bullet);
+            if (index !== -1) {
+              swiper.slideTo(index);
+            }
+          }
+        });
+      }
+
+      if (mobilePagination) {
+        mobilePagination.addEventListener('click', function(e) {
+          const bullet = e.target.closest('.swiper-pagination-bullet');
+          if (bullet) {
+            const index = Array.from(mobilePagination.querySelectorAll('.swiper-pagination-bullet')).indexOf(bullet);
+            if (index !== -1) {
+              swiper.slideTo(index);
+            }
+          }
+        });
+      }
+
+      // Update pagination on resize
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          const newIsDesktop = window.innerWidth >= 950;
+          const newPaginationEl = newIsDesktop ? desktopPagination : mobilePagination;
+          
+          if (swiper.params.pagination.el !== newPaginationEl) {
+            swiper.params.pagination.el = newPaginationEl;
+            swiper.pagination.destroy();
+            swiper.pagination.init();
+            swiper.pagination.render();
+            swiper.pagination.update();
+            syncPagination();
+          }
+        }, 250);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReviewSlider);
+    } else {
+      initReviewSlider();
+    }
+  })();
+</script>
+
+<style>
+  .maison_commerce_review_slider {
+    width: 100%;
+    background-color: {{ section.settings.section_bg_color }};
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_review_slider__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .maison_commerce_review_slider__header {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__header {
+      margin-bottom: 24px;
+    }
+  }
+
+  .maison_commerce_review_slider__rating-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__rating-section {
+      margin-bottom: 12px;
+    }
+  }
+
+  .maison_commerce_review_slider__stars {
+    display: flex;
+    align-items: center;
+  }
+
+  .maison_commerce_review_slider__rating-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.rating_text_color }};
+    margin: 0;
+  }
+
+  .maison_commerce_review_slider__rating-text strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__rating-text {
+      font-size: 14px;
+    }
+  }
+
+  .maison_commerce_review_slider__header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__header-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  .maison_commerce_review_slider__heading {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: {{ section.settings.heading_line_height_desktop }};
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: {{ section.settings.heading_line_height_mobile }};
+    }
+  }
+
+  .maison_commerce_review_slider__navigation {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+  }
+
+  .maison_commerce_review_slider__navigation--desktop {
+    display: flex;
+  }
+
+  .maison_commerce_review_slider__navigation--mobile {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__navigation--desktop {
+      display: none;
+    }
+
+    .maison_commerce_review_slider__navigation--mobile {
+      display: flex;
+      margin-top: 20px;
+    }
+  }
+
+  .maison_commerce_review_slider__button-prev,
+  .maison_commerce_review_slider__button-next {
+    border: 1.5px solid #E9EBE9;
+    background: transparent;
+    border-radius: 90px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: #2E432F;
+    right: auto!important;
+    left: auto!important;
+    top: auto!important;
+    bottom: auto!important;
+    position: relative!important;
+    margin: 0!important;
+  }
+
+  .maison_commerce_review_slider__button-prev:after,
+  .maison_commerce_review_slider__button-next:after{
+    content: none!important;
+  }
+
+  .maison_commerce_review_slider__button-prev:hover,
+  .maison_commerce_review_slider__button-next:hover {
+    background-color: #F8FFF6;
+    border-color: #2E432F;
+  }
+
+  .maison_commerce_review_slider__button-prev.swiper-button-disabled,
+  .maison_commerce_review_slider__button-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__button-prev,
+    .maison_commerce_review_slider__button-next {
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+  }
+
+  .maison_commerce_review_slider__button-prev svg,
+  .maison_commerce_review_slider__button-next svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .maison_commerce_review_slider__swiper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .maison_commerce_review_slider__swiper .swiper-wrapper{
+    display: flex;
+  }
+
+  .maison_commerce_review_slider__slide {
+    height: auto;
+    flex-shrink: initial!important;
+  }
+
+  .maison_commerce_review_slider__card {
+    background-color: {{ section.settings.card_bg_color }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+    overflow: hidden;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 432px;
+    gap: 8px;
+  }
+
+  .maison_commerce_review_slider__card-image {
+    width: 133px;
+    height: 169px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .maison_commerce_review_slider__card-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+  }
+
+  .maison_commerce_review_slider__card-content {
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__card-content {
+      padding: 16px;
+      gap: 12px;
+    }
+
+    .maison_commerce_review_slider__card{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      width: 311px;
+    }
+  }
+
+  .maison_commerce_review_slider__card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_review_slider__card-stars {
+    display: flex;
+    align-items: center;
+  }
+
+  .maison_commerce_review_slider__card-date {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.date_color }};
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .maison_commerce_review_slider__card-text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.review_text_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.review_text_color | hex_to_rgba: 0.75 }};
+    flex: 1;
+  }
+
+  .maison_commerce_review_slider__card-text p {
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_review_slider__card-text {
+      font-size: {{ section.settings.review_text_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_review_slider__card-footer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    background-color: {{ section.settings.verified_badge_bg_color }};
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: fit-content;
+  }
+
+  .maison_commerce_review_slider__card-reviewer-name {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: {{ section.settings.reviewer_name_color }};
+    margin: 0;
+  }
+
+  .maison_commerce_review_slider__verified-dot{
+    width: 4px;
+    height: 4px;
+    opacity: 0.2;
+    background: #3C1C13;
+    border-radius: 50%;
+    display: flex!important;
+  }
+
+  .maison_commerce_review_slider__verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .maison_commerce_review_slider__verified-badge svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_review_slider__verified-badge span {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.verified_badge_text_color }};
+  }
+
+  .maison_commerce_review_slider__pagination {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 24px;
+    right: auto!important;
+    left: auto!important;
+    top: auto!important;
+    bottom: auto!important;
+    position: relative!important;
+  }
+
+  @media (max-width: 949px) {
+    .maison_commerce_review_slider__pagination {
+      display: none;
+    }
+  }
+
+  .maison_commerce_review_slider__pagination .swiper-pagination-bullet {
+    width: 24px;
+    height: 4px;
+    border-radius: 42px;
+    background-color: #0C1C25;
+    opacity: 0.1;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    cursor: pointer;
+  }
+
+  .maison_commerce_review_slider__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .maison_commerce_review_slider__pagination-mobile {
+    display: none;
+    gap: 4px;
+    align-items: center;
+    width: fit-content!important;
+  }
+
+  @media (max-width: 949px) {
+    .maison_commerce_review_slider__pagination-mobile {
+      display: flex;
+    }
+  }
+
+  .maison_commerce_review_slider__pagination-mobile .swiper-pagination-bullet {
+    width: 16px;
+    height: 4px;
+    border-radius: 42px;
+    background-color: #2F3936;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+
+  .maison_commerce_review_slider__pagination-mobile .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .maison_commerce_review_slider__empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #98A2B3;
+  }
+</style>
+

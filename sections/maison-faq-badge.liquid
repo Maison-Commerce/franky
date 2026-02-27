@@ -1,0 +1,599 @@
+{% schema %}
+{
+  "name": "Maison FAQ Badge",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>The Science Behind <em>Sustained Energy</em></p>"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bg_color_start",
+      "label": "Background Color Start",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_end",
+      "label": "Background Color End",
+      "default": "#FDFBDD"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2E432F"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Cards (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Cards (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 40,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size (Mobile)",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "icon_content_gap_desktop",
+      "min": 24,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Icon and Content (Desktop)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_content_gap_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Icon and Content (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_description_gap",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Title and Description",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font Size (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "min": 16,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Title Font Size (Mobile)",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2F3936"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_desktop",
+      "min": 16,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_mobile",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "rgba(44, 41, 38, 0.75)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_ball_image",
+      "label": "Background Ball Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Fuel Your Body"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p><strong>20g</strong> premium protein prevents the blood sugar rollercoaster. Stay satisfied for hours.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison FAQ Badge",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Fuel Your Body",
+            "description": "<p><strong>20g</strong> premium protein prevents the blood sugar rollercoaster. Stay satisfied for hours.</p>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Energize Your Mind",
+            "description": "<p><strong>150mg</strong> natural caffeine provides mental clarity without anxiety.</p>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "title": "Support Your Performance",
+            "description": "<p>MCTs, adaptogens, collagen boost metabolism and mental clarity.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_faq_badge" style="background: linear-gradient(to bottom, {{ section.settings.bg_color_start }}, {{ section.settings.bg_color_end }}); padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  {% if section.settings.background_ball_image != blank %}
+    <div class="maison_commerce_faq_badge__background-image">
+      {{
+        section.settings.background_ball_image
+        | image_url: width: 2000
+        | image_tag: loading: 'lazy', alt: '', class: 'maison_commerce_faq_badge__background-image-img'
+      }}
+    </div>
+  {% endif %}
+  <div class="maison_commerce_faq_badge__container">
+    {% if section.settings.heading != blank %}
+      <h2 class="maison_commerce_faq_badge__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="maison_commerce_faq_badge__badges">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'badge' %}
+            <div class="maison_commerce_faq_badge__badge" {{ block.shopify_attributes }}>
+              <div class="maison_commerce_faq_badge__badge-content">
+                {% if block.settings.icon != blank %}
+                  <div class="maison_commerce_faq_badge__badge-icon">
+                    {{
+                      block.settings.icon
+                      | image_url: width: 200
+                      | image_tag: loading: 'lazy', alt: block.settings.title, class: 'maison_commerce_faq_badge__badge-icon-img'
+                    }}
+                  </div>
+                {% endif %}
+                <div class="maison_commerce_faq_badge__badge-text">
+                  {% if block.settings.title != blank %}
+                    <h3 class="maison_commerce_faq_badge__badge-title">{{ block.settings.title }}</h3>
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                    <div class="maison_commerce_faq_badge__badge-description">
+                      {{ block.settings.description }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .maison_commerce_faq_badge {
+    width: 100%;
+    background: linear-gradient(to bottom, {{ section.settings.bg_color_start }}, {{ section.settings.bg_color_end }});
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: {{ section.settings.padding_left_mobile }}px !important;
+      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+    }
+  }
+
+  .maison_commerce_faq_badge__background-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .maison_commerce_faq_badge__background-image-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .maison_commerce_faq_badge__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__background-image-img {
+      aspect-ratio: 1/0.2;
+    }
+    .maison_commerce_faq_badge__container {
+      gap: 32px;
+    }
+  }
+
+  .maison_commerce_faq_badge__heading {
+    font-family: "Swarsh Daisy", serif;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .maison_commerce_faq_badge__heading p {
+    margin: 0;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  .maison_commerce_faq_badge__heading em {
+    font-style: italic;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: 1.4;
+    }
+  }
+
+  .maison_commerce_faq_badge__badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ section.settings.card_gap_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badges {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.card_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge {
+    padding: {{ section.settings.card_padding }}px;
+    border-radius: {{ section.settings.card_border_radius }}px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge {
+        padding: 0;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ section.settings.icon_content_gap_desktop }}px;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-content {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: {{ section.settings.icon_content_gap_mobile }}px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-icon {
+    flex-shrink: 0;
+    width: {{ section.settings.icon_size_desktop }}px;
+    height: {{ section.settings.icon_size_desktop }}px;
+    background: white;
+    border-radius: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 9px;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-icon {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+      padding: 0 5.85px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-icon-img {
+        width: 20.8px;
+        height: 20.8px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.title_description_gap }}px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-text {
+      align-items: flex-start;
+      text-align: left;
+      gap: 8px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-title {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-title {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_faq_badge__badge-description {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: {{ section.settings.description_font_size_desktop }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ section.settings.description_color }};
+  }
+
+  .maison_commerce_faq_badge__badge-description p {
+    margin: 0;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  .maison_commerce_faq_badge__badge-description strong {
+    font-weight: 700;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_faq_badge__badge-description {
+      font-size: {{ section.settings.description_font_size_mobile }}px;
+    }
+  }
+</style>
+

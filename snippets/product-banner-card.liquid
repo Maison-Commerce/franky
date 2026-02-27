@@ -1,0 +1,345 @@
+{% comment %}
+  Renders a product banner card
+
+  Accepts:
+  - banner_image: {Object} Image object (optional)
+  - rating: {String} Rating value (optional)
+  - review_count: {String} Review count text (optional)
+  - banner_text: {String} Banner text (optional)
+  - overlay_text_1: {String} Overlay text 1 (optional)
+  - overlay_text_2: {String} Overlay text 2 (optional)
+{% endcomment %}
+
+<div class="product-banner-card">
+  {% if banner_image != blank %}
+    <div class="product-banner-card__image-wrapper">
+      {{
+        banner_image
+        | image_url: width: 600
+        | image_tag: loading: 'lazy', alt: banner_text | default: 'Product banner', class: 'product-banner-card__image'
+      }}
+    </div>
+  {% endif %}
+  
+  <div class="product-banner-card__overlay">
+    {% if overlay_text_1 != blank or overlay_text_2 != blank %}
+      <div class="product-banner-card__overlay-content">
+        {% if overlay_text_1 != blank %}
+          <p class="product-banner-card__overlay-text-1">{{ overlay_text_1 }}</p>
+        {% endif %}
+        {% if overlay_text_2 != blank %}
+          <p class="product-banner-card__overlay-text-2">{{ overlay_text_2 }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="product-banner-card__content">
+    {% if rating != blank or review_count != blank %}
+      <div class="product-banner-card__badge">
+        {% if rating != blank %}
+          <div class="product-banner-card__stars">
+            {% assign rating_num = rating | times: 1.0 %}
+            {% assign full_stars = rating_num | floor %}
+            {% assign has_half = rating_num | modulo: 1 %}
+            {% assign next_star_index = full_stars | plus: 1 %}
+            
+            {% for i in (1..5) %}
+              {% if i <= full_stars %}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F"/>
+                </svg>
+              {% elsif i == next_star_index and has_half >= 0.3 %}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="half-{{ forloop.index }}">
+                      <stop offset="50%" stop-color="#2E432F"/>
+                      <stop offset="50%" stop-color="transparent" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="url(#half-{{ forloop.index }})"/>
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F" fill-opacity="0.15"/>
+                </svg>
+              {% else %}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F" fill-opacity="0.15"/>
+                </svg>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if banner_text != blank %}
+          <div class="product-banner-card__text">{{ banner_text | remove: '<p>' | remove: '</p>' }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .product-banner-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card {
+      border-radius: 11.39px;
+    }
+  }
+
+  .product-banner-card__image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .product-banner-card__image-wrapper img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+  }
+
+  .product-banner-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .product-banner-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background-color: #D8FDD0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__overlay {
+      height: 60px;
+    }
+  }
+
+  .product-banner-card__overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .product-banner-card__overlay-text-1 {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #2E432F;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__overlay-text-1 {
+      font-size: 12px;
+    }
+  }
+
+  .product-banner-card__overlay-text-2 {
+    font-family: 'Swarsh Daisy', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #2E432F;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__overlay-text-2 {
+      font-size: 24px;
+    }
+  }
+
+  .product-banner-card__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 0 0 0;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__content {
+      padding: 11.39px 0 0 0;
+    }
+  }
+
+  .product-banner-card__badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__badge {
+      gap: 5.06px;
+    }
+  }
+
+  .product-banner-card__stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .product-banner-card__stars svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__stars svg {
+      width: 10.12px;
+      height: 10.12px;
+    }
+  }
+
+  .product-banner-card__text {
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #FBFBFB;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 749px) {
+    .product-banner-card__text {
+      font-size: 8px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    let lastWindowWidth = window.innerWidth;
+    let lastWindowHeight = window.innerHeight;
+
+    function setBannerHeight() {
+      const bannerCards = document.querySelectorAll('.product-banner-card');
+      if (bannerCards.length === 0) return;
+
+      const productCards = document.querySelectorAll('.product-grid .grid__item:not(.product-banner-item) .card-wrapper');
+      
+      if (productCards.length === 0) return;
+
+      let maxHeight = 0;
+      productCards.forEach(function(card) {
+        const cardHeight = card.offsetHeight;
+        if (cardHeight > maxHeight) {
+          maxHeight = cardHeight;
+        }
+      });
+
+      if (maxHeight > 0) {
+        bannerCards.forEach(function(banner) {
+          banner.style.height = maxHeight + 'px';
+        });
+      }
+    }
+
+    function checkResize() {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      
+      if (currentWidth !== lastWindowWidth || currentHeight !== lastWindowHeight) {
+        lastWindowWidth = currentWidth;
+        lastWindowHeight = currentHeight;
+        setBannerHeight();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setBannerHeight();
+        setInterval(checkResize, 100);
+      });
+    } else {
+      setBannerHeight();
+      setInterval(checkResize, 100);
+    }
+
+    window.addEventListener('load', setBannerHeight);
+
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        checkResize();
+        setBannerHeight();
+      }, 100);
+    });
+
+    const observer = new MutationObserver(function(mutations) {
+      let shouldUpdate = false;
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          shouldUpdate = true;
+        }
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+          shouldUpdate = true;
+        }
+      });
+      if (shouldUpdate) {
+        setTimeout(setBannerHeight, 100);
+      }
+    });
+
+    const productGrid = document.querySelector('.product-grid');
+    if (productGrid) {
+      observer.observe(productGrid, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+    }
+
+    const bannerItems = document.querySelectorAll('.product-banner-item');
+    bannerItems.forEach(function(item) {
+      observer.observe(item, {
+        attributes: true,
+        attributeFilter: ['style', 'class'],
+        childList: true,
+        subtree: true
+      });
+    });
+  })();
+</script>
+
