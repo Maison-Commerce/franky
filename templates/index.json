@@ -100,22 +100,25 @@
         "feature_xPeaw4": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
             "title": "Sustained Energy",
-            "description": "Real coffee + 20g protein = no crash, no jitters"
+            "description": "Real coffee + 10g protein = steady focus, no crash"
           }
         },
         "feature_W7ER6e": {
           "type": "feature",
           "settings": {
-            "title": "Complete Nutrition",
-            "description": "Protein, caffeine, superfoods, micronutrients in one cup"
+            "icon": "shopify://shop_images/awfawfwf.svg",
+            "title": "Complete Functional Blend",
+            "description": "Protein, balanced caffeine, and targeted ingredients in one cup"
           }
         },
         "feature_ULyHhk": {
           "type": "feature",
           "settings": {
+            "icon": "shopify://shop_images/sfawfwfw.svg",
             "title": "Effortless Routine",
-            "description": "Replaces breakfast + coffee in 60 seconds"
+            "description": "Replaces breakfast + coffee in under 60 seconds"
           }
         },
         "trust_badge_8URhmJ": {
@@ -147,7 +150,7 @@
       ],
       "name": "Maison Introducing",
       "settings": {
-        "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
+        "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "social_proof_text": "Join",
         "social_proof_count": "8,450+ people",
         "social_proof_suffix": "who've reclaimed their masculinity",
