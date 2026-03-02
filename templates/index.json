@@ -286,41 +286,41 @@
       "blocks": {
         "video_898y86": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
-        "video_cnMFKx": {
+        "video_twc8mH": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
-        "video_wyPb8M": {
+        "video_NEbjp3": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
-        "video_t3VTj6": {
+        "video_LnYNTf": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
-        "video_XNB69x": {
+        "video_gnjb79": {
           "type": "video",
-          "settings": {}
-        },
-        "video_7jKptW": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_JFhTpV": {
-          "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         }
       },
       "block_order": [
         "video_898y86",
-        "video_cnMFKx",
-        "video_wyPb8M",
-        "video_t3VTj6",
-        "video_XNB69x",
-        "video_7jKptW",
-        "video_JFhTpV"
+        "video_twc8mH",
+        "video_NEbjp3",
+        "video_LnYNTf",
+        "video_gnjb79"
       ],
       "name": "Maison Video Review",
       "settings": {
@@ -416,67 +416,6 @@
         "description_font_size_desktop": 18,
         "description_font_size_mobile": 14,
         "description_color": "#2c2926bf"
-      }
-    },
-    "maison_video_slider_xHeHzQ": {
-      "type": "maison-video-slider",
-      "blocks": {
-        "video_hGCtPz": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_b6CnWJ": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_E6NaUR": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_hnYthk": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_B8bWKa": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_tKJnhR": {
-          "type": "video",
-          "settings": {}
-        },
-        "video_3bqHpK": {
-          "type": "video",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "video_hGCtPz",
-        "video_b6CnWJ",
-        "video_E6NaUR",
-        "video_hnYthk",
-        "video_B8bWKa",
-        "video_tKJnhR",
-        "video_3bqHpK"
-      ],
-      "name": "Maison Video Slider",
-      "settings": {
-        "padding_top_desktop": 24,
-        "padding_bottom_desktop": 24,
-        "padding_left_desktop": 0,
-        "padding_right_desktop": 0,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20,
-        "padding_left_mobile": 0,
-        "padding_right_mobile": 0,
-        "section_bg_color": "#ffffff",
-        "video_gap_desktop": 18,
-        "video_gap_mobile": 12,
-        "video_border_radius": 18,
-        "video_padding": 12,
-        "play_button_bg_color": "#faf59b",
-        "play_button_size": 50,
-        "autoplay_delay": 3000
       }
     },
     "maison_introducing_v2_nKrCXH": {
@@ -689,7 +628,6 @@
     "maison_advantages_CC8mpx",
     "maison_video_review_jCeGmk",
     "maison_faq_badge_VJzwxc",
-    "maison_video_slider_xHeHzQ",
     "maison_introducing_v2_nKrCXH",
     "maison_review_slider_RyQYLB"
   ]
