@@ -561,30 +561,42 @@
         "instagram_image_xNtUFP": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/d94ee5cf910958f4eecf5a612cc37ec75511a115.png",
             "instagram_url": ""
           }
         },
         "instagram_image_RgnGwb": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/uwgfawvfhjaw.png",
             "instagram_url": ""
           }
         },
         "instagram_image_J8qCT6": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/uvr23uvfh3f.jpg",
             "instagram_url": ""
           }
         },
         "instagram_image_fCHU47": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/v3fv32vt23f3.png",
             "instagram_url": ""
           }
         },
         "instagram_image_CcdAia": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/oawfihbg3gg3.png",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_kga8t9": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/731gyfvhj43g3g.jpg",
             "instagram_url": ""
           }
         }
@@ -594,7 +606,8 @@
         "instagram_image_RgnGwb",
         "instagram_image_J8qCT6",
         "instagram_image_fCHU47",
-        "instagram_image_CcdAia"
+        "instagram_image_CcdAia",
+        "instagram_image_kga8t9"
       ],
       "name": "Maison Instagram Images",
       "settings": {
