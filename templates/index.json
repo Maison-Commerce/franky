@@ -23,6 +23,7 @@
         "button_text": "Start Your Ritual",
         "button_link": "shopify://collections/all-products-dev",
         "product_image_desktop": "shopify://shop_images/2f14f82783b17bb261b2a47eabd9eca8cc440b70.png",
+        "product_image_mobile": "shopify://shop_images/IMG_BANNER_MOB.png",
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 80,
         "padding_left_desktop": 40,
