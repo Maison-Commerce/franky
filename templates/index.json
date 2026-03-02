@@ -247,7 +247,7 @@
       ],
       "name": "Maison Advantages",
       "settings": {
-        "heading": "<p>Why AROSE Is <em>Different</em></p>",
+        "heading": "<p>Why Franky Isn’t <br/>Just Another Coffee</p>",
         "padding_top_desktop": 70,
         "padding_bottom_desktop": 70,
         "padding_left_desktop": 60,
@@ -256,11 +256,11 @@
         "padding_bottom_mobile": 32,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "section_bg_color": "#ffffff",
+        "section_bg_color": "linear-gradient(180deg, #FFFFFE 0%, #DEEAF2 100%)",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
-        "heading_color": "#2e432f",
-        "card_bg_color": "#f2feef",
+        "heading_color": "#3b2b2f",
+        "card_bg_color": "#ffffff",
         "card_padding": 18,
         "card_gap_desktop": 24,
         "card_gap_mobile": 18,
@@ -269,10 +269,10 @@
         "icon_content_gap": 12,
         "title_font_size_desktop": 18,
         "title_font_size_mobile": 16,
-        "title_color": "#2f3936",
+        "title_color": "#3b2b2f",
         "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
-        "description_color": "#2f3936bf"
+        "description_color": "#3b2b2f"
       }
     },
     "maison_faq_badge_VJzwxc": {
