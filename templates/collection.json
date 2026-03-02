@@ -30,13 +30,13 @@
         "feature_HdVjP7": {
           "type": "feature",
           "settings": {
-            "text": "Complete nutrition"
+            "text": "10g protein"
           }
         },
         "feature_yjQLXW": {
           "type": "feature",
           "settings": {
-            "text": "Zero compromise"
+            "text": "Zero crash"
           }
         }
       },
@@ -68,7 +68,7 @@
         "badge_font_size_mobile": 12,
         "badge_text_color": "#3b2b2f",
         "badge_gap": 8,
-        "title": "Make your morning routine work",
+        "title": "Make Your Morning Routine Work",
         "title_font_size_desktop": 48,
         "title_font_size_mobile": 32,
         "title_line_height_desktop": 1.2,
@@ -76,7 +76,7 @@
         "title_color": "#3b2b2f",
         "title_uppercase": false,
         "title_align": "left",
-        "description": "Simply select any 20-pack, 30-pack, or bundle of your choice and add it to your cart. After that, include the Glow Up item, and you'll see the discount applied automatically at checkout!",
+        "description": "Choose your flavor. Build your ritual. Keep it simple.",
         "description_font_size_desktop": 18,
         "description_font_size_mobile": 14,
         "description_color": "#3b2b2f",
