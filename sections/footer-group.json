@@ -104,7 +104,7 @@
       "name": "Maison Footer",
       "settings": {
         "footer_bg_color": "#2e432f",
-        "padding_top_desktop": 0,
+        "padding_top_desktop": 60,
         "padding_bottom_desktop": 48,
         "padding_left_desktop": 80,
         "padding_right_desktop": 80,
