@@ -67,7 +67,7 @@
         "color-hover-background": "#ffffff",
         "color-hover-text": "#212121",
         "logo_position": "middle-center",
-        "menu": "maison-header-menu",
+        "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
         "show_line_separator": false,
