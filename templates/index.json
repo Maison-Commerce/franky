@@ -45,80 +45,6 @@
         "checkmark_color": "#3b2b2f"
       }
     },
-    "maison_scroll_img_B4xREt": {
-      "type": "maison-scroll-img",
-      "blocks": {
-        "logo_YTz6jn": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_EXTWWT": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_wUPkxn": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_bBF9td": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_8P7VFT": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_yfWTUT": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_YTz6jn",
-        "logo_EXTWWT",
-        "logo_wUPkxn",
-        "logo_bBF9td",
-        "logo_8P7VFT",
-        "logo_yfWTUT"
-      ],
-      "name": "Maison Scroll Images",
-      "settings": {
-        "section_bg_color": "#ffffff",
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0,
-        "padding_left_desktop": 0,
-        "padding_right_desktop": 0,
-        "padding_top_mobile": 22,
-        "padding_bottom_mobile": 22,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "scroll_duration": 30,
-        "scroll_duration_mobile": 30,
-        "pause_on_hover": false,
-        "logo_height_desktop": 60,
-        "logo_height_mobile": 45,
-        "logo_gap_desktop": 50,
-        "logo_gap_mobile": 38
-      }
-    },
     "maison_collection_slider_6QQcEi": {
       "type": "maison-collection-slider",
       "blocks": {
@@ -153,7 +79,7 @@
       "settings": {
         "section_heading_part1": "Top",
         "section_heading_part2": "this month",
-        "collection": "",
+        "collection": "frontpage",
         "products_to_show": 4,
         "padding_top_desktop": 56,
         "padding_bottom_desktop": 56,
@@ -743,7 +669,6 @@
   },
   "order": [
     "maison_banner_cfyBXn",
-    "maison_scroll_img_B4xREt",
     "maison_collection_slider_6QQcEi",
     "maison_introducing_GH37PA",
     "maison_badge_list_FNahLr",
