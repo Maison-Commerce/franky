@@ -325,7 +325,7 @@
       ],
       "name": "Maison Video Review",
       "settings": {
-        "section_bg_gradient": "linear-gradient(180deg, #DEEAF2 0%, rgba(251, 246, 234, 0.00) 100%)",
+        "section_bg_gradient": "linear-gradient(180deg, rgba(222, 234, 242, 1), rgba(251, 246, 234, 0) 100%)",
         "padding_top_desktop": 24,
         "padding_bottom_desktop": 24,
         "padding_left_desktop": 0,
@@ -554,6 +554,73 @@
         "trust_badge_font_size": 14,
         "trust_badge_color": "#3b2b2f"
       }
+    },
+    "maison_inst_img_7m9jP7": {
+      "type": "maison-inst-img",
+      "blocks": {
+        "instagram_image_xNtUFP": {
+          "type": "instagram_image",
+          "settings": {
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_RgnGwb": {
+          "type": "instagram_image",
+          "settings": {
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_J8qCT6": {
+          "type": "instagram_image",
+          "settings": {
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_fCHU47": {
+          "type": "instagram_image",
+          "settings": {
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_CcdAia": {
+          "type": "instagram_image",
+          "settings": {
+            "instagram_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_image_xNtUFP",
+        "instagram_image_RgnGwb",
+        "instagram_image_J8qCT6",
+        "instagram_image_fCHU47",
+        "instagram_image_CcdAia"
+      ],
+      "name": "Maison Instagram Images",
+      "settings": {
+        "padding_top_desktop": 44,
+        "padding_bottom_desktop": 44,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "heading": "Explore Our Instagram",
+        "heading_font_size_desktop": 32,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#201c19",
+        "heading_gap_desktop": 40,
+        "heading_gap_mobile": 32,
+        "image_size_desktop": 242,
+        "image_size_mobile": 161,
+        "image_gap_desktop": 12,
+        "image_gap_mobile": 8,
+        "image_border_radius_desktop": 16,
+        "image_border_radius_mobile": 11,
+        "slider_speed": 30
+      }
     }
   },
   "order": [
@@ -563,6 +630,7 @@
     "maison_advantages_CC8mpx",
     "maison_video_review_jCeGmk",
     "maison_review_slider_RyQYLB",
-    "maison_introducing_paL9iF"
+    "maison_introducing_paL9iF",
+    "maison_inst_img_7m9jP7"
   ]
 }
