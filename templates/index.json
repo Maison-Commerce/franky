@@ -387,9 +387,10 @@
         "review_bk7tmm": {
           "type": "review",
           "settings": {
+            "product_image": "shopify://shop_images/awgagawgawggw3gw.jpg",
             "star_rating": 5,
-            "purchase_date": "Purchased on 18 July 2025",
-            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
             "reviewer_name": "Hannah",
             "reviewer_profession": "RN",
             "reviewer_age": "45",
