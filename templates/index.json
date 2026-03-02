@@ -170,20 +170,20 @@
         "section_bg_color": "#ffffff",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
-        "heading_color": "#2c2926",
+        "heading_color": "#3b2b2f",
         "feature_title_font_size_desktop": 18,
         "feature_title_font_size_mobile": 14,
         "feature_description_font_size_desktop": 18,
         "feature_description_font_size_mobile": 16,
-        "feature_text_color": "#2f3936",
+        "feature_text_color": "#3b2b2f",
         "social_proof_font_size": 12,
-        "social_proof_color": "#2f3936",
-        "button_bg_color": "#cbfdc1",
-        "button_text_color": "#2e432f",
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
         "button_font_size_desktop": 16,
         "button_font_size_mobile": 14,
         "trust_badge_font_size": 14,
-        "trust_badge_color": "#2c2c2c"
+        "trust_badge_color": "#3b2b2f"
       }
     },
     "maison_badge_list_FNahLr": {
