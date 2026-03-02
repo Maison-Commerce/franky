@@ -131,17 +131,17 @@
         "social_facebook_url": "https://www.facebook.com/mojogummies/",
         "social_tiktok_url": "",
         "social_pinterest_url": "",
-        "social_icon_color": "#ffffff",
+        "social_icon_color": "#3b2b2f",
         "show_background_logo": true,
-        "background_logo_color": "#2e432f",
+        "background_logo_color": "#514346",
         "background_logo_opacity": 10,
         "heading_font_size_desktop": 20,
         "heading_font_size_mobile": 20,
-        "heading_color": "#e9ebe9",
+        "heading_color": "#3b2b2f",
         "link_font_size_desktop": 14,
         "link_font_size_mobile": 14,
-        "link_color": "#b7beb7",
-        "link_hover_color": "#b9fcab"
+        "link_color": "#3b2b2f",
+        "link_hover_color": "#4a373b"
       }
     },
     "footer": {
