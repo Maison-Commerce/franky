@@ -35,13 +35,13 @@
         "image_bg_color": "#fff5f0",
         "heading_font_size_desktop": 48,
         "heading_font_size_mobile": 32,
-        "heading_color": "#2c2926",
+        "heading_color": "#3b2b2f",
         "body_font_size_desktop": 16,
         "body_font_size_mobile": 16,
-        "button_bg_color": "#2e432f",
+        "button_bg_color": "#3b2b2f",
         "button_text_color": "#ffffff",
-        "button_hover_bg_color": "#1e2f1f",
-        "checkmark_color": "#2e432f"
+        "button_hover_bg_color": "#4a373b",
+        "checkmark_color": "#3b2b2f"
       }
     },
     "maison_scroll_img_B4xREt": {
