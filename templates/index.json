@@ -456,6 +456,103 @@
         "nav_button_icon_color": "#2e432f"
       }
     },
+    "maison_introducing_paL9iF": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_9KKn4J": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Sustained Energy",
+            "description": "Real coffee + 10g protein = steady focus, no crash"
+          }
+        },
+        "feature_47NPYD": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/awfawfwf.svg",
+            "title": "Complete Functional Blend",
+            "description": "Protein, balanced caffeine, and targeted ingredients in one cup"
+          }
+        },
+        "feature_TUUhXm": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sfawfwfw.svg",
+            "title": "Effortless Routine",
+            "description": "Replaces breakfast + coffee in under 60 seconds"
+          }
+        },
+        "trust_badge_8g7qLg": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
+            "text": "GMP-Certified Facility"
+          }
+        },
+        "trust_badge_kYriUN": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/la_flag-usa.svg",
+            "text": "Made in USA"
+          }
+        },
+        "trust_badge_Yq4qdf": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
+            "text": "Organically Grown Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9KKn4J",
+        "feature_47NPYD",
+        "feature_TUUhXm",
+        "trust_badge_8g7qLg",
+        "trust_badge_kYriUN",
+        "trust_badge_Yq4qdf"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "product_image_desktop": "shopify://shop_images/Frame_1484581760.png",
+        "product_image_mobile": "shopify://shop_images/agwg23g3whe.png",
+        "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
+        "social_proof_text": "Join",
+        "social_proof_count": "8,450+ people",
+        "social_proof_suffix": "who've reclaimed their masculinity",
+        "avatar_1": "shopify://shop_images/avatar-1.png",
+        "avatar_2": "shopify://shop_images/avatar-2.png",
+        "avatar_3": "shopify://shop_images/avatar-3.png",
+        "button_text": "Upgrade My Morning",
+        "button_link": "shopify://products/brain-boost-gummies",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
+      }
+    },
     "maison_faq_badge_VJzwxc": {
       "type": "maison-faq-badge",
       "blocks": {
@@ -632,6 +729,7 @@
     "maison_advantages_CC8mpx",
     "maison_video_review_jCeGmk",
     "maison_review_slider_RyQYLB",
+    "maison_introducing_paL9iF",
     "maison_faq_badge_VJzwxc",
     "maison_introducing_v2_nKrCXH"
   ]
