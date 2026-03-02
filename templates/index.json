@@ -153,6 +153,8 @@
       ],
       "name": "Maison Introducing",
       "settings": {
+        "product_image_desktop": "shopify://shop_images/Image.png",
+        "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "social_proof_text": "Join",
         "social_proof_count": "8,450+ people",
