@@ -262,7 +262,7 @@
         "padding_bottom_mobile": 32,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "section_bg_color": "linear-gradient(180deg, #FFFFFE 0%, #DEEAF2 100%)",
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 1), rgba(222, 234, 242, 1) 100%)",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
@@ -279,6 +279,200 @@
         "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
         "description_color": "#3b2b2f"
+      }
+    },
+    "maison_video_review_jCeGmk": {
+      "type": "maison-video-review",
+      "blocks": {
+        "video_898y86": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_cnMFKx": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_wyPb8M": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_t3VTj6": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_XNB69x": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_7jKptW": {
+          "type": "video",
+          "settings": {}
+        },
+        "video_JFhTpV": {
+          "type": "video",
+          "settings": {}
+        },
+        "review_f676nR": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_GjRrUz": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_wt8xMC": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE set me up with a routine that totally fits my life better than any strict plan ever could.\"</p>",
+            "reviewer_name": "Patty, 48",
+            "verified_buyer": true
+          }
+        },
+        "review_3MTnPt": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "reviewer_name": "Patty, 48",
+            "verified_buyer": true
+          }
+        },
+        "review_UttyA3": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts!\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_KKzH6V": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_MRzPN4": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_mr3w9e": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "reviewer_name": "Verified Buyer",
+            "verified_buyer": true
+          }
+        },
+        "review_gwFdFx": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        },
+        "review_jEJbHd": {
+          "type": "review",
+          "settings": {
+            "slider_position": "bottom",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Jule 2025",
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Hannah, RN, 45",
+            "verified_buyer": true
+          }
+        }
+      },
+      "block_order": [
+        "video_898y86",
+        "video_cnMFKx",
+        "video_wyPb8M",
+        "video_t3VTj6",
+        "video_XNB69x",
+        "video_7jKptW",
+        "video_JFhTpV",
+        "review_f676nR",
+        "review_GjRrUz",
+        "review_wt8xMC",
+        "review_3MTnPt",
+        "review_UttyA3",
+        "review_KKzH6V",
+        "review_MRzPN4",
+        "review_mr3w9e",
+        "review_gwFdFx",
+        "review_jEJbHd"
+      ],
+      "name": "Maison Video Review",
+      "settings": {
+        "section_bg_gradient": "linear-gradient(180deg, rgba(234, 240, 219, 1), rgba(255, 255, 255, 1) 100%)",
+        "padding_top_desktop": 24,
+        "padding_bottom_desktop": 24,
+        "padding_left_desktop": 0,
+        "padding_right_desktop": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0,
+        "heading": "<p>Join The Productivity</p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2e432f",
+        "overall_rating": 4.8,
+        "review_count": "8,450+",
+        "star_color": "#ff8c00",
+        "rating_font_size_desktop": 14,
+        "rating_font_size_mobile": 14,
+        "rating_text_color": "#2e432f",
+        "video_gap_desktop": 18,
+        "video_gap_mobile": 12,
+        "video_border_radius": 18,
+        "video_padding": 12,
+        "play_button_bg_color": "#faf59b",
+        "play_button_size": 50,
+        "card_gap_desktop": 18,
+        "card_gap_mobile": 12,
+        "card_width_desktop": 342,
+        "card_width_mobile": 256
       }
     },
     "maison_faq_badge_VJzwxc": {
@@ -613,6 +807,7 @@
     "maison_collection_slider_6QQcEi",
     "maison_introducing_GH37PA",
     "maison_advantages_CC8mpx",
+    "maison_video_review_jCeGmk",
     "maison_faq_badge_VJzwxc",
     "maison_video_slider_xHeHzQ",
     "maison_introducing_v2_nKrCXH",
