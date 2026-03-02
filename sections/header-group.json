@@ -40,7 +40,7 @@
       ],
       "name": "Maison Announcement Bar",
       "settings": {
-        "bar_bg_color": "#cbfdc1",
+        "bar_bg_color": "#f8f2e7",
         "padding_top_desktop": 8,
         "padding_bottom_desktop": 8,
         "padding_left_desktop": 80,
@@ -51,8 +51,8 @@
         "padding_right_mobile": 20,
         "text_font_size_desktop": 14,
         "text_font_size_mobile": 12,
-        "text_color": "#2e432f",
-        "icon_color": "#2e432f",
+        "text_color": "#3b2b2f",
+        "icon_color": "#3b2b2f",
         "scroll_delay": 3,
         "scroll_speed": 0.5
       }
