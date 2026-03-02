@@ -197,43 +197,43 @@
         "advantage_VtpNTw": {
           "type": "advantage",
           "settings": {
-            "title": "Premium Ingredients",
-            "description": "<p>Grass-fed whey, real coffee extract, clinical-dose superfoods. No cheap fillers. No compromises.</p>"
+            "title": "Real Coffee + Real Protein",
+            "description": "<p>Real brewed coffee with 10g protein — no artificial blends.</p>"
           }
         },
         "advantage_3y7PD8": {
           "type": "advantage",
           "settings": {
-            "title": "Tastes Incredible",
-            "description": "<p>Tastes like a $6 coffee shop latte. Smooth, creamy, delicious. 89% reorder rate proves it.</p>"
+            "title": "Steady Energy",
+            "description": "<p>Balanced caffeine + protein for smooth focus without the crash or jitters.</p>"
           }
         },
         "advantage_hXDpGW": {
           "type": "advantage",
           "settings": {
-            "title": "Scientifically Formulated",
-            "description": "<p>Every ingredient is clinically dosed for real results. Backed by nutritional science, not marketing hype.</p>"
+            "title": "Complete Morning Fuel",
+            "description": "<p>Replaces your coffee and breakfast in one simple, satisfying cup.</p>"
           }
         },
         "advantage_JidVQn": {
           "type": "advantage",
           "settings": {
-            "title": "Complete Nutrition",
-            "description": "<p>Not just protein and coffee. Everything you need in one cup.</p>"
+            "title": "Clean, Transparent Formula",
+            "description": "<p>No fillers or added sugar. Just what works.</p>"
           }
         },
         "advantage_DiPbcN": {
           "type": "advantage",
           "settings": {
-            "title": "Zero Jitters",
-            "description": "<p>Protein and MCT oil buffer caffeine for smooth, sustained energy. No anxiety. No crash.</p>"
+            "title": "Actually Tastes Good",
+            "description": "<p>Creamy, smooth, café-level flavor — no chalky texture, no weird aftertaste.</p>"
           }
         },
         "advantage_F7Uejg": {
           "type": "advantage",
           "settings": {
-            "title": "Trusted By Thousands",
-            "description": "<p>25,000+ customers. 12,000+ 5-star reviews. 90-day guarantee. We stand behind every bag.</p>"
+            "title": "Built for Real Life",
+            "description": "<p>Made for busy mornings, long shifts, workouts and everything in between.</p>"
           }
         }
       },
