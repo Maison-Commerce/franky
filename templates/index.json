@@ -191,82 +191,6 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
-    "maison_badge_list_FNahLr": {
-      "type": "maison-badge-list",
-      "blocks": {
-        "badge_g74xp4": {
-          "type": "badge",
-          "settings": {
-            "text": "Clean ingredients"
-          }
-        },
-        "badge_ttUXc8": {
-          "type": "badge",
-          "settings": {
-            "text": "Cruelty-free"
-          }
-        },
-        "badge_WGFWjf": {
-          "type": "badge",
-          "settings": {
-            "text": "Vegan"
-          }
-        },
-        "badge_KbTCEG": {
-          "type": "badge",
-          "settings": {
-            "text": "Gluten-free"
-          }
-        },
-        "badge_4yyXF9": {
-          "type": "badge",
-          "settings": {
-            "text": "Low Sugar"
-          }
-        },
-        "badge_8R8Gb9": {
-          "type": "badge",
-          "settings": {
-            "text": "Non-GMO"
-          }
-        },
-        "badge_HU6ctB": {
-          "type": "badge",
-          "settings": {
-            "text": "No fillers"
-          }
-        }
-      },
-      "block_order": [
-        "badge_g74xp4",
-        "badge_ttUXc8",
-        "badge_WGFWjf",
-        "badge_KbTCEG",
-        "badge_4yyXF9",
-        "badge_8R8Gb9",
-        "badge_HU6ctB"
-      ],
-      "name": "Maison Badge List",
-      "settings": {
-        "padding_top_desktop": 18,
-        "padding_bottom_desktop": 18,
-        "padding_left_desktop": 80,
-        "padding_right_desktop": 80,
-        "padding_top_mobile": 12,
-        "padding_bottom_mobile": 12,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "section_bg_color": "#2e432f",
-        "badge_text_font_size_desktop": 16,
-        "badge_text_font_size_mobile": 14,
-        "badge_text_color": "#ffffff",
-        "icon_size_desktop": 32,
-        "icon_size_mobile": 24,
-        "badge_gap_desktop": 8,
-        "badge_gap_mobile": 18,
-        "icon_text_gap": 12
-      }
-    },
     "maison_advantages_CC8mpx": {
       "type": "maison-advantages",
       "blocks": {
@@ -682,7 +606,6 @@
     "maison_banner_cfyBXn",
     "maison_collection_slider_6QQcEi",
     "maison_introducing_GH37PA",
-    "maison_badge_list_FNahLr",
     "maison_advantages_CC8mpx",
     "maison_faq_badge_VJzwxc",
     "maison_video_slider_xHeHzQ",
