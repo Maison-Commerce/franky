@@ -7,7 +7,7 @@
       "content": "Section Settings"
     },
     {
-      "type": "color",
+      "type": "color_background",
       "id": "footer_bg_color",
       "label": "Footer Background Color",
       "default": "#273928"
@@ -692,7 +692,7 @@
   .maison_commerce_footer {
     position: relative;
     width: 100%;
-    background-color: {{ section.settings.footer_bg_color }};
+    background: {{ section.settings.footer_bg_color }};
     overflow: hidden;
   }
 
@@ -1099,7 +1099,7 @@
   }
 
   .maison_commerce_footer__payment-icon {
-    background-color: {{ section.settings.footer_bg_color }};
+    background: {{ section.settings.footer_bg_color }};
     border: 1px solid {{ section.settings.link_color | color_modify: 'alpha', 0.2 }};
     border-radius: 6px;
     padding: 6px 12px;
