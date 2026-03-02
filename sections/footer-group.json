@@ -58,7 +58,7 @@
         "card_gap_desktop": 40,
         "card_gap_mobile": 24,
         "icon_size": 70,
-        "icon_border_radius": 24,
+        "icon_border_radius": 90,
         "icon_bg_color": "#bdd9ef",
         "icon_color": "#ffffff",
         "title_font_size_desktop": 32,
