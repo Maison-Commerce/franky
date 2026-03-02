@@ -567,7 +567,7 @@
 
   .maison_commerce_introducing__content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: {% if section.settings.row == 'right' %}row{% else %}row-reverse{% endif %} ;
     gap: 24px;
     align-items: center;
     justify-content: space-between;
