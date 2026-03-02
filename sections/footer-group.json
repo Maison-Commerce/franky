@@ -113,6 +113,7 @@
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
         "logo_image": "shopify://shop_images/LogoFooter.png",
+        "logo_image_bg": "shopify://shop_images/svgviewer-output_3.svg",
         "logo_width_desktop": 177,
         "logo_width_mobile": 177,
         "newsletter_heading": "Join And Get 10% Off",
