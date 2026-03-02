@@ -89,7 +89,7 @@
       "default": 20
     },
     {
-      "type": "color",
+      "type": "color_background",
       "id": "section_bg_color",
       "label": "Section Background Color",
       "default": "#FFFFFF"
@@ -316,7 +316,7 @@
 }
 {% endschema %}
 
-<div class="maison_commerce_advantages" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+<div class="maison_commerce_advantages" style="background: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
   <div class="maison_commerce_advantages__container">
     {% if section.settings.heading != blank %}
       <h2 class="maison_commerce_advantages__heading">
@@ -358,7 +358,7 @@
 <style>
   .maison_commerce_advantages {
     width: 100%;
-    background-color: {{ section.settings.section_bg_color }};
+    background: {{ section.settings.section_bg_color }};
   }
 
   @media (max-width: 950px) {
