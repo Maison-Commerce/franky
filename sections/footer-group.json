@@ -17,7 +17,6 @@
         "usp_iCD4gH": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/Shipment-Upload--Streamline-Ultimate.svg",
             "title": "Free Shipping",
             "description": "On all orders over $50"
           }
@@ -25,7 +24,6 @@
         "usp_HmneQP": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/Frame.svg",
             "title": "Subscribe & Save",
             "description": "Save 15% with auto-delivery"
           }
@@ -33,7 +31,6 @@
         "usp_TUXHKb": {
           "type": "usp",
           "settings": {
-            "icon": "shopify://shop_images/Love-Heart-Hands-Hold-3--Streamline-Ultimate.svg",
             "title": "Exceptional Support",
             "description": "Real humans, real help, 7 days a week"
           }
@@ -46,7 +43,7 @@
       ],
       "name": "Maison Base USPs",
       "settings": {
-        "section_bg_color": "#fdfbe0",
+        "section_bg_color": "#fcfeff",
         "padding_top_desktop": 44,
         "padding_bottom_desktop": 44,
         "padding_left_desktop": 60,
@@ -65,10 +62,10 @@
         "title_font_size_mobile": 24,
         "title_line_height_desktop": 1.2,
         "title_line_height_mobile": 1.3,
-        "title_color": "#2c2926",
+        "title_color": "#3b2b2f",
         "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
-        "description_color": "#2f3936"
+        "description_color": "#3b2b2f"
       }
     },
     "maison_footer_CAGawr": {
@@ -85,14 +82,14 @@
           "type": "link_list",
           "settings": {
             "heading": "Navigate",
-            "menu": "maison-navigate"
+            "menu": ""
           }
         },
         "link_list_HmF37b": {
           "type": "link_list",
           "settings": {
             "heading": "Shipping & Returns",
-            "menu": "maison-shipping-returns"
+            "menu": ""
           }
         }
       },
@@ -112,8 +109,6 @@
         "padding_bottom_mobile": 38,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "logo_image": "shopify://shop_images/AROSE_PRIMARY_LOGO.png",
-        "logo_image_bg": "shopify://shop_images/AROSE_dark_green_SVG_1_16d78509-adfa-49a2-91f5-c933b135e7f7.svg",
         "logo_width_desktop": 177,
         "logo_width_mobile": 177,
         "newsletter_heading": "Join And Get 10% Off",
