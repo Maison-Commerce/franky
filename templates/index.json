@@ -438,7 +438,7 @@
         "heading_line_height_mobile": 1.3,
         "heading_color": "#3b2b2f",
         "rating_text_color": "#3b2b2f",
-        "star_color": "#f79009",
+        "star_color": "#3b2b2f",
         "star_empty_color": "#e0e0e0",
         "card_gap_desktop": 12,
         "card_gap_mobile": 12,
