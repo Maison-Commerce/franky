@@ -355,6 +355,103 @@
         "card_width_mobile": 256
       }
     },
+    "maison_review_slider_RyQYLB": {
+      "type": "maison-review-slider",
+      "blocks": {
+        "review_gTmP6V": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "purchase_date": "Purchased on 18 July 2025",
+            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
+            "reviewer_name": "Hannah",
+            "reviewer_profession": "RN",
+            "reviewer_age": "45",
+            "show_verified_badge": true
+          }
+        },
+        "review_MEcgQA": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "purchase_date": "Purchased on 18 July 2025",
+            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
+            "reviewer_name": "Hannah",
+            "reviewer_profession": "RN",
+            "reviewer_age": "45",
+            "show_verified_badge": true
+          }
+        },
+        "review_bk7tmm": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "purchase_date": "Purchased on 18 July 2025",
+            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
+            "reviewer_name": "Hannah",
+            "reviewer_profession": "RN",
+            "reviewer_age": "45",
+            "show_verified_badge": true
+          }
+        },
+        "review_Y7BXCR": {
+          "type": "review",
+          "settings": {
+            "star_rating": 5,
+            "purchase_date": "Purchased on 18 July 2025",
+            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
+            "reviewer_name": "Hannah",
+            "reviewer_profession": "RN",
+            "reviewer_age": "45",
+            "show_verified_badge": true
+          }
+        }
+      },
+      "block_order": [
+        "review_gTmP6V",
+        "review_MEcgQA",
+        "review_bk7tmm",
+        "review_Y7BXCR"
+      ],
+      "name": "Maison Review Slider",
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "overall_rating": "4.8/5",
+        "review_count": "8,450+",
+        "overall_star_rating": 5,
+        "heading": "Real Talk, Real Customers",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_line_height_desktop": 1.2,
+        "heading_line_height_mobile": 1.3,
+        "heading_color": "#2f3936",
+        "rating_text_color": "#2f3936",
+        "star_color": "#2e432f",
+        "star_empty_color": "#e0e0e0",
+        "card_gap_desktop": 12,
+        "card_gap_mobile": 12,
+        "card_border_radius": 18,
+        "card_bg_color": "#ffffff",
+        "review_text_font_size_desktop": 16,
+        "review_text_font_size_mobile": 14,
+        "review_text_color": "#3a3631",
+        "date_color": "#3a3631",
+        "reviewer_name_color": "#3a3631",
+        "verified_badge_bg_color": "#ecfee9",
+        "verified_badge_text_color": "#3a3631",
+        "nav_button_bg_color": "#ffffff",
+        "nav_button_border_color": "#b9fcab",
+        "nav_button_icon_color": "#2e432f"
+      }
+    },
     "maison_faq_badge_VJzwxc": {
       "type": "maison-faq-badge",
       "blocks": {
@@ -522,103 +619,6 @@
         "content_gap_desktop": 32,
         "content_gap_mobile": 20
       }
-    },
-    "maison_review_slider_RyQYLB": {
-      "type": "maison-review-slider",
-      "blocks": {
-        "review_gTmP6V": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "purchase_date": "Purchased on 18 July 2025",
-            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
-            "reviewer_name": "Hannah",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
-            "show_verified_badge": true
-          }
-        },
-        "review_MEcgQA": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "purchase_date": "Purchased on 18 July 2025",
-            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
-            "reviewer_name": "Hannah",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
-            "show_verified_badge": true
-          }
-        },
-        "review_bk7tmm": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "purchase_date": "Purchased on 18 July 2025",
-            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
-            "reviewer_name": "Hannah",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
-            "show_verified_badge": true
-          }
-        },
-        "review_Y7BXCR": {
-          "type": "review",
-          "settings": {
-            "star_rating": 5,
-            "purchase_date": "Purchased on 18 July 2025",
-            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck...</p>",
-            "reviewer_name": "Hannah",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
-            "show_verified_badge": true
-          }
-        }
-      },
-      "block_order": [
-        "review_gTmP6V",
-        "review_MEcgQA",
-        "review_bk7tmm",
-        "review_Y7BXCR"
-      ],
-      "name": "Maison Review Slider",
-      "settings": {
-        "section_bg_color": "#ffffff",
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_left_desktop": 80,
-        "padding_right_desktop": 80,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "overall_rating": "4.8/5",
-        "review_count": "8,450+",
-        "overall_star_rating": 5,
-        "heading": "Real Talk, Real Customers",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_line_height_desktop": 1.2,
-        "heading_line_height_mobile": 1.3,
-        "heading_color": "#2f3936",
-        "rating_text_color": "#2f3936",
-        "star_color": "#2e432f",
-        "star_empty_color": "#e0e0e0",
-        "card_gap_desktop": 12,
-        "card_gap_mobile": 12,
-        "card_border_radius": 18,
-        "card_bg_color": "#ffffff",
-        "review_text_font_size_desktop": 16,
-        "review_text_font_size_mobile": 14,
-        "review_text_color": "#3a3631",
-        "date_color": "#3a3631",
-        "reviewer_name_color": "#3a3631",
-        "verified_badge_bg_color": "#ecfee9",
-        "verified_badge_text_color": "#3a3631",
-        "nav_button_bg_color": "#ffffff",
-        "nav_button_border_color": "#b9fcab",
-        "nav_button_icon_color": "#2e432f"
-      }
     }
   },
   "order": [
@@ -627,8 +627,8 @@
     "maison_introducing_GH37PA",
     "maison_advantages_CC8mpx",
     "maison_video_review_jCeGmk",
+    "maison_review_slider_RyQYLB",
     "maison_faq_badge_VJzwxc",
-    "maison_introducing_v2_nKrCXH",
-    "maison_review_slider_RyQYLB"
+    "maison_introducing_v2_nKrCXH"
   ]
 }
