@@ -124,18 +124,21 @@
         "trust_badge_8URhmJ": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
             "text": "GMP-Certified Facility"
           }
         },
         "trust_badge_46VeGw": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/la_flag-usa.svg",
             "text": "Made in USA"
           }
         },
         "trust_badge_btqjAN": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
             "text": "Organically Grown Ingredients"
           }
         }
