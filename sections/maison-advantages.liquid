@@ -493,7 +493,7 @@
     font-size: {{ section.settings.description_font_size_desktop }}px;
     font-weight: 500;
     line-height: 1.5;
-    color: {{ section.settings.description_color }};
+    color: {{ section.settings.description_color | hex_to_rgba: 0.75 }};
   }
 
   .maison_commerce_advantages__card-description p {
