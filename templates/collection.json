@@ -207,28 +207,28 @@
         "faq_item_LKK3EP": {
           "type": "faq_item",
           "settings": {
-            "question": "Will this make me jittery?",
+            "question": "How much caffeine?",
             "answer": "<p>No. Unlike regular coffee that spikes your system, AROSE combines 150mg of natural caffeine with 25g of protein and healthy fats. The protein buffers the caffeine absorption, giving you smooth, sustained energy without the jitters, anxiety, or heart-racing feeling you get from coffee alone.</p>"
           }
         },
         "faq_item_cL4Fzp": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this for weight loss?",
+            "question": "Will I crash?",
             "answer": "<p>Absolutely. While AROSE isn't marketed as a weight-loss product, the science is clear: high protein intake (25g per serving) increases satiety hormones, reduces hunger throughout the day, and supports a healthy metabolism. Many customers report naturally eating less and losing weight without trying because they're finally satisfied in the morning. You're replacing empty-calorie coffee drinks with complete nutrition.</p>"
           }
         },
         "faq_item_ghVQGC": {
           "type": "faq_item",
           "settings": {
-            "question": "How long until I feel results?",
+            "question": "Can I replace breakfast?",
             "answer": "<p>Most people feel the difference immediately - stable energy that lasts 4-6 hours instead of crashing after 2. Within 3-5 days, you'll notice you're not reaching for snacks mid-morning. By week 2-3, the sustained energy becomes your new normal and you'll wonder how you ever functioned without it.</p>"
           }
         },
         "faq_item_cRrQAK": {
           "type": "faq_item",
           "settings": {
-            "question": "Caffeine content?",
+            "question": "Is it dairy-free?",
             "answer": "<p>150mg of natural caffeine per serving - equivalent to about 1.5 cups of coffee. It's the sweet spot: enough to energize and enhance focus, but not so much that you crash or can't sleep at night. And because it's paired with protein, it releases gradually for sustained alertness without the spike-and-crash cycle.</p>"
           }
         },
@@ -236,21 +236,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Can I drink daily?",
-            "answer": "<p>Yes - AROSE is designed as your daily morning ritual. It's perfectly safe for long-term use and contains only natural, food-based ingredients. Most customers make it their permanent breakfast replacement and actually look forward to it every morning. Think of it as upgrading from regular coffee to functional coffee that actually nourishes you.</p>"
-          }
-        },
-        "faq_item_rnfrcb": {
-          "type": "faq_item",
-          "settings": {
-            "question": "I'm lactose intolerant—can I use this?",
-            "answer": "<p>Most likely, yes. AROSE uses whey protein isolate, which has 90%+ of lactose removed during processing. The majority of people with lactose intolerance tolerate whey isolate without issues. That said, if you have severe dairy sensitivity, we recommend starting with a half serving to test tolerance, or consulting your doctor first.</p>"
-          }
-        },
-        "faq_item_HjCwjg": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How is this different from adding protein powder to coffee?",
-            "answer": "<p>Great question. Most protein powders curdle, clump, or create a chalky mess when mixed with hot coffee. AROSE is specifically formulated to blend instantly and smoothly - whether hot or cold - with a taste profile designed to complement coffee, not fight it. Plus, we've optimized the protein-to-caffeine ratio based on research for maximum energy stability. It's not just protein + coffee thrown together - it's an engineered system that actually works.</p>"
+            "answer": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>"
           }
         }
       },
@@ -260,9 +246,7 @@
         "faq_item_cL4Fzp",
         "faq_item_ghVQGC",
         "faq_item_cRrQAK",
-        "faq_item_Bbrt93",
-        "faq_item_rnfrcb",
-        "faq_item_HjCwjg"
+        "faq_item_Bbrt93"
       ],
       "name": "Maison FAQ",
       "settings": {
