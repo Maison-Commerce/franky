@@ -20,52 +20,9 @@
     },
     "support_section_LrKkHV": {
       "type": "support-section",
-      "blocks": {
-        "support_option_NrA8YN": {
-          "type": "support_option",
-          "settings": {
-            "title": "Chat With Us",
-            "description": "Live support available Mon-Fri, 9am-8pm GMT. Connect instantly with our support team.",
-            "button_text": "Start Chat Now",
-            "button_link": "#",
-            "button_action": "link",
-            "email_to_copy": "",
-            "phone_number": ""
-          }
-        },
-        "support_option_xYVMzK": {
-          "type": "support_option",
-          "settings": {
-            "title": "Email Support",
-            "description": "24/7 ticket system for all your inquiries. Email us at support@vitalityboost.co.uk anytime.",
-            "button_text": "Copy Email",
-            "button_link": "",
-            "button_action": "copy_email",
-            "email_to_copy": "support@vitalityboost.co.uk",
-            "phone_number": ""
-          }
-        },
-        "support_option_CnQNJJ": {
-          "type": "support_option",
-          "settings": {
-            "title": "Call Us",
-            "description": "Speak directly with our experts at 0800-123-4567. Best time to call: 9am-8pm GMT.",
-            "button_text": "Call Now",
-            "button_link": "",
-            "button_action": "call",
-            "email_to_copy": "",
-            "phone_number": "0800-123-4567"
-          }
-        }
-      },
-      "block_order": [
-        "support_option_NrA8YN",
-        "support_option_xYVMzK",
-        "support_option_CnQNJJ"
-      ],
       "name": "Support Section",
       "settings": {
-        "section_bg_color": "#fefdee",
+        "section_bg_color": "#fefcf5",
         "padding_top_desktop": 44,
         "padding_bottom_desktop": 44,
         "padding_left_desktop": 60,
@@ -83,10 +40,10 @@
         "title_font_size_mobile": 24,
         "title_line_height_desktop": 1.2,
         "title_line_height_mobile": 1.4,
-        "title_color": "#2c2926",
+        "title_color": "#3b2b2f",
         "subtitle_font_size_desktop": 18,
         "subtitle_font_size_mobile": 14,
-        "subtitle_color": "#2f3936",
+        "subtitle_color": "#3b2b2f",
         "subtitle_opacity": 75,
         "card_gap_desktop": 32,
         "card_gap_mobile": 32,
