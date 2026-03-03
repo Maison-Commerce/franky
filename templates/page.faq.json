@@ -121,6 +121,7 @@
         "nav_button_zwJRy7": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Ecology-Leaf--Streamline-Ultimate.svg",
             "label": "Products",
             "section_id": "products"
           }
@@ -128,6 +129,7 @@
         "nav_button_9iHGrb": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Award-Trophy-Star-1--Streamline-Ultimate.svg",
             "label": "Results",
             "section_id": "results"
           }
@@ -135,6 +137,7 @@
         "nav_button_PGGGbA": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Pill-Timer--Streamline-Ultimate.svg",
             "label": "Usage",
             "section_id": "usage"
           }
@@ -142,6 +145,7 @@
         "nav_button_MfimTj": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Shipment-Upload--Streamline-Ultimate_16accbbf-4171-4a30-93e6-4fad90fd1967.svg",
             "label": "Shipping",
             "section_id": "shipping"
           }
@@ -149,6 +153,7 @@
         "nav_button_JapEdM": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Certified-Ribbon-1--Streamline-Ultimate.svg",
             "label": "Guarantee",
             "section_id": "guarantee"
           }
@@ -156,6 +161,7 @@
         "nav_button_bFfg9t": {
           "type": "nav_button",
           "settings": {
+            "icon": "shopify://shop_images/Button-Refresh-Arrow--Streamline-Ultimate.svg",
             "label": "Subscription",
             "section_id": "subscription"
           }
