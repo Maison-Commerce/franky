@@ -1,0 +1,579 @@
+<section
+  class="maison_commerce_maison_ing"
+  style="
+    --mc-ing-bg-start: {{ section.settings.bg_gradient_start }};
+    --mc-ing-bg-end: {{ section.settings.bg_gradient_end }};
+    --mc-ing-pt-d: {{ section.settings.padding_top_desktop }}px;
+    --mc-ing-pb-d: {{ section.settings.padding_bottom_desktop }}px;
+    --mc-ing-pl-d: {{ section.settings.padding_left_desktop }}px;
+    --mc-ing-pr-d: {{ section.settings.padding_right_desktop }}px;
+    --mc-ing-pt-m: {{ section.settings.padding_top_mobile }}px;
+    --mc-ing-pb-m: {{ section.settings.padding_bottom_mobile }}px;
+    --mc-ing-pl-m: {{ section.settings.padding_left_mobile }}px;
+    --mc-ing-pr-m: {{ section.settings.padding_right_mobile }}px;
+    --mc-ing-heading-color: {{ section.settings.heading_color }};
+    --mc-ing-heading-size-d: {{ section.settings.heading_font_size_desktop }}px;
+    --mc-ing-heading-size-m: {{ section.settings.heading_font_size_mobile }}px;
+    --mc-ing-subtitle-color: {{ section.settings.subtitle_color }};
+    --mc-ing-subtitle-size-d: {{ section.settings.subtitle_font_size_desktop }}px;
+    --mc-ing-subtitle-size-m: {{ section.settings.subtitle_font_size_mobile }}px;
+    --mc-ing-card-bg: {{ section.settings.card_bg_color }};
+    --mc-ing-card-title-color: {{ section.settings.card_title_color }};
+    --mc-ing-card-title-size-d: {{ section.settings.card_title_font_size_desktop }}px;
+    --mc-ing-card-title-size-m: {{ section.settings.card_title_font_size_mobile }}px;
+    --mc-ing-card-desc-color: {{ section.settings.card_desc_color }};
+    --mc-ing-card-desc-size-d: {{ section.settings.card_desc_font_size_desktop }}px;
+    --mc-ing-card-desc-size-m: {{ section.settings.card_desc_font_size_mobile }}px;
+  "
+>
+  <div class="maison_commerce_maison_ing__container">
+
+    {%- if section.settings.section_heading != blank or section.settings.section_subtitle != blank -%}
+      <div class="maison_commerce_maison_ing__header">
+        {%- if section.settings.section_heading != blank -%}
+          <h2 class="maison_commerce_maison_ing__heading">{{ section.settings.section_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.section_subtitle != blank -%}
+          <p class="maison_commerce_maison_ing__subtitle">{{ section.settings.section_subtitle }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="maison_commerce_maison_ing__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'ingredient' -%}
+            <div class="maison_commerce_maison_ing__card-outer" {{ block.shopify_attributes }}>
+              <div class="maison_commerce_maison_ing__card-image">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 300
+                    | image_tag:
+                      alt: block.settings.title,
+                      loading: 'lazy',
+                      widths: '150, 200, 300'
+                  }}
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'maison_commerce_maison_ing__placeholder-svg' }}
+                {%- endif -%}
+              </div>
+              <div class="maison_commerce_maison_ing__card-body">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="maison_commerce_maison_ing__card-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="maison_commerce_maison_ing__card-desc">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ============================================
+     Section
+  ============================================ */
+  .maison_commerce_maison_ing {
+    box-sizing: border-box;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--mc-ing-bg-start), var(--mc-ing-bg-end));
+    padding: var(--mc-ing-pt-d) var(--mc-ing-pr-d) var(--mc-ing-pb-d) var(--mc-ing-pl-d);
+  }
+
+  /* ============================================
+     Container
+  ============================================ */
+  .maison_commerce_maison_ing__container {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  /* ============================================
+     Header
+  ============================================ */
+  .maison_commerce_maison_ing__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .maison_commerce_maison_ing__heading {
+    font-family: 'Lust Text', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--mc-ing-heading-size-d);
+    line-height: 1.2;
+    color: var(--mc-ing-heading-color);
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .maison_commerce_maison_ing__subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: var(--mc-ing-subtitle-size-d);
+    line-height: 1.5;
+    color: var(--mc-ing-subtitle-color);
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  /* ============================================
+     Grid — Desktop: horizontal row
+  ============================================ */
+  .maison_commerce_maison_ing__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ============================================
+     Card outer — Desktop: vertical card
+     with image floating above the card body
+  ============================================ */
+  .maison_commerce_maison_ing__card-outer {
+    position: relative;
+    padding-top: 90px; /* creates space for the floating image */
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ============================================
+     Card image — Desktop: floats above card body
+  ============================================ */
+  .maison_commerce_maison_ing__card-image {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 132px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 6px;
+    z-index: 2;
+  }
+
+  .maison_commerce_maison_ing__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .maison_commerce_maison_ing__placeholder-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* ============================================
+     Card body — Desktop
+  ============================================ */
+  .maison_commerce_maison_ing__card-body {
+    background-color: var(--mc-ing-card-bg);
+    border: 1px solid rgba(59, 43, 47, 0.18);
+    border-radius: 18px;
+    padding: 16px;
+  }
+
+  /* ============================================
+     Card title
+  ============================================ */
+  .maison_commerce_maison_ing__card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--mc-ing-card-title-size-d);
+    line-height: 1.5;
+    color: var(--mc-ing-card-title-color);
+    margin: 0 0 4px;
+  }
+
+  /* ============================================
+     Card description
+  ============================================ */
+  .maison_commerce_maison_ing__card-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: var(--mc-ing-card-desc-size-d);
+    line-height: 1.5;
+    color: var(--mc-ing-card-desc-color);
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  /* ============================================
+     Mobile
+  ============================================ */
+  @media (max-width: 768px) {
+    /* Section padding */
+    .maison_commerce_maison_ing {
+      padding: var(--mc-ing-pt-m) var(--mc-ing-pr-m) var(--mc-ing-pb-m) var(--mc-ing-pl-m);
+    }
+
+    /* Container gap */
+    .maison_commerce_maison_ing__container {
+      gap: 24px;
+    }
+
+    /* Header: left-aligned on mobile */
+    .maison_commerce_maison_ing__header {
+      align-items: flex-start;
+      text-align: left;
+      margin: 0;
+    }
+
+    .maison_commerce_maison_ing__heading {
+      font-size: var(--mc-ing-heading-size-m);
+    }
+
+    .maison_commerce_maison_ing__subtitle {
+      font-size: var(--mc-ing-subtitle-size-m);
+    }
+
+    /* Grid: vertical stack */
+    .maison_commerce_maison_ing__grid {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Card outer: horizontal card layout */
+    .maison_commerce_maison_ing__card-outer {
+      width: 100%;
+      padding-top: 0;
+      display: flex;
+      align-items: stretch;
+      background-color: white;
+      border: 1px solid rgba(59, 43, 47, 0.18);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Card image: static, on the right */
+    .maison_commerce_maison_ing__card-image {
+      position: static;
+      width: 100px;
+      height: auto;
+      min-height: 75px;
+      flex-shrink: 0;
+      order: 2;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    /* Card body: on the left */
+    .maison_commerce_maison_ing__card-body {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 18px;
+      order: 1;
+    }
+
+    .maison_commerce_maison_ing__card-title {
+      font-size: var(--mc-ing-card-title-size-m);
+    }
+
+    .maison_commerce_maison_ing__card-desc {
+      font-size: var(--mc-ing-card-desc-size-m);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Maison ING",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Premium Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "Complete Protein & Performance Coffee Formula for Steady Energy and Focus"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_start",
+      "label": "Gradient Start Color (Top)",
+      "default": "#deeaf2"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_end",
+      "label": "Gradient End Color (Bottom)",
+      "default": "#fffffe"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#3b2b2f"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#3b2b2f"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#fefefe"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#3b2b2f"
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_desktop",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_title_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Title Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_desc_color",
+      "label": "Card Description Color",
+      "default": "#3b2b2f"
+    },
+    {
+      "type": "range",
+      "id": "card_desc_font_size_desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Description Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_desc_font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Description Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Padding — Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Padding — Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ingredient Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Ingredient Name",
+          "default": "Natural Caffeine"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Clean energy without anxiety."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison ING",
+      "blocks": [
+        { "type": "ingredient" },
+        { "type": "ingredient" },
+        { "type": "ingredient" },
+        { "type": "ingredient" },
+        { "type": "ingredient" },
+        { "type": "ingredient" }
+      ]
+    }
+  ]
+}
+{% endschema %}
