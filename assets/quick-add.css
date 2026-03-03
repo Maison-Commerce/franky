@@ -362,9 +362,9 @@ quick-add-modal .product-form__buttons {
   gap: 8px;
   align-self: stretch;
   border-radius: 8px;
-  border: 1px solid var(--Color-Brand-1-900, #7D8A7E);
+  border: 1px solid var(--Color-Brand-2-1600, #C3D7E6);
   background: transparent;
-  color: var(--Color-Brand-1-1800, #2E432F);
+  color: #3B2B2F;
   font-family: "Neue Haas Grotesk Display Pro";
   font-size: 14px;
   font-style: normal;
