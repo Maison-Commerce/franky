@@ -211,7 +211,7 @@
 }
 
 .facets__summary {
-  color: var(--Text-Secondary, rgba(47, 57, 54, 0.75));
+  color: rgba(59, 43, 47, 0.75);
   font-family: "Neue Haas Grotesk Display Pro";
   font-size: 16px;
   font-style: normal;
