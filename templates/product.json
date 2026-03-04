@@ -1475,7 +1475,7 @@
       ],
       "name": "Maison Video Review",
       "settings": {
-        "section_bg_gradient": "linear-gradient(180deg, rgba(234, 240, 219, 1), rgba(255, 255, 255, 1) 100%)",
+        "section_bg_gradient": "linear-gradient(180deg, #DEEAF2 0%, rgba(251, 246, 234, 0.00) 100%)",
         "padding_top_desktop": 24,
         "padding_bottom_desktop": 24,
         "padding_left_desktop": 0,
