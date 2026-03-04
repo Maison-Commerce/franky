@@ -83,7 +83,7 @@
       "default": 20
     },
     {
-      "type": "color",
+      "type": "color_background",
       "id": "section_bg_color",
       "label": "Section Background Color",
       "default": "#2E432F"
@@ -236,7 +236,7 @@
 }
 {% endschema %}
 
-<div class="maison_commerce_badge_list" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+<div class="maison_commerce_badge_list" style="background: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
   <div class="maison_commerce_badge_list__container">
     <div class="maison_commerce_badge_list__badges">
       {% for block in section.blocks %}
@@ -265,7 +265,7 @@
 <style>
   .maison_commerce_badge_list {
     width: 100%;
-    background-color: {{ section.settings.section_bg_color }};
+    background: {{ section.settings.section_bg_color }};
   }
 
   @media (max-width: 950px) {
