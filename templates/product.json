@@ -684,7 +684,7 @@
         "feature_pcaLBH": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/awfawfwf.svg",
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
             "title": "Focus & Mental Clarity",
             "description": "Sharpens focus & keeps you locked in during work and workouts."
           }
@@ -692,7 +692,7 @@
         "feature_7iLXFG": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/sfawfwfw.svg",
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
             "title": "10g Protein Power",
             "description": "Aids muscle recovery and fuels you without heavy shakes."
           }
@@ -808,7 +808,7 @@
         "padding_bottom_mobile": 12,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "section_bg_color": "linear-gradient(0deg, #3B2B2F 0%, #3B2B2F 100%), #FFF",
+        "section_bg_color": "linear-gradient(0deg, rgba(59, 43, 47, 1), rgba(59, 43, 47, 1) 100%)",
         "badge_text_font_size_desktop": 16,
         "badge_text_font_size_mobile": 14,
         "badge_text_color": "#ffffff",
@@ -816,7 +816,82 @@
         "icon_size_mobile": 24,
         "badge_gap_desktop": 8,
         "badge_gap_mobile": 18,
-        "icon_text_gap": 12
+        "icon_text_gap": 12,
+        "marquee_speed": 20
+      }
+    },
+    "maison_introducing_bnLFrb": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_wnh8C4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Gut-Friendly Formula",
+            "description": "Added fiber and ingredients for digestion and balance."
+          }
+        },
+        "feature_TfKCVp": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/abwgabgkjawb.png",
+            "title": "No Jitters",
+            "description": "Caffeine that energizes without anxiety."
+          }
+        },
+        "feature_Y8nRhj": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1484580868.png",
+            "title": "Breakfast in One Cup",
+            "description": "Replaces coffee + protein shake  in 60 seconds flat."
+          }
+        }
+      },
+      "block_order": [
+        "feature_wnh8C4",
+        "feature_TfKCVp",
+        "feature_Y8nRhj"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row",
+        "mobile_image_position": "bottom",
+        "text_align": "center",
+        "product_image_desktop": "shopify://shop_images/Image.png",
+        "product_image_mobile": "shopify://shop_images/2wafwfw.png",
+        "heading": "<p>What’s Inside Matters</p>",
+        "desc": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
+        "social_proof_text": "",
+        "social_proof_count": "",
+        "social_proof_suffix": "",
+        "button_text": "Upgrade My Morning",
+        "button_link": "",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
       }
     },
     "maison_introducing_DidygV": {
@@ -1628,6 +1703,7 @@
     "maison_ing_Pzf6La",
     "maison_introducing_LXBj6d",
     "maison_badge_list_Qxnb7C",
+    "maison_introducing_bnLFrb",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
