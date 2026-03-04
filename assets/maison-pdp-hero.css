@@ -22,7 +22,7 @@
   --color-brand-1-3200: #192F06;
   --color-brand-1-3300: #141405;
   
-  --color-brand-2-300: #F2FEEF;
+  --color-brand-2-300: rgba(245, 237, 220, 0.40);
   --color-brand-2-700: #DDFED6;
   --color-brand-2-800: #D8FDD0;
   --color-brand-2-1300: #C4FCB8;
@@ -459,7 +459,7 @@ img {
 }
 
 .xmaison_pack-option.xmaison_selected {
-  background-color: var(--color-brand-2-300);
+  background: var(--color-brand-2-300);
   border: 1.5px solid var(--color-brand-1-1400);
 }
 
@@ -570,7 +570,7 @@ img {
 }
 
 .xmaison_subscription-option.xmaison_subscribe .xmaison_subscription-content {
-  background-color: var(--color-brand-2-300);
+  background: var(--color-brand-2-300);
   border-radius: 8px;
 }
 
