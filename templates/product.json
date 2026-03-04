@@ -577,6 +577,7 @@
         ],
         "bundle_enabled": true,
         "bundle_title": "BUILD YOUR BUNDLE:",
+        "bundle_addon_count": 10,
         "bundle_tier1_label": "1 bag",
         "bundle_tier1_price": "$34.95/bag",
         "bundle_tier2_label": "2 bags",
@@ -585,7 +586,9 @@
         "bundle_tier3_price": "$30.95/bag",
         "bundle_tier4_label": "4+ bags",
         "bundle_tier4_price": "$24.95/bag",
-        "bundle_products": []
+        "bundle_products": [
+          "franky-protein-coffee-test"
+        ]
       }
     },
     "maison_ing_Pzf6La": {
