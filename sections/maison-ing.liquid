@@ -158,14 +158,11 @@
      Card image — Desktop: floats above card body
   ============================================ */
   .maison_commerce_maison_ing__card-image {
-    position: absolute;
-    top: 0;
-    right: 16px;
-    width: 132px;
-    height: 100px;
+    width: 100%;
+    max-width: 132px;
+    height: auto;
     overflow: hidden;
-    border-radius: 6px;
-    z-index: 2;
+    margin-left: auto;
   }
 
   .maison_commerce_maison_ing__card-image img {
@@ -174,6 +171,12 @@
     object-fit: cover;
     object-position: center;
     display: block;
+  }
+
+  .maison_commerce_maison_ing__card-txt-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .maison_commerce_maison_ing__placeholder-svg {
