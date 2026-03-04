@@ -1049,7 +1049,7 @@
       <!-- Product Options -->
       <div class="xmaison_product-options">
         <!-- Flavor Selector -->
-        {% comment %} <div class="xmaison_option-group">
+        <div class="xmaison_option-group">
           <div class="xmaison_option-label">
             <span class="xmaison_option-label-title">Flavor</span>
             <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
@@ -1074,10 +1074,10 @@
               <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-        </div> {% endcomment %}
+        </div>
 
         <!-- Pack Size Selector -->
-        {% comment %} <div class="xmaison_pack-size-group">
+        <div class="xmaison_pack-size-group">
           <div class="xmaison_option-label">
             <span class="xmaison_option-label-title">Pack Size:</span>
             <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
@@ -1118,7 +1118,7 @@
               {% endif %}
             {% endfor %}
           </div>
-        </div> {% endcomment %}
+        </div>
 
         <!-- Build Your Bundle -->
         {% if section.settings.bundle_enabled %}
