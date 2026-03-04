@@ -1664,9 +1664,6 @@
   flex-direction: column;
   gap: 16px;
   padding: 20px;
-  background: rgba(245, 237, 220, 0.4);
-  border-radius: 12px;
-  border: 1px solid rgba(220, 213, 198, 0.6);
 }
 
 .xmaison_bundle-title {
