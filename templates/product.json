@@ -1024,12 +1024,36 @@
             "title": "Stay Balanced",
             "description": "Functional support for digestion"
           }
+        },
+        "trust_badge_ThXTfq": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/Shipment-Return--Streamline-Plump-Remix.svg",
+            "text": "Simple Returns"
+          }
+        },
+        "trust_badge_d3Xgzn": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/3vesvsebdb.svg",
+            "text": "Secure checkout"
+          }
+        },
+        "trust_badge_mrWmX7": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/bakjfbajkvbjkwa.svg",
+            "text": "1.2M sold last year"
+          }
         }
       },
       "block_order": [
         "feature_dpKWdQ",
         "feature_FaA4b4",
-        "feature_8kQiwH"
+        "feature_8kQiwH",
+        "trust_badge_ThXTfq",
+        "trust_badge_d3Xgzn",
+        "trust_badge_mrWmX7"
       ],
       "name": "Maison Introducing",
       "settings": {
