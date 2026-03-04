@@ -774,7 +774,7 @@
 
         const mainItem = {
           id: variantId || this.variantId,
-          quantity: qty || this.quantity,
+          quantity: hasBundleAddons ? 1 : (qty || this.quantity),
         };
 
         if (this.isSubscription && this.sellingPlanId && !isRelated) {
