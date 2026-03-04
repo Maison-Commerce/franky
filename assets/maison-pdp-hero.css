@@ -1155,6 +1155,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 }
 
 .xmaison_related-item-name {
