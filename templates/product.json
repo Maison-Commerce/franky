@@ -808,7 +808,7 @@
         "padding_bottom_mobile": 12,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "section_bg_color": "#2e432f",
+        "section_bg_color": "linear-gradient(0deg, #3B2B2F 0%, #3B2B2F 100%), #FFF",
         "badge_text_font_size_desktop": 16,
         "badge_text_font_size_mobile": 14,
         "badge_text_color": "#ffffff",
