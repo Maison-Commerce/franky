@@ -252,7 +252,7 @@ img {
   transition: width 0.3s ease-in-out;
   height: 6px;
   width: 100%;
-  background: linear-gradient(to right, #2e432f, #74a977);
+  background: #3B2B2F;
   border-radius: var(--xmaison-radius-full);
   position: relative;
   z-index: 1;
