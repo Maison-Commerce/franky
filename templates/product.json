@@ -998,320 +998,6 @@
         "row_value_color_featured": "#3b2b2f"
       }
     },
-    "maison_introducing_DidygV": {
-      "type": "maison-introducing",
-      "blocks": {
-        "feature_9krNK3": {
-          "type": "feature",
-          "settings": {
-            "title": "Sustained Energy",
-            "description": "Real coffee + 20g protein = no crash, no jitters"
-          }
-        },
-        "feature_kmFwV8": {
-          "type": "feature",
-          "settings": {
-            "title": "Complete Nutrition",
-            "description": "Protein, caffeine, superfoods, micronutrients in one cup"
-          }
-        },
-        "feature_cN9meJ": {
-          "type": "feature",
-          "settings": {
-            "title": "Effortless Routine",
-            "description": "Replaces breakfast + coffee in 60 seconds"
-          }
-        },
-        "trust_badge_CbdKTU": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
-            "text": "GMP-Certified Facility"
-          }
-        },
-        "trust_badge_6HNUcm": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/la_flag-usa.svg",
-            "text": "Made in USA"
-          }
-        },
-        "trust_badge_NXqHRM": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
-            "text": "Organically Grown Ingredients"
-          }
-        }
-      },
-      "block_order": [
-        "feature_9krNK3",
-        "feature_kmFwV8",
-        "feature_cN9meJ",
-        "trust_badge_CbdKTU",
-        "trust_badge_6HNUcm",
-        "trust_badge_NXqHRM"
-      ],
-      "disabled": true,
-      "name": "Maison Introducing",
-      "settings": {
-        "row": "row",
-        "mobile_image_position": "top",
-        "text_align": "left",
-        "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
-        "desc": "",
-        "social_proof_text": "Join",
-        "social_proof_count": "8,450+ people",
-        "social_proof_suffix": "who've reclaimed their masculinity",
-        "button_text": "Take Control of My Mood",
-        "button_link": "shopify://collections/all",
-        "padding_top_desktop": 70,
-        "padding_bottom_desktop": 70,
-        "padding_left_desktop": 60,
-        "padding_right_desktop": 60,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 32,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "section_bg_color": "#ffffff",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_color": "#2c2926",
-        "feature_title_font_size_desktop": 18,
-        "feature_title_font_size_mobile": 14,
-        "feature_description_font_size_desktop": 18,
-        "feature_description_font_size_mobile": 16,
-        "feature_text_color": "#2f3936",
-        "social_proof_font_size": 12,
-        "social_proof_color": "#2f3936",
-        "button_bg_color": "#cbfdc1",
-        "button_text_color": "#2e432f",
-        "button_font_size_desktop": 16,
-        "button_font_size_mobile": 14,
-        "trust_badge_font_size": 14,
-        "trust_badge_color": "#2c2c2c"
-      }
-    },
-    "maison_scroll_img_wDAFGb": {
-      "type": "maison-scroll-img",
-      "blocks": {
-        "logo_znBWgf": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_jG7Eim": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_ya46Qh": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_gGdYBR": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_3Hnj8f": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        },
-        "logo_Y4mnrW": {
-          "type": "logo",
-          "settings": {
-            "logo_alt": "",
-            "logo_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_znBWgf",
-        "logo_jG7Eim",
-        "logo_ya46Qh",
-        "logo_gGdYBR",
-        "logo_3Hnj8f",
-        "logo_Y4mnrW"
-      ],
-      "disabled": true,
-      "name": "Maison Scroll Images",
-      "settings": {
-        "section_bg_color": "#faf6ab",
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0,
-        "padding_left_desktop": 0,
-        "padding_right_desktop": 0,
-        "padding_top_mobile": 22,
-        "padding_bottom_mobile": 22,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "scroll_duration": 30,
-        "scroll_duration_mobile": 30,
-        "pause_on_hover": false,
-        "logo_height_desktop": 60,
-        "logo_height_mobile": 45,
-        "logo_gap_desktop": 50,
-        "logo_gap_mobile": 38
-      }
-    },
-    "maison_difference_MjnCfW": {
-      "type": "maison-difference",
-      "blocks": {
-        "comparison_YHd97V": {
-          "type": "comparison",
-          "settings": {
-            "title": "Coffee",
-            "icon_type": "x",
-            "icon_bg_color": "#d6e1b7",
-            "icon_x_bg_color": "#d6e1b7"
-          }
-        },
-        "point_nfcB3t": {
-          "type": "point",
-          "settings": {
-            "text": "Can cause major crashes or jitters",
-            "parent_block": "Coffee"
-          }
-        },
-        "point_VLpVQJ": {
-          "type": "point",
-          "settings": {
-            "text": "Bitter, acidic taste",
-            "parent_block": "Coffee"
-          }
-        },
-        "point_crJfeF": {
-          "type": "point",
-          "settings": {
-            "text": "Only caffeine stimulation – focus fades",
-            "parent_block": "Coffee"
-          }
-        },
-        "point_xUadRa": {
-          "type": "point",
-          "settings": {
-            "text": "Just coffee, nothing else",
-            "parent_block": "Coffee"
-          }
-        },
-        "point_mkLEmQ": {
-          "type": "point",
-          "settings": {
-            "text": "Dehydrates, stains teeth, upsets stomach",
-            "parent_block": "Coffee"
-          }
-        },
-        "comparison_BrXD9X": {
-          "type": "comparison",
-          "settings": {
-            "title": "MOJO gummies",
-            "icon_type": "check",
-            "icon_bg_color": "#b9fcab",
-            "icon_x_bg_color": "#d6e1b7"
-          }
-        },
-        "point_jBF83D": {
-          "type": "point",
-          "settings": {
-            "text": "<strong>Zero</strong> crash or jitters",
-            "parent_block": "MOJO gummies"
-          }
-        },
-        "point_VQKVyM": {
-          "type": "point",
-          "settings": {
-            "text": "<strong>Delicious</strong> gummy taste",
-            "parent_block": "MOJO gummies"
-          }
-        },
-        "point_qwCAeF": {
-          "type": "point",
-          "settings": {
-            "text": "<strong>Energy</strong> and focus support",
-            "parent_block": "MOJO gummies"
-          }
-        },
-        "point_XAanp7": {
-          "type": "point",
-          "settings": {
-            "text": "<strong>Super blend</strong> (mushrooms, nootropics)",
-            "parent_block": "MOJO gummies"
-          }
-        },
-        "point_pmNhWg": {
-          "type": "point",
-          "settings": {
-            "text": "Clean, portable, <strong>anytime</strong>",
-            "parent_block": "MOJO gummies"
-          }
-        }
-      },
-      "block_order": [
-        "comparison_YHd97V",
-        "point_nfcB3t",
-        "point_VLpVQJ",
-        "point_crJfeF",
-        "point_xUadRa",
-        "point_mkLEmQ",
-        "comparison_BrXD9X",
-        "point_jBF83D",
-        "point_VQKVyM",
-        "point_qwCAeF",
-        "point_XAanp7",
-        "point_pmNhWg"
-      ],
-      "disabled": true,
-      "name": "Maison Difference",
-      "settings": {
-        "section_bg_color": "#f8faf3",
-        "padding_top_desktop": 60,
-        "padding_bottom_desktop": 60,
-        "padding_left_desktop": 44,
-        "padding_right_desktop": 44,
-        "padding_top_mobile": 16,
-        "padding_bottom_mobile": 16,
-        "padding_left_mobile": 12,
-        "padding_right_mobile": 12,
-        "heading": "<p>Why Coffee Alone Sabotages <em>Your Energy</em></p>",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_color": "#2f3936",
-        "subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
-        "subtitle_font_size_desktop": 18,
-        "subtitle_font_size_mobile": 14,
-        "subtitle_color": "#000000",
-        "vs_font_size_desktop": 56,
-        "vs_font_size_mobile": 40,
-        "vs_color": "#2f3936",
-        "card_bg_color": "#ffffff",
-        "card_border_radius": 16,
-        "card_padding_desktop": 32,
-        "card_padding_mobile": 24,
-        "card_gap_desktop": 40,
-        "card_gap_mobile": 18,
-        "card_title_font_size_desktop": 18,
-        "card_title_font_size_mobile": 12,
-        "card_title_color": "#2f3936",
-        "point_font_size_desktop": 16,
-        "point_font_size_mobile": 12,
-        "point_text_color": "#2f3936",
-        "image_size_desktop": 110,
-        "image_size_mobile": 86
-      }
-    },
     "maison_video_review_UWqfGU": {
       "type": "maison-video-review",
       "blocks": {
@@ -1746,46 +1432,59 @@
         "heading_color": "#3b2b2f"
       }
     },
-    "maison_inst_img_gVTbXa": {
+    "maison_inst_img_XPMVhM": {
       "type": "maison-inst-img",
       "blocks": {
-        "instagram_image_8gjkKw": {
+        "instagram_image_QG3NX8": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/d94ee5cf910958f4eecf5a612cc37ec75511a115.png",
             "instagram_url": ""
           }
         },
-        "instagram_image_bfy9ip": {
+        "instagram_image_fjrhFc": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/uwgfawvfhjaw.png",
             "instagram_url": ""
           }
         },
-        "instagram_image_mfbaL8": {
+        "instagram_image_9gtpe3": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/uvr23uvfh3f.jpg",
             "instagram_url": ""
           }
         },
-        "instagram_image_kWcwRb": {
+        "instagram_image_4MBPaK": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/v3fv32vt23f3.png",
             "instagram_url": ""
           }
         },
-        "instagram_image_kTcHR9": {
+        "instagram_image_nXny4k": {
           "type": "instagram_image",
           "settings": {
+            "image": "shopify://shop_images/oawfihbg3gg3.png",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_8nz6DB": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/731gyfvhj43g3g.jpg",
             "instagram_url": ""
           }
         }
       },
       "block_order": [
-        "instagram_image_8gjkKw",
-        "instagram_image_bfy9ip",
-        "instagram_image_mfbaL8",
-        "instagram_image_kWcwRb",
-        "instagram_image_kTcHR9"
+        "instagram_image_QG3NX8",
+        "instagram_image_fjrhFc",
+        "instagram_image_9gtpe3",
+        "instagram_image_4MBPaK",
+        "instagram_image_nXny4k",
+        "instagram_image_8nz6DB"
       ],
       "name": "Maison Instagram Images",
       "settings": {
@@ -1842,14 +1541,11 @@
     "maison_badge_list_Qxnb7C",
     "maison_introducing_bnLFrb",
     "maison_comp_flex_acwryg",
-    "maison_introducing_DidygV",
-    "maison_scroll_img_wDAFGb",
-    "maison_difference_MjnCfW",
     "maison_video_review_UWqfGU",
     "maison_introducing_xjgRKK",
     "maison_faq_Lq9Y64",
     "maison_collection_slider_icVqir",
-    "maison_inst_img_gVTbXa",
+    "maison_inst_img_XPMVhM",
     "related-products"
   ]
 }
