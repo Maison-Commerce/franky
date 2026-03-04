@@ -24,7 +24,7 @@
   
   --color-brand-2-300: rgba(245, 237, 220, 0.40);
   --color-brand-2-700: #DDFED6;
-  --color-brand-2-800: #D8FDD0;
+  --color-brand-2-800: rgba(255, 255, 255, 0.60);
   --color-brand-2-1300: #C4FCB8;
   --color-brand-2-1800: #B9FCAB;
   
@@ -565,7 +565,7 @@ img {
 }
 
 .xmaison_subscription-option.xmaison_subscribe {
-  background-color: var(--color-brand-2-800);
+  background: var(--color-brand-2-800);
   border: 1.5px solid var(--color-brand-1-1800);
 }
 
