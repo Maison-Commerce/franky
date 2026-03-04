@@ -258,7 +258,7 @@
         "padding_bottom_mobile": 32,
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
-        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.50) 0%, rgba(243, 207, 203, 0.50) 100%)",
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(243, 207, 203, 0.5) 100%)",
         "heading": "<p>Everything You Need To Know <em>About Arose</em></p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
