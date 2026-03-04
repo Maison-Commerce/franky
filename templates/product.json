@@ -966,13 +966,13 @@
         "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
-        "heading_color": "#3B2B2F",
+        "heading_color": "#3b2b2f",
         "subtitle_font_size_desktop": 18,
         "subtitle_font_size_mobile": 14,
-        "subtitle_color": "#3B2B2F",
+        "subtitle_color": "#3b2b2f",
         "subtitle_opacity": 75,
-        "bg_color_top": "#FFFFFF",
-        "bg_color_bottom": "#DEEAF2",
+        "bg_color_top": "#ffffff",
+        "bg_color_bottom": "#deeaf2",
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40,
         "padding_left_desktop": 80,
@@ -984,18 +984,92 @@
         "featured_title": "franky",
         "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
         "featured_image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
-        "featured_header_color": "#3B2B2F",
-        "featured_header_text_color": "#F5EDDC",
-        "featured_body_color": "#F5EDDC",
+        "featured_header_color": "#3b2b2f",
+        "featured_header_text_color": "#f5eddc",
+        "featured_body_color": "#f5eddc",
         "col1_title": "Coffee",
         "col1_image": "shopify://shop_images/Rectangle_4927.png",
         "col3_title": "Protein powder",
         "col3_image": "shopify://shop_images/geg3g4rgse.png",
         "row_font_size_desktop": 16,
         "row_font_size_mobile": 14,
-        "row_label_color": "#3B2B2F",
-        "row_value_color_competitor": "#92898B",
-        "row_value_color_featured": "#3B2B2F"
+        "row_label_color": "#3b2b2f",
+        "row_value_color_competitor": "#92898b",
+        "row_value_color_featured": "#3b2b2f"
+      }
+    },
+    "maison_introducing_xjgRKK": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_dpKWdQ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Fuel Your Body",
+            "description": "Protein prevents energy dips"
+          }
+        },
+        "feature_FaA4b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
+            "title": "Energize Your Mind",
+            "description": "Clean caffeine supports focus"
+          }
+        },
+        "feature_8kQiwH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "Stay Balanced",
+            "description": "Functional support for digestion"
+          }
+        }
+      },
+      "block_order": [
+        "feature_dpKWdQ",
+        "feature_FaA4b4",
+        "feature_8kQiwH"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row-reverse",
+        "mobile_image_position": "bottom",
+        "text_align": "center",
+        "product_image_desktop": "shopify://shop_images/Image.png",
+        "product_image_mobile": "shopify://shop_images/2wafwfw.png",
+        "heading": "<p>The Science Behind Steady Energy</p>",
+        "desc": "Krijg inzicht in je slaap, beweging & meer zodat jij beter kan slapen. Een app die je snapt.",
+        "social_proof_text": "",
+        "social_proof_count": "",
+        "social_proof_suffix": "",
+        "button_text": "Upgrade My Morning",
+        "button_link": "",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
       }
     },
     "maison_introducing_DidygV": {
@@ -1822,6 +1896,7 @@
     "maison_badge_list_Qxnb7C",
     "maison_introducing_bnLFrb",
     "maison_comp_flex_acwryg",
+    "maison_introducing_xjgRKK",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
