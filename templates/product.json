@@ -1052,6 +1052,7 @@
         "trust_badge_6HNUcm",
         "trust_badge_NXqHRM"
       ],
+      "disabled": true,
       "name": "Maison Introducing",
       "settings": {
         "row": "row",
@@ -1145,6 +1146,7 @@
         "logo_3Hnj8f",
         "logo_Y4mnrW"
       ],
+      "disabled": true,
       "name": "Maison Scroll Images",
       "settings": {
         "section_bg_color": "#faf6ab",
@@ -1271,6 +1273,7 @@
         "point_XAanp7",
         "point_pmNhWg"
       ],
+      "disabled": true,
       "name": "Maison Difference",
       "settings": {
         "section_bg_color": "#f8faf3",
