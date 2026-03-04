@@ -785,6 +785,7 @@
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Finally, a Coffee That Works With You</p>",
+        "desc": "Krijg inzicht in je slaap, beweging & meer zodat jij beter kan slapen. Een app die je snapt.",
         "social_proof_text": "",
         "social_proof_count": "",
         "social_proof_suffix": "",
@@ -875,6 +876,7 @@
       "settings": {
         "row": "row",
         "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
+        "desc": "",
         "social_proof_text": "Join",
         "social_proof_count": "8,450+ people",
         "social_proof_suffix": "who've reclaimed their masculinity",
