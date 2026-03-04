@@ -772,36 +772,12 @@
             "title": "Effortless Routine",
             "description": "Replaces breakfast + coffee in under 60 seconds"
           }
-        },
-        "trust_badge_CY8PUF": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
-            "text": "GMP-Certified Facility"
-          }
-        },
-        "trust_badge_qTBCR3": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/la_flag-usa.svg",
-            "text": "Made in USA"
-          }
-        },
-        "trust_badge_L9Yw3c": {
-          "type": "trust_badge",
-          "settings": {
-            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
-            "text": "Organically Grown Ingredients"
-          }
         }
       },
       "block_order": [
         "feature_X3Mg7X",
         "feature_pcaLBH",
-        "feature_7iLXFG",
-        "trust_badge_CY8PUF",
-        "trust_badge_qTBCR3",
-        "trust_badge_L9Yw3c"
+        "feature_7iLXFG"
       ],
       "name": "Maison Introducing",
       "settings": {
@@ -809,14 +785,11 @@
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
-        "social_proof_text": "Join",
-        "social_proof_count": "8,450+ people",
-        "social_proof_suffix": "who've reclaimed their masculinity",
-        "avatar_1": "shopify://shop_images/avatar-1.png",
-        "avatar_2": "shopify://shop_images/avatar-2.png",
-        "avatar_3": "shopify://shop_images/avatar-3.png",
+        "social_proof_text": "",
+        "social_proof_count": "",
+        "social_proof_suffix": "",
         "button_text": "Upgrade My Morning",
-        "button_link": "shopify://products/brain-boost-gummies",
+        "button_link": "",
         "padding_top_desktop": 70,
         "padding_bottom_desktop": 70,
         "padding_left_desktop": 60,
