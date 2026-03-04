@@ -581,82 +581,6 @@
         ]
       }
     },
-    "maison_badge_list_Qxnb7C": {
-      "type": "maison-badge-list",
-      "blocks": {
-        "badge_zwkR7p": {
-          "type": "badge",
-          "settings": {
-            "text": "Clean ingredients"
-          }
-        },
-        "badge_XzA84J": {
-          "type": "badge",
-          "settings": {
-            "text": "Cruelty-free"
-          }
-        },
-        "badge_VdXCPA": {
-          "type": "badge",
-          "settings": {
-            "text": "Vegan"
-          }
-        },
-        "badge_RyTNBC": {
-          "type": "badge",
-          "settings": {
-            "text": "Gluten-free"
-          }
-        },
-        "badge_W6YAML": {
-          "type": "badge",
-          "settings": {
-            "text": "Low Sugar"
-          }
-        },
-        "badge_pYKmeY": {
-          "type": "badge",
-          "settings": {
-            "text": "Non-GMO"
-          }
-        },
-        "badge_XdHaqJ": {
-          "type": "badge",
-          "settings": {
-            "text": "No fillers"
-          }
-        }
-      },
-      "block_order": [
-        "badge_zwkR7p",
-        "badge_XzA84J",
-        "badge_VdXCPA",
-        "badge_RyTNBC",
-        "badge_W6YAML",
-        "badge_pYKmeY",
-        "badge_XdHaqJ"
-      ],
-      "name": "Maison Badge List",
-      "settings": {
-        "padding_top_desktop": 18,
-        "padding_bottom_desktop": 18,
-        "padding_left_desktop": 80,
-        "padding_right_desktop": 80,
-        "padding_top_mobile": 12,
-        "padding_bottom_mobile": 12,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "section_bg_color": "#2e432f",
-        "badge_text_font_size_desktop": 16,
-        "badge_text_font_size_mobile": 14,
-        "badge_text_color": "#ffffff",
-        "icon_size_desktop": 32,
-        "icon_size_mobile": 24,
-        "badge_gap_desktop": 8,
-        "badge_gap_mobile": 18,
-        "icon_text_gap": 12
-      }
-    },
     "maison_ing_Pzf6La": {
       "type": "maison-ing",
       "blocks": {
@@ -818,6 +742,75 @@
         "button_font_size_mobile": 14,
         "trust_badge_font_size": 14,
         "trust_badge_color": "#3b2b2f"
+      }
+    },
+    "maison_badge_list_Qxnb7C": {
+      "type": "maison-badge-list",
+      "blocks": {
+        "badge_zwkR7p": {
+          "type": "badge",
+          "settings": {
+            "text": "Real Coffee"
+          }
+        },
+        "badge_XzA84J": {
+          "type": "badge",
+          "settings": {
+            "text": "Gluten-Free"
+          }
+        },
+        "badge_VdXCPA": {
+          "type": "badge",
+          "settings": {
+            "text": "No Added Sugar"
+          }
+        },
+        "badge_RyTNBC": {
+          "type": "badge",
+          "settings": {
+            "text": "10g Protein"
+          }
+        },
+        "badge_W6YAML": {
+          "type": "badge",
+          "settings": {
+            "text": "No Fillers"
+          }
+        },
+        "badge_pYKmeY": {
+          "type": "badge",
+          "settings": {
+            "text": "Non-GMO"
+          }
+        }
+      },
+      "block_order": [
+        "badge_zwkR7p",
+        "badge_XzA84J",
+        "badge_VdXCPA",
+        "badge_RyTNBC",
+        "badge_W6YAML",
+        "badge_pYKmeY"
+      ],
+      "name": "Maison Badge List",
+      "settings": {
+        "padding_top_desktop": 18,
+        "padding_bottom_desktop": 18,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#2e432f",
+        "badge_text_font_size_desktop": 16,
+        "badge_text_font_size_mobile": 14,
+        "badge_text_color": "#ffffff",
+        "icon_size_desktop": 32,
+        "icon_size_mobile": 24,
+        "badge_gap_desktop": 8,
+        "badge_gap_mobile": 18,
+        "icon_text_gap": 12
       }
     },
     "maison_introducing_DidygV": {
@@ -1626,9 +1619,9 @@
   "order": [
     "main",
     "maison_pdp_hero_mfQLMr",
-    "maison_badge_list_Qxnb7C",
     "maison_ing_Pzf6La",
     "maison_introducing_LXBj6d",
+    "maison_badge_list_Qxnb7C",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
