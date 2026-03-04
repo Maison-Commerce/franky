@@ -1153,7 +1153,8 @@
             {% if bundle_addon_product %}
               {%- assign addon_vid = bundle_addon_product.variants.first.id -%}
               <script>window.bundleAddonVariantId = {{ addon_vid }};</script>
-              <div class="xmaison_bundle-addons">
+              <div class="xmaison_bundle-addons-wrapper">
+                <div class="xmaison_bundle-addons">
                 {% for i in (1..section.settings.bundle_addon_count) %}
                   {%- assign slot_index = forloop.index -%}
                   <div
@@ -1191,6 +1192,7 @@
                     </div>
                   </div>
                 {% endfor %}
+              </div>
               </div>
             {% endif %}
           </div>
