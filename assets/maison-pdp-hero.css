@@ -1096,6 +1096,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(64, 62, 58, 0.08);
+  padding: 4px;
 }
 
 .xmaison_product-section .xmaison_carousel-btn svg {
