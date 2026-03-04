@@ -670,36 +670,36 @@
         "ingredient_tkt7Lc": {
           "type": "ingredient",
           "settings": {
-            "title": "Natural Caffeine",
-            "description": "Clean energy without anxiety."
+            "title": "Plant Protein",
+            "description": "Supports satiety and blood sugar balance."
           }
         },
         "ingredient_9mGBh6": {
           "type": "ingredient",
           "settings": {
-            "title": "Natural Caffeine",
-            "description": "Clean energy without anxiety."
+            "title": "L-Theanine",
+            "description": "Smooths caffeine response."
           }
         },
         "ingredient_wp9ey8": {
           "type": "ingredient",
           "settings": {
-            "title": "Natural Caffeine",
-            "description": "Clean energy without anxiety."
+            "title": "Prebiotic Fiber",
+            "description": "Supports digestion and gut balance."
           }
         },
         "ingredient_9NYLU7": {
           "type": "ingredient",
           "settings": {
-            "title": "Natural Caffeine",
-            "description": "Clean energy without anxiety."
+            "title": "Psyllium Fiber",
+            "description": "Aids digestion and keeps you fuller."
           }
         },
         "ingredient_aB8HGE": {
           "type": "ingredient",
           "settings": {
-            "title": "Natural Caffeine",
-            "description": "Clean energy without anxiety."
+            "title": "Lion’s Mane",
+            "description": "Supports sharper thinking."
           }
         }
       },
