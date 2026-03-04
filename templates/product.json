@@ -754,23 +754,23 @@
           "settings": {
             "icon": "shopify://shop_images/Frame1.svg",
             "title": "Sustained Energy",
-            "description": "Real coffee + 10g protein = steady focus, no crash"
+            "description": "Real coffee and protein for steady energy. No spike or crash."
           }
         },
         "feature_pcaLBH": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/awfawfwf.svg",
-            "title": "Complete Functional Blend",
-            "description": "Protein, balanced caffeine, and targeted ingredients in one cup"
+            "title": "Focus & Mental Clarity",
+            "description": "Sharpens focus & keeps you locked in during work and workouts."
           }
         },
         "feature_7iLXFG": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/sfawfwfw.svg",
-            "title": "Effortless Routine",
-            "description": "Replaces breakfast + coffee in under 60 seconds"
+            "title": "10g Protein Power",
+            "description": "Aids muscle recovery and fuels you without heavy shakes."
           }
         }
       },
