@@ -44,21 +44,21 @@
         {%- case block.type -%}
           {%- when 'ingredient' -%}
             <div class="maison_commerce_maison_ing__card-outer" {{ block.shopify_attributes }}>
-              <div class="maison_commerce_maison_ing__card-image">
-                {%- if block.settings.image != blank -%}
-                  {{
-                    block.settings.image
-                    | image_url: width: 300
-                    | image_tag:
-                      alt: block.settings.title,
-                      loading: 'lazy',
-                      widths: '150, 200, 300'
-                  }}
-                {%- else -%}
-                  {{ 'product-1' | placeholder_svg_tag: 'maison_commerce_maison_ing__placeholder-svg' }}
-                {%- endif -%}
-              </div>
               <div class="maison_commerce_maison_ing__card-body">
+                <div class="maison_commerce_maison_ing__card-image">
+                  {%- if block.settings.image != blank -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 300
+                      | image_tag:
+                        alt: block.settings.title,
+                        loading: 'lazy',
+                        widths: '150, 200, 300'
+                    }}
+                  {%- else -%}
+                    {{ 'product-1' | placeholder_svg_tag: 'maison_commerce_maison_ing__placeholder-svg' }}
+                  {%- endif -%}
+                </div>
                 {%- if block.settings.title != blank -%}
                   <h3 class="maison_commerce_maison_ing__card-title">{{ block.settings.title }}</h3>
                 {%- endif -%}
