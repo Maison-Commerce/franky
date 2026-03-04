@@ -612,13 +612,13 @@
 </div>
 
 <style>
-  .maison_commerce_introducing {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing {
     width: 100%;
     background-color: {{ section.settings.section_bg_color }};
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing {
       padding-top: {{ section.settings.padding_top_mobile }}px !important;
       padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
       padding-left: {{ section.settings.padding_left_mobile }}px !important;
@@ -626,7 +626,7 @@
     }
   }
 
-  .maison_commerce_introducing__container {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__container {
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
@@ -634,7 +634,7 @@
 
   #shopify-section-{{ section.id }} .maison_commerce_introducing__content {
     display: flex;
-    flex-direction: {% if section.settings.row == 'row' %}row{% else %}row-reverse{% endif %} ;
+    flex-direction: {% if section.settings.row == 'row' %}row{% else %}row-reverse{% endif %};
     gap: 24px;
     align-items: center;
     justify-content: space-between;
@@ -642,13 +642,13 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__content {
-      flex-direction: column!important;
-      gap: 20px!important;
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__content {
+      flex-direction: column !important;
+      gap: 20px !important;
     }
   }
 
-  .maison_commerce_introducing__image-wrapper {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__image-wrapper {
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -659,7 +659,7 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__image-wrapper {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__image-wrapper {
       width: 100%;
       max-width: 100%;
       aspect-ratio: 1 / 1;
@@ -667,38 +667,38 @@
     }
   }
 
-  .maison_commerce_introducing__image {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__image {
     width: 100%;
     height: 100%;
     position: relative;
   }
 
-  .maison_commerce_introducing__image--desktop {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__image--desktop {
     display: block;
   }
 
-  .maison_commerce_introducing__image--mobile {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__image--mobile {
     display: none;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__image--desktop {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__image--desktop {
       display: none;
     }
 
-    .maison_commerce_introducing__image--mobile {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__image--mobile {
       display: block;
     }
   }
 
-  .maison_commerce_introducing__image-img {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__image-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .maison_commerce_introducing__badge {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__badge {
     position: absolute;
     top: 27px;
     right: 27px;
@@ -708,7 +708,7 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__badge {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__badge {
       width: 70px;
       height: 70px;
       top: 35px;
@@ -716,14 +716,14 @@
     }
   }
 
-  .maison_commerce_introducing__badge-img {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__badge-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
   }
 
-  .maison_commerce_introducing__text-content {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__text-content {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -733,19 +733,19 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__text-content {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__text-content {
       gap: 20px;
       max-width: 100%;
     }
   }
 
-  .maison_commerce_introducing__text-flex{
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__text-flex {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .maison_commerce_introducing__heading {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__heading {
     font-family: "Swarsh Daisy", serif;
     font-size: {{ section.settings.heading_font_size_desktop }}px;
     font-weight: 400;
@@ -754,7 +754,7 @@
     margin: 0;
   }
 
-  .maison_commerce_introducing__desc {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__desc {
     color: var(--Text-Secondary, rgba(59, 43, 47, 0.75));
     font-size: 18px;
     font-style: normal;
@@ -762,28 +762,28 @@
     line-height: 150%;
   }
 
-  .maison_commerce_introducing__heading p {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__heading p {
     margin: 0;
     line-height: inherit;
     color: inherit;
   }
 
-  .maison_commerce_introducing__heading em {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__heading em {
     font-style: italic;
   }
 
-  .maison_commerce_introducing__heading em strong{
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__heading em strong {
     font-weight: 400;
     color: #739D6A;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__heading {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__heading {
       font-size: {{ section.settings.heading_font_size_mobile }}px;
       line-height: 1.2;
     }
 
-    .maison_commerce_introducing__desc{
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__desc {
       font-size: 14px;
     }
 
@@ -793,31 +793,31 @@
     }
   }
 
-  .maison_commerce_introducing__features {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__features {
     display: flex;
     flex-direction: column;
     gap: 24px;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__features {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__features {
       gap: 18px;
     }
   }
 
-  .maison_commerce_introducing__feature {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature {
     display: flex;
     gap: 18px;
     align-items: center;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__feature {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__feature {
       gap: 12px;
     }
   }
 
-  .maison_commerce_introducing__feature-icon {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-icon {
     flex-shrink: 0;
     width: 52px;
     height: 52px;
@@ -828,19 +828,19 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__feature-icon {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-icon {
       width: 44px;
       height: 44px;
     }
   }
 
-  .maison_commerce_introducing__feature-icon-img {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-icon-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  .maison_commerce_introducing__feature-content {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -848,7 +848,7 @@
     min-width: 0;
   }
 
-  .maison_commerce_introducing__feature-title {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-title {
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: {{ section.settings.feature_title_font_size_desktop }}px;
     font-weight: 600;
@@ -858,12 +858,12 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__feature-title {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-title {
       font-size: {{ section.settings.feature_title_font_size_mobile }}px;
     }
   }
 
-  .maison_commerce_introducing__feature-description {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-description {
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: {{ section.settings.feature_description_font_size_desktop }}px;
     font-weight: 500;
@@ -873,24 +873,24 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__feature-description {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-description {
       font-size: {{ section.settings.feature_description_font_size_mobile }}px;
     }
   }
 
-  .maison_commerce_introducing__social-proof {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__social-proof {
     display: flex;
     gap: 12px;
     align-items: center;
   }
 
-  .maison_commerce_introducing__avatars {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__avatars {
     display: flex;
     align-items: center;
     flex-shrink: 0;
   }
 
-  .maison_commerce_introducing__avatar {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -901,20 +901,20 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__avatar {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__avatar {
       width: 24px;
       height: 24px;
     }
   }
 
-  .maison_commerce_introducing__avatar-img {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__avatar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .maison_commerce_introducing__social-proof-text {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__social-proof-text {
     font-family: "Geist", sans-serif;
     font-size: {{ section.settings.social_proof_font_size }}px;
     font-weight: 400;
@@ -923,23 +923,23 @@
     margin: 0;
   }
 
-  .maison_commerce_introducing__social-proof-text strong {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__social-proof-text strong {
     font-weight: 700;
   }
 
-  .maison_commerce_introducing__cta {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__cta {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__cta {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__cta {
       gap: 8px;
     }
   }
 
-  .maison_commerce_introducing__button {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -954,7 +954,7 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__button {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__button {
       padding: 12px 24px;
       border-radius: 12px;
       height: auto;
@@ -962,11 +962,11 @@
     }
   }
 
-  .maison_commerce_introducing__button:hover {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__button:hover {
     opacity: 0.9;
   }
 
-  .maison_commerce_introducing__button-text {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__button-text {
     font-family: "Geist", sans-serif;
     font-size: {{ section.settings.button_font_size_desktop }}px;
     font-weight: 600;
@@ -975,25 +975,25 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__button-text {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__button-text {
       font-size: {{ section.settings.button_font_size_mobile }}px;
     }
   }
 
-  .maison_commerce_introducing__button-arrow {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__button-arrow {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__button-arrow {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__button-arrow {
       width: 20px;
       height: 20px;
     }
   }
 
-  .maison_commerce_introducing__trust-badges {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badges {
     display: flex;
     gap: 32px;
     align-items: center;
@@ -1002,24 +1002,24 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__trust-badges {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badges {
       gap: 24px;
     }
   }
 
-  .maison_commerce_introducing__trust-badge {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge {
     display: flex;
     gap: 12px;
     align-items: center;
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__trust-badges .maison_commerce_introducing__trust-badge:nth-child(3){
-        display: none;
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badges .maison_commerce_introducing__trust-badge:nth-child(3) {
+      display: none;
     }
   }
 
-  .maison_commerce_introducing__trust-badge-icon {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge-icon {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
@@ -1029,20 +1029,20 @@
   }
 
   @media (max-width: 950px) {
-    .maison_commerce_introducing__trust-badge-icon {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge-icon {
       width: 20px;
       height: 20px;
     }
   }
 
-  .maison_commerce_introducing__trust-badge-icon-img {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge-icon-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
   }
 
-  .maison_commerce_introducing__trust-badge-text {
+  #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge-text {
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: {{ section.settings.trust_badge_font_size }}px;
     font-weight: 500;
@@ -1054,10 +1054,10 @@
 
   {% if section.settings.mobile_image_position == 'bottom' %}
   @media (max-width: 950px) {
-    .maison_commerce_introducing__image-wrapper {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__image-wrapper {
       order: 2;
     }
-    .maison_commerce_introducing__text-content {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__text-content {
       order: 1;
     }
   }
