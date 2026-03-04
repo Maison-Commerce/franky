@@ -750,36 +750,42 @@
         "badge_zwkR7p": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/Non-Gmo-Lab--Streamline-Ultimate.png",
             "text": "Real Coffee"
           }
         },
         "badge_XzA84J": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/Bread-Gluten-Free--Streamline-Ultimate.png",
             "text": "Gluten-Free"
           }
         },
         "badge_VdXCPA": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/wagawg32gr.png",
             "text": "No Added Sugar"
           }
         },
         "badge_RyTNBC": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/sebebrfbrbt.png",
             "text": "10g Protein"
           }
         },
         "badge_W6YAML": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/jabvaeegasge.png",
             "text": "No Fillers"
           }
         },
         "badge_pYKmeY": {
           "type": "badge",
           "settings": {
+            "icon": "shopify://shop_images/jagw4grbt.png",
             "text": "Non-GMO"
           }
         }
