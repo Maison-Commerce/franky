@@ -1736,12 +1736,15 @@
   background: #3B2B2F;
 }
 
+.xmaison_bundle-addons-wrapper{
+  max-height: 606px;
+  overflow: scroll;
+}
+
 /* Add-on Products */
 .xmaison_bundle-addons {
   display: flex;
   flex-direction: column;
-  max-height: 606px;
-  overflow-y: scroll;
   gap: 12px;
 }
 
