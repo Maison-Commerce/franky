@@ -1751,7 +1751,7 @@
 .xmaison_bundle-addon {
   display: flex;
   align-items: center;
-  border: 1px solid rgba(230, 222, 214, 0.50);
+  outline: 1px solid rgba(230, 222, 214, 0.50);
   border-radius: 12px;
   overflow: hidden;
   padding-right: 12px;
