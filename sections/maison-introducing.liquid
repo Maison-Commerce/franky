@@ -520,48 +520,50 @@
           {% endfor %}
         </div>
 
-        <div class="maison_commerce_introducing__social-proof">
-          <div class="maison_commerce_introducing__avatars">
-            {% if section.settings.avatar_1 != blank %}
-              <div class="maison_commerce_introducing__avatar">
-                {{
-                  section.settings.avatar_1
-                  | image_url: width: 100
-                  | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
-                }}
-              </div>
-            {% endif %}
-            {% if section.settings.avatar_2 != blank %}
-              <div class="maison_commerce_introducing__avatar">
-                {{
-                  section.settings.avatar_2
-                  | image_url: width: 100
-                  | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
-                }}
-              </div>
-            {% endif %}
-            {% if section.settings.avatar_3 != blank %}
-              <div class="maison_commerce_introducing__avatar">
-                {{
-                  section.settings.avatar_3
-                  | image_url: width: 100
-                  | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
-                }}
-              </div>
-            {% endif %}
+        {% if section.settings.avatar_1 != blank and section.settings.avatar_2 != blank and section.settings.avatar_3 != blank %}
+          <div class="maison_commerce_introducing__social-proof">
+            <div class="maison_commerce_introducing__avatars">
+              {% if section.settings.avatar_1 != blank %}
+                <div class="maison_commerce_introducing__avatar">
+                  {{
+                    section.settings.avatar_1
+                    | image_url: width: 100
+                    | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
+                  }}
+                </div>
+              {% endif %}
+              {% if section.settings.avatar_2 != blank %}
+                <div class="maison_commerce_introducing__avatar">
+                  {{
+                    section.settings.avatar_2
+                    | image_url: width: 100
+                    | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
+                  }}
+                </div>
+              {% endif %}
+              {% if section.settings.avatar_3 != blank %}
+                <div class="maison_commerce_introducing__avatar">
+                  {{
+                    section.settings.avatar_3
+                    | image_url: width: 100
+                    | image_tag: loading: 'lazy', alt: 'Avatar', class: 'maison_commerce_introducing__avatar-img'
+                  }}
+                </div>
+              {% endif %}
+            </div>
+            <p class="maison_commerce_introducing__social-proof-text">
+              {% if section.settings.social_proof_text != blank %}
+                <span>{{ section.settings.social_proof_text }}</span>
+              {% endif %}
+              {% if section.settings.social_proof_count != blank %}
+                <strong>{{ section.settings.social_proof_count }}</strong>
+              {% endif %}
+              {% if section.settings.social_proof_suffix != blank %}
+                <span>{{ section.settings.social_proof_suffix }}</span>
+              {% endif %}
+            </p>
           </div>
-          <p class="maison_commerce_introducing__social-proof-text">
-            {% if section.settings.social_proof_text != blank %}
-              <span>{{ section.settings.social_proof_text }}</span>
-            {% endif %}
-            {% if section.settings.social_proof_count != blank %}
-              <strong>{{ section.settings.social_proof_count }}</strong>
-            {% endif %}
-            {% if section.settings.social_proof_suffix != blank %}
-              <span>{{ section.settings.social_proof_suffix }}</span>
-            {% endif %}
-          </p>
-        </div>
+        {% endif %}
 
         <div class="maison_commerce_introducing__cta">
           {% if section.settings.button_link != blank and section.settings.button_text != blank %}
