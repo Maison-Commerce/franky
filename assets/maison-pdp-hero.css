@@ -1234,7 +1234,7 @@ img {
 }
 
 .xmaison_related-add-btn:hover {
-  background-color: var(--color-brand-2-1800);
+  background: var(--color-brand-2-1800);
 }
 
 .xmaison_related-add-text {
