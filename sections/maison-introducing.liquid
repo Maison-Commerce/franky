@@ -444,11 +444,18 @@
       </div>
 
       <div class="maison_commerce_introducing__text-content">
-        {% if section.settings.heading != blank %}
-          <h2 class="maison_commerce_introducing__heading">
-            {{ section.settings.heading }}
-          </h2>
-        {% endif %}
+        <div class="maison_commerce_introducing__text-flex">
+          {% if section.settings.heading != blank %}
+            <h2 class="maison_commerce_introducing__heading">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+          {% if section.settings.desc != blank %}
+            <p class="maison_commerce_introducing__desc">
+              {{ section.settings.heading }}
+            </p>
+          {% endif %}
+        </div>
 
         <div class="maison_commerce_introducing__features">
           {% for block in section.blocks %}
