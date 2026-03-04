@@ -894,6 +894,110 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
+    "maison_comp_flex_acwryg": {
+      "type": "maison-comp-flex",
+      "blocks": {
+        "comparison_row_Yn436X": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Sugar",
+            "value_col1": "40-60g",
+            "label_featured": "Sugar",
+            "value_featured": "<1g",
+            "label_col3": "Sugar",
+            "value_col3": "As much as 60g"
+          }
+        },
+        "comparison_row_y4kraR": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Protein",
+            "value_col1": "0g",
+            "label_featured": "Protein",
+            "value_featured": "10g",
+            "label_col3": "Protein",
+            "value_col3": "15g"
+          }
+        },
+        "comparison_row_8iWUkT": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Gluten-Free",
+            "value_col1": "No",
+            "label_featured": "Gluten-Free",
+            "value_featured": "Yes",
+            "label_col3": "Gluten-Free",
+            "value_col3": "No"
+          }
+        },
+        "comparison_row_tgm97y": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Fiber",
+            "value_col1": "No",
+            "label_featured": "Brain Boosting MCTs",
+            "value_featured": "Yes",
+            "label_col3": "Fiber",
+            "value_col3": "Fiber"
+          }
+        },
+        "comparison_row_qC6Dhj": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Pre- & Probiotics",
+            "value_col1": "Sometimes",
+            "label_featured": "Prebiotics",
+            "value_featured": "Yes",
+            "label_col3": "Pre- & Probiotics",
+            "value_col3": "Sometimes"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_Yn436X",
+        "comparison_row_y4kraR",
+        "comparison_row_8iWUkT",
+        "comparison_row_tgm97y",
+        "comparison_row_qC6Dhj"
+      ],
+      "name": "Maison Comp Flex",
+      "settings": {
+        "section_heading": "Why Coffee Alone Sabotages Your Energy",
+        "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3B2B2F",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#3B2B2F",
+        "subtitle_opacity": 75,
+        "bg_color_top": "#FFFFFF",
+        "bg_color_bottom": "#DEEAF2",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16,
+        "featured_title": "franky",
+        "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
+        "featured_image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
+        "featured_header_color": "#3B2B2F",
+        "featured_header_text_color": "#F5EDDC",
+        "featured_body_color": "#F5EDDC",
+        "col1_title": "Coffee",
+        "col1_image": "shopify://shop_images/Rectangle_4927.png",
+        "col3_title": "Protein powder",
+        "col3_image": "shopify://shop_images/geg3g4rgse.png",
+        "row_font_size_desktop": 16,
+        "row_font_size_mobile": 14,
+        "row_label_color": "#3B2B2F",
+        "row_value_color_competitor": "#92898B",
+        "row_value_color_featured": "#3B2B2F"
+      }
+    },
     "maison_introducing_DidygV": {
       "type": "maison-introducing",
       "blocks": {
@@ -1704,6 +1808,7 @@
     "maison_introducing_LXBj6d",
     "maison_badge_list_Qxnb7C",
     "maison_introducing_bnLFrb",
+    "maison_comp_flex_acwryg",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
