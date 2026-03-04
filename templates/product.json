@@ -408,42 +408,6 @@
             "feature_text_regular": "clarity so you can get \"in the zone\""
           }
         },
-        "pack_option_DJG6R8": {
-          "type": "pack_option",
-          "settings": {
-            "pack_name": "1 Pack",
-            "bottle_count": 1,
-            "badge_text": "",
-            "discount_multiplier": "1",
-            "is_default_selected": false,
-            "show_best_value": false,
-            "variant_id": ""
-          }
-        },
-        "pack_option_qcBP6U": {
-          "type": "pack_option",
-          "settings": {
-            "pack_name": "2 Packs",
-            "bottle_count": 2,
-            "badge_text": "Save 10%",
-            "discount_multiplier": "0.9",
-            "is_default_selected": false,
-            "show_best_value": false,
-            "variant_id": ""
-          }
-        },
-        "pack_option_nmaFpt": {
-          "type": "pack_option",
-          "settings": {
-            "pack_name": "3 Packs",
-            "bottle_count": 3,
-            "badge_text": "Save 15%",
-            "discount_multiplier": "0.85",
-            "is_default_selected": true,
-            "show_best_value": true,
-            "variant_id": ""
-          }
-        },
         "subscription_benefit_VhX7iW": {
           "type": "subscription_benefit",
           "settings": {
@@ -529,9 +493,6 @@
         "feature_item_wRQD6i",
         "feature_item_mkmkcY",
         "feature_item_rJBaVy",
-        "pack_option_DJG6R8",
-        "pack_option_qcBP6U",
-        "pack_option_nmaFpt",
         "subscription_benefit_VhX7iW",
         "subscription_benefit_BxqJNr",
         "subscription_benefit_K9ViRm",
