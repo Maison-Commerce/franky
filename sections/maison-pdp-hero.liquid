@@ -686,7 +686,7 @@
       subscriptionMultiplier: window.subscriptionMultiplier,
       videoModalOpen: false,
       activeVideoId: null,
-      bundleAddonQtys: {},
+      bundleAddonSlots: {},
 
       get variant() {
         return this.product.variants.find((variant) => variant.id === this.variantId);
@@ -716,11 +716,7 @@
       },
 
       get bundleAddonTotal() {
-        return Object.values(this.bundleAddonQtys).reduce((sum, qty) => sum + qty, 0);
-      },
-
-      get bundleTotalQty() {
-        return this.quantity + this.bundleAddonTotal;
+        return Object.values(this.bundleAddonSlots).filter(Boolean).length;
       },
 
       get subscriptionPrice() {
@@ -738,25 +734,12 @@
         return fullPrice - discountedTotal;
       },
 
-      addBundleAddon(variantId) {
-        const current = this.bundleAddonQtys[variantId] || 0;
-        this.bundleAddonQtys = { ...this.bundleAddonQtys, [variantId]: current + 1 };
+      addBundleAddon(slotIndex) {
+        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: true };
       },
 
-      removeBundleAddon(variantId) {
-        const current = this.bundleAddonQtys[variantId] || 0;
-        if (current <= 0) return;
-        const updated = { ...this.bundleAddonQtys };
-        if (current === 1) {
-          delete updated[variantId];
-        } else {
-          updated[variantId] = current - 1;
-        }
-        this.bundleAddonQtys = updated;
-      },
-
-      getBundleAddonQty(variantId) {
-        return this.bundleAddonQtys[variantId] || 0;
+      removeBundleAddon(slotIndex) {
+        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: false };
       },
 
       openVideoModal(videoId) {
@@ -805,10 +788,10 @@
         let payload;
         if (hasBundleAddons) {
           const items = [mainItem];
-          for (const [addonVariantId, addonQty] of Object.entries(this.bundleAddonQtys)) {
+          if (window.bundleAddonVariantId) {
             items.push({
-              id: parseInt(addonVariantId),
-              quantity: addonQty,
+              id: window.bundleAddonVariantId,
+              quantity: this.bundleAddonTotal,
               properties: { mc_bundle: bundleId },
             });
           }
@@ -1086,48 +1069,50 @@
         </div>
 
         <!-- Pack Size Selector -->
-        <div class="xmaison_pack-size-group">
-          <div class="xmaison_option-label">
-            <span class="xmaison_option-label-title">Pack Size:</span>
-            <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
-          </div>
-          <div class="xmaison_pack-options">
-            {% for block in section.blocks %}
-              {% if block.type == 'pack_option' %}
-                <div
-                  class="xmaison_pack-option"
-                  :class="{ 'xmaison_selected': quantity === {{ block.settings.bottle_count }} }"
-                  @click="quantity = {{ block.settings.bottle_count }}; currentPackDiscount = {{ block.settings.discount_multiplier | default: 1 }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <div class="xmaison_pack-images">
-                    {% for i in (1..block.settings.bottle_count) %}
-                      <img
-                        class="xmaison_pack-image"
-                        src="{{ product.featured_image | image_url: width: 100 }}"
-                        alt="{{ block.settings.pack_name }}"
-                      >
-                    {% endfor %}
-                  </div>
-                  <div class="xmaison_pack-details">
-                    <span class="xmaison_pack-name">{{ block.settings.pack_name }}</span>
-                    {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
-                    {% if discount_multiplier < 1 %}
-                      <div class="xmaison_pack-badge">
-                        <span class="xmaison_pack-badge-text" x-text="'Save ' + formatMoney(getPackSavings({{ block.settings.bottle_count }}, {{ block.settings.discount_multiplier }}))"></span>
+        {% if section.settings.pack_size_label != blank %}
+          <div class="xmaison_pack-size-group">
+            <div class="xmaison_option-label">
+              <span class="xmaison_option-label-title">Pack Size:</span>
+              <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
+            </div>
+            <div class="xmaison_pack-options">
+              {% for block in section.blocks %}
+                {% if block.type == 'pack_option' %}
+                  <div
+                    class="xmaison_pack-option"
+                    :class="{ 'xmaison_selected': quantity === {{ block.settings.bottle_count }} }"
+                    @click="quantity = {{ block.settings.bottle_count }}; currentPackDiscount = {{ block.settings.discount_multiplier | default: 1 }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="xmaison_pack-images">
+                      {% for i in (1..block.settings.bottle_count) %}
+                        <img
+                          class="xmaison_pack-image"
+                          src="{{ product.featured_image | image_url: width: 100 }}"
+                          alt="{{ block.settings.pack_name }}"
+                        >
+                      {% endfor %}
+                    </div>
+                    <div class="xmaison_pack-details">
+                      <span class="xmaison_pack-name">{{ block.settings.pack_name }}</span>
+                      {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
+                      {% if discount_multiplier < 1 %}
+                        <div class="xmaison_pack-badge">
+                          <span class="xmaison_pack-badge-text" x-text="'Save ' + formatMoney(getPackSavings({{ block.settings.bottle_count }}, {{ block.settings.discount_multiplier }}))"></span>
+                        </div>
+                      {% endif %}
+                    </div>
+                    {% if block.settings.show_best_value %}
+                      <div class="xmaison_best-value-badge">
+                        <span class="xmaison_best-value-text">{{ section.settings.best_value_text }}</span>
                       </div>
                     {% endif %}
                   </div>
-                  {% if block.settings.show_best_value %}
-                    <div class="xmaison_best-value-badge">
-                      <span class="xmaison_best-value-text">{{ section.settings.best_value_text }}</span>
-                    </div>
-                  {% endif %}
-                </div>
-              {% endif %}
-            {% endfor %}
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
-        </div>
+        {% endif %}
 
         <!-- Build Your Bundle -->
         {% if section.settings.bundle_enabled %}
@@ -1165,12 +1150,13 @@
             {% assign bundle_addon_product = section.settings.bundle_products | first %}
             {% if bundle_addon_product %}
               {%- assign addon_vid = bundle_addon_product.variants.first.id -%}
+              <script>window.bundleAddonVariantId = {{ addon_vid }};</script>
               <div class="xmaison_bundle-addons">
                 {% for i in (1..section.settings.bundle_addon_count) %}
                   {%- assign slot_index = forloop.index -%}
                   <div
                     class="xmaison_bundle-addon"
-                    :class="{ 'xmaison_bundle-addon--added': bundleAddonTotal >= {{ slot_index }} }"
+                    :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] }"
                   >
                     <div class="xmaison_bundle-addon-image">
                       {% if bundle_addon_product.featured_image %}
@@ -1188,19 +1174,17 @@
                       {% endif %}
                     </div>
                     <div class="xmaison_bundle-addon-actions">
-                      <!-- "Add" button: only on the next available slot -->
                       <button
                         class="xmaison_bundle-addon-btn"
                         type="button"
-                        @click="addBundleAddon({{ addon_vid }})"
-                        x-show="bundleAddonTotal === {{ slot_index }} - 1"
+                        @click="addBundleAddon({{ slot_index }})"
+                        x-show="!bundleAddonSlots[{{ slot_index }}]"
                       >Add</button>
-                      <!-- "Added" badge: slot is filled -->
                       <button
                         class="xmaison_bundle-addon-added-btn"
                         type="button"
-                        @click="removeBundleAddon({{ addon_vid }})"
-                        x-show="bundleAddonTotal >= {{ slot_index }}"
+                        @click="removeBundleAddon({{ slot_index }})"
+                        x-show="bundleAddonSlots[{{ slot_index }}]"
                       >Added ✓</button>
                     </div>
                   </div>
