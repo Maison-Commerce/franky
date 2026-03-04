@@ -507,6 +507,26 @@
           return;
         }
 
+        // If deleting a bundle item, delete all items in the same bundle
+        if (quantity === 0 && item?.properties?.mc_bundle) {
+          const bundleId = item.properties.mc_bundle;
+          const bundleItems = this.cart.items.filter((i) => i.properties?.mc_bundle === bundleId);
+          this.cart.items = this.cart.items.filter((i) => i.properties?.mc_bundle !== bundleId);
+
+          const updates = {};
+          bundleItems.forEach((i) => { updates[i.key] = 0; });
+
+          this.loading = true;
+          fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ updates }),
+          }).finally(() => {
+            this.fetchCart();
+          });
+          return;
+        }
+
         if (item) {
           item.quantity = quantity;
           if (quantity === 0) {
