@@ -1317,23 +1317,33 @@
       "blocks": {
         "video_hGCtPz": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
         "video_b6CnWJ": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
         "video_E6NaUR": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
         "video_hnYthk": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
         "video_B8bWKa": {
           "type": "video",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          }
         },
         "video_tKJnhR": {
           "type": "video",
@@ -1475,7 +1485,7 @@
       ],
       "name": "Maison Video Review",
       "settings": {
-        "section_bg_gradient": "linear-gradient(180deg, #DEEAF2 0%, rgba(251, 246, 234, 0.00) 100%)",
+        "section_bg_gradient": "linear-gradient(180deg, rgba(222, 234, 242, 1), rgba(251, 246, 234, 0) 100%)",
         "padding_top_desktop": 24,
         "padding_bottom_desktop": 24,
         "padding_left_desktop": 0,
