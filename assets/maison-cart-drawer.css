@@ -9,7 +9,7 @@
   --xmaison-white: #ffffff;
   --xmaison-brand1-200: #e9ebe9;
   --xmaison-brand1-1300: #4f6050;
-  --xmaison-brand1-1800: #2e432f;
+  --xmaison-brand1-1800: #3B2B2F;
   --xmaison-brand2-1500: #3B2B2F;
   --xmaison-brand2-1800: #b9fcab;
   --xmaison-brand3-100: #fcfcfb;
@@ -910,7 +910,7 @@ img {
   width: 100%;
   height: 56px;
   padding: 16px 32px;
-  background-color: var(--xmaison-brand1-1800);
+  background: var(--xmaison-brand1-1800);
   border-radius: var(--xmaison-radius-16);
   transition: background-color 0.2s ease;
 }
