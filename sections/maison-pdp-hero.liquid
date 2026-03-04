@@ -1041,32 +1041,34 @@
       <!-- Product Options -->
       <div class="xmaison_product-options">
         <!-- Flavor Selector -->
-        <div class="xmaison_option-group">
-          <div class="xmaison_option-label">
-            <span class="xmaison_option-label-title">Flavor</span>
-            <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
+        {% if section.settings.product_list != blank %}
+          <div class="xmaison_option-group">
+            <div class="xmaison_option-label">
+              <span class="xmaison_option-label-title">Flavor</span>
+              <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
+            </div>
+            <div class="xmaison_flavor-select-wrapper">
+              <select class="xmaison_flavor-select" onchange="if(this.value) window.location.href = this.value;">
+                {% for flavor_product in section.settings.product_list %}
+                  <option
+                    value="{{ flavor_product.url }}"
+                    {% if flavor_product.id == product.id %}
+                      selected
+                    {% endif %}
+                  >
+                    {{ flavor_product.title | split: '-' | last | strip }}
+                  </option>
+                {% endfor %}
+                {% if section.settings.product_list.size == 0 %}
+                  <option value="" selected>{{ product.title | split: '-' | last | strip }}</option>
+                {% endif %}
+              </select>
+              <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
-          <div class="xmaison_flavor-select-wrapper">
-            <select class="xmaison_flavor-select" onchange="if(this.value) window.location.href = this.value;">
-              {% for flavor_product in section.settings.product_list %}
-                <option
-                  value="{{ flavor_product.url }}"
-                  {% if flavor_product.id == product.id %}
-                    selected
-                  {% endif %}
-                >
-                  {{ flavor_product.title | split: '-' | last | strip }}
-                </option>
-              {% endfor %}
-              {% if section.settings.product_list.size == 0 %}
-                <option value="" selected>{{ product.title | split: '-' | last | strip }}</option>
-              {% endif %}
-            </select>
-            <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
+        {% endif %}
 
         <!-- Pack Size Selector -->
         {% if section.settings.pack_size_label != blank %}
