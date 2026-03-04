@@ -746,6 +746,104 @@
         "padding_right_mobile": 16
       }
     },
+    "maison_introducing_LXBj6d": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_X3Mg7X": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Sustained Energy",
+            "description": "Real coffee + 10g protein = steady focus, no crash"
+          }
+        },
+        "feature_pcaLBH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/awfawfwf.svg",
+            "title": "Complete Functional Blend",
+            "description": "Protein, balanced caffeine, and targeted ingredients in one cup"
+          }
+        },
+        "feature_7iLXFG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sfawfwfw.svg",
+            "title": "Effortless Routine",
+            "description": "Replaces breakfast + coffee in under 60 seconds"
+          }
+        },
+        "trust_badge_CY8PUF": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
+            "text": "GMP-Certified Facility"
+          }
+        },
+        "trust_badge_qTBCR3": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/la_flag-usa.svg",
+            "text": "Made in USA"
+          }
+        },
+        "trust_badge_L9Yw3c": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
+            "text": "Organically Grown Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "feature_X3Mg7X",
+        "feature_pcaLBH",
+        "feature_7iLXFG",
+        "trust_badge_CY8PUF",
+        "trust_badge_qTBCR3",
+        "trust_badge_L9Yw3c"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row-reverse",
+        "product_image_desktop": "shopify://shop_images/Image.png",
+        "product_image_mobile": "shopify://shop_images/2wafwfw.png",
+        "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
+        "social_proof_text": "Join",
+        "social_proof_count": "8,450+ people",
+        "social_proof_suffix": "who've reclaimed their masculinity",
+        "avatar_1": "shopify://shop_images/avatar-1.png",
+        "avatar_2": "shopify://shop_images/avatar-2.png",
+        "avatar_3": "shopify://shop_images/avatar-3.png",
+        "button_text": "Upgrade My Morning",
+        "button_link": "shopify://products/brain-boost-gummies",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
+      }
+    },
     "maison_introducing_DidygV": {
       "type": "maison-introducing",
       "blocks": {
@@ -1551,6 +1649,7 @@
     "maison_pdp_hero_mfQLMr",
     "maison_badge_list_Qxnb7C",
     "maison_ing_Pzf6La",
+    "maison_introducing_LXBj6d",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
