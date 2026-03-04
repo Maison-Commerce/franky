@@ -163,6 +163,16 @@
       "unit": "px",
       "label": "Gap Between Icon and Text",
       "default": 12
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "min": 5,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Marquee Speed (Mobile)",
+      "default": 20
     }
   ],
   "blocks": [
@@ -237,13 +247,15 @@
 {% endschema %}
 
 <div class="maison_commerce_badge_list" style="background: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+
+  <!-- Desktop: static flex grid -->
   <div class="maison_commerce_badge_list__container">
     <div class="maison_commerce_badge_list__badges">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'badge' %}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'badge' -%}
             <div class="maison_commerce_badge_list__badge" {{ block.shopify_attributes }}>
-              {% if block.settings.icon != blank %}
+              {%- if block.settings.icon != blank -%}
                 <div class="maison_commerce_badge_list__badge-icon">
                   {{
                     block.settings.icon
@@ -251,15 +263,43 @@
                     | image_tag: loading: 'lazy', alt: block.settings.text, class: 'maison_commerce_badge_list__badge-icon-img'
                   }}
                 </div>
-              {% endif %}
-              {% if block.settings.text != blank %}
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
                 <p class="maison_commerce_badge_list__badge-text">{{ block.settings.text }}</p>
-              {% endif %}
+              {%- endif -%}
             </div>
-        {% endcase %}
-      {% endfor %}
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
   </div>
+
+  <!-- Mobile: auto-scrolling marquee (content duplicated for seamless loop) -->
+  <div class="maison_commerce_badge_list__marquee" aria-hidden="true">
+    <div class="maison_commerce_badge_list__marquee-track">
+      {%- for i in (1..2) -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'badge' -%}
+              <div class="maison_commerce_badge_list__badge">
+                {%- if block.settings.icon != blank -%}
+                  <div class="maison_commerce_badge_list__badge-icon">
+                    {{
+                      block.settings.icon
+                      | image_url: width: 100
+                      | image_tag: loading: 'lazy', alt: block.settings.text, class: 'maison_commerce_badge_list__badge-icon-img'
+                    }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <p class="maison_commerce_badge_list__badge-text">{{ block.settings.text }}</p>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
 </div>
 
 <style>
@@ -272,8 +312,9 @@
     .maison_commerce_badge_list {
       padding-top: {{ section.settings.padding_top_mobile }}px !important;
       padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
-      padding-left: {{ section.settings.padding_left_mobile }}px !important;
-      padding-right: {{ section.settings.padding_right_mobile }}px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      overflow: hidden;
     }
   }
 
@@ -283,19 +324,13 @@
     width: 100%;
   }
 
+  /* ── Desktop: static grid ── */
   .maison_commerce_badge_list__badges {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: {{ section.settings.badge_gap_desktop }}px;
-  }
-
-  @media (max-width: 950px) {
-    .maison_commerce_badge_list__badges {
-      justify-content: center;
-      gap: {{ section.settings.badge_gap_mobile }}px;
-    }
   }
 
   .maison_commerce_badge_list__badge {
@@ -312,13 +347,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  @media (max-width: 950px) {
-    .maison_commerce_badge_list__badge-icon {
-      width: {{ section.settings.icon_size_mobile }}px;
-      height: {{ section.settings.icon_size_mobile }}px;
-    }
   }
 
   .maison_commerce_badge_list__badge-icon-img {
@@ -338,10 +366,48 @@
     white-space: nowrap;
   }
 
+  /* ── Marquee: hidden on desktop ── */
+  .maison_commerce_badge_list__marquee {
+    display: none;
+  }
+
+  /* ── Mobile ── */
   @media (max-width: 950px) {
-    .maison_commerce_badge_list__badge-text {
+    /* Hide static grid, show marquee */
+    .maison_commerce_badge_list__badges {
+      display: none;
+    }
+
+    .maison_commerce_badge_list__marquee {
+      display: block;
+      width: 100%;
+    }
+
+    .maison_commerce_badge_list__marquee-track {
+      display: flex;
+      align-items: center;
+      gap: {{ section.settings.badge_gap_mobile }}px;
+      width: max-content;
+      animation: maison_badge_marquee {{ section.settings.marquee_speed }}s linear infinite;
+    }
+
+    .maison_commerce_badge_list__marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .maison_commerce_badge_list__marquee-track .maison_commerce_badge_list__badge-icon {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+    }
+
+    .maison_commerce_badge_list__marquee-track .maison_commerce_badge_list__badge-text {
       font-size: {{ section.settings.badge_text_font_size_mobile }}px;
     }
+  }
+
+  @keyframes maison_badge_marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
 </style>
 
