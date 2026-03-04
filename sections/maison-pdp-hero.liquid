@@ -911,7 +911,7 @@
         <p class="xmaison_product-description">
           {{ product.description }}
         </p>
-        <div class="xmaison_feature-list">
+        {% comment %} <div class="xmaison_feature-list">
           {% for block in section.blocks %}
             {% if block.type == 'feature_item' %}
               <div class="xmaison_feature-item" {{ block.shopify_attributes }}>
@@ -933,7 +933,7 @@
               </div>
             {% endif %}
           {% endfor %}
-        </div>
+        </div> {% endcomment %}
       </div>
 
       <!-- Product Options -->
