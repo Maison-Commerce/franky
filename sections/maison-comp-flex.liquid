@@ -1,0 +1,807 @@
+{% schema %}
+{
+  "name": "Maison Comp Flex",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Why Coffee Alone Sabotages Your Energy"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "This isn't about discipline. Your body needs fuel, not just stimulation."
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#3B2B2F"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#3B2B2F"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Subtitle Opacity",
+      "default": 75
+    },
+    {
+      "type": "color",
+      "id": "bg_color_top",
+      "label": "Background Gradient Top",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_bottom",
+      "label": "Background Gradient Bottom",
+      "default": "#DEEAF2"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Featured Column"
+    },
+    {
+      "type": "text",
+      "id": "featured_title",
+      "label": "Featured Column Title",
+      "default": "franky"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_logo_image",
+      "label": "Featured Logo Image (replaces title text)"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Featured Product Image"
+    },
+    {
+      "type": "color",
+      "id": "featured_header_color",
+      "label": "Featured Header Background",
+      "default": "#3B2B2F"
+    },
+    {
+      "type": "color",
+      "id": "featured_header_text_color",
+      "label": "Featured Header Text Color",
+      "default": "#F5EDDC"
+    },
+    {
+      "type": "color",
+      "id": "featured_body_color",
+      "label": "Featured Card Body Background",
+      "default": "#F5EDDC"
+    },
+    {
+      "type": "header",
+      "content": "Column 1 (Left Competitor)"
+    },
+    {
+      "type": "text",
+      "id": "col1_title",
+      "label": "Column 1 Title",
+      "default": "Coffee"
+    },
+    {
+      "type": "image_picker",
+      "id": "col1_image",
+      "label": "Column 1 Product Image"
+    },
+    {
+      "type": "header",
+      "content": "Column 2 (Right Competitor)"
+    },
+    {
+      "type": "text",
+      "id": "col3_title",
+      "label": "Column 2 Title",
+      "default": "Protein powder"
+    },
+    {
+      "type": "image_picker",
+      "id": "col3_image",
+      "label": "Column 2 Product Image"
+    },
+    {
+      "type": "header",
+      "content": "Row Styling"
+    },
+    {
+      "type": "range",
+      "id": "row_font_size_desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Row Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "row_font_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Row Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "row_label_color",
+      "label": "Row Label Color",
+      "default": "#3B2B2F"
+    },
+    {
+      "type": "color",
+      "id": "row_value_color_competitor",
+      "label": "Competitor Row Value Color",
+      "default": "#92898B"
+    },
+    {
+      "type": "color",
+      "id": "row_value_color_featured",
+      "label": "Featured Row Value Color",
+      "default": "#3B2B2F"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label_col1",
+          "label": "Column 1 Label",
+          "default": "Sugar"
+        },
+        {
+          "type": "text",
+          "id": "value_col1",
+          "label": "Column 1 Value",
+          "default": "40-60g"
+        },
+        {
+          "type": "text",
+          "id": "label_featured",
+          "label": "Featured Label",
+          "default": "Sugar"
+        },
+        {
+          "type": "text",
+          "id": "value_featured",
+          "label": "Featured Value",
+          "default": "<1g"
+        },
+        {
+          "type": "text",
+          "id": "label_col3",
+          "label": "Column 2 Label",
+          "default": "Sugar"
+        },
+        {
+          "type": "text",
+          "id": "value_col3",
+          "label": "Column 2 Value",
+          "default": "As much as 60g"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Comp Flex",
+      "blocks": [
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Sugar",
+            "value_col1": "40-60g",
+            "label_featured": "Sugar",
+            "value_featured": "<1g",
+            "label_col3": "Sugar",
+            "value_col3": "As much as 60g"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Protein",
+            "value_col1": "0g",
+            "label_featured": "Protein",
+            "value_featured": "10g",
+            "label_col3": "Protein",
+            "value_col3": "15g"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Gluten-Free",
+            "value_col1": "No",
+            "label_featured": "Gluten-Free",
+            "value_featured": "Yes",
+            "label_col3": "Gluten-Free",
+            "value_col3": "No"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Fiber",
+            "value_col1": "No",
+            "label_featured": "Brain Boosting MCTs",
+            "value_featured": "Yes",
+            "label_col3": "Fiber",
+            "value_col3": "Fiber"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Pre- & Probiotics",
+            "value_col1": "Sometimes",
+            "label_featured": "Prebiotics",
+            "value_featured": "Yes",
+            "label_col3": "Pre- & Probiotics",
+            "value_col3": "Sometimes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="maison_commerce_comp_flex" style="background: linear-gradient(to bottom, {{ section.settings.bg_color_top }}, {{ section.settings.bg_color_bottom }}); padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+
+  <div class="maison_commerce_comp_flex__inner">
+
+    <!-- Section Header -->
+    <div class="maison_commerce_comp_flex__header">
+      {%- if section.settings.section_heading != blank -%}
+        <h2 class="maison_commerce_comp_flex__heading">{{ section.settings.section_heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.section_subtitle != blank -%}
+        <p class="maison_commerce_comp_flex__subtitle">{{ section.settings.section_subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <!-- Cards: scrollable on mobile, flex row on desktop -->
+    <div class="maison_commerce_comp_flex__cards-scroll">
+      <div class="maison_commerce_comp_flex__cards">
+
+        <!-- Featured Column (center on desktop, first on mobile via DOM order) -->
+        <div class="maison_commerce_comp_flex__col maison_commerce_comp_flex__col--featured"
+             style="background-color: {{ section.settings.featured_header_color }}; border: 1.5px solid {{ section.settings.featured_header_color }};">
+          <div class="maison_commerce_comp_flex__col-header">
+            {%- if section.settings.featured_logo_image != blank -%}
+              {{
+                section.settings.featured_logo_image
+                | image_url: width: 120
+                | image_tag: loading: 'lazy', alt: section.settings.featured_title, class: 'maison_commerce_comp_flex__logo-img'
+              }}
+            {%- else -%}
+              <span class="maison_commerce_comp_flex__col-header-title"
+                    style="color: {{ section.settings.featured_header_text_color }};">{{ section.settings.featured_title }}</span>
+            {%- endif -%}
+          </div>
+          <div class="maison_commerce_comp_flex__col-body maison_commerce_comp_flex__col-body--featured"
+               style="background-color: {{ section.settings.featured_body_color }};">
+            {%- if section.settings.featured_image != blank -%}
+              <div class="maison_commerce_comp_flex__product-image">
+                {{
+                  section.settings.featured_image
+                  | image_url: width: 200
+                  | image_tag: loading: 'lazy', alt: section.settings.featured_title, class: 'maison_commerce_comp_flex__product-img'
+                }}
+              </div>
+            {%- endif -%}
+            <div class="maison_commerce_comp_flex__rows">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'comparison_row' -%}
+                  {%- unless forloop.first -%}
+                    <div class="maison_commerce_comp_flex__row-divider"></div>
+                  {%- endunless -%}
+                  <div class="maison_commerce_comp_flex__row" {{ block.shopify_attributes }}>
+                    <span class="maison_commerce_comp_flex__row-label">{{ block.settings.label_featured }}</span>
+                    <span class="maison_commerce_comp_flex__row-value maison_commerce_comp_flex__row-value--featured">{{ block.settings.value_featured }}</span>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 1 (Left competitor) -->
+        <div class="maison_commerce_comp_flex__col maison_commerce_comp_flex__col--competitor maison_commerce_comp_flex__col--left">
+          <p class="maison_commerce_comp_flex__col-title">{{ section.settings.col1_title }}</p>
+          <div class="maison_commerce_comp_flex__col-body maison_commerce_comp_flex__col-body--competitor">
+            {%- if section.settings.col1_image != blank -%}
+              <div class="maison_commerce_comp_flex__product-image">
+                {{
+                  section.settings.col1_image
+                  | image_url: width: 200
+                  | image_tag: loading: 'lazy', alt: section.settings.col1_title, class: 'maison_commerce_comp_flex__product-img'
+                }}
+              </div>
+            {%- endif -%}
+            <div class="maison_commerce_comp_flex__rows">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'comparison_row' -%}
+                  {%- unless forloop.first -%}
+                    <div class="maison_commerce_comp_flex__row-divider"></div>
+                  {%- endunless -%}
+                  <div class="maison_commerce_comp_flex__row">
+                    <span class="maison_commerce_comp_flex__row-label">{{ block.settings.label_col1 }}</span>
+                    <span class="maison_commerce_comp_flex__row-value">{{ block.settings.value_col1 }}</span>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 (Right competitor) -->
+        <div class="maison_commerce_comp_flex__col maison_commerce_comp_flex__col--competitor maison_commerce_comp_flex__col--right">
+          <p class="maison_commerce_comp_flex__col-title">{{ section.settings.col3_title }}</p>
+          <div class="maison_commerce_comp_flex__col-body maison_commerce_comp_flex__col-body--competitor">
+            {%- if section.settings.col3_image != blank -%}
+              <div class="maison_commerce_comp_flex__product-image">
+                {{
+                  section.settings.col3_image
+                  | image_url: width: 200
+                  | image_tag: loading: 'lazy', alt: section.settings.col3_title, class: 'maison_commerce_comp_flex__product-img'
+                }}
+              </div>
+            {%- endif -%}
+            <div class="maison_commerce_comp_flex__rows">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'comparison_row' -%}
+                  {%- unless forloop.first -%}
+                    <div class="maison_commerce_comp_flex__row-divider"></div>
+                  {%- endunless -%}
+                  <div class="maison_commerce_comp_flex__row">
+                    <span class="maison_commerce_comp_flex__row-label">{{ block.settings.label_col3 }}</span>
+                    <span class="maison_commerce_comp_flex__row-value">{{ block.settings.value_col3 }}</span>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .maison_commerce_comp_flex {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .maison_commerce_comp_flex__inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  /* ── Header ── */
+  .maison_commerce_comp_flex__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .maison_commerce_comp_flex__heading {
+    font-family: "Lust Text", serif;
+    font-weight: 400;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  .maison_commerce_comp_flex__subtitle {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.subtitle_color }};
+    opacity: {{ section.settings.subtitle_opacity | divided_by: 100.0 }};
+    margin: 0;
+  }
+
+  /* ── Cards layout ── */
+  .maison_commerce_comp_flex__cards-scroll {
+    width: 100%;
+  }
+
+  .maison_commerce_comp_flex__cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .maison_commerce_comp_flex__col {
+    width: 310px;
+    flex-shrink: 0;
+  }
+
+  /* Desktop column ordering: col1(left) | featured(center) | col3(right) */
+  .maison_commerce_comp_flex__col--left     { order: 1; }
+  .maison_commerce_comp_flex__col--featured { order: 2; }
+  .maison_commerce_comp_flex__col--right    { order: 3; }
+
+  /* ── Competitor columns ── */
+  .maison_commerce_comp_flex__col--competitor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .maison_commerce_comp_flex__col-title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .maison_commerce_comp_flex__col-body--competitor {
+    width: 100%;
+    background: #fefefe;
+    border-radius: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* ── Featured column ── */
+  .maison_commerce_comp_flex__col--featured {
+    border-radius: 18px;
+    overflow: hidden;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .maison_commerce_comp_flex__col-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px 8px;
+  }
+
+  .maison_commerce_comp_flex__col-header-title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+
+  .maison_commerce_comp_flex__logo-img {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .maison_commerce_comp_flex__col-body--featured {
+    width: 100%;
+    border-radius: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  /* ── Product images ── */
+  .maison_commerce_comp_flex__product-image {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_comp_flex__product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ── Comparison rows ── */
+  .maison_commerce_comp_flex__rows {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .maison_commerce_comp_flex__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .maison_commerce_comp_flex__row-label {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: {{ section.settings.row_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.row_label_color }};
+    white-space: nowrap;
+  }
+
+  .maison_commerce_comp_flex__row-value {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: {{ section.settings.row_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.row_value_color_competitor }};
+    white-space: nowrap;
+  }
+
+  .maison_commerce_comp_flex__row-value--featured {
+    font-weight: 600;
+    color: {{ section.settings.row_value_color_featured }};
+  }
+
+  .maison_commerce_comp_flex__row-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(59, 43, 47, 0.12);
+    flex-shrink: 0;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 950px) {
+    .maison_commerce_comp_flex {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .maison_commerce_comp_flex__inner {
+      gap: 20px;
+    }
+
+    .maison_commerce_comp_flex__header {
+      align-items: flex-start;
+      text-align: left;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+
+    .maison_commerce_comp_flex__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: 1.4;
+    }
+
+    .maison_commerce_comp_flex__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+
+    /* Horizontal scroll */
+    .maison_commerce_comp_flex__cards-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+    }
+
+    .maison_commerce_comp_flex__cards-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .maison_commerce_comp_flex__cards {
+      width: max-content;
+      justify-content: flex-start;
+      gap: 18px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+
+    /* Reset to DOM order on mobile: featured(1st), col1(2nd), col3(3rd) */
+    .maison_commerce_comp_flex__col--left,
+    .maison_commerce_comp_flex__col--featured,
+    .maison_commerce_comp_flex__col--right {
+      order: 0;
+    }
+
+    .maison_commerce_comp_flex__col {
+      width: 227px;
+    }
+
+    .maison_commerce_comp_flex__col--competitor {
+      padding-top: 4px;
+    }
+
+    .maison_commerce_comp_flex__col-title {
+      font-size: 16px;
+    }
+
+    .maison_commerce_comp_flex__col-body--competitor {
+      padding: 18px;
+      gap: 24px;
+    }
+
+    .maison_commerce_comp_flex__col-body--featured {
+      padding: 18px;
+      gap: 24px;
+    }
+
+    .maison_commerce_comp_flex__product-image {
+      width: 95px;
+      height: 105px;
+    }
+
+    .maison_commerce_comp_flex__row-label,
+    .maison_commerce_comp_flex__row-value {
+      font-size: {{ section.settings.row_font_size_mobile }}px;
+    }
+  }
+</style>
