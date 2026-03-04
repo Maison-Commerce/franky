@@ -480,7 +480,7 @@
       </div>
 
       <div class="maison_commerce_introducing__text-content">
-        <div class="maison_commerce_introducing__text-flex" style="text-align: {{ section.settings.text_align }}; align-items: {% if section.settings.text_align == 'center' %}center{% elsif section.settings.text_align == 'right' %}flex-end{% else %}flex-start{% endif %};">
+        <div class="maison_commerce_introducing__text-flex">
           {% if section.settings.heading != blank %}
             <h2 class="maison_commerce_introducing__heading">
               {{ section.settings.heading }}
@@ -777,11 +777,15 @@
     .maison_commerce_introducing__heading {
       font-size: {{ section.settings.heading_font_size_mobile }}px;
       line-height: 1.2;
-      text-align: left;
     }
 
     .maison_commerce_introducing__desc{
       font-size: 14px;
+    }
+
+    .maison_commerce_introducing__text-flex {
+      text-align: {{ section.settings.text_align }};
+      align-items: {% if section.settings.text_align == 'center' %}center{% elsif section.settings.text_align == 'right' %}flex-end{% else %}flex-start{% endif %};
     }
   }
 

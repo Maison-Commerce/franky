@@ -782,6 +782,8 @@
       "name": "Maison Introducing",
       "settings": {
         "row": "row-reverse",
+        "mobile_image_position": "bottom",
+        "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Finally, a Coffee That Works With You</p>",
@@ -875,6 +877,8 @@
       "name": "Maison Introducing",
       "settings": {
         "row": "row",
+        "mobile_image_position": "top",
+        "text_align": "left",
         "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
         "desc": "",
         "social_proof_text": "Join",
