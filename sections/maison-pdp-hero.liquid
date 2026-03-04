@@ -185,6 +185,76 @@
       "id": "product_list",
       "label": "Flavor List",
       "info": "Select the flavors to display in the flavor list."
+    },
+    {
+      "type": "header",
+      "content": "Build Your Bundle"
+    },
+    {
+      "type": "checkbox",
+      "id": "bundle_enabled",
+      "label": "Enable Bundle Section",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "bundle_title",
+      "label": "Bundle Section Title",
+      "default": "BUILD YOUR BUNDLE:"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier1_label",
+      "label": "Tier 1 Label",
+      "default": "1 bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier1_price",
+      "label": "Tier 1 Price",
+      "default": "$34.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier2_label",
+      "label": "Tier 2 Label",
+      "default": "2 bags"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier2_price",
+      "label": "Tier 2 Price",
+      "default": "$32.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier3_label",
+      "label": "Tier 3 Label",
+      "default": "3 bags"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier3_price",
+      "label": "Tier 3 Price",
+      "default": "$30.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier4_label",
+      "label": "Tier 4 Label",
+      "default": "4+ bags"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier4_price",
+      "label": "Tier 4 Price",
+      "default": "$24.95/bag"
+    },
+    {
+      "type": "product_list",
+      "id": "bundle_products",
+      "label": "Bundle Add-on Products",
+      "info": "Select products to offer as bundle add-ons."
     }
   ],
   "blocks": [
@@ -607,6 +677,7 @@
       subscriptionMultiplier: window.subscriptionMultiplier,
       videoModalOpen: false,
       activeVideoId: null,
+      bundleAddonQtys: {},
 
       get variant() {
         return this.product.variants.find((variant) => variant.id === this.variantId);
@@ -635,6 +706,14 @@
         return Math.round(fullPrice * packDiscount);
       },
 
+      get bundleAddonTotal() {
+        return Object.values(this.bundleAddonQtys).reduce((sum, qty) => sum + qty, 0);
+      },
+
+      get bundleTotalQty() {
+        return this.quantity + this.bundleAddonTotal;
+      },
+
       get subscriptionPrice() {
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
@@ -648,6 +727,27 @@
         const fullPrice = basePrice * bottleCount;
         const discountedTotal = Math.round(fullPrice * discountMultiplier);
         return fullPrice - discountedTotal;
+      },
+
+      addBundleAddon(variantId) {
+        const current = this.bundleAddonQtys[variantId] || 0;
+        this.bundleAddonQtys = { ...this.bundleAddonQtys, [variantId]: current + 1 };
+      },
+
+      removeBundleAddon(variantId) {
+        const current = this.bundleAddonQtys[variantId] || 0;
+        if (current <= 0) return;
+        const updated = { ...this.bundleAddonQtys };
+        if (current === 1) {
+          delete updated[variantId];
+        } else {
+          updated[variantId] = current - 1;
+        }
+        this.bundleAddonQtys = updated;
+      },
+
+      getBundleAddonQty(variantId) {
+        return this.bundleAddonQtys[variantId] || 0;
       },
 
       openVideoModal(videoId) {
@@ -676,14 +776,36 @@
         if (this.loading) return;
         this.loading = true;
 
-        const payload = {
+        const isRelated = variantId !== null;
+        const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
+        const bundleId = hasBundleAddons ? 'bundle_' + Date.now() : null;
+
+        const mainItem = {
           id: variantId || this.variantId,
           quantity: qty || this.quantity,
         };
 
-        // Add selling plan if subscription is selected and we have a selling plan ID
-        if (this.isSubscription && this.sellingPlanId && !variantId) {
-          payload.selling_plan = this.sellingPlanId;
+        if (this.isSubscription && this.sellingPlanId && !isRelated) {
+          mainItem.selling_plan = this.sellingPlanId;
+        }
+
+        if (hasBundleAddons) {
+          mainItem.properties = { mc_bundle: bundleId };
+        }
+
+        let payload;
+        if (hasBundleAddons) {
+          const items = [mainItem];
+          for (const [addonVariantId, addonQty] of Object.entries(this.bundleAddonQtys)) {
+            items.push({
+              id: parseInt(addonVariantId),
+              quantity: addonQty,
+              properties: { mc_bundle: bundleId },
+            });
+          }
+          payload = { items };
+        } else {
+          payload = mainItem;
         }
 
         fetch('/cart/add.js', {
@@ -927,7 +1049,7 @@
       <!-- Product Options -->
       <div class="xmaison_product-options">
         <!-- Flavor Selector -->
-        <div class="xmaison_option-group">
+        {% comment %} <div class="xmaison_option-group">
           <div class="xmaison_option-label">
             <span class="xmaison_option-label-title">Flavor</span>
             <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
@@ -952,10 +1074,10 @@
               <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-        </div>
+        </div> {% endcomment %}
 
         <!-- Pack Size Selector -->
-        <div class="xmaison_pack-size-group">
+        {% comment %} <div class="xmaison_pack-size-group">
           <div class="xmaison_option-label">
             <span class="xmaison_option-label-title">Pack Size:</span>
             <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
@@ -996,7 +1118,90 @@
               {% endif %}
             {% endfor %}
           </div>
-        </div>
+        </div> {% endcomment %}
+
+        <!-- Build Your Bundle -->
+        {% if section.settings.bundle_enabled %}
+          <div class="xmaison_bundle-section">
+            <span class="xmaison_bundle-title">{{ section.settings.bundle_title }}</span>
+
+            <!-- Progress Bar -->
+            <div class="xmaison_bundle-progress">
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 1 }">
+                <div class="xmaison_bundle-dot"></div>
+                <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier1_label }}</span>
+                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier1_price }}</span>
+              </div>
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 2 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 2 }">
+                <div class="xmaison_bundle-dot"></div>
+                <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier2_label }}</span>
+                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier2_price }}</span>
+              </div>
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 3 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 3 }">
+                <div class="xmaison_bundle-dot"></div>
+                <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier3_label }}</span>
+                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier3_price }}</span>
+              </div>
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 4 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 4 }">
+                <div class="xmaison_bundle-dot"></div>
+                <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier4_label }}</span>
+                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier4_price }}</span>
+              </div>
+            </div>
+
+            <!-- Add-on Products -->
+            {% if section.settings.bundle_products != blank %}
+              <div class="xmaison_bundle-addons">
+                {% for bundle_product in section.settings.bundle_products %}
+                  <div class="xmaison_bundle-addon">
+                    <div class="xmaison_bundle-addon-image">
+                      {% if bundle_product.featured_image %}
+                        <img
+                          src="{{ bundle_product.featured_image | image_url: width: 170 }}"
+                          alt="{{ bundle_product.title }}"
+                          loading="lazy"
+                        >
+                      {% endif %}
+                    </div>
+                    <div class="xmaison_bundle-addon-details">
+                      <span class="xmaison_bundle-addon-title">{{ bundle_product.title }}</span>
+                      {% if bundle_product.description != blank %}
+                        <p class="xmaison_bundle-addon-desc">{{ bundle_product.description | strip_html | truncate: 80 }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="xmaison_bundle-addon-actions">
+                      <button
+                        class="xmaison_bundle-addon-btn"
+                        type="button"
+                        @click="addBundleAddon({{ bundle_product.variants.first.id }})"
+                        x-show="getBundleAddonQty({{ bundle_product.variants.first.id }}) === 0"
+                      >Add</button>
+                      <div
+                        class="xmaison_bundle-addon-qty"
+                        x-show="getBundleAddonQty({{ bundle_product.variants.first.id }}) > 0"
+                      >
+                        <button
+                          class="xmaison_bundle-qty-btn"
+                          type="button"
+                          @click="removeBundleAddon({{ bundle_product.variants.first.id }})"
+                        >−</button>
+                        <span class="xmaison_bundle-qty-value" x-text="getBundleAddonQty({{ bundle_product.variants.first.id }})"></span>
+                        <button
+                          class="xmaison_bundle-qty-btn"
+                          type="button"
+                          @click="addBundleAddon({{ bundle_product.variants.first.id }})"
+                        >+</button>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
 
         <!-- Subscription Options -->
         {% if section.settings.selling_plan_id != blank %}
