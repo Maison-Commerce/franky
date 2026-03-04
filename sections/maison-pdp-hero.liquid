@@ -203,6 +203,15 @@
       "default": "BUILD YOUR BUNDLE:"
     },
     {
+      "type": "range",
+      "id": "bundle_addon_count",
+      "label": "Number of Add-on Slots",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
       "type": "text",
       "id": "bundle_tier1_label",
       "label": "Tier 1 Label",
@@ -1127,74 +1136,72 @@
 
             <!-- Progress Bar -->
             <div class="xmaison_bundle-progress">
-              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 1 }">
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 1 }">
                 <div class="xmaison_bundle-dot"></div>
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier1_label }}</span>
                 <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier1_price }}</span>
               </div>
-              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 2 }"></div>
-              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 2 }">
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 2 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 2 }">
                 <div class="xmaison_bundle-dot"></div>
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier2_label }}</span>
                 <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier2_price }}</span>
               </div>
-              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 3 }"></div>
-              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 3 }">
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 3 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 3 }">
                 <div class="xmaison_bundle-dot"></div>
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier3_label }}</span>
                 <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier3_price }}</span>
               </div>
-              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleTotalQty >= 4 }"></div>
-              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleTotalQty >= 4 }">
+              <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 4 }"></div>
+              <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 4 }">
                 <div class="xmaison_bundle-dot"></div>
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier4_label }}</span>
                 <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier4_price }}</span>
               </div>
             </div>
 
-            <!-- Add-on Products -->
-            {% if section.settings.bundle_products != blank %}
+            <!-- Add-on Product Slots (first product duplicated N times) -->
+            {% assign bundle_addon_product = section.settings.bundle_products | first %}
+            {% if bundle_addon_product %}
+              {%- assign addon_vid = bundle_addon_product.variants.first.id -%}
               <div class="xmaison_bundle-addons">
-                {% for bundle_product in section.settings.bundle_products %}
-                  <div class="xmaison_bundle-addon">
+                {% for i in (1..section.settings.bundle_addon_count) %}
+                  {%- assign slot_index = forloop.index -%}
+                  <div
+                    class="xmaison_bundle-addon"
+                    :class="{ 'xmaison_bundle-addon--added': bundleAddonTotal >= {{ slot_index }} }"
+                  >
                     <div class="xmaison_bundle-addon-image">
-                      {% if bundle_product.featured_image %}
+                      {% if bundle_addon_product.featured_image %}
                         <img
-                          src="{{ bundle_product.featured_image | image_url: width: 170 }}"
-                          alt="{{ bundle_product.title }}"
+                          src="{{ bundle_addon_product.featured_image | image_url: width: 170 }}"
+                          alt="{{ bundle_addon_product.title }}"
                           loading="lazy"
                         >
                       {% endif %}
                     </div>
                     <div class="xmaison_bundle-addon-details">
-                      <span class="xmaison_bundle-addon-title">{{ bundle_product.title }}</span>
-                      {% if bundle_product.description != blank %}
-                        <p class="xmaison_bundle-addon-desc">{{ bundle_product.description | strip_html | truncate: 80 }}</p>
+                      <span class="xmaison_bundle-addon-title">{{ bundle_addon_product.title }}</span>
+                      {% if bundle_addon_product.description != blank %}
+                        <p class="xmaison_bundle-addon-desc">{{ bundle_addon_product.description | strip_html | truncate: 80 }}</p>
                       {% endif %}
                     </div>
                     <div class="xmaison_bundle-addon-actions">
+                      <!-- "Add" button: only on the next available slot -->
                       <button
                         class="xmaison_bundle-addon-btn"
                         type="button"
-                        @click="addBundleAddon({{ bundle_product.variants.first.id }})"
-                        x-show="getBundleAddonQty({{ bundle_product.variants.first.id }}) === 0"
+                        @click="addBundleAddon({{ addon_vid }})"
+                        x-show="bundleAddonTotal === {{ slot_index }} - 1"
                       >Add</button>
-                      <div
-                        class="xmaison_bundle-addon-qty"
-                        x-show="getBundleAddonQty({{ bundle_product.variants.first.id }}) > 0"
-                      >
-                        <button
-                          class="xmaison_bundle-qty-btn"
-                          type="button"
-                          @click="removeBundleAddon({{ bundle_product.variants.first.id }})"
-                        >−</button>
-                        <span class="xmaison_bundle-qty-value" x-text="getBundleAddonQty({{ bundle_product.variants.first.id }})"></span>
-                        <button
-                          class="xmaison_bundle-qty-btn"
-                          type="button"
-                          @click="addBundleAddon({{ bundle_product.variants.first.id }})"
-                        >+</button>
-                      </div>
+                      <!-- "Added" badge: slot is filled -->
+                      <button
+                        class="xmaison_bundle-addon-added-btn"
+                        type="button"
+                        @click="removeBundleAddon({{ addon_vid }})"
+                        x-show="bundleAddonTotal >= {{ slot_index }}"
+                      >Added ✓</button>
                     </div>
                   </div>
                 {% endfor %}

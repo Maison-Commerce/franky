@@ -1799,73 +1799,48 @@
   margin: 0;
 }
 
+.xmaison_bundle-addon--added {
+  opacity: 0.75;
+}
+
 .xmaison_bundle-addon-actions {
   flex-shrink: 0;
 }
 
-.xmaison_bundle-addon-btn {
+.xmaison_bundle-addon-btn,
+.xmaison_bundle-addon-added-btn {
   width: 100px;
   height: 32px;
   padding: 0 12px;
-  background: #3B2B2F;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s ease;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.xmaison_bundle-addon-btn {
+  background: #3B2B2F;
+  color: #ffffff;
 }
 
 .xmaison_bundle-addon-btn:hover {
   background: var(--color-brand-1-1400);
 }
 
-.xmaison_bundle-addon-qty {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  width: 100px;
-  height: 32px;
-  background: #3B2B2F;
-  border-radius: 12px;
-  overflow: hidden;
+.xmaison_bundle-addon-added-btn {
+  background: rgba(59, 43, 47, 0.12);
+  color: var(--text-primary);
 }
 
-.xmaison_bundle-qty-btn {
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s ease;
-}
-
-.xmaison_bundle-qty-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.xmaison_bundle-qty-value {
-  flex: 1;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1;
+.xmaison_bundle-addon-added-btn:hover {
+  background: rgba(59, 43, 47, 0.2);
 }
 
 @media (max-width: 1100px) {
