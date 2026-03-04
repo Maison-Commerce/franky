@@ -1663,7 +1663,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px;
 }
 
 .xmaison_bundle-title {
@@ -1747,6 +1746,7 @@
 .xmaison_bundle-addon {
   display: flex;
   align-items: center;
+  border: 1px solid rgba(230, 222, 214, 0.50);
   gap: 12px;
 }
 
