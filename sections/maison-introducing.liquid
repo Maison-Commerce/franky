@@ -565,45 +565,47 @@
           </div>
         {% endif %}
 
-        <div class="maison_commerce_introducing__cta">
-          {% if section.settings.button_link != blank and section.settings.button_text != blank %}
-            <a href="{{ section.settings.button_link }}" class="maison_commerce_introducing__button">
-              <span class="maison_commerce_introducing__button-text">{{ section.settings.button_text }}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <g clip-path="url(#clip0_8314_1471)">
-                    <path d="M23.71 11.2901L18.93 6.51011C18.7894 6.37135 18.6108 6.27736 18.4168 6.23998C18.2228 6.20261 18.0221 6.22353 17.84 6.30011C17.6574 6.37513 17.5011 6.50253 17.3907 6.66625C17.2804 6.82997 17.221 7.02269 17.22 7.22011V10.2201C17.22 10.2864 17.1937 10.35 17.1468 10.3969C17.0999 10.4438 17.0363 10.4701 16.97 10.4701H1.5C1.10218 10.4701 0.720644 10.6281 0.43934 10.9095C0.158035 11.1908 0 11.5723 0 11.9701C0 12.3679 0.158035 12.7495 0.43934 13.0308C0.720644 13.3121 1.10218 13.4701 1.5 13.4701H17C17.0663 13.4701 17.1299 13.4964 17.1768 13.5433C17.2237 13.5902 17.25 13.6538 17.25 13.7201V16.7201C17.25 16.9853 17.3554 17.2397 17.5429 17.4272C17.7304 17.6148 17.9848 17.7201 18.25 17.7201C18.3823 17.7196 18.5132 17.6928 18.6351 17.6413C18.7569 17.5898 18.8674 17.5146 18.96 17.4201L23.74 12.6501C23.8985 12.4696 23.9902 12.2401 24 12.0001C24.0008 11.8685 23.9755 11.738 23.9258 11.6162C23.876 11.4944 23.8027 11.3836 23.71 11.2901Z" fill="currentColor"/>
-                </g>
-                <defs>
-                    <clipPath id="clip0_8314_1471">
-                    <rect width="24" height="24" fill="white"/>
-                    </clipPath>
-                </defs>
-              </svg>
-            </a>
-          {% endif %}
+        {% if section.settings.button_link != blank %}
+          <div class="maison_commerce_introducing__cta">
+            {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+              <a href="{{ section.settings.button_link }}" class="maison_commerce_introducing__button">
+                <span class="maison_commerce_introducing__button-text">{{ section.settings.button_text }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <g clip-path="url(#clip0_8314_1471)">
+                      <path d="M23.71 11.2901L18.93 6.51011C18.7894 6.37135 18.6108 6.27736 18.4168 6.23998C18.2228 6.20261 18.0221 6.22353 17.84 6.30011C17.6574 6.37513 17.5011 6.50253 17.3907 6.66625C17.2804 6.82997 17.221 7.02269 17.22 7.22011V10.2201C17.22 10.2864 17.1937 10.35 17.1468 10.3969C17.0999 10.4438 17.0363 10.4701 16.97 10.4701H1.5C1.10218 10.4701 0.720644 10.6281 0.43934 10.9095C0.158035 11.1908 0 11.5723 0 11.9701C0 12.3679 0.158035 12.7495 0.43934 13.0308C0.720644 13.3121 1.10218 13.4701 1.5 13.4701H17C17.0663 13.4701 17.1299 13.4964 17.1768 13.5433C17.2237 13.5902 17.25 13.6538 17.25 13.7201V16.7201C17.25 16.9853 17.3554 17.2397 17.5429 17.4272C17.7304 17.6148 17.9848 17.7201 18.25 17.7201C18.3823 17.7196 18.5132 17.6928 18.6351 17.6413C18.7569 17.5898 18.8674 17.5146 18.96 17.4201L23.74 12.6501C23.8985 12.4696 23.9902 12.2401 24 12.0001C24.0008 11.8685 23.9755 11.738 23.9258 11.6162C23.876 11.4944 23.8027 11.3836 23.71 11.2901Z" fill="currentColor"/>
+                  </g>
+                  <defs>
+                      <clipPath id="clip0_8314_1471">
+                      <rect width="24" height="24" fill="white"/>
+                      </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            {% endif %}
 
-          <div class="maison_commerce_introducing__trust-badges">
-            {% for block in section.blocks %}
-              {% case block.type %}
-                {% when 'trust_badge' %}
-                  <div class="maison_commerce_introducing__trust-badge" {{ block.shopify_attributes }}>
-                    {% if block.settings.icon != blank %}
-                      <div class="maison_commerce_introducing__trust-badge-icon">
-                        {{
-                          block.settings.icon
-                          | image_url: width: 50
-                          | image_tag: loading: 'lazy', alt: block.settings.text, class: 'maison_commerce_introducing__trust-badge-icon-img'
-                        }}
-                      </div>
-                    {% endif %}
-                    {% if block.settings.text != blank %}
-                      <p class="maison_commerce_introducing__trust-badge-text">{{ block.settings.text }}</p>
-                    {% endif %}
-                  </div>
-              {% endcase %}
-            {% endfor %}
+            <div class="maison_commerce_introducing__trust-badges">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'trust_badge' %}
+                    <div class="maison_commerce_introducing__trust-badge" {{ block.shopify_attributes }}>
+                      {% if block.settings.icon != blank %}
+                        <div class="maison_commerce_introducing__trust-badge-icon">
+                          {{
+                            block.settings.icon
+                            | image_url: width: 50
+                            | image_tag: loading: 'lazy', alt: block.settings.text, class: 'maison_commerce_introducing__trust-badge-icon-img'
+                          }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <p class="maison_commerce_introducing__trust-badge-text">{{ block.settings.text }}</p>
+                      {% endif %}
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     </div>
   </div>
