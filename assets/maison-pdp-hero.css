@@ -26,7 +26,7 @@
   --color-brand-2-700: #DDFED6;
   --color-brand-2-800: rgba(255, 255, 255, 0.60);
   --color-brand-2-1300: #C4FCB8;
-  --color-brand-2-1800: #B9FCAB;
+  --color-brand-2-1800: rgba(255, 201, 157, 0.70);
   
   --text-primary: #3B2B2F;
   --text-secondary: rgba(59, 43, 47, 0.75);
@@ -642,7 +642,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 2px 8px;
-  background-color: var(--color-brand-2-1800);
+  background: var(--color-brand-2-1800);
   border-radius: 999px;
 }
 
@@ -801,7 +801,7 @@ img {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--color-brand-2-1800);
+  background: var(--color-brand-2-1800);
 }
 
 .xmaison_button-price {
