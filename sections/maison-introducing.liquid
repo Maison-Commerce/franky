@@ -783,7 +783,7 @@
       font-size: 14px;
     }
 
-    .maison_commerce_introducing__text-flex {
+    #shopify-section-{{ section.id }} .maison_commerce_introducing__text-flex {
       text-align: {{ section.settings.text_align }};
       align-items: {% if section.settings.text_align == 'center' %}center{% elsif section.settings.text_align == 'right' %}flex-end{% else %}flex-start{% endif %};
     }
