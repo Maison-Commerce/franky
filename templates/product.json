@@ -533,9 +533,7 @@
           "franky-protein-coffee"
         ],
         "related_add_button_text": "Add",
-        "product_list": [
-          "franky-protein-coffee"
-        ],
+        "product_list": [],
         "bundle_enabled": true,
         "bundle_title": "BUILD YOUR BUNDLE:",
         "bundle_addon_count": 10,
