@@ -76,7 +76,7 @@ img {
 .xmaison_product-section {
   width: 100%;
   padding: 32px clamp(20px, 5vw, 80px);
-  background-color: #F9F9F4;
+  background-color: #FFF;
 }
 
 .xmaison_product-container {
