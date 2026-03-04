@@ -369,24 +369,18 @@
         "customer_video_WHqD7f": {
           "type": "customer_video",
           "settings": {
-            "video": "",
-            "thumbnail": "shopify://shop_images/xmaison-customer-1.png",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_tm3Rzp": {
           "type": "customer_video",
           "settings": {
-            "video": "",
-            "thumbnail": "shopify://shop_images/xmaison-customer-2.png",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_mEtUwE": {
           "type": "customer_video",
           "settings": {
-            "video": "",
-            "thumbnail": "shopify://shop_images/xmaison-customer-3.png",
             "alt_text": "Customer testimonial"
           }
         },
@@ -593,49 +587,42 @@
         "badge_zwkR7p": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/d8cd28fb22f312155b752637943afe350db7036d.png",
             "text": "Clean ingredients"
           }
         },
         "badge_XzA84J": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/26bc59e340dc58569c8efeeb2091789969e37832.png",
             "text": "Cruelty-free"
           }
         },
         "badge_VdXCPA": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/c0b35978375cf02685a3f7ef5d5069d7acd49efd.png",
             "text": "Vegan"
           }
         },
         "badge_RyTNBC": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/64d4a7de2795f4afe05b57e9ae50b43032184876.png",
             "text": "Gluten-free"
           }
         },
         "badge_W6YAML": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/b3b5486257dbd7b8b0d2c7d5a183444c9d28273b.png",
             "text": "Low Sugar"
           }
         },
         "badge_pYKmeY": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/98188caf971591385ed68a2fc9868d203a599554.png",
             "text": "Non-GMO"
           }
         },
         "badge_XdHaqJ": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/4d3fc75f875f145cd607b91cd385a233274980d4.png",
             "text": "No fillers"
           }
         }
@@ -670,105 +657,87 @@
         "icon_text_gap": 12
       }
     },
-    "maison_ingredients_qqPath": {
-      "type": "maison-ingredients",
+    "maison_ing_Pzf6La": {
+      "type": "maison-ing",
       "blocks": {
-        "ingredient_i7pVmw": {
+        "ingredient_7J6hnM": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/b7e9d0e7ec0c7432778b8f14fcd5b180bf0754fc.png",
-            "title": "Collagen",
-            "description": "<p>BPA and phthalates in plastic containers can disrupt hormone balance and raise estrogen levels with each sip.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         },
-        "ingredient_gjpDeQ": {
+        "ingredient_tkt7Lc": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/f942eeaa847b62d50e2f4d9fb3d751e52fcb0e99.png",
-            "title": "Vitamin E, B5 + B12",
-            "description": "<p>Vitamins E, B5, and B12 nourish hair, skin, and nails, enhancing moisture and resilience for a healthy glow.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         },
-        "ingredient_9TnYeE": {
+        "ingredient_9mGBh6": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/00ac1f7cbd08f5d132e938210ed3138de0f8872b.png",
-            "title": "Reishi Mushroom",
-            "description": "<p>Reishi, the \"Mushroom of Immortality,\" is prized for its antioxidants that support hydration and overall scalp health.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         },
-        "ingredient_4Unex6": {
+        "ingredient_wp9ey8": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/c1cddd0602091497e5de9bf79ee3b699c52b3606.png",
-            "title": "Tremella Mushroom",
-            "description": "<p>Mucuna Pruriens promotes better mood by enhancing dopamine synthesis & serotonin signaling.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         },
-        "ingredient_jYaAeN": {
+        "ingredient_9NYLU7": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/ff2132d978271631b144dff88e1a2c531a1baaee.png",
-            "title": "Vitamin C",
-            "description": "<p>Vitamin C aids collagen production, maintaining skin glow and benefiting hair and nails.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         },
-        "ingredient_YfKYnG": {
+        "ingredient_aB8HGE": {
           "type": "ingredient",
           "settings": {
-            "image": "shopify://shop_images/3bc91014b647e25b9640f9594121671069d28f50.png",
-            "title": "Biotin",
-            "description": "<p>Biotin supports strong hair, healthy skin, and resilient nails - promoting growth, repair, and your natural glow.</p>"
+            "title": "Natural Caffeine",
+            "description": "Clean energy without anxiety."
           }
         }
       },
       "block_order": [
-        "ingredient_i7pVmw",
-        "ingredient_gjpDeQ",
-        "ingredient_9TnYeE",
-        "ingredient_4Unex6",
-        "ingredient_jYaAeN",
-        "ingredient_YfKYnG"
+        "ingredient_7J6hnM",
+        "ingredient_tkt7Lc",
+        "ingredient_9mGBh6",
+        "ingredient_wp9ey8",
+        "ingredient_9NYLU7",
+        "ingredient_aB8HGE"
       ],
-      "name": "Maison Ingredients",
+      "name": "Maison ING",
       "settings": {
-        "section_bg_color": "#ffffff",
-        "padding_top_desktop": 70,
-        "padding_bottom_desktop": 70,
+        "section_heading": "Premium Ingredients",
+        "section_subtitle": "Complete Protein & Performance Coffee Formula for Steady Energy and Focus",
+        "bg_gradient_start": "#deeaf2",
+        "bg_gradient_end": "#fffffe",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "subtitle_color": "#3b2b2f",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "card_bg_color": "#fefefe",
+        "card_title_color": "#3b2b2f",
+        "card_title_font_size_desktop": 18,
+        "card_title_font_size_mobile": 16,
+        "card_desc_color": "#3b2b2f",
+        "card_desc_font_size_desktop": 16,
+        "card_desc_font_size_mobile": 14,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
         "padding_left_desktop": 80,
         "padding_right_desktop": 80,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "heading": "Premium Ingredients",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 32,
-        "heading_color": "#2f3936",
-        "subtitle": "Complete Mushroom and Botanical Formula for Your Natural Glow",
-        "subtitle_font_size_desktop": 18,
-        "subtitle_font_size_mobile": 14,
-        "subtitle_color": "#2f3936",
-        "cta_text": "Get My Gummies",
-        "cta_url": "#",
-        "cta_bg_color": "#c4fcb8",
-        "cta_text_color": "#2e432f",
-        "cta_font_size_desktop": 14,
-        "cta_font_size_mobile": 14,
-        "card_gap_desktop": 18,
-        "card_gap_mobile": 12,
-        "card_bg_color": "#f8faf3",
-        "card_border_radius": 16,
-        "card_padding_desktop": 24,
-        "card_padding_mobile": 18,
-        "card_title_font_size_desktop": 20,
-        "card_title_font_size_mobile": 18,
-        "card_title_color": "#2f3936",
-        "card_text_font_size_desktop": 18,
-        "card_text_font_size_mobile": 14,
-        "card_text_color": "#2f3936",
-        "image_size_desktop": 220,
-        "image_size_mobile": 80
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16
       }
     },
     "maison_introducing_DidygV": {
@@ -777,7 +746,6 @@
         "feature_9krNK3": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Energy_710c22ba-5c01-4a4b-99b8-381443b6d42a.svg",
             "title": "Sustained Energy",
             "description": "Real coffee + 20g protein = no crash, no jitters"
           }
@@ -785,7 +753,6 @@
         "feature_kmFwV8": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Nutrition.svg",
             "title": "Complete Nutrition",
             "description": "Protein, caffeine, superfoods, micronutrients in one cup"
           }
@@ -793,7 +760,6 @@
         "feature_cN9meJ": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Union.svg",
             "title": "Effortless Routine",
             "description": "Replaces breakfast + coffee in 60 seconds"
           }
@@ -830,15 +796,11 @@
       ],
       "name": "Maison Introducing",
       "settings": {
-        "product_image_desktop": "shopify://shop_images/75e75d0e70c68100a94b3e3fd5b58f6be913c894.png",
-        "badge_image": "shopify://shop_images/Badge.png",
+        "row": "row",
         "heading": "<p>Introducing AROSE: <br/>Coffee that actually <em>fuels</em> <em><strong>Your Day</strong></em></p>",
         "social_proof_text": "Join",
         "social_proof_count": "8,450+ people",
         "social_proof_suffix": "who've reclaimed their masculinity",
-        "avatar_1": "shopify://shop_images/Users-Img-1.png",
-        "avatar_2": "shopify://shop_images/Users-Img-2.png",
-        "avatar_3": "shopify://shop_images/Users-Img-3.png",
         "button_text": "Take Control of My Mood",
         "button_link": "shopify://collections/all",
         "padding_top_desktop": 70,
@@ -874,7 +836,6 @@
         "logo_znBWgf": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/ecf7c4f664bf214c63d8f40c75bc3842ec855e75.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -882,7 +843,6 @@
         "logo_jG7Eim": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/d5e23ff44dcfbfdf4c14bad658bc6752ad20338d.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -890,7 +850,6 @@
         "logo_ya46Qh": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/1216f1937143dd0c29fb744ddf4b21ef9e9c6fee.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -898,7 +857,6 @@
         "logo_gGdYBR": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/84fcdd90d58a5f904fa6bec39ec7392411a29172.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -906,7 +864,6 @@
         "logo_3Hnj8f": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/68825e751120d37ebb2535884d7802de4726ad99.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -914,7 +871,6 @@
         "logo_Y4mnrW": {
           "type": "logo",
           "settings": {
-            "logo_image": "shopify://shop_images/2e0249e942963ea944e876c532627fee9ac503c1.png",
             "logo_alt": "",
             "logo_link": ""
           }
@@ -955,7 +911,6 @@
           "type": "comparison",
           "settings": {
             "title": "Coffee",
-            "image": "shopify://shop_images/Rectangle_4927.png",
             "icon_type": "x",
             "icon_bg_color": "#d6e1b7",
             "icon_x_bg_color": "#d6e1b7"
@@ -1000,7 +955,6 @@
           "type": "comparison",
           "settings": {
             "title": "MOJO gummies",
-            "image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
             "icon_type": "check",
             "icon_bg_color": "#b9fcab",
             "icon_x_bg_color": "#d6e1b7"
@@ -1099,45 +1053,31 @@
       "blocks": {
         "video_hGCtPz": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_b6CnWJ": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_E6NaUR": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_hnYthk": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_B8bWKa": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_tKJnhR": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "video_3bqHpK": {
           "type": "video",
-          "settings": {
-            "video": ""
-          }
+          "settings": {}
         },
         "review_FT7eUG": {
           "type": "review",
@@ -1308,7 +1248,6 @@
         "badge_M3HHGc": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/Flash-1--Streamline-Ultimate.svg",
             "title": "Fuel Your Body",
             "description": "<p><strong>20g</strong> premium protein prevents the blood sugar rollercoaster. Stay satisfied for hours.</p>"
           }
@@ -1316,7 +1255,6 @@
         "badge_cMHVra": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/Empathy-Authentication-Heart-Inside--Streamline-Ultimate.svg",
             "title": "Energize Your Mind",
             "description": "<p><strong>150mg</strong> natural caffeine provides mental clarity without anxiety.</p>"
           }
@@ -1324,7 +1262,6 @@
         "badge_8rLwjC": {
           "type": "badge",
           "settings": {
-            "icon": "shopify://shop_images/Feedback-1--Streamline-Ultimate.svg",
             "title": "Support Your Performance",
             "description": "<p>MCTs, adaptogens, collagen boost metabolism and mental clarity.</p>"
           }
@@ -1365,8 +1302,7 @@
         "title_color": "#2f3936",
         "description_font_size_desktop": 18,
         "description_font_size_mobile": 14,
-        "description_color": "#2c2926bf",
-        "background_ball_image": "shopify://shop_images/Group_5126.png"
+        "description_color": "#2c2926bf"
       }
     },
     "maison_faq_kDGU3k": {
@@ -1454,7 +1390,6 @@
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
         "heading_color": "#2f3936",
-        "image": "shopify://shop_images/4a3868dfe30778291d8b8dded6fc44ed1cd22891.png",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
@@ -1523,35 +1458,30 @@
         "instagram_image_8gjkKw": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/wgagawg.png",
             "instagram_url": ""
           }
         },
         "instagram_image_bfy9ip": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/gawgawgawg.png",
             "instagram_url": ""
           }
         },
         "instagram_image_mfbaL8": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/gawgawgw.jpg",
             "instagram_url": ""
           }
         },
         "instagram_image_kWcwRb": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/gagawgwg.png",
             "instagram_url": ""
           }
         },
         "instagram_image_kTcHR9": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/gawgagwagawgw.png",
             "instagram_url": ""
           }
         }
@@ -1614,7 +1544,7 @@
     "main",
     "maison_pdp_hero_mfQLMr",
     "maison_badge_list_Qxnb7C",
-    "maison_ingredients_qqPath",
+    "maison_ing_Pzf6La",
     "maison_introducing_DidygV",
     "maison_scroll_img_wDAFGb",
     "maison_difference_MjnCfW",
