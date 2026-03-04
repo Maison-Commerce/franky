@@ -663,6 +663,7 @@
         "ingredient_7J6hnM": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/awfawfawfw.png",
             "title": "Natural Caffeine",
             "description": "Clean energy without anxiety."
           }
@@ -670,6 +671,7 @@
         "ingredient_tkt7Lc": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/afawfawfwafawf.png",
             "title": "Plant Protein",
             "description": "Supports satiety and blood sugar balance."
           }
@@ -677,6 +679,7 @@
         "ingredient_9mGBh6": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/wfagawgawg.png",
             "title": "L-Theanine",
             "description": "Smooths caffeine response."
           }
@@ -684,6 +687,7 @@
         "ingredient_wp9ey8": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/gwawgsbesgw.png",
             "title": "Prebiotic Fiber",
             "description": "Supports digestion and gut balance."
           }
@@ -691,6 +695,7 @@
         "ingredient_9NYLU7": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/aewgsebegwqg.png",
             "title": "Psyllium Fiber",
             "description": "Aids digestion and keeps you fuller."
           }
@@ -698,6 +703,7 @@
         "ingredient_aB8HGE": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/vdsvwegwebes.png",
             "title": "Lion’s Mane",
             "description": "Supports sharper thinking."
           }
