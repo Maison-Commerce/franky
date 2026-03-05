@@ -728,6 +728,14 @@
         return Object.values(this.bundleAddonSlots).reduce((sum, qty) => sum + (qty || 0), 0);
       },
 
+      get bundleCalculatedPrice() {
+        if (!window.bundleAddonPrices) return 0;
+        return Object.entries(this.bundleAddonSlots).reduce((sum, [slotIndex, qty]) => {
+          const price = window.bundleAddonPrices[slotIndex] || 0;
+          return sum + price * (qty || 0);
+        }, 0);
+      },
+
       get subscriptionPrice() {
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
@@ -1186,6 +1194,11 @@
                     {{ forloop.index }}: {{ bundle_product.variants.first.id }},
                   {% endfor %}
                 };
+                window.bundleAddonPrices = {
+                  {% for bundle_product in section.settings.bundle_products %}
+                    {{ forloop.index }}: {{ bundle_product.variants.first.price }},
+                  {% endfor %}
+                };
               </script>
               <div class="xmaison_bundle-addons">
                 {% for bundle_product in section.settings.bundle_products %}
@@ -1328,7 +1341,7 @@
             {% endif %}
           ></span>
           <span class="xmaison_button-dot" x-show="!loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} && bundleAddonTotal > 0{% endif %}"></span>
-          <span class="xmaison_button-price" x-show="!loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} && bundleAddonTotal > 0{% endif %}" x-text="formatMoney(calculatedPrice)"></span>
+          <span class="xmaison_button-price" x-show="!loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} && bundleAddonTotal > 0{% endif %}" x-text="formatMoney({% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}bundleCalculatedPrice{% else %}calculatedPrice{% endif %})"></span>
         </button>
 
         <!-- Payment Methods -->

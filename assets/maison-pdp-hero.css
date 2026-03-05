@@ -1850,6 +1850,49 @@
   background: rgba(59, 43, 47, 0.2);
 }
 
+/* Quantity Picker */
+.xmaison_bundle-qty-picker {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(59, 43, 47, 0.08);
+}
+
+.xmaison_bundle-qty-btn {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  line-height: 1;
+}
+
+.xmaison_bundle-qty-btn:hover {
+  background: rgba(59, 43, 47, 0.12);
+}
+
+.xmaison_bundle-qty-value {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+  user-select: none;
+}
+
 @media (max-width: 1100px) {
   .xmaison_bundle-section {
     padding: 16px;
