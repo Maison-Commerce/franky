@@ -1057,6 +1057,7 @@
       <!-- Product Options -->
       <div class="xmaison_product-options">
         <!-- Flavor Selector -->
+        {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
         {% if section.settings.product_list != blank %}
           <div class="xmaison_option-group">
             <div class="xmaison_option-label">
@@ -1085,6 +1086,7 @@
             </div>
           </div>
         {% endif %}
+        {% endunless %}
 
         <!-- Pack Size Selector -->
         {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
