@@ -197,6 +197,28 @@
       "default": false
     },
     {
+      "type": "select",
+      "id": "section_mode_default",
+      "label": "Default Section Mode",
+      "options": [
+        { "value": "packs", "label": "Packs" },
+        { "value": "bundle", "label": "Bundle" }
+      ],
+      "default": "packs"
+    },
+    {
+      "type": "text",
+      "id": "section_mode_packs_label",
+      "label": "Packs Option Label",
+      "default": "Packs"
+    },
+    {
+      "type": "text",
+      "id": "section_mode_bundle_label",
+      "label": "Bundle Option Label",
+      "default": "Bundle"
+    },
+    {
       "type": "text",
       "id": "bundle_title",
       "label": "Bundle Section Title",
@@ -687,6 +709,7 @@
       videoModalOpen: false,
       activeVideoId: null,
       bundleAddonSlots: {},
+      sectionMode: '{{ section.settings.section_mode_default | default: "packs" }}',
 
       get variant() {
         return this.product.variants.find((variant) => variant.id === this.variantId);
@@ -769,8 +792,8 @@
         this.loading = true;
 
         const isRelated = variantId !== null;
-        const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
-        const bundleId = hasBundleAddons ? 'bundle_true' : null;
+        const hasBundleAddons = !isRelated && this.sectionMode === 'bundle' && this.bundleAddonTotal > 0;
+        const bundleId = hasBundleAddons ? 'bundle_' + Date.now() : null;
 
         const mainItem = {
           id: variantId || this.variantId,
@@ -1070,9 +1093,19 @@
           </div>
         {% endif %}
 
+        <!-- Section Mode Selector -->
+        {% if section.settings.bundle_enabled %}
+          <div class="xmaison_mode-selector">
+            <select class="xmaison_mode-select" x-model="sectionMode">
+              <option value="packs">{{ section.settings.section_mode_packs_label | default: 'Packs' }}</option>
+              <option value="bundle">{{ section.settings.section_mode_bundle_label | default: 'Bundle' }}</option>
+            </select>
+          </div>
+        {% endif %}
+
         <!-- Pack Size Selector -->
         {% if section.settings.pack_size_label != blank %}
-          <div class="xmaison_pack-size-group">
+          <div class="xmaison_pack-size-group" {% if section.settings.bundle_enabled %}x-show="sectionMode === 'packs'"{% endif %}>
             <div class="xmaison_option-label">
               <span class="xmaison_option-label-title">Pack Size:</span>
               <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
@@ -1118,7 +1151,7 @@
 
         <!-- Build Your Bundle -->
         {% if section.settings.bundle_enabled %}
-          <div class="xmaison_bundle-section">
+          <div class="xmaison_bundle-section" x-show="sectionMode === 'bundle'">
             <span class="xmaison_bundle-title">{{ section.settings.bundle_title }}</span>
 
             <!-- Progress Bar -->
@@ -1153,8 +1186,7 @@
             {% if bundle_addon_product %}
               {%- assign addon_vid = bundle_addon_product.variants.first.id -%}
               <script>window.bundleAddonVariantId = {{ addon_vid }};</script>
-              <div class="xmaison_bundle-addons-wrapper">
-                <div class="xmaison_bundle-addons">
+              <div class="xmaison_bundle-addons">
                 {% for i in (1..section.settings.bundle_addon_count) %}
                   {%- assign slot_index = forloop.index -%}
                   <div
@@ -1192,7 +1224,6 @@
                     </div>
                   </div>
                 {% endfor %}
-              </div>
               </div>
             {% endif %}
           </div>
@@ -1284,13 +1315,13 @@
           </span>
         </div>
 
-        <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading">
+        <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading || (sectionMode === 'bundle' && bundleAddonTotal === 0)">
           <span
             class="xmaison_add-to-cart-text"
-            x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}'"
+            x-text="(sectionMode === 'bundle' && bundleAddonTotal === 0) ? 'Select at least 1 pack' : (loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}')"
           ></span>
-          <span class="xmaison_button-dot" x-show="!loading"></span>
-          <span class="xmaison_button-price" x-show="!loading" x-text="formatMoney(calculatedPrice)"></span>
+          <span class="xmaison_button-dot" x-show="!loading && !(sectionMode === 'bundle' && bundleAddonTotal === 0)"></span>
+          <span class="xmaison_button-price" x-show="!loading && !(sectionMode === 'bundle' && bundleAddonTotal === 0)" x-text="formatMoney(calculatedPrice)"></span>
         </button>
 
         <!-- Payment Methods -->
