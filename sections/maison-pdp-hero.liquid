@@ -792,6 +792,8 @@
 
         if (hasBundleAddons) {
           mainItem.properties = { mc_bundle: bundleId };
+        } else if (!isRelated) {
+          mainItem.properties = { mc_packs: 'packs_true' };
         }
 
         let payload;
