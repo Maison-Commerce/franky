@@ -784,6 +784,11 @@
   .xmaison_add-to-cart-button:hover {
     background-color: var(--color-brand-1-1400);
   }
+
+  .xmaison_add-to-cart-button[disabled="disabled"]{
+    pointer-events: none;
+    opacity: 0.5;
+  }
   
   .xmaison_add-to-cart-text {
     font-family: var(--font-body);
