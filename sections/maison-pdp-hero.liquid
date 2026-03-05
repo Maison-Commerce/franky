@@ -213,15 +213,6 @@
       "default": "BUILD YOUR BUNDLE:"
     },
     {
-      "type": "range",
-      "id": "bundle_addon_count",
-      "label": "Number of Add-on Slots",
-      "min": 1,
-      "max": 20,
-      "step": 1,
-      "default": 10
-    },
-    {
       "type": "text",
       "id": "bundle_tier1_label",
       "label": "Tier 1 Label",
@@ -798,11 +789,18 @@
         let payload;
         if (hasBundleAddons) {
           const items = [mainItem];
-          if (window.bundleAddonVariantId) {
-            items.push({
-              id: window.bundleAddonVariantId,
-              quantity: this.bundleAddonTotal,
-              properties: { mc_bundle: bundleId },
+          if (window.bundleAddonVariants) {
+            Object.entries(this.bundleAddonSlots).forEach(([slotIndex, isAdded]) => {
+              if (isAdded) {
+                const addonVariantId = window.bundleAddonVariants[slotIndex];
+                if (addonVariantId) {
+                  items.push({
+                    id: addonVariantId,
+                    quantity: 1,
+                    properties: { mc_bundle: bundleId },
+                  });
+                }
+              }
             });
           }
           payload = { items };
@@ -1160,31 +1158,35 @@
               </div>
             </div>
 
-            <!-- Add-on Product Slots (first product duplicated N times) -->
-            {% assign bundle_addon_product = section.settings.bundle_products | first %}
-            {% if bundle_addon_product %}
-              {%- assign addon_vid = bundle_addon_product.variants.first.id -%}
-              <script>window.bundleAddonVariantId = {{ addon_vid }};</script>
+            <!-- Add-on Product Slots -->
+            {% if section.settings.bundle_products != blank %}
+              <script>
+                window.bundleAddonVariants = {
+                  {% for bundle_product in section.settings.bundle_products %}
+                    {{ forloop.index }}: {{ bundle_product.variants.first.id }},
+                  {% endfor %}
+                };
+              </script>
               <div class="xmaison_bundle-addons">
-                {% for i in (1..section.settings.bundle_addon_count) %}
+                {% for bundle_product in section.settings.bundle_products %}
                   {%- assign slot_index = forloop.index -%}
                   <div
                     class="xmaison_bundle-addon"
                     :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] }"
                   >
                     <div class="xmaison_bundle-addon-image">
-                      {% if bundle_addon_product.featured_image %}
+                      {% if bundle_product.featured_image %}
                         <img
-                          src="{{ bundle_addon_product.featured_image | image_url: width: 170 }}"
-                          alt="{{ bundle_addon_product.title }}"
+                          src="{{ bundle_product.featured_image | image_url: width: 170 }}"
+                          alt="{{ bundle_product.title }}"
                           loading="lazy"
                         >
                       {% endif %}
                     </div>
                     <div class="xmaison_bundle-addon-details">
-                      <span class="xmaison_bundle-addon-title">{{ bundle_addon_product.title }}</span>
-                      {% if bundle_addon_product.description != blank %}
-                        <p class="xmaison_bundle-addon-desc">{{ bundle_addon_product.description | strip_html | truncate: 80 }}</p>
+                      <span class="xmaison_bundle-addon-title">{{ bundle_product.title }}</span>
+                      {% if bundle_product.description != blank %}
+                        <p class="xmaison_bundle-addon-desc">{{ bundle_product.description | strip_html | truncate: 80 }}</p>
                       {% endif %}
                     </div>
                     <div class="xmaison_bundle-addon-actions">
