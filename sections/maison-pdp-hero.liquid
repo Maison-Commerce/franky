@@ -725,7 +725,7 @@
       },
 
       get bundleAddonTotal() {
-        return Object.values(this.bundleAddonSlots).filter(Boolean).length;
+        return Object.values(this.bundleAddonSlots).reduce((sum, qty) => sum + (qty || 0), 0);
       },
 
       get subscriptionPrice() {
@@ -744,11 +744,18 @@
       },
 
       addBundleAddon(slotIndex) {
-        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: true };
+        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: 1 };
       },
 
-      removeBundleAddon(slotIndex) {
-        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: false };
+      incrementBundleAddon(slotIndex) {
+        const current = this.bundleAddonSlots[slotIndex] || 0;
+        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: current + 1 };
+      },
+
+      decrementBundleAddon(slotIndex) {
+        const current = this.bundleAddonSlots[slotIndex] || 0;
+        const next = current - 1;
+        this.bundleAddonSlots = { ...this.bundleAddonSlots, [slotIndex]: next < 0 ? 0 : next };
       },
 
       openVideoModal(videoId) {
@@ -798,15 +805,15 @@
 
         let payload;
         if (hasBundleAddons) {
-          const items = [mainItem];
+          const items = [];
           if (window.bundleAddonVariants) {
-            Object.entries(this.bundleAddonSlots).forEach(([slotIndex, isAdded]) => {
-              if (isAdded) {
+            Object.entries(this.bundleAddonSlots).forEach(([slotIndex, qty]) => {
+              if (qty > 0) {
                 const addonVariantId = window.bundleAddonVariants[slotIndex];
                 if (addonVariantId) {
                   items.push({
                     id: addonVariantId,
-                    quantity: 1,
+                    quantity: qty,
                     properties: { mc_bundle: bundleId },
                   });
                 }
@@ -1185,7 +1192,7 @@
                   {%- assign slot_index = forloop.index -%}
                   <div
                     class="xmaison_bundle-addon"
-                    :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] }"
+                    :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] > 0 }"
                   >
                     <div class="xmaison_bundle-addon-image">
                       {% if bundle_product.featured_image %}
@@ -1207,14 +1214,16 @@
                         class="xmaison_bundle-addon-btn"
                         type="button"
                         @click="addBundleAddon({{ slot_index }})"
-                        x-show="!bundleAddonSlots[{{ slot_index }}]"
+                        x-show="!(bundleAddonSlots[{{ slot_index }}] > 0)"
                       >Add</button>
-                      <button
-                        class="xmaison_bundle-addon-added-btn"
-                        type="button"
-                        @click="removeBundleAddon({{ slot_index }})"
-                        x-show="bundleAddonSlots[{{ slot_index }}]"
-                      >Delete</button>
+                      <div
+                        class="xmaison_bundle-qty-picker"
+                        x-show="bundleAddonSlots[{{ slot_index }}] > 0"
+                      >
+                        <button class="xmaison_bundle-qty-btn" type="button" @click="decrementBundleAddon({{ slot_index }})">−</button>
+                        <span class="xmaison_bundle-qty-value" x-text="bundleAddonSlots[{{ slot_index }}] || 0"></span>
+                        <button class="xmaison_bundle-qty-btn" type="button" @click="incrementBundleAddon({{ slot_index }})">+</button>
+                      </div>
                     </div>
                   </div>
                 {% endfor %}
