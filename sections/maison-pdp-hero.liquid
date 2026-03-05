@@ -780,7 +780,7 @@
 
         const isRelated = variantId !== null;
         const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
-        const bundleId = hasBundleAddons ? 'bundle_' + Date.now() : null;
+        const bundleId = hasBundleAddons ? 'bundle_true' : null;
 
         const mainItem = {
           id: variantId || this.variantId,
