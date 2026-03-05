@@ -366,6 +366,42 @@
     "maison_pdp_hero_mfQLMr": {
       "type": "maison-pdp-hero",
       "blocks": {
+        "pack_option_GHhn3X": {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "1 Pack",
+            "bottle_count": 1,
+            "badge_text": "",
+            "discount_multiplier": "1",
+            "is_default_selected": false,
+            "show_best_value": false,
+            "variant_id": ""
+          }
+        },
+        "pack_option_wRrbhV": {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "2 Pack",
+            "bottle_count": 2,
+            "badge_text": "",
+            "discount_multiplier": "0.9",
+            "is_default_selected": false,
+            "show_best_value": false,
+            "variant_id": ""
+          }
+        },
+        "pack_option_wrUnNn": {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "3 Pack",
+            "bottle_count": 3,
+            "badge_text": "Best Value",
+            "discount_multiplier": "0.85",
+            "is_default_selected": true,
+            "show_best_value": true,
+            "variant_id": ""
+          }
+        },
         "customer_video_WHqD7f": {
           "type": "customer_video",
           "settings": {
@@ -487,6 +523,9 @@
         }
       },
       "block_order": [
+        "pack_option_GHhn3X",
+        "pack_option_wRrbhV",
+        "pack_option_wrUnNn",
         "customer_video_WHqD7f",
         "customer_video_tm3Rzp",
         "customer_video_mEtUwE",
