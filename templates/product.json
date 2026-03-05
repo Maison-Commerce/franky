@@ -572,7 +572,9 @@
           "franky-protein-coffee"
         ],
         "related_add_button_text": "Add",
-        "product_list": [],
+        "product_list": [
+          "franky-protein-coffee-test"
+        ],
         "bundle_enabled": true,
         "section_mode_default": "packs",
         "bundle_title": "BUILD YOUR BUNDLE:",
