@@ -515,7 +515,6 @@
   .xmaison_best-value-badge {
     position: absolute;
     top: 24px;
-    right: 58px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1443,7 +1442,6 @@
   
     .xmaison_best-value-badge {
       top: 25px;
-      right: 22px;
       padding: 2px 8px;
     }
   
