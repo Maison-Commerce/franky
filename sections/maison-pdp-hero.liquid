@@ -668,6 +668,13 @@
       {% endif %}
     {% endfor %}
   };
+  window.packNames = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' %}
+        {{ block.settings.bottle_count }}: "{{ block.settings.pack_name }}",
+      {% endif %}
+    {% endfor %}
+  };
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
@@ -682,6 +689,7 @@
       currentPackDiscount: window.defaultPackDiscount || 1,
       loading: false,
       packPricing: window.packPricing || {},
+      packNames: window.packNames || {},
       isSubscription: window.subscriptionDefaultSelected,
       sellingPlanId: window.sellingPlanId,
       subscriptionMultiplier: window.subscriptionMultiplier,
@@ -1084,7 +1092,7 @@
           <div class="xmaison_pack-size-group">
             <div class="xmaison_option-label">
               <span class="xmaison_option-label-title">Quantity:</span>
-              <span class="xmaison_option-label-value">{{ section.settings.pack_size_label }}</span>
+              <span class="xmaison_option-label-value" x-text="packNames[quantity] || '{{ section.settings.pack_size_label }}'"></span>
             </div>
             <div class="xmaison_pack-options">
               {% for block in section.blocks %}
