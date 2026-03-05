@@ -1108,8 +1108,9 @@
                       <span class="xmaison_pack-name">{{ block.settings.pack_name }}</span>
                       {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
                       {% if discount_multiplier < 1 %}
+                        {% assign discount_percent = 1 | minus: discount_multiplier | times: 100 | round %}
                         <div class="xmaison_pack-badge">
-                          <span class="xmaison_pack-badge-text" x-text="'Save ' + formatMoney(getPackSavings({{ block.settings.bottle_count }}, {{ block.settings.discount_multiplier }}))"></span>
+                          <span class="xmaison_pack-badge-text">Save {{ discount_percent }}%</span>
                         </div>
                       {% endif %}
                     </div>
