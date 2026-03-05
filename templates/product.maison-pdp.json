@@ -577,7 +577,7 @@
           "franky-protein-coffee"
         ],
         "bundle_enabled": true,
-        "section_mode_default": "packs",
+        "section_mode_default": "bundle",
         "bundle_title": "BUILD YOUR BUNDLE:",
         "bundle_tier1_label": "1 bag",
         "bundle_tier1_price": "$34.95/bag",
