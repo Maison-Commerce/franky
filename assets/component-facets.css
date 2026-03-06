@@ -48,7 +48,7 @@
 
 .facet-filters__label {
   color: var(--Text-Primary, #3B2B2F);
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -118,7 +118,7 @@
   padding-left: 0;
   padding-right: 1.75rem;
   color: rgba(59, 43, 47, 0.75);
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -190,7 +190,7 @@
 .facets__heading {
   margin: 0 2rem 0 0;
   color: #3B2B2F;
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -212,7 +212,7 @@
 
 .facets__summary {
   color: rgba(59, 43, 47, 0.75);
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -873,7 +873,7 @@ cubic-bezier(.4, .06, .1, 1.04);
 .mobile-facets__open-label {
   transition: text-decoration var(--duration-short) ease;
   color: var(--Text-Primary, #2C2926);
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -1134,7 +1134,7 @@ input.mobile-facets__checkbox {
 .product-count__text {
   margin: 0;
   color: var(--Text-Secondary, rgba(59, 43, 47, 0.75));
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

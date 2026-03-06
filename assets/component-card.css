@@ -178,7 +178,7 @@
 }
 
 .card__rating-count {
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -357,7 +357,7 @@
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 600;
@@ -581,7 +581,7 @@
 }
 
 .card__price-wrapper .price-item--regular {
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -589,7 +589,7 @@
 }
 
 .card__price-wrapper .price-item--strikethrough {
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -598,7 +598,7 @@
 }
 
 .card__price-wrapper .price-item--sale {
-  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
