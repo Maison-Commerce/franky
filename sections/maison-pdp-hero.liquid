@@ -678,6 +678,7 @@
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+  window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
 
   console.log('[Subscription Debug] sellingPlanId:', window.sellingPlanId);
   console.log('[Subscription Debug] subscriptionMultiplier:', window.subscriptionMultiplier);
@@ -732,6 +733,9 @@
       },
 
       get onetimePrice() {
+        if (window.sectionMode === 'bundle') {
+          return this.bundleCalculatedPrice;
+        }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
         const fullPrice = basePrice * this.quantity;
@@ -751,6 +755,9 @@
       },
 
       get subscriptionPrice() {
+        if (window.sectionMode === 'bundle') {
+          return Math.round(this.bundleCalculatedPrice * this.subscriptionMultiplier);
+        }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
         const fullPrice = basePrice * this.quantity;
