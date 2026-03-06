@@ -801,6 +801,10 @@
           quantity: hasBundleAddons ? 1 : (qty || this.quantity),
         };
 
+        console.log('this.isSubscription', this.isSubscription);
+        console.log('this.sellingPlanId', this.sellingPlanId);
+        console.log('isRelated', isRelated);
+
         if (this.isSubscription && this.sellingPlanId && !isRelated) {
           mainItem.selling_plan = this.sellingPlanId;
         }
