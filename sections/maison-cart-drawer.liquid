@@ -205,7 +205,7 @@
                       <button
                         class="xmaison_qty-btn xmaison_qty-plus"
                         @click="updateQuantity(item.key, item.quantity + 1)"
-                        :disabled="loading || (item.quantity_rule && item.quantity_rule.max && item.quantity >= item.quantity_rule.max)"
+                        :disabled="loading || (item.quantity_rule && item.quantity_rule.max > 0 && item.quantity >= item.quantity_rule.max)"
                       >
                         <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
                       </button>
@@ -468,9 +468,11 @@
           .then((data) => {
             const clone = structuredClone(data);
 
-            clone.items.forEach((item) => {
-              item.product = window.productDataBag[item.product_id];
-            });
+            if (window.productDataBag) {
+              clone.items.forEach((item) => {
+                item.product = window.productDataBag[item.product_id];
+              });
+            }
 
             this.cart = clone;
             window.cart = clone;
