@@ -205,7 +205,6 @@
                       <button
                         class="xmaison_qty-btn xmaison_qty-plus"
                         @click="updateQuantity(item.key, item.quantity + 1)"
-                        :disabled="loading || (item.quantity_rule && item.quantity_rule.max > 0 && item.quantity >= item.quantity_rule.max)"
                       >
                         <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
                       </button>
