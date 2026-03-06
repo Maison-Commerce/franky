@@ -678,6 +678,11 @@
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+
+  console.log('[Subscription Debug] sellingPlanId:', window.sellingPlanId);
+  console.log('[Subscription Debug] subscriptionMultiplier:', window.subscriptionMultiplier);
+  console.log('[Subscription Debug] subscriptionDefaultSelected:', window.subscriptionDefaultSelected);
+  console.log('[Subscription Debug] selling_plan_id setting raw:', "{{ section.settings.selling_plan_id }}");
 </script>
 
 <script>
@@ -693,6 +698,15 @@
       isSubscription: window.subscriptionDefaultSelected,
       sellingPlanId: window.sellingPlanId,
       subscriptionMultiplier: window.subscriptionMultiplier,
+
+      init() {
+        console.log('[Subscription Debug] Alpine init - isSubscription:', this.isSubscription);
+        console.log('[Subscription Debug] Alpine init - sellingPlanId:', this.sellingPlanId);
+        console.log('[Subscription Debug] Alpine init - subscriptionMultiplier:', this.subscriptionMultiplier);
+        console.log('[Subscription Debug] Alpine init - variantId:', this.variantId);
+        console.log('[Subscription Debug] Alpine init - product price:', this.product.price);
+        console.log('[Subscription Debug] Alpine init - calculatedPrice:', this.variant?.price || this.product.price);
+      },
       videoModalOpen: false,
       activeVideoId: null,
       bundleAddonSlots: {},
@@ -796,14 +810,17 @@
         const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
         const bundleId = hasBundleAddons ? 'bundle_true' : null;
 
+        console.log('[AddToCart Debug] isRelated:', isRelated);
+        console.log('[AddToCart Debug] hasBundleAddons:', hasBundleAddons);
+        console.log('[AddToCart Debug] isSubscription:', this.isSubscription);
+        console.log('[AddToCart Debug] sellingPlanId:', this.sellingPlanId);
+        console.log('[AddToCart Debug] variantId:', variantId || this.variantId);
+        console.log('[AddToCart Debug] quantity:', qty || this.quantity);
+
         const mainItem = {
           id: variantId || this.variantId,
           quantity: hasBundleAddons ? 1 : (qty || this.quantity),
         };
-
-        console.log('this.isSubscription', this.isSubscription);
-        console.log('this.sellingPlanId', this.sellingPlanId);
-        console.log('isRelated', isRelated);
 
         if (this.isSubscription && this.sellingPlanId && !isRelated) {
           mainItem.selling_plan = this.sellingPlanId;
@@ -814,6 +831,8 @@
         } else if (!isRelated) {
           mainItem.properties = { mc_packs: 'packs_true' };
         }
+
+        console.log('[AddToCart Debug] mainItem:', JSON.stringify(mainItem));
 
         let payload;
         if (hasBundleAddons) {
@@ -837,14 +856,24 @@
           payload = mainItem;
         }
 
+        console.log('[AddToCart Debug] final payload:', JSON.stringify(payload));
+
         fetch('/cart/add.js', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
-          .then(() => {
+          .then((res) => {
+            console.log('[AddToCart Debug] response status:', res.status);
+            return res.json();
+          })
+          .then((data) => {
+            console.log('[AddToCart Debug] response data:', JSON.stringify(data));
             maisonDispatch('maison:cart-drawer-reload');
             maisonDispatch('maison:cart-drawer-open');
+          })
+          .catch((err) => {
+            console.error('[AddToCart Debug] error:', err);
           })
           .finally(() => {
             this.loading = false;
