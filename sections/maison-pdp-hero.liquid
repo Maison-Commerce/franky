@@ -842,11 +842,15 @@
               if (qty > 0) {
                 const addonVariantId = window.bundleAddonVariants[slotIndex];
                 if (addonVariantId) {
-                  items.push({
+                  const item = {
                     id: addonVariantId,
                     quantity: qty,
                     properties: { mc_bundle: bundleId },
-                  });
+                  };
+                  if (this.isSubscription && this.sellingPlanId) {
+                    item.selling_plan = this.sellingPlanId;
+                  }
+                  items.push(item);
                 }
               }
             });
