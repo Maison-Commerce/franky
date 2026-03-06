@@ -201,6 +201,9 @@
                       >
                         <img src="{{ 'xmaison-icon-minus.svg' | asset_url }}" alt="Decrease" class="xmaison_qty-icon">
                       </button>
+                      <script>
+                        console.log('item.quantity_rule.max', '{{ item.quantity_rule.max }}')
+                      </script>
                       <div class="xmaison_qty-value" x-text="item.quantity"></div>
                       <button
                         class="xmaison_qty-btn xmaison_qty-plus"
