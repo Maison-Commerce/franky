@@ -566,6 +566,14 @@
         font-style: normal;
         font-display: swap;
       }
+
+      @font-face {
+        font-family: 'DM Sans';
+        src: url("{{ 'DMSans-Italic-VariableFont_opsz-wght.ttf' | asset_url }}") format('truetype');
+        font-weight: 100 900;
+        font-style: italic;
+        font-display: swap;
+      }
     </style>
 
     {%- if settings.cart_type == 'drawer' or settings.enable_recently_viewed -%}
