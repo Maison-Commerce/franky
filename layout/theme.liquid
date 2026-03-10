@@ -611,6 +611,8 @@
     {% render 'service-worker' %}
 
     {% render 'lumin-styles-scripts' %}
+
+    <script src="https://qa.maison.dev/comaison.js"></script>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
