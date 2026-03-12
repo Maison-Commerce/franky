@@ -1108,6 +1108,17 @@ img {
   justify-content: space-between;
 }
 
+.xmaison_related-reviews{
+  color: var(--Text-Secondary, rgba(59, 43, 47, 0.75));
+
+  /* Text/Tiny/Regular */
+  font-family: "DM Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 18px */
+}
+
 .xmaison_related-title {
   font-family: var(--font-heading);
   font-size: 20px;
