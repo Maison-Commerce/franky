@@ -1706,7 +1706,7 @@ line-height: 1.5;
 /* Progress Bar */
 .xmaison_bundle-progress {
 display: flex;
-align-items: flex-start;
+align-items: center;
 }
 
 .xmaison_bundle-step {
