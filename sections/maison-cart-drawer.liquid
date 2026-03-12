@@ -184,8 +184,8 @@
                     </button>
                   </div>
                     <div class="xmaison_product-price">
-                      <template x-if="item.product && item.product.compare_at_price && item.product.compare_at_price > item.product.price">
-                        <span class="xmaison_original-price" x-text="m(item.product.compare_at_price * item.quantity)"></span>
+                      <template x-if="item.original_line_price > item.line_price">
+                        <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
                       </template>
                       <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
                     </div>
@@ -573,8 +573,7 @@
       get compareAtTotal() {
         if (!this.cart.items) return 0;
         return this.cart.items.reduce((sum, item) => {
-          const comparePrice = item.product?.compare_at_price || item.product?.price || 0;
-          return sum + (comparePrice * item.quantity);
+          return sum + (item.original_line_price || item.line_price || 0);
         }, 0);
       },
 
