@@ -1047,7 +1047,7 @@
     font-size: {{ section.settings.link_font_size_desktop }}px;
     font-weight: 400;
     line-height: 1.5;
-    color: {{ section.settings.link_color }};
+    color: {{ section.settings.link_color | hex_to_rgba: 0.75 }};
   }
 
   .maison_commerce_footer__support-content p {
