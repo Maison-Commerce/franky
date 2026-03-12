@@ -519,7 +519,7 @@
       ],
       "name": "Maison Introducing",
       "settings": {
-        "row": "row-reverse",
+        "row": "row",
         "mobile_image_position": "top",
         "text_align": "left",
         "product_image_desktop": "shopify://shop_images/Frame_1484581760.png",
