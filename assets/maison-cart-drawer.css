@@ -878,7 +878,7 @@
     font-family: var(--xmaison-font-body);
     font-size: 14px;
     font-weight: 400;
-    color: var(--xmaison-gray-500);
+    color: rgba(59, 43, 47, 0.75);
     text-decoration: line-through;
   }
   
