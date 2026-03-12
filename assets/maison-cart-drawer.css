@@ -670,7 +670,7 @@
   }
   
   .xmaison_upsell-product {
-    background-color: var(--xmaison-brand3-100);
+    background: rgba(248, 242, 231, 0.40);
     border-radius: var(--xmaison-radius-12);
     padding: 8px;
     box-sizing: border-box;
