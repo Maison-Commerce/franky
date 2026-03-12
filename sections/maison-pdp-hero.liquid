@@ -1086,9 +1086,9 @@
       <!-- Product Description & Features -->
       {% if product.description != blank %}
         <div class="xmaison_product-header">
-          <p class="xmaison_product-description">
+          <div class="xmaison_product-description">
             {{ product.description }}
-          </p>
+          </div>
           {% comment %} <div class="xmaison_feature-list">
             {% for block in section.blocks %}
               {% if block.type == 'feature_item' %}
