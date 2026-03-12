@@ -271,7 +271,7 @@
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
         "card_bg_color": "#ffffff",
-        "card_padding": 18,
+        "card_padding": 24,
         "card_gap_desktop": 24,
         "card_gap_mobile": 18,
         "icon_size_desktop": 60,
