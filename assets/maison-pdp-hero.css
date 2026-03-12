@@ -812,7 +812,7 @@ img {
 
 .xmaison_add-to-cart-button[disabled="disabled"]{
   pointer-events: none;
-  opacity: 0.5;
+  background: rgba(218, 215, 216, 0.50);
 }
 
 .xmaison_add-to-cart-text {
