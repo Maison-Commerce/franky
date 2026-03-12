@@ -818,7 +818,7 @@ img {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: #F7F3E6;
+  color: var(--color-brand-2-1800);
   line-height: 1.5;
 }
 
@@ -826,14 +826,14 @@ img {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #F7F3E6;
+  background: var(--color-brand-2-1800);
 }
 
 .xmaison_button-price {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: #F7F3E6;
+  color: var(--color-brand-2-1800);
   line-height: 1.5;
 }
 
@@ -1943,4 +1943,165 @@ user-select: none;
 .xmaison_bundle-tier-price {
   font-size: 10px;
 }
+}
+
+/* ==========================================================================
+   Nutritional Information Button & Popup
+   ========================================================================== */
+.xmaison_nutritional-btn-wrapper {
+  margin-top: 32px;
+}
+
+.xmaison_nutritional-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 56px;
+  padding: 16px 32px;
+  background-color: #E5EDF4;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.xmaison_nutritional-btn:hover {
+  background-color: #d6e3ee;
+}
+
+.xmaison_nutritional-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.xmaison_nutritional-btn-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #3B2B2F;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Nutritional Popup Overlay */
+.xmaison_nutritional-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.xmaison_nutritional-popup {
+  background: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.xmaison_nutritional-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-brand-1-200);
+}
+
+.xmaison_nutritional-popup-title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: #3B2B2F;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.xmaison_nutritional-popup-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.xmaison_nutritional-popup-close:hover {
+  background-color: rgba(59, 43, 47, 0.08);
+}
+
+.xmaison_nutritional-popup-body {
+  padding: 24px;
+  overflow-y: auto;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.xmaison_nutritional-popup-body p {
+  margin: 0 0 12px;
+}
+
+.xmaison_nutritional-popup-body p:last-child {
+  margin-bottom: 0;
+}
+
+.xmaison_nutritional-popup-body ul,
+.xmaison_nutritional-popup-body ol {
+  padding-left: 20px;
+  margin: 0 0 12px;
+}
+
+.xmaison_nutritional-popup-body li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 1100px) {
+  .xmaison_nutritional-btn-wrapper {
+    margin-top: 20px;
+  }
+
+  .xmaison_nutritional-btn {
+    height: 44px;
+    border-radius: 14px;
+    padding: 12px 32px;
+  }
+
+  .xmaison_nutritional-btn-text {
+    font-size: 14px;
+  }
+
+  .xmaison_nutritional-popup {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 14px;
+  }
+
+  .xmaison_nutritional-popup-header {
+    padding: 16px 20px;
+  }
+
+  .xmaison_nutritional-popup-title {
+    font-size: 16px;
+  }
+
+  .xmaison_nutritional-popup-body {
+    padding: 20px;
+  }
 }
