@@ -120,7 +120,7 @@
           </nav>
 
           <div class="menu-drawer__utility-links">
-            {% comment %} {%- if shop.customer_accounts_enabled -%}
+            {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
                 class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
@@ -148,7 +148,7 @@
                   endif
                 -%}
               </a>
-            {%- endif -%} {% endcomment %}
+            {%- endif -%}
 
             {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
