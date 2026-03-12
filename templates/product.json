@@ -366,6 +366,13 @@
     "maison_pdp_hero_mfQLMr": {
       "type": "maison-pdp-hero",
       "blocks": {
+        "nutritional_info_xpfTdY": {
+          "type": "nutritional_info",
+          "settings": {
+            "button_text": "Nutritional Information",
+            "popup_content": "<p>Nutritional information content goes here.</p>"
+          }
+        },
         "pack_option_GHhn3X": {
           "type": "pack_option",
           "settings": {
@@ -516,6 +523,7 @@
         }
       },
       "block_order": [
+        "nutritional_info_xpfTdY",
         "pack_option_GHhn3X",
         "pack_option_wRrbhV",
         "pack_option_wrUnNn",
