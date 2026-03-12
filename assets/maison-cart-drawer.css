@@ -1393,6 +1393,15 @@
   white-space: nowrap;
 }
 
+.xmaison_product-main-info-wrap{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
 .xmaison_delivery-payment-frequency {
   font-family: var(--xmaison-font-system);
   font-size: 12px;
