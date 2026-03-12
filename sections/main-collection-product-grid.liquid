@@ -198,26 +198,28 @@
                   %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
-                
-                {%- comment -%} Insert banner after every 3rd product {%- endcomment -%}
-                {%- assign remainder = product_count | modulo: 3 -%}
-                {%- if section.settings.show_product_banner and product_count != 0 and remainder == 0 -%}
-                  <li
-                    class="grid__item product-banner-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                    {% if settings.animations_reveal_on_scroll %}
-                      data-cascade
-                      style="--animation-order: {{ product_count | plus: 1 }};"
-                    {% endif %}
-                  >
-                    {% render 'product-banner-card',
-                      banner_image: section.settings.banner_image,
-                      rating: section.settings.banner_rating,
-                      banner_text: section.settings.banner_text,
-                      overlay_text_1: section.settings.banner_overlay_text_1,
-                      overlay_text_2: section.settings.banner_overlay_text_2
-                    %}
-                  </li>
-                {%- endif -%}
+
+                {%- comment -%} Insert banner blocks at their configured positions {%- endcomment -%}
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'product_banner' and block.settings.position == product_count -%}
+                    <li
+                      class="grid__item product-banner-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                      {% if settings.animations_reveal_on_scroll %}
+                        data-cascade
+                        style="--animation-order: {{ product_count | plus: 1 }};"
+                      {% endif %}
+                      {{ block.shopify_attributes }}
+                    >
+                      {% render 'product-banner-card',
+                        banner_image: block.settings.banner_image,
+                        rating: block.settings.banner_rating,
+                        banner_text: block.settings.banner_text,
+                        overlay_text_1: block.settings.banner_overlay_text_1,
+                        overlay_text_2: block.settings.banner_overlay_text_2
+                      %}
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
               {%- endfor -%}
             </ul>
 
@@ -467,47 +469,6 @@
     },
     {
       "type": "header",
-      "content": "Product Banner Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_banner",
-      "label": "Show Product Banner",
-      "default": false,
-      "info": "Show banner after every 3rd product"
-    },
-    {
-      "type": "image_picker",
-      "id": "banner_image",
-      "label": "Banner Image"
-    },
-    {
-      "type": "text",
-      "id": "banner_rating",
-      "label": "Banner Rating",
-      "default": "4.8",
-      "info": "Rating value (e.g., 4.8)"
-    },
-    {
-      "type": "richtext",
-      "id": "banner_text",
-      "label": "Banner Text",
-      "default": "<p>Rated 4.8/5 based on 8,450+ reviews.</p>"
-    },
-    {
-      "type": "text",
-      "id": "banner_overlay_text_1",
-      "label": "Overlay Text 1",
-      "default": "One sold every minute"
-    },
-    {
-      "type": "text",
-      "id": "banner_overlay_text_2",
-      "label": "Overlay Text 2",
-      "default": "BUY 2, GET 3"
-    },
-    {
-      "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
@@ -529,6 +490,54 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_banner",
+      "name": "Product Banner",
+      "settings": [
+        {
+          "type": "range",
+          "id": "position",
+          "min": 1,
+          "max": 36,
+          "step": 1,
+          "default": 3,
+          "label": "Position (after product #)",
+          "info": "Insert banner after this product number on the current page"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "banner_rating",
+          "label": "Banner Rating",
+          "default": "4.8",
+          "info": "Rating value (e.g., 4.8)"
+        },
+        {
+          "type": "richtext",
+          "id": "banner_text",
+          "label": "Banner Text",
+          "default": "<p>Rated 4.8/5 based on 8,450+ reviews.</p>"
+        },
+        {
+          "type": "text",
+          "id": "banner_overlay_text_1",
+          "label": "Overlay Text 1",
+          "default": "One sold every minute"
+        },
+        {
+          "type": "text",
+          "id": "banner_overlay_text_2",
+          "label": "Overlay Text 2",
+          "default": "BUY 2, GET 3"
+        }
+      ]
     }
   ]
 }
