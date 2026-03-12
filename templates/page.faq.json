@@ -591,28 +591,35 @@
           "type": "faq_item",
           "settings": {
             "question": "How does Subscribe & Save work?",
-            "answer": "<p>Pick your flavor and frequency (every 20, 30, or 40 days). Get 15% off every order. Free shipping. Pause, skip, or cancel anytime from your account. No phone calls required. No hidden fees. No 'call to cancel' BS.</p>"
+            "answer": "<p>Subscribe & Save delivers your Franky supply automatically at a discounted price so you never run out.</p>"
           }
         },
         "faq_item_GmW3HE": {
           "type": "faq_item",
           "settings": {
             "question": "Can I pause or cancel my subscription?",
-            "answer": "<p>Yes. Log into your account. Click 'Manage Subscription.' Pause, skip next order, change frequency, or cancel. Takes 30 seconds. No phone calls. No retention team trying to guilt you.</p>"
+            "answer": "<p>Yes. You can pause, skip, or cancel your subscription anytime through your account.</p>"
           }
         },
         "faq_item_gPpmLB": {
           "type": "faq_item",
           "settings": {
             "question": "Can I change my delivery schedule?",
-            "answer": "<p>Yep. Adjust your delivery date, skip a shipment, or change frequency anytime. Just log into your account or email us if you need help.</p>"
+            "answer": "<p>Absolutely. You can adjust delivery frequency or shipping dates whenever you need.</p>"
           }
         },
         "faq_item_wzh4rx": {
           "type": "faq_item",
           "settings": {
+            "question": "How do I get a refund?",
+            "answer": "<p> If there’s an issue with your order, our support team can assist with refunds according to our return policy.</p>"
+          }
+        },
+        "faq_item_4xFyDq": {
+          "type": "faq_item",
+          "settings": {
             "question": "Are there bulk discounts?",
-            "answer": "<p>Subscribe & Save is 15% off forever. We also have bundles (2-bag, 3-bag) with additional savings. The more you buy, the less per serving. Check the shop page for current bundle deals.</p>"
+            "answer": "<p>Yes. Multi-bottle bundles and subscriptions typically offer the best savings.</p>"
           }
         }
       },
@@ -620,7 +627,8 @@
         "faq_item_cNfniY",
         "faq_item_GmW3HE",
         "faq_item_gPpmLB",
-        "faq_item_wzh4rx"
+        "faq_item_wzh4rx",
+        "faq_item_4xFyDq"
       ],
       "name": "FAQ Accordion",
       "settings": {
