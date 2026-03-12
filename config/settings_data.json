@@ -348,9 +348,8 @@
         "type": "maison-cart-drawer",
         "settings": {
           "upsell_list": [
-            "brain-boost-gummies-blackberry-plum",
-            "brain-boost-gummies",
-            "brain-boost-gummies-strawberry-tangerine"
+            "franky-protein-coffee",
+            "franky-protein-coffee-test"
           ],
           "subscribe_badge": "Most Popular",
           "subscribe_title": "Subscribe & Save an Extra 10%",
