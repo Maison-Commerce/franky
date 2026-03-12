@@ -1017,6 +1017,10 @@
     height: 10px;
   }
 
+  .xmaison_quantity-selector {
+    border-radius: 8px;
+  }
+
   .xmaison_cart-container .xmaison_save-text {
     font-size: 8px;
   }
