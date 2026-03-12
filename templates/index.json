@@ -277,7 +277,7 @@
         "icon_size_desktop": 60,
         "icon_size_mobile": 44,
         "icon_content_gap": 12,
-        "title_font_size_desktop": 18,
+        "title_font_size_desktop": 20,
         "title_font_size_mobile": 16,
         "title_color": "#3b2b2f",
         "description_font_size_desktop": 16,
