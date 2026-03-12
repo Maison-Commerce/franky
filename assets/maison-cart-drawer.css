@@ -759,7 +759,7 @@
   }
   
   .xmaison_cart-container .xmaison_save-badge {
-    background-color: var(--xmaison-yellow-500);
+    background-color: rgba(255, 201, 157, 0.70);
     border-radius: var(--xmaison-radius-90);
     padding: 2px 8px;
     display: flex;
@@ -772,7 +772,7 @@
     font-size: 10px;
     font-weight: 600;
     line-height: var(--xmaison-line-height-normal);
-    color: var(--xmaison-brand1-1800);
+    color: #3B2B2F;
   }
   
   /* Add Button */
