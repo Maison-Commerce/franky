@@ -828,8 +828,8 @@
       ],
       "name": "Maison Badge List",
       "settings": {
-        "padding_top_desktop": 18,
-        "padding_bottom_desktop": 18,
+        "padding_top_desktop": 12,
+        "padding_bottom_desktop": 12,
         "padding_left_desktop": 80,
         "padding_right_desktop": 80,
         "padding_top_mobile": 12,
