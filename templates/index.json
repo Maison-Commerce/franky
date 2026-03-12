@@ -84,7 +84,7 @@
         "padding_top_desktop": 56,
         "padding_bottom_desktop": 56,
         "padding_left_desktop": 60,
-        "padding_right_desktop": 80,
+        "padding_right_desktop": 60,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32,
         "padding_left_mobile": 20,
@@ -153,7 +153,7 @@
       ],
       "name": "Maison Introducing",
       "settings": {
-        "row": "row",
+        "row": "row-reverse",
         "mobile_image_position": "top",
         "text_align": "left",
         "product_image_desktop": "shopify://shop_images/Image.png",
