@@ -423,35 +423,35 @@
           "type": "faq_item",
           "settings": {
             "question": "Is shipping delayed?",
-            "answer": "<p>Nope. Orders placed before 2PM EST ship same day. You'll have it in 2-5 business days depending on where you live. We ship from the US, not overseas.</p>"
+            "answer": "<p>Orders typically ship within 24–48 hours. Delivery times may vary depending on location and shipping carrier.</p>"
           }
         },
         "faq_item_HYDRRx": {
           "type": "faq_item",
           "settings": {
             "question": "How fast will my order arrive?",
-            "answer": "<p>2-5 business days in the US. Sometimes faster. We ship USPS Priority or UPS Ground depending on your location. You get tracking the day it ships.</p>"
+            "answer": "<p>Most orders arrive within 3–7 business days depending on your region and shipping option selected.</p>"
           }
         },
         "faq_item_THwrEV": {
           "type": "faq_item",
           "settings": {
             "question": "Do you ship internationally?",
-            "answer": "<p>US only right now. We're working on Canada and UK. If you're international and want to be notified when we expand, email us at <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a></p>"
+            "answer": "<p>Yes, Franky ships to many countries worldwide. Shipping rates and delivery times will be calculated at checkout.</p>"
           }
         },
         "faq_item_WNdJaY": {
           "type": "faq_item",
           "settings": {
             "question": "What payment methods do you accept?",
-            "answer": "<p>Credit cards (Visa, Mastercard, Amex, Discover), Apple Pay, Google Pay, Shop Pay. We don't accept PayPal because they held our money hostage once and we're petty.</p>"
+            "answer": "<p>We accept major credit cards, PayPal, and other secure payment options available at checkout.</p>"
           }
         },
         "faq_item_aLmRim": {
           "type": "faq_item",
           "settings": {
             "question": "Can I modify or cancel my order?",
-            "answer": "<p>Email us ASAP at <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a>. If we haven't shipped it yet (within 24 hours usually), we can change or cancel. After it ships, you'll need to use our return policy.</p>"
+            "answer": "<p> If your order has not yet shipped, our support team may be able to help modify or cancel it.</p>"
           }
         }
       },
@@ -511,28 +511,28 @@
           "type": "faq_item",
           "settings": {
             "question": "How does your guarantee work?",
-            "answer": "<p>90 days. Drink the entire bag. All 30 servings. If you don't feel the difference, email us. We refund you. No return shipping required. No photos of your empty bag. No interrogation. We just refund you.</p>"
+            "answer": "<p>Franky offers a satisfaction guarantee. If you’re not happy with your results, you can contact support to request a return within the guarantee period.</p>"
           }
         },
         "faq_item_zBpxYJ": {
           "type": "faq_item",
           "settings": {
             "question": "What if I want to return an unopened bottle?",
-            "answer": "<p>Unopened bags get full refunds within 90 days. Just email us. We'll send you a prepaid return label. You ship it back. We refund you when we receive it. Easy.</p>"
+            "answer": "<p>Unopened products can typically be returned within the return window for a full refund.</p>"
           }
         },
         "faq_item_diKU3d": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I get a refund?",
-            "answer": "<p>Email <a href=\"mailto:hello@drinkarose.com\">hello@drinkarose.com</a> with your order number and why you want a refund. We process it within 1-2 business days. Money hits your account in 5-7 business days depending on your bank.</p>"
+            "question": "Do you ship internationally?",
+            "answer": "<p>Yes, international customers can also place orders. Shipping costs and delivery times depend on location.</p>"
           }
         },
         "faq_item_UmKzHG": {
           "type": "faq_item",
           "settings": {
-            "question": "Do you really honor the guarantee?",
-            "answer": "<p>Yes. We've refunded hundreds of people. We don't fight you. We don't ask invasive questions. You say it didn't work, we refund you. Our refund rate is under 3% because the product works. But when someone asks, we honor it.</p>"
+            "question": "How do I get a refund?",
+            "answer": "<p>Simply contact our support team with your order number and they’ll guide you through the return and refund process.</p>"
           }
         }
       },
