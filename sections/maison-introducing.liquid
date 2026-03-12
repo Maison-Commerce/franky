@@ -849,7 +849,7 @@
   }
 
   #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-title {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: {{ section.settings.feature_title_font_size_desktop }}px;
     font-weight: 600;
     line-height: 1.5;
@@ -864,11 +864,11 @@
   }
 
   #shopify-section-{{ section.id }} .maison_commerce_introducing__feature-description {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: {{ section.settings.feature_description_font_size_desktop }}px;
     font-weight: 500;
     line-height: 1.5;
-    color: {{ section.settings.feature_text_color }};
+    color: {{ section.settings.feature_text_color | hex_to_rgba: 0.75 }};
     margin: 0;
   }
 
@@ -1043,7 +1043,7 @@
   }
 
   #shopify-section-{{ section.id }} .maison_commerce_introducing__trust-badge-text {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: {{ section.settings.trust_badge_font_size }}px;
     font-weight: 500;
     line-height: 1.5;
