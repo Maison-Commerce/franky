@@ -818,7 +818,7 @@ img {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-brand-2-1800);
+  color: #F7F3E6;
   line-height: 1.5;
 }
 
@@ -826,14 +826,14 @@ img {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--color-brand-2-1800);
+  background: #F7F3E6;
 }
 
 .xmaison_button-price {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-brand-2-1800);
+  color: #F7F3E6;
   line-height: 1.5;
 }
 
