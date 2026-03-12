@@ -815,6 +815,11 @@ img {
   background: rgba(218, 215, 216, 0.50);
 }
 
+.xmaison_add-to-cart-button[disabled="disabled"] span{
+  color: var(--Text-Primary, #3B2B2F);
+  opacity: 0.5;
+}
+
 .xmaison_add-to-cart-text {
   font-family: var(--font-body);
   font-size: 16px;
