@@ -91,7 +91,7 @@
         "icon_size_mobile": 18,
         "icon_bg_color": "#f9f9f9",
         "icon_text_gap": 12,
-        "feature_font_size_desktop": 18,
+        "feature_font_size_desktop": 16,
         "feature_font_size_mobile": 14,
         "feature_text_color": "#3b2b2f"
       }
