@@ -77,7 +77,7 @@
         "title_uppercase": false,
         "title_align": "left",
         "description": "Choose your flavor. Build your ritual. Keep it simple.",
-        "description_font_size_desktop": 18,
+        "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
         "description_color": "#3b2b2f",
         "description_opacity": 75,
