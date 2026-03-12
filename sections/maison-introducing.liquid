@@ -188,7 +188,7 @@
       "id": "padding_left_mobile",
       "min": 0,
       "max": 100,
-      "step": 5,
+      "step": 1,
       "unit": "px",
       "label": "Padding Left (Mobile)",
       "default": 20
@@ -198,7 +198,7 @@
       "id": "padding_right_mobile",
       "min": 0,
       "max": 100,
-      "step": 5,
+      "step": 1,
       "unit": "px",
       "label": "Padding Right (Mobile)",
       "default": 20
@@ -782,6 +782,7 @@
     #shopify-section-{{ section.id }} .maison_commerce_introducing__heading {
       font-size: {{ section.settings.heading_font_size_mobile }}px;
       line-height: 1.2;
+      text-align: {{ section.settings.text_align }};
     }
 
     #shopify-section-{{ section.id }} .maison_commerce_introducing__desc {
