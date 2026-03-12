@@ -601,7 +601,7 @@
      Upsell Section
      ======================================== */
   .xmaison_upsell-section {
-    background-color: var(--xmaison-bg-green);
+    background-color: #FFF;
     width: 100%;
     z-index: 1;
   }
