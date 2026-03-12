@@ -103,14 +103,14 @@
           "type": "collection_button",
           "settings": {
             "label": "All Products",
-            "collection": "all-products-dev"
+            "collection": ""
           }
         },
         "collection_button_gXQjay": {
           "type": "collection_button",
           "settings": {
             "label": "Energy & Focus",
-            "collection": "frontpage"
+            "collection": ""
           }
         },
         "collection_button_GtpyCB": {
