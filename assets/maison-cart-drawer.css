@@ -773,6 +773,7 @@
     font-weight: 600;
     line-height: var(--xmaison-line-height-normal);
     color: #3B2B2F;
+    text-transform: uppercase;
   }
   
   /* Add Button */
