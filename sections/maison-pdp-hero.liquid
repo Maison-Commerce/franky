@@ -803,9 +803,10 @@
         if (window.Shopify?.formatMoney) {
           return Shopify.formatMoney(cents);
         }
-        return (cents / 100).toLocaleString(undefined, {
+        const currency = Shopify?.currency?.active || 'USD';
+        return (cents / 100).toLocaleString('en-US', {
           style: 'currency',
-          currency: Shopify?.currency?.active || 'USD',
+          currency: currency,
         });
       },
 
