@@ -166,6 +166,22 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "product_banner_a4V3HA": {
+          "type": "product_banner",
+          "settings": {
+            "position": 2,
+            "banner_image": "shopify://shop_images/wafawgfawgawg3g.png",
+            "banner_rating": "4.8",
+            "banner_text": "<p>Rated 4.8/5 based on 8,450+ reviews.</p>",
+            "banner_overlay_text_1": "One sold every minute",
+            "banner_overlay_text_2": "BUY 2, GET 3"
+          }
+        }
+      },
+      "block_order": [
+        "product_banner_a4V3HA"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -185,11 +201,6 @@
         "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "show_product_banner": true,
-        "banner_rating": "4.8",
-        "banner_text": "<p>Rated <strong>4.8/5 </strong>based on <strong>8,450+ </strong>reviews.</p>",
-        "banner_overlay_text_1": "One sold every minute",
-        "banner_overlay_text_2": "BUY 2, GET 3",
         "padding_top": 36,
         "padding_bottom": 36
       }
