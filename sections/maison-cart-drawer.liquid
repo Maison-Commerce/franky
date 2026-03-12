@@ -184,31 +184,31 @@
                     </button>
                   </div>
                   <div class="xmaison_product-main-info-wrap">
-                    <div class="xmaison_product-price">
-                    <template x-if="item.original_line_price > item.line_price">
-                      <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
-                    </template>
-                    <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
-                  </div>
-                  <div class="xmaison_product-footer">
-                    <div class="xmaison_quantity-selector">
-                      <button
-                        class="xmaison_qty-btn xmaison_qty-minus"
-                        @click="updateQuantity(item.key, item.quantity - 1)"
-                        :disabled="loading || item.quantity <= 1"
-                      >
-                        <img src="{{ 'xmaison-icon-minus.svg' | asset_url }}" alt="Decrease" class="xmaison_qty-icon">
-                      </button>
-                      <div class="xmaison_qty-value" x-text="item.quantity"></div>
-                      <button
-                        class="xmaison_qty-btn xmaison_qty-plus"
-                        @click="updateQuantity(item.key, item.quantity + 1)"
-                        :disabled="loading"
-                      >
-                        <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
-                      </button>
+                    <div class="xmaison_product-footer">
+                      <div class="xmaison_quantity-selector">
+                        <button
+                          class="xmaison_qty-btn xmaison_qty-minus"
+                          @click="updateQuantity(item.key, item.quantity - 1)"
+                          :disabled="loading || item.quantity <= 1"
+                        >
+                          <img src="{{ 'xmaison-icon-minus.svg' | asset_url }}" alt="Decrease" class="xmaison_qty-icon">
+                        </button>
+                        <div class="xmaison_qty-value" x-text="item.quantity"></div>
+                        <button
+                          class="xmaison_qty-btn xmaison_qty-plus"
+                          @click="updateQuantity(item.key, item.quantity + 1)"
+                          :disabled="loading"
+                        >
+                          <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                    <div class="xmaison_product-price">
+                      <template x-if="item.original_line_price > item.line_price">
+                        <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
+                      </template>
+                      <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
+                    </div>
                   </div>
                 </div>
               </div>
