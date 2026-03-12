@@ -183,12 +183,13 @@
                       <img src="{{ 'xmaison-icon-trash.svg' | asset_url }}" alt="Delete" class="xmaison_trash-icon">
                     </button>
                   </div>
+                  <div class="xmaison_product-main-info-wrap">
                     <div class="xmaison_product-price">
-                      <template x-if="item.original_line_price > item.line_price">
-                        <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
-                      </template>
-                      <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
-                    </div>
+                    <template x-if="item.original_line_price > item.line_price">
+                      <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
+                    </template>
+                    <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
+                  </div>
                   <div class="xmaison_product-footer">
                     <div class="xmaison_quantity-selector">
                       <button
@@ -207,6 +208,7 @@
                         <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
                       </button>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
