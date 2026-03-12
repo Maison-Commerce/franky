@@ -598,9 +598,13 @@
   .xmaison_subscription-option.xmaison_subscribe.xmaison_selected {
     opacity: 1;
   }
+
+  .xmaison_subscription-option.xmaison_onetime:not(.xmaison_selected){
+    opacity: 0.8;
+  }
   
   .xmaison_subscription-option.xmaison_onetime:not(.xmaison_selected):hover {
-    opacity: 0.8;
+    opacity: 1;
   }
   
   .xmaison_subscription-option.xmaison_onetime.xmaison_selected {
