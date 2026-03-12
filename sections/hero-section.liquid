@@ -534,7 +534,7 @@
   <div class="hero-section__container">
     <div class="hero-section__hero" style="background-color: {{ section.settings.hero_bg_color }}; border-radius: {{ section.settings.hero_border_radius }}px; padding: {{ section.settings.hero_padding_desktop }}px;">
       <div class="hero-section__content-wrapper">
-        <div class="hero-section__content" style="width: {{ section.settings.content_width_desktop }}px;">
+        <div class="hero-section__content">
           {% if section.settings.badge_text != blank %}
             <div class="hero-section__badge">
               <svg width="80" height="16" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -676,6 +676,7 @@
     flex-direction: column;
     gap: {{ section.settings.content_gap }}px;
     flex: 1;
+    max-width: {{ section.settings.content_width_desktop }}px;
     justify-content: center;
   }
 
