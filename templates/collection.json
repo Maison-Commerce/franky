@@ -62,7 +62,7 @@
         "hero_padding_mobile": 24,
         "hero_gap_desktop": 80,
         "hero_gap_mobile": 32,
-        "content_width_desktop": 600,
+        "content_width_desktop": 560,
         "badge_text": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
         "badge_font_size_desktop": 14,
         "badge_font_size_mobile": 12,
