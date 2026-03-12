@@ -462,14 +462,7 @@
           "type": "subscription_benefit",
           "settings": {
             "icon_type": "checkmark",
-            "benefit_text": "Convenient delivery every 30 days"
-          }
-        },
-        "subscription_benefit_V7KJ6F": {
-          "type": "subscription_benefit",
-          "settings": {
-            "icon_type": "checkmark",
-            "benefit_text": "Exclusive Deals"
+            "benefit_text": "Free US Shipping"
           }
         },
         "trust_badge_6RkdBR": {
@@ -535,7 +528,6 @@
         "subscription_benefit_VhX7iW",
         "subscription_benefit_BxqJNr",
         "subscription_benefit_K9ViRm",
-        "subscription_benefit_V7KJ6F",
         "trust_badge_6RkdBR",
         "trust_badge_RY6LQE",
         "trust_badge_RDLj3F",
