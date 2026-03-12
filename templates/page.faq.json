@@ -334,36 +334,36 @@
         "faq_item_dnzpxY": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I take AROSE?",
-            "answer": "<p>One scoop in 8-12oz cold water or milk. Shake for 30 seconds. Drink. That's it. Works hot or cold, but cold mixes smoother. Best taken in the morning to replace breakfast + coffee.</p>"
+            "question": "How do I take Franky?",
+            "answer": "<p> Take the recommended serving about 30–60 minutes before bedtime with water. For best results, use consistently as part of your nightly routine.</p>"
           }
         },
         "faq_item_VJTJcf": {
           "type": "faq_item",
           "settings": {
             "question": "Are there any side effects?",
-            "answer": "<p>If you're not used to caffeine: you might feel energized (that's the point). If you're lactose intolerant: we use whey isolate which is 99% lactose-free, but some sensitivity is possible. If you drink coffee at 6PM: you might not sleep well. Use common sense.</p>"
+            "answer": "<p>Franky is formulated to be gentle and well-tolerated. Most people experience no side effects, though individual reactions may vary.</p>"
           }
         },
         "faq_item_Mdk9Jm": {
           "type": "faq_item",
           "settings": {
             "question": "Is this safe for long-term use?",
-            "answer": "<p>Yes. It's protein and coffee. People have been consuming both for centuries. Our oldest customer has been drinking it daily for 3+ years. Just stay hydrated and don't go crazy with additional caffeine.</p>"
+            "answer": "<p>Yes, the ingredients are selected for regular use. If you have a medical condition or are unsure, consult your healthcare professional.</p>"
           }
         },
         "faq_item_LceN3X": {
           "type": "faq_item",
           "settings": {
             "question": "Can I take this if I'm on medication?",
-            "answer": "<p>Check with your doctor. We can't give medical advice. That said: it's whey protein, coffee, and vitamins. If you currently drink coffee and eat protein, you're probably fine. But seriously — ask your doctor if you're on meds.</p>"
+            "answer": "<p>If you are taking medication or have a medical condition, we recommend speaking with your doctor before use.</p>"
           }
         },
         "faq_item_VFkTWg": {
           "type": "faq_item",
           "settings": {
             "question": "What age is this appropriate for?",
-            "answer": "<p>18+. Not because it's dangerous, but because we formulated it for adults with full-time jobs. Kids and teens don't need 150mg of caffeine and 20g of protein for breakfast.</p>"
+            "answer": "<p>Franky is intended for adults. If you are under 18, consult a healthcare professional before use.</p>"
           }
         }
       },
