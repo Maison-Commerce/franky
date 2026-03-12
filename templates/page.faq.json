@@ -166,36 +166,29 @@
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
-            "question": "The Product & How It Works",
-            "answer": "<p>Real coffee taste (not that weird protein shake flavor), grass-fed whey that won't bloat you, and a protein-to-caffeine ratio designed by actual nutritionists. Most protein coffees taste like punishment. AROSE tastes like a $6 latte and actually works.</p>"
+            "question": "How does the energy-blocking mechanism work?",
+            "answer": "<p>Franky works by helping regulate the body’s stress and energy signals. The formula supports balanced cortisol levels and calmer nervous system activity, which can reduce late-night energy spikes and help your body wind down more naturally.</p>"
           }
         },
         "faq_item_FnK3tU": {
           "type": "faq_item",
           "settings": {
             "question": "How does the energy-blocking mechanism work?",
-            "answer": "<p>It's not blocking — it's buffering. The 20g of protein slows caffeine absorption so you get smooth, sustained energy instead of a spike and crash. Think of protein as a time-release mechanism for caffeine. You get 6+ hours of focus instead of 90 minutes of jitters.</p>"
+            "answer": "<p>Franky supports your body’s natural nighttime rhythm. By helping calm overstimulation and supporting relaxation pathways, it makes it easier for your body to transition into restful sleep.</p>"
           }
         },
         "faq_item_p6JKzb": {
           "type": "faq_item",
           "settings": {
-            "question": "Is this the same as DIY protein+coffee mixes at home?",
-            "answer": "<p>Nope. Dumping whey into hot coffee = clumpy disaster. We use cold-brew extract and specific ratios tested over 2 years to actually mix smooth and taste good. Plus MCT oil, collagen, and adaptogens you'd never add yourself.</p>"
+            "question": "Can I take this with other supplements?",
+            "answer": "<p>Yes, Franky is generally safe to take alongside most supplements. However, if you are taking prescription medications or specialized treatments, we recommend consulting your healthcare provider first.</p>"
           }
         },
         "faq_item_kEt6g4": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I take this with other supplements?",
-            "answer": "<p>Yes. AROSE is food + coffee, not a medication. Stack it with your multivitamin, creatine, whatever. Just watch total caffeine intake if you're taking pre-workout later (we have 150mg per serving).</p>"
-          }
-        },
-        "faq_item_Rp47MT": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What's actually in each capsule?",
-            "answer": "<p>We don't use capsules — it's a powder. Each scoop has: 20g grass-fed whey protein, 150mg caffeine from real cold-brew coffee, 2g MCT oil, 5g collagen peptides, plus adaptogens and prebiotics. Full nutrition label on every product page.</p>"
+            "question": "What’s actually in each capsule?",
+            "answer": "<p>Each capsule contains a blend of carefully selected ingredients designed to support relaxation, balanced energy levels, and deeper sleep. The full ingredient list is available on the product label and product page.</p>"
           }
         }
       },
@@ -203,8 +196,7 @@
         "faq_item_kJtwLa",
         "faq_item_FnK3tU",
         "faq_item_p6JKzb",
-        "faq_item_kEt6g4",
-        "faq_item_Rp47MT"
+        "faq_item_kEt6g4"
       ],
       "name": "FAQ Accordion",
       "settings": {
