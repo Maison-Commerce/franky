@@ -1324,7 +1324,7 @@
         "button_text_color": "#fbfbfb",
         "button_font_size_desktop": 16,
         "button_font_size_mobile": 14,
-        "trust_badge_font_size": 14,
+        "trust_badge_font_size": 12,
         "trust_badge_color": "#3b2b2f"
       }
     },
