@@ -409,6 +409,27 @@
             "alt_text": "Customer testimonial"
           }
         },
+        "customer_video_36WNUz": {
+          "type": "customer_video",
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "alt_text": "Customer testimonial"
+          }
+        },
+        "customer_video_qWHxzm": {
+          "type": "customer_video",
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "alt_text": "Customer testimonial"
+          }
+        },
+        "customer_video_6xhLFL": {
+          "type": "customer_video",
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "alt_text": "Customer testimonial"
+          }
+        },
         "customer_video_tm3Rzp": {
           "type": "customer_video",
           "settings": {
@@ -528,6 +549,9 @@
         "pack_option_wRrbhV",
         "pack_option_wrUnNn",
         "customer_video_WHqD7f",
+        "customer_video_36WNUz",
+        "customer_video_qWHxzm",
+        "customer_video_6xhLFL",
         "customer_video_tm3Rzp",
         "customer_video_mEtUwE",
         "feature_item_wRQD6i",
