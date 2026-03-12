@@ -1186,9 +1186,9 @@ img {
 }
 
 .xmaison_related-item-image {
-  width: 70px;
-  height: 70px;
-  border-radius: 3px;
+  width: 64px;
+  height: 64px;
+  border-radius: 0px;
   overflow: hidden;
   flex-shrink: 0;
 }
