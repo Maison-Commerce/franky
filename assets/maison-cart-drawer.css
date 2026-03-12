@@ -1396,6 +1396,7 @@
 .xmaison_product-main-info-wrap{
   display: flex;
   gap: 16px;
+  width: 100%;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
