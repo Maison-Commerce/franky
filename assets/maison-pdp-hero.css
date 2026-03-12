@@ -1756,7 +1756,7 @@ flex: 1;
 height: 8px;
 background: rgba(220, 213, 198, 0.6);
 border-radius: 4px;
-margin-top: 7px; /* centers 8px bar within 22px dot: (22 - 8) / 2 = 7 */
+margin-top: 3px; /* centers 8px bar within 22px dot: (22 - 8) / 2 = 7 */
 transition: background 0.2s ease;
 }
 
