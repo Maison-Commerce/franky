@@ -33,7 +33,7 @@
         "padding_right_mobile": 20,
         "title": "How can we help you?",
         "subtitle": "Real support from guys who get it. No judgment, just help.",
-        "title_gap": 16,
+        "title_gap": 8,
         "title_section_gap_desktop": 32,
         "title_section_gap_mobile": 20,
         "title_font_size_desktop": 40,
@@ -166,7 +166,7 @@
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
-            "question": "What makes AROSE different from other protein coffees?",
+            "question": "The Product & How It Works",
             "answer": "<p>Real coffee taste (not that weird protein shake flavor), grass-fed whey that won't bloat you, and a protein-to-caffeine ratio designed by actual nutritionists. Most protein coffees taste like punishment. AROSE tastes like a $6 latte and actually works.</p>"
           }
         },
