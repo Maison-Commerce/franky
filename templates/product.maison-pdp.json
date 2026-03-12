@@ -840,7 +840,7 @@
         "badge_text_font_size_desktop": 16,
         "badge_text_font_size_mobile": 14,
         "badge_text_color": "#ffffff",
-        "icon_size_desktop": 32,
+        "icon_size_desktop": 24,
         "icon_size_mobile": 24,
         "badge_gap_desktop": 8,
         "badge_gap_mobile": 18,
