@@ -1016,6 +1016,10 @@
     width: 10px;
     height: 10px;
   }
+
+  .xmaison_cart-container .xmaison_save-text {
+    font-size: 8px;
+  }
   
     /* Cart Overlay & Container - Mobile */
     .xmaison_cart-overlay {
