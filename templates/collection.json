@@ -173,7 +173,7 @@
             "position": 2,
             "banner_image": "shopify://shop_images/wafawgfawgawg3g.png",
             "banner_rating": "4.8",
-            "banner_text": "<p>Rated 4.8/5 based on 8,450+ reviews.</p>",
+            "banner_text": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
             "banner_overlay_text_1": "One sold every minute",
             "banner_overlay_text_2": "BUY 2, GET 3"
           }
