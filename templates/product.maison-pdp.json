@@ -405,6 +405,7 @@
         "customer_video_WHqD7f": {
           "type": "customer_video",
           "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
             "alt_text": "Customer testimonial"
           }
         },
