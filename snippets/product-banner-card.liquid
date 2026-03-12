@@ -47,22 +47,22 @@
             {% for i in (1..5) %}
               {% if i <= full_stars %}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F"/>
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#3B2B2F"/>
                 </svg>
               {% elsif i == next_star_index and has_half >= 0.3 %}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="half-{{ forloop.index }}">
-                      <stop offset="50%" stop-color="#2E432F"/>
+                      <stop offset="50%" stop-color="#3B2B2F"/>
                       <stop offset="50%" stop-color="transparent" stop-opacity="0"/>
                     </linearGradient>
                   </defs>
                   <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="url(#half-{{ forloop.index }})"/>
-                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F" fill-opacity="0.15"/>
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#3B2B2F" fill-opacity="0.15"/>
                 </svg>
               {% else %}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#2E432F" fill-opacity="0.15"/>
+                  <path d="M8 0L9.79611 5.52786L15.6085 5.52786L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786L6.20389 5.52786L8 0Z" fill="#3B2B2F" fill-opacity="0.15"/>
                 </svg>
               {% endif %}
             {% endfor %}
@@ -100,6 +100,8 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    filter: blur(4px);
+    border-radius: 16px;
   }
 
   .product-banner-card__image-wrapper img {
@@ -120,8 +122,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 90px;
-    background-color: #D8FDD0;
+    height: 96px;
+    background-color: #FBF6EA;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -131,7 +133,7 @@
 
   @media (max-width: 749px) {
     .product-banner-card__overlay {
-      height: 60px;
+      height: 57px;
     }
   }
 
@@ -146,30 +148,30 @@
   }
 
   .product-banner-card__overlay-text-1 {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    color: #2E432F;
+    color: #3B2B2F;
     margin: 0;
     text-align: center;
   }
 
   @media (max-width: 749px) {
     .product-banner-card__overlay-text-1 {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 
   .product-banner-card__overlay-text-2 {
-    font-family: 'Lust Text', serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 40px;
     font-weight: 400;
     line-height: 1.2;
-    color: #2E432F;
+    color: #3B2B2F;
     margin: 0;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   @media (max-width: 749px) {
@@ -230,11 +232,11 @@
   }
 
   .product-banner-card__text {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
-    color: #FBFBFB;
+    color: #3B2B2F;
     margin: 0;
     text-align: center;
   }
