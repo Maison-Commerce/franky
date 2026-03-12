@@ -174,9 +174,6 @@
                       <div class="xmaison_product-meta" x-show="item.variant_title">
                         <span class="xmaison_product-variant" x-text="item.variant_title"></span>
                       </div>
-                      <div class="xmaison_product-selling-plan" x-show="item.selling_plan_allocation">
-                        <span class="xmaison_selling-plan-name" x-text="item.selling_plan_allocation?.selling_plan?.name"></span>
-                      </div>
                     </div>
                     <button
                       class="xmaison_delete-btn"
@@ -210,6 +207,22 @@
                         <img src="{{ 'xmaison-icon-plus.svg' | asset_url }}" alt="Increase" class="xmaison_qty-icon">
                       </button>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delivery & Payment Info -->
+              <div class="xmaison_delivery-payment" x-show="item.selling_plan_allocation">
+                <div class="xmaison_delivery-payment-inner">
+                  <div class="xmaison_delivery-payment-header">
+                    <span class="xmaison_delivery-payment-label">Delivery &amp; Payment:</span>
+                    <span class="xmaison_delivery-payment-frequency" x-text="item.selling_plan_allocation?.selling_plan?.name"></span>
+                  </div>
+                  <div class="xmaison_delivery-payment-benefit">
+                    <svg class="xmaison_delivery-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="rgba(59,43,47,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="xmaison_delivery-payment-text">Easily Edit, Delay, Pause, and Cancel Anytime</span>
                   </div>
                 </div>
               </div>
