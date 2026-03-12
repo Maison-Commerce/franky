@@ -155,7 +155,7 @@
       "settings": {
         "row": "row-reverse",
         "mobile_image_position": "top",
-        "text_align": "left",
+        "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
