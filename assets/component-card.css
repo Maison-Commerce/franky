@@ -200,6 +200,10 @@
   .card__rating-wrapper{
     order: 2;
   }
+
+  .card__price-wrapper .price-item--sale{
+    font-size: 10px;
+  }
 }
 
 .card:not(.ratio) > .card__content {
