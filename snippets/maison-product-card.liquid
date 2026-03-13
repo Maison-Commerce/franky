@@ -49,10 +49,8 @@
   assign filled_stars = rating_raw | floor
   assign rating_remainder = rating_raw | minus: filled_stars
   assign has_half_star = false
-  if rating_remainder >= 0.25 and rating_remainder < 0.75
+  if rating_remainder > 0
     assign has_half_star = true
-  elsif rating_remainder >= 0.75
-    assign filled_stars = filled_stars | plus: 1
   endif
   if filled_stars > 5
     assign filled_stars = 5
