@@ -330,8 +330,8 @@
   }
   
   .xmaison_product-image-container {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: var(--xmaison-radius-8);
     overflow: hidden;
     flex-shrink: 0;
