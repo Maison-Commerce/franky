@@ -187,6 +187,17 @@
   color: rgba(44, 41, 38, 0.75);
 }
 
+@media(max-width: 768px){
+  .card__rating-stars svg{
+    width: 8.556px;
+    height: 8.556px;
+  }
+
+  .card__rating-count {
+    font-size: 10px;
+  }
+}
+
 .card:not(.ratio) > .card__content {
   grid-template-rows: max-content minmax(0, 1fr) max-content auto;
 }
