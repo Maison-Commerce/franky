@@ -837,20 +837,29 @@
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
         var self = this;
-        setTimeout(function() {
+        this.$nextTick(function() {
           var video = self.$el.querySelector('video[data-video-id="' + videoId + '"]');
           if (!video) return;
           video.currentTime = 0;
+          video.muted = true;
+          video.preload = 'auto';
+
+          function tryPlay() {
+            video.play().then(function() {
+              video.muted = false;
+            }).catch(function() {});
+          }
+
           if (video.readyState >= 3) {
-            video.play().catch(function() {});
+            tryPlay();
           } else {
             video.addEventListener('canplay', function handler() {
               video.removeEventListener('canplay', handler);
-              video.play().catch(function() {});
+              tryPlay();
             });
             video.load();
           }
-        }, 50);
+        });
       },
 
       closeVideoModal() {
@@ -1700,7 +1709,7 @@
           </button>
           {% for block in section.blocks %}
             {% if block.type == 'customer_video' and block.settings.video %}
-              <div class="xmaison_video-wrapper" x-show="activeVideoId === 'video-{{ block.id }}'">
+              <div class="xmaison_video-wrapper" :style="activeVideoId === 'video-{{ block.id }}' ? '' : 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none'">
                 <video
                   class="xmaison_popup-video"
                   data-video-id="video-{{ block.id }}"
