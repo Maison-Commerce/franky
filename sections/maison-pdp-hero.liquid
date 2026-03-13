@@ -839,9 +839,16 @@
         var self = this;
         setTimeout(function() {
           var video = self.$el.querySelector('video[data-video-id="' + videoId + '"]');
-          if (video) {
-            video.currentTime = 0;
+          if (!video) return;
+          video.currentTime = 0;
+          if (video.readyState >= 3) {
             video.play().catch(function() {});
+          } else {
+            video.addEventListener('canplay', function handler() {
+              video.removeEventListener('canplay', handler);
+              video.play().catch(function() {});
+            });
+            video.load();
           }
         }, 50);
       },
