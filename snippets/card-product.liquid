@@ -475,7 +475,7 @@
               </div>
             {%- endif -%}
 
-            <span class="caption-large light">{{ block.settings.description | escape }}</span>
+            {% if block.settings.description != blank %}<span class="caption-large light">{{ block.settings.description | escape }}</span>{% endif %}
 
             {% render 'price', product: card_product, price_class: 'card__price-wrapper', show_compare_at_price: true, show_badges: true %}
             {%- if card_product.has_only_default_variant == false and settings.show_swatches -%}
