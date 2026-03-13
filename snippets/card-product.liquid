@@ -245,6 +245,11 @@
                   </span>
                 {%- endif -%}
               {% endunless %}
+              {% if card_product.tags contains 'best-seller' %}
+                <div class="card__best-seller-badge">
+                  <span>BEST SELLER</span>
+                </div>
+              {% endif %}
               {% unless settings.hide_custom_badge %}
                 {%- if card_product.metafields.custom.badge_1 != blank -%}
                   <span
