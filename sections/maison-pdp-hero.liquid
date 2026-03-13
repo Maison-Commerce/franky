@@ -1481,7 +1481,7 @@
                     <div class="xmaison_price-row">
                       <span class="xmaison_price-current" x-text="formatMoney(subscriptionPrice)"></span>
                       {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-                        <span class="xmaison_price-original" x-show="bundleSavePercent > 0" x-text="formatMoney(bundleOriginalPrice)"></span>
+                        <span class="xmaison_price-original" x-text="formatMoney(bundleOriginalPrice)"></span>
                       {% else %}
                         <span class="xmaison_price-original" x-text="formatMoney(onetimePrice)"></span>
                       {% endif %}
