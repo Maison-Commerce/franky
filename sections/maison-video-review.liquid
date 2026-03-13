@@ -622,6 +622,21 @@
   </div>
 </section>
 
+<!-- Video Popup -->
+<div class="maison_commerce_video_review__popup" id="videoReviewPopup-{{ section.id }}">
+  <div class="maison_commerce_video_review__popup-overlay"></div>
+  <div class="maison_commerce_video_review__popup-content">
+    <button class="maison_commerce_video_review__popup-close" aria-label="Close video">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="maison_commerce_video_review__popup-video-container">
+      <video class="maison_commerce_video_review__popup-video" playsinline controls></video>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
@@ -635,9 +650,6 @@
       const videosSectionContainer = section.querySelector('.maison_commerce_video_review__videos');
       
       if (videosSwiperContainer) {
-        let videosSwiper;
-        let isVideosHovered = false;
-        let isVideoPlaying = false;
         const videoElements = videosSwiperContainer.querySelectorAll('.maison_commerce_video_review__video-element');
         const videoPlayButtons = videosSwiperContainer.querySelectorAll('.maison_commerce_video_review__play-button');
 
@@ -657,208 +669,75 @@
           },
         });
 
+        // Popup elements
+        const popup = document.getElementById('videoReviewPopup-{{ section.id }}');
+        const popupVideo = popup.querySelector('.maison_commerce_video_review__popup-video');
+        const popupOverlay = popup.querySelector('.maison_commerce_video_review__popup-overlay');
+        const popupClose = popup.querySelector('.maison_commerce_video_review__popup-close');
+
+        // Open video in popup
+        function openVideoPopup(sourceVideo) {
+          // Copy sources from the clicked video
+          popupVideo.innerHTML = '';
+          const sources = sourceVideo.querySelectorAll('source');
+          sources.forEach(function(source) {
+            const newSource = document.createElement('source');
+            newSource.src = source.src;
+            newSource.type = source.type;
+            popupVideo.appendChild(newSource);
+          });
+          popupVideo.poster = sourceVideo.poster;
+          popupVideo.load();
+
+          popup.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+          popupVideo.play();
+        }
+
+        // Close popup
+        function closeVideoPopup() {
+          popupVideo.pause();
+          popupVideo.currentTime = 0;
+          popup.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+
+        popupOverlay.addEventListener('click', closeVideoPopup);
+        popupClose.addEventListener('click', closeVideoPopup);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && popup.classList.contains('is-open')) {
+            closeVideoPopup();
+          }
+        });
+
         // Initialize video event listeners
         function initializeVideos() {
           videoElements.forEach(function(video) {
-            const videoIndex = parseInt(video.dataset.videoIndex);
-            const videoWrapper = video.closest('.maison_commerce_video_review__video-wrapper');
-            
-            // Ensure video starts paused
             video.pause();
-            
-            // Make video clickable to pause
-            video.addEventListener('click', function() {
-              if (!this.paused) {
-                this.pause();
-              }
-            });
-            
-            // Add click handler to video wrapper for fullscreen
-            if (videoWrapper) {
-              videoWrapper.addEventListener('click', function(e) {
-                // Don't trigger if clicking on play/pause buttons
-                if (e.target.closest('.maison_commerce_video_review__play-button')) {
-                  return;
-                }
-                
-                // Request fullscreen
-                if (video.requestFullscreen) {
-                  video.requestFullscreen();
-                } else if (video.webkitRequestFullscreen) {
-                  video.webkitRequestFullscreen();
-                } else if (video.mozRequestFullScreen) {
-                  video.mozRequestFullScreen();
-                } else if (video.msRequestFullscreen) {
-                  video.msRequestFullscreen();
-                }
-              });
-            }
-            
-            // Add event listeners
-            video.addEventListener('play', function() {
-              handleVideoStateChange(videoIndex, true);
-            });
-            
-            video.addEventListener('pause', function() {
-              handleVideoStateChange(videoIndex, false);
-            });
-            
-            video.addEventListener('ended', function() {
-              handleVideoStateChange(videoIndex, false);
-            });
-          });
-          
-          // Handle fullscreen change event to pause video when exiting fullscreen
-          document.addEventListener('fullscreenchange', handleFullscreenChange);
-          document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-          document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-          document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-        }
-        
-        // Handle fullscreen change
-        function handleFullscreenChange() {
-          const isFullscreen = !!(
-            document.fullscreenElement ||
-            document.webkitFullscreenElement ||
-            document.mozFullScreenElement ||
-            document.msFullscreenElement
-          );
-          
-          if (!isFullscreen) {
-            // Exit fullscreen - pause all videos
-            videoElements.forEach(function(video) {
-              if (!video.paused) {
-                video.pause();
-              }
-            });
-          }
-        }
-
-        // Handle video state changes
-        function handleVideoStateChange(videoIndex, isPlaying) {
-          const playButton = videosSwiperContainer.querySelector(`.maison_commerce_video_review__play-button--play[data-video-index="${videoIndex}"]`);
-          const pauseButton = videosSwiperContainer.querySelector(`.maison_commerce_video_review__play-button--pause[data-video-index="${videoIndex}"]`);
-          const videoContainer = videosSwiperContainer.querySelector(`.maison_commerce_video_review__video-container[data-video-id="${videoIndex}"]`);
-          
-          if (isPlaying) {
-            // Pause all other videos
-            videoElements.forEach(function(video) {
-              const idx = parseInt(video.dataset.videoIndex);
-              if (idx !== videoIndex && !video.paused) {
-                video.pause();
-              }
-            });
-
-            // Hide play button, pause button will show on hover via CSS
-            if (playButton) {
-              playButton.style.display = 'none';
-            }
-            
-            if (videoContainer) {
-              videoContainer.classList.add('is-playing');
-            }
-
-            // Stop slider scrolling by pausing CSS animation
-            const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
-            if (wrapper) {
-              wrapper.classList.add('paused');
-            }
-            isVideoPlaying = true;
-          } else {
-            // Show play button always, hide pause button
-            if (playButton) {
-              playButton.style.display = 'flex';
-            }
-            
-            if (videoContainer) {
-              videoContainer.classList.remove('is-playing');
-            }
-
-            // Check if any video is still playing
-            checkAllVideosPaused();
-          }
-        }
-
-        // Check if all videos are paused
-        function checkAllVideosPaused() {
-          let anyPlaying = false;
-          
-          videoElements.forEach(function(video) {
-            if (!video.paused) {
-              anyPlaying = true;
-            }
           });
 
-          if (!anyPlaying) {
-            isVideoPlaying = false;
-            // Resume CSS animation if not hovered
-            if (!isVideosHovered) {
-              const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
-              if (wrapper) {
-                wrapper.classList.remove('paused');
+          // Click on video wrapper or play button opens popup
+          const allWrappers = videosSwiperContainer.querySelectorAll('.maison_commerce_video_review__video-wrapper');
+          allWrappers.forEach(function(wrapper) {
+            wrapper.addEventListener('click', function(e) {
+              const video = wrapper.querySelector('.maison_commerce_video_review__video-element');
+              if (video) {
+                openVideoPopup(video);
               }
-            }
-          }
+            });
+          });
         }
 
-        // Play/Pause button click handlers
+        // Play/Pause button click handlers — open popup
         videoPlayButtons.forEach(function(button) {
           button.addEventListener('click', function(e) {
             e.stopPropagation();
             const videoIndex = parseInt(this.dataset.videoIndex);
             const video = videosSwiperContainer.querySelector(`.maison_commerce_video_review__video-element[data-video-index="${videoIndex}"]`);
-            
             if (video) {
-              if (this.classList.contains('maison_commerce_video_review__play-button--play')) {
-                video.play();
-                // Open fullscreen when play button is clicked
-                if (video.requestFullscreen) {
-                  video.requestFullscreen();
-                } else if (video.webkitRequestFullscreen) {
-                  video.webkitRequestFullscreen();
-                } else if (video.mozRequestFullScreen) {
-                  video.mozRequestFullScreen();
-                } else if (video.msRequestFullscreen) {
-                  video.msRequestFullscreen();
-                }
-              } else if (this.classList.contains('maison_commerce_video_review__play-button--pause')) {
-                video.pause();
-              }
+              openVideoPopup(video);
             }
           });
-        });
-
-        // Track hover state for video play logic
-        if (videosSectionContainer) {
-          videosSectionContainer.addEventListener('mouseenter', function() {
-            isVideosHovered = true;
-          });
-
-          videosSectionContainer.addEventListener('mouseleave', function() {
-            isVideosHovered = false;
-            // Resume animation if no videos are playing
-            if (!isVideoPlaying) {
-              const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
-              if (wrapper) {
-                wrapper.classList.remove('paused');
-              }
-            }
-          });
-        }
-        
-        videosSwiperContainer.addEventListener('mouseenter', function() {
-          isVideosHovered = true;
-        });
-
-        videosSwiperContainer.addEventListener('mouseleave', function() {
-          isVideosHovered = false;
-          // Resume animation if no videos are playing
-          if (!isVideoPlaying) {
-            const wrapper = videosSwiperContainer.querySelector('.swiper-wrapper');
-            if (wrapper) {
-              wrapper.classList.remove('paused');
-            }
-          }
         });
 
         // Initialize videos
@@ -1031,7 +910,7 @@
   }
 
   .maison_commerce_video_review__rating-text {
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: {{ section.settings.rating_font_size_desktop }}px;
     font-weight: 400;
     line-height: 1.5;
@@ -1104,6 +983,7 @@
   .maison_commerce_video_review__video-wrapper {
     width: 241.6px;
     height: 379px;
+    cursor: pointer;
   }
 
   @media (max-width: 950px) {
@@ -1134,35 +1014,6 @@
     cursor: pointer;
   }
 
-  /* Fullscreen video styles with contain */
-  .maison_commerce_video_review__video-element:-webkit-full-screen {
-    object-fit: contain;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-
-  .maison_commerce_video_review__video-element:-moz-full-screen {
-    object-fit: contain;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-
-  .maison_commerce_video_review__video-element:-ms-fullscreen {
-    object-fit: contain;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-
-  .maison_commerce_video_review__video-element:fullscreen {
-    object-fit: contain;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-  }
-
   .maison_commerce_video_review__play-button {
     position: absolute;
     top: 50%;
@@ -1188,10 +1039,6 @@
 
   .maison_commerce_video_review__play-button--pause {
     display: none;
-  }
-
-  .maison_commerce_video_review__video-container.is-playing:hover .maison_commerce_video_review__play-button--pause {
-    display: flex;
   }
 
   .maison_commerce_video_review__play-button svg {
@@ -1374,6 +1221,87 @@
 
   .maison_commerce_video_review__pagination .swiper-pagination-bullet-active {
     background-color: #2E432F;
+  }
+
+  /* Video Popup */
+  .maison_commerce_video_review__popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_video_review__popup.is-open {
+    display: flex;
+  }
+
+  .maison_commerce_video_review__popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+
+  .maison_commerce_video_review__popup-content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 480px;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_video_review__popup-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_video_review__popup-close:hover {
+    opacity: 0.7;
+  }
+
+  .maison_commerce_video_review__popup-video-container {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .maison_commerce_video_review__popup-video {
+    width: 100%;
+    max-height: 85vh;
+    display: block;
+    object-fit: contain;
+    background: #000;
+  }
+
+  @media (max-width: 950px) {
+    .maison_commerce_video_review__popup-content {
+      max-width: 90%;
+    }
+
+    .maison_commerce_video_review__popup-close {
+      top: -40px;
+      right: 0;
+    }
   }
 </style>
 
