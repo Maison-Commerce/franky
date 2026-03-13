@@ -1328,59 +1328,59 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
-    "maison_faq_Lq9Y64": {
+    "maison_faq_XGaHRG": {
       "type": "maison-faq",
       "blocks": {
-        "faq_item_y8eqhj": {
+        "faq_item_NP6JH9": {
           "type": "faq_item",
           "settings": {
             "question": "How much protein per serving?",
-            "answer": "<p>Each serving delivers 25g of premium whey protein isolate - the optimal amount for muscle recovery, sustained satiety, and metabolic support. This is equivalent to eating 4 eggs or a 4oz chicken breast, but infinitely more convenient.</p>"
+            "answer": "<p>Each serving contains <strong>10g of high-quality protein</strong> to help support energy, focus, and satiety throughout your morning.</p>"
           }
         },
-        "faq_item_pGtL34": {
+        "faq_item_iCa7WQ": {
           "type": "faq_item",
           "settings": {
             "question": "How much caffeine?",
-            "answer": "<p>No. Unlike regular coffee that spikes your system, AROSE combines 150mg of natural caffeine with 25g of protein and healthy fats. The protein buffers the caffeine absorption, giving you smooth, sustained energy without the jitters, anxiety, or heart-racing feeling you get from coffee alone.</p>"
+            "answer": "<p>Each serving contains about <strong>90–100mg of caffeine</strong>, roughly the same as a standard cup of coffee.</p>"
           }
         },
-        "faq_item_LpH8Nz": {
+        "faq_item_mRn38Y": {
           "type": "faq_item",
           "settings": {
             "question": "Will I crash?",
-            "answer": "<p>Absolutely. While AROSE isn't marketed as a weight-loss product, the science is clear: high protein intake (25g per serving) increases satiety hormones, reduces hunger throughout the day, and supports a healthy metabolism. Many customers report naturally eating less and losing weight without trying because they're finally satisfied in the morning. You're replacing empty-calorie coffee drinks with complete nutrition.</p>"
+            "answer": "<p>No. Franky is formulated to provide <strong>smooth, sustained energy</strong> without the sudden spikes and crashes often associated with traditional coffee.</p>"
           }
         },
-        "faq_item_KwD6k8": {
+        "faq_item_hekCYf": {
           "type": "faq_item",
           "settings": {
             "question": "Can I replace breakfast?",
-            "answer": "<p>Most people feel the difference immediately - stable energy that lasts 4-6 hours instead of crashing after 2. Within 3-5 days, you'll notice you're not reaching for snacks mid-morning. By week 2-3, the sustained energy becomes your new normal and you'll wonder how you ever functioned without it.</p>"
+            "answer": "<p>Franky can be used as a <strong>light breakfast option</strong> or alongside your morning routine, but it’s not intended to fully replace a balanced meal.</p>"
           }
         },
-        "faq_item_pf4prJ": {
+        "faq_item_RD3gmG": {
           "type": "faq_item",
           "settings": {
             "question": "Is it dairy-free?",
-            "answer": "<p>150mg of natural caffeine per serving - equivalent to about 1.5 cups of coffee. It's the sweet spot: enough to energize and enhance focus, but not so much that you crash or can't sleep at night. And because it's paired with protein, it releases gradually for sustained alertness without the spike-and-crash cycle.</p>"
+            "answer": "<p>Yes. Franky is <strong>dairy-free</strong> and designed to be easy to digest.</p>"
           }
         },
-        "faq_item_kV7K6c": {
+        "faq_item_pwz94h": {
           "type": "faq_item",
           "settings": {
             "question": "Can I drink daily?",
-            "answer": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>"
+            "answer": "<p>Yes. Franky is designed to be enjoyed <strong>daily as part of your morning routine</strong>.</p>"
           }
         }
       },
       "block_order": [
-        "faq_item_y8eqhj",
-        "faq_item_pGtL34",
-        "faq_item_LpH8Nz",
-        "faq_item_KwD6k8",
-        "faq_item_pf4prJ",
-        "faq_item_kV7K6c"
+        "faq_item_NP6JH9",
+        "faq_item_iCa7WQ",
+        "faq_item_mRn38Y",
+        "faq_item_hekCYf",
+        "faq_item_RD3gmG",
+        "faq_item_pwz94h"
       ],
       "name": "Maison FAQ",
       "settings": {
@@ -1393,9 +1393,9 @@
         "padding_left_mobile": 20,
         "padding_right_mobile": 20,
         "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(243, 207, 203, 0.5) 100%)",
-        "heading": "<p>Everything You Need To Know About Arose</p>",
+        "heading": "<p>Everything You Need To Know about Franky</p>",
         "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
+        "heading_font_size_mobile": 32,
         "heading_color": "#3b2b2f",
         "image": "shopify://shop_images/2f14f82783b17bb261b2a47eabd9eca8cc440b70_518cc6f7-bc00-4f91-9e1f-cca0865996fb.png",
         "image_width_desktop": 600,
@@ -1571,7 +1571,7 @@
     "maison_comp_flex_acwryg",
     "maison_video_review_UWqfGU",
     "maison_introducing_xjgRKK",
-    "maison_faq_Lq9Y64",
+    "maison_faq_XGaHRG",
     "maison_collection_slider_icVqir",
     "maison_inst_img_XPMVhM",
     "related-products"
