@@ -738,7 +738,7 @@
         "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
-        "heading": "<p>Finally, a Coffee That Works With You</p>",
+        "heading": "<p>Finally, a Coffee That </p><p>Works With You</p>",
         "desc": "Krijg inzicht in je slaap, beweging & meer zodat jij beter kan slapen. Een app die je snapt.",
         "social_proof_text": "",
         "social_proof_count": "",
