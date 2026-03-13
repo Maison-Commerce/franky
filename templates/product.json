@@ -388,7 +388,7 @@
         "pack_option_wRrbhV": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "2 Pack",
+            "pack_name": "2 Packs",
             "bottle_count": 2,
             "badge_text": "",
             "discount_multiplier": "0.9",
@@ -400,7 +400,7 @@
         "pack_option_wrUnNn": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "3 Pack",
+            "pack_name": "3 Packs",
             "bottle_count": 3,
             "badge_text": "Best Value",
             "discount_multiplier": "0.85",
