@@ -142,6 +142,7 @@
         "collection_button_4hGRcx",
         "collection_button_trRHL8"
       ],
+      "disabled": true,
       "name": "Collection Navigation",
       "settings": {
         "section_bg_color": "#ffffff",
