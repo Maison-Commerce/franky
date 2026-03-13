@@ -837,25 +837,18 @@
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
         this.$nextTick(() => {
-          setTimeout(() => {
-            const modal = this.$el.querySelector('.xmaison_video-modal-content');
-            if (!modal) return;
-            const wrappers = modal.querySelectorAll('.xmaison_video-wrapper');
-            wrappers.forEach(w => {
-              const video = w.querySelector('video');
-              if (video) {
-                if (w.style.display !== 'none') {
-                  video.currentTime = 0;
-                  video.play().catch(() => {});
-                }
-              }
-            });
-          }, 50);
+          const wrapper = this.$el.querySelector('[data-video-id="' + videoId + '"]');
+          if (wrapper) {
+            const video = wrapper.querySelector('video');
+            if (video) {
+              video.currentTime = 0;
+              video.play().catch(() => {});
+            }
+          }
         });
       },
 
       closeVideoModal() {
-        /* Pause & reset all popup videos */
         this.$el.querySelectorAll('.xmaison_video-wrapper video').forEach(v => {
           v.pause();
           v.currentTime = 0;
@@ -1702,8 +1695,8 @@
           </button>
           {% for block in section.blocks %}
             {% if block.type == 'customer_video' and block.settings.video %}
-              <div class="xmaison_video-wrapper" x-show="activeVideoId === 'video-{{ block.id }}'">
-                {{ block.settings.video | video_tag: autoplay: false, loop: false, controls: true, muted: false, preload: 'none' }}
+              <div class="xmaison_video-wrapper" data-video-id="video-{{ block.id }}" x-show="activeVideoId === 'video-{{ block.id }}'">
+                {{ block.settings.video | video_tag: autoplay: false, loop: false, controls: true, muted: false, preload: 'metadata' }}
               </div>
             {% endif %}
           {% endfor %}
