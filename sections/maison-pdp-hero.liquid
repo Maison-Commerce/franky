@@ -836,7 +836,7 @@
         this.activeVideoId = videoId;
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
-        this.$nextTick(() => {
+        setTimeout(() => {
           const wrapper = this.$el.querySelector('[data-video-id="' + videoId + '"]');
           if (wrapper) {
             const video = wrapper.querySelector('video');
@@ -845,7 +845,7 @@
               video.play().catch(() => {});
             }
           }
-        });
+        }, 50);
       },
 
       closeVideoModal() {
