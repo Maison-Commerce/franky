@@ -131,7 +131,6 @@
 /* Ensure banner takes full grid item space */
 .grid .product-banner-item {
   display: flex;
-  height: 100%;
 }
 
 .grid .product-banner-item .product-banner-card {
