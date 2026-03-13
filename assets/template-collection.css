@@ -124,7 +124,7 @@
 
 @media (max-width: 749px) {
   .product-banner-item .product-banner-card {
-    min-height: 180px;
+    min-height: 300px;
   }
 }
 
