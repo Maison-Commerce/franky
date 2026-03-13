@@ -196,6 +196,10 @@
   .card__rating-count {
     font-size: 10px;
   }
+
+  .card__rating-wrapper{
+    order: 2;
+  }
 }
 
 .card:not(.ratio) > .card__content {
