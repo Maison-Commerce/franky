@@ -18,7 +18,7 @@
   assign has_reviews = false
   assign rating = 0
   assign review_count = 0
-  
+
   if product.metafields.reviews.rating.value != blank
     assign rating = product.metafields.reviews.rating.value.rating | floor
     assign has_reviews = true
@@ -26,13 +26,22 @@
     assign rating = product.metafields.custom.rating | floor
     assign has_reviews = true
   endif
-  
+
   if product.metafields.reviews.rating_count != blank
     assign review_count = product.metafields.reviews.rating_count
     assign has_reviews = true
   elsif product.metafields.custom.review_count != blank
     assign review_count = product.metafields.custom.review_count
     assign has_reviews = true
+  endif
+
+  if review_count == 0 or review_count == blank
+    if product.metafields.custom.mc_stars != blank and product.metafields.custom.mc_reviews_count != blank and product.metafields.custom.mc_reviews_count > 0
+      assign mc_stars_str = product.metafields.custom.mc_stars | replace: ',', '.'
+      assign rating = mc_stars_str | times: 1.0 | floor
+      assign review_count = product.metafields.custom.mc_reviews_count
+      assign has_reviews = true
+    endif
   endif
 
   assign filled_stars = rating
