@@ -766,12 +766,37 @@
         return Object.values(this.bundleAddonSlots).reduce((sum, qty) => sum + (qty || 0), 0);
       },
 
+      get bundleDiscountMultiplier() {
+        const total = this.bundleAddonTotal;
+        if (total >= 4) return 0.80;
+        if (total >= 3) return 0.85;
+        if (total >= 2) return 0.90;
+        return 1;
+      },
+
       get bundleCalculatedPrice() {
+        if (!window.bundleAddonPrices) return 0;
+        const rawTotal = Object.entries(this.bundleAddonSlots).reduce((sum, [slotIndex, qty]) => {
+          const price = window.bundleAddonPrices[slotIndex] || 0;
+          return sum + price * (qty || 0);
+        }, 0);
+        return Math.round(rawTotal * this.bundleDiscountMultiplier);
+      },
+
+      get bundleOriginalPrice() {
         if (!window.bundleAddonPrices) return 0;
         return Object.entries(this.bundleAddonSlots).reduce((sum, [slotIndex, qty]) => {
           const price = window.bundleAddonPrices[slotIndex] || 0;
           return sum + price * (qty || 0);
         }, 0);
+      },
+
+      get bundleSavePercent() {
+        const total = this.bundleAddonTotal;
+        if (total >= 4) return 20;
+        if (total >= 3) return 15;
+        if (total >= 2) return 10;
+        return 0;
       },
 
       get subscriptionPrice() {
@@ -1446,12 +1471,20 @@
                     <div class="xmaison_subscription-title-row">
                       <span class="xmaison_subscription-title">{{ section.settings.subscribe_title }}</span>
                       <div class="xmaison_save-badge">
-                        <span class="xmaison_save-badge-text">{{ section.settings.subscribe_save_badge }}</span>
+                        {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
+                          <span class="xmaison_save-badge-text" x-text="bundleSavePercent > 0 ? 'SAVE ' + Math.round((1 - bundleDiscountMultiplier * subscriptionMultiplier) * 100) + '%' : '{{ section.settings.subscribe_save_badge }}'"></span>
+                        {% else %}
+                          <span class="xmaison_save-badge-text">{{ section.settings.subscribe_save_badge }}</span>
+                        {% endif %}
                       </div>
                     </div>
                     <div class="xmaison_price-row">
                       <span class="xmaison_price-current" x-text="formatMoney(subscriptionPrice)"></span>
-                      <span class="xmaison_price-original" x-text="formatMoney(onetimePrice)"></span>
+                      {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
+                        <span class="xmaison_price-original" x-show="bundleSavePercent > 0" x-text="formatMoney(bundleOriginalPrice)"></span>
+                      {% else %}
+                        <span class="xmaison_price-original" x-text="formatMoney(onetimePrice)"></span>
+                      {% endif %}
                     </div>
                   </div>
                   <div class="xmaison_subscription-divider"></div>
@@ -1491,6 +1524,12 @@
                 <span class="xmaison_subscription-title">{{ section.settings.onetime_title }}</span>
                 <div class="xmaison_price-row">
                   <span class="xmaison_price-current" x-text="formatMoney(onetimePrice)"></span>
+                  {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
+                    <span class="xmaison_price-original" x-show="bundleSavePercent > 0" x-text="formatMoney(bundleOriginalPrice)"></span>
+                    <span class="xmaison_save-badge xmaison_save-badge--onetime" x-show="bundleSavePercent > 0">
+                      <span class="xmaison_save-badge-text" x-text="'SAVE ' + bundleSavePercent + '%'"></span>
+                    </span>
+                  {% endif %}
                 </div>
               </div>
             </div>
