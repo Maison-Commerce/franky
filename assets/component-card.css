@@ -202,7 +202,11 @@
   }
 
   .card__price-wrapper .price-item--sale{
-    font-size: 10px;
+    font-size: 10px!important;
+  }
+
+  .card-information > .price--on-sale .price-item--regular{
+    font-size: 10px!important;
   }
 }
 
