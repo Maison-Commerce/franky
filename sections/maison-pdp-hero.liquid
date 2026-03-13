@@ -839,7 +839,7 @@
       },
 
       closeVideoModal() {
-        this.$el.querySelectorAll('.xmaison_popup-video').forEach(function(v) {
+        document.querySelectorAll('.xmaison_popup-video').forEach(function(v) {
           v.pause();
           v.currentTime = 0;
         });
