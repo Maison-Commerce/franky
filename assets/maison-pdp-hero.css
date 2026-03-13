@@ -1085,11 +1085,55 @@ img {
   background: #000;
 }
 
+.xmaison_video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .xmaison_video-wrapper video {
   width: 100%;
   height: auto;
   max-height: 80vh;
   display: block;
+  cursor: pointer;
+}
+
+.xmaison_modal-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  padding: 8px;
+  transition: opacity 0.3s ease;
+  color: #2E432F;
+}
+
+.xmaison_modal-play-btn:hover {
+  opacity: 0.9;
+}
+
+.xmaison_modal-play-btn--pause {
+  display: none;
+}
+
+.xmaison_video-container.is-playing:hover .xmaison_modal-play-btn--pause {
+  display: flex;
+}
+
+.xmaison_modal-play-btn svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* ==========================================================================
