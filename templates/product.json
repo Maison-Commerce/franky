@@ -412,18 +412,21 @@
         "customer_video_WHqD7f": {
           "type": "customer_video",
           "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_tm3Rzp": {
           "type": "customer_video",
           "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_mEtUwE": {
           "type": "customer_video",
           "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
             "alt_text": "Customer testimonial"
           }
         },
@@ -556,7 +559,7 @@
         "subscription_default_selected": true,
         "subscription_header_label": "SUBSCRIBE AND SAVE 20%",
         "subscribe_title": "Subscribe & Save",
-        "subscribe_save_badge": "You Save 10%",
+        "subscribe_save_badge": "You Save 20%",
         "subscribe_popular_tag": "Most Popular",
         "onetime_title": "One-time purchase",
         "onetime_price": "$39.90",
