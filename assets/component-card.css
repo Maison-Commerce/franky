@@ -173,8 +173,10 @@
   width: 100%;
 }
 
-.card__rating-wrapper .rating {
-  margin: 0;
+.card__rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .card__rating-count {
