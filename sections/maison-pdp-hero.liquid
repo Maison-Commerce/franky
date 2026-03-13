@@ -837,13 +837,20 @@
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
         this.$nextTick(() => {
-          const wrapper = this.$el.querySelector('.xmaison_video-wrapper[style=""]') ||
-            this.$el.querySelector('.xmaison_video-wrapper:not([style*="display: none"])');
-          const video = wrapper ? wrapper.querySelector('video') : null;
-          if (video) {
-            video.currentTime = 0;
-            video.play();
-          }
+          setTimeout(() => {
+            const modal = this.$el.querySelector('.xmaison_video-modal-content');
+            if (!modal) return;
+            const wrappers = modal.querySelectorAll('.xmaison_video-wrapper');
+            wrappers.forEach(w => {
+              const video = w.querySelector('video');
+              if (video) {
+                if (w.style.display !== 'none') {
+                  video.currentTime = 0;
+                  video.play().catch(() => {});
+                }
+              }
+            });
+          }, 50);
         });
       },
 
