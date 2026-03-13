@@ -191,6 +191,11 @@
                 {% endunless %}
               {%- endif -%}
             </div>
+            {% if card_product.tags contains 'best-seller' %}
+              <div class="card__best-seller-badge">
+                <span>BEST SELLER</span>
+              </div>
+            {% endif %}
           </div>
         {%- endif -%}
         <div class="card__content">

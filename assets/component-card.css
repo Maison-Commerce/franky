@@ -113,6 +113,41 @@
   width: calc(100% - 2 * var(--image-padding));
 }
 
+.card__best-seller-badge {
+  position: absolute;
+  top: 12px;
+  left: 11px;
+  z-index: 2;
+  background-color: #5A4C50;
+  border-radius: 90px;
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__best-seller-badge span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .card__best-seller-badge {
+    top: 6px;
+    left: 6px;
+    padding: 2px 6px;
+  }
+
+  .card__best-seller-badge span {
+    font-size: 10px;
+  }
+}
+
 .card--standard .card__media {
   background: #F8FAF3;
   margin: var(--image-padding);
