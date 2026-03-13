@@ -268,11 +268,11 @@
         }
       });
 
-      if (maxHeight > 0) {
+      {% comment %} if (maxHeight > 0) {
         bannerCards.forEach(function(banner) {
           banner.style.height = maxHeight + 'px';
         });
-      }
+      } {% endcomment %}
     }
 
     function checkResize() {
