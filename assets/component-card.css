@@ -214,7 +214,7 @@
     padding: 1.07px 4.278px!important;
   }
 
-  .card__price-wrapper{
+  .card__price-wrapper, .card__price-wrapper .lumin-price-container{
     gap: 4px!important;
   }
 }
