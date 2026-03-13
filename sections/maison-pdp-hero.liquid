@@ -836,30 +836,6 @@
         this.activeVideoId = videoId;
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
-        var self = this;
-        this.$nextTick(function() {
-          var video = self.$el.querySelector('video[data-video-id="' + videoId + '"]');
-          if (!video) return;
-          video.currentTime = 0;
-          video.muted = true;
-          video.preload = 'auto';
-
-          function tryPlay() {
-            video.play().then(function() {
-              video.muted = false;
-            }).catch(function() {});
-          }
-
-          if (video.readyState >= 3) {
-            tryPlay();
-          } else {
-            video.addEventListener('canplay', function handler() {
-              video.removeEventListener('canplay', handler);
-              tryPlay();
-            });
-            video.load();
-          }
-        });
       },
 
       closeVideoModal() {
@@ -1709,19 +1685,30 @@
           </button>
           {% for block in section.blocks %}
             {% if block.type == 'customer_video' and block.settings.video %}
-              <div class="xmaison_video-wrapper" :style="activeVideoId === 'video-{{ block.id }}' ? '' : 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none'">
-                <video
-                  class="xmaison_popup-video"
-                  data-video-id="video-{{ block.id }}"
-                  playsinline
-                  controls
-                  preload="metadata"
-                  poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
-                >
-                  {% for source in block.settings.video.sources %}
-                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
-                  {% endfor %}
-                </video>
+              <div class="xmaison_video-wrapper" x-show="activeVideoId === 'video-{{ block.id }}'">
+                <div class="xmaison_video-container" data-video-id="video-{{ block.id }}">
+                  <video
+                    class="xmaison_popup-video"
+                    data-video-id="video-{{ block.id }}"
+                    playsinline
+                    preload="metadata"
+                    poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
+                  >
+                    {% for source in block.settings.video.sources %}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {% endfor %}
+                  </video>
+                  <button class="xmaison_modal-play-btn xmaison_modal-play-btn--play" data-video-id="video-{{ block.id }}" aria-label="Play video">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                    </svg>
+                  </button>
+                  <button class="xmaison_modal-play-btn xmaison_modal-play-btn--pause" data-video-id="video-{{ block.id }}" aria-label="Pause video">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             {% endif %}
           {% endfor %}
@@ -1936,6 +1923,64 @@
       header.addEventListener('click', () => {
         const item = header.parentElement;
         item.classList.toggle('xmaison_open');
+      });
+    });
+
+    // Video Modal - play/pause (same logic as maison-video-slider)
+    var modalVideos = document.querySelectorAll('.xmaison_popup-video');
+    var modalPlayButtons = document.querySelectorAll('.xmaison_modal-play-btn');
+
+    modalVideos.forEach(function(video) {
+      video.addEventListener('click', function() {
+        if (!this.paused) {
+          this.pause();
+        }
+      });
+
+      video.addEventListener('play', function() {
+        var vid = this.dataset.videoId;
+        var playBtn = document.querySelector('.xmaison_modal-play-btn--play[data-video-id="' + vid + '"]');
+        var container = document.querySelector('.xmaison_video-container[data-video-id="' + vid + '"]');
+        if (playBtn) playBtn.style.display = 'none';
+        if (container) container.classList.add('is-playing');
+
+        // Pause all other modal videos
+        modalVideos.forEach(function(otherVideo) {
+          if (otherVideo !== video && !otherVideo.paused) {
+            otherVideo.pause();
+          }
+        });
+      });
+
+      video.addEventListener('pause', function() {
+        var vid = this.dataset.videoId;
+        var playBtn = document.querySelector('.xmaison_modal-play-btn--play[data-video-id="' + vid + '"]');
+        var container = document.querySelector('.xmaison_video-container[data-video-id="' + vid + '"]');
+        if (playBtn) playBtn.style.display = 'flex';
+        if (container) container.classList.remove('is-playing');
+      });
+
+      video.addEventListener('ended', function() {
+        var vid = this.dataset.videoId;
+        var playBtn = document.querySelector('.xmaison_modal-play-btn--play[data-video-id="' + vid + '"]');
+        var container = document.querySelector('.xmaison_video-container[data-video-id="' + vid + '"]');
+        if (playBtn) playBtn.style.display = 'flex';
+        if (container) container.classList.remove('is-playing');
+      });
+    });
+
+    modalPlayButtons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var vid = this.dataset.videoId;
+        var video = document.querySelector('video.xmaison_popup-video[data-video-id="' + vid + '"]');
+        if (video) {
+          if (this.classList.contains('xmaison_modal-play-btn--play')) {
+            video.play();
+          } else if (this.classList.contains('xmaison_modal-play-btn--pause')) {
+            video.pause();
+          }
+        }
       });
     });
   });
