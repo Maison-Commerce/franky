@@ -474,8 +474,10 @@
                   </button>
                   {% if block.settings.answer != blank %}
                     <div class="faq-accordion__answer">
-                      <div class="faq-accordion__answer-content">
-                        {{ block.settings.answer }}
+                      <div class="faq-accordion__answer-inner">
+                        <div class="faq-accordion__answer-content">
+                          {{ block.settings.answer }}
+                        </div>
                       </div>
                     </div>
                   {% endif %}
@@ -620,13 +622,23 @@
   .faq-accordion__answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 0;
   }
 
   .faq-accordion__item.active .faq-accordion__answer {
-    max-height: 1000px;
     padding-bottom: {{ section.settings.answer_padding_bottom }}px;
+  }
+
+  .faq-accordion__answer-inner {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+  }
+
+  .faq-accordion__item.active .faq-accordion__answer-inner {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .faq-accordion__answer-content {
@@ -646,10 +658,6 @@
 
   .faq-accordion__answer-content a {
     color: #2e432f;
-  }
-
-  .faq-accordion__item.active .faq-accordion__answer {
-    padding-bottom: {{ section.settings.answer_padding_bottom }}px;
   }
 
   .faq-accordion__question-text {
@@ -700,26 +708,27 @@
 <script>
   function toggleAccordion(button) {
     const item = button.closest('.faq-accordion__item');
+    const answer = item.querySelector('.faq-accordion__answer');
     const isExpanded = button.getAttribute('aria-expanded') === 'true';
-    
-    // Close all other accordions (optional - remove if you want multiple open)
-    // document.querySelectorAll('.faq-accordion__item').forEach(otherItem => {
-    //   if (otherItem !== item) {
-    //     otherItem.classList.remove('active');
-    //     const otherButton = otherItem.querySelector('.faq-accordion__question');
-    //     if (otherButton) {
-    //       otherButton.setAttribute('aria-expanded', 'false');
-    //     }
-    //   }
-    // });
-    
-    // Toggle current accordion
+
     if (isExpanded) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      requestAnimationFrame(function() {
+        answer.style.maxHeight = '0px';
+      });
       item.classList.remove('active');
       button.setAttribute('aria-expanded', 'false');
     } else {
       item.classList.add('active');
       button.setAttribute('aria-expanded', 'true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      var onEnd = function() {
+        if (item.classList.contains('active')) {
+          answer.style.maxHeight = 'none';
+        }
+        answer.removeEventListener('transitionend', onEnd);
+      };
+      answer.addEventListener('transitionend', onEnd);
     }
   }
 </script>
