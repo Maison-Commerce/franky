@@ -729,6 +729,7 @@
       },
       nutritionalOpen: false,
       videoModalOpen: false,
+      activeVideoId: null,
       bundleAddonSlots: {},
 
       get variant() {
@@ -832,42 +833,26 @@
       },
 
       openVideoModal(videoId) {
+        this.activeVideoId = videoId;
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
-        const self = this;
+        var self = this;
         setTimeout(function() {
-          const sourceWrapper = self.$el.querySelector('[data-video-source="' + videoId + '"]');
-          const popupVideo = self.$el.querySelector('.xmaison_popup-video');
-          if (sourceWrapper && popupVideo) {
-            const sourceVideo = sourceWrapper.querySelector('video');
-            popupVideo.innerHTML = '';
-            const sources = sourceVideo.querySelectorAll('source');
-            sources.forEach(function(source) {
-              const newSource = document.createElement('source');
-              newSource.src = source.src;
-              newSource.type = source.type;
-              popupVideo.appendChild(newSource);
-            });
-            if (sourceVideo.poster) {
-              popupVideo.poster = sourceVideo.poster;
-            }
-            popupVideo.muted = true;
-            popupVideo.load();
-            popupVideo.play().then(function() {
-              popupVideo.muted = false;
-            }).catch(function() {});
+          var video = self.$el.querySelector('video[data-video-id="' + videoId + '"]');
+          if (video) {
+            video.currentTime = 0;
+            video.play().catch(function() {});
           }
-        }, 100);
+        }, 50);
       },
 
       closeVideoModal() {
-        const popupVideo = this.$el.querySelector('.xmaison_popup-video');
-        if (popupVideo) {
-          popupVideo.pause();
-          popupVideo.currentTime = 0;
-          popupVideo.innerHTML = '';
-        }
+        this.$el.querySelectorAll('.xmaison_popup-video').forEach(function(v) {
+          v.pause();
+          v.currentTime = 0;
+        });
         this.videoModalOpen = false;
+        this.activeVideoId = null;
         document.body.style.overflow = '';
       },
 
@@ -1692,17 +1677,6 @@
         </div>
       </div>
 
-      <!-- Hidden source videos (used to copy sources into popup) -->
-      <div style="display:none;">
-        {% for block in section.blocks %}
-          {% if block.type == 'customer_video' and block.settings.video %}
-            <div data-video-source="video-{{ block.id }}">
-              {{ block.settings.video | video_tag: autoplay: false, loop: false, controls: false, muted: false, preload: 'none' }}
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
       <!-- Video Modal -->
       <div
         class="xmaison_video-modal"
@@ -1717,9 +1691,24 @@
               <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <div class="xmaison_video-wrapper">
-            <video class="xmaison_popup-video" playsinline controls></video>
-          </div>
+          {% for block in section.blocks %}
+            {% if block.type == 'customer_video' and block.settings.video %}
+              <div class="xmaison_video-wrapper" x-show="activeVideoId === 'video-{{ block.id }}'">
+                <video
+                  class="xmaison_popup-video"
+                  data-video-id="video-{{ block.id }}"
+                  playsinline
+                  controls
+                  preload="metadata"
+                  poster="{{ block.settings.video.preview_image | image_url: width: 800 }}"
+                >
+                  {% for source in block.settings.video.sources %}
+                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                  {% endfor %}
+                </video>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
 
