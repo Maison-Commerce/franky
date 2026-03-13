@@ -843,6 +843,13 @@
           v.pause();
           v.currentTime = 0;
         });
+        // Reset play/pause button states
+        document.querySelectorAll('.xmaison_modal-play-btn--play').forEach(function(btn) {
+          btn.style.display = 'flex';
+        });
+        document.querySelectorAll('.xmaison_video-container').forEach(function(c) {
+          c.classList.remove('is-playing');
+        });
         this.videoModalOpen = false;
         this.activeVideoId = null;
         document.body.style.overflow = '';
