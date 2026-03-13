@@ -512,28 +512,35 @@
           "type": "accordion_item",
           "settings": {
             "accordion_title": "Benefits & Ingredients",
-            "accordion_content": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients including Lion's Mane Mushroom, Bacopa Monnieri, Ginkgo Biloba, and Vitamin B12. Each gummy delivers cognitive support without artificial colors or preservatives.</p>"
+            "accordion_content": "<p>Franky combines real coffee with <strong>10g of protein and functional ingredients</strong> designed to support steady energy, focus, and satiety. Instead of the typical caffeine spike and crash, the formula provides smoother energy through balanced caffeine and L-theanine.<br/>The blend includes <strong>protein for sustained fuel</strong>, <strong>natural caffeine for focus</strong>, and <strong>prebiotic fiber to support digestion and gut balance</strong>. Together, these ingredients help turn your morning coffee into a more complete and functional routine.</p>"
           }
         },
         "accordion_item_fpnbqj": {
           "type": "accordion_item",
           "settings": {
-            "accordion_title": "How to Enjoy",
-            "accordion_content": "<p>Take 2 gummies daily, preferably in the morning or early afternoon. For best results, take consistently for at least 4-6 weeks. Can be taken with or without food.</p>"
+            "accordion_title": "Nutritional Information",
+            "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is <strong>vegan, keto-friendly, gluten-free, and dairy-free</strong>, with no fillers or unnecessary additives. It’s designed to provide real nutrition alongside your daily coffee, not just stimulation.</p>"
           }
         },
         "accordion_item_hdeJXf": {
           "type": "accordion_item",
           "settings": {
-            "accordion_title": "Endorsements",
-            "accordion_content": "<p>Recommended by over 500 healthcare professionals. Featured in Forbes, Well+Good, and mindbodygreen. Third-party tested for purity and potency.</p>"
+            "accordion_title": "How to Enjoy",
+            "accordion_content": "<p>Add one serving of Franky to cold or hot water and mix or shake well. In under <strong>60 seconds</strong>, you’ll have a smooth iced coffee with protein and functional ingredients.<br/>Many people use Franky as part of their <strong>morning routine or as a light breakfast alternative</strong>, providing energy, focus, and satiety without the typical coffee crash.</p>"
           }
         },
         "accordion_item_UgPTiM": {
           "type": "accordion_item",
           "settings": {
+            "accordion_title": "Endorsements",
+            "accordion_content": "<p>Franky is rated <strong>4.8/5 based on 8,450+ customer reviews</strong>, with thousands of customers reporting smoother energy, improved focus, and fewer caffeine crashes.</p>"
+          }
+        },
+        "accordion_item_yqFq7M": {
+          "type": "accordion_item",
+          "settings": {
             "accordion_title": "Shipping & Returns",
-            "accordion_content": "<p>Free shipping on orders over $50. Standard delivery takes 3-5 business days. We offer a 30-day money-back guarantee if you're not completely satisfied.</p>"
+            "accordion_content": "<p>Orders ship from our <strong>Ohio warehouse</strong>, typically within <strong>24–48 hours</strong> when the product is in stock.</p>"
           }
         }
       },
@@ -559,7 +566,8 @@
         "accordion_item_BMU6dj",
         "accordion_item_fpnbqj",
         "accordion_item_hdeJXf",
-        "accordion_item_UgPTiM"
+        "accordion_item_UgPTiM",
+        "accordion_item_yqFq7M"
       ],
       "name": "Maison PDP Hero",
       "settings": {
