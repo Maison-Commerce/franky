@@ -208,6 +208,10 @@
   .card-information > .price--on-sale .price-item--regular{
     font-size: 10px!important;
   }
+
+  .card__price-wrapper .price__badge-sale{
+    font-size: 8px!important;
+  }
 }
 
 .card:not(.ratio) > .card__content {
