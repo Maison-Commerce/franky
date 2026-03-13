@@ -836,6 +836,12 @@
         this.activeVideoId = videoId;
         this.videoModalOpen = true;
         document.body.style.overflow = 'hidden';
+        this.$nextTick(function() {
+          var video = document.querySelector('video.xmaison_popup-video[data-video-id="' + videoId + '"]');
+          if (video) {
+            video.play();
+          }
+        });
       },
 
       closeVideoModal() {
