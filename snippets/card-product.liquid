@@ -380,30 +380,60 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
-            {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-              {% liquid
-                assign rating_decimal = 0
-                assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-                if decimal >= 0.3 and decimal <= 0.7
-                  assign rating_decimal = 0.5
-                elsif decimal > 0.7
-                  assign rating_decimal = 1
+            {%- liquid
+              assign cp_has_reviews = false
+              assign cp_rating_raw = 0
+              assign cp_review_count = 0
+              assign cp_rating_max = 5
+
+              if card_product.metafields.reviews.rating.value != blank
+                assign cp_rating_raw = card_product.metafields.reviews.rating.value.rating | times: 1.0
+                assign cp_rating_max = card_product.metafields.reviews.rating.value.scale_max
+                assign cp_has_reviews = true
+              elsif card_product.metafields.custom.rating != blank
+                assign cp_rating_raw = card_product.metafields.custom.rating | times: 1.0
+                assign cp_has_reviews = true
+              endif
+
+              if card_product.metafields.reviews.rating_count != blank
+                assign cp_review_count = card_product.metafields.reviews.rating_count
+                assign cp_has_reviews = true
+              elsif card_product.metafields.custom.review_count != blank
+                assign cp_review_count = card_product.metafields.custom.review_count
+                assign cp_has_reviews = true
+              endif
+
+              if cp_review_count == 0 or cp_review_count == blank
+                if card_product.metafields.custom.mc_stars != blank and card_product.metafields.custom.mc_reviews_count != blank and card_product.metafields.custom.mc_reviews_count > 0
+                  assign cp_mc_stars_str = card_product.metafields.custom.mc_stars | replace: ',', '.'
+                  assign cp_rating_raw = cp_mc_stars_str | times: 1.0
+                  assign cp_review_count = card_product.metafields.custom.mc_reviews_count
+                  assign cp_has_reviews = true
                 endif
-              %}
+              endif
+
+              assign cp_filled_stars = cp_rating_raw | floor
+              assign cp_rating_remainder = cp_rating_raw | minus: cp_filled_stars
+              assign cp_rating_decimal = 0
+              if cp_rating_remainder > 0
+                assign cp_rating_decimal = 0.5
+              endif
+            -%}
+            {%- if show_rating and cp_has_reviews -%}
               <div class="card__rating-wrapper">
                 <div
                   class="rating"
                   role="img"
-                  aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
+                  aria-label="{{ cp_rating_raw }} out of {{ cp_rating_max }} stars"
                 >
                   <span
                     aria-hidden="true"
                     class="rating-star"
-                    style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                    style="--rating: {{ cp_filled_stars }}; --rating-max: {{ cp_rating_max }}; --rating-decimal: {{ cp_rating_decimal }};"
                   ></span>
                 </div>
                 <span class="card__rating-count">
-                  ({{ card_product.metafields.reviews.rating_count }} Reviews)
+                  ({{ cp_review_count }} Reviews)
                 </span>
               </div>
             {%- endif -%}
