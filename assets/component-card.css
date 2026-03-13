@@ -211,6 +211,7 @@
 
   .card__price-wrapper .price__badge-sale{
     font-size: 8px!important;
+    padding: 1.07px 4.278px!important;
   }
 }
 
