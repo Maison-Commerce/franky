@@ -942,7 +942,7 @@ img {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .xmaison_accordion-item.xmaison_open .xmaison_accordion-toggle {
@@ -950,13 +950,18 @@ img {
 }
 
 .xmaison_accordion-content {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.xmaison_accordion-content > * {
+  overflow: hidden;
 }
 
 .xmaison_accordion-item.xmaison_open .xmaison_accordion-content {
-  max-height: 200px;
+  grid-template-rows: 1fr;
   padding-bottom: 16px;
 }
 

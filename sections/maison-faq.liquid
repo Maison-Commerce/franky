@@ -340,10 +340,15 @@
                     </div>
                   </button>
 
-                  <div 
+                  <div
                     class="maison_commerce_faq__answer"
                     x-show="openItem === {{ forloop.index0 }}"
-                    x-transition
+                    x-transition:enter="faq-transition-enter"
+                    x-transition:enter-start="faq-transition-enter-start"
+                    x-transition:enter-end="faq-transition-enter-end"
+                    x-transition:leave="faq-transition-leave"
+                    x-transition:leave-start="faq-transition-leave-start"
+                    x-transition:leave-end="faq-transition-leave-end"
                     x-cloak
                   >
                     <div class="maison_commerce_faq__answer-content">
@@ -549,11 +554,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .maison_commerce_faq__toggle-icon svg {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .maison_commerce_faq__toggle-icon.is-open svg {
@@ -562,6 +567,32 @@
 
   .maison_commerce_faq__answer {
     overflow: hidden;
+  }
+
+  .faq-transition-enter {
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    overflow: hidden;
+  }
+  .faq-transition-enter-start {
+    opacity: 0;
+    max-height: 0;
+  }
+  .faq-transition-enter-end {
+    opacity: 1;
+    max-height: 500px;
+  }
+  .faq-transition-leave {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  .faq-transition-leave-start {
+    opacity: 1;
+    max-height: 500px;
+  }
+  .faq-transition-leave-end {
+    opacity: 0;
+    max-height: 0;
   }
 
   .maison_commerce_faq__answer-content {
