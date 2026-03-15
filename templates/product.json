@@ -600,7 +600,8 @@
         "bundle_tier4_label": "4+ bags",
         "bundle_tier4_price": "$24.95/bag",
         "bundle_products": [
-          "franky-magic-frother"
+          "franky-magic-frother",
+          "franky-protein-coffee"
         ]
       }
     },
