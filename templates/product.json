@@ -368,6 +368,7 @@
       "blocks": {
         "nutritional_info_xpfTdY": {
           "type": "nutritional_info",
+          "disabled": true,
           "settings": {
             "button_text": "Nutritional Information",
             "popup_content": "<p>Nutritional information content goes here.</p>"
@@ -1436,6 +1437,7 @@
         "product_8kFqQj",
         "product_fGWrQJ"
       ],
+      "disabled": true,
       "name": "Maison Collection Slider",
       "settings": {
         "section_heading_part1": "Top",
