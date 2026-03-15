@@ -85,14 +85,14 @@
           "type": "link_list",
           "settings": {
             "heading": "Navigate",
-            "menu": "main-menu"
+            "menu": "footer"
           }
         },
         "link_list_HmF37b": {
           "type": "link_list",
           "settings": {
             "heading": "Shipping & Returns",
-            "menu": "customer-account-main-menu"
+            "menu": "footer-2"
           }
         }
       },
