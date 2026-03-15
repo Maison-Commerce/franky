@@ -668,7 +668,7 @@
       "name": "Maison ING",
       "settings": {
         "section_heading": "Premium Ingredients",
-        "section_subtitle": "Complete Protein & Performance Coffee Formula for Steady Energy and Focus",
+        "section_subtitle": "Frankly delicious. Genuinely functional.",
         "bg_gradient_start": "#deeaf2",
         "bg_gradient_end": "#fffffe",
         "heading_color": "#3b2b2f",
@@ -718,7 +718,7 @@
           "settings": {
             "icon": "shopify://shop_images/vjasehgth3y432.png",
             "title": "10g Protein Power",
-            "description": "Aids muscle recovery and fuels you without heavy shakes."
+            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want."
           }
         }
       },
@@ -735,7 +735,7 @@
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>Finally, a Coffee That Works With You</p>",
-        "desc": "Krijg inzicht in je slaap, beweging & meer zodat jij beter kan slapen. Een app die je snapt.",
+        "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
         "social_proof_text": "",
         "social_proof_count": "",
         "social_proof_suffix": "",
@@ -789,7 +789,7 @@
           "type": "badge",
           "settings": {
             "icon": "shopify://shop_images/wagawg32gr.png",
-            "text": "No Added Sugar"
+            "text": "0g Sugar"
           }
         },
         "badge_RyTNBC": {
@@ -987,7 +987,7 @@
       "name": "Maison Comp Flex",
       "settings": {
         "section_heading": "Why Coffee Alone Sabotages Your Energy",
-        "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
+        "section_subtitle": "Plain coffee wakes you up. Franky keeps you going.",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
@@ -1091,7 +1091,7 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 9 April 2025",
-            "review_text": "<p>\"AROSE set me up with a routine that totally fits my life better than any strict plan ever could.\"</p>",
+            "review_text": "<p>Franky set me up with a routine that totally fits my life better than any strict plan ever could</p>",
             "reviewer_name": "Patty, 48",
             "verified_buyer": true
           }
@@ -1102,7 +1102,7 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 9 April 2025",
-            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "review_text": "<p>\"Franky gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
             "reviewer_name": "Patty, 48",
             "verified_buyer": true
           }
@@ -1113,7 +1113,7 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 18 Jule 2025",
-            "review_text": "<p>\"Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts!\"</p>",
+            "review_text": "<p>Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts</p>",
             "reviewer_name": "Hannah, RN, 45",
             "verified_buyer": true
           }
@@ -1204,7 +1204,7 @@
         "padding_bottom_mobile": 24,
         "padding_left_mobile": 0,
         "padding_right_mobile": 0,
-        "heading": "<p>Join The Productivity</p>",
+        "heading": "<p>Join the community</p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
@@ -1255,6 +1255,7 @@
         },
         "trust_badge_ThXTfq": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/Shipment-Return--Streamline-Plump-Remix.svg",
             "text": "Simple Returns"
@@ -1262,6 +1263,7 @@
         },
         "trust_badge_d3Xgzn": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/3vesvsebdb.svg",
             "text": "Secure checkout"
@@ -1269,6 +1271,7 @@
         },
         "trust_badge_mrWmX7": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/bakjfbajkvbjkwa.svg",
             "text": "1.2M sold last year"
@@ -1291,7 +1294,7 @@
         "product_image_desktop": "shopify://shop_images/Image.png",
         "product_image_mobile": "shopify://shop_images/2wafwfw.png",
         "heading": "<p>The Science Behind Steady Energy</p>",
-        "desc": "Krijg inzicht in je slaap, beweging & meer zodat jij beter kan slapen. Een app die je snapt.",
+        "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
         "social_proof_text": "",
         "social_proof_count": "",
         "social_proof_suffix": "",
@@ -1331,7 +1334,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How much protein per serving?",
-            "answer": "<p>Each serving contains <strong>10g of high-quality protein</strong> to help support energy, focus, and satiety throughout your morning.</p>"
+            "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving — giving you <strong>20g of protein</strong> to properly fuel your morning, support muscle recovery, keep you satisfied, and help you reach your weight loss goals.</p>"
           }
         },
         "faq_item_Ermbtx": {

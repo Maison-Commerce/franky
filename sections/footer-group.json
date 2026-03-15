@@ -18,7 +18,7 @@
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/Shipment-Upload--Streamline-Ultimate.svg",
-            "title": "Free Shipping",
+            "title": "Free US Shipping",
             "description": "On all orders over $50"
           }
         },
@@ -27,15 +27,15 @@
           "settings": {
             "icon": "shopify://shop_images/Frame.svg",
             "title": "Subscribe & Save",
-            "description": "Save 15% with auto-delivery"
+            "description": "Save 15% with auto-delivery. Coming soon"
           }
         },
         "usp_TUXHKb": {
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/Love-Heart-Hands-Hold-3--Streamline-Ultimate.svg",
-            "title": "Exceptional Support",
-            "description": "Real humans, real help, 7 days a week"
+            "title": "Made in the USA",
+            "description": "High-quality ingredients & third-party lab tested"
           }
         }
       },
