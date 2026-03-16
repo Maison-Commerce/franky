@@ -968,6 +968,13 @@ img {
   line-height: 1.6;
 }
 
+.xmaison_accordion-image {
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+
 /* ==========================================================================
    Customer Gallery
    ========================================================================== */
