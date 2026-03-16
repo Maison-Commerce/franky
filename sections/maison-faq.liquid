@@ -340,11 +340,9 @@
                     </div>
                   </button>
 
-                  <div 
+                  <div
                     class="maison_commerce_faq__answer"
-                    x-show="openItem === {{ forloop.index0 }}"
-                    x-transition
-                    x-cloak
+                    x-ref="answer_{{ forloop.index0 }}"
                   >
                     <div class="maison_commerce_faq__answer-content">
                       {{ block.settings.answer }}
@@ -365,9 +363,37 @@
   function maison_commerce_faq_init() {
     return {
       openItem: null,
-      
+
       toggleItem(index) {
-        this.openItem = this.openItem === index ? null : index;
+        var prevIndex = this.openItem;
+        var newIndex = prevIndex === index ? null : index;
+
+        // Close previous item
+        if (prevIndex !== null) {
+          var prevAnswer = this.$refs['answer_' + prevIndex];
+          if (prevAnswer) {
+            prevAnswer.style.maxHeight = prevAnswer.scrollHeight + 'px';
+            requestAnimationFrame(function() {
+              prevAnswer.style.maxHeight = '0';
+            });
+          }
+        }
+
+        // Open new item
+        if (newIndex !== null) {
+          var newAnswer = this.$refs['answer_' + newIndex];
+          if (newAnswer) {
+            newAnswer.style.maxHeight = newAnswer.scrollHeight + 'px';
+            newAnswer.addEventListener('transitionend', function handler() {
+              if (newAnswer.style.maxHeight !== '0px') {
+                newAnswer.style.maxHeight = 'none';
+              }
+              newAnswer.removeEventListener('transitionend', handler);
+            });
+          }
+        }
+
+        this.openItem = newIndex;
       },
     };
   }
@@ -561,7 +587,9 @@
   }
 
   .maison_commerce_faq__answer {
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
   .maison_commerce_faq__answer-content {
@@ -588,7 +616,6 @@
     margin-bottom: 0;
   }
 
-  /* AlpineJS Transitions */
   [x-cloak] {
     display: none !important;
   }
