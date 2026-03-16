@@ -700,6 +700,11 @@
       {% endif %}
     {% endfor %}
   };
+  window.variantTitles = {
+    {% for variant in product.variants %}
+      {{ variant.id }}: "{{ variant.title | escape }}",
+    {% endfor %}
+  };
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
@@ -724,6 +729,7 @@
       isSubscription: window.subscriptionDefaultSelected,
       sellingPlanId: window.sellingPlanId,
       subscriptionMultiplier: window.subscriptionMultiplier,
+      variantTitles: window.variantTitles || {},
 
       init() {
         console.log('[Subscription Debug] Alpine init - isSubscription:', this.isSubscription);
@@ -740,6 +746,10 @@
 
       get variant() {
         return this.product.variants.find((variant) => variant.id === this.variantId);
+      },
+
+      get variantTitle() {
+        return this.variantTitles[this.variantId] || this.product.title;
       },
 
       get discountMultiplier() {
@@ -1085,7 +1095,7 @@
   <div class="xmaison_product-container">
     <!-- Product Title & Rating (Mobile: shows first) -->
     <div class="xmaison_product-header-top">
-      <h1 class="xmaison_product-title">{{ product.title }}</h1>
+      <h1 class="xmaison_product-title" x-text="variantTitle">{{ product.title }}</h1>
       {%- liquid
         assign pdp_has_reviews = false
         assign pdp_rating_raw = 0
@@ -1306,29 +1316,21 @@
 
       <!-- Product Options -->
       <div class="xmaison_product-options">
-        <!-- Flavor Selector -->
+        <!-- Variant Selector -->
         {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-        {% if section.settings.product_list != blank %}
+        {% if product.variants.size > 1 %}
           <div class="xmaison_option-group">
             <div class="xmaison_option-label">
-              <span class="xmaison_option-label-title">Flavor:</span>
-              <span class="xmaison_option-label-value">{{ product.title | split: '-' | last | strip }}</span>
+              <span class="xmaison_option-label-title">{{ product.options.first }}:</span>
+              <span class="xmaison_option-label-value" x-text="variantTitles[variantId] || ''"></span>
             </div>
             <div class="xmaison_flavor-select-wrapper">
-              <select class="xmaison_flavor-select" onchange="if(this.value) window.location.href = this.value;">
-                {% for flavor_product in section.settings.product_list %}
-                  <option
-                    value="{{ flavor_product.url }}"
-                    {% if flavor_product.id == product.id %}
-                      selected
-                    {% endif %}
-                  >
-                    {{ flavor_product.title | split: '-' | last | strip }}
+              <select class="xmaison_flavor-select" x-model.number="variantId">
+                {% for variant in product.variants %}
+                  <option value="{{ variant.id }}">
+                    {{ variant.title }}
                   </option>
                 {% endfor %}
-                {% if section.settings.product_list.size == 0 %}
-                  <option value="" selected>{{ product.title | split: '-' | last | strip }}</option>
-                {% endif %}
               </select>
               <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
