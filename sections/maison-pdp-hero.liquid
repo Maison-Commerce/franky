@@ -1951,7 +1951,23 @@
     document.querySelectorAll('.xmaison_accordion-header').forEach((header) => {
       header.addEventListener('click', () => {
         const item = header.parentElement;
-        item.classList.toggle('xmaison_open');
+        const content = item.querySelector('.xmaison_accordion-content');
+        if (item.classList.contains('xmaison_open')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            content.style.maxHeight = '0';
+          });
+          item.classList.remove('xmaison_open');
+        } else {
+          item.classList.add('xmaison_open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.addEventListener('transitionend', function handler() {
+            if (item.classList.contains('xmaison_open')) {
+              content.style.maxHeight = 'none';
+            }
+            content.removeEventListener('transitionend', handler);
+          });
+        }
       });
     });
 
