@@ -189,7 +189,7 @@
                         <button
                           class="xmaison_qty-btn xmaison_qty-minus"
                           @click="updateQuantity(item.key, item.quantity - 1)"
-                          :disabled="loading || item.quantity <= 1"
+                          :disabled="loading"
                         >
                           <img src="{{ 'xmaison-icon-minus.svg' | asset_url }}" alt="Decrease" class="xmaison_qty-icon">
                         </button>
