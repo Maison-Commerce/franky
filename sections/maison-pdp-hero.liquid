@@ -1325,9 +1325,9 @@
               <span class="xmaison_option-label-value" x-text="variantTitles[variantId] || ''"></span>
             </div>
             <div class="xmaison_flavor-select-wrapper">
-              <select class="xmaison_flavor-select" x-model.number="variantId">
+              <select class="xmaison_flavor-select" :value="variantId" @change="variantId = parseInt($event.target.value)">
                 {% for variant in product.variants %}
-                  <option value="{{ variant.id }}">
+                  <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected{% endif %}>
                     {{ variant.title }}
                   </option>
                 {% endfor %}
