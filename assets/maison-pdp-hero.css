@@ -956,6 +956,7 @@ img {
 }
 
 .xmaison_accordion-item.xmaison_open .xmaison_accordion-content {
+  max-height: fit-content;
   padding-bottom: 16px;
 }
 
