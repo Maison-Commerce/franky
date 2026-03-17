@@ -572,7 +572,7 @@
   }
 
   .maison_commerce_faq__description{
-    color: var(--Text-Secondary, rgba(59, 43, 47, 0.75));
+    color: {{ section.settings.heading_color | hex_to_rgba: 0.75 }};
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
