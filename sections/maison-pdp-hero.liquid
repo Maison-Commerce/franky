@@ -1318,7 +1318,7 @@
       <div class="xmaison_product-options">
         <!-- Variant Selector -->
         {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-          {% if product.variants.size > 1 %}
+          {% if product.variants.size > 0 %}
             <div class="xmaison_option-group">
               <div class="xmaison_option-label">
                 <span class="xmaison_option-label-title">{{ product.options.first }}:</span>
