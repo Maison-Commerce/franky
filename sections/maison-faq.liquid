@@ -351,6 +351,9 @@
                 </div>
             {% endcase %}
           {% endfor %}
+          {% if section.settings.description != blank %}
+            <p class="maison_commerce_faq__description">{{ section.settings.description }}</p>
+          {% endif %}
         </div>
       {% endif %}
     </div>
