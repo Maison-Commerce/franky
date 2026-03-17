@@ -1318,26 +1318,26 @@
       <div class="xmaison_product-options">
         <!-- Variant Selector -->
         {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-        {% if product.variants.size > 1 %}
-          <div class="xmaison_option-group">
-            <div class="xmaison_option-label">
-              <span class="xmaison_option-label-title">{{ product.options.first }}:</span>
-              <span class="xmaison_option-label-value" x-text="variantTitles[variantId] || ''"></span>
+          {% if product.variants.size > 1 %}
+            <div class="xmaison_option-group">
+              <div class="xmaison_option-label">
+                <span class="xmaison_option-label-title">{{ product.options.first }}:</span>
+                <span class="xmaison_option-label-value" x-text="variantTitles[variantId] || ''"></span>
+              </div>
+              <div class="xmaison_flavor-select-wrapper">
+                <select class="xmaison_flavor-select" :value="variantId" @change="variantId = parseInt($event.target.value)">
+                  {% for variant in product.variants %}
+                    <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected{% endif %}>
+                      {{ variant.title }}
+                    </option>
+                  {% endfor %}
+                </select>
+                <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
             </div>
-            <div class="xmaison_flavor-select-wrapper">
-              <select class="xmaison_flavor-select" :value="variantId" @change="variantId = parseInt($event.target.value)">
-                {% for variant in product.variants %}
-                  <option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected{% endif %}>
-                    {{ variant.title }}
-                  </option>
-                {% endfor %}
-              </select>
-              <svg class="xmaison_chevron-down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9l6 6 6-6" stroke="#475467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-        {% endif %}
+          {% endif %}
         {% endunless %}
 
         <!-- Pack Size Selector -->
