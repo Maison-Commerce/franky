@@ -247,7 +247,7 @@
     "enable_cart_progress_bar": true,
     "show_progress_bar_icons": true,
     "use_items_subtotal": true,
-    "cart_progress_goal_threshold_1": "USD: 100, EUR: 100",
+    "cart_progress_goal_threshold_1": "USD: 50, EUR: 50",
     "goal_1_pre_goal_message": "You're only <strong>[x]</strong> away from <strong>FREE SHIPPING</strong>",
     "goal_1_post_goal_message": "🎉 Congrats! You've unlocked <strong>Free Gift</strong>",
     "goal_1_icon": "truck",
