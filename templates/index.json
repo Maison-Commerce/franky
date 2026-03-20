@@ -524,7 +524,7 @@
         "mobile_image_position": "top",
         "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Frame_1484581760.png",
-        "product_image_mobile": "shopify://shop_images/e36408e8b3094c815bdd44d0ed001938_1.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_01.png",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "desc": "",
         "social_proof_text": "Join",
@@ -589,7 +589,7 @@
         "instagram_image_fCHU47": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/v3fv32vt23f3.png",
+            "image": "shopify://shop_images/Franky_04.png",
             "instagram_url": ""
           }
         },
