@@ -735,7 +735,7 @@
         "row": "row-reverse",
         "mobile_image_position": "bottom",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Image.png",
+        "product_image_desktop": "shopify://shop_images/Franky_08.png",
         "product_image_mobile": "shopify://shop_images/Franky_08.png",
         "heading": "<p>Finally, a Coffee That Works With You</p>",
         "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
@@ -885,8 +885,8 @@
         "row": "row",
         "mobile_image_position": "bottom",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/v3fv32vt23f3.png",
-        "product_image_mobile": "shopify://shop_images/Franky_03.png",
+        "product_image_desktop": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
+        "product_image_mobile": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
         "heading": "<p>What’s Inside Matters</p>",
         "desc": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
         "social_proof_text": "",
@@ -1299,8 +1299,8 @@
         "row": "row-reverse",
         "mobile_image_position": "bottom",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Image.png",
-        "product_image_mobile": "shopify://shop_images/Franky_01.png",
+        "product_image_desktop": "shopify://shop_images/Franky_04.png",
+        "product_image_mobile": "shopify://shop_images/Franky_04.png",
         "heading": "<p>The Science Behind Steady Energy</p>",
         "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
         "social_proof_text": "",
@@ -1482,7 +1482,7 @@
         "instagram_image_fjrhFc": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/uwgfawvfhjaw.png",
+            "image": "shopify://shop_images/Franky_07.jpg",
             "instagram_url": ""
           }
         },
