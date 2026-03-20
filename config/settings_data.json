@@ -252,7 +252,7 @@
     "goal_1_post_goal_message": "🎉 Congrats! You've unlocked <strong>Free Gift</strong>",
     "goal_1_icon": "truck",
     "goal_1_icon_reached": "truck",
-    "enable_goal_2": true,
+    "enable_goal_2": false,
     "cart_progress_goal_threshold_2": "USD:150, EUR:150, GBP:150",
     "enable_goal_3": false,
     "cart_progress_goal_threshold_3": "USD:200, EUR:190, GBP:170",
