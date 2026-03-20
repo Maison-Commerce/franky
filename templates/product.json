@@ -1297,10 +1297,10 @@
       "name": "Maison Introducing",
       "settings": {
         "row": "row-reverse",
-        "mobile_image_position": "bottom",
+        "mobile_image_position": "top",
         "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Franky_04.png",
-        "product_image_mobile": "shopify://shop_images/Franky_04.png",
+        "product_image_mobile": "shopify://shop_images/Projektion-2026-03-20-2120-1-1.png",
         "heading": "<p>The Science Behind Steady Energy</p>",
         "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
         "social_proof_text": "",

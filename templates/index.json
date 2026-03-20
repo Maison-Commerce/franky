@@ -363,10 +363,10 @@
     "maison_review_slider_RyQYLB": {
       "type": "maison-review-slider",
       "blocks": {
-        "review_bk7tmm": {
+        "review_Y7BXCR": {
           "type": "review",
           "settings": {
-            "product_image": "shopify://shop_images/Review_image.jpg",
+            "product_image": "shopify://shop_images/Review_image_02.jpg",
             "star_rating": 5,
             "purchase_date": "Purchased on 18 Jule 2025",
             "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
@@ -376,10 +376,10 @@
             "show_verified_badge": true
           }
         },
-        "review_Y7BXCR": {
+        "review_bk7tmm": {
           "type": "review",
           "settings": {
-            "product_image": "shopify://shop_images/avatar-1.png",
+            "product_image": "shopify://shop_images/Review_image.jpg",
             "star_rating": 5,
             "purchase_date": "Purchased on 18 Jule 2025",
             "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
@@ -417,8 +417,8 @@
         }
       },
       "block_order": [
-        "review_bk7tmm",
         "review_Y7BXCR",
+        "review_bk7tmm",
         "review_gTmP6V",
         "review_MEcgQA"
       ],
