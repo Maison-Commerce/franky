@@ -326,6 +326,7 @@
         "video_LnYNTf",
         "video_gnjb79"
       ],
+      "disabled": true,
       "name": "Maison Video Review",
       "settings": {
         "section_bg_gradient": "linear-gradient(180deg, rgba(222, 234, 242, 1), rgba(251, 246, 234, 0) 100%)",
