@@ -507,8 +507,8 @@
         "row": "row",
         "mobile_image_position": "top",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
-        "product_image_mobile": "shopify://shop_images/Franky_05.png",
+        "product_image_desktop": "shopify://shop_images/Franky_08.png",
+        "product_image_mobile": "shopify://shop_images/Franky_08.png",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "desc": "",
         "social_proof_text": "Join",
@@ -549,13 +549,6 @@
     "maison_inst_img_7m9jP7": {
       "type": "maison-inst-img",
       "blocks": {
-        "instagram_image_xNtUFP": {
-          "type": "instagram_image",
-          "settings": {
-            "image": "shopify://shop_images/d94ee5cf910958f4eecf5a612cc37ec75511a115.png",
-            "instagram_url": ""
-          }
-        },
         "instagram_image_RgnGwb": {
           "type": "instagram_image",
           "settings": {
@@ -563,10 +556,31 @@
             "instagram_url": ""
           }
         },
+        "instagram_image_kga8t9": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_02.jpg",
+            "instagram_url": ""
+          }
+        },
         "instagram_image_J8qCT6": {
           "type": "instagram_image",
           "settings": {
-            "image": "shopify://shop_images/uvr23uvfh3f.jpg",
+            "image": "shopify://shop_images/Socialmedia_03.jpg",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_CcdAia": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_04jpg.jpg",
+            "instagram_url": ""
+          }
+        },
+        "instagram_image_xNtUFP": {
+          "type": "instagram_image",
+          "settings": {
+            "image": "shopify://shop_images/d94ee5cf910958f4eecf5a612cc37ec75511a115.png",
             "instagram_url": ""
           }
         },
@@ -576,29 +590,15 @@
             "image": "shopify://shop_images/Franky_04.png",
             "instagram_url": ""
           }
-        },
-        "instagram_image_CcdAia": {
-          "type": "instagram_image",
-          "settings": {
-            "image": "shopify://shop_images/oawfihbg3gg3.png",
-            "instagram_url": ""
-          }
-        },
-        "instagram_image_kga8t9": {
-          "type": "instagram_image",
-          "settings": {
-            "image": "shopify://shop_images/Franky_02_59adcf53-434a-4b64-b86c-d6e1f5bd5666.png",
-            "instagram_url": ""
-          }
         }
       },
       "block_order": [
-        "instagram_image_xNtUFP",
         "instagram_image_RgnGwb",
+        "instagram_image_kga8t9",
         "instagram_image_J8qCT6",
-        "instagram_image_fCHU47",
         "instagram_image_CcdAia",
-        "instagram_image_kga8t9"
+        "instagram_image_xNtUFP",
+        "instagram_image_fCHU47"
       ],
       "name": "Maison Instagram Images",
       "settings": {
