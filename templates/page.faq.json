@@ -163,36 +163,60 @@
     "faq_accordion_KpFrMh": {
       "type": "faq-accordion",
       "blocks": {
+        "faq_item_VBdbqL": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes AROSE different from other protein coffees?",
+            "answer": ""
+          }
+        },
+        "faq_item_QENXBE": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes AROSE different from other protein coffees?",
+            "answer": ""
+          }
+        },
+        "faq_item_ig6KEJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes AROSE different from other protein coffees?",
+            "answer": ""
+          }
+        },
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
-            "question": "How does the energy-blocking mechanism work?",
-            "answer": "<p>Franky works by helping regulate the body’s stress and energy signals. The formula supports balanced cortisol levels and calmer nervous system activity, which can reduce late-night energy spikes and help your body wind down more naturally.</p>"
+            "question": "What is protein coffee?",
+            "answer": "<p>Franky Instant Protein Coffee is a premium instant coffee blended with ultra-clean whey protein — giving you the energy of real coffee and the benefits of protein in one delicious scoop. It's designed for anyone who wants a smarter way to start their day, fuel their workouts, or simply enjoy a high-protein coffee without the hassle of brewing or blending.</p>"
           }
         },
         "faq_item_FnK3tU": {
           "type": "faq_item",
           "settings": {
-            "question": "How does the energy-blocking mechanism work?",
-            "answer": "<p>Franky supports your body’s natural nighttime rhythm. By helping calm overstimulation and supporting relaxation pathways, it makes it easier for your body to transition into restful sleep.</p>"
+            "question": "What ingredients do you use?",
+            "answer": "<p>Our protein coffee is made with high-quality, carefully selected ingredients including Whey Protein Concentrate, real spray dried coffee, Psyllium Husk Powder (1,500 mg), Lion's Mane Mushroom Extract (300 mg), L-Theanine (200 mg), Caffeine Anhydrous (50 mg), and a Probiotic Blend (3 million CFU). It's sweetened naturally with Monk Fruit Extract and Fermented Reb M — no sugar, no artificial sweeteners. Each serving is just 67 calories with 10g of protein. All Franky Nutrition products are proudly made in the USA, 100% gluten-free, and non-GMO.</p>"
           }
         },
         "faq_item_p6JKzb": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I take this with other supplements?",
-            "answer": "<p>Yes, Franky is generally safe to take alongside most supplements. However, if you are taking prescription medications or specialized treatments, we recommend consulting your healthcare provider first.</p>"
+            "question": "Where are your products manufactured?",
+            "answer": "<p>We work exclusively with US-based manufacturers that follow strict quality control standards. All products undergo third-party lab testing to ensure purity, potency, and safety.</p>"
           }
         },
         "faq_item_kEt6g4": {
           "type": "faq_item",
           "settings": {
-            "question": "What’s actually in each capsule?",
-            "answer": "<p>Each capsule contains a blend of carefully selected ingredients designed to support relaxation, balanced energy levels, and deeper sleep. The full ingredient list is available on the product label and product page.</p>"
+            "question": "What is the shelf life of protein coffee?",
+            "answer": "<p>Our Instant Protein Coffee has a shelf life of 2 years from the date of manufacture. Once opened, make sure to seal the bag tightly and store it in a cool, dry place to maintain freshness and quality.</p>"
           }
         }
       },
       "block_order": [
+        "faq_item_VBdbqL",
+        "faq_item_QENXBE",
+        "faq_item_ig6KEJ",
         "faq_item_kJtwLa",
         "faq_item_FnK3tU",
         "faq_item_p6JKzb",
@@ -212,7 +236,7 @@
         "content_gap_desktop": 80,
         "content_gap_mobile": 24,
         "title_width_desktop": 600,
-        "title": "The Product & How It Works",
+        "title": "Our Products",
         "title_font_size_desktop": 32,
         "title_font_size_mobile": 24,
         "title_line_height_desktop": 1.2,
@@ -243,48 +267,80 @@
     "faq_accordion_ieGUJc": {
       "type": "faq-accordion",
       "blocks": {
+        "faq_item_EHJkkR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can protein coffee help me lose weight?",
+            "answer": "<p>Protein is one of the most effective nutrients for supporting weight management. Franky Protein Iced Coffee may help you increase your daily protein intake, which may promote a feeling of fullness and may help reduce cravings and unnecessary snacking throughout the day. It may also support healthy digestion and may help fuel your body so you stay energized without reaching for sugary alternatives.</p>"
+          }
+        },
         "faq_item_gRdCBm": {
           "type": "faq_item",
           "settings": {
-            "question": "How quickly will I see results?",
-            "answer": "<p>Some people notice improvements within the first few nights, while for others it may take 1–2 weeks of consistent use as the body adjusts.</p>"
+            "question": "What are the benefits of whey protein?",
+            "answer": "<p>Whey protein is one of the highest-quality protein sources available. It is absorbed quickly and efficiently by the body and may support muscle growth while helping to reduce muscle breakdown. Whey protein may also support a healthy metabolism and fat burning, and contains essential amino acids critical for peak muscle performance. Additionally, it may support the body's natural antioxidant defenses and is highly satiating, helping to reduce hunger and cravings.</p>"
           }
         },
         "faq_item_XqGDgd": {
           "type": "faq_item",
           "settings": {
-            "question": "Will this make me put on or lose weight?",
-            "answer": "<p>Franky is not designed for weight gain or weight loss. Its purpose is to support better sleep, relaxation, and balanced nighttime energy.</p>"
-          }
-        },
-        "faq_item_DHQ4mn": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if I don’t see results?",
-            "answer": "<p>Every body is different. If you don’t experience improvements, our support team can help guide you or assist with returns under our satisfaction guarantee.</p>"
-          }
-        },
-        "faq_item_7J3AVq": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do results last after I stop taking it?",
-            "answer": "<p>Many users notice improved sleep habits even after stopping. However, results may vary depending on lifestyle, stress levels, and overall health.</p>"
+            "question": "Which fiber do you use and what are it's benefits?",
+            "answer": "<p>Psyllium Husk is a natural plant-based fiber derived from the seeds of the Plantago ovata plant. Each serving of Franky Instant Protein Coffee contains 1,500 mg of Psyllium Husk Powder. It supports healthy digestion by promoting regular bowel movements and relieving occasional constipation. Psyllium Husk also acts as a prebiotic, feeding the good bacteria in your gut. Its high fiber content helps you feel fuller for longer, supports healthy blood sugar levels, and may contribute to maintaining healthy cholesterol levels.</p>"
           }
         },
         "faq_item_cyAWqY": {
           "type": "faq_item",
           "settings": {
-            "question": "What results can actually be realistic?",
-            "answer": "<p>Most customers report falling asleep easier, fewer nighttime awakenings, and feeling more refreshed in the morning.</p>"
+            "question": "What are the benefits of the Probiotic Blend?",
+            "answer": "<p>Each serving of Franky Protein Iced Coffee contains a probiotic blend of 3 million CFU featuring three clinically studied strains: L. acidophilus, B. longum, and L. plantarum.</p><p>These beneficial bacteria may support a healthy and balanced gut microbiome, which is essential for proper digestion and nutrient absorption. Probiotics may help reduce bloating and digestive discomfort, may support the gut lining, and may support a healthy immune response. A balanced gut has also been linked to improved mood, better energy levels, and overall well-being. Adding probiotics to your daily coffee is a simple way to may support your digestive health with every sip.</p>"
+          }
+        },
+        "faq_item_DHQ4mn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is Lion's Mane Mushroom Extract and what are its benefits?",
+            "answer": "<p>Lion's Mane is a functional mushroom that has been used for centuries in traditional medicine. Each serving of Franky Protein Iced Coffee contains 300mg of Lion's Mane Mushroom Extract (Hericium erinaceus, fruiting body).</p><p>Lion's Mane is best known for may supporting brain health, mental clarity, and focus. Studies suggest it may promote nerve growth factor (NGF) production, which may support cognitive function and memory. It may also support the body's natural anti-inflammatory and antioxidant defenses, contributing to overall immune health.</p>"
+          }
+        },
+        "faq_item_7J3AVq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is L-Theanine and what are its benefits?",
+            "answer": "<p>L-Theanine is a naturally occurring amino acid commonly found in tea leaves. Each serving of Franky Protein Iced Coffee contains 200mg of L-Theanine.</p><p>L-Theanine may promote a state of calm focus without drowsiness, making it the perfect complement to caffeine. When combined with caffeine, it may help smooth out the energy boost — supporting sustained focus and alertness without the jitters or crash. L-Theanine may also support relaxation, stress reduction, and improved sleep quality.</p>"
+          }
+        },
+        "faq_item_RHBTji": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to use during pregnancy or breastfeeding?",
+            "answer": "<p>Franky Protein Iced Coffee contains caffeine, which should be monitored during pregnancy and breastfeeding. While the ingredients are generally considered safe, we always recommend consulting your healthcare provider before adding any new supplement to your routine during pregnancy or while nursing.</p>"
+          }
+        },
+        "faq_item_JhRzcn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to take alongside prescribed medication?",
+            "answer": "<p>Franky Protein Iced Coffee is generally considered safe to use alongside medication. That said, we always recommend consulting your doctor or pharmacist before combining any supplement with prescribed medication, as individual circumstances vary.</p>"
+          }
+        },
+        "faq_item_wF3grt": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the protein coffee suitable for people with food allergies or dietary restrictions?",
+            "answer": "<p>Franky Protein Iced Coffee contains milk derived from whey protein concentrate. If you have a dairy allergy or intolerance, this product may not be suitable for you. The product is 100% gluten-free and non-GMO. Please review the full ingredient list and supplement facts on the product label before purchasing if you have specific dietary concerns.</p>"
           }
         }
       },
       "block_order": [
+        "faq_item_EHJkkR",
         "faq_item_gRdCBm",
         "faq_item_XqGDgd",
+        "faq_item_cyAWqY",
         "faq_item_DHQ4mn",
         "faq_item_7J3AVq",
-        "faq_item_cyAWqY"
+        "faq_item_RHBTji",
+        "faq_item_JhRzcn",
+        "faq_item_wF3grt"
       ],
       "name": "FAQ Accordion",
       "settings": {
@@ -300,7 +356,7 @@
         "content_gap_desktop": 80,
         "content_gap_mobile": 24,
         "title_width_desktop": 600,
-        "title": "Results & Expectations",
+        "title": "Health & Benefits",
         "title_font_size_desktop": 32,
         "title_font_size_mobile": 24,
         "title_line_height_desktop": 1.2,
@@ -334,45 +390,29 @@
         "faq_item_dnzpxY": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I take Franky?",
-            "answer": "<p> Take the recommended serving about 30–60 minutes before bedtime with water. For best results, use consistently as part of your nightly routine.</p>"
+            "question": "How do I prepare Franky Protein Iced Coffee?",
+            "answer": "<p>It's quick and easy — no coffee machine needed. Add 8oz of cold water or your favorite milk — almond milk or oat milk work great — into a glass, mix in one scoop of Franky Protein Iced Coffee, then shake or stir well. Add ice and enjoy. For the best taste, we recommend serving it over a full glass of ice. Feel free to customize with your favorite creamer or toppings. Want a stronger flavor or more protein? Just add a second scoop.</p>"
           }
         },
         "faq_item_VJTJcf": {
           "type": "faq_item",
           "settings": {
-            "question": "Are there any side effects?",
-            "answer": "<p>Franky is formulated to be gentle and well-tolerated. Most people experience no side effects, though individual reactions may vary.</p>"
+            "question": "Do I need a coffee machine to make it?",
+            "answer": "<p>Not at all. Franky Protein Iced Coffee dissolves instantly in cold water or milk — no brewing, no machine, no hassle.</p>"
           }
         },
         "faq_item_Mdk9Jm": {
           "type": "faq_item",
           "settings": {
             "question": "Is this safe for long-term use?",
-            "answer": "<p>Yes, the ingredients are selected for regular use. If you have a medical condition or are unsure, consult your healthcare professional.</p>"
-          }
-        },
-        "faq_item_LceN3X": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Can I take this if I'm on medication?",
-            "answer": "<p>If you are taking medication or have a medical condition, we recommend speaking with your doctor before use.</p>"
-          }
-        },
-        "faq_item_VFkTWg": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What age is this appropriate for?",
-            "answer": "<p>Franky is intended for adults. If you are under 18, consult a healthcare professional before use.</p>"
+            "answer": "<p>Anytime that works for you. Enjoy it as your morning coffee, a pre-workout boost, a post-workout recovery drink, or an afternoon pick-me-up. It fits seamlessly into any part of your day. For the best taste and experience, we recommend serving it over ice.</p>"
           }
         }
       },
       "block_order": [
         "faq_item_dnzpxY",
         "faq_item_VJTJcf",
-        "faq_item_Mdk9Jm",
-        "faq_item_LceN3X",
-        "faq_item_VFkTWg"
+        "faq_item_Mdk9Jm"
       ],
       "name": "FAQ Accordion",
       "settings": {
@@ -388,7 +428,7 @@
         "content_gap_desktop": 80,
         "content_gap_mobile": 24,
         "title_width_desktop": 600,
-        "title": "Usage & Safety",
+        "title": "How to use",
         "title_font_size_desktop": 32,
         "title_font_size_mobile": 24,
         "title_line_height_desktop": 1.2,
