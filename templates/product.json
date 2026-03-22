@@ -519,7 +519,7 @@
           "type": "accordion_item",
           "settings": {
             "accordion_title": "Nutritional Information",
-            "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is <strong>vegan, keto-friendly, gluten-free, and dairy-free</strong>, with no fillers or unnecessary additives. </p><p></p>",
+            "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is<strong> keto</strong>-<strong>friendly</strong> and <strong>gluten</strong>-<strong>free</strong>, with no fillers or unnecessary additives. </p><p></p>",
             "accordion_image": "shopify://shop_images/Franky_Nutritional_Info.png"
           }
         },
