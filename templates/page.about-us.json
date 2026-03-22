@@ -84,9 +84,10 @@
         "row_ELaARV": {
           "type": "row",
           "settings": {
-            "caption": "Brand Name",
+            "image": "shopify://shop_images/Franky_09.png",
+            "caption": "",
             "heading": "Our Story",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac velit nec metus tincidunt varius. In hac habitasse platea dictumst. Suspendisse potenti. Proin ut quam eu elit rhoncus euismod. Phasellus consectetur risus eget neque fermentum, vel ullamcorper purus efficitur. Sed nec urna eu justo volutpat accumsan.</p>",
+            "text": "<p>After feeling the real difference that wellness made in our lives, we wanted to make healthy living feel easier — and way more enjoyable — for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit right into your daily routine.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -94,11 +95,12 @@
         "row_kN7ArP": {
           "type": "row",
           "settings": {
-            "caption": "the future",
-            "heading": "What Next?",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac velit nec metus tincidunt varius. In hac habitasse platea dictumst. Suspendisse potenti. Proin ut quam eu elit rhoncus euismod. Phasellus consectetur risus eget neque fermentum, vel ullamcorper purus efficitur. Sed nec urna eu justo volutpat accumsan.</p>",
-            "button_label": "",
-            "button_link": ""
+            "image": "shopify://shop_images/Franky_02_59adcf53-434a-4b64-b86c-d6e1f5bd5666.png",
+            "caption": "",
+            "heading": "Fuel your mind, body, and gut — in one delicious sip.",
+            "text": "<p>With protein, probiotics, collagen, and brain-boosting adaptogens, our protein coffee and matcha help you stay sharp, strong, and balanced — without sugar crashes, bloating, or stress.</p>",
+            "button_label": "Discover your morning ritual",
+            "button_link": "shopify://products/franky-protein-coffee"
           }
         }
       },
