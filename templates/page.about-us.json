@@ -34,7 +34,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Franky_03.png",
-        "image_2": "shopify://shop_images/Franky_11.png",
+        "image_2": "shopify://shop_images/Franky_08.png",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "top-center",
@@ -60,7 +60,7 @@
         "text_BJemWy": {
           "type": "text",
           "settings": {
-            "text": "<p>in the heart of a bustling city, there was a small juice stand nestled between towering skyscrapers and bustling streets. This humble beginning marked the start of a remarkable journey for our founders, Emma and David, who shared a passion for health and wellness.</p>"
+            "text": "<p>We develop science-backed, delicious nutrition products that solve real health problems and fit seamlessly into daily life. From protein coffee to complete morning stacks, every product delivers measurable results while making wellness sustainable and achievable for millions.</p>"
           }
         }
       },
