@@ -1375,29 +1375,29 @@
         "faq_item_BUczLQ": {
           "type": "faq_item",
           "settings": {
-            "question": "Will I crash?",
-            "answer": "<p>No. Franky is formulated to provide <strong>smooth, sustained energy</strong> without the sudden spikes and crashes often associated with traditional coffee.</p>"
+            "question": "Will I crash or get jitters?",
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — giving you calm, focused energy with no spike, no jitters, and no mid-morning crash.</p>"
           }
         },
         "faq_item_gH3kcf": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I replace breakfast?",
-            "answer": "<p>Franky can be used as a <strong>light breakfast option</strong> or alongside your morning routine, but it’s not intended to fully replace a balanced meal.</p>"
+            "question": "Is it good for gut health?",
+            "answer": "<p>Yes. Every serving contains 3 million CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, reduce bloating, and help maintain a balanced gut microbiome.</p>"
           }
         },
         "faq_item_yrAef3": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it dairy-free?",
-            "answer": "<p>Yes. Franky is <strong>dairy-free</strong> and designed to be easy to digest.</p>"
+            "question": "Does it contain dairy or allergens?",
+            "answer": "<p>Franky contains milk derived from whey protein concentrate and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have specific dietary concerns.</p>"
           }
         },
         "faq_item_AkrewH": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I drink daily?",
-            "answer": "<p>Yes. Franky is designed to be enjoyed <strong>daily as part of your morning routine</strong>.</p>"
+            "question": "How do I prepare it?",
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
           }
         }
       },
