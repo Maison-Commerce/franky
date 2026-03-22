@@ -347,6 +347,19 @@
     "maison_review_slider_RyQYLB": {
       "type": "maison-review-slider",
       "blocks": {
+        "review_MEcgQA": {
+          "type": "review",
+          "settings": {
+            "product_image": "shopify://shop_images/Review_image_02.jpg",
+            "star_rating": 5,
+            "purchase_date": "Purchased on 9 April 2025",
+            "review_text": "<p>\"I was skeptical about protein coffee but this completely changed my mind. It tastes incredible, keeps my gut happy, and it helps me to reach my protein goals\"</p>",
+            "reviewer_name": "Patty",
+            "reviewer_profession": "",
+            "reviewer_age": "48",
+            "show_verified_badge": true
+          }
+        },
         "review_Y7BXCR": {
           "type": "review",
           "settings": {
@@ -385,26 +398,13 @@
             "reviewer_age": "45",
             "show_verified_badge": true
           }
-        },
-        "review_MEcgQA": {
-          "type": "review",
-          "settings": {
-            "product_image": "shopify://shop_images/Review_image_02.jpg",
-            "star_rating": 5,
-            "purchase_date": "Purchased on 9 April 2025",
-            "review_text": "<p>\"Franky gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
-            "reviewer_name": "Patty",
-            "reviewer_profession": "",
-            "reviewer_age": "48",
-            "show_verified_badge": true
-          }
         }
       },
       "block_order": [
+        "review_MEcgQA",
         "review_Y7BXCR",
         "review_bk7tmm",
-        "review_gTmP6V",
-        "review_MEcgQA"
+        "review_gTmP6V"
       ],
       "name": "Maison Review Slider",
       "settings": {
