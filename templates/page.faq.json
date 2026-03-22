@@ -766,7 +766,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Where is your company based and where was Franky founded?",
-            "answer": "<p>Franky Nutrition was founded and is registered in the state of Delaware. Our team operates out of our office in Miami, Florida, and all orders ship directly from our fulfillment warehouse in Georgia, USA — so you always know exactly where your product is coming from.</p>"
+            "answer": "<p>Franky Nutrition was founded and is registered in the state of Delaware. Our team operates out of our office in Miami, Florida, and all orders ship directly from our fulfillment warehouse in Georgia, USA — so you always know exactly where your product is coming from.<br/><br/>Below our company details:<br/><br/>Franky Nutrition Inc.<br/>1007 N Orange St. 4th Floor  Suite #4390,<br/>Wilmington, Delaware 19801,<br/>United States<br/><br/>You can reach our team in three ways — by email at <a href=\"mailto:support@frankynu.com\">support@frankynu.com</a>, by phone at +1 (786) 442-1243, or via live chat in the bottom right corner of your screen. We're available Monday to Saturday, 9:00 AM to 6:00 PM ET and will get back to you as quickly as possible.</p>"
           }
         }
       },
