@@ -24,8 +24,8 @@
         "heading_xBQBHQ": {
           "type": "heading",
           "settings": {
-            "heading": "Our Story",
-            "heading_size": "h0"
+            "heading": "About Us",
+            "heading_size": "hxl"
           }
         }
       },
@@ -33,12 +33,14 @@
         "heading_xBQBHQ"
       ],
       "settings": {
+        "image": "shopify://shop_images/Franky_03.png",
+        "image_2": "shopify://shop_images/Franky_11.png",
         "image_overlay_opacity": 0,
-        "image_height": "xsmall",
+        "image_height": "small",
         "desktop_content_position": "top-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
+        "color_scheme": "accent-1",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
