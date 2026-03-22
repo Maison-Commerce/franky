@@ -163,31 +163,10 @@
     "faq_accordion_KpFrMh": {
       "type": "faq-accordion",
       "blocks": {
-        "faq_item_VBdbqL": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What makes AROSE different from other protein coffees?",
-            "answer": ""
-          }
-        },
-        "faq_item_QENXBE": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What makes AROSE different from other protein coffees?",
-            "answer": ""
-          }
-        },
-        "faq_item_ig6KEJ": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What makes AROSE different from other protein coffees?",
-            "answer": ""
-          }
-        },
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
-            "question": "What is protein coffee?",
+            "question": "What is a protein coffee?",
             "answer": "<p>Franky Instant Protein Coffee is a premium instant coffee blended with ultra-clean whey protein — giving you the energy of real coffee and the benefits of protein in one delicious scoop. It's designed for anyone who wants a smarter way to start their day, fuel their workouts, or simply enjoy a high-protein coffee without the hassle of brewing or blending.</p>"
           }
         },
@@ -214,9 +193,6 @@
         }
       },
       "block_order": [
-        "faq_item_VBdbqL",
-        "faq_item_QENXBE",
-        "faq_item_ig6KEJ",
         "faq_item_kJtwLa",
         "faq_item_FnK3tU",
         "faq_item_p6JKzb",
