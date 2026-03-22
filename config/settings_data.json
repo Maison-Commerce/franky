@@ -349,8 +349,7 @@
         "type": "maison-cart-drawer",
         "settings": {
           "upsell_list": [
-            "franky-protein-coffee",
-            "franky-protein-coffee-test"
+            "franky-protein-coffee"
           ],
           "subscribe_badge": "Most Popular",
           "subscribe_title": "Subscribe & Save an Extra 10%",
