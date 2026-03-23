@@ -286,7 +286,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0px;
-  margin-bottom: 24px;
 }
 
 .xmaison_product-description {
@@ -743,6 +742,29 @@ img {
   padding-top: 18px;
 }
 
+.xmaison_pdp-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.xmaison_pdp-price-current {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-brand-1-1800);
+  line-height: 1.4;
+}
+
+.xmaison_pdp-price-compare {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-decoration: line-through;
+}
+
 .xmaison_stock-status {
   display: flex;
   align-items: center;
@@ -956,7 +978,6 @@ img {
 }
 
 .xmaison_accordion-item.xmaison_open .xmaison_accordion-content {
-  max-height: fit-content;
   padding-bottom: 16px;
 }
 

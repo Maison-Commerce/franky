@@ -1314,6 +1314,12 @@
 
       <!-- Product Options -->
       <div class="xmaison_product-options">
+        <!-- Price Display -->
+        <div class="xmaison_pdp-price">
+          <span class="xmaison_pdp-price-current" x-text="formatMoney(isSubscription ? subscriptionPrice : onetimePrice)"></span>
+          <span class="xmaison_pdp-price-compare" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
+        </div>
+
         <!-- Variant Selector -->
         {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
           {% if product.variants.size > 0 %}
@@ -1587,8 +1593,6 @@
               x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}'"
             {% endif %}
           ></span>
-          <span class="xmaison_button-dot" x-show="!loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} && bundleAddonTotal > 0{% endif %}"></span>
-          <span class="xmaison_button-price" x-show="!loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} && bundleAddonTotal > 0{% endif %}" x-text="formatMoney(isSubscription ? subscriptionPrice : onetimePrice)"></span>
         </button>
 
         <!-- Payment Methods -->
