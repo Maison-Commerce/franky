@@ -1387,13 +1387,6 @@
             "answer": "<p>Yes. Every serving contains 3 million CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, reduce bloating, and help maintain a balanced gut microbiome.</p>"
           }
         },
-        "faq_item_yrAef3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Does it contain dairy or allergens?",
-            "answer": "<p>Franky contains milk derived from whey protein concentrate and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have specific dietary concerns.</p>"
-          }
-        },
         "faq_item_x7BFRN": {
           "type": "faq_item",
           "settings": {
@@ -1407,6 +1400,13 @@
             "question": "How do I prepare it?",
             "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
           }
+        },
+        "faq_item_yrAef3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it contain dairy or allergens?",
+            "answer": "<p>Franky contains milk derived from whey protein concentrate and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have specific dietary concerns.</p>"
+          }
         }
       },
       "block_order": [
@@ -1414,9 +1414,9 @@
         "faq_item_Ermbtx",
         "faq_item_BUczLQ",
         "faq_item_gH3kcf",
-        "faq_item_yrAef3",
         "faq_item_x7BFRN",
-        "faq_item_AkrewH"
+        "faq_item_AkrewH",
+        "faq_item_yrAef3"
       ],
       "name": "Maison FAQ",
       "settings": {
