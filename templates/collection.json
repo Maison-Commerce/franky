@@ -170,6 +170,7 @@
       "blocks": {
         "product_banner_a4V3HA": {
           "type": "product_banner",
+          "disabled": true,
           "settings": {
             "position": 2,
             "banner_image": "shopify://shop_images/wafawgfawgawg3g.png",
