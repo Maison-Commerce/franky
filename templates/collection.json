@@ -36,7 +36,7 @@
         "feature_yjQLXW": {
           "type": "feature",
           "settings": {
-            "text": "Zero crash"
+            "text": "0g Sugar"
           }
         }
       },
@@ -68,7 +68,7 @@
         "badge_font_size_mobile": 12,
         "badge_text_color": "#3b2b2f",
         "badge_gap": 8,
-        "title": "Make Your Morning Routine Work",
+        "title": "Better Coffee. Better Morning. Better You.",
         "title_font_size_desktop": 48,
         "title_font_size_mobile": 32,
         "title_line_height_desktop": 1.2,
@@ -76,7 +76,7 @@
         "title_color": "#3b2b2f",
         "title_uppercase": false,
         "title_align": "left",
-        "description": "Choose your flavor. Build your ritual. Keep it simple.",
+        "description": "Real coffee with protein, focus support, and gut health — all in one cup that actually tastes incredible.",
         "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
         "description_color": "#3b2b2f",
