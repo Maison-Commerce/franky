@@ -348,6 +348,7 @@
       "maison-cart-drawer": {
         "type": "maison-cart-drawer",
         "settings": {
+          "free_shipping_threshold": 50,
           "upsell_list": [
             "franky-protein-coffee"
           ],
