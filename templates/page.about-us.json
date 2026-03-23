@@ -123,12 +123,58 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "rich_text_AzgJDk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_p6e7y3": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_Uaw7Uy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're here whenever you need us, whether you have a question about your order, need product advice, or just want to say hello. Reach out to our friendly support team via email, phone, or live chat and we'll get back to you as soon as possible.</p><p><br/></p><p><strong>Contact Information</strong><br/>Franky Nutrition Inc.<br/>1007 N Orange St. 4th Floor, Suite #4390<br/>Wilmington, Delaware 19801, United States<br/><strong>Email:</strong> <a href=\"mailto:support@frankynu.com\" title=\"Email Franky Nutrition Customer Support\">support@frankynu.com</a><br/><strong>Phone:</strong> <a href=\"tel:+17864421243\" title=\"Call Franky Nutrition Customer Support\">+1 (786) 442-1243</a></p><p><br/></p><p><strong>Opening Hours:</strong><br/>Monday to Saturday: 9:00 a.m. to 6:00 p.m. (US Eastern Time)</p>"
+          }
+        },
+        "button_UbFjDU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_p6e7y3",
+        "text_Uaw7Uy",
+        "button_UbFjDU"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "image_banner_LpnHdw",
     "rich_text_pxGm8H",
-    "multirow_c9JFtJ"
+    "multirow_c9JFtJ",
+    "rich_text_AzgJDk"
   ]
 }
