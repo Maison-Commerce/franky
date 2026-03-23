@@ -542,6 +542,12 @@
             "accordion_title": "Shipping & Returns",
             "accordion_content": "<p>Orders ship from our <strong>Ohio warehouse</strong>, typically within <strong>24–48 hours</strong> when the product is in stock.</p>"
           }
+        },
+        "bundle_product_HigBqf": {
+          "type": "bundle_product",
+          "settings": {
+            "product": "franky-protein-coffee"
+          }
         }
       },
       "block_order": [
@@ -567,7 +573,8 @@
         "accordion_item_fpnbqj",
         "accordion_item_hdeJXf",
         "accordion_item_UgPTiM",
-        "accordion_item_yqFq7M"
+        "accordion_item_yqFq7M",
+        "bundle_product_HigBqf"
       ],
       "name": "Maison PDP Hero",
       "settings": {
