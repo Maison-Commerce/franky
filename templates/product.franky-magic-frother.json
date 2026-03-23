@@ -484,6 +484,7 @@
         },
         "trust_badge_6RkdBR": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon_type": "returns",
             "badge_text": "Simple Returns"
@@ -672,6 +673,7 @@
         "ingredient_9NYLU7",
         "ingredient_aB8HGE"
       ],
+      "disabled": true,
       "name": "Maison ING",
       "settings": {
         "section_heading": "Premium Ingredients",
@@ -991,6 +993,7 @@
         "comparison_row_tgm97y",
         "comparison_row_8iWUkT"
       ],
+      "disabled": true,
       "name": "Maison Comp Flex",
       "settings": {
         "section_heading": "Why Coffee Alone Sabotages Your Energy",
