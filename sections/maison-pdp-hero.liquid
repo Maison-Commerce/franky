@@ -1198,16 +1198,14 @@
               </div>
             {% endfor %}
           </div>
-          <div class="xmaison_badge-natural">
-            {% if section.settings.natural_badge_image %}
-              <img
-                src="{{ section.settings.natural_badge_image | image_url: width: 120 }}"
-                alt="{{ section.settings.natural_badge_alt }}"
-              >
-            {% else %}
-              <img src="{{ 'xmaison-badge-natural.png' | asset_url }}" alt="{{ section.settings.natural_badge_alt }}">
-            {% endif %}
-          </div>
+          {% if section.settings.natural_badge_image %}
+            <div class="xmaison_badge-natural">
+                <img
+                  src="{{ section.settings.natural_badge_image | image_url: width: 120 }}"
+                  alt="{{ section.settings.natural_badge_alt }}"
+                >
+            </div>
+          {% endif %}
         </div>
         <!-- Thumbnails Swiper -->
         <div class="xmaison_gallery-thumbnails swiper" id="galleryThumbs">
