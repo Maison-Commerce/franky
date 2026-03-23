@@ -932,9 +932,9 @@
             "label_col1": "Sugar",
             "value_col1": "40-60g",
             "label_featured": "Sugar",
-            "value_featured": "<1g",
+            "value_featured": "0g",
             "label_col3": "Sugar",
-            "value_col3": "As much as 60g"
+            "value_col3": "<1g"
           }
         },
         "comparison_row_y4kraR": {
@@ -943,19 +943,19 @@
             "label_col1": "Protein",
             "value_col1": "0g",
             "label_featured": "Protein",
-            "value_featured": "10g",
+            "value_featured": "2 scoops: 20g",
             "label_col3": "Protein",
             "value_col3": "15g"
           }
         },
-        "comparison_row_8iWUkT": {
+        "comparison_row_qC6Dhj": {
           "type": "comparison_row",
           "settings": {
-            "label_col1": "Gluten-Free",
+            "label_col1": "Pre- & Probiotics",
             "value_col1": "No",
-            "label_featured": "Gluten-Free",
+            "label_featured": "Pre- & Probiotics",
             "value_featured": "Yes",
-            "label_col3": "Gluten-Free",
+            "label_col3": "Pre- & Probiotics",
             "value_col3": "No"
           }
         },
@@ -964,30 +964,30 @@
           "settings": {
             "label_col1": "Fiber",
             "value_col1": "No",
-            "label_featured": "Brain Boosting MCTs",
+            "label_featured": "Fiber",
             "value_featured": "Yes",
             "label_col3": "Fiber",
-            "value_col3": "Fiber"
+            "value_col3": "No"
           }
         },
-        "comparison_row_qC6Dhj": {
+        "comparison_row_8iWUkT": {
           "type": "comparison_row",
           "settings": {
-            "label_col1": "Pre- & Probiotics",
-            "value_col1": "Sometimes",
-            "label_featured": "Prebiotics",
+            "label_col1": "Brain Support",
+            "value_col1": "No",
+            "label_featured": "Brain Support",
             "value_featured": "Yes",
-            "label_col3": "Pre- & Probiotics",
-            "value_col3": "Sometimes"
+            "label_col3": "Brain Support",
+            "value_col3": "No"
           }
         }
       },
       "block_order": [
         "comparison_row_Yn436X",
         "comparison_row_y4kraR",
-        "comparison_row_8iWUkT",
+        "comparison_row_qC6Dhj",
         "comparison_row_tgm97y",
-        "comparison_row_qC6Dhj"
+        "comparison_row_8iWUkT"
       ],
       "name": "Maison Comp Flex",
       "settings": {
