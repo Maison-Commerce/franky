@@ -376,6 +376,7 @@
         },
         "pack_option_GHhn3X": {
           "type": "pack_option",
+          "disabled": true,
           "settings": {
             "pack_name": "1 Pack",
             "bottle_count": 1,
@@ -388,6 +389,7 @@
         },
         "pack_option_wRrbhV": {
           "type": "pack_option",
+          "disabled": true,
           "settings": {
             "pack_name": "2 Packs",
             "bottle_count": 2,
@@ -400,6 +402,7 @@
         },
         "pack_option_wrUnNn": {
           "type": "pack_option",
+          "disabled": true,
           "settings": {
             "pack_name": "3 Packs",
             "bottle_count": 3,
@@ -590,7 +593,6 @@
         ],
         "related_add_button_text": "Add",
         "product_list": [
-          "franky-protein-coffee-test",
           "franky-protein-coffee"
         ],
         "bundle_enabled": true,
