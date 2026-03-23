@@ -172,6 +172,7 @@ img {
 @media(max-width: 1100px){
   .xmaison_gallery-main .swiper-slide {
     aspect-ratio: 1/1;
+    height: auto;
   }
 }
 
