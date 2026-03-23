@@ -114,10 +114,6 @@
 }
 
 .card__best-seller-badge {
-  position: absolute;
-  top: 12px;
-  left: 11px;
-  z-index: 2;
   background-color: #5A4C50;
   border-radius: 90px;
   padding: 2px 8px;
@@ -149,7 +145,7 @@
 }
 
 .card--standard .card__media {
-  background: #F8FAF3;
+  background: #F5F5F6;
   margin: var(--image-padding);
 }
 
