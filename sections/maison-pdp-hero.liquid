@@ -363,6 +363,29 @@
           "id": "variant_id",
           "label": "Variant ID",
           "info": "The variant ID this pack corresponds to"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Pack Image",
+          "info": "Upload a PNG with transparent background. Falls back to product image if empty."
+        }
+      ]
+    },
+    {
+      "type": "bundle_product",
+      "name": "Bundle Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Product Image",
+          "info": "Upload a PNG with transparent background. Falls back to product image if empty."
         }
       ]
     },
@@ -1365,7 +1388,7 @@
                       {% for i in (1..block.settings.bottle_count) %}
                         <img
                           class="xmaison_pack-image"
-                          src="{{ product.featured_image | image_url: width: 100 }}"
+                          src="{{ block.settings.custom_image | default: product.featured_image | image_url: width: 100 }}"
                           alt="{{ block.settings.pack_name }}"
                         >
                       {% endfor %}
@@ -1426,58 +1449,85 @@
             </div>
 
             <!-- Add-on Product Slots -->
-            {% if section.settings.bundle_products != blank %}
+            {%- assign has_bundle_blocks = false -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'bundle_product' -%}
+                {%- assign has_bundle_blocks = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {% if has_bundle_blocks %}
               <script>
                 window.bundleAddonVariants = {
-                  {% for bundle_product in section.settings.bundle_products %}
-                    {{ forloop.index }}: {{ bundle_product.variants.first.id }},
+                  {%- assign bundle_index = 0 -%}
+                  {% for block in section.blocks %}
+                    {% if block.type == 'bundle_product' and block.settings.product != blank %}
+                      {%- assign bundle_index = bundle_index | plus: 1 -%}
+                      {{ bundle_index }}: {{ block.settings.product.variants.first.id }},
+                    {% endif %}
                   {% endfor %}
                 };
                 window.bundleAddonPrices = {
-                  {% for bundle_product in section.settings.bundle_products %}
-                    {{ forloop.index }}: {{ bundle_product.variants.first.price }},
+                  {%- assign bundle_index = 0 -%}
+                  {% for block in section.blocks %}
+                    {% if block.type == 'bundle_product' and block.settings.product != blank %}
+                      {%- assign bundle_index = bundle_index | plus: 1 -%}
+                      {{ bundle_index }}: {{ block.settings.product.variants.first.price }},
+                    {% endif %}
                   {% endfor %}
                 };
               </script>
               <div class="xmaison_bundle-addons">
-                {% for bundle_product in section.settings.bundle_products %}
-                  {%- assign slot_index = forloop.index -%}
-                  <div
-                    class="xmaison_bundle-addon"
-                    :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] > 0 }"
-                  >
-                    <div class="xmaison_bundle-addon-image">
-                      {% if bundle_product.featured_image %}
-                        <img
-                          src="{{ bundle_product.featured_image | image_url: width: 170 }}"
-                          alt="{{ bundle_product.title }}"
-                          loading="lazy"
+                {%- assign slot_index = 0 -%}
+                {% for block in section.blocks %}
+                  {% if block.type == 'bundle_product' and block.settings.product != blank %}
+                    {%- assign slot_index = slot_index | plus: 1 -%}
+                    {%- assign bundle_product = block.settings.product -%}
+                    <div
+                      class="xmaison_bundle-addon"
+                      :class="{ 'xmaison_bundle-addon--added': bundleAddonSlots[{{ slot_index }}] > 0 }"
+                      {{ block.shopify_attributes }}
+                    >
+                      <div class="xmaison_bundle-addon-image">
+                        {% if block.settings.custom_image != blank %}
+                          <img
+                            src="{{ block.settings.custom_image | image_url: width: 170 }}"
+                            alt="{{ bundle_product.title }}"
+                            loading="lazy"
+                          >
+                        {% elsif bundle_product.featured_image %}
+                          <img
+                            src="{{ bundle_product.featured_image | image_url: width: 170 }}"
+                            alt="{{ bundle_product.title }}"
+                            loading="lazy"
+                          >
+                        {% endif %}
+                      </div>
+                      <div class="xmaison_bundle-addon-details">
+                        <span class="xmaison_bundle-addon-title">{{ bundle_product.title }}</span>
+                        {% if bundle_product.description != blank %}
+                          <p class="xmaison_bundle-addon-desc">{{ bundle_product.description | strip_html | truncate: 80 }}</p>
+                        {% endif %}
+                      </div>
+                      <div class="xmaison_bundle-addon-actions">
+                        <button
+                          class="xmaison_bundle-addon-btn"
+                          type="button"
+                          @click="addBundleAddon({{ slot_index }})"
+                          x-show="!(bundleAddonSlots[{{ slot_index }}] > 0)"
+                        >Add</button>
+                        <div
+                          class="xmaison_bundle-qty-picker"
+                          x-show="bundleAddonSlots[{{ slot_index }}] > 0"
                         >
-                      {% endif %}
-                    </div>
-                    <div class="xmaison_bundle-addon-details">
-                      <span class="xmaison_bundle-addon-title">{{ bundle_product.title }}</span>
-                      {% if bundle_product.description != blank %}
-                        <p class="xmaison_bundle-addon-desc">{{ bundle_product.description | strip_html | truncate: 80 }}</p>
-                      {% endif %}
-                    </div>
-                    <div class="xmaison_bundle-addon-actions">
-                      <button
-                        class="xmaison_bundle-addon-btn"
-                        type="button"
-                        @click="addBundleAddon({{ slot_index }})"
-                        x-show="!(bundleAddonSlots[{{ slot_index }}] > 0)"
-                      >Add</button>
-                      <div
-                        class="xmaison_bundle-qty-picker"
-                        x-show="bundleAddonSlots[{{ slot_index }}] > 0"
-                      >
-                        <button class="xmaison_bundle-qty-btn" type="button" @click="decrementBundleAddon({{ slot_index }})">−</button>
-                        <span class="xmaison_bundle-qty-value" x-text="bundleAddonSlots[{{ slot_index }}] || 0"></span>
-                        <button class="xmaison_bundle-qty-btn" type="button" @click="incrementBundleAddon({{ slot_index }})">+</button>
+                          <button class="xmaison_bundle-qty-btn" type="button" @click="decrementBundleAddon({{ slot_index }})">-</button>
+                          <span class="xmaison_bundle-qty-value" x-text="bundleAddonSlots[{{ slot_index }}] || 0"></span>
+                          <button class="xmaison_bundle-qty-btn" type="button" @click="incrementBundleAddon({{ slot_index }})">+</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  {% endif %}
                 {% endfor %}
               </div>
             {% endif %}
