@@ -1377,7 +1377,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Will I crash or get jitters?",
-            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — giving you calm, focused energy with no spike, no jitters, and no mid-morning crash.</p>"
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — giving you calm, focused energy with no spike, no jitters, and no mid-morning crash. With two scoops, you're getting 100mg, roughly the equivalent of a regular cup of coffee.</p>"
           }
         },
         "faq_item_gH3kcf": {
@@ -1394,18 +1394,18 @@
             "answer": "<p>Franky contains milk derived from whey protein concentrate and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have specific dietary concerns.</p>"
           }
         },
-        "faq_item_AkrewH": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I prepare it?",
-            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
-          }
-        },
         "faq_item_x7BFRN": {
           "type": "faq_item",
           "settings": {
             "question": "What does it taste like?",
             "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>"
+          }
+        },
+        "faq_item_AkrewH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I prepare it?",
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
           }
         }
       },
@@ -1415,8 +1415,8 @@
         "faq_item_BUczLQ",
         "faq_item_gH3kcf",
         "faq_item_yrAef3",
-        "faq_item_AkrewH",
-        "faq_item_x7BFRN"
+        "faq_item_x7BFRN",
+        "faq_item_AkrewH"
       ],
       "name": "Maison FAQ",
       "settings": {
