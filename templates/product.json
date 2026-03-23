@@ -1400,6 +1400,13 @@
             "question": "How do I prepare it?",
             "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
           }
+        },
+        "faq_item_x7BFRN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does it taste like?",
+            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>"
+          }
         }
       },
       "block_order": [
@@ -1408,7 +1415,8 @@
         "faq_item_BUczLQ",
         "faq_item_gH3kcf",
         "faq_item_yrAef3",
-        "faq_item_AkrewH"
+        "faq_item_AkrewH",
+        "faq_item_x7BFRN"
       ],
       "name": "Maison FAQ",
       "settings": {
