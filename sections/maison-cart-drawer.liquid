@@ -3,6 +3,13 @@
   "name": "Maison Cart Drawer",
   "settings": [
     {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Free Shipping Threshold ($)",
+      "default": 50,
+      "info": "The minimum order amount (in dollars) for free shipping."
+    },
+    {
       "type": "product_list",
       "id": "upsell_list",
       "label": "Upsell List",
@@ -90,7 +97,7 @@
                 <span>FREE Shipping Unlocked!</span>
               </template>
               <template x-if="progressPercentage < 100">
-                <span>Spend <span x-text="m(10000 - (cart.total_price || 0))"></span> more for FREE shipping</span>
+                <span>Spend <span x-text="m({{ section.settings.free_shipping_threshold | default: 50 }} * 100 - (cart.total_price || 0))"></span> more for FREE shipping</span>
               </template>
             </p>
           </div>
@@ -570,7 +577,7 @@
       },
 
       get progressPercentage() {
-        const freeShippingThreshold = 10000; // ($100.00)
+        const freeShippingThreshold = {{ section.settings.free_shipping_threshold | default: 50 }} * 100;
         return (this.cart.total_price / freeShippingThreshold) * 100;
       },
 
