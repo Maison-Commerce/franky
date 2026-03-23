@@ -1243,7 +1243,7 @@
           "settings": {
             "icon": "shopify://shop_images/Frame1.svg",
             "title": "Fuel Your Body",
-            "description": "Protein prevents energy dips"
+            "description": "Protein that may help reduce energy dips"
           }
         },
         "feature_FaA4b4": {
@@ -1369,7 +1369,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Will it keep me full until lunch?",
-            "answer": "<p>Yes, that's exactly what it's designed for. The combination of 10g whey protein and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, keeping you satisfied and away from unnecessary snacking all morning.</p>"
+            "answer": "<p>Yes, that's exactly what it's designed for. The combination of 10g whey protein and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, and may help keep you satisfied and away from unnecessary snacking throughout the day.</p>"
           }
         },
         "faq_item_BUczLQ": {
