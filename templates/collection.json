@@ -220,22 +220,22 @@
         "faq_item_LKK3EP": {
           "type": "faq_item",
           "settings": {
-            "question": "How much caffeine?",
-            "answer": "<p>Each serving contains about <strong>90–100mg of caffeine</strong>, roughly the same as a standard cup of coffee.</p>"
+            "question": "Will it keep me full until lunch?",
+            "answer": "<p>That's exactly what it's designed for. The combination of 20g of whey protein (two scoops) and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, keeping you satisfied and away from unnecessary snacking until lunch.</p>"
           }
         },
         "faq_item_cL4Fzp": {
           "type": "faq_item",
           "settings": {
-            "question": "Will I crash?",
-            "answer": "<p>No. Franky is formulated to provide <strong>smooth, sustained energy</strong> without the sudden spikes and crashes often associated with traditional coffee.</p>"
+            "question": "Will I crash or get jitters?",
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — and may give you calm, focused energy with no spike, no jitters, and no mid-morning crash. With two scoops, you're getting 100mg, roughly the equivalent of a regular cup of coffee.</p>"
           }
         },
         "faq_item_ghVQGC": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I replace breakfast?",
-            "answer": "<p>Franky can be used as a <strong>light breakfast option</strong> or alongside your morning routine, but it’s not intended to fully replace a balanced meal.</p>"
+            "question": "Is it good for gut health?",
+            "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>"
           }
         },
         "faq_item_cRrQAK": {
