@@ -1009,6 +1009,22 @@ img {
   font-weight: 300;
   color: var(--text-secondary);
   line-height: 1.6;
+  margin: 0 0 8px 0;
+}
+
+.xmaison_accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+.xmaison_accordion-content ul,
+.xmaison_accordion-content ol {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+  padding-left: 20px;
 }
 
 .xmaison_accordion-image {
