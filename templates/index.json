@@ -553,7 +553,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How much protein per serving?",
-            "answer": "<p>Each scoop contains 10g of high-quality protein. For best results, we recommend two scoops per serving - giving you 20g of protein to properly fuel your morning, support muscle recovery, keep you satisfied, and help you reach your weight loss goals.</p>"
+            "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving, giving you 20g of protein that may fuel your morning, support muscle recovery, keep you satisfied, and work toward your weight loss goals.</p>"
           }
         },
         "faq_item_t9Yn8G": {
