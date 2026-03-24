@@ -381,7 +381,7 @@
             "bottle_count": 1,
             "badge_text": "",
             "discount_multiplier": "1",
-            "is_default_selected": false,
+            "is_default_selected": true,
             "show_best_value": false,
             "variant_id": ""
           }
@@ -405,7 +405,7 @@
             "bottle_count": 3,
             "badge_text": "Best Value",
             "discount_multiplier": "0.85",
-            "is_default_selected": true,
+            "is_default_selected": false,
             "show_best_value": true,
             "variant_id": ""
           }
