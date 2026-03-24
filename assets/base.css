@@ -1219,11 +1219,11 @@ button.shopify-payment-button__button--unbranded {
   font-weight: 500;
   line-height: 24px;
   text-decoration: none;
-  color: rgb(var(--color-button-text));
+  color: #FFFFFF;
   transition: background-color 0.3s ease;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background))
+  background-color: #2E432F
 }
 
 .button:before,
@@ -1267,8 +1267,8 @@ button.shopify-payment-button__button--unbranded {
 .button:not([disabled]):hover,
 .customer button:hover,
 .shopify-challenge__button:hover {
-  color: rgb(var(--color-button-text));
-  background-color: rgba(var(--color-button), 0.85);
+  color: #FFFFFF;
+  background-color: #1E2F1F;
   transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden
@@ -1317,9 +1317,9 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--secondary:not([disabled]):hover {
-  color: rgb(var(--color-secondary-button));
-  background-color: rgba(var(--color-secondary-button-text), 1);
-  transition: all .4s cubic-bezier(.4, 0, .2, 1);
+  color: #FFFFFF;
+  background-color: #1E2F1F;
+  transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden
 }
