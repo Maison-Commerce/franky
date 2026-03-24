@@ -248,8 +248,15 @@
         "faq_item_Bbrt93": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I drink daily?",
-            "answer": "<p>Yes. Franky is designed to be enjoyed <strong>daily as part of your morning routine</strong>.</p>"
+            "question": "How do I prepare it?",
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk, almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep, ready in under 60 seconds.</p>"
+          }
+        },
+        "faq_item_rpLtCz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it contain dairy or allergens?",
+            "answer": "<p>Answer text here</p>"
           }
         }
       },
@@ -259,7 +266,8 @@
         "faq_item_cL4Fzp",
         "faq_item_ghVQGC",
         "faq_item_cRrQAK",
-        "faq_item_Bbrt93"
+        "faq_item_Bbrt93",
+        "faq_item_rpLtCz"
       ],
       "name": "Maison FAQ",
       "settings": {
