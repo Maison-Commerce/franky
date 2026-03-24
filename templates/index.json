@@ -624,6 +624,7 @@
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
         "heading_color": "#2F3936",
+        "image": "shopify://shop_images/Review_03.jpg",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
