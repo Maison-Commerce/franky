@@ -507,11 +507,18 @@
     "faq_accordion_dhdXgK": {
       "type": "faq-accordion",
       "blocks": {
+        "faq_item_tMabGg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer a money-back guarantee?",
+            "answer": "<p>Yes! We offer a 100% money-back guarantee on your first order. If you're not completely satisfied within 30 days of delivery, just reach out to us and we'll make it right. You don't need to worry about whether the product has been opened or used, if it's not for you, we've got you covered.</p>"
+          }
+        },
         "faq_item_XNiLT6": {
           "type": "faq_item",
           "settings": {
             "question": "What is your return policy?",
-            "answer": "<p>You may return eligible items within 30 days of delivery for a full refund. Items must be unused, unopened, and in their original packaging. For health and safety reasons, opened or used supplements cannot be returned.</p>"
+            "answer": "<p>You may return eligible first-order items within 30 days of delivery for a full refund. Simply contact us at <a href=\"mailto:support@frankynu.com\">support@frankynu.com</a> or via our live chat before sending anything back, and our team will provide you with a prepaid return label and instructions. For subscription renewals and repeat orders, please ensure you cancel before your next billing date, as orders already in progress are not eligible for a refund.</p>"
           }
         },
         "faq_item_zBpxYJ": {
@@ -523,6 +530,7 @@
         }
       },
       "block_order": [
+        "faq_item_tMabGg",
         "faq_item_XNiLT6",
         "faq_item_zBpxYJ"
       ],
