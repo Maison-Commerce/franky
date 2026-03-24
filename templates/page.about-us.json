@@ -87,7 +87,7 @@
             "image": "shopify://shop_images/Franky_09.png",
             "caption": "",
             "heading": "Our Story",
-            "text": "<p>After experiencing the real difference that wellness made in our own lives, we set out to make healthy living easier and far more enjoyable for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit seamlessly into your daily routine.</p>",
+            "text": "<p>After experiencing the real difference that health & wellness made in our own lives, we set out to make healthy living easier and far more enjoyable for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit seamlessly into your daily routine.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -176,21 +176,21 @@
           "type": "faq_item",
           "settings": {
             "question": "How much protein per serving?",
-            "answer": "<p>Each serving contains 10g of protein.</p>"
+            "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving, giving you 20g of protein that may fuel your morning, support muscle recovery, keep you satisfied, and work toward your weight loss goals.</p>"
           }
         },
         "faq_item_HGWXFH": {
           "type": "faq_item",
           "settings": {
-            "question": "Will this make me jittery?",
-            "answer": "<p>No, our formula is designed to provide steady energy without jitters.</p>"
+            "question": "How do I prepare it?",
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk, almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep, ready in under 60 seconds.</p>"
           }
         },
         "faq_item_MRbEii": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use this for weight loss?",
-            "answer": "<p>Yes, our product can be part of a balanced weight loss plan.</p>"
+            "question": "Does it contain dairy or allergens?",
+            "answer": "<p>Franky contains whey protein concentrate, which is derived from milk, and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have any specific dietary concerns.</p>"
           }
         }
       },
@@ -215,6 +215,7 @@
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
         "heading_color": "#2F3936",
+        "image": "shopify://shop_images/Franky_12_tiny.png",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
