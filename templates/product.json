@@ -1383,7 +1383,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Is it good for gut health?",
-            "answer": "<p>Yes. Every serving contains 3 million CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, reduce bloating, and help maintain a balanced gut microbiome.</p>"
+            "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>"
           }
         },
         "faq_item_x7BFRN": {
@@ -1397,14 +1397,14 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I prepare it?",
-            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond milk or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep, ready in under 60 seconds.</p>"
           }
         },
         "faq_item_yrAef3": {
           "type": "faq_item",
           "settings": {
             "question": "Does it contain dairy or allergens?",
-            "answer": "<p>Franky contains milk derived from whey protein concentrate and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have specific dietary concerns.</p>"
+            "answer": "<p>Franky contains whey protein concentrate, which is derived from milk, and is not suitable for those with a dairy allergy or intolerance. It is <strong>100</strong>% <strong>gluten</strong>-<strong>free</strong> and <strong>non</strong>-<strong>GMO</strong>. Please review the full ingredient list before purchasing if you have any specific dietary concerns.</p>"
           }
         }
       },
