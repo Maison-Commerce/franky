@@ -546,6 +546,97 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
+    "maison_faq_rdrxKm": {
+      "type": "maison-faq",
+      "blocks": {
+        "faq_item_RxqCPq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much protein per serving?",
+            "answer": "<p>Each scoop contains 10g of high-quality protein. For best results, we recommend two scoops per serving - giving you 20g of protein to properly fuel your morning, support muscle recovery, keep you satisfied, and help you reach your weight loss goals.</p>"
+          }
+        },
+        "faq_item_t9Yn8G": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it keep me full until lunch?",
+            "answer": "<p>Yes, that's exactly what it's designed for. The combination of 10g whey protein and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, and may help keep you satisfied and away from unnecessary snacking throughout the day.</p>"
+          }
+        },
+        "faq_item_VC3qHJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I crash or get jitters?",
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — and may give you calm, focused energy with no spike, no jitters, and no mid-morning crash. With two scoops, you're getting 100mg, roughly the equivalent of a regular cup of coffee.</p>"
+          }
+        },
+        "faq_item_8GHqMH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it good for gut health?",
+            "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>"
+          }
+        },
+        "faq_item_8giM6H": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does it taste like?",
+            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>"
+          }
+        },
+        "faq_item_gy7Vqx": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I prepare it?",
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk — almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep — ready in under 60 seconds.</p>"
+          }
+        },
+        "faq_item_BhqqMX": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it contain dairy or allergens?",
+            "answer": "<p>Franky contains whey protein concentrate, which is derived from milk, and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have any specific dietary concerns.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_RxqCPq",
+        "faq_item_t9Yn8G",
+        "faq_item_VC3qHJ",
+        "faq_item_8GHqMH",
+        "faq_item_8giM6H",
+        "faq_item_gy7Vqx",
+        "faq_item_BhqqMX"
+      ],
+      "name": "Maison FAQ",
+      "settings": {
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#FFFFFF",
+        "heading": "<p>Everything You Need To Know <em>about Arose</em></p>",
+        "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#2F3936",
+        "image_width_desktop": 600,
+        "image_border_radius": 16,
+        "faq_gap_desktop": 80,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2F3936",
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "question_gap": 24,
+        "border_color": "rgba(47, 57, 54, 0.2)",
+        "toggle_icon_size": 32
+      }
+    },
     "maison_inst_img_7m9jP7": {
       "type": "maison-inst-img",
       "blocks": {
@@ -635,6 +726,7 @@
     "maison_video_review_jCeGmk",
     "maison_review_slider_RyQYLB",
     "maison_introducing_paL9iF",
+    "maison_faq_rdrxKm",
     "maison_inst_img_7m9jP7"
   ]
 }
