@@ -224,7 +224,7 @@
 
                           {%- for property in item.properties -%}
                             {%- assign property_first_char = property.first | slice: 0 -%}
-                            {%- if property.last != blank and property_first_char != '_' -%}
+                            {%- if property.last != blank and property_first_char != '_' and property.first != 'mc_packs' and property.first != 'mc_bindle' and property.first != 'mc_bundle' -%}
                               <div class="product-option">
                                 <dt>{{ property.first }}:</dt>
                                 <dd>
