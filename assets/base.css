@@ -1186,14 +1186,14 @@ deferred-media {
 .customer button,
 .shopify-challenge__button,
 button.shopify-payment-button__button--unbranded {
-  --shadow-horizontal-offset: var(--buttons-shadow-horizontal-offset);
-  --shadow-vertical-offset: var(--buttons-shadow-vertical-offset);
-  --shadow-blur-radius: var(--buttons-shadow-blur-radius);
-  --shadow-opacity: var(--buttons-shadow-opacity);
-  --shadow-visible: var(--buttons-shadow-visible);
-  --border-offset: var(--buttons-border-offset);
-  --border-opacity: calc(1 - var(--buttons-border-opacity));
-  border-radius: var(--buttons-radius-outset);
+  --shadow-horizontal-offset: 0;
+  --shadow-vertical-offset: 0;
+  --shadow-blur-radius: 0;
+  --shadow-opacity: 0;
+  --shadow-visible: 0;
+  --border-offset: 0;
+  --border-opacity: 0;
+  border-radius: 16px;
   position: relative
 }
 
@@ -1212,13 +1212,15 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 16px 32px;
   cursor: pointer;
-  font: inherit;
-  font-size: 1.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
   text-decoration: none;
   color: rgb(var(--color-button-text));
-  transition: box-shadow var(--duration-short) ease;
+  transition: background-color 0.3s ease;
   -webkit-appearance: none;
   appearance: none;
   background-color: rgba(var(--color-button), var(--alpha-button-background))
@@ -1235,8 +1237,8 @@ button.shopify-payment-button__button--unbranded {
   bottom: 0;
   left: 0;
   z-index: -1;
-  border-radius: var(--buttons-radius-outset);
-  box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity))
+  border-radius: 16px;
+  box-shadow: none
 }
 
 .button:after,
@@ -1245,13 +1247,13 @@ button.shopify-payment-button__button--unbranded {
 .shopify-payment-button__button--unbranded:after {
   content: '';
   position: absolute;
-  top: var(--buttons-border-width);
-  right: var(--buttons-border-width);
-  bottom: var(--buttons-border-width);
-  left: var(--buttons-border-width);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1;
-  border-radius: var(--buttons-radius);
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
+  border-radius: 16px;
+  box-shadow: none;
   transition: box-shadow var(--duration-short) ease
 }
 
@@ -1259,16 +1261,15 @@ button.shopify-payment-button__button--unbranded {
 .customer button:hover::after,
 .shopify-challenge__button:hover::after,
 .shopify-payment-button__button--unbranded:hover::after {
-  --border-offset: 1.3px;
-  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background))
+  box-shadow: none
 }
 
 .button:not([disabled]):hover,
 .customer button:hover,
 .shopify-challenge__button:hover {
-  color: rgb(var(--color-button));
-  background-color: rgba(var(--color-button-text), 1);
-  transition: all .4s cubic-bezier(.4, 0, .2, 1);
+  color: rgb(var(--color-button-text));
+  background-color: rgba(var(--color-button), 0.85);
+  transition: background-color 0.3s ease;
   position: relative;
   overflow: hidden
 }
@@ -1381,12 +1382,12 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .customer button,
 .shopify-challenge__button {
-  font-family: var(--font-button-family);
-  font-size: var(--button-text-size);
-  font-weight: var(--font-button-weight);
-  text-transform: var(--font-button-style);
-  letter-spacing: var(--button-text-space);
-  line-height: calc(1 + .2 / var(--font-body-scale))
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 24px
 }
 
 @media screen and (max-width:749px) {
