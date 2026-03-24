@@ -87,7 +87,7 @@
             "image": "shopify://shop_images/Franky_09.png",
             "caption": "",
             "heading": "Our Story",
-            "text": "<p>After feeling the real difference that wellness made in our lives, we wanted to make healthy living feel easier, and way more enjoyable, for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit right into your daily routine.</p>",
+            "text": "<p>After experiencing the real difference that wellness made in our own lives, we set out to make healthy living easier and far more enjoyable for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit seamlessly into your daily routine.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -168,6 +168,65 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "maison_faq_wbxgnH": {
+      "type": "maison-faq",
+      "blocks": {
+        "faq_item_Y3kTnM": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much protein per serving?",
+            "answer": "<p>Each serving contains 10g of protein.</p>"
+          }
+        },
+        "faq_item_HGWXFH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this make me jittery?",
+            "answer": "<p>No, our formula is designed to provide steady energy without jitters.</p>"
+          }
+        },
+        "faq_item_MRbEii": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use this for weight loss?",
+            "answer": "<p>Yes, our product can be part of a balanced weight loss plan.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Y3kTnM",
+        "faq_item_HGWXFH",
+        "faq_item_MRbEii"
+      ],
+      "name": "Maison FAQ",
+      "settings": {
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#FFFFFF",
+        "heading": "<p>Everything You Need To Know about<em> Franky</em></p>",
+        "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#2F3936",
+        "image_width_desktop": 600,
+        "image_border_radius": 16,
+        "faq_gap_desktop": 80,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#2F3936",
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "question_gap": 24,
+        "border_color": "rgba(47, 57, 54, 0.2)",
+        "toggle_icon_size": 32
+      }
     }
   },
   "order": [
@@ -175,6 +234,7 @@
     "image_banner_LpnHdw",
     "rich_text_pxGm8H",
     "multirow_c9JFtJ",
-    "rich_text_AzgJDk"
+    "rich_text_AzgJDk",
+    "maison_faq_wbxgnH"
   ]
 }
