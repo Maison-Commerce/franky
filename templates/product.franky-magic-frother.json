@@ -484,10 +484,9 @@
         },
         "trust_badge_6RkdBR": {
           "type": "trust_badge",
-          "disabled": true,
           "settings": {
             "icon_type": "returns",
-            "badge_text": "Simple Returns"
+            "badge_text": "30 Day Money Back Guarantee"
           }
         },
         "trust_badge_RY6LQE": {
