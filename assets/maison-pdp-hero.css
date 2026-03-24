@@ -772,6 +772,21 @@ img {
   text-decoration: line-through;
 }
 
+.xmaison_pdp-price-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: rgba(255, 201, 157, 0.70);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-brand-1-1800);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
 .xmaison_stock-status {
   display: flex;
   align-items: center;
