@@ -383,7 +383,8 @@
             "discount_multiplier": "1",
             "is_default_selected": true,
             "show_best_value": false,
-            "variant_id": ""
+            "variant_id": "",
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack.png"
           }
         },
         "pack_option_wRrbhV": {
@@ -395,7 +396,8 @@
             "discount_multiplier": "0.9",
             "is_default_selected": false,
             "show_best_value": false,
-            "variant_id": ""
+            "variant_id": "",
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack.png"
           }
         },
         "pack_option_wrUnNn": {
@@ -407,7 +409,8 @@
             "discount_multiplier": "0.85",
             "is_default_selected": false,
             "show_best_value": true,
-            "variant_id": ""
+            "variant_id": "",
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack.png"
           }
         },
         "customer_video_WHqD7f": {
