@@ -1367,8 +1367,13 @@
         <!-- Price Display -->
         <div class="xmaison_pdp-price">
           <span class="xmaison_pdp-price-current" x-text="formatMoney(isSubscription ? subscriptionPrice : onetimePrice)"></span>
-          <span class="xmaison_pdp-price-compare" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
-          <span class="xmaison_pdp-price-save" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price && (isSubscription ? subscriptionPrice : onetimePrice) > 0" x-text="'YOU SAVE ' + Math.round((1 - (isSubscription ? subscriptionPrice : onetimePrice) / (variant?.compare_at_price * quantity)) * 100) + '%'"></span>
+          {% if section.settings.section_mode_default == 'classic' %}
+            <span class="xmaison_pdp-price-compare" x-show="classicSavePercent > 0" x-text="formatMoney((variant?.price || product.price) * quantity)"></span>
+            <span class="xmaison_pdp-price-save" x-show="classicSavePercent > 0" x-text="'YOU SAVE ' + classicSavePercent + '%'"></span>
+          {% else %}
+            <span class="xmaison_pdp-price-compare" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
+            <span class="xmaison_pdp-price-save" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price && (isSubscription ? subscriptionPrice : onetimePrice) > 0" x-text="'YOU SAVE ' + Math.round((1 - (isSubscription ? subscriptionPrice : onetimePrice) / (variant?.compare_at_price * quantity)) * 100) + '%'"></span>
+          {% endif %}
         </div>
 
         <!-- Variant Selector -->
