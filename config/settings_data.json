@@ -407,7 +407,7 @@
           "background": "#ffffff",
           "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 75%)",
           "text": "#1c1c1c",
-          "button": "#1c1c1c",
+          "button": "#3b2b2f",
           "button_label": "#ffffff",
           "secondary_button_label": "#585858",
           "shadow": "#000000"
@@ -418,7 +418,7 @@
           "background": "#f2f2f2",
           "background_gradient": "",
           "text": "#1c1c1c",
-          "button": "#1c1c1c",
+          "button": "#3b2b2f",
           "button_label": "#ffffff",
           "secondary_button_label": "#1c1c1c",
           "shadow": "#1c1c1c"
@@ -440,8 +440,8 @@
           "background": "#1c1c1c",
           "background_gradient": "linear-gradient(310deg, rgba(0, 0, 0, 1), rgba(28, 28, 28, 1) 100%)",
           "text": "#f2f2f2",
-          "button": "#ffffff",
-          "button_label": "#1c1c1c",
+          "button": "#3b2b2f",
+          "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#ffffff"
         }
