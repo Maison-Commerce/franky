@@ -201,6 +201,7 @@
       "id": "section_mode_default",
       "label": "Default Section Mode",
       "options": [
+        { "value": "classic", "label": "Classic" },
         { "value": "packs", "label": "Packs" },
         { "value": "bundle", "label": "Bundle" }
       ],
@@ -732,6 +733,10 @@
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
+  {% if section.settings.section_mode_default == 'classic' %}
+    window.defaultPackQuantity = 1;
+    window.defaultPackDiscount = 1;
+  {% endif %}
 
   console.log('[Subscription Debug] sellingPlanId:', window.sellingPlanId);
   console.log('[Subscription Debug] subscriptionMultiplier:', window.subscriptionMultiplier);
@@ -795,6 +800,9 @@
         if (window.sectionMode === 'bundle') {
           return this.bundleCalculatedPrice;
         }
+        if (window.sectionMode === 'classic') {
+          return (this.variant?.price || this.product.price) * this.quantity;
+        }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
         const fullPrice = basePrice * this.quantity;
@@ -841,6 +849,9 @@
       get subscriptionPrice() {
         if (window.sectionMode === 'bundle') {
           return Math.round(this.bundleCalculatedPrice * this.subscriptionMultiplier);
+        }
+        if (window.sectionMode === 'classic') {
+          return Math.round((this.variant?.price || this.product.price) * this.quantity * this.subscriptionMultiplier);
         }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
@@ -937,7 +948,7 @@
 
         if (hasBundleAddons) {
           mainItem.properties = { mc_bundle: bundleId };
-        } else if (!isRelated) {
+        } else if (!isRelated && window.sectionMode !== 'classic') {
           mainItem.properties = { mc_packs: 'packs_true' };
         }
 
@@ -1368,8 +1379,36 @@
           {% endif %}
         {% endunless %}
 
+        <!-- Classic Quantity Selector -->
+        {% if section.settings.section_mode_default == 'classic' %}
+          <div class="xmaison_classic-quantity-group">
+            <div class="xmaison_option-label">
+              <span class="xmaison_option-label-title">Quantity:</span>
+            </div>
+            <div class="xmaison_classic-quantity">
+              <button type="button" class="xmaison_qty-btn xmaison_qty-minus" @click="if (quantity > 1) quantity--" :disabled="quantity <= 1">
+                <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <input
+                type="number"
+                class="xmaison_qty-input"
+                :value="quantity"
+                @change="quantity = Math.max(1, parseInt($event.target.value) || 1)"
+                min="1"
+              >
+              <button type="button" class="xmaison_qty-btn xmaison_qty-plus" @click="quantity++">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 7H13M7 1V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        {% endif %}
+
         <!-- Pack Size Selector -->
-        {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
+        {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' or section.settings.section_mode_default == 'classic' %}
         {% if section.settings.pack_size_label != blank %}
           <div class="xmaison_pack-size-group">
             <div class="xmaison_option-label">

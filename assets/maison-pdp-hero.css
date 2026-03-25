@@ -431,6 +431,69 @@ img {
 }
 
 /* ==========================================================================
+   Classic Quantity Selector
+   ========================================================================== */
+.xmaison_classic-quantity-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.xmaison_classic-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--color-brand-1-400, #D9D5D6);
+  border-radius: 14px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.xmaison_qty-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-brand-1-1800, #3B2B2F);
+  transition: background-color 0.2s ease;
+}
+
+.xmaison_qty-btn:hover {
+  background-color: var(--color-brand-1-200, #F5F2F3);
+}
+
+.xmaison_qty-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.xmaison_qty-input {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--color-brand-1-400, #D9D5D6);
+  border-right: 1px solid var(--color-brand-1-400, #D9D5D6);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-brand-1-1800, #3B2B2F);
+  background: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.xmaison_qty-input::-webkit-outer-spin-button,
+.xmaison_qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ==========================================================================
    Pack Size Selector
    ========================================================================== */
 .xmaison_pack-size-group {
