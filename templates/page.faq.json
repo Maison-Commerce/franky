@@ -671,7 +671,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What payment methods do you accept?",
-            "answer": "<p>We accept Visa, Mastercard, American Express, Discover, Diners Club, JCB, PayPal, Shop Pay, Apple Pay, and Google Pay. All payments are processed securely through Shopify Payments.</p>"
+            "answer": "<p>We accept Visa, Mastercard, American Express, Discover, Diners Club, JCB, Shop Pay, Apple Pay, and Google Pay, PayPal, Venmo and Amazon Pay. All payments are processed securely through Shopify Payments.</p>"
           }
         },
         "faq_item_w9MXD6": {
@@ -890,18 +890,18 @@
         "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
-        "heading_color": "#2F3936",
+        "heading_color": "#2f3936",
         "image": "shopify://shop_images/Franky_02_59adcf53-434a-4b64-b86c-d6e1f5bd5666.png",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
         "question_font_size_desktop": 18,
         "question_font_size_mobile": 16,
-        "question_color": "#2F3936",
+        "question_color": "#2f3936",
         "question_padding_desktop": 20,
         "question_padding_mobile": 18,
         "question_gap": 24,
-        "border_color": "rgba(47, 57, 54, 0.2)",
+        "border_color": "#2f393633",
         "toggle_icon_size": 32
       }
     }
