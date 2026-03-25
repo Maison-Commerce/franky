@@ -1356,7 +1356,7 @@
         </div>
 
         <!-- Variant Selector -->
-        {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
+        {% unless section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' or section.settings.section_mode_default == 'classic' %}
           {% if product.variants.size > 0 %}
             <div class="xmaison_option-group">
               <div class="xmaison_option-label">
