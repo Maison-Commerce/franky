@@ -163,6 +163,13 @@
     "faq_accordion_KpFrMh": {
       "type": "faq-accordion",
       "blocks": {
+        "faq_item_bPQMaj": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes AROSE different from other protein coffees?",
+            "answer": ""
+          }
+        },
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
@@ -187,12 +194,13 @@
         "faq_item_kEt6g4": {
           "type": "faq_item",
           "settings": {
-            "question": "What is the shelf life of protein coffee?",
-            "answer": "<p>Our Instant Protein Coffee has a shelf life of 2 years from the date of manufacture. Once opened, make sure to seal the bag tightly and store it in a cool, dry place to maintain freshness and quality.</p>"
+            "question": "What is NOT in Franky Protein Coffee?",
+            "answer": "<p>Let's be frank: what we leave out matters just as much as what we put in.</p><p></p><p><strong>No Sugar. No Fillers. No Compromises.</strong></p><ul><li><strong>Sugar:</strong> 0g per serving. Period.</li><li><strong>Sucrose:</strong> No table sugar hiding under a different name.</li><li><strong>Stevia:</strong> We use Monk Fruit Extract and Fermented Reb M instead, for a cleaner, smoother sweetness with zero bitter aftertaste.</li><li><strong>Dextrose & Maltodextrin:</strong> No cheap filler carbs that spike your blood sugar.</li><li><strong>Corn Syrup or High-Fructose Corn Syrup:</strong> None. Not even a trace.</li><li><strong>Seed Oils:</strong> No canola, soybean, sunflower, or other inflammatory oils.</li><li><strong>Artificial Sweeteners:</strong> No aspartame, sucralose, or acesulfame-K.</li><li><strong>Artificial Colors or Flavors:</strong> Nothing synthetic. Ever.</li><li><strong>Fillers or Proprietary Blends:</strong> Every ingredient is listed with its exact dose. No mystery formulas, no hidden shortcuts.</li><li><strong>Gluten:</strong> 100% gluten-free.</li><li><strong>Soy:</strong> Completely soy-free.</li><li><strong>GMOs:</strong> Non-GMO verified.</li><li><strong>Pesticides:</strong> Made with organically grown ingredients.</li><li><strong>Heavy Metals:</strong> Every batch is third-party lab tested for purity and safety.</li></ul>"
           }
         }
       },
       "block_order": [
+        "faq_item_bPQMaj",
         "faq_item_kJtwLa",
         "faq_item_FnK3tU",
         "faq_item_p6JKzb",
