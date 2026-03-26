@@ -573,7 +573,7 @@
         "best_value_text": "Best Value",
         "selling_plan_id": "",
         "subscription_multiplier": "0.8",
-        "subscription_default_selected": true,
+        "subscription_default_selected": false,
         "subscription_header_label": "SUBSCRIBE AND SAVE 20%",
         "subscribe_title": "Subscribe & Save",
         "subscribe_save_badge": "You Save 20%",
