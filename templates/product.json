@@ -1361,6 +1361,13 @@
     "maison_faq_QLFLjc": {
       "type": "maison-faq",
       "blocks": {
+        "faq_item_acLwN7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is NOT in Franky Protein Coffee?",
+            "answer": "<p>Let's be frank: what we leave out matters just as much as what we put in.</p><p><strong>No Sugar. No Fillers. No Compromises.</strong></p><ul><li><strong>Sugar:</strong> 0g per serving. Period.</li><li><strong>Sucrose:</strong> No table sugar hiding under a different name.</li><li><strong>Stevia:</strong> We use Monk Fruit Extract and Fermented Reb M instead, for a cleaner, smoother sweetness with zero bitter aftertaste.</li><li><strong>Dextrose & Maltodextrin:</strong> No cheap filler carbs that spike your blood sugar.</li><li><strong>Corn Syrup or High-Fructose Corn Syrup:</strong> None. Not even a trace.</li><li><strong>Seed Oils:</strong> No canola, soybean, sunflower, or other inflammatory oils.</li><li><strong>Artificial Sweeteners:</strong> No aspartame, sucralose, or acesulfame-K.</li><li><strong>Artificial Colors or Flavors:</strong> Nothing synthetic. Ever.</li><li><strong>Fillers or Proprietary Blends:</strong> Every ingredient is listed with its exact dose. No mystery formulas, no hidden shortcuts.</li><li><strong>Gluten:</strong> 100% gluten-free.</li><li><strong>Soy:</strong> Completely soy-free.</li><li><strong>GMOs:</strong> Non-GMO verified.</li><li><strong>Pesticides:</strong> Made with organically grown ingredients.</li><li><strong>Heavy Metals:</strong> Every batch is third-party lab tested for purity and safety.</li></ul><p>You deserve to know exactly what you're putting in your body: and exactly what you're not. That's why our label is fully transparent and our formula stays clean, always.</p>"
+          }
+        },
         "faq_item_Gc3cd8": {
           "type": "faq_item",
           "settings": {
@@ -1412,6 +1419,7 @@
         }
       },
       "block_order": [
+        "faq_item_acLwN7",
         "faq_item_Gc3cd8",
         "faq_item_Ermbtx",
         "faq_item_BUczLQ",
