@@ -608,6 +608,7 @@
         "faq_item_gy7Vqx",
         "faq_item_BhqqMX"
       ],
+      "disabled": true,
       "name": "Maison FAQ",
       "settings": {
         "padding_top_desktop": 56,
@@ -725,12 +726,12 @@
         "instafeed_app_block_rpM6Hx": {
           "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
-            "title": "",
+            "title": "Join the FRANKY Community",
             "title_color": "",
             "title_size_v2": 0,
             "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
+            "instafeed_margin_top": 11,
+            "instafeed_margin_bottom": 13,
             "instafeed_margin_sides": 0,
             "show_instagram_link": false,
             "link_alignment": "left",
