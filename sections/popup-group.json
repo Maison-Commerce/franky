@@ -56,7 +56,8 @@
         "flo_colors_text_bg": "#f0eeff",
         "flo_bg_transparent": true,
         "flo_radius": 6,
-        "mobile_disabled": true
+        "mobile_disabled": true,
+        "mobile_popup_position": "center"
       }
     },
     "popup_promo_a8X9bk": {
@@ -100,11 +101,41 @@
         "colors_background": "#ffffff",
         "colors_text": "#1a1b18"
       }
+    },
+    "17745491640a5f500f": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_MXeUEA": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Join the FRANKY Community",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_MXeUEA"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "popup_pro_KtXe6n",
     "popup_promo_a8X9bk",
-    "popup_promo_CakT6x"
+    "popup_promo_CakT6x",
+    "17745491640a5f500f"
   ]
 }
