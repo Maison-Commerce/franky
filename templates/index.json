@@ -720,6 +720,128 @@
         "slider_speed": 30
       }
     },
+    "maison_advantages_jxp6wc": {
+      "type": "maison-advantages",
+      "blocks": {
+        "advantage_eT7yMX": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/wafwafwf.png",
+            "title": "No Sugar",
+            "description": "<p>Sweetened with natural monk fruit. Zero spike, zero crash.</p>"
+          }
+        },
+        "advantage_hbmiCG": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/akjbfakbgwkgabw.png",
+            "title": "No artificial fillers",
+            "description": "<p>Every ingredient has a job. Nothing comes along for the ride.</p>"
+          }
+        },
+        "advantage_pJKG9R": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/wafqgagww.png",
+            "title": "Complete Morning Fuel",
+            "description": "<p>Replaces your coffee and breakfast in one simple, satisfying cup.</p>"
+          }
+        },
+        "advantage_mfXd8a": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/awgagwwgw.png",
+            "title": "Clean, Transparent Formula",
+            "description": "<p>No fillers or added sugar. Just what works.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "advantage_eT7yMX",
+        "advantage_hbmiCG",
+        "advantage_pJKG9R",
+        "advantage_mfXd8a"
+      ],
+      "name": "Maison Advantages",
+      "settings": {
+        "heading": "<p>Let's be Frank, we said no to a lot of things.</p>",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 1), rgba(222, 234, 242, 1) 100%)",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "card_bg_color": "#ffffff",
+        "card_padding": 24,
+        "card_gap_desktop": 24,
+        "card_gap_mobile": 18,
+        "icon_size_desktop": 60,
+        "icon_size_mobile": 44,
+        "icon_content_gap": 12,
+        "title_font_size_desktop": 20,
+        "title_font_size_mobile": 18,
+        "title_color": "#3b2b2f",
+        "description_font_size_desktop": 16,
+        "description_font_size_mobile": 14,
+        "description_color": "#3b2b2f"
+      }
+    },
+    "image_banner_6fQpXj": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_EPLWXN": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_yqFpM4": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_tbycqN": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_EPLWXN",
+        "text_yqFpM4",
+        "buttons_tbycqN"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Franky_15.jpg",
+        "image_2": "shopify://shop_images/Milkfrohter_01_tiny.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "17745490023dd80377": {
       "type": "apps",
       "blocks": {
@@ -760,6 +882,8 @@
     "maison_introducing_paL9iF",
     "maison_faq_rdrxKm",
     "maison_inst_img_7m9jP7",
+    "maison_advantages_jxp6wc",
+    "image_banner_6fQpXj",
     "17745490023dd80377"
   ]
 }
