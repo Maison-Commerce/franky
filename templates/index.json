@@ -728,7 +728,15 @@
           "settings": {
             "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
             "title": "No Sugar",
-            "description": "<p>Og per serving. Period. Sweetened with natural monk fruit. Zero spike, zero crash.</p>"
+            "description": "<p>Og per serving. Period. Zero spike, zero crash.</p>"
+          }
+        },
+        "advantage_PMCap3": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No Artificial Sweetners",
+            "description": "<p>Sweetened with natural monk fruit. No stevia, sucralose, dextrose, or maltodextrin.</p>"
           }
         },
         "advantage_hbmiCG": {
@@ -762,23 +770,15 @@
             "title": "No unverified claims",
             "description": "<p>Third party lab tested. Every single batch.</p>"
           }
-        },
-        "advantage_PMCap3": {
-          "type": "advantage",
-          "settings": {
-            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
-            "title": "No pesticides",
-            "description": "<p>All organic ingredients. Clean from source to scoop.</p>"
-          }
         }
       },
       "block_order": [
         "advantage_eT7yMX",
+        "advantage_PMCap3",
         "advantage_hbmiCG",
         "advantage_pJKG9R",
         "advantage_mfXd8a",
-        "advantage_NFyzmg",
-        "advantage_PMCap3"
+        "advantage_NFyzmg"
       ],
       "name": "Maison Advantages",
       "settings": {
