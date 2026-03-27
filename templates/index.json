@@ -726,15 +726,15 @@
         "advantage_eT7yMX": {
           "type": "advantage",
           "settings": {
-            "icon": "shopify://shop_images/wafwafwf.png",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
             "title": "No Sugar",
-            "description": "<p>Sweetened with natural monk fruit. Zero spike, zero crash.</p>"
+            "description": "<p>Og per serving. Period. Sweetened with natural monk fruit. Zero spike, zero crash.</p>"
           }
         },
         "advantage_hbmiCG": {
           "type": "advantage",
           "settings": {
-            "icon": "shopify://shop_images/akjbfakbgwkgabw.png",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
             "title": "No artificial fillers",
             "description": "<p>Every ingredient has a job. Nothing comes along for the ride.</p>"
           }
@@ -742,17 +742,17 @@
         "advantage_pJKG9R": {
           "type": "advantage",
           "settings": {
-            "icon": "shopify://shop_images/wafqgagww.png",
-            "title": "Complete Morning Fuel",
-            "description": "<p>Replaces your coffee and breakfast in one simple, satisfying cup.</p>"
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No artificial flavors or colors.",
+            "description": "<p>We never use artificial flavors or colors in our products. Real taste. Full stop.</p>"
           }
         },
         "advantage_mfXd8a": {
           "type": "advantage",
           "settings": {
-            "icon": "shopify://shop_images/awgagwwgw.png",
-            "title": "Clean, Transparent Formula",
-            "description": "<p>No fillers or added sugar. Just what works.</p>"
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No gluten. No soy.",
+            "description": "<p>Clean for sensitive stomachs. No compromises.</p>"
           }
         }
       },
