@@ -792,56 +792,6 @@
         "description_color": "#3b2b2f"
       }
     },
-    "image_banner_6fQpXj": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_EPLWXN": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_yqFpM4": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_tbycqN": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_EPLWXN",
-        "text_yqFpM4",
-        "buttons_tbycqN"
-      ],
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Franky_15.jpg",
-        "image_2": "shopify://shop_images/Milkfrohter_01_tiny.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "17745490023dd80377": {
       "type": "apps",
       "blocks": {
@@ -883,7 +833,6 @@
     "maison_faq_rdrxKm",
     "maison_inst_img_7m9jP7",
     "maison_advantages_jxp6wc",
-    "image_banner_6fQpXj",
     "17745490023dd80377"
   ]
 }
