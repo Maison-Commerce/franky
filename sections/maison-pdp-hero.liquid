@@ -796,27 +796,12 @@
         return packDiscountedTotal;
       },
 
-      get classicDiscountMultiplier() {
-        if (this.quantity >= 4) return 0.80;
-        if (this.quantity >= 3) return 0.85;
-        if (this.quantity >= 2) return 0.90;
-        return 1;
-      },
-
-      get classicSavePercent() {
-        if (this.quantity >= 4) return 20;
-        if (this.quantity >= 3) return 15;
-        if (this.quantity >= 2) return 10;
-        return 0;
-      },
-
       get onetimePrice() {
         if (window.sectionMode === 'bundle') {
           return this.bundleCalculatedPrice;
         }
         if (window.sectionMode === 'classic') {
-          const basePrice = this.variant?.price || this.product.price;
-          return Math.round(basePrice * this.quantity * this.classicDiscountMultiplier);
+          return (this.variant?.price || this.product.price) * this.quantity;
         }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
@@ -866,8 +851,7 @@
           return Math.round(this.bundleCalculatedPrice * this.subscriptionMultiplier);
         }
         if (window.sectionMode === 'classic') {
-          const basePrice = this.variant?.price || this.product.price;
-          return Math.round(basePrice * this.quantity * this.classicDiscountMultiplier * this.subscriptionMultiplier);
+          return Math.round((this.variant?.price || this.product.price) * this.quantity * this.subscriptionMultiplier);
         }
         const basePrice = this.variant?.price || this.product.price;
         const packDiscount = this.currentPackDiscount || 1;
@@ -1368,8 +1352,6 @@
         <div class="xmaison_pdp-price">
           <span class="xmaison_pdp-price-current" x-text="formatMoney(isSubscription ? subscriptionPrice : onetimePrice)"></span>
           {% if section.settings.section_mode_default == 'classic' %}
-            <span class="xmaison_pdp-price-compare" x-show="classicSavePercent > 0" x-text="formatMoney((variant?.price || product.price) * quantity)"></span>
-            <span class="xmaison_pdp-price-save" x-show="classicSavePercent > 0" x-text="'YOU SAVE ' + classicSavePercent + '%'"></span>
           {% else %}
             <span class="xmaison_pdp-price-compare" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
             <span class="xmaison_pdp-price-save" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price && (isSubscription ? subscriptionPrice : onetimePrice) > 0" x-text="'YOU SAVE ' + Math.round((1 - (isSubscription ? subscriptionPrice : onetimePrice) / (variant?.compare_at_price * quantity)) * 100) + '%'"></span>
