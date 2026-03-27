@@ -163,13 +163,6 @@
     "faq_accordion_KpFrMh": {
       "type": "faq-accordion",
       "blocks": {
-        "faq_item_bPQMaj": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What makes AROSE different from other protein coffees?",
-            "answer": ""
-          }
-        },
         "faq_item_kJtwLa": {
           "type": "faq_item",
           "settings": {
@@ -200,7 +193,6 @@
         }
       },
       "block_order": [
-        "faq_item_bPQMaj",
         "faq_item_kJtwLa",
         "faq_item_FnK3tU",
         "faq_item_p6JKzb",
