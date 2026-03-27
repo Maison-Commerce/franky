@@ -751,8 +751,8 @@
           "type": "advantage",
           "settings": {
             "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
-            "title": "No artificial flavors or colors",
-            "description": "<p>We never use artificial flavors or colors in our products. Real taste. Full stop.</p>"
+            "title": "No artificial colors",
+            "description": "<p>We never use artificial colors in our products. Real ingredients. Full stop.</p>"
           }
         },
         "advantage_mfXd8a": {
