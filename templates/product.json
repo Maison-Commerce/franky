@@ -1451,6 +1451,13 @@
     "maison_faq_QLFLjc": {
       "type": "maison-faq",
       "blocks": {
+        "faq_item_x7BFRN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does it taste like?",
+            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>"
+          }
+        },
         "faq_item_acLwN7": {
           "type": "faq_item",
           "settings": {
@@ -1486,13 +1493,6 @@
             "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>"
           }
         },
-        "faq_item_x7BFRN": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What does it taste like?",
-            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>"
-          }
-        },
         "faq_item_AkrewH": {
           "type": "faq_item",
           "settings": {
@@ -1509,12 +1509,12 @@
         }
       },
       "block_order": [
+        "faq_item_x7BFRN",
         "faq_item_acLwN7",
         "faq_item_Gc3cd8",
         "faq_item_Ermbtx",
         "faq_item_BUczLQ",
         "faq_item_gH3kcf",
-        "faq_item_x7BFRN",
         "faq_item_AkrewH",
         "faq_item_yrAef3"
       ],
