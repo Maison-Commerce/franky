@@ -702,80 +702,6 @@
         "padding_right_mobile": 16
       }
     },
-    "maison_introducing_LXBj6d": {
-      "type": "maison-introducing",
-      "blocks": {
-        "feature_X3Mg7X": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame1.svg",
-            "title": "Sustained Energy",
-            "description": "Real coffee and protein for steady energy. No spike or crash."
-          }
-        },
-        "feature_pcaLBH": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
-            "title": "Focus & Mental Clarity",
-            "description": "Sharpens focus & keeps you locked in during work and workouts."
-          }
-        },
-        "feature_7iLXFG": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/vjasehgth3y432.png",
-            "title": "10g Protein Power",
-            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want."
-          }
-        }
-      },
-      "block_order": [
-        "feature_X3Mg7X",
-        "feature_pcaLBH",
-        "feature_7iLXFG"
-      ],
-      "name": "Maison Introducing",
-      "settings": {
-        "row": "row-reverse",
-        "mobile_image_position": "bottom",
-        "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_08.png",
-        "product_image_mobile": "shopify://shop_images/Franky_08.png",
-        "heading": "<p>Finally, a Coffee That Works With You</p>",
-        "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
-        "social_proof_text": "",
-        "social_proof_count": "",
-        "social_proof_suffix": "",
-        "button_text": "Upgrade My Morning",
-        "button_link": "",
-        "padding_top_desktop": 70,
-        "padding_bottom_desktop": 70,
-        "padding_left_desktop": 60,
-        "padding_right_desktop": 60,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 32,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "section_bg_color": "#fcfeff",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_color": "#3b2b2f",
-        "feature_title_font_size_desktop": 18,
-        "feature_title_font_size_mobile": 14,
-        "feature_description_font_size_desktop": 18,
-        "feature_description_font_size_mobile": 16,
-        "feature_text_color": "#3b2b2f",
-        "social_proof_font_size": 12,
-        "social_proof_color": "#3b2b2f",
-        "button_bg_color": "#3b2b2f",
-        "button_text_color": "#fbfbfb",
-        "button_font_size_desktop": 16,
-        "button_font_size_mobile": 14,
-        "trust_badge_font_size": 14,
-        "trust_badge_color": "#3b2b2f"
-      }
-    },
     "maison_badge_list_Qxnb7C": {
       "type": "maison-badge-list",
       "blocks": {
@@ -885,6 +811,7 @@
         "feature_TfKCVp",
         "feature_Y8nRhj"
       ],
+      "disabled": true,
       "name": "Maison Introducing",
       "settings": {
         "row": "row",
@@ -1029,6 +956,181 @@
         "row_label_color": "#3b2b2f",
         "row_value_color_competitor": "#92898b",
         "row_value_color_featured": "#3b2b2f"
+      }
+    },
+    "maison_introducing_xjgRKK": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_dpKWdQ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Fuel Your Body",
+            "description": "Protein prevents energy dips"
+          }
+        },
+        "feature_FaA4b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
+            "title": "Energize Your Mind",
+            "description": "Clean caffeine supports focus"
+          }
+        },
+        "feature_8kQiwH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "Stay Balanced",
+            "description": "Functional support for digestion"
+          }
+        },
+        "trust_badge_ThXTfq": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/Shipment-Return--Streamline-Plump-Remix.svg",
+            "text": "Simple Returns"
+          }
+        },
+        "trust_badge_d3Xgzn": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/3vesvsebdb.svg",
+            "text": "Secure checkout"
+          }
+        },
+        "trust_badge_mrWmX7": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/bakjfbajkvbjkwa.svg",
+            "text": "1.2M sold last year"
+          }
+        }
+      },
+      "block_order": [
+        "feature_dpKWdQ",
+        "feature_FaA4b4",
+        "feature_8kQiwH",
+        "trust_badge_ThXTfq",
+        "trust_badge_d3Xgzn",
+        "trust_badge_mrWmX7"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row-reverse",
+        "mobile_image_position": "top",
+        "text_align": "center",
+        "product_image_desktop": "shopify://shop_images/Milkfrohter_01_tiny.png",
+        "product_image_mobile": "shopify://shop_images/Milkfrohter_01_tiny.png",
+        "heading": "<p>The Science Behind Steady Energy</p>",
+        "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
+        "social_proof_text": "",
+        "social_proof_count": "",
+        "social_proof_suffix": "",
+        "button_text": "Upgrade My Morning",
+        "button_link": "shopify://collections/all",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
+      }
+    },
+    "maison_introducing_LXBj6d": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_X3Mg7X": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Sustained Energy",
+            "description": "Real coffee and protein for steady energy. No spike or crash."
+          }
+        },
+        "feature_pcaLBH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
+            "title": "Focus & Mental Clarity",
+            "description": "Sharpens focus & keeps you locked in during work and workouts."
+          }
+        },
+        "feature_7iLXFG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "10g Protein Power",
+            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want."
+          }
+        }
+      },
+      "block_order": [
+        "feature_X3Mg7X",
+        "feature_pcaLBH",
+        "feature_7iLXFG"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row",
+        "mobile_image_position": "bottom",
+        "text_align": "center",
+        "product_image_desktop": "shopify://shop_images/Franky_08.png",
+        "product_image_mobile": "shopify://shop_images/Franky_08.png",
+        "heading": "<p>Finally, a Coffee That Works With You</p>",
+        "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
+        "social_proof_text": "",
+        "social_proof_count": "",
+        "social_proof_suffix": "",
+        "button_text": "Upgrade My Morning",
+        "button_link": "",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
       }
     },
     "maison_video_review_UWqfGU": {
@@ -1239,107 +1341,6 @@
         "card_gap_mobile": 12,
         "card_width_desktop": 342,
         "card_width_mobile": 256
-      }
-    },
-    "maison_introducing_xjgRKK": {
-      "type": "maison-introducing",
-      "blocks": {
-        "feature_dpKWdQ": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame1.svg",
-            "title": "Fuel Your Body",
-            "description": "Protein prevents energy dips"
-          }
-        },
-        "feature_FaA4b4": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
-            "title": "Energize Your Mind",
-            "description": "Clean caffeine supports focus"
-          }
-        },
-        "feature_8kQiwH": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/vjasehgth3y432.png",
-            "title": "Stay Balanced",
-            "description": "Functional support for digestion"
-          }
-        },
-        "trust_badge_ThXTfq": {
-          "type": "trust_badge",
-          "disabled": true,
-          "settings": {
-            "icon": "shopify://shop_images/Shipment-Return--Streamline-Plump-Remix.svg",
-            "text": "Simple Returns"
-          }
-        },
-        "trust_badge_d3Xgzn": {
-          "type": "trust_badge",
-          "disabled": true,
-          "settings": {
-            "icon": "shopify://shop_images/3vesvsebdb.svg",
-            "text": "Secure checkout"
-          }
-        },
-        "trust_badge_mrWmX7": {
-          "type": "trust_badge",
-          "disabled": true,
-          "settings": {
-            "icon": "shopify://shop_images/bakjfbajkvbjkwa.svg",
-            "text": "1.2M sold last year"
-          }
-        }
-      },
-      "block_order": [
-        "feature_dpKWdQ",
-        "feature_FaA4b4",
-        "feature_8kQiwH",
-        "trust_badge_ThXTfq",
-        "trust_badge_d3Xgzn",
-        "trust_badge_mrWmX7"
-      ],
-      "name": "Maison Introducing",
-      "settings": {
-        "row": "row-reverse",
-        "mobile_image_position": "top",
-        "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Milkfrohter_01_tiny.png",
-        "product_image_mobile": "shopify://shop_images/Milkfrohter_01_tiny.png",
-        "heading": "<p>The Science Behind Steady Energy</p>",
-        "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
-        "social_proof_text": "",
-        "social_proof_count": "",
-        "social_proof_suffix": "",
-        "button_text": "Upgrade My Morning",
-        "button_link": "shopify://collections/all",
-        "padding_top_desktop": 70,
-        "padding_bottom_desktop": 70,
-        "padding_left_desktop": 60,
-        "padding_right_desktop": 60,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 32,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20,
-        "section_bg_color": "#fcfeff",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_color": "#3b2b2f",
-        "feature_title_font_size_desktop": 18,
-        "feature_title_font_size_mobile": 14,
-        "feature_description_font_size_desktop": 18,
-        "feature_description_font_size_mobile": 16,
-        "feature_text_color": "#3b2b2f",
-        "social_proof_font_size": 12,
-        "social_proof_color": "#3b2b2f",
-        "button_bg_color": "#3b2b2f",
-        "button_text_color": "#fbfbfb",
-        "button_font_size_desktop": 16,
-        "button_font_size_mobile": 14,
-        "trust_badge_font_size": 14,
-        "trust_badge_color": "#3b2b2f"
       }
     },
     "1774045599b927268f": {
@@ -1638,12 +1639,12 @@
     "main",
     "maison_pdp_hero_mfQLMr",
     "maison_ing_Pzf6La",
-    "maison_introducing_LXBj6d",
     "maison_badge_list_Qxnb7C",
     "maison_introducing_bnLFrb",
     "maison_comp_flex_acwryg",
-    "maison_video_review_UWqfGU",
     "maison_introducing_xjgRKK",
+    "maison_introducing_LXBj6d",
+    "maison_video_review_UWqfGU",
     "1774045599b927268f",
     "maison_faq_QLFLjc",
     "maison_collection_slider_icVqir",
