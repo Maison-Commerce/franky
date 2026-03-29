@@ -1321,8 +1321,8 @@
         "section_bg_color": "#FFFFFF",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
-        "heading_color": "#2E432F",
-        "card_bg_color": "#F2FEEF",
+        "heading_color": "#000000",
+        "card_bg_color": "#f4fafe",
         "card_padding": 18,
         "card_gap_desktop": 24,
         "card_gap_mobile": 18,
@@ -1331,10 +1331,10 @@
         "icon_content_gap": 12,
         "title_font_size_desktop": 18,
         "title_font_size_mobile": 16,
-        "title_color": "#2F3936",
+        "title_color": "#000000",
         "description_font_size_desktop": 16,
         "description_font_size_mobile": 14,
-        "description_color": "rgba(47, 57, 54, 0.75)"
+        "description_color": "#000000"
       }
     },
     "maison_introducing_xjgRKK": {
