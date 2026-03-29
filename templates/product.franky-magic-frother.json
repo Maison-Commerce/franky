@@ -511,26 +511,25 @@
             "accordion_content": "<p>The Franky Magic Frother turns your protein iced coffee into a smooth, café-quality drink in seconds — no clumps, no settling, no stirring forever with a spoon. Powered by a high-speed motor, it blends every scoop of Franky into a perfectly mixed, frothy drink that tastes the way it was meant to. </p><p>Compact, lightweight, and rechargeable, it fits in your gym bag, your desk drawer, or your kitchen counter without taking up space.</p><p>The stainless steel whisk head is easy to rinse clean and built to last through your daily routine. Whether you're mixing with cold water, almond milk, or oat milk over ice, the Magic Frother gives you that creamy, blended texture you'd expect from a coffee shop — at home, in under 10 seconds. One button. </p><p>Zero effort. Just a better cup, every single morning.</p><p>Weight: 2.4 oz (68g) · Dimensions: 6.5 × 1.5 × 1.5 in</p>"
           }
         },
-        "accordion_item_BMU6dj": {
+        "accordion_item_hdeJXf": {
           "type": "accordion_item",
           "settings": {
-            "accordion_title": "Benefits & Ingredients",
-            "accordion_content": "<p>Franky combines real coffee with <strong>10g of protein and functional ingredients</strong> designed to support steady energy, focus, and satiety. Instead of the typical caffeine spike and crash, the formula provides smoother energy through balanced caffeine and L-theanine.<br/>The blend includes <strong>protein for sustained fuel</strong>, <strong>natural caffeine for focus</strong>, and <strong>prebiotic fiber to support digestion and gut balance</strong>. Together, these ingredients help turn your morning coffee into a more complete and functional routine.</p>"
+            "accordion_title": "How to use",
+            "accordion_content": "<p>Press and hold the button to turn it on, submerge the whisk head into your drink, and let it run for 10–15 seconds until fully blended and frothy. Release the button to turn it off.</p><p><strong>What's the best way to use it with Franky Protein Coffee?</strong><br/>Add your scoops of Franky to cold water or your milk of choice over ice first, then insert the frother and blend for 10–15 seconds. This gives you the smoothest, creamiest result with zero clumping.</p><p><strong>Can I use it in a regular glass or cup?</strong><br/>Yes. Any standard glass, shaker cup, or tumbler works. For best results, make sure there's enough liquid to fully submerge the whisk head before turning it on.</p><p><strong>How do I clean it?</strong><br/>Rinse the whisk head under warm running water immediately after use. For a deeper clean, run it in a glass of warm water for a few seconds. Never submerge the motor body in water.</p><p><strong>How do I charge it?</strong><br/>The Magic Frother charges via USB. A full charge typically takes 1–2 hours and provides enough power for multiple uses throughout the day.</p><p><strong>How do I know when the battery is low?</strong><br/>The motor will noticeably slow down when the battery needs charging. We recommend charging it overnight so it's ready every morning.</p><p><strong>Is it travel-friendly?</strong><br/>Yes. At 6.5 inches and 2.4 oz, it's lightweight enough to toss in a bag and take anywhere — office, gym, or travel.</p>"
           }
         },
         "accordion_item_fpnbqj": {
           "type": "accordion_item",
           "settings": {
-            "accordion_title": "Nutritional Information",
-            "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is<strong> keto</strong>-<strong>friendly</strong> and <strong>gluten</strong>-<strong>free</strong>, with no fillers or unnecessary additives. </p><p></p>",
-            "accordion_image": "shopify://shop_images/Franky_Nutritional_Info.png"
+            "accordion_title": "How do I charge it?",
+            "accordion_content": "<p>The Magic Frother charges via USB. A full charge typically takes 1–2 hours and provides enough power for multiple uses throughout the day.</p>"
           }
         },
-        "accordion_item_hdeJXf": {
+        "accordion_item_BMU6dj": {
           "type": "accordion_item",
           "settings": {
-            "accordion_title": "How to Enjoy",
-            "accordion_content": "<p>Add one scoop to Cold Water, Hot Water, or your Milk of Joy — almond milk over a mountain of ice is our personal favorite. Shake or stir, done in 60 seconds flat. No blender, no barista, no drama.</p><p>Best served ice cold. Make it your morning ritual and you'll actually look forward to your alarm going off. Almost.</p><p><br/>Many people use Franky as part of their <strong>morning routine or as a light breakfast alternative</strong>, providing energy, focus, and satiety without the typical coffee crash.</p>"
+            "accordion_title": "How do I clean it?",
+            "accordion_content": "<p>Rinse the whisk head under warm running water immediately after use. For a deeper clean, run it in a glass of warm water for a few seconds. Never submerge the motor body in water.</p>"
           }
         },
         "accordion_item_UgPTiM": {
@@ -559,9 +558,9 @@
         "trust_badge_RY6LQE",
         "trust_badge_RDLj3F",
         "accordion_item_BQRfcT",
-        "accordion_item_BMU6dj",
-        "accordion_item_fpnbqj",
         "accordion_item_hdeJXf",
+        "accordion_item_fpnbqj",
+        "accordion_item_BMU6dj",
         "accordion_item_UgPTiM"
       ],
       "name": "Maison PDP Hero",
