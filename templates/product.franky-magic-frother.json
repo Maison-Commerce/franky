@@ -756,6 +756,7 @@
         "badge_W6YAML",
         "badge_pYKmeY"
       ],
+      "disabled": true,
       "name": "Maison Badge List",
       "settings": {
         "padding_top_desktop": 18,
@@ -966,7 +967,7 @@
           "settings": {
             "icon": "shopify://shop_images/Frame1.svg",
             "title": "Fuel Your Body",
-            "description": "Protein prevents energy dips"
+            "description": "Blends protein powder fully for maximum absorption"
           }
         },
         "feature_FaA4b4": {
@@ -974,15 +975,15 @@
           "settings": {
             "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
             "title": "Energize Your Mind",
-            "description": "Clean caffeine supports focus"
+            "description": "Silky, café-quality froth every single time"
           }
         },
         "feature_8kQiwH": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/vjasehgth3y432.png",
-            "title": "Stay Balanced",
-            "description": "Functional support for digestion"
+            "title": "Zero Effort",
+            "description": "Ready in seconds, easy to clean, built to last"
           }
         },
         "trust_badge_ThXTfq": {
@@ -1025,8 +1026,8 @@
         "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Milkfrohter_01_tiny.png",
         "product_image_mobile": "shopify://shop_images/Milkfrohter_01_tiny.png",
-        "heading": "<p>The Science Behind Steady Energy</p>",
-        "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
+        "heading": "<p>The Secret to a Perfect Cup</p>",
+        "desc": "One press is all it takes. The Franky Magic Frother blends your protein coffee into a smooth, creamy, clump-free drink in seconds — no shaker, no mess, no settling at the bottom.",
         "social_proof_text": "",
         "social_proof_count": "",
         "social_proof_suffix": "",
