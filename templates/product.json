@@ -982,6 +982,17 @@
             "label_col3": "Brain Support",
             "value_col3": "No"
           }
+        },
+        "comparison_row_aYPXAz": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Cost per serving",
+            "value_col1": "40-60g",
+            "label_featured": "Cost per serving",
+            "value_featured": "$1,99",
+            "label_col3": "Cost per serving",
+            "value_col3": "As much as 60g"
+          }
         }
       },
       "block_order": [
@@ -989,7 +1000,8 @@
         "comparison_row_y4kraR",
         "comparison_row_qC6Dhj",
         "comparison_row_tgm97y",
-        "comparison_row_8iWUkT"
+        "comparison_row_8iWUkT",
+        "comparison_row_aYPXAz"
       ],
       "name": "Maison Comp Flex",
       "settings": {
