@@ -987,11 +987,11 @@
           "type": "comparison_row",
           "settings": {
             "label_col1": "Cost per serving",
-            "value_col1": "40-60g",
+            "value_col1": "$5-7",
             "label_featured": "Cost per serving",
             "value_featured": "$1,99",
             "label_col3": "Cost per serving",
-            "value_col3": "As much as 60g"
+            "value_col3": "$1,89"
           }
         }
       },
