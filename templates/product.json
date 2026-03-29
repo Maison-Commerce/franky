@@ -1238,6 +1238,105 @@
         "card_width_mobile": 256
       }
     },
+    "maison_advantages_YXMwHF": {
+      "type": "maison-advantages",
+      "blocks": {
+        "advantage_UBFR9Q": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No Sugar",
+            "description": "<p>Og per serving. Period. Zero spike, zero crash.</p>"
+          }
+        },
+        "advantage_nByq4z": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No Artificial Sweetners",
+            "description": "<p>Sweetened with natural monk fruit & fermented Reb M™. No sucralose, dextrose, or maltodextrin.</p>"
+          }
+        },
+        "advantage_4kJkrT": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No artificial fillers",
+            "description": "<p>Every ingredient has a job. Nothing comes along for the ride.</p>"
+          }
+        },
+        "advantage_gaF8fw": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No artificial colors",
+            "description": "<p>We never use artificial colors in our products. Real ingredients. Full stop.</p>"
+          }
+        },
+        "advantage_BE7ALR": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No gluten, No soy",
+            "description": "<p>Clean for sensitive stomachs. No compromises.</p>"
+          }
+        },
+        "advantage_fRdWGH": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No heavy metals",
+            "description": "<p>Third party lab tested. Every batch, every time.</p>"
+          }
+        },
+        "advantage_cQj87W": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "Trusted By Thousands",
+            "description": "<p>25,000+ customers. 12,000+ 5-star reviews. 90-day guarantee. We stand behind every bag.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "advantage_UBFR9Q",
+        "advantage_nByq4z",
+        "advantage_4kJkrT",
+        "advantage_gaF8fw",
+        "advantage_BE7ALR",
+        "advantage_fRdWGH",
+        "advantage_cQj87W"
+      ],
+      "name": "Maison Advantages",
+      "settings": {
+        "heading": "<p>Why AROSE Is <em>Different</em></p>",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#FFFFFF",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#2E432F",
+        "card_bg_color": "#F2FEEF",
+        "card_padding": 18,
+        "card_gap_desktop": 24,
+        "card_gap_mobile": 18,
+        "icon_size_desktop": 60,
+        "icon_size_mobile": 44,
+        "icon_content_gap": 12,
+        "title_font_size_desktop": 18,
+        "title_font_size_mobile": 16,
+        "title_color": "#2F3936",
+        "description_font_size_desktop": 16,
+        "description_font_size_mobile": 14,
+        "description_color": "rgba(47, 57, 54, 0.75)"
+      }
+    },
     "maison_introducing_xjgRKK": {
       "type": "maison-introducing",
       "blocks": {
@@ -1649,6 +1748,7 @@
     "maison_introducing_bnLFrb",
     "maison_comp_flex_acwryg",
     "maison_video_review_UWqfGU",
+    "maison_advantages_YXMwHF",
     "maison_introducing_xjgRKK",
     "1774045599b927268f",
     "maison_faq_QLFLjc",
