@@ -1288,14 +1288,6 @@
             "title": "No heavy metals",
             "description": "<p>Third party lab tested. Every batch, every time.</p>"
           }
-        },
-        "advantage_cQj87W": {
-          "type": "advantage",
-          "settings": {
-            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
-            "title": "Trusted By Thousands",
-            "description": "<p>25,000+ customers. 12,000+ 5-star reviews. 90-day guarantee. We stand behind every bag.</p>"
-          }
         }
       },
       "block_order": [
@@ -1304,8 +1296,7 @@
         "advantage_4kJkrT",
         "advantage_gaF8fw",
         "advantage_BE7ALR",
-        "advantage_fRdWGH",
-        "advantage_cQj87W"
+        "advantage_fRdWGH"
       ],
       "name": "Maison Advantages",
       "settings": {
