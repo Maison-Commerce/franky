@@ -1484,6 +1484,13 @@
             "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving, giving you 20g of protein that may fuel your morning, support muscle recovery, keep you satisfied, and work toward your weight loss goals.</p>"
           }
         },
+        "faq_item_G9iCMV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How many calories?",
+            "answer": "<p>Our Protein Coffee is a light and energizing choice, with just <strong>67 calories per serving</strong>. If you prefer a stronger boost and add two scoops, the total comes to <strong>134 calories. </strong>Still a low-calorie option that fits perfectly into an active lifestyle. </p>"
+          }
+        },
         "faq_item_Ermbtx": {
           "type": "faq_item",
           "settings": {
@@ -1524,6 +1531,7 @@
         "faq_item_x7BFRN",
         "faq_item_acLwN7",
         "faq_item_Gc3cd8",
+        "faq_item_G9iCMV",
         "faq_item_Ermbtx",
         "faq_item_BUczLQ",
         "faq_item_gH3kcf",
