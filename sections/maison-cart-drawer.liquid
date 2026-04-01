@@ -489,11 +489,15 @@
         this.fetchCart();
 
         document.addEventListener('maison:cart-drawer-open', () => {
+          this._scrollY = window.scrollY;
+          document.body.style.top = `-${this._scrollY}px`;
           document.querySelector('html').classList.add('maison-cart-open');
         });
 
         document.addEventListener('maison:cart-drawer-close', () => {
           document.querySelector('html').classList.remove('maison-cart-open');
+          document.body.style.top = '';
+          window.scrollTo(0, this._scrollY || 0);
         });
 
         document.addEventListener('maison:cart-drawer-reload', () => {

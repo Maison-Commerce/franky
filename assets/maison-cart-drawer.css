@@ -92,7 +92,11 @@
      ======================================== */
   .xmaison_cart-overlay {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100dvh;
     background-color: var(--xmaison-overlay);
     display: flex;
     align-items: center;
@@ -1355,9 +1359,16 @@
     transition: opacity 0.3s ease-in-out;
   }
   
-  html.maison-cart-open body,
-  html.maison-cart-open {
+  html.maison-cart-open,
+  html.maison-cart-open body {
     overflow: hidden !important;
+    height: 100% !important;
+  }
+
+  html.maison-cart-open body {
+    position: fixed;
+    width: 100%;
+    touch-action: none;
   }
   
   html.maison-cart-open .xmaison_cart-overlay {
