@@ -585,6 +585,10 @@
         "add_to_cart_text": "Add To Cart",
         "add_to_cart_loading_text": "Adding...",
         "add_to_cart_price": "$24.75",
+        "preorder_enabled": true,
+        "preorder_button_text": "Pre-Order Now - 15% OFF",
+        "preorder_property_text": "Your order will be delivered on [delivery_date]",
+        "preorder_loading_text": "Adding...",
         "customer_gallery_title": "",
         "related_products_title": "Now add something worth frothing",
         "related_products": [
