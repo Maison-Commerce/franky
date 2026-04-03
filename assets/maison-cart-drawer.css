@@ -400,6 +400,18 @@
     color: var(--xmaison-text-secondary);
     line-height: var(--xmaison-line-height-normal);
   }
+
+  .xmaison_preorder-info {
+    margin-top: 4px;
+  }
+
+  .xmaison_preorder-info-text {
+    font-family: var(--xmaison-font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: #D4442A;
+    line-height: 1.4;
+  }
   
   .xmaison_product-selling-plan {
     display: inline-flex;
