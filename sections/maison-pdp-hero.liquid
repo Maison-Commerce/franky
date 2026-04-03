@@ -952,16 +952,17 @@
       get isPreorder() {
         if (!window.preorderEnabled) return false;
         const inventory = window.variantInventory[this.variantId];
+        console.log('[PreOrder] variantId:', this.variantId, 'inventory:', inventory, 'preorderEnabled:', window.preorderEnabled);
         return inventory !== undefined && inventory <= 0;
       },
 
       get preorderPrice() {
-        const basePrice = (this.variant?.price || this.product.price) * this.quantity;
-        return Math.round(basePrice * 0.85);
+        const currentPrice = this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
+        return Math.round(currentPrice * 0.85);
       },
 
       get preorderOriginalPrice() {
-        return (this.variant?.price || this.product.price) * this.quantity;
+        return this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
       },
 
       get preorderPropertyValue() {
@@ -972,27 +973,66 @@
         if (this.loading) return;
         this.loading = true;
 
-        const item = {
-          id: this.variantId,
-          quantity: this.quantity,
-          properties: {
-            'mc_pre_order': 'true',
-            '_pre-order': 'true',
-            'Pre-Order': this.preorderPropertyValue
-          }
+        const preorderProps = {
+          'mc_pre_order': 'true',
+          '_pre-order': 'true',
+          'Pre-Order': this.preorderPropertyValue
         };
 
-        console.log('[PreOrder] Adding to cart:', JSON.stringify(item, null, 2));
+        const hasBundleAddons = this.bundleAddonTotal > 0;
+        const bundleId = hasBundleAddons ? 'bundle_true' : null;
+
+        let payload;
+
+        if (window.sectionMode === 'bundle' && hasBundleAddons) {
+          const items = [];
+          if (window.bundleAddonVariants) {
+            Object.entries(this.bundleAddonSlots).forEach(([slotIndex, qty]) => {
+              if (qty > 0) {
+                const addonVariantId = window.bundleAddonVariants[slotIndex];
+                if (addonVariantId) {
+                  const item = {
+                    id: addonVariantId,
+                    quantity: qty,
+                    properties: { mc_bundle: bundleId, ...preorderProps },
+                  };
+                  if (this.isSubscription && this.sellingPlanId) {
+                    item.selling_plan = this.sellingPlanId;
+                  }
+                  items.push(item);
+                }
+              }
+            });
+          }
+          payload = { items };
+        } else {
+          const mainItem = {
+            id: this.variantId,
+            quantity: this.quantity,
+            properties: { ...preorderProps },
+          };
+
+          if (window.sectionMode === 'packs') {
+            mainItem.properties.mc_packs = 'packs_true';
+          }
+
+          if (this.isSubscription && this.sellingPlanId) {
+            mainItem.selling_plan = this.sellingPlanId;
+          }
+
+          payload = mainItem;
+        }
+
+        console.log('[PreOrder] Adding to cart:', JSON.stringify(payload, null, 2));
 
         fetch('/cart/add.js', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(item),
+          body: JSON.stringify(payload),
         })
           .then(res => res.json())
           .then(data => {
             console.log('[PreOrder] Added to cart, response:', JSON.stringify(data, null, 2));
-            console.log('[PreOrder] Item properties:', JSON.stringify(data.items ? data.items.map(i => ({ title: i.title, properties: i.properties })) : data.properties, null, 2));
             return fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
