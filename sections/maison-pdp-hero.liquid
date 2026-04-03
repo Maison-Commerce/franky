@@ -1040,7 +1040,10 @@
               body: JSON.stringify({ attributes: { 'pre-order': 'true' } }),
             });
           })
-          .then(() => {
+          .then(() => fetch('/cart.js').then(r => r.json()))
+          .then((cart) => {
+            console.log('[Cart] Full cart:', JSON.stringify(cart, null, 2));
+            console.log('[Cart] Items:', cart.items.map(i => ({ title: i.title, qty: i.quantity, price: i.line_price, properties: i.properties })));
             maisonDispatch('maison:cart-drawer-reload');
             maisonDispatch('maison:cart-drawer-open');
           })
@@ -1130,6 +1133,11 @@
           })
           .then((data) => {
             console.log('[AddToCart Debug] response data:', JSON.stringify(data));
+            return fetch('/cart.js').then(r => r.json());
+          })
+          .then((cart) => {
+            console.log('[Cart] Full cart:', JSON.stringify(cart, null, 2));
+            console.log('[Cart] Items:', cart.items.map(i => ({ title: i.title, qty: i.quantity, price: i.line_price, properties: i.properties })));
             maisonDispatch('maison:cart-drawer-reload');
             maisonDispatch('maison:cart-drawer-open');
           })
