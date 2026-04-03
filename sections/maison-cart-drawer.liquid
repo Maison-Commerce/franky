@@ -10,16 +10,6 @@
       "info": "The minimum order amount (in dollars) for free shipping."
     },
     {
-      "type": "range",
-      "id": "preorder_discount_percent",
-      "label": "Pre-Order Discount %",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 15,
-      "unit": "%"
-    },
-    {
       "type": "product_list",
       "id": "upsell_list",
       "label": "Upsell List",
@@ -497,7 +487,7 @@
   };
 
   if (!window.preorderDiscountMultiplier) {
-    window.preorderDiscountMultiplier = 1 - ({{ section.settings.preorder_discount_percent | default: 15 }} / 100);
+    window.preorderDiscountMultiplier = 1 - ({{ settings.preorder_discount_percent | default: 15 }} / 100);
   }
 
   function maisonCartDrawer() {

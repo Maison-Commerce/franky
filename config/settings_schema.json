@@ -5061,5 +5061,21 @@
         "info": "t:settings_schema.cart_discount_settings.settings.text.cart_discount_error_invalid_info"
       }
     ]
+  },
+  {
+    "name": "Pre-Order",
+    "settings": [
+      {
+        "type": "range",
+        "id": "preorder_discount_percent",
+        "label": "Pre-Order Discount %",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 15,
+        "unit": "%",
+        "info": "Discount percentage applied to pre-order items on PDP and in cart."
+      }
+    ]
   }
 ]
