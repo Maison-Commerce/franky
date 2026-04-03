@@ -522,7 +522,7 @@
             window.cart = clone;
 
             // Check for pre-order items and update cart attribute
-            const hasPreorder = clone.items.some(item => item.properties && item.properties['_pre-order'] === 'true');
+            const hasPreorder = clone.items.some(item => item.properties && (item.properties['mc_pre_order'] === 'true' || item.properties['_pre-order'] === 'true'));
             fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },

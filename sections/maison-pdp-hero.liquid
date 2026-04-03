@@ -169,7 +169,7 @@
       "id": "preorder_property_text",
       "label": "Pre-Order Property Text",
       "default": "Pre-Order: Your order will be delivered on [delivery_date]",
-      "info": "[delivery_date] will be replaced with the product metafield value (product.metafields.custom.preorder_delivery_date)"
+      "info": "[delivery_date] will be replaced with the product metafield value (product.metafields.custom.mc_pre_order_delivery_date)"
     },
     {
       "type": "text",
@@ -763,7 +763,7 @@
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
   window.preorderEnabled = {{ section.settings.preorder_enabled | default: false }};
-  window.preorderDeliveryDate = "{{ product.metafields.custom.preorder_delivery_date | escape }}";
+  window.preorderDeliveryDate = "{{ product.metafields.custom.mc_pre_order_delivery_date | escape }}";
   window.preorderPropertyText = "{{ section.settings.preorder_property_text | escape }}";
   window.productInventoryQuantity = {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }};
   window.variantInventory = {
@@ -976,10 +976,13 @@
           id: this.variantId,
           quantity: this.quantity,
           properties: {
+            'mc_pre_order': 'true',
             '_pre-order': 'true',
             'Pre-Order': this.preorderPropertyValue
           }
         };
+
+        console.log('[PreOrder] Adding to cart:', JSON.stringify(item, null, 2));
 
         fetch('/cart/add.js', {
           method: 'POST',
@@ -987,7 +990,9 @@
           body: JSON.stringify(item),
         })
           .then(res => res.json())
-          .then(() => {
+          .then(data => {
+            console.log('[PreOrder] Added to cart, response:', JSON.stringify(data, null, 2));
+            console.log('[PreOrder] Item properties:', JSON.stringify(data.items ? data.items.map(i => ({ title: i.title, properties: i.properties })) : data.properties, null, 2));
             return fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
