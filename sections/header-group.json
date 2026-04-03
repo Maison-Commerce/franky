@@ -14,26 +14,36 @@
     "maison_announcement_bar_M4jRT6": {
       "type": "maison-announcement-bar",
       "blocks": {
+        "announcement_qTCAgf": {
+          "type": "announcement",
+          "settings": {
+            "text": "UP TO 32% OFF YOUR FIRST ORDER + FREE SHIPPING"
+          }
+        },
         "announcement_nkgiw6": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "0g of sugar"
           }
         },
         "announcement_V467FF": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Real coffee"
           }
         },
         "announcement_gNWpnm": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Natural Ingredients - made in the USA"
           }
         }
       },
       "block_order": [
+        "announcement_qTCAgf",
         "announcement_nkgiw6",
         "announcement_V467FF",
         "announcement_gNWpnm"
