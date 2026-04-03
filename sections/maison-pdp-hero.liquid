@@ -168,7 +168,7 @@
       "type": "text",
       "id": "preorder_property_text",
       "label": "Pre-Order Property Text",
-      "default": "Pre-Order: Your order will be delivered on [delivery_date]",
+      "default": "Your order will be delivered on [delivery_date]",
       "info": "[delivery_date] will be replaced with the product metafield value (product.metafields.custom.mc_pre_order_delivery_date)"
     },
     {
@@ -974,7 +974,7 @@
         this.loading = true;
 
         const preorderProps = {
-          'mc_pre_order': 'true',
+          '_mc_pre_order': 'true',
           'Pre-Order': this.preorderPropertyValue
         };
 
@@ -993,7 +993,7 @@
                   const item = {
                     id: addonVariantId,
                     quantity: qty,
-                    properties: { mc_bundle: bundleId, ...preorderProps },
+                    properties: { _mc_bundle: bundleId, ...preorderProps },
                   };
                   if (this.isSubscription && this.sellingPlanId) {
                     item.selling_plan = this.sellingPlanId;
@@ -1082,9 +1082,9 @@
         }
 
         if (hasBundleAddons) {
-          mainItem.properties = { mc_bundle: bundleId };
+          mainItem.properties = { _mc_bundle: bundleId };
         } else if (!isRelated && window.sectionMode !== 'classic') {
-          mainItem.properties = { mc_packs: 'packs_true' };
+          mainItem.properties = { _mc_packs: 'packs_true' };
         }
 
         console.log('[AddToCart Debug] mainItem:', JSON.stringify(mainItem));
@@ -1100,7 +1100,7 @@
                   const item = {
                     id: addonVariantId,
                     quantity: qty,
-                    properties: { mc_bundle: bundleId },
+                    properties: { _mc_bundle: bundleId },
                   };
                   if (this.isSubscription && this.sellingPlanId) {
                     item.selling_plan = this.sellingPlanId;

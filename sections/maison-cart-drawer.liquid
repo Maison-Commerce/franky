@@ -525,7 +525,7 @@
             window.cart = clone;
 
             // Check for pre-order items and update cart attribute
-            const hasPreorder = clone.items.some(item => item.properties && item.properties['mc_pre_order'] === 'true');
+            const hasPreorder = clone.items.some(item => item.properties && item.properties['_mc_pre_order'] === 'true');
             fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -565,10 +565,10 @@
         }
 
         // If deleting a bundle item, delete all items in the same bundle
-        if (quantity === 0 && item?.properties?.mc_bundle) {
-          const bundleId = item.properties.mc_bundle;
-          const bundleItems = this.cart.items.filter((i) => i.properties?.mc_bundle === bundleId);
-          this.cart.items = this.cart.items.filter((i) => i.properties?.mc_bundle !== bundleId);
+        if (quantity === 0 && item?.properties?._mc_bundle) {
+          const bundleId = item.properties._mc_bundle;
+          const bundleItems = this.cart.items.filter((i) => i.properties?._mc_bundle === bundleId);
+          this.cart.items = this.cart.items.filter((i) => i.properties?._mc_bundle !== bundleId);
 
           const updates = {};
           bundleItems.forEach((i) => { updates[i.key] = 0; });
