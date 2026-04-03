@@ -400,9 +400,8 @@
     color: var(--xmaison-text-secondary);
     line-height: var(--xmaison-line-height-normal);
   }
-
   .xmaison_preorder-info {
-    margin-top: 4px;
+    display: flex;
   }
 
   .xmaison_preorder-info-text {
