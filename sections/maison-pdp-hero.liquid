@@ -159,6 +159,16 @@
       "default": false
     },
     {
+      "type": "range",
+      "id": "preorder_discount_percent",
+      "label": "Pre-Order Discount %",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "unit": "%"
+    },
+    {
       "type": "text",
       "id": "preorder_button_text",
       "label": "Pre-Order Button Text",
@@ -763,6 +773,8 @@
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
   window.preorderEnabled = {{ section.settings.preorder_enabled | default: false }};
+  window.preorderDiscountPercent = {{ section.settings.preorder_discount_percent | default: 15 }};
+  window.preorderDiscountMultiplier = 1 - ({{ section.settings.preorder_discount_percent | default: 15 }} / 100);
   window.preorderDeliveryDate = "{{ product.metafields.custom.mc_pre_order_delivery_date | escape }}";
   window.preorderPropertyText = "{{ section.settings.preorder_property_text | escape }}";
   window.productInventoryQuantity = {{ product.selected_or_first_available_variant.inventory_quantity | default: 0 }};
@@ -958,7 +970,7 @@
 
       get preorderPrice() {
         const currentPrice = this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
-        return Math.round(currentPrice * 0.85);
+        return Math.round(currentPrice * window.preorderDiscountMultiplier);
       },
 
       get preorderOriginalPrice() {
