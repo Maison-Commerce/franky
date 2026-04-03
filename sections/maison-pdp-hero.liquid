@@ -251,8 +251,15 @@
     {
       "type": "text",
       "id": "bundle_tier1_price",
-      "label": "Tier 1 Price",
+      "label": "Tier 1 Price Label",
       "default": "$34.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier1_price_cents",
+      "label": "Tier 1 Price per item (cents)",
+      "default": "3495",
+      "info": "Price in cents, e.g. 3495 = $34.95"
     },
     {
       "type": "text",
@@ -263,8 +270,15 @@
     {
       "type": "text",
       "id": "bundle_tier2_price",
-      "label": "Tier 2 Price",
+      "label": "Tier 2 Price Label",
       "default": "$32.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier2_price_cents",
+      "label": "Tier 2 Price per item (cents)",
+      "default": "3295",
+      "info": "Price in cents, e.g. 3295 = $32.95"
     },
     {
       "type": "text",
@@ -275,8 +289,15 @@
     {
       "type": "text",
       "id": "bundle_tier3_price",
-      "label": "Tier 3 Price",
+      "label": "Tier 3 Price Label",
       "default": "$30.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier3_price_cents",
+      "label": "Tier 3 Price per item (cents)",
+      "default": "3095",
+      "info": "Price in cents, e.g. 3095 = $30.95"
     },
     {
       "type": "text",
@@ -287,8 +308,15 @@
     {
       "type": "text",
       "id": "bundle_tier4_price",
-      "label": "Tier 4 Price",
+      "label": "Tier 4 Price Label",
       "default": "$24.95/bag"
+    },
+    {
+      "type": "text",
+      "id": "bundle_tier4_price_cents",
+      "label": "Tier 4 Price per item (cents)",
+      "default": "2495",
+      "info": "Price in cents, e.g. 2495 = $24.95"
     },
     {
       "type": "product_list",
@@ -762,6 +790,12 @@
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
+  window.bundleTierPrices = {
+    1: parseInt("{{ section.settings.bundle_tier1_price_cents | default: '3495' }}") || 0,
+    2: parseInt("{{ section.settings.bundle_tier2_price_cents | default: '3295' }}") || 0,
+    3: parseInt("{{ section.settings.bundle_tier3_price_cents | default: '3095' }}") || 0,
+    4: parseInt("{{ section.settings.bundle_tier4_price_cents | default: '2495' }}") || 0,
+  };
   window.preorderEnabled = {{ section.settings.preorder_enabled | default: false }};
   window.preorderDiscountPercent = {{ settings.preorder_discount_percent | default: 15 }};
   window.preorderDiscountMultiplier = 1 - ({{ settings.preorder_discount_percent | default: 15 }} / 100);
@@ -853,37 +887,27 @@
         return Object.values(this.bundleAddonSlots).reduce((sum, qty) => sum + (qty || 0), 0);
       },
 
-      get bundleDiscountMultiplier() {
+      get bundleTierPrice() {
         const total = this.bundleAddonTotal;
-        if (total >= 4) return 0.80;
-        if (total >= 3) return 0.85;
-        if (total >= 2) return 0.90;
-        return 1;
+        const tiers = window.bundleTierPrices || {};
+        if (total >= 4) return tiers[4] || 0;
+        if (total >= 3) return tiers[3] || 0;
+        if (total >= 2) return tiers[2] || 0;
+        return tiers[1] || 0;
       },
 
       get bundleCalculatedPrice() {
-        if (!window.bundleAddonPrices) return 0;
-        const rawTotal = Object.entries(this.bundleAddonSlots).reduce((sum, [slotIndex, qty]) => {
-          const price = window.bundleAddonPrices[slotIndex] || 0;
-          return sum + price * (qty || 0);
-        }, 0);
-        return Math.round(rawTotal * this.bundleDiscountMultiplier);
+        return this.bundleTierPrice * this.bundleAddonTotal;
       },
 
       get bundleOriginalPrice() {
-        if (!window.bundleAddonPrices) return 0;
-        return Object.entries(this.bundleAddonSlots).reduce((sum, [slotIndex, qty]) => {
-          const price = window.bundleAddonPrices[slotIndex] || 0;
-          return sum + price * (qty || 0);
-        }, 0);
+        const baseTierPrice = window.bundleTierPrices?.[1] || 0;
+        return baseTierPrice * this.bundleAddonTotal;
       },
 
       get bundleSavePercent() {
-        const total = this.bundleAddonTotal;
-        if (total >= 4) return 20;
-        if (total >= 3) return 15;
-        if (total >= 2) return 10;
-        return 0;
+        if (this.bundleOriginalPrice <= 0 || this.bundleAddonTotal <= 1) return 0;
+        return Math.round((1 - this.bundleCalculatedPrice / this.bundleOriginalPrice) * 100);
       },
 
       get subscriptionPrice() {
@@ -1739,7 +1763,7 @@
                       <span class="xmaison_subscription-title">{{ section.settings.subscribe_title }}</span>
                       <div class="xmaison_save-badge">
                         {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-                          <span class="xmaison_save-badge-text" x-text="bundleSavePercent > 0 ? 'SAVE ' + Math.round((1 - bundleDiscountMultiplier * subscriptionMultiplier) * 100) + '%' : '{{ section.settings.subscribe_save_badge }}'"></span>
+                          <span class="xmaison_save-badge-text" x-text="bundleSavePercent > 0 ? 'SAVE ' + Math.round((1 - (bundleCalculatedPrice / bundleOriginalPrice) * subscriptionMultiplier) * 100) + '%' : '{{ section.settings.subscribe_save_badge }}'"></span>
                         {% else %}
                           <span class="xmaison_save-badge-text">{{ section.settings.subscribe_save_badge }}</span>
                         {% endif %}
