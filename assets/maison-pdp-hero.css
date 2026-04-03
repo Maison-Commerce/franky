@@ -939,17 +939,17 @@ img {
 .xmaison_preorder-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   margin-top: 8px;
 }
 
 .xmaison_preorder-button {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   width: 100%;
-  height: 56px;
-  padding: 16px 32px;
+  padding: 12px 32px;
   background-color: transparent;
   border: 2px solid var(--color-brand-1-1800, #3B2B2F);
   border-radius: 14px;
@@ -966,6 +966,12 @@ img {
   pointer-events: none;
 }
 
+.xmaison_preorder-button-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .xmaison_preorder-text {
   font-family: var(--font-body);
   font-size: 16px;
@@ -974,10 +980,11 @@ img {
   line-height: 1.5;
 }
 
-.xmaison_preorder-price {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.xmaison_preorder-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-brand-1-1800, #3B2B2F);
 }
 
 .xmaison_preorder-price-current {
@@ -995,22 +1002,11 @@ img {
   text-decoration: line-through;
 }
 
-.xmaison_preorder-save-badge {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  background-color: #D4442A;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
 .xmaison_preorder-note {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--text-muted, #8A7F82);
-  margin: 0;
 }
 
 .xmaison_button-dot {

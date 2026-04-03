@@ -1813,14 +1813,7 @@
         </div>
 
         <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} || bundleAddonTotal === 0{% endif %}">
-          <span
-            class="xmaison_add-to-cart-text"
-            {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
-              x-text="bundleAddonTotal === 0 ? 'Select at least 1 pack' : (loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}')"
-            {% else %}
-              x-text="loading ? '{{ section.settings.add_to_cart_loading_text }}' : '{{ section.settings.add_to_cart_text }}'"
-            {% endif %}
-          ></span>
+          <span class="xmaison_add-to-cart-text">{{ section.settings.add_to_cart_text }}</span>
         </button>
 
         <!-- Pre-Order Button -->
@@ -1829,20 +1822,17 @@
             <button
               type="button"
               class="xmaison_preorder-button"
-              :disabled="loading"
+              :disabled="loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} || bundleAddonTotal === 0{% endif %}"
               @click="addToCartPreOrder()"
             >
-              <span
-                class="xmaison_preorder-text"
-                x-text="loading ? '{{ section.settings.preorder_loading_text }}' : '{{ section.settings.preorder_button_text }}'"
-              ></span>
+              <div class="xmaison_preorder-button-top">
+                <span class="xmaison_preorder-text">{{ section.settings.preorder_button_text }}</span>
+                <span class="xmaison_preorder-dot"></span>
+                <span class="xmaison_preorder-price-current" x-text="formatMoney(preorderPrice)"></span>
+                <span class="xmaison_preorder-price-original" x-text="formatMoney(preorderOriginalPrice)"></span>
+              </div>
+              <span class="xmaison_preorder-note" x-text="preorderPropertyValue"></span>
             </button>
-            <div class="xmaison_preorder-price">
-              <span class="xmaison_preorder-price-current" x-text="formatMoney(preorderPrice)"></span>
-              <span class="xmaison_preorder-price-original" x-text="formatMoney(preorderOriginalPrice)"></span>
-              <span class="xmaison_preorder-save-badge">SAVE 15%</span>
-            </div>
-            <p class="xmaison_preorder-note" x-text="preorderPropertyValue"></p>
           </div>
         {% endif %}
 
