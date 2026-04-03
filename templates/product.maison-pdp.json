@@ -598,6 +598,10 @@
         "add_to_cart_text": "Add To Cart",
         "add_to_cart_loading_text": "Adding...",
         "add_to_cart_price": "$24.75",
+        "preorder_enabled": true,
+        "preorder_button_text": "Pre-Order Now - 15% OFF",
+        "preorder_property_text": "Pre-Order: Your order will be delivered on [delivery_date]",
+        "preorder_loading_text": "Adding...",
         "customer_gallery_title": "Join 12,850+ Customers Transforming Their Lives",
         "related_products_title": "Try both and save big",
         "related_products": [
