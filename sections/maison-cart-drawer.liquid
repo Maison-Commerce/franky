@@ -182,7 +182,7 @@
                         <span class="xmaison_product-variant" x-text="item.variant_title"></span>
                       </div>
                       <div class="xmaison_preorder-info" x-show="item.properties && item.properties['Pre-Order']">
-                        <span class="xmaison_preorder-info-text" x-text="item.properties?.['Pre-Order']"></span>
+                        <span class="xmaison_preorder-info-text" x-text="'Pre-Order: ' + item.properties?.['Pre-Order']"></span>
                       </div>
                     </div>
                     <button
