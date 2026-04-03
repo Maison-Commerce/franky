@@ -97,7 +97,7 @@
                 <span>FREE Shipping Unlocked!</span>
               </template>
               <template x-if="progressPercentage < 100">
-                <span>Spend <span x-text="m({{ section.settings.free_shipping_threshold | default: 50 }} * 100 - (cart.total_price || 0))"></span> more for FREE shipping</span>
+                <span>Spend <span x-text="m({{ section.settings.free_shipping_threshold | default: 50 }} * 100 - (adjustedTotal || 0))"></span> more for FREE shipping</span>
               </template>
             </p>
           </div>
@@ -214,10 +214,13 @@
                       </div>
                     </div>
                     <div class="xmaison_product-price">
-                      <template x-if="item.original_line_price > item.line_price">
+                      <template x-if="item.properties?.['_mc_pre_order'] === 'true'">
+                        <span class="xmaison_original-price" x-text="m(item.line_price)"></span>
+                      </template>
+                      <template x-if="item.properties?.['_mc_pre_order'] !== 'true' && item.original_line_price > item.line_price">
                         <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
                       </template>
-                      <span class="xmaison_sale-price" x-text="m(item.line_price)"></span>
+                      <span class="xmaison_sale-price" x-text="m(item.properties?.['_mc_pre_order'] === 'true' ? Math.round(item.line_price * 0.85) : item.line_price)"></span>
                     </div>
                   </div>
                 </div>
@@ -377,10 +380,10 @@
           <div class="xmaison_total-row">
             <span class="xmaison_total-label">Total Price (with savings)</span>
             <div class="xmaison_total-price">
-              <template x-if="compareAtTotal > cart.total_price">
-                <span class="xmaison_total-original" x-text="m(compareAtTotal)"></span>
+              <template x-if="cart.total_price > adjustedTotal || compareAtTotal > adjustedTotal">
+                <span class="xmaison_total-original" x-text="m(compareAtTotal > cart.total_price ? compareAtTotal : cart.total_price)"></span>
               </template>
-              <span class="xmaison_total-current" x-text="m(cart.total_price || 0)"></span>
+              <span class="xmaison_total-current" x-text="m(adjustedTotal)"></span>
             </div>
           </div>
         </div>
@@ -609,13 +612,24 @@
 
       get progressPercentage() {
         const freeShippingThreshold = {{ section.settings.free_shipping_threshold | default: 50 }} * 100;
-        return (this.cart.total_price / freeShippingThreshold) * 100;
+        return (this.adjustedTotal / freeShippingThreshold) * 100;
       },
 
       get compareAtTotal() {
         if (!this.cart.items) return 0;
         return this.cart.items.reduce((sum, item) => {
           return sum + (item.original_line_price || item.line_price || 0);
+        }, 0);
+      },
+
+      get adjustedTotal() {
+        if (!this.cart.items) return 0;
+        return this.cart.items.reduce((sum, item) => {
+          const price = item.line_price || 0;
+          if (item.properties?.['_mc_pre_order'] === 'true') {
+            return sum + Math.round(price * 0.85);
+          }
+          return sum + price;
         }, 0);
       },
 
