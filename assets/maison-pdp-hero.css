@@ -2393,6 +2393,7 @@ user-select: none;
 
 .xmaison_test-results-trigger-icon {
   flex-shrink: 0;
+  display: flex;
 }
 
 .xmaison_test-results-trigger-icon svg {
