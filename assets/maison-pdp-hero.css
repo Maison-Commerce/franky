@@ -2516,25 +2516,17 @@ user-select: none;
   gap: 8px;
 }
 
-/* Tab content fade transition */
-.xmaison_test-results-fade-enter {
-  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-}
-.xmaison_test-results-fade-enter-start {
+/* Tab content sequential fade transition */
+.xmaison_test-results-tab-content {
   opacity: 0;
-  transform: translateY(4px);
+  transition: opacity 200ms ease-in-out;
 }
-.xmaison_test-results-fade-enter-end {
-  opacity: 1;
-  transform: translateY(0);
-}
-.xmaison_test-results-fade-leave {
-  transition: opacity 150ms ease-in-out;
-}
-.xmaison_test-results-fade-leave-start {
+
+.xmaison_test-results-tab-content--visible {
   opacity: 1;
 }
-.xmaison_test-results-fade-leave-end {
+
+.xmaison_test-results-tab-content--fading-out {
   opacity: 0;
 }
 

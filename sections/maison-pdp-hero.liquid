@@ -884,6 +884,37 @@
       nutritionalOpen: false,
       testResultsOpen: false,
       testResultsActiveTab: 0,
+      testResultsTransitioning: false,
+      switchTestTab(newTab) {
+        if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) return;
+        this.testResultsTransitioning = true;
+        this.$nextTick(() => {
+          const current = this.$el.querySelector('.xmaison_test-results-tab-content--visible');
+          if (current) {
+            current.classList.add('xmaison_test-results-tab-content--fading-out');
+            setTimeout(() => {
+              current.classList.remove('xmaison_test-results-tab-content--visible', 'xmaison_test-results-tab-content--fading-out');
+              this.testResultsActiveTab = newTab;
+              this.$nextTick(() => {
+                const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
+                if (next) {
+                  next.classList.add('xmaison_test-results-tab-content--visible');
+                }
+                this.testResultsTransitioning = false;
+              });
+            }, 200);
+          } else {
+            this.testResultsActiveTab = newTab;
+            this.$nextTick(() => {
+              const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
+              if (next) {
+                next.classList.add('xmaison_test-results-tab-content--visible');
+              }
+              this.testResultsTransitioning = false;
+            });
+          }
+        });
+      },
       videoModalOpen: false,
       activeVideoId: null,
       bundleAddonSlots: {},
@@ -2093,7 +2124,7 @@
                       type="button"
                       class="xmaison_test-results-tab"
                       :class="{ 'xmaison_test-results-tab--active': testResultsActiveTab === {{ forloop.index0 }} }"
-                      @click="testResultsActiveTab = {{ forloop.index0 }}"
+                      @click="switchTestTab({{ forloop.index0 }})"
                     >
                       {{ category.title }}
                     </button>
@@ -2112,14 +2143,9 @@
                   {% endfor %}
 
                   <div
-                    class="xmaison_test-results-tab-content"
+                    class="xmaison_test-results-tab-content{% if forloop.index0 == 0 %} xmaison_test-results-tab-content--visible{% endif %}"
+                    data-test-tab="{{ forloop.index0 }}"
                     x-show="testResultsActiveTab === {{ forloop.index0 }}"
-                    x-transition:enter="xmaison_test-results-fade-enter"
-                    x-transition:enter-start="xmaison_test-results-fade-enter-start"
-                    x-transition:enter-end="xmaison_test-results-fade-enter-end"
-                    x-transition:leave="xmaison_test-results-fade-leave"
-                    x-transition:leave-start="xmaison_test-results-fade-leave-start"
-                    x-transition:leave-end="xmaison_test-results-fade-leave-end"
                   >
                     <div class="xmaison_test-results-status-banner {% if cat_passed == cat_total %}xmaison_test-results-status-banner--success{% else %}xmaison_test-results-status-banner--warning{% endif %}">
                       {{ cat_passed }} OF {{ cat_total }} WITHIN LIMIT
