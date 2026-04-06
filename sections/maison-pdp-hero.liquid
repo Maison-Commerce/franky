@@ -888,33 +888,24 @@
       switchTestTab(newTab) {
         if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) return;
         this.testResultsTransitioning = true;
-        const current = this.$el.querySelector('.xmaison_test-results-tab-content--visible');
-        if (current) {
-          current.classList.add('xmaison_test-results-tab-content--fading-out');
-          current.classList.remove('xmaison_test-results-tab-content--visible');
-          setTimeout(() => {
-            current.classList.remove('xmaison_test-results-tab-content--fading-out');
-            this.testResultsActiveTab = newTab;
-            const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
-            if (next) {
-              requestAnimationFrame(() => {
-                next.classList.add('xmaison_test-results-tab-content--visible');
-                this.testResultsTransitioning = false;
-              });
-            } else {
-              this.testResultsTransitioning = false;
-            }
-          }, 200);
-        } else {
+        const tabs = this.$el.querySelectorAll('.xmaison_test-results-tab-content');
+        const current = tabs[this.testResultsActiveTab];
+        const next = tabs[newTab];
+        if (!current || !next) { this.testResultsTransitioning = false; return; }
+
+        current.style.opacity = '0';
+        setTimeout(() => {
+          current.style.display = 'none';
           this.testResultsActiveTab = newTab;
-          const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
-          if (next) {
+          next.style.display = 'flex';
+          next.style.opacity = '0';
+          requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              next.classList.add('xmaison_test-results-tab-content--visible');
+              next.style.opacity = '1';
+              this.testResultsTransitioning = false;
             });
-          }
-          this.testResultsTransitioning = false;
-        }
+          });
+        }, 200);
       },
       videoModalOpen: false,
       activeVideoId: null,
@@ -2144,8 +2135,9 @@
                   {% endfor %}
 
                   <div
-                    class="xmaison_test-results-tab-content{% if forloop.index0 == 0 %} xmaison_test-results-tab-content--visible{% endif %}"
+                    class="xmaison_test-results-tab-content"
                     data-test-tab="{{ forloop.index0 }}"
+                    style="{% if forloop.index0 == 0 %}display:flex;opacity:1{% else %}display:none;opacity:0{% endif %}"
                   >
                     <div class="xmaison_test-results-status-banner {% if cat_passed == cat_total %}xmaison_test-results-status-banner--success{% else %}xmaison_test-results-status-banner--warning{% endif %}">
                       {{ cat_passed }} OF {{ cat_total }} WITHIN LIMIT

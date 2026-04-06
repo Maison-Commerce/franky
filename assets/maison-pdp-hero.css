@@ -2516,26 +2516,9 @@ user-select: none;
   gap: 8px;
 }
 
-/* Tab content sequential fade transition */
+/* Tab content fade transition */
 .xmaison_test-results-tab-content {
-  opacity: 0;
-  position: absolute;
-  pointer-events: none;
-  visibility: hidden;
   transition: opacity 200ms ease-in-out;
-}
-
-.xmaison_test-results-tab-content--visible {
-  opacity: 1;
-  position: relative;
-  pointer-events: auto;
-  visibility: visible;
-}
-
-.xmaison_test-results-tab-content--fading-out {
-  opacity: 0;
-  position: relative;
-  visibility: visible;
 }
 
 .xmaison_test-results-popup-close:hover svg path {
