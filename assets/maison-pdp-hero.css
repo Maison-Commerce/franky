@@ -2680,6 +2680,12 @@ user-select: none;
   gap: 20px;
 }
 
+.xmaison-test-results-popup-content-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 749px) {
   .xmaison_test-results-trigger {
