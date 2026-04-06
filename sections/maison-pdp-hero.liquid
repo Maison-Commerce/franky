@@ -2001,28 +2001,6 @@
 
       <!-- 3rd Party Testing -->
       {% assign test_categories = product.metafields.custom.test_results.value %}
-      <script>
-        console.log('[TestResults] raw metafield:', {{ product.metafields.custom.test_results | json }});
-        console.log('[TestResults] test_categories:', {{ test_categories | json }});
-        {% if test_categories != blank and test_categories.size > 0 %}
-          {% for category in test_categories %}
-            console.log('[TestResults] category {{ forloop.index }}:', {
-              title: {{ category.title | json }},
-              entries: {{ category.entries | json }}
-            });
-            {% for entry in category.entries.value %}
-              console.log('[TestResults]   entry {{ forloop.index }}:', {
-                name: {{ entry.name | json }},
-                status: {{ entry.status | json }},
-                limit_value: {{ entry.limit_value | json }}
-              });
-            {% endfor %}
-          {% endfor %}
-        {% else %}
-          console.log('[TestResults] No test categories found for this product');
-        {% endif %}
-        console.log('[TestResults] certificate:', {{ product.metafields.custom.test_certificate | json }});
-      </script>
       {% if test_categories != blank and test_categories.size > 0 %}
         {% assign all_passed = true %}
         {% assign total_tests = 0 %}
