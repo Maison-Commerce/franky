@@ -1158,12 +1158,15 @@
 
         if (hasBundleAddons) {
           mainItem.properties = { _mc_bundle: bundleId };
-        } else if (!isRelated && window.sectionMode !== 'classic') {
+        } else if (!isRelated) {
           const compareAt = this.variant?.compare_at_price || 0;
-          mainItem.properties = {
-            _mc_packs: 'packs_true',
-            _mc_compare_at_unit: compareAt > 0 ? String(compareAt) : '',
-          };
+          mainItem.properties = mainItem.properties || {};
+          if (window.sectionMode !== 'classic') {
+            mainItem.properties._mc_packs = 'packs_true';
+          }
+          if (compareAt > 0) {
+            mainItem.properties._mc_compare_at_unit = String(compareAt);
+          }
         }
 
         console.log('[AddToCart Debug] mainItem:', JSON.stringify(mainItem));
