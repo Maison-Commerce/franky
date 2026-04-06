@@ -2114,7 +2114,12 @@
                   <div
                     class="xmaison_test-results-tab-content"
                     x-show="testResultsActiveTab === {{ forloop.index0 }}"
-                    x-transition.opacity
+                    x-transition:enter="xmaison_test-results-fade-enter"
+                    x-transition:enter-start="xmaison_test-results-fade-enter-start"
+                    x-transition:enter-end="xmaison_test-results-fade-enter-end"
+                    x-transition:leave="xmaison_test-results-fade-leave"
+                    x-transition:leave-start="xmaison_test-results-fade-leave-start"
+                    x-transition:leave-end="xmaison_test-results-fade-leave-end"
                   >
                     <div class="xmaison_test-results-status-banner {% if cat_passed == cat_total %}xmaison_test-results-status-banner--success{% else %}xmaison_test-results-status-banner--warning{% endif %}">
                       {{ cat_passed }} OF {{ cat_total }} WITHIN LIMIT

@@ -2516,6 +2516,28 @@ user-select: none;
   gap: 8px;
 }
 
+/* Tab content fade transition */
+.xmaison_test-results-fade-enter {
+  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+}
+.xmaison_test-results-fade-enter-start {
+  opacity: 0;
+  transform: translateY(4px);
+}
+.xmaison_test-results-fade-enter-end {
+  opacity: 1;
+  transform: translateY(0);
+}
+.xmaison_test-results-fade-leave {
+  transition: opacity 150ms ease-in-out;
+}
+.xmaison_test-results-fade-leave-start {
+  opacity: 1;
+}
+.xmaison_test-results-fade-leave-end {
+  opacity: 0;
+}
+
 .xmaison_test-results-popup-close:hover svg path {
   stroke: #3B2B2F;
 }
