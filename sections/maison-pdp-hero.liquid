@@ -1081,6 +1081,10 @@
 
           if (window.sectionMode === 'packs') {
             mainItem.properties._mc_packs = 'packs_true';
+            const compareAt = this.variant?.compare_at_price || 0;
+            if (compareAt > 0) {
+              mainItem.properties._mc_compare_at = String(compareAt * this.quantity);
+            }
           }
 
           if (this.isSubscription && this.sellingPlanId) {
@@ -1155,7 +1159,12 @@
         if (hasBundleAddons) {
           mainItem.properties = { _mc_bundle: bundleId };
         } else if (!isRelated && window.sectionMode !== 'classic') {
-          mainItem.properties = { _mc_packs: 'packs_true' };
+          const compareAt = this.variant?.compare_at_price || 0;
+          const packQty = qty || this.quantity;
+          mainItem.properties = {
+            _mc_packs: 'packs_true',
+            _mc_compare_at: compareAt > 0 ? String(compareAt * packQty) : '',
+          };
         }
 
         console.log('[AddToCart Debug] mainItem:', JSON.stringify(mainItem));
