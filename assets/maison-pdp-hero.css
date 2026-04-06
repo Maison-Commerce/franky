@@ -2674,6 +2674,12 @@ user-select: none;
   height: 24px;
 }
 
+.xmaison-test-results-popup-general-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 749px) {
   .xmaison_test-results-trigger {
