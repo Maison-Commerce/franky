@@ -297,6 +297,27 @@
       ]
     },
     {
+      "type": "image",
+      "name": "Customer Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "min": -10,
+          "max": 10,
+          "step": 1,
+          "unit": "°",
+          "label": "Rotation",
+          "default": 0
+        }
+      ]
+    },
+    {
       "type": "review",
       "name": "Review",
       "settings": [
@@ -617,6 +638,25 @@
             </svg>
           </button>
         </div>
+      </div>
+    {% endif %}
+
+    {% assign image_blocks = section.blocks | where: 'type', 'image' %}
+    {% if image_blocks.size > 0 %}
+      <div class="maison_commerce_video_review__images">
+        {% for block in image_blocks %}
+          {% if block.settings.image != blank %}
+            <div class="maison_commerce_video_review__image-card" style="--rotation: {{ block.settings.rotation }}deg;" {{ block.shopify_attributes }}>
+              <img
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.image.alt | default: 'Customer photo' }}"
+                loading="lazy"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     {% endif %}
   </div>
@@ -1303,6 +1343,52 @@
     .maison_commerce_video_review__popup-close {
       top: -40px;
       right: 0;
+    }
+  }
+
+  /* Customer Images */
+  .maison_commerce_video_review__images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+    width: 100%;
+  }
+
+  .maison_commerce_video_review__image-card {
+    flex: 1;
+    max-width: 33.333%;
+    transform: rotate(var(--rotation, 0deg));
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    padding: 8px 8px 8px 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .maison_commerce_video_review__image-card:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .maison_commerce_video_review__image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  @media (max-width: 749px) {
+    .maison_commerce_video_review__images {
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .maison_commerce_video_review__image-card {
+      padding: 6px;
     }
   }
 </style>
