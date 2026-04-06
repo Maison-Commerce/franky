@@ -546,7 +546,7 @@
         "bundle_product_HigBqf": {
           "type": "bundle_product",
           "settings": {
-            "product": "franky-protein-coffee"
+            "product": "franky-protein-coffee-test-pre-order"
           }
         }
       },
@@ -602,6 +602,12 @@
         "preorder_button_text": "Add Pre-Order To Cart",
         "preorder_property_text": "Your order will be delivered on [delivery_date]",
         "preorder_loading_text": "Adding...",
+        "test_results_title": "3rd Party Testing",
+        "test_results_badge_text": "COMPLETE",
+        "test_results_description": "Passed strict quality, safety, and regulatory standards.",
+        "test_results_link_text": "Learn more",
+        "test_results_popup_title": "Test Results",
+        "test_results_cta_text": "Download Certificate of Analysis",
         "customer_gallery_title": "Join 12,850+ Customers Transforming Their Lives",
         "related_products_title": "Try both and save big",
         "related_products": [
@@ -617,12 +623,16 @@
         "bundle_title": "BUILD YOUR BUNDLE:",
         "bundle_tier1_label": "1 bag",
         "bundle_tier1_price": "$34.95/bag",
+        "bundle_tier1_price_cents": "3495",
         "bundle_tier2_label": "2 bags",
         "bundle_tier2_price": "$32.95/bag",
+        "bundle_tier2_price_cents": "3295",
         "bundle_tier3_label": "3 bags",
         "bundle_tier3_price": "$30.95/bag",
+        "bundle_tier3_price_cents": "3095",
         "bundle_tier4_label": "4+ bags",
         "bundle_tier4_price": "$24.95/bag",
+        "bundle_tier4_price_cents": "2495",
         "bundle_products": [
           "franky-protein-coffee"
         ]
@@ -1140,61 +1150,6 @@
             "reviewer_name": "Hannah, RN, 45",
             "verified_buyer": true
           }
-        },
-        "review_fLFXEj": {
-          "type": "review",
-          "settings": {
-            "slider_position": "bottom",
-            "rating": 5,
-            "purchase_date": "Purchased on 18 Jule 2025",
-            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
-            "reviewer_name": "Hannah, RN, 45",
-            "verified_buyer": true
-          }
-        },
-        "review_4LdLKr": {
-          "type": "review",
-          "settings": {
-            "slider_position": "bottom",
-            "rating": 5,
-            "purchase_date": "Purchased on 18 Jule 2025",
-            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
-            "reviewer_name": "Hannah, RN, 45",
-            "verified_buyer": true
-          }
-        },
-        "review_W6bmRm": {
-          "type": "review",
-          "settings": {
-            "slider_position": "bottom",
-            "rating": 5,
-            "purchase_date": "Purchased on 9 April 2025",
-            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
-            "reviewer_name": "Verified Buyer",
-            "verified_buyer": true
-          }
-        },
-        "review_KbXRfR": {
-          "type": "review",
-          "settings": {
-            "slider_position": "bottom",
-            "rating": 5,
-            "purchase_date": "Purchased on 18 Jule 2025",
-            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
-            "reviewer_name": "Hannah, RN, 45",
-            "verified_buyer": true
-          }
-        },
-        "review_XLdtjw": {
-          "type": "review",
-          "settings": {
-            "slider_position": "bottom",
-            "rating": 5,
-            "purchase_date": "Purchased on 18 Jule 2025",
-            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
-            "reviewer_name": "Hannah, RN, 45",
-            "verified_buyer": true
-          }
         }
       },
       "block_order": [
@@ -1209,12 +1164,7 @@
         "review_z3MKXm",
         "review_FpXG9p",
         "review_UATFJa",
-        "review_WyUFjR",
-        "review_fLFXEj",
-        "review_4LdLKr",
-        "review_W6bmRm",
-        "review_KbXRfR",
-        "review_XLdtjw"
+        "review_WyUFjR"
       ],
       "name": "Maison Video Review",
       "settings": {
