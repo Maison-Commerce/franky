@@ -16,6 +16,12 @@
       "info": "Select the products to display in the upsell list."
     },
     {
+      "type": "text",
+      "id": "upsell_title",
+      "label": "Upsell Title",
+      "default": "Try more, choose a favorite"
+    },
+    {
       "type": "header",
       "content": "Subscribe & Save Upsell Box"
     },
@@ -281,7 +287,7 @@
         <div class="xmaison_upsell-section">
           <div class="xmaison_upsell-container">
             <div class="xmaison_upsell-header">
-              <span class="xmaison_upsell-title">Add another bag and save up to 32% off</span>
+              <span class="xmaison_upsell-title">{{ section.settings.upsell_title }}</span>
               <div class="xmaison_carousel-controls">
                 <button class="xmaison_carousel-btn xmaison_carousel-prev">
                   <img
