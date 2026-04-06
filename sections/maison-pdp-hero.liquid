@@ -884,40 +884,6 @@
       nutritionalOpen: false,
       testResultsOpen: false,
       testResultsActiveTab: 0,
-      testResultsTransitioning: false,
-      switchTestTab(newTab) {
-        console.log('[TestTabs] switchTestTab called', { newTab, activeTab: this.testResultsActiveTab, transitioning: this.testResultsTransitioning });
-        if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) {
-          console.log('[TestTabs] blocked - same tab or transitioning');
-          return;
-        }
-        this.testResultsTransitioning = true;
-        const tabs = document.querySelectorAll('.xmaison_test-results-tab-content');
-        console.log('[TestTabs] found tabs:', tabs.length, tabs);
-        const current = tabs[this.testResultsActiveTab];
-        const next = tabs[newTab];
-        console.log('[TestTabs] current:', current, 'next:', next);
-        if (!current || !next) {
-          console.log('[TestTabs] missing element, aborting');
-          this.testResultsTransitioning = false;
-          return;
-        }
-
-        current.style.opacity = '0';
-        setTimeout(() => {
-          current.style.display = 'none';
-          this.testResultsActiveTab = newTab;
-          next.style.display = 'flex';
-          next.style.opacity = '0';
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              next.style.opacity = '1';
-              this.testResultsTransitioning = false;
-              console.log('[TestTabs] transition complete, now on tab', newTab);
-            });
-          });
-        }, 200);
-      },
       videoModalOpen: false,
       activeVideoId: null,
       bundleAddonSlots: {},
@@ -2127,7 +2093,7 @@
                       type="button"
                       class="xmaison_test-results-tab"
                       :class="{ 'xmaison_test-results-tab--active': testResultsActiveTab === {{ forloop.index0 }} }"
-                      @click="switchTestTab({{ forloop.index0 }})"
+                      @click="testResultsActiveTab = {{ forloop.index0 }}"
                     >
                       {{ category.title }}
                     </button>
@@ -2147,8 +2113,7 @@
 
                   <div
                     class="xmaison_test-results-tab-content"
-                    data-test-tab="{{ forloop.index0 }}"
-                    style="{% if forloop.index0 == 0 %}display:flex;opacity:1{% else %}display:none;opacity:0{% endif %}"
+                    x-show="testResultsActiveTab === {{ forloop.index0 }}"
                   >
                     <div class="xmaison_test-results-status-banner {% if cat_passed == cat_total %}xmaison_test-results-status-banner--success{% else %}xmaison_test-results-status-banner--warning{% endif %}">
                       {{ cat_passed }} OF {{ cat_total }} WITHIN LIMIT

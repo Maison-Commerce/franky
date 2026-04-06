@@ -2516,10 +2516,6 @@ user-select: none;
   gap: 8px;
 }
 
-/* Tab content fade transition */
-.xmaison_test-results-tab-content {
-  transition: opacity 200ms ease-in-out;
-}
 
 .xmaison_test-results-popup-close:hover svg path {
   stroke: #3B2B2F;
