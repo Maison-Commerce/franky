@@ -217,10 +217,10 @@
                       <template x-if="item.properties?.['_mc_pre_order'] === 'true'">
                         <span class="xmaison_original-price" x-text="m(item.line_price)"></span>
                       </template>
-                      <template x-if="item.properties?.['_mc_pre_order'] !== 'true' && item.properties?.['_mc_compare_at']">
-                        <span class="xmaison_original-price" x-text="m(parseInt(item.properties['_mc_compare_at']))"></span>
+                      <template x-if="item.properties?.['_mc_pre_order'] !== 'true' && item.properties?.['_mc_compare_at_unit']">
+                        <span class="xmaison_original-price" x-text="m(parseInt(item.properties['_mc_compare_at_unit']) * item.quantity)"></span>
                       </template>
-                      <template x-if="item.properties?.['_mc_pre_order'] !== 'true' && !item.properties?.['_mc_compare_at'] && item.original_line_price > item.line_price">
+                      <template x-if="item.properties?.['_mc_pre_order'] !== 'true' && !item.properties?.['_mc_compare_at_unit'] && item.original_line_price > item.line_price">
                         <span class="xmaison_original-price" x-text="m(item.original_line_price)"></span>
                       </template>
                       <span class="xmaison_sale-price" x-text="m(item.properties?.['_mc_pre_order'] === 'true' ? Math.round(item.line_price * window.preorderDiscountMultiplier) : item.line_price)"></span>
@@ -625,8 +625,8 @@
       get compareAtTotal() {
         if (!this.cart.items) return 0;
         return this.cart.items.reduce((sum, item) => {
-          if (item.properties?.['_mc_compare_at']) {
-            return sum + parseInt(item.properties['_mc_compare_at']);
+          if (item.properties?.['_mc_compare_at_unit']) {
+            return sum + (parseInt(item.properties['_mc_compare_at_unit']) * item.quantity);
           }
           return sum + (item.original_line_price || item.line_price || 0);
         }, 0);
