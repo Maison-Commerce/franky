@@ -2151,10 +2151,9 @@
             </div>
 
             <!-- Download CTA -->
-            <!-- DEBUG: certificate type={{ product.metafields.custom.test_certificate.type }} value={{ product.metafields.custom.test_certificate.value }} url={{ product.metafields.custom.test_certificate.value.url }} -->
             {% if product.metafields.custom.test_certificate.value != blank %}
               <a
-                href="{{ product.metafields.custom.test_certificate.value.url | default: product.metafields.custom.test_certificate.value | file_url }}"
+                href="{{ product.metafields.custom.test_certificate.value.url }}"
                 target="_blank"
                 class="xmaison_test-results-cta"
               >
