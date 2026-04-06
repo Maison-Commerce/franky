@@ -2490,7 +2490,7 @@ user-select: none;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
