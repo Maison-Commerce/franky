@@ -886,12 +886,22 @@
       testResultsActiveTab: 0,
       testResultsTransitioning: false,
       switchTestTab(newTab) {
-        if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) return;
+        console.log('[TestTabs] switchTestTab called', { newTab, activeTab: this.testResultsActiveTab, transitioning: this.testResultsTransitioning });
+        if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) {
+          console.log('[TestTabs] blocked - same tab or transitioning');
+          return;
+        }
         this.testResultsTransitioning = true;
-        const tabs = this.$el.querySelectorAll('.xmaison_test-results-tab-content');
+        const tabs = document.querySelectorAll('.xmaison_test-results-tab-content');
+        console.log('[TestTabs] found tabs:', tabs.length, tabs);
         const current = tabs[this.testResultsActiveTab];
         const next = tabs[newTab];
-        if (!current || !next) { this.testResultsTransitioning = false; return; }
+        console.log('[TestTabs] current:', current, 'next:', next);
+        if (!current || !next) {
+          console.log('[TestTabs] missing element, aborting');
+          this.testResultsTransitioning = false;
+          return;
+        }
 
         current.style.opacity = '0';
         setTimeout(() => {
@@ -903,6 +913,7 @@
             requestAnimationFrame(() => {
               next.style.opacity = '1';
               this.testResultsTransitioning = false;
+              console.log('[TestTabs] transition complete, now on tab', newTab);
             });
           });
         }, 200);
