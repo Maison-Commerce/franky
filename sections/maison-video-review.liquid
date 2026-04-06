@@ -564,7 +564,7 @@
           <div dir="rtl" class="swiper maison_commerce_video_review__slider maison_commerce_video_review__slider--bottom">
             <div class="swiper-wrapper">
               {% for review in review_blocks %}
-                {% if review.settings.slider_position == 'top' %}
+                {% if review.settings.slider_position == 'bottom' %}
                   <div class="swiper-slide maison_commerce_video_review__slide">
                     <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
                       <div class="maison_commerce_video_review__card-container">
@@ -575,7 +575,7 @@
                 {% endif %}
               {% endfor %}
               {% for review in review_blocks %}
-                {% if review.settings.slider_position == 'top' %}
+                {% if review.settings.slider_position == 'bottom' %}
                   <div class="swiper-slide maison_commerce_video_review__slide">
                     <div class="maison_commerce_video_review__card" {{ review.shopify_attributes }}>
                       <div class="maison_commerce_video_review__card-container">
