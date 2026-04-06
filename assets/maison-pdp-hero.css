@@ -2455,7 +2455,7 @@ user-select: none;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
-  color: #3B2B2F;
+  color: rgba(59, 43, 47, 0.75);
   text-decoration: underline;
   white-space: nowrap;
 }
