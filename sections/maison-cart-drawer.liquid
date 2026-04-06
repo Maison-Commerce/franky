@@ -213,7 +213,7 @@
                         </button>
                       </div>
                     </div>
-                    <div class="xmaison_product-price" x-init="console.log('[CartItem]', item.title, { properties: item.properties, line_price: item.line_price, original_line_price: item.original_line_price, quantity: item.quantity })">
+                    <div class="xmaison_product-price">
                       <template x-if="item.properties?.['_mc_pre_order'] === 'true'">
                         <span class="xmaison_original-price" x-text="m(item.line_price)"></span>
                       </template>
