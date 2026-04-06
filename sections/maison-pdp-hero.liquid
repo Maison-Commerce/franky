@@ -2007,14 +2007,14 @@
         {% if test_categories != blank and test_categories.size > 0 %}
           {% for category in test_categories %}
             console.log('[TestResults] category {{ forloop.index }}:', {
-              title: {{ category.value.title | json }},
-              entries: {{ category.value.entries | json }}
+              title: {{ category.title | json }},
+              entries: {{ category.entries | json }}
             });
-            {% for entry in category.value.entries.value %}
+            {% for entry in category.entries.value %}
               console.log('[TestResults]   entry {{ forloop.index }}:', {
-                name: {{ entry.value.name | json }},
-                status: {{ entry.value.status | json }},
-                limit_value: {{ entry.value.limit_value | json }}
+                name: {{ entry.name | json }},
+                status: {{ entry.status | json }},
+                limit_value: {{ entry.limit_value | json }}
               });
             {% endfor %}
           {% endfor %}
@@ -2028,9 +2028,9 @@
         {% assign total_tests = 0 %}
         {% assign passed_tests = 0 %}
         {% for category in test_categories %}
-          {% for entry in category.value.entries.value %}
+          {% for entry in category.entries.value %}
             {% assign total_tests = total_tests | plus: 1 %}
-            {% if entry.value.status == 'Passed' %}
+            {% if entry.status == 'Passed' %}
               {% assign passed_tests = passed_tests | plus: 1 %}
             {% else %}
               {% assign all_passed = false %}
@@ -2093,18 +2093,18 @@
                   :class="{ 'xmaison_test-results-tab--active': testResultsActiveTab === {{ forloop.index0 }} }"
                   @click="testResultsActiveTab = {{ forloop.index0 }}"
                 >
-                  {{ category.value.title }}
+                  {{ category.title }}
                 </button>
               {% endfor %}
             </div>
 
             <!-- Tab Content -->
             {% for category in test_categories %}
-              {% assign cat_entries = category.value.entries.value %}
+              {% assign cat_entries = category.entries.value %}
               {% assign cat_total = cat_entries.size %}
               {% assign cat_passed = 0 %}
               {% for entry in cat_entries %}
-                {% if entry.value.status == 'Passed' %}
+                {% if entry.status == 'Passed' %}
                   {% assign cat_passed = cat_passed | plus: 1 %}
                 {% endif %}
               {% endfor %}
@@ -2122,7 +2122,7 @@
                   {% for entry in cat_entries %}
                     <div class="xmaison_test-results-row">
                       <div class="xmaison_test-results-cell xmaison_test-results-cell--name">
-                        {% if entry.value.status == 'Passed' %}
+                        {% if entry.status == 'Passed' %}
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="7" cy="7" r="7" fill="#EAFBEF"/>
                             <path d="M4.5 7L6.5 9L10 5" stroke="#31A156" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2133,13 +2133,13 @@
                             <path d="M5 5L9 9M9 5L5 9" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                           </svg>
                         {% endif %}
-                        <span>{{ entry.value.name }}</span>
+                        <span>{{ entry.name }}</span>
                       </div>
-                      <div class="xmaison_test-results-cell xmaison_test-results-cell--status {% if entry.value.status == 'Passed' %}xmaison_test-results-cell--passed{% else %}xmaison_test-results-cell--failed{% endif %}">
-                        {{ entry.value.status }}
+                      <div class="xmaison_test-results-cell xmaison_test-results-cell--status {% if entry.status == 'Passed' %}xmaison_test-results-cell--passed{% else %}xmaison_test-results-cell--failed{% endif %}">
+                        {{ entry.status }}
                       </div>
                       <div class="xmaison_test-results-cell xmaison_test-results-cell--limit">
-                        {{ entry.value.limit_value }}
+                        {{ entry.limit_value }}
                       </div>
                     </div>
                   {% endfor %}
