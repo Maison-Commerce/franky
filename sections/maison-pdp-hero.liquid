@@ -888,32 +888,33 @@
       switchTestTab(newTab) {
         if (newTab === this.testResultsActiveTab || this.testResultsTransitioning) return;
         this.testResultsTransitioning = true;
-        this.$nextTick(() => {
-          const current = this.$el.querySelector('.xmaison_test-results-tab-content--visible');
-          if (current) {
-            current.classList.add('xmaison_test-results-tab-content--fading-out');
-            setTimeout(() => {
-              current.classList.remove('xmaison_test-results-tab-content--visible', 'xmaison_test-results-tab-content--fading-out');
-              this.testResultsActiveTab = newTab;
-              this.$nextTick(() => {
-                const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
-                if (next) {
-                  next.classList.add('xmaison_test-results-tab-content--visible');
-                }
+        const current = this.$el.querySelector('.xmaison_test-results-tab-content--visible');
+        if (current) {
+          current.classList.add('xmaison_test-results-tab-content--fading-out');
+          current.classList.remove('xmaison_test-results-tab-content--visible');
+          setTimeout(() => {
+            current.classList.remove('xmaison_test-results-tab-content--fading-out');
+            this.testResultsActiveTab = newTab;
+            const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
+            if (next) {
+              requestAnimationFrame(() => {
+                next.classList.add('xmaison_test-results-tab-content--visible');
                 this.testResultsTransitioning = false;
               });
-            }, 200);
-          } else {
-            this.testResultsActiveTab = newTab;
-            this.$nextTick(() => {
-              const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
-              if (next) {
-                next.classList.add('xmaison_test-results-tab-content--visible');
-              }
+            } else {
               this.testResultsTransitioning = false;
+            }
+          }, 200);
+        } else {
+          this.testResultsActiveTab = newTab;
+          const next = this.$el.querySelector('[data-test-tab="' + newTab + '"]');
+          if (next) {
+            requestAnimationFrame(() => {
+              next.classList.add('xmaison_test-results-tab-content--visible');
             });
           }
-        });
+          this.testResultsTransitioning = false;
+        }
       },
       videoModalOpen: false,
       activeVideoId: null,
@@ -2145,7 +2146,6 @@
                   <div
                     class="xmaison_test-results-tab-content{% if forloop.index0 == 0 %} xmaison_test-results-tab-content--visible{% endif %}"
                     data-test-tab="{{ forloop.index0 }}"
-                    x-show="testResultsActiveTab === {{ forloop.index0 }}"
                   >
                     <div class="xmaison_test-results-status-banner {% if cat_passed == cat_total %}xmaison_test-results-status-banner--success{% else %}xmaison_test-results-status-banner--warning{% endif %}">
                       {{ cat_passed }} OF {{ cat_total }} WITHIN LIMIT
