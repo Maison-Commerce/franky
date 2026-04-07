@@ -109,11 +109,23 @@
             "button_label": "Discover your morning ritual",
             "button_link": "shopify://products/franky-protein-coffee"
           }
+        },
+        "row_qqx3HF": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Franky_11.png",
+            "caption": "",
+            "heading": "Our Story",
+            "text": "<p>After experiencing the real difference that health & wellness made in our own lives, we set out to make healthy living easier and far more enjoyable for everyone. So we created simple, effective, and seriously delicious products that nourish your body and fit seamlessly into your daily routine.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
         "row_ELaARV",
-        "row_kN7ArP"
+        "row_kN7ArP",
+        "row_qqx3HF"
       ],
       "settings": {
         "image_height": "medium",
