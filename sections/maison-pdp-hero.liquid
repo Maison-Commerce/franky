@@ -1037,17 +1037,26 @@
         return window.preorderPropertyText.replace('[delivery_date]', window.preorderDeliveryDate || '');
       },
 
+      getDiscountBucket(isPreorder = false) {
+        const mode =
+          window.sectionMode === 'bundle' ||
+          window.sectionMode === 'packs' ||
+          window.sectionMode === 'classic'
+            ? window.sectionMode
+            : 'packs';
+        return `${mode}_${isPreorder ? 'preorder' : 'standard'}`;
+      },
+
       addToCartPreOrder() {
         if (this.loading) return;
         this.loading = true;
 
         const preorderProps = {
-          '_mc_pre_order': 'true',
-          'Pre-Order': this.preorderPropertyValue
+          _mc_discount_bucket: this.getDiscountBucket(true),
+          'Pre-Order': this.preorderPropertyValue,
         };
 
         const hasBundleAddons = this.bundleAddonTotal > 0;
-        const bundleId = hasBundleAddons ? 'bundle_true' : null;
 
         let payload;
 
@@ -1061,7 +1070,7 @@
                   const item = {
                     id: addonVariantId,
                     quantity: qty,
-                    properties: { _mc_pre_order_bundle: 'pre_order_bundle_true', ...preorderProps },
+                    properties: { ...preorderProps },
                   };
                   if (this.isSubscription && this.sellingPlanId) {
                     item.selling_plan = this.sellingPlanId;
@@ -1080,13 +1089,10 @@
           };
 
           if (window.sectionMode === 'packs') {
-            mainItem.properties._mc_pre_order_packs = 'pre_order_packs_true';
             const compareAt = this.variant?.compare_at_price || 0;
             if (compareAt > 0) {
               mainItem.properties._mc_compare_at_unit = String(compareAt);
             }
-          } else if (window.sectionMode === 'classic') {
-            mainItem.properties._mc_pre_order_classic = 'pre_order_classic_true';
           }
 
           if (this.isSubscription && this.sellingPlanId) {
@@ -1106,13 +1112,19 @@
           .then(res => res.json())
           .then(data => {
             console.log('[PreOrder] Added to cart, response:', JSON.stringify(data, null, 2));
+            return fetch('/cart.js').then(r => r.json());
+          })
+          .then((cart) => {
+            const hasPreorder = cart.items.some((item) => {
+              const bucket = item.properties?._mc_discount_bucket;
+              return typeof bucket === 'string' && bucket.endsWith('_preorder');
+            });
             return fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ attributes: { 'pre-order': 'true' } }),
-            });
+              body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'true' : '' } }),
+            }).then(() => cart);
           })
-          .then(() => fetch('/cart.js').then(r => r.json()))
           .then((cart) => {
             console.log('[Cart] Full cart:', JSON.stringify(cart, null, 2));
             console.log('[Cart] Items:', cart.items.map(i => ({ title: i.title, qty: i.quantity, price: i.line_price, properties: i.properties })));
@@ -1140,7 +1152,7 @@
 
         const isRelated = variantId !== null;
         const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
-        const bundleId = hasBundleAddons ? 'bundle_true' : null;
+        const discountBucket = !isRelated ? this.getDiscountBucket(false) : null;
 
         console.log('[AddToCart Debug] isRelated:', isRelated);
         console.log('[AddToCart Debug] hasBundleAddons:', hasBundleAddons);
@@ -1160,14 +1172,11 @@
 
         const compareAt = this.variant?.compare_at_price || 0;
 
-        if (hasBundleAddons) {
-          mainItem.properties = { _mc_bundle: bundleId };
-        } else if (!isRelated && window.sectionMode !== 'classic') {
-          mainItem.properties = { _mc_packs: 'packs_true' };
+        if (!isRelated && !hasBundleAddons) {
+          mainItem.properties = { _mc_discount_bucket: discountBucket };
         }
 
-        if (!isRelated && compareAt > 0) {
-          mainItem.properties = mainItem.properties || {};
+        if (!isRelated && !hasBundleAddons && compareAt > 0) {
           mainItem.properties._mc_compare_at_unit = String(compareAt);
         }
 
@@ -1186,7 +1195,7 @@
               if (qty > 0) {
                 const addonVariantId = window.bundleAddonVariants[slotIndex];
                 if (addonVariantId) {
-                  const itemProps = { _mc_bundle: bundleId };
+                  const itemProps = { _mc_discount_bucket: discountBucket };
                   if (bundleTotal >= 2 && bundleBaseTier > 0) {
                     itemProps._mc_compare_at_unit = String(bundleBaseTier);
                   }

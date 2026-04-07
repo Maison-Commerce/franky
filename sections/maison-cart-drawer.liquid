@@ -501,6 +501,14 @@
       cart: {},
       loading: false,
 
+      isPreorderBucket(bucket) {
+        return typeof bucket === 'string' && bucket.endsWith('_preorder');
+      },
+
+      isBundleBucket(bucket) {
+        return bucket === 'bundle_standard' || bucket === 'bundle_preorder';
+      },
+
       init() {
         this.fetchCart();
 
@@ -538,7 +546,7 @@
             window.cart = clone;
 
             // Check for pre-order items and update cart attribute
-            const hasPreorder = clone.items.some(item => item.properties && item.properties['_mc_pre_order'] === 'true');
+            const hasPreorder = clone.items.some((item) => this.isPreorderBucket(item.properties?._mc_discount_bucket));
             fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -578,10 +586,10 @@
         }
 
         // If deleting a bundle item, delete all items in the same bundle
-        if (quantity === 0 && item?.properties?._mc_bundle) {
-          const bundleId = item.properties._mc_bundle;
-          const bundleItems = this.cart.items.filter((i) => i.properties?._mc_bundle === bundleId);
-          this.cart.items = this.cart.items.filter((i) => i.properties?._mc_bundle !== bundleId);
+        const discountBucket = item?.properties?._mc_discount_bucket;
+        if (quantity === 0 && this.isBundleBucket(discountBucket)) {
+          const bundleItems = this.cart.items.filter((i) => i.properties?._mc_discount_bucket === discountBucket);
+          this.cart.items = this.cart.items.filter((i) => i.properties?._mc_discount_bucket !== discountBucket);
 
           const updates = {};
           bundleItems.forEach((i) => { updates[i.key] = 0; });
@@ -697,7 +705,8 @@
             body: JSON.stringify({
               id: item.variant_id,
               quantity: item.quantity,
-              selling_plan: sellingPlan.id
+              selling_plan: sellingPlan.id,
+              properties: item.properties || {},
             })
           });
           
