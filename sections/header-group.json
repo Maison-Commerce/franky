@@ -17,28 +17,32 @@
         "announcement_qTCAgf": {
           "type": "announcement",
           "settings": {
-            "text": "UP TO 32% OFF YOUR FIRST ORDER + FREE SHIPPING"
+            "text": "UP TO 32% OFF YOUR FIRST ORDER + FREE SHIPPING",
+            "show_icon": false
           }
         },
         "announcement_nkgiw6": {
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "0g of sugar"
+            "text": "0g of sugar",
+            "show_icon": true
           }
         },
         "announcement_V467FF": {
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "Real coffee"
+            "text": "Real coffee",
+            "show_icon": true
           }
         },
         "announcement_gNWpnm": {
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "Natural Ingredients - made in the USA"
+            "text": "Natural Ingredients - made in the USA",
+            "show_icon": true
           }
         }
       },
