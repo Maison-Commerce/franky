@@ -1047,16 +1047,29 @@
         return `${mode}_${isPreorder ? 'preorder' : 'standard'}`;
       },
 
+      getBundleGroupId() {
+        if (window.crypto?.randomUUID) {
+          return window.crypto.randomUUID();
+        }
+        return `bundle_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+      },
+
       addToCartPreOrder() {
         if (this.loading) return;
         this.loading = true;
+
+        const hasBundleAddons = this.bundleAddonTotal > 0;
+        const bundleGroupId = window.sectionMode === 'bundle' && hasBundleAddons
+          ? this.getBundleGroupId()
+          : null;
 
         const preorderProps = {
           _mc_discount_bucket: this.getDiscountBucket(true),
           'Pre-Order': this.preorderPropertyValue,
         };
-
-        const hasBundleAddons = this.bundleAddonTotal > 0;
+        if (bundleGroupId) {
+          preorderProps._mc_bundle_group = bundleGroupId;
+        }
 
         let payload;
 
@@ -1153,6 +1166,9 @@
         const isRelated = variantId !== null;
         const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
         const discountBucket = !isRelated ? this.getDiscountBucket(false) : null;
+        const bundleGroupId = window.sectionMode === 'bundle' && hasBundleAddons
+          ? this.getBundleGroupId()
+          : null;
 
         console.log('[AddToCart Debug] isRelated:', isRelated);
         console.log('[AddToCart Debug] hasBundleAddons:', hasBundleAddons);
@@ -1196,6 +1212,9 @@
                 const addonVariantId = window.bundleAddonVariants[slotIndex];
                 if (addonVariantId) {
                   const itemProps = { _mc_discount_bucket: discountBucket };
+                  if (bundleGroupId) {
+                    itemProps._mc_bundle_group = bundleGroupId;
+                  }
                   if (bundleTotal >= 2 && bundleBaseTier > 0) {
                     itemProps._mc_compare_at_unit = String(bundleBaseTier);
                   }

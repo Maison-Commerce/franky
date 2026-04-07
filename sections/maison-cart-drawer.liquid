@@ -587,9 +587,10 @@
 
         // If deleting a bundle item, delete all items in the same bundle
         const discountBucket = item?.properties?._mc_discount_bucket;
-        if (quantity === 0 && this.isBundleBucket(discountBucket)) {
-          const bundleItems = this.cart.items.filter((i) => i.properties?._mc_discount_bucket === discountBucket);
-          this.cart.items = this.cart.items.filter((i) => i.properties?._mc_discount_bucket !== discountBucket);
+        const bundleGroup = item?.properties?._mc_bundle_group;
+        if (quantity === 0 && bundleGroup && this.isBundleBucket(discountBucket)) {
+          const bundleItems = this.cart.items.filter((i) => i.properties?._mc_bundle_group === bundleGroup);
+          this.cart.items = this.cart.items.filter((i) => i.properties?._mc_bundle_group !== bundleGroup);
 
           const updates = {};
           bundleItems.forEach((i) => { updates[i.key] = 0; });
