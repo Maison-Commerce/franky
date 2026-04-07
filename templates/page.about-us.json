@@ -60,13 +60,20 @@
         "text_BJemWy": {
           "type": "text",
           "settings": {
+            "text": "<p><strong>We create nutrition that works -</strong></p><p><strong> for your body, your goals, and your life.</strong></p>"
+          }
+        },
+        "text_ePJPqy": {
+          "type": "text",
+          "settings": {
             "text": "<p>We develop science-backed, delicious nutrition products that solve real health problems and fit seamlessly into daily life. From protein coffee to complete morning stacks, every product delivers measurable results while making wellness sustainable and achievable for millions.</p>"
           }
         }
       },
       "block_order": [
         "heading_4hrhQj",
-        "text_BJemWy"
+        "text_BJemWy",
+        "text_ePJPqy"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
@@ -214,18 +221,18 @@
         "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
-        "heading_color": "#2F3936",
+        "heading_color": "#2f3936",
         "image": "shopify://shop_images/Franky_12_tiny.png",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
         "question_font_size_desktop": 18,
         "question_font_size_mobile": 16,
-        "question_color": "#2F3936",
+        "question_color": "#2f3936",
         "question_padding_desktop": 20,
         "question_padding_mobile": 18,
         "question_gap": 24,
-        "border_color": "rgba(47, 57, 54, 0.2)",
+        "border_color": "#2f393633",
         "toggle_icon_size": 32
       }
     }
