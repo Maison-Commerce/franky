@@ -408,7 +408,7 @@
             "badge_text": "Best Value",
             "discount_multiplier": "0.68",
             "is_default_selected": false,
-            "show_best_value": false,
+            "show_best_value": true,
             "variant_id": "",
             "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png"
           }
