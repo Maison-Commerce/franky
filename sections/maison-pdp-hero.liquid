@@ -1614,7 +1614,7 @@
           <span class="xmaison_pdp-price-current" x-text="formatMoney(isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice))"></span>
           {% if section.settings.preorder_enabled %}
             <span class="xmaison_pdp-price-compare" x-show="isPreorder" x-text="formatMoney(preorderOriginalPrice)"></span>
-            <span class="xmaison_pdp-price-save" x-show="isPreorder" x-text="'YOU SAVE ' + {{ settings.preorder_discount_percent | default: 15 }} + '%'"></span>
+            <span class="xmaison_pdp-price-save" x-show="isPreorder" x-text="'YOU SAVE ' + (Math.round((1 - currentPackDiscount) * 100) + {{ settings.preorder_discount_percent | default: 15 }}) + '%'"></span>
           {% endif %}
           {% if section.settings.section_mode_default == 'bundle' %}
             <span class="xmaison_pdp-price-compare" x-show="!isPreorder && bundleAddonTotal >= 2 && bundleOriginalPrice > bundleCalculatedPrice" x-text="formatMoney(bundleOriginalPrice)"></span>
