@@ -350,7 +350,8 @@
         "settings": {
           "free_shipping_threshold": 50,
           "upsell_list": [
-            "franky-magic-frother"
+            "franky-magic-frother",
+            "franky-protein-coffee"
           ],
           "upsell_title": "Try more, choose a favorite",
           "subscribe_badge": "Most Popular",
