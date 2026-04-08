@@ -1611,13 +1611,17 @@
       <div class="xmaison_product-options">
         <!-- Price Display -->
         <div class="xmaison_pdp-price">
-          <span class="xmaison_pdp-price-current" x-text="formatMoney(isSubscription ? subscriptionPrice : onetimePrice)"></span>
+          <span class="xmaison_pdp-price-current" x-text="formatMoney(isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice))"></span>
+          {% if section.settings.preorder_enabled %}
+            <span class="xmaison_pdp-price-compare" x-show="isPreorder" x-text="formatMoney(preorderOriginalPrice)"></span>
+            <span class="xmaison_pdp-price-save" x-show="isPreorder" x-text="'YOU SAVE ' + {{ settings.preorder_discount_percent | default: 15 }} + '%'"></span>
+          {% endif %}
           {% if section.settings.section_mode_default == 'bundle' %}
-            <span class="xmaison_pdp-price-compare" x-show="bundleAddonTotal >= 2 && bundleOriginalPrice > bundleCalculatedPrice" x-text="formatMoney(bundleOriginalPrice)"></span>
-            <span class="xmaison_pdp-price-save" x-show="bundleAddonTotal >= 2 && bundleSavePercent > 0" x-text="'YOU SAVE ' + bundleSavePercent + '%'"></span>
+            <span class="xmaison_pdp-price-compare" x-show="!isPreorder && bundleAddonTotal >= 2 && bundleOriginalPrice > bundleCalculatedPrice" x-text="formatMoney(bundleOriginalPrice)"></span>
+            <span class="xmaison_pdp-price-save" x-show="!isPreorder && bundleAddonTotal >= 2 && bundleSavePercent > 0" x-text="'YOU SAVE ' + bundleSavePercent + '%'"></span>
           {% else %}
-            <span class="xmaison_pdp-price-compare" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
-            <span class="xmaison_pdp-price-save" x-show="variant && variant.compare_at_price && variant.compare_at_price > variant.price && (isSubscription ? subscriptionPrice : onetimePrice) > 0" x-text="'YOU SAVE ' + Math.round((1 - (isSubscription ? subscriptionPrice : onetimePrice) / (variant?.compare_at_price * quantity)) * 100) + '%'"></span>
+            <span class="xmaison_pdp-price-compare" x-show="!isPreorder && variant && variant.compare_at_price && variant.compare_at_price > variant.price" x-text="formatMoney(variant?.compare_at_price * quantity)"></span>
+            <span class="xmaison_pdp-price-save" x-show="!isPreorder && variant && variant.compare_at_price && variant.compare_at_price > variant.price && (isSubscription ? subscriptionPrice : onetimePrice) > 0" x-text="'YOU SAVE ' + Math.round((1 - (isSubscription ? subscriptionPrice : onetimePrice) / (variant?.compare_at_price * quantity)) * 100) + '%'"></span>
           {% endif %}
         </div>
 
