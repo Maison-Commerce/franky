@@ -1637,7 +1637,7 @@
       <div class="xmaison_product-options">
         <!-- Price Display -->
         <div class="xmaison_pdp-price">
-          <span class="xmaison_pdp-price-current" x-text="formatMoney((isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice)) + (isPreorder ? (quantity >= 3 ? 2 : 0) : (quantity >= 2 ? 1 : 0)))"></span>
+          <span class="xmaison_pdp-price-current" x-text="formatMoney((isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice)) + (window.sectionMode !== 'classic' ? (isPreorder ? (quantity >= 3 ? 2 : 0) : (quantity >= 2 ? 1 : 0)) : 0))"></span>
           {% if section.settings.preorder_enabled %}
             <span class="xmaison_pdp-price-compare" x-show="isPreorder" x-text="formatMoney(preorderOriginalPrice)"></span>
             <span class="xmaison_pdp-price-save" x-show="isPreorder" x-text="'YOU SAVE ' + (Math.round((1 - currentPackDiscount) * 100) + {{ settings.preorder_discount_percent | default: 15 }}) + '%'"></span>
