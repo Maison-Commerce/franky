@@ -625,13 +625,13 @@
         "bundle_tier1_price": "$34.95/bag",
         "bundle_tier1_discount_percent": 0,
         "bundle_tier2_label": "2 bags",
-        "bundle_tier2_price": "$32.96/bag",
+        "bundle_tier2_price": "$37.96/bag",
         "bundle_tier2_discount_percent": 5,
         "bundle_tier3_label": "3 bags",
-        "bundle_tier3_price": "$30.95/bag",
+        "bundle_tier3_price": "$35.96/bag",
         "bundle_tier3_discount_percent": 10,
         "bundle_tier4_label": "4+ bags",
-        "bundle_tier4_price": "$24.95/bag",
+        "bundle_tier4_price": "$33.96/bag",
         "bundle_tier4_discount_percent": 15,
         "bundle_products": [
           "franky-protein-coffee"
