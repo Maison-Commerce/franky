@@ -350,8 +350,9 @@
         "settings": {
           "free_shipping_threshold": 50,
           "upsell_list": [
-            "franky-protein-coffee"
+            "franky-magic-frother"
           ],
+          "upsell_title": "Try more, choose a favorite",
           "subscribe_badge": "Most Popular",
           "subscribe_title": "Subscribe & Save an Extra 10%",
           "subscribe_benefit_1": "Instantly save more off your first order",
@@ -397,11 +398,6 @@
       },
       "1232542678405107163": {
         "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
-        "disabled": false,
-        "settings": {}
-      },
-      "6708902783804164213": {
-        "type": "shopify://apps/discountray-custom-price/blocks/dr-global-embed/8c400e5a-b710-47ec-96e7-2bf54a9db286",
         "disabled": false,
         "settings": {}
       }
