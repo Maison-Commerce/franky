@@ -1795,7 +1795,7 @@
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 2 }">
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier2_label }}</span>
                 <div class="xmaison_bundle-dot"></div>
-                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier2_discount_percent | default: 5 }} / 100))) + '/bag'">{{ section.settings.bundle_tier2_price }}</span>
+                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier2_discount_percent | default: 5 }} / 100)) + 1) + '/bag'">{{ section.settings.bundle_tier2_price }}</span>
               </div>
               <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 3 }"></div>
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 3 }">
