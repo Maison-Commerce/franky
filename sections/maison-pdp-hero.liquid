@@ -1709,7 +1709,17 @@
                       {% if discount_multiplier < 1 %}
                         {% assign discount_percent = 1 | minus: discount_multiplier | times: 100 | round %}
                         <div class="xmaison_pack-badge">
-                          <span class="xmaison_pack-badge-text">Save {{ discount_percent }}%</span>
+                          {% if section.settings.preorder_enabled %}
+                            {% assign preorder_discount = settings.preorder_discount_percent | default: 15 %}
+                            {% assign combined_percent = discount_percent | plus: preorder_discount %}
+                            <span class="xmaison_pack-badge-text" x-text="isPreorder ? 'Save {{ combined_percent }}%' : 'Save {{ discount_percent }}%'">Save {{ discount_percent }}%</span>
+                          {% else %}
+                            <span class="xmaison_pack-badge-text">Save {{ discount_percent }}%</span>
+                          {% endif %}
+                        </div>
+                      {% elsif section.settings.preorder_enabled %}
+                        <div class="xmaison_pack-badge" x-show="isPreorder" x-cloak>
+                          <span class="xmaison_pack-badge-text">Save {{ settings.preorder_discount_percent | default: 15 }}%</span>
                         </div>
                       {% endif %}
                     </div>
