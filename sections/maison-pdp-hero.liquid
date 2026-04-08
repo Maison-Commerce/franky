@@ -2013,7 +2013,7 @@
               <div class="xmaison_preorder-button-top">
                 <span class="xmaison_preorder-text">{{ section.settings.preorder_button_text }}</span>
                 <span class="xmaison_preorder-dot"></span>
-                <span class="xmaison_preorder-price-current" x-text="formatMoney(preorderPrice)"></span>
+                <span class="xmaison_preorder-price-current" x-text="formatMoney(preorderPrice + (window.sectionMode === 'packs' ? (quantity >= 3 ? 2 : 0) : (window.sectionMode === 'bundle' ? (bundleAddonTotal >= 4 ? -6 : (bundleAddonTotal === 3 ? 1 : (bundleAddonTotal === 2 ? -5 : 0))) : 0)))"></span>
                 <span class="xmaison_preorder-price-original" x-text="formatMoney(preorderOriginalPrice)"></span>
               </div>
               <span class="xmaison_preorder-note" x-text="preorderPropertyValue"></span>
