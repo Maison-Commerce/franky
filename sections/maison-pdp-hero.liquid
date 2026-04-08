@@ -1940,7 +1940,7 @@
           </span>
         </div>
 
-        <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} || bundleAddonTotal === 0{% endif %}">
+        <button type="submit" class="xmaison_add-to-cart-button" :disabled="loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} || bundleAddonTotal === 0{% endif %}" {% if section.settings.preorder_enabled %}x-show="!isPreorder"{% endif %}>
           <span class="xmaison_add-to-cart-text">{{ section.settings.add_to_cart_text }}</span>
         </button>
 
