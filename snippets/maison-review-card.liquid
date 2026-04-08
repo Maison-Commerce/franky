@@ -44,6 +44,18 @@
         {{ review.settings.purchase_date }}
     </p>
     {% endif %}
+
+    {% if review.settings.review_image != blank %}
+    <div class="maison_review_card__image">
+      <img
+        src="{{ review.settings.review_image | image_url: width: 600 }}"
+        alt="{{ review.settings.reviewer_name | default: 'Review image' }}"
+        loading="lazy"
+        width="600"
+        height="{{ 600 | divided_by: review.settings.review_image.aspect_ratio | round }}"
+      >
+    </div>
+    {% endif %}
 </div>
 
 {% if review.settings.review_text != blank %}
@@ -100,6 +112,20 @@
     line-height: 1.5;
     color: #3A3631;
     margin: 0;
+  }
+
+  .maison_review_card__image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .maison_review_card__image img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .maison_review_card__text {
