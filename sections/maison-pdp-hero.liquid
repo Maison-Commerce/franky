@@ -885,6 +885,9 @@
           const packDiscountPercent = Math.round((1 - this.currentPackDiscount) * 100);
           const preorderDiscountPercent = window.preorderDiscountPercent || 0;
           const combinedPercent = packDiscountPercent + (this.isPreorder ? preorderDiscountPercent : 0);
+          const basePrice = this.variant?.price || this.product.price;
+          console.log('[Price Debug] basePrice (before discounts):', basePrice);
+          console.log('[Price Debug] basePriceTotal (x quantity):', basePrice * this.quantity);
           console.log('[Price Debug] variantId:', this.variantId);
           console.log('[Price Debug] isPreorder:', this.isPreorder);
           console.log('[Price Debug] currentPackDiscount:', this.currentPackDiscount);
