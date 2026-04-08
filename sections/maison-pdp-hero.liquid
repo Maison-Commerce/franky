@@ -982,7 +982,7 @@
       },
 
       get bundleCalculatedPrice() {
-        return this.bundleTierPrice * this.bundleAddonTotal;
+        return this.bundleTierPrice * this.bundleAddonTotal + (this.bundleAddonTotal === 2 ? 2 : 0);
       },
 
       get bundleOriginalPrice() {
