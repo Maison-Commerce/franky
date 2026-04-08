@@ -71,6 +71,11 @@
 {% endschema %}
 
 {{ 'maison-cart-drawer.css' | asset_url | stylesheet_tag }}
+<style>
+  .xmaison_upsell-product.xmaison_upsell-hidden {
+    display: none !important;
+  }
+</style>
 
 <div x-cloak x-data="maisonCartDrawer()" @click="maisonDispatch('maison:cart-drawer-close')" class="xmaison_cart-overlay">
   <div class="xmaison_cart-container" @click.stop>
@@ -316,7 +321,7 @@
                     %}
                   {% endif %}
 
-                  <div class="swiper-slide xmaison_upsell-product">
+                  <div class="swiper-slide xmaison_upsell-product" data-product-id="{{ product.id }}">
                     <div class="xmaison_upsell-product-content">
                       <div class="xmaison_upsell-product-image">
                         <a href="{{ product.url }}">
@@ -545,6 +550,9 @@
             this.cart = clone;
             window.cart = clone;
 
+            // Filter upsell products already in cart
+            this.filterUpsellProducts();
+
             // Check for pre-order items and update cart attribute
             const hasPreorder = clone.items.some((item) => this.isPreorderBucket(item.properties?._mc_discount_bucket));
             fetch('/cart/update.js', {
@@ -558,6 +566,31 @@
           .finally(() => {
             this.loading = false;
           });
+      },
+
+      filterUpsellProducts() {
+        const cartProductIds = (this.cart.items || []).map(i => i.product_id);
+        const slides = document.querySelectorAll('.xmaison_upsell-product[data-product-id]');
+        let visibleCount = 0;
+
+        slides.forEach(slide => {
+          const productId = parseInt(slide.dataset.productId);
+          if (cartProductIds.includes(productId)) {
+            slide.classList.add('xmaison_upsell-hidden');
+          } else {
+            slide.classList.remove('xmaison_upsell-hidden');
+            visibleCount++;
+          }
+        });
+
+        const section = document.querySelector('.xmaison_upsell-section');
+        if (section) {
+          section.style.display = visibleCount > 0 ? '' : 'none';
+        }
+
+        if (window.xmaisonUpsellSwiper) {
+          window.xmaisonUpsellSwiper.update();
+        }
       },
 
       updateCartBubble() {
@@ -748,7 +781,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   // Initialize Swiper
-  const xmaisonSwiper = new Swiper('.xmaison_products-swiper', {
+  window.xmaisonUpsellSwiper = new Swiper('.xmaison_products-swiper', {
     // Prevent skipping slides on rapid clicks
     preventInteractionOnTransition: true,
     speed: 300,
