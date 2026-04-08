@@ -295,11 +295,14 @@
       "default": "$34.95/bag"
     },
     {
-      "type": "text",
-      "id": "bundle_tier1_price_cents",
-      "label": "Tier 1 Price per item (cents)",
-      "default": "3495",
-      "info": "Price in cents, e.g. 3495 = $34.95"
+      "type": "range",
+      "id": "bundle_tier1_discount_percent",
+      "label": "Tier 1 Discount %",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0,
+      "info": "Discount percentage for tier 1"
     },
     {
       "type": "text",
@@ -314,11 +317,14 @@
       "default": "$32.95/bag"
     },
     {
-      "type": "text",
-      "id": "bundle_tier2_price_cents",
-      "label": "Tier 2 Price per item (cents)",
-      "default": "3295",
-      "info": "Price in cents, e.g. 3295 = $32.95"
+      "type": "range",
+      "id": "bundle_tier2_discount_percent",
+      "label": "Tier 2 Discount %",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 5,
+      "info": "Discount percentage for tier 2"
     },
     {
       "type": "text",
@@ -333,11 +339,14 @@
       "default": "$30.95/bag"
     },
     {
-      "type": "text",
-      "id": "bundle_tier3_price_cents",
-      "label": "Tier 3 Price per item (cents)",
-      "default": "3095",
-      "info": "Price in cents, e.g. 3095 = $30.95"
+      "type": "range",
+      "id": "bundle_tier3_discount_percent",
+      "label": "Tier 3 Discount %",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "info": "Discount percentage for tier 3"
     },
     {
       "type": "text",
@@ -352,11 +361,14 @@
       "default": "$24.95/bag"
     },
     {
-      "type": "text",
-      "id": "bundle_tier4_price_cents",
-      "label": "Tier 4 Price per item (cents)",
-      "default": "2495",
-      "info": "Price in cents, e.g. 2495 = $24.95"
+      "type": "range",
+      "id": "bundle_tier4_discount_percent",
+      "label": "Tier 4 Discount %",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15,
+      "info": "Discount percentage for tier 4"
     },
     {
       "type": "product_list",
@@ -830,11 +842,11 @@
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
   window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
-  window.bundleTierPrices = {
-    1: parseInt("{{ section.settings.bundle_tier1_price_cents | default: '3495' }}") || 0,
-    2: parseInt("{{ section.settings.bundle_tier2_price_cents | default: '3295' }}") || 0,
-    3: parseInt("{{ section.settings.bundle_tier3_price_cents | default: '3095' }}") || 0,
-    4: parseInt("{{ section.settings.bundle_tier4_price_cents | default: '2495' }}") || 0,
+  window.bundleTierDiscounts = {
+    1: {{ section.settings.bundle_tier1_discount_percent | default: 0 }},
+    2: {{ section.settings.bundle_tier2_discount_percent | default: 5 }},
+    3: {{ section.settings.bundle_tier3_discount_percent | default: 10 }},
+    4: {{ section.settings.bundle_tier4_discount_percent | default: 15 }},
   };
   window.preorderEnabled = {{ section.settings.preorder_enabled | default: false }};
   window.preorderDiscountPercent = {{ settings.preorder_discount_percent | default: 15 }};
@@ -955,13 +967,18 @@
         return Object.values(this.bundleAddonSlots).reduce((sum, qty) => sum + (qty || 0), 0);
       },
 
-      get bundleTierPrice() {
+      get bundleTierDiscount() {
         const total = this.bundleAddonTotal;
-        const tiers = window.bundleTierPrices || {};
+        const tiers = window.bundleTierDiscounts || {};
         if (total >= 4) return tiers[4] || 0;
         if (total >= 3) return tiers[3] || 0;
         if (total >= 2) return tiers[2] || 0;
         return tiers[1] || 0;
+      },
+
+      get bundleTierPrice() {
+        const basePrice = this.variant?.price || this.product.price;
+        return Math.round(basePrice * (1 - this.bundleTierDiscount / 100));
       },
 
       get bundleCalculatedPrice() {
@@ -969,13 +986,13 @@
       },
 
       get bundleOriginalPrice() {
-        const baseTierPrice = window.bundleTierPrices?.[1] || 0;
-        return baseTierPrice * this.bundleAddonTotal;
+        const basePrice = this.variant?.price || this.product.price;
+        return basePrice * this.bundleAddonTotal;
       },
 
       get bundleSavePercent() {
-        if (this.bundleOriginalPrice <= 0 || this.bundleAddonTotal <= 1) return 0;
-        return Math.round((1 - this.bundleCalculatedPrice / this.bundleOriginalPrice) * 100);
+        if (this.bundleAddonTotal <= 1) return 0;
+        return this.bundleTierDiscount;
       },
 
       get subscriptionPrice() {
@@ -1230,7 +1247,7 @@
         let payload;
         if (hasBundleAddons) {
           const items = [];
-          const bundleBaseTier = window.bundleTierPrices?.[1] || 0;
+          const bundleBaseTier = this.variant?.price || this.product.price;
           const bundleTotal = this.bundleAddonTotal;
           if (window.bundleAddonVariants) {
             Object.entries(this.bundleAddonSlots).forEach(([slotIndex, qty]) => {
@@ -1772,25 +1789,25 @@
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 1 }">
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier1_label }}</span>
                 <div class="xmaison_bundle-dot"></div>
-                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier1_price }}</span>
+                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier1_discount_percent | default: 0 }} / 100))) + '/bag'">{{ section.settings.bundle_tier1_price }}</span>
               </div>
               <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 2 }"></div>
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 2 }">
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier2_label }}</span>
                 <div class="xmaison_bundle-dot"></div>
-                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier2_price }}</span>
+                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier2_discount_percent | default: 5 }} / 100))) + '/bag'">{{ section.settings.bundle_tier2_price }}</span>
               </div>
               <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 3 }"></div>
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 3 }">
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier3_label }}</span>
                 <div class="xmaison_bundle-dot"></div>
-                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier3_price }}</span>
+                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier3_discount_percent | default: 10 }} / 100))) + '/bag'">{{ section.settings.bundle_tier3_price }}</span>
               </div>
               <div class="xmaison_bundle-connector" :class="{ 'xmaison_bundle-connector--active': bundleAddonTotal >= 4 }"></div>
               <div class="xmaison_bundle-step" :class="{ 'xmaison_bundle-step--active': bundleAddonTotal >= 4 }">
                 <span class="xmaison_bundle-tier-qty">{{ section.settings.bundle_tier4_label }}</span>
                 <div class="xmaison_bundle-dot"></div>
-                <span class="xmaison_bundle-tier-price">{{ section.settings.bundle_tier4_price }}</span>
+                <span class="xmaison_bundle-tier-price" x-text="formatMoney(Math.round((variant?.price || product.price) * (1 - {{ section.settings.bundle_tier4_discount_percent | default: 15 }} / 100))) + '/bag'">{{ section.settings.bundle_tier4_price }}</span>
               </div>
             </div>
 
