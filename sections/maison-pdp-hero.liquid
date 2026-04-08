@@ -880,6 +880,29 @@
         console.log('[Subscription Debug] Alpine init - variantId:', this.variantId);
         console.log('[Subscription Debug] Alpine init - product price:', this.product.price);
         console.log('[Subscription Debug] Alpine init - calculatedPrice:', this.variant?.price || this.product.price);
+
+        const logPriceInfo = () => {
+          const packDiscountPercent = Math.round((1 - this.currentPackDiscount) * 100);
+          const preorderDiscountPercent = window.preorderDiscountPercent || 0;
+          const combinedPercent = packDiscountPercent + (this.isPreorder ? preorderDiscountPercent : 0);
+          console.log('[Price Debug] variantId:', this.variantId);
+          console.log('[Price Debug] isPreorder:', this.isPreorder);
+          console.log('[Price Debug] currentPackDiscount:', this.currentPackDiscount);
+          console.log('[Price Debug] packDiscountPercent:', packDiscountPercent + '%');
+          console.log('[Price Debug] preorderDiscountPercent:', preorderDiscountPercent + '%');
+          console.log('[Price Debug] combinedSavePercent:', combinedPercent + '%');
+          console.log('[Price Debug] onetimePrice:', this.onetimePrice);
+          console.log('[Price Debug] subscriptionPrice:', this.subscriptionPrice);
+          console.log('[Price Debug] displayedPrice:', this.isPreorder ? this.preorderPrice : (this.isSubscription ? this.subscriptionPrice : this.onetimePrice));
+          console.log('[Price Debug] preorderPrice:', this.preorderPrice);
+          console.log('[Price Debug] preorderOriginalPrice:', this.preorderOriginalPrice);
+        };
+
+        this.$watch('variantId', () => logPriceInfo());
+        this.$watch('quantity', () => logPriceInfo());
+        this.$watch('currentPackDiscount', () => logPriceInfo());
+        this.$watch('isSubscription', () => logPriceInfo());
+        logPriceInfo();
       },
       nutritionalOpen: false,
       testResultsOpen: false,
