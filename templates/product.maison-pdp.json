@@ -1150,27 +1150,6 @@
             "reviewer_name": "Hannah, RN, 45",
             "verified_buyer": true
           }
-        },
-        "image_GgcbYk": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Review_03.jpg",
-            "rotation": -5
-          }
-        },
-        "image_jA64Ya": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Review_04.jpg",
-            "rotation": 0
-          }
-        },
-        "image_pkLrBR": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Review_image_02.jpg",
-            "rotation": 3
-          }
         }
       },
       "block_order": [
@@ -1185,10 +1164,7 @@
         "review_4LdLKr",
         "review_W6bmRm",
         "review_KbXRfR",
-        "review_XLdtjw",
-        "image_GgcbYk",
-        "image_jA64Ya",
-        "image_pkLrBR"
+        "review_XLdtjw"
       ],
       "name": "Maison Video Review",
       "settings": {
