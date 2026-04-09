@@ -794,65 +794,30 @@
       const bottomSlider = section.querySelector('.maison_commerce_video_review__slider--bottom');
 
       if (topSlider) {
-        const topSwiperInstance = new Swiper('.maison_commerce_video_review__slider--top', {
+        new Swiper('.maison_commerce_video_review__slider--top', {
           slidesPerView: 'auto',
           spaceBetween: {{ section.settings.card_gap_desktop }},
-          autoplay: {
-            delay: 1000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          },
-          speed: 2500,
+          loop: true,
+          allowTouchMove: false,
           breakpoints: {
             950: {
               spaceBetween: {{ section.settings.card_gap_desktop }},
             },
           },
-        });
-
-        // Pause on hover
-        topSlider.addEventListener('mouseenter', function() {
-          if (topSwiperInstance.autoplay) {
-            topSwiperInstance.autoplay.stop();
-          }
-        });
-
-        topSlider.addEventListener('mouseleave', function() {
-          if (topSwiperInstance.autoplay) {
-            topSwiperInstance.autoplay.start();
-          }
         });
       }
 
       if (bottomSlider) {
-        const bottomSwiperInstance = new Swiper('.maison_commerce_video_review__slider--bottom', {
+        new Swiper('.maison_commerce_video_review__slider--bottom', {
           slidesPerView: 'auto',
           spaceBetween: {{ section.settings.card_gap_desktop }},
-          autoplay: {
-            delay: 1000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          },
-          speed: 2500,
           loop: true,
+          allowTouchMove: false,
           breakpoints: {
             950: {
               spaceBetween: {{ section.settings.card_gap_desktop }},
             },
           },
-        });
-
-        // Pause on hover
-        bottomSlider.addEventListener('mouseenter', function() {
-          if (bottomSwiperInstance.autoplay) {
-            bottomSwiperInstance.autoplay.stop();
-          }
-        });
-
-        bottomSlider.addEventListener('mouseleave', function() {
-          if (bottomSwiperInstance.autoplay) {
-            bottomSwiperInstance.autoplay.start();
-          }
         });
       }
 
@@ -1137,6 +1102,33 @@
 
   .maison_commerce_video_review__slider .swiper-wrapper {
     display: flex;
+    animation: maison_commerce_video_review_reviews_scroll_{{ section.id }} 30s linear infinite;
+  }
+
+  .maison_commerce_video_review__slider--bottom .swiper-wrapper {
+    animation-name: maison_commerce_video_review_reviews_scroll_bottom_{{ section.id }};
+  }
+
+  .maison_commerce_video_review__slider:hover .swiper-wrapper {
+    animation-play-state: paused;
+  }
+
+  @keyframes maison_commerce_video_review_reviews_scroll_{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes maison_commerce_video_review_reviews_scroll_bottom_{{ section.id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
   }
 
   .maison_commerce_video_review__slider .swiper-slide {
