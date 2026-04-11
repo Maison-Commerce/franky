@@ -1107,6 +1107,7 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 18 Jan 2026",
+            "review_image": "shopify://shop_images/Review_image_02.jpg",
             "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with</p>",
             "reviewer_name": "Hannah, RN, 45",
             "verified_buyer": true
@@ -1118,8 +1119,9 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 21 Feb 2026",
+            "review_image": "shopify://shop_images/Review_04.jpg",
             "review_text": "<p>Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts</p>",
-            "reviewer_name": "Sophia, RN, 35",
+            "reviewer_name": "Sophia, RN, 31",
             "verified_buyer": true
           }
         },
@@ -1129,13 +1131,15 @@
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 9 March 2026",
+            "review_image": "shopify://shop_images/Review_03.jpg",
             "review_text": "<p>Franky set me up with a routine that totally fits my life better than any strict plan ever could</p>",
-            "reviewer_name": "Isabella, 33",
+            "reviewer_name": "Isabella, 43",
             "verified_buyer": true
           }
         },
         "review_UATFJa": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "slider_position": "top",
             "rating": 5,
@@ -1147,6 +1151,7 @@
         },
         "review_WyUFjR": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "slider_position": "top",
             "rating": 5,
