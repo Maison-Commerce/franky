@@ -1060,30 +1060,35 @@
       "blocks": {
         "video_hGCtPz": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
         },
         "video_b6CnWJ": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
         },
         "video_E6NaUR": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
         },
         "video_hnYthk": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
         },
         "video_B8bWKa": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
