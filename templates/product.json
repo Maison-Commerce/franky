@@ -1139,7 +1139,6 @@
         },
         "review_UATFJa": {
           "type": "review",
-          "disabled": true,
           "settings": {
             "slider_position": "top",
             "rating": 5,
@@ -1152,13 +1151,13 @@
         },
         "review_WyUFjR": {
           "type": "review",
-          "disabled": true,
           "settings": {
             "slider_position": "top",
             "rating": 5,
             "purchase_date": "Purchased on 18 Feb 2026",
+            "review_image": "shopify://shop_images/Customer_04.png",
             "review_text": "<p>Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts</p>",
-            "reviewer_name": "Charlotte, RN, 25",
+            "reviewer_name": "Charlotte, 25",
             "verified_buyer": true
           }
         },
