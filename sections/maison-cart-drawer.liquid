@@ -19,7 +19,7 @@
       "type": "text",
       "id": "upsell_title",
       "label": "Upsell Title",
-      "default": "Try more, choose a favorite"
+      "default": "Add another bag and save up to 32% off"
     },
     {
       "type": "header",
@@ -71,11 +71,6 @@
 {% endschema %}
 
 {{ 'maison-cart-drawer.css' | asset_url | stylesheet_tag }}
-<style>
-  .xmaison_upsell-product.xmaison_upsell-hidden {
-    display: none !important;
-  }
-</style>
 
 <div x-cloak x-data="maisonCartDrawer()" @click="maisonDispatch('maison:cart-drawer-close')" class="xmaison_cart-overlay">
   <div class="xmaison_cart-container" @click.stop>
@@ -355,14 +350,7 @@
                         <button
                           class="xmaison_add-btn"
                           :disabled="loading"
-                          @click="
-                            loading = true;
-                            fetch('/cart/add.js', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ id: {{ variant.id }}, quantity: 1 })
-                            }).finally(() => fetchCart());
-                          "
+                          @click="addUpsell({{ variant.id }}, {{ compare_price | default: 0 }})"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" class="xmaison_add-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
                             <path d="M0.75 6.58333H12.4167M6.58333 0.75V12.4167" stroke="#3B2B2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -550,9 +538,6 @@
             this.cart = clone;
             window.cart = clone;
 
-            // Filter upsell products already in cart
-            this.filterUpsellProducts();
-
             // Check for pre-order items and update cart attribute
             const hasPreorder = clone.items.some((item) => this.isPreorderBucket(item.properties?._mc_discount_bucket));
             fetch('/cart/update.js', {
@@ -568,29 +553,20 @@
           });
       },
 
-      filterUpsellProducts() {
-        const cartProductIds = (this.cart.items || []).map(i => i.product_id);
-        const slides = document.querySelectorAll('.xmaison_upsell-product[data-product-id]');
-        let visibleCount = 0;
+      addUpsell(variantId, compareAtPrice) {
+        if (this.loading) return;
+        this.loading = true;
 
-        slides.forEach(slide => {
-          const productId = parseInt(slide.dataset.productId);
-          if (cartProductIds.includes(productId)) {
-            slide.classList.add('xmaison_upsell-hidden');
-          } else {
-            slide.classList.remove('xmaison_upsell-hidden');
-            visibleCount++;
-          }
-        });
-
-        const section = document.querySelector('.xmaison_upsell-section');
-        if (section) {
-          section.style.display = visibleCount > 0 ? '' : 'none';
+        const properties = { _mc_discount_bucket: 'packs_standard' };
+        if (compareAtPrice && compareAtPrice > 0) {
+          properties._mc_compare_at_unit = String(compareAtPrice);
         }
 
-        if (window.xmaisonUpsellSwiper) {
-          window.xmaisonUpsellSwiper.update();
-        }
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: variantId, quantity: 1, properties }),
+        }).finally(() => this.fetchCart());
       },
 
       updateCartBubble() {
