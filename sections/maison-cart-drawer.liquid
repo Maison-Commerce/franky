@@ -280,7 +280,14 @@
       </div>
 
       <!-- People Also Got Section -->
-      {% if section.settings.upsell_list.size > 0 %}
+      {%- assign available_upsells = 0 -%}
+      {%- for product in section.settings.upsell_list -%}
+        {%- assign v = product.variants.first -%}
+        {%- if v.inventory_management != 'shopify' or v.inventory_quantity > 0 -%}
+          {%- assign available_upsells = available_upsells | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {% if available_upsells > 0 %}
         <div class="xmaison_upsell-section">
           <div class="xmaison_upsell-container">
             <div class="xmaison_upsell-header">
@@ -304,6 +311,9 @@
               <div class="swiper-wrapper">
                 {% for product in section.settings.upsell_list %}
                   {% assign variant = product.variants.first %}
+                  {% if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0 %}
+                    {% continue %}
+                  {% endif %}
                   {% assign current_price = variant.price %}
                   {% assign compare_price = variant.compare_at_price %}
                   {% assign has_discount = false %}
