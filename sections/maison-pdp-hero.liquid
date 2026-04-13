@@ -1990,10 +1990,18 @@
         <input type="hidden" name="quantity" :value="quantity">
 
         <div class="xmaison_stock-status">
-          <span class="xmaison_stock-dot"></span>
+          <span class="xmaison_stock-dot"{% if section.settings.preorder_enabled %} :class="{ 'xmaison_stock-dot--preorder': isPreorder }"{% endif %}></span>
           <span class="xmaison_stock-text">
-            <span class="xmaison_in-stock">{{ section.settings.stock_status_text }}</span> -
-            {{ section.settings.shipping_text }}
+            <span{% if section.settings.preorder_enabled %} x-show="!isPreorder"{% endif %}>
+              <span class="xmaison_in-stock">{{ section.settings.stock_status_text }}</span> -
+              {{ section.settings.shipping_text }}
+            </span>
+            {% if section.settings.preorder_enabled %}
+              <span x-show="isPreorder" x-cloak>
+                <span class="xmaison_out-of-stock">Out of Stock</span> -
+                <span x-text="preorderPropertyValue"></span>
+              </span>
+            {% endif %}
           </span>
         </div>
 
@@ -2010,13 +2018,7 @@
               :disabled="loading{% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %} || bundleAddonTotal === 0{% endif %}"
               @click="addToCartPreOrder()"
             >
-              <div class="xmaison_preorder-button-top">
-                <span class="xmaison_preorder-text">{{ section.settings.preorder_button_text }}</span>
-                <span class="xmaison_preorder-dot"></span>
-                <span class="xmaison_preorder-price-current" x-text="formatMoney(preorderPrice + (window.sectionMode === 'packs' ? (quantity >= 3 ? 2 : 0) : (window.sectionMode === 'bundle' ? (bundleAddonTotal >= 4 ? -6 : (bundleAddonTotal === 3 ? 1 : (bundleAddonTotal === 2 ? -5 : 0))) : 0)))"></span>
-                <span class="xmaison_preorder-price-original" x-text="formatMoney(preorderOriginalPrice)"></span>
-              </div>
-              <span class="xmaison_preorder-note" x-text="preorderPropertyValue"></span>
+              <span class="xmaison_preorder-text">{{ section.settings.preorder_button_text }}</span>
             </button>
           </div>
         {% endif %}

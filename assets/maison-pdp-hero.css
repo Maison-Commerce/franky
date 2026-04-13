@@ -897,6 +897,15 @@ img {
   color: var(--green-stock);
 }
 
+.xmaison_stock-text .xmaison_out-of-stock {
+  color: var(--orange);
+}
+
+.xmaison_stock-dot--preorder,
+.xmaison_stock-dot--preorder::after {
+  background-color: var(--orange);
+}
+
 /* Add to Cart Button */
 .xmaison_add-to-cart-button {
   display: flex;
@@ -944,69 +953,39 @@ img {
 
 .xmaison_preorder-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
   width: 100%;
-  padding: 12px 32px;
-  background-color: transparent;
-  border: 2px solid var(--color-brand-1-1800, #3B2B2F);
+  height: 56px;
+  padding: 16px 32px;
+  background-color: var(--color-brand-1-1800);
+  border: none;
   border-radius: 14px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .xmaison_preorder-button:hover {
-  background-color: var(--color-brand-1-200, #F5F2F3);
+  background-color: var(--color-brand-1-1400);
 }
 
 .xmaison_preorder-button[disabled] {
-  opacity: 0.5;
   pointer-events: none;
+  background: rgba(218, 215, 216, 0.50);
 }
 
-.xmaison_preorder-button-top {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.xmaison_preorder-button[disabled] .xmaison_preorder-text {
+  color: var(--Text-Primary, #3B2B2F);
+  opacity: 0.5;
 }
 
 .xmaison_preorder-text {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-brand-1-1800, #3B2B2F);
+  color: #F7F3E6;
   line-height: 1.5;
-}
-
-.xmaison_preorder-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--color-brand-1-1800, #3B2B2F);
-}
-
-.xmaison_preorder-price-current {
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-brand-1-1800, #3B2B2F);
-}
-
-.xmaison_preorder-price-original {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--text-muted, #8A7F82);
-  text-decoration: line-through;
-}
-
-.xmaison_preorder-note {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-muted, #8A7F82);
 }
 
 .xmaison_button-dot {
