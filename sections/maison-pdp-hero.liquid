@@ -168,7 +168,7 @@
       "type": "text",
       "id": "preorder_property_text",
       "label": "Pre-Order Property Text",
-      "default": "Your order will be delivered on [delivery_date]",
+      "default": "Estimated to ship [delivery_date]",
       "info": "[delivery_date] will be replaced with the product metafield value (product.metafields.custom.mc_pre_order_delivery_date)"
     },
     {
@@ -1178,7 +1178,7 @@
             return fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'true' : '' } }),
+              body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'PRE-ORDER' : '' } }),
             }).then(() => cart);
           })
           .then((cart) => {
@@ -1998,8 +1998,8 @@
             </span>
             {% if section.settings.preorder_enabled %}
               <span x-show="isPreorder" x-cloak>
-                <span class="xmaison_out-of-stock">Out of Stock</span> -
-                <span x-text="preorderPropertyValue"></span>
+                <span class="xmaison_out-of-stock">Pre Order</span> -
+                <span x-text="'Wait & Save: ' + preorderPropertyValue"></span>
               </span>
             {% endif %}
           </span>

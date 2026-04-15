@@ -588,7 +588,7 @@
         "add_to_cart_price": "$24.75",
         "preorder_enabled": true,
         "preorder_button_text": "Add Pre-Order To Cart",
-        "preorder_property_text": "Your order will be delivered on [delivery_date]",
+        "preorder_property_text": "Estimated to ship [delivery_date]",
         "preorder_loading_text": "Adding...",
         "test_results_title": "3rd Party Testing",
         "test_results_badge_text": "COMPLETE",

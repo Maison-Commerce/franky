@@ -553,7 +553,7 @@
             fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'true' : '' } }),
+              body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'PRE-ORDER' : '' } }),
             });
 
             this.updateCartBubble();
