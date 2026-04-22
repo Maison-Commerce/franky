@@ -539,6 +539,14 @@
             "accordion_title": "Shipping & Returns",
             "accordion_content": "<p><strong>Standard Shipping</strong><br/>3–5 business days · Free on orders over $50 · $4.95 on orders under $50</p><p><strong>Express Shipping</strong><br/>1–2 business days · $9.95</p><p>Orders ship from our Georgia warehouse within 1 business day.</p><p><strong>30-Day Money-Back Guarantee</strong><br/>Not happy? Zero risk — just reach out and we'll make it right.</p>"
           }
+        },
+        "accordion_item_MCYThT": {
+          "type": "accordion_item",
+          "disabled": true,
+          "settings": {
+            "accordion_title": "3rd Party Lab Testing Results",
+            "accordion_content": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients.</p>"
+          }
         }
       },
       "block_order": [
@@ -562,7 +570,8 @@
         "accordion_item_BMU6dj",
         "accordion_item_fpnbqj",
         "accordion_item_hdeJXf",
-        "accordion_item_UgPTiM"
+        "accordion_item_UgPTiM",
+        "accordion_item_MCYThT"
       ],
       "name": "Maison PDP Hero",
       "settings": {
