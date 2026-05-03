@@ -1153,7 +1153,7 @@
             "rating": 5,
             "purchase_date": "Purchased on 12 March 2026",
             "review_image": "shopify://shop_images/Customer_06.png",
-            "review_text": "<p>Franky gave me what discipline couldn't—a routine that actually works with my life</p>",
+            "review_text": "<p>Didn't expect much. Most \"healthy\" products taste like cardboard. This actually tastes amazing. Smooth, clean, no fake sweetness. Look forward to it daily.</p>",
             "reviewer_name": "Mia, 27",
             "verified_buyer": true
           }
@@ -1281,6 +1281,24 @@
         "card_gap_mobile": 12,
         "card_width_desktop": 342,
         "card_width_mobile": 256
+      }
+    },
+    "1774045599b927268f": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_eqmDxx": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_eqmDxx"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "maison_advantages_YXMwHF": {
@@ -1472,25 +1490,6 @@
         "button_font_size_mobile": 14,
         "trust_badge_font_size": 14,
         "trust_badge_color": "#3b2b2f"
-      }
-    },
-    "1774045599b927268f": {
-      "type": "apps",
-      "blocks": {
-        "okendo_reviews_widget_eqmDxx": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "disabled": true,
-          "settings": {
-            "product": "{{product}}",
-            "widget_type": "reviews_widget"
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_widget_eqmDxx"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "maison_faq_QLFLjc": {
@@ -1754,30 +1753,6 @@
     },
     "17741821203b2fdc66": {
       "type": "apps",
-      "blocks": {
-        "instafeed_app_block_DpyKDU": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
-          "disabled": true,
-          "settings": {
-            "title": "",
-            "title_color": "",
-            "title_size_v2": 0,
-            "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": false,
-            "link_alignment": "left",
-            "link_color": "#000000",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
-          }
-        }
-      },
-      "block_order": [
-        "instafeed_app_block_DpyKDU"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -1792,9 +1767,9 @@
     "maison_introducing_bnLFrb",
     "maison_comp_flex_acwryg",
     "maison_video_review_UWqfGU",
+    "1774045599b927268f",
     "maison_advantages_YXMwHF",
     "maison_introducing_xjgRKK",
-    "1774045599b927268f",
     "maison_faq_QLFLjc",
     "maison_collection_slider_icVqir",
     "maison_inst_img_XPMVhM",
