@@ -415,25 +415,22 @@
         },
         "customer_video_WHqD7f": {
           "type": "customer_video",
-          "disabled": true,
           "settings": {
-            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_tm3Rzp": {
           "type": "customer_video",
-          "disabled": true,
           "settings": {
-            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4",
             "alt_text": "Customer testimonial"
           }
         },
         "customer_video_mEtUwE": {
           "type": "customer_video",
-          "disabled": true,
           "settings": {
-            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4",
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4",
             "alt_text": "Customer testimonial"
           }
         },
