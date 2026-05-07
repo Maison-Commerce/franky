@@ -1067,10 +1067,11 @@
     "maison_video_review_UWqfGU": {
       "type": "maison-video-review",
       "blocks": {
-        "video_hGCtPz": {
+        "video_hnYthk": {
           "type": "video",
+          "disabled": true,
           "settings": {
-            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154204032_web.mp4"
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4"
           }
         },
         "video_b6CnWJ": {
@@ -1079,17 +1080,16 @@
             "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
           }
         },
+        "video_hGCtPz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154204032_web.mp4"
+          }
+        },
         "video_E6NaUR": {
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4"
-          }
-        },
-        "video_hnYthk": {
-          "type": "video",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
           }
         },
         "video_B8bWKa": {
@@ -1101,10 +1101,12 @@
         },
         "video_tKJnhR": {
           "type": "video",
+          "disabled": true,
           "settings": {}
         },
         "video_3bqHpK": {
           "type": "video",
+          "disabled": true,
           "settings": {}
         },
         "review_FT7eUG": {
@@ -1229,10 +1231,10 @@
         }
       },
       "block_order": [
-        "video_hGCtPz",
-        "video_b6CnWJ",
-        "video_E6NaUR",
         "video_hnYthk",
+        "video_b6CnWJ",
+        "video_hGCtPz",
+        "video_E6NaUR",
         "video_B8bWKa",
         "video_tKJnhR",
         "video_3bqHpK",
