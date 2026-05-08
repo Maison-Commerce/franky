@@ -83,8 +83,8 @@
       "type": "text",
       "id": "subscription_multiplier",
       "label": "Subscription Discount Multiplier",
-      "info": "Applied on top of pack discount. 0.8 = additional 20% off",
-      "default": "0.8"
+      "info": "Applied on top of pack discount. 0.85 = additional 15% off (matches Loop plan discount)",
+      "default": "0.85"
     },
     {
       "type": "checkbox",
@@ -378,7 +378,7 @@
   };
   
   window.listicleSellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
-  window.listicleSubscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
+  window.listicleSubscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.85' }}") || 0.85;
   window.listicleSubscriptionDefault = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
 </script>
 

@@ -63,8 +63,8 @@
       "type": "text",
       "id": "subscription_multiplier",
       "label": "Subscription Discount Multiplier",
-      "info": "Applied on top of pack discount. 0.8 = additional 20% off",
-      "default": "0.8"
+      "info": "Applied on top of pack discount. 0.85 = additional 15% off (matches Loop plan discount)",
+      "default": "0.85"
     },
     {
       "type": "checkbox",
@@ -88,7 +88,7 @@
       "type": "text",
       "id": "subscribe_save_badge",
       "label": "Subscribe Save Badge Text",
-      "default": "You Save 20%"
+      "default": "You Save 15%"
     },
     {
       "type": "text",
@@ -878,7 +878,7 @@
     {% endfor %}
   };
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
-  window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
+  window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.85' }}") || 0.85;
   {%- assign has_any_pack_plan = false -%}
   {%- for block in section.blocks -%}
     {%- if block.type == 'pack_option' and block.settings.selling_plan_id != blank -%}
