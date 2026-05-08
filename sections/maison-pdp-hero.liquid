@@ -1832,7 +1832,7 @@
       <div class="xmaison_product-options">
         <!-- Price Display -->
         <div class="xmaison_pdp-price">
-          <span class="xmaison_pdp-price-current" x-text="formatMoney((isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice)) + (window.sectionMode === 'packs' ? (isPreorder ? (quantity >= 3 ? 2 : 0) : (quantity >= 2 ? 1 : 0)) : (window.sectionMode === 'bundle' && isPreorder ? (bundleAddonTotal >= 4 ? -6 : (bundleAddonTotal === 3 ? 1 : (bundleAddonTotal === 2 ? -5 : 0))) : 0)))"></span>
+          <span class="xmaison_pdp-price-current" x-text="formatMoney((isPreorder ? preorderPrice : (isSubscription ? subscriptionPrice : onetimePrice)) + (window.sectionMode === 'bundle' && isPreorder ? (bundleAddonTotal >= 4 ? -6 : (bundleAddonTotal === 3 ? 1 : (bundleAddonTotal === 2 ? -5 : 0))) : 0))"></span>
           {% if section.settings.preorder_enabled %}
             <span class="xmaison_pdp-price-compare" x-show="isPreorder && (window.sectionMode !== 'bundle' || bundleAddonTotal > 0)" x-text="formatMoney(window.sectionMode === 'bundle' ? bundleOriginalPrice : preorderOriginalPrice)"></span>
             <span class="xmaison_pdp-price-save" x-show="isPreorder && (window.sectionMode !== 'bundle' || bundleAddonTotal > 0)" x-text="window.sectionMode === 'bundle' ? ((bundleAddonTotal >= 4 ? 30 : (bundleAddonTotal === 3 ? 25 : (bundleAddonTotal === 2 ? 20 : 15))) + '% OFF TODAY') : ((Math.round((1 - currentPackDiscount) * 100) + {{ settings.preorder_discount_percent | default: 15 }}) + '% OFF TODAY')"></span>
