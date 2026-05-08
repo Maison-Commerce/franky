@@ -237,7 +237,7 @@
                 <div class="xmaison_delivery-payment-inner">
                   <div class="xmaison_delivery-payment-header">
                     <span class="xmaison_delivery-payment-label">Delivery &amp; Payment:</span>
-                    <span class="xmaison_delivery-payment-frequency" x-text="item.selling_plan_allocation?.selling_plan?.name"></span>
+                    <span class="xmaison_delivery-payment-frequency" x-text="(item.selling_plan_allocation?.selling_plan?.name || '').replace(/^Deliver/i, 'Ships')"></span>
                   </div>
                   <div class="xmaison_delivery-payment-benefit">
                     <svg xmlns="http://www.w3.org/2000/svg" class="xmaison_delivery-check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -619,6 +619,34 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ updates }),
+          }).finally(() => {
+            this.fetchCart();
+          });
+          return;
+        }
+
+        // Packs item with quantity-dependent selling plan: use /cart/change.js to also swap the plan
+        const planByQty = window.sellingPlanByQuantity || {};
+        const isPacksItem = typeof discountBucket === 'string' && discountBucket.startsWith('packs_');
+        const isSubscribe = !!item?.selling_plan_allocation;
+        const canSwapPlan = item && isPacksItem && quantity > 0 && quantity <= 3 && Object.keys(planByQty).length > 0;
+
+        if (canSwapPlan) {
+          item.quantity = quantity;
+          const newPlan = planByQty[quantity] || null;
+          const changeBody = {
+            id: item.key,
+            quantity: quantity,
+          };
+          if (isSubscribe && newPlan) {
+            changeBody.selling_plan = newPlan;
+          }
+
+          this.loading = true;
+          fetch('/cart/change.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(changeBody),
           }).finally(() => {
             this.fetchCart();
           });
