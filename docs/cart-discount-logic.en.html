@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Franky Theme Discounts — Client Guide</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css;base64,Ym9keXtmb250LWZhbWlseTotYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxzYW5zLXNlcmlmO21heC13aWR0aDo3ODBweDttYXJnaW46NDBweCBhdXRvO3BhZGRpbmc6MCAyMHB4O2xpbmUtaGVpZ2h0OjEuNjtjb2xvcjojMjIyfWgxe2JvcmRlci1ib3R0b206MnB4IHNvbGlkICMzMzM7cGFkZGluZy1ib3R0b206OHB4fWgye21hcmdpbi10b3A6MzJweDtjb2xvcjojMWExYTFhfWgze2NvbG9yOiMzMzN9dGFibGV7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO3dpZHRoOjEwMCU7bWFyZ2luOjEycHggMH10aCx0ZHtib3JkZXI6MXB4IHNvbGlkICNkZGQ7cGFkZGluZzo4cHggMTJweDt0ZXh0LWFsaWduOmxlZnR9dGh7YmFja2dyb3VuZDojZjVmNWY1fWNvZGV7YmFja2dyb3VuZDojZjRmNGY0O3BhZGRpbmc6MnB4IDZweDtib3JkZXItcmFkaXVzOjNweDtmb250LXNpemU6MC45ZW19YmxvY2txdW90ZXtib3JkZXItbGVmdDo0cHggc29saWQgI2ZmYTUwMDtiYWNrZ3JvdW5kOiNmZmY4ZTE7cGFkZGluZzoxMHB4IDE2cHg7bWFyZ2luOjE2cHggMH1ocntib3JkZXI6bm9uZTtib3JkZXItdG9wOjFweCBzb2xpZCAjZGRkO21hcmdpbjoyNHB4IDB9Cg==" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Franky Theme Discounts — Client Guide</h1>
+</header>
+<h1 id="cart-discounts-in-the-franky-theme-client-guide">Cart Discounts
+in the Franky Theme — Client Guide</h1>
+<p>A short guide explaining where and how to change discounts in Shopify
+admin.</p>
+<hr />
+<h2 id="main-rule">⚠️ Main Rule</h2>
+<p>Discounts are managed in <strong>three places</strong> depending on
+the discount type:</p>
+<ol type="1">
+<li><strong>Customizer</strong> (theme) — shows the discounted price on
+the product page (for all types)</li>
+<li><strong>Every Possible Discount</strong> (Admin → Apps) — applies
+Packs / Bundle / Pre-order discounts at checkout</li>
+<li><strong>Loop Subscriptions</strong> (Admin → Apps) — applies the
+subscription discount at checkout</li>
+</ol>
+<p>If you change only one of them, the customer will see one price on
+the site and a different price at checkout. <strong>Always update all
+relevant places.</strong></p>
+<h3 id="how-every-possible-discount-is-set-up">How Every Possible
+Discount is Set Up</h3>
+<p>The app has 5 active discount functions (Tiered, Automatic). Each one
+covers a specific scenario:</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 51%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function</th>
+<th>When it applies</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packs_standard</code></td>
+<td>Packs mode, regular purchase</td>
+<td>Fixed amount per item</td>
+</tr>
+<tr>
+<td><code>packs_preorder</code></td>
+<td>Packs mode + pre-order</td>
+<td>Fixed amount per item</td>
+</tr>
+<tr>
+<td><code>bundle_standard</code></td>
+<td>Bundle mode, regular purchase</td>
+<td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><code>bundle_preorder</code></td>
+<td>Bundle mode + pre-order</td>
+<td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><code>classic_preorder</code></td>
+<td>Classic mode + pre-order</td>
+<td>Tiered Percentage</td>
+</tr>
+</tbody>
+</table>
+<p>When a product is added to the cart, the theme automatically attaches
+a “tag” (<code>_mc_discount_bucket</code>) with the matching value, and
+the app finds the corresponding function and applies its tiered
+discount.</p>
+<h3 id="how-discounts-stack-at-checkout-important">How Discounts Stack
+at Checkout (Important!)</h3>
+<p>Shopify checkout stacks discounts <strong>linearly</strong> off the
+variant base price:</p>
+<pre><code>final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item</code></pre>
+<p>First Loop subtracts 15% (if subscription is selected), then EPD
+subtracts the fixed pack discount. This affects how the EPD values are
+configured — for pre-order, for example, EPD must account for
+<strong>both pack discount and pre-order discount</strong> combined.</p>
+<hr />
+<h2 id="discount-types">Discount Types</h2>
+<h3 id="pack-quantity-discount-fixed-price-per-unit">1. Pack quantity
+discount — Fixed price per unit</h3>
+<p>Currently: - 1 Bag → $39.95/ea - 2 Bags → $37.95/ea (-$2 from base) -
+3 Bags → $35.95/ea (-$4 from base)</p>
+<p><strong>Where to change it:</strong></p>
+<ul>
+<li><strong>PDP price:</strong> Customizer → section <strong>Maison PDP
+Hero</strong> → <strong>Pack Option</strong> blocks →
+<code>Price per unit (cents)</code> field
+<ul>
+<li><code>3995</code> = $39.95</li>
+<li><code>3795</code> = $37.95</li>
+<li><code>3595</code> = $35.95</li>
+</ul></li>
+<li><strong>Checkout discount:</strong> Admin → Apps → Every Possible
+Discount → function <code>packs_standard</code> → tiers (Fixed amount
+per item):
+<ul>
+<li>1 → $0.00 off</li>
+<li>2 → $2.00 off</li>
+<li>3 → $4.00 off</li>
+</ul></li>
+</ul>
+<h3 id="pre-order-discount">2. Pre-order discount</h3>
+<p>A discount for products that are currently out of stock (pre-order).
+Currently -15% from base.</p>
+<p><strong>Where to change it:</strong></p>
+<ul>
+<li><strong>PDP %:</strong> Customizer → <strong>Theme settings</strong>
+→ <strong>Pre-Order</strong> → <code>Pre-Order Discount %</code>
+(e.g. <code>15</code>)</li>
+<li><strong>Checkout discount:</strong> Admin → Apps → Every Possible
+Discount → function <code>packs_preorder</code> → tiers:
+<ul>
+<li>1 → $5.99 off (= 15% of $39.95)</li>
+<li>2 → $7.99 off (= $5.99 pre-order + $2.00 pack discount)</li>
+<li>3 → $9.99 off (= $5.99 pre-order + $4.00 pack discount)</li>
+</ul></li>
+</ul>
+<h3 id="subscription-discount-subscribe-save">3. Subscription discount
+(Subscribe &amp; Save)</h3>
+<p>Discount for subscribing. Currently -15%. Applied <strong>not through
+Every Possible Discount</strong>, but through <strong>Loop
+Subscriptions</strong> (selling plan).</p>
+<p>The subscription has 3 plans, each tied to a quantity:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Plan ID</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Bag</td>
+<td>#5080383721</td>
+<td>Every 4 weeks</td>
+</tr>
+<tr>
+<td>2 Bags</td>
+<td>#5271978217</td>
+<td>Every 6 weeks</td>
+</tr>
+<tr>
+<td>3 Bags</td>
+<td>#5272010985</td>
+<td>Every 8 weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where to change it:</strong></p>
+<ol type="1">
+<li><strong>PDP multiplier:</strong> Customizer → section <strong>Maison
+PDP Hero</strong> → <code>Subscription Multiplier</code>
+(<code>0.85</code> = 15% off)</li>
+<li><strong>Plan ID per pack:</strong> Customizer → section
+<strong>Maison PDP Hero</strong> → <strong>Pack Option</strong> block →
+<code>Subscription Plan ID (Loop)</code> field for each quantity</li>
+<li><strong>Frequency Label per pack:</strong> Customizer → section
+<strong>Maison PDP Hero</strong> → <strong>Pack Option</strong> block →
+<code>Frequency Label (subscribe card)</code> field (e.g. “Ships every 4
+weeks”)</li>
+<li><strong>Loop discount:</strong> Admin → Apps → Loop Subscriptions →
+open each plan → <code>discount</code> field (all should match —
+<code>15.00%</code>)</li>
+</ol>
+<p><strong>All 4 values must match</strong> — otherwise PDP shows one
+price and checkout shows another.</p>
+<h3 id="bundle-discount">4. Bundle discount</h3>
+<p>Discount based on the number of items added to the bundle (2, 3,
+4+).</p>
+<p><strong>Changing this requires a developer</strong> — values are
+hardcoded in the theme (Tiered Percentage in EPD also needs
+updating).</p>
+<p>Current values: - 2 items → 20% - 3 items → 25% - 4+ items → 30%</p>
+<hr />
+<h2 id="how-discounts-combine-examples">How Discounts Combine
+(Examples)</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>PDP &amp; Cart show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 bag, one-time</td>
+<td>$39.95</td>
+</tr>
+<tr>
+<td>2 bags, one-time</td>
+<td>$75.90 ($37.95 × 2)</td>
+</tr>
+<tr>
+<td>3 bags, one-time</td>
+<td>$107.85</td>
+</tr>
+<tr>
+<td>1 bag, subscribe</td>
+<td>$33.96 (Loop −15%)</td>
+</tr>
+<tr>
+<td>2 bags, subscribe</td>
+<td>$63.92 ($33.96 × 2 − $4 EPD)</td>
+</tr>
+<tr>
+<td>3 bags, subscribe</td>
+<td>$89.88</td>
+</tr>
+<tr>
+<td>1 bag, pre-order, one-time</td>
+<td>$33.96</td>
+</tr>
+<tr>
+<td>2 bags, pre-order, one-time</td>
+<td>$63.92</td>
+</tr>
+<tr>
+<td>2 bags, pre-order, subscribe</td>
+<td>$51.94</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-reference-table">Quick Reference Table</h2>
+<table>
+<colgroup>
+<col style="width: 69%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>What to change</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pack price per unit (PDP)</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Price per unit (cents)</code></td>
+</tr>
+<tr>
+<td>Pack price (checkout)</td>
+<td>Admin → Apps → <strong>EPD</strong> → <code>packs_standard</code> →
+tier discount</td>
+</tr>
+<tr>
+<td>Pre-order % (PDP)</td>
+<td>Customizer → Theme settings → Pre-Order</td>
+</tr>
+<tr>
+<td>Pre-order checkout discount</td>
+<td>Admin → Apps → <strong>EPD</strong> →
+<code>packs_preorder</code></td>
+</tr>
+<tr>
+<td>Subscription % (PDP)</td>
+<td>Customizer → PDP Hero → <code>Subscription Multiplier</code></td>
+</tr>
+<tr>
+<td>Subscription % (checkout)</td>
+<td>Admin → Apps → <strong>Loop Subscriptions</strong> → each plan</td>
+</tr>
+<tr>
+<td>Subscription plan ID per pack</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Subscription Plan ID (Loop)</code></td>
+</tr>
+<tr>
+<td>Subscribe frequency text</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Frequency Label</code></td>
+</tr>
+<tr>
+<td>Enable pre-order on a product</td>
+<td>Customizer → PDP Hero → <code>Enable Pre-Order</code></td>
+</tr>
+<tr>
+<td>Bundle %</td>
+<td>Theme code (developer required)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="examples">Examples</h2>
+<h3 id="change-the-2-pack-price-from-37.95-to-36.95">Change the 2-pack
+price from $37.95 to $36.95</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → “2 Bags” block →
+<code>Price per unit (cents)</code>: <code>3695</code></li>
+<li>Admin → Apps → EPD → <code>packs_standard</code> → tier for 2 →
+<code>$3.00 off</code> (= $39.95 − $36.95)</li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → tier for 2 →
+<code>$8.99 off</code> (= $5.99 pre-order + $3.00 pack)</li>
+<li>Save everywhere</li>
+</ol>
+<h3 id="change-the-pre-order-discount-from-15-to-20">Change the
+pre-order discount from 15% to 20%</h3>
+<ol type="1">
+<li>Customizer → Theme settings → Pre-Order →
+<code>Pre-Order Discount %</code>: <code>20</code></li>
+<li>Recalculate pre-order discount per item: $39.95 × 0.20 = $7.99</li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → update tiers:
+<ul>
+<li>1 → $7.99</li>
+<li>2 → $9.99 (= $7.99 + $2.00)</li>
+<li>3 → $11.99 (= $7.99 + $4.00)</li>
+</ul></li>
+</ol>
+<h3 id="add-a-new-pack-e.g.-5-bags-33.95ea">Add a new pack (e.g. 5 Bags
+@ $33.95/ea)</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → add a <strong>Pack Option</strong> block:
+<ul>
+<li><code>Pack Name</code>: “5 Bags”</li>
+<li><code>Number of Bottles to Display</code>: <code>5</code></li>
+<li><code>Price per unit (cents)</code>: <code>3395</code></li>
+<li><code>Subscription Plan ID (Loop)</code>: new plan ID from Loop (you
+need to create one in Loop first)</li>
+<li><code>Frequency Label</code>: “Ships every 14 weeks” (for
+example)</li>
+</ul></li>
+<li>Admin → Apps → EPD → <code>packs_standard</code> → add tier: 5 →
+<code>$6.00 off</code></li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → add tier: 5 →
+<code>$11.99 off</code></li>
+<li>Admin → Apps → Loop Subscriptions → create a new plan with 15%
+discount (if not yet)</li>
+</ol>
+<h3 id="disable-the-pre-order-discount">Disable the pre-order
+discount</h3>
+<ol type="1">
+<li>Customizer → Theme settings → Pre-Order →
+<code>Pre-Order Discount %</code>: <code>0</code></li>
+<li>Admin → Apps → EPD → disable functions <code>packs_preorder</code>,
+<code>bundle_preorder</code>, <code>classic_preorder</code> (toggle on
+the right)</li>
+</ol>
+<h3 id="change-subscription-discount-from-15-to-20">Change subscription
+discount from 15% to 20%</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → <code>Subscription Multiplier</code>:
+<code>0.80</code></li>
+<li>Admin → Apps → Loop Subscriptions → open each plan (4w / 6w / 8w) →
+change discount to <code>20.00%</code></li>
+</ol>
+<hr />
+<h2 id="cart-merge-behaviour">Cart Merge Behaviour</h2>
+<p>When a pack is added to the cart, the theme <strong>automatically
+merges</strong> with an existing line item (same variant + same mode +
+same pre-order state, combined qty ≤ 3) and reassigns the correct plan
+ID.</p>
+<p>Example: - Cart: 1 Bag subscribe (4-week plan) - User adds 2 Bags
+subscribe → <strong>one line: 3 Bags @ 8-week plan,
+$35.95/ea</strong></p>
+<p>If combined qty &gt; 3 — a <strong>separate line</strong> is created
+(no merge).</p>
+<p>When quantity changes via cart drawer (<code>+</code> /
+<code>−</code> buttons) — the plan also auto-swaps to the correct one
+for the new quantity.</p>
+<hr />
+<h2 id="checklist-after-changing-discounts">Checklist After Changing
+Discounts</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Customizer — Save</label></li>
+<li><label><input type="checkbox" />EPD — all relevant functions
+updated</label></li>
+<li><label><input type="checkbox" />Loop — discount updated in plan (if
+subscription was touched)</label></li>
+<li><label><input type="checkbox" />Open the product in
+<strong>incognito</strong> — verify the price on the page</label></li>
+<li><label><input type="checkbox" />Add to cart — verify the price in
+the cart</label></li>
+<li><label><input type="checkbox" />Proceed to checkout — verify the
+final amount</label></li>
+<li><label><input type="checkbox" />Subscription — verify the correct
+plan ID was assigned for each quantity</label></li>
+</ul>
+</body>
+</html>

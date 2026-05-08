@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Знижки в темі Franky</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css;base64,Ym9keXtmb250LWZhbWlseTotYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxzYW5zLXNlcmlmO21heC13aWR0aDo3ODBweDttYXJnaW46NDBweCBhdXRvO3BhZGRpbmc6MCAyMHB4O2xpbmUtaGVpZ2h0OjEuNjtjb2xvcjojMjIyfWgxe2JvcmRlci1ib3R0b206MnB4IHNvbGlkICMzMzM7cGFkZGluZy1ib3R0b206OHB4fWgye21hcmdpbi10b3A6MzJweDtjb2xvcjojMWExYTFhfWgze2NvbG9yOiMzMzN9dGFibGV7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO3dpZHRoOjEwMCU7bWFyZ2luOjEycHggMH10aCx0ZHtib3JkZXI6MXB4IHNvbGlkICNkZGQ7cGFkZGluZzo4cHggMTJweDt0ZXh0LWFsaWduOmxlZnR9dGh7YmFja2dyb3VuZDojZjVmNWY1fWNvZGV7YmFja2dyb3VuZDojZjRmNGY0O3BhZGRpbmc6MnB4IDZweDtib3JkZXItcmFkaXVzOjNweDtmb250LXNpemU6MC45ZW19YmxvY2txdW90ZXtib3JkZXItbGVmdDo0cHggc29saWQgI2ZmYTUwMDtiYWNrZ3JvdW5kOiNmZmY4ZTE7cGFkZGluZzoxMHB4IDE2cHg7bWFyZ2luOjE2cHggMH1ocntib3JkZXI6bm9uZTtib3JkZXItdG9wOjFweCBzb2xpZCAjZGRkO21hcmdpbjoyNHB4IDB9Cg==" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Знижки в темі Franky</h1>
+</header>
+<h1 id="знижки-в-темі-franky-як-змінювати">Знижки в темі Franky — як
+змінювати</h1>
+<p>Короткий гайд для клієнта: де і що міняти в Shopify admin, щоб
+змінити знижки.</p>
+<hr />
+<h2 id="головне-правило">⚠️ Головне правило</h2>
+<p>Знижки керуються у <strong>трьох місцях</strong> залежно від
+типу:</p>
+<ol type="1">
+<li><strong>Customizer</strong> (тема) — показує знижену ціну на
+сторінці товару (для всіх типів)</li>
+<li><strong>Every Possible Discount</strong> (Admin → Apps) — застосовує
+знижки Packs / Bundle / Pre-order на checkout</li>
+<li><strong>Loop Subscriptions</strong> (Admin → Apps) — застосовує
+знижку за підписку на checkout</li>
+</ol>
+<p>Якщо змінити лише одне — клієнт побачить одну ціну на сайті і іншу на
+оплаті. <strong>Завжди оновлюй всі задіяні місця.</strong></p>
+<h3 id="як-влаштовано-every-possible-discount">Як влаштовано Every
+Possible Discount</h3>
+<p>В апці є 5 активних discount-функцій (Tiered, Automatic). Кожна — для
+свого сценарію:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 60%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Функція</th>
+<th>Коли застосовується</th>
+<th>Тип</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packs_standard</code></td>
+<td>Режим Packs, звичайна купівля</td>
+<td>Fixed amount per item</td>
+</tr>
+<tr>
+<td><code>packs_preorder</code></td>
+<td>Режим Packs + pre-order</td>
+<td>Fixed amount per item</td>
+</tr>
+<tr>
+<td><code>bundle_standard</code></td>
+<td>Режим Bundle, звичайна купівля</td>
+<td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><code>bundle_preorder</code></td>
+<td>Режим Bundle + pre-order</td>
+<td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><code>classic_preorder</code></td>
+<td>Режим Classic + pre-order</td>
+<td>Tiered Percentage</td>
+</tr>
+</tbody>
+</table>
+<p>Тема при додаванні товару в корзину автоматично ставить “тег”
+(<code>_mc_discount_bucket</code>) з відповідним значенням, і апка
+знаходить потрібну функцію та застосовує її tiered-знижку.</p>
+<h3 id="як-стекаються-знижки-на-checkout-важливо">Як стекаються знижки
+на checkout (важливо!)</h3>
+<p>Shopify checkout стекає знижки <strong>лінійно</strong> від базової
+ціни варіанта:</p>
+<pre><code>final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item</code></pre>
+<p>Спочатку Loop віднімає 15% (якщо є підписка), потім EPD віднімає
+фіксований pack discount. Це впливає на те, як виставлені значення EPD —
+для pre-order, наприклад, EPD має враховувати <strong>і pack discount, і
+pre-order discount</strong> одночасно.</p>
+<hr />
+<h2 id="типи-знижок">Типи знижок</h2>
+<h3 id="знижка-за-кількість-паків-pack-discount-fixed-price-per-unit">1.
+Знижка за кількість паків (Pack discount) — Fixed price per unit</h3>
+<p>Зараз: - 1 Bag → $39.95/ea - 2 Bags → $37.95/ea (-$2 від базової) - 3
+Bags → $35.95/ea (-$4 від базової)</p>
+<p><strong>Де змінити:</strong></p>
+<ul>
+<li><strong>PDP ціна:</strong> Customizer → секція <strong>Maison PDP
+Hero</strong> → блоки <strong>Pack Option</strong> → поле
+<code>Price per unit (cents)</code>
+<ul>
+<li><code>3995</code> = $39.95</li>
+<li><code>3795</code> = $37.95</li>
+<li><code>3595</code> = $35.95</li>
+</ul></li>
+<li><strong>Checkout discount:</strong> Admin → Apps → Every Possible
+Discount → функція <code>packs_standard</code> → tiers (Fixed amount per
+item):
+<ul>
+<li>1 → $0.00 off</li>
+<li>2 → $2.00 off</li>
+<li>3 → $4.00 off</li>
+</ul></li>
+</ul>
+<h3 id="pre-order-знижка">2. Pre-order знижка</h3>
+<p>Знижка для товарів, які зараз out of stock (клієнт замовляє наперед).
+Зараз -15% від базової.</p>
+<p><strong>Де змінити:</strong></p>
+<ul>
+<li><strong>PDP %:</strong> Customizer → <strong>Theme settings</strong>
+→ <strong>Pre-Order</strong> → <code>Pre-Order Discount %</code>
+(наприклад <code>15</code>)</li>
+<li><strong>Checkout discount:</strong> Admin → Apps → Every Possible
+Discount → функція <code>packs_preorder</code> → tiers:
+<ul>
+<li>1 → $5.99 off (= 15% від $39.95)</li>
+<li>2 → $7.99 off (= $5.99 pre-order + $2.00 pack discount)</li>
+<li>3 → $9.99 off (= $5.99 pre-order + $4.00 pack discount)</li>
+</ul></li>
+</ul>
+<h3 id="subscription-знижка-subscribe-save">3. Subscription знижка
+(Subscribe &amp; Save)</h3>
+<p>Знижка за підписку. Зараз -15%. Застосовується <strong>не через Every
+Possible Discount</strong>, а через <strong>Loop Subscriptions</strong>
+(selling plan).</p>
+<p>Підписка має 3 плани, які прив’язані до кількості:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Plan ID</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Bag</td>
+<td>#5080383721</td>
+<td>Every 4 weeks</td>
+</tr>
+<tr>
+<td>2 Bags</td>
+<td>#5271978217</td>
+<td>Every 6 weeks</td>
+</tr>
+<tr>
+<td>3 Bags</td>
+<td>#5272010985</td>
+<td>Every 8 weeks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Де змінити:</strong></p>
+<ol type="1">
+<li><strong>PDP multiplier:</strong> Customizer → секція <strong>Maison
+PDP Hero</strong> → <code>Subscription Multiplier</code>
+(<code>0.85</code> = 15% off)</li>
+<li><strong>Plan ID per pack:</strong> Customizer → секція
+<strong>Maison PDP Hero</strong> → блок <strong>Pack Option</strong> →
+поле <code>Subscription Plan ID (Loop)</code> для кожної кількості</li>
+<li><strong>Frequency Label per pack:</strong> Customizer → секція
+<strong>Maison PDP Hero</strong> → блок <strong>Pack Option</strong> →
+поле <code>Frequency Label (subscribe card)</code> (наприклад “Ships
+every 4 weeks”)</li>
+<li><strong>Loop discount:</strong> Admin → Apps → Loop Subscriptions →
+відкрити кожен plan → поле <code>discount</code> (мають всі бути
+однакові — <code>15.00%</code>)</li>
+</ol>
+<p><strong>Усі 4 значення мають співпадати</strong> — інакше PDP покаже
+одне, а checkout інше.</p>
+<h3 id="bundle-знижка-набори">4. Bundle знижка (набори)</h3>
+<p>Знижка залежно від кількості доданих товарів до набору (2, 3,
+4+).</p>
+<p><strong>Для зміни потрібен розробник</strong> — значення прописані в
+коді теми (Tiered Percentage у EPD теж треба оновити).</p>
+<p>Поточні значення: - 2 items → 20% - 3 items → 25% - 4+ items →
+30%</p>
+<hr />
+<h2 id="як-знижки-складаються-приклади">Як знижки складаються
+(приклади)</h2>
+<table>
+<thead>
+<tr>
+<th>Сценарій</th>
+<th>PDP та Cart показують</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 bag, one-time</td>
+<td>$39.95</td>
+</tr>
+<tr>
+<td>2 bags, one-time</td>
+<td>$75.90 ($37.95 × 2)</td>
+</tr>
+<tr>
+<td>3 bags, one-time</td>
+<td>$107.85</td>
+</tr>
+<tr>
+<td>1 bag, subscribe</td>
+<td>$33.96 (Loop −15%)</td>
+</tr>
+<tr>
+<td>2 bags, subscribe</td>
+<td>$63.92 ($33.96 × 2 − $4 EPD)</td>
+</tr>
+<tr>
+<td>3 bags, subscribe</td>
+<td>$89.88</td>
+</tr>
+<tr>
+<td>1 bag, pre-order, one-time</td>
+<td>$33.96</td>
+</tr>
+<tr>
+<td>2 bags, pre-order, one-time</td>
+<td>$63.92</td>
+</tr>
+<tr>
+<td>2 bags, pre-order, subscribe</td>
+<td>$51.94</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="швидка-таблиця-що-де">Швидка таблиця “Що → Де”</h2>
+<table>
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th>Що змінити</th>
+<th>Де</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pack ціна за одиницю (PDP)</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Price per unit (cents)</code></td>
+</tr>
+<tr>
+<td>Pack ціна (checkout)</td>
+<td>Admin → Apps → <strong>EPD</strong> → <code>packs_standard</code> →
+tier discount</td>
+</tr>
+<tr>
+<td>Pre-order % (PDP)</td>
+<td>Customizer → Theme settings → Pre-Order</td>
+</tr>
+<tr>
+<td>Pre-order checkout discount</td>
+<td>Admin → Apps → <strong>EPD</strong> →
+<code>packs_preorder</code></td>
+</tr>
+<tr>
+<td>Subscription % (PDP)</td>
+<td>Customizer → PDP Hero → <code>Subscription Multiplier</code></td>
+</tr>
+<tr>
+<td>Subscription % (checkout)</td>
+<td>Admin → Apps → <strong>Loop Subscriptions</strong> → кожен plan</td>
+</tr>
+<tr>
+<td>Subscription plan ID per pack</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Subscription Plan ID (Loop)</code></td>
+</tr>
+<tr>
+<td>Subscribe frequency text</td>
+<td>Customizer → PDP Hero → Pack Option →
+<code>Frequency Label</code></td>
+</tr>
+<tr>
+<td>Увімкнути pre-order на товарі</td>
+<td>Customizer → PDP Hero → <code>Enable Pre-Order</code></td>
+</tr>
+<tr>
+<td>Bundle %</td>
+<td>Код теми (потребує розробника)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="приклади">Приклади</h2>
+<h3 id="змінити-ціну-2-pack-з-37.95-на-36.95">Змінити ціну 2-pack з
+$37.95 на $36.95</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → блок “2 Bags” →
+<code>Price per unit (cents)</code>: <code>3695</code></li>
+<li>Admin → Apps → EPD → <code>packs_standard</code> → tier для 2 →
+<code>$3.00 off</code> (= $39.95 − $36.95)</li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → tier для 2 →
+<code>$8.99 off</code> (= $5.99 pre-order + $3.00 pack)</li>
+<li>Save усюди</li>
+</ol>
+<h3 id="змінити-pre-order-знижку-з-15-на-20">Змінити pre-order знижку з
+15% на 20%</h3>
+<ol type="1">
+<li>Customizer → Theme settings → Pre-Order →
+<code>Pre-Order Discount %</code>: <code>20</code></li>
+<li>Перерахувати pre-order discount per item: $39.95 × 0.20 = $7.99</li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → оновити tiers:
+<ul>
+<li>1 → $7.99</li>
+<li>2 → $9.99 (= $7.99 + $2.00)</li>
+<li>3 → $11.99 (= $7.99 + $4.00)</li>
+</ul></li>
+</ol>
+<h3 id="додати-новий-пак-наприклад-5-bags-33.95ea">Додати новий пак
+(наприклад, 5 Bags @ $33.95/ea)</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → додати блок <strong>Pack Option</strong>:
+<ul>
+<li><code>Pack Name</code>: “5 Bags”</li>
+<li><code>Number of Bottles to Display</code>: <code>5</code></li>
+<li><code>Price per unit (cents)</code>: <code>3395</code></li>
+<li><code>Subscription Plan ID (Loop)</code>: новий plan ID з Loop
+(треба створити план у Loop)</li>
+<li><code>Frequency Label</code>: “Ships every 14 weeks”
+(наприклад)</li>
+</ul></li>
+<li>Admin → Apps → EPD → <code>packs_standard</code> → додати tier: 5 →
+<code>$6.00 off</code></li>
+<li>Admin → Apps → EPD → <code>packs_preorder</code> → додати tier: 5 →
+<code>$11.99 off</code></li>
+<li>Admin → Apps → Loop Subscriptions → створити новий plan з 15%
+discount (якщо ще немає)</li>
+</ol>
+<h3 id="вимкнути-pre-order-знижку">Вимкнути pre-order знижку</h3>
+<ol type="1">
+<li>Customizer → Theme settings → Pre-Order →
+<code>Pre-Order Discount %</code>: <code>0</code></li>
+<li>Admin → Apps → EPD → вимкнути функції <code>packs_preorder</code>,
+<code>bundle_preorder</code>, <code>classic_preorder</code> (toggle
+справа)</li>
+</ol>
+<h3 id="змінити-subscription-знижку-з-15-на-20">Змінити subscription
+знижку з 15% на 20%</h3>
+<ol type="1">
+<li>Customizer → PDP Hero → <code>Subscription Multiplier</code>:
+<code>0.80</code></li>
+<li>Admin → Apps → Loop Subscriptions → відкрити кожен plan (4w / 6w /
+8w) → змінити discount на <code>20.00%</code></li>
+</ol>
+<hr />
+<h2 id="cart-merge-поведінка">Cart merge поведінка</h2>
+<p>При додаванні pack у корзину тема <strong>автоматично
+об’єднує</strong> з existing line item (Same variant + Same mode + Same
+pre-order state, qty ≤ 3) і перепризначає правильний plan ID.</p>
+<p>Приклад: - Корзина: 1 Bag subscribe (4-week plan) - Користувач додає
+ще 2 Bags subscribe → <strong>одна лінія: 3 Bags @ 8-week plan,
+$35.95/ea</strong></p>
+<p>Якщо combined qty &gt; 3 — створюється <strong>окрема лінія</strong>
+(без merge).</p>
+<p>При зміні quantity у cart drawer (<code>+</code> / <code>−</code>
+кнопки) — plan теж автоматично swap’ається на правильний для нової
+кількості.</p>
+<hr />
+<h2 id="чеклист-після-зміни-знижок">Чеклист після зміни знижок</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Customizer — Save</label></li>
+<li><label><input type="checkbox" />EPD — оновлено всі задіяні
+функції</label></li>
+<li><label><input type="checkbox" />Loop — оновлено discount у плані
+(якщо торкалось підписки)</label></li>
+<li><label><input type="checkbox" />Відкрити товар у
+<strong>incognito</strong> — перевірити ціну на сторінці</label></li>
+<li><label><input type="checkbox" />Додати в корзину — перевірити ціну в
+корзині</label></li>
+<li><label><input type="checkbox" />Пройти до checkout — перевірити
+фінальну суму</label></li>
+<li><label><input type="checkbox" />Підписка — перевірити що правильний
+plan ID присвоївся для кожної quantity</label></li>
+</ul>
+</body>
+</html>
