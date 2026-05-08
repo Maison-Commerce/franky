@@ -1,87 +1,105 @@
-# Every Possible Discount — оновлення для fixed-price pack discount
+# Every Possible Discount — fixed-amount config (узгоджено з checkout-математикою)
 
-Інструкція для оновлення EPD-функцій після переходу packs mode з percentage на fixed-amount discount.
+Інструкція для конфігурації EPD-функцій так, щоб ціни на PDP, у cart і на checkout збігались.
 
 ---
 
 ## Контекст
 
-Тема тепер пише в `_mc_discount_bucket` ті самі значення (`packs_standard`, `packs_preorder`), але PDP розраховує **fixed unit price** замість percentage. Щоб checkout збігався з PDP — функції в EPD теж треба перевести на Fixed Amount.
+Shopify checkout стекає знижки **лінійно** від variant base price:
 
-Базові ціни:
-- 1 Bag → $39.95/ea
-- 2 Bags → $37.95/ea (-$2 від базової)
-- 3 Bags → $35.95/ea (-$4 від базової)
+```
+final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
+```
 
-Pre-order = -15% від unit price → еквівалентно фіксованим знижкам.
+PDP-математика тепер віддзеркалює цей же порядок (комміт після цього документа). Тому EPD значення мають враховувати **і pack tier discount, і pre-order discount**, бо обидва — fixed amount у Shopify cart.
+
+Базові ціни (PDP цільові):
+- 1 Bag → $39.95/ea (повна ціна)
+- 2 Bags → $37.95/ea (-$2 pack discount)
+- 3 Bags → $35.95/ea (-$4 pack discount)
+
+Pre-order discount = -15% від variant base = **$5.99/ea** (однаковий для всіх pack tiers).
 
 ---
 
-## packs_standard (звичайна купівля)
+## packs_standard (звичайна купівля, без pre-order)
 
-**Admin → Apps → Every Possible Discount → знайти функцію `packs_standard`**
+**Admin → Apps → Every Possible Discount → функція `packs_standard`**
 
-1. Відкрити функцію → змінити **Discount type** з `Percentage` на `Fixed amount per item`
-2. Tiers:
+- **Discount type:** `Fixed amount per item`
+- **Tiers:**
 
-| Quantity | Discount per item | Result per item |
-|----------|-------------------|-----------------|
-| 1 | $0.00 off | $39.95 |
-| 2 | $2.00 off | $37.95 |
-| 3 | $4.00 off | $35.95 |
+| Quantity | Discount per item | Math | Final per item |
+|----------|-------------------|------|----------------|
+| 1 | **$0.00** off | $39.95 − $0 | $39.95 |
+| 2 | **$2.00** off | $39.95 − $2.00 | $37.95 |
+| 3 | **$4.00** off | $39.95 − $4.00 | $35.95 |
 
-3. Save & переконатись що toggle справа `Active`
+При підписці Loop додатково віднімає 15% від variant base (до EPD), все стекається лінійно.
 
 ---
 
 ## packs_preorder (pre-order купівля)
 
-Pre-order = pack discount + 15% від unit price.
+**Discount = pack discount + 15% pre-order = $5.99 + pack_discount per item**
 
-| Quantity | Unit base | Pre-order discount per item | Result per item |
-|----------|-----------|------------------------------|-----------------|
-| 1 | $39.95 | $5.99 off | $33.96 |
-| 2 | $37.95 | $5.69 off | $32.26 |
-| 3 | $35.95 | $5.39 off | $30.56 |
+| Quantity | Pack disc | Pre-order disc (15%) | **Total off per item** | Math |
+|----------|-----------|----------------------|------------------------|------|
+| 1 | $0.00 | $5.99 | **$5.99** | $39.95 − $5.99 = $33.96 |
+| 2 | $2.00 | $5.99 | **$7.99** | $39.95 − $7.99 = $31.96 |
+| 3 | $4.00 | $5.99 | **$9.99** | $39.95 − $9.99 = $29.96 |
 
 Кроки:
 
-1. Відкрити функцію `packs_preorder` → **Discount type** → `Fixed amount per item`
-2. Заповнити tiers за таблицею вище
+1. Відкрити функцію `packs_preorder` → **Discount type:** `Fixed amount per item`
+2. Заповнити tiers:
+   - 1 → **$5.99**
+   - 2 → **$7.99**
+   - 3 → **$9.99**
 3. Save & активувати
+
+> ⚠️ **Увага:** попередня версія цього документа давала значення $5.99 / $5.69 / $5.39 — це було помилкою (не враховувало що pack discount теж має бути в EPD для pre-order, бо Loop subscription для pre-order може стекатись теж).
 
 ---
 
 ## bundle_standard / bundle_preorder / classic_preorder
 
-**Не чіпаємо** — bundle і classic mode залишаються на percentage logic. Перетворення на fixed-amount тільки для packs.
+**Не чіпаємо** — bundle і classic mode залишаються на percentage logic.
 
 ---
 
 ## Subscription discount (Loop)
 
-Subscription знижка (15%) застосовується **через Loop selling plan**, не через EPD. Жодних змін в EPD для підписки не потрібно — Loop сам застосовує -15% при checkout, коли line item має `selling_plan` ID.
+Subscription знижка (15%) застосовується **через Loop selling plan**, не через EPD. Loop сам віднімає -15% від variant base, коли line item має `selling_plan` ID.
+
+EPD підлаштовується автоматично — після Loop, EPD стримує fixed amount від уже-знижeної ціни.
 
 ---
 
-## Як перевірити що все працює
+## Test matrix
 
-1. Customizer → Save (щоб оновити live theme)
-2. Open product PDP в incognito
-3. Click "2 Bags" — має показатись `$37.95/ea` під назвою
-4. Click "3 Bags" — `$35.95/ea`
-5. Add to cart → checkout — фінальна сума має співпадати з PDP
+| Scenario | Variant | Loop | EPD | Final per item | Total |
+|----------|---------|------|-----|----------------|-------|
+| 1 bag, one-time | $39.95 | — | $0 | $39.95 | $39.95 |
+| 2 bags, one-time | $39.95 | — | -$2.00 | $37.95 | $75.90 |
+| 3 bags, one-time | $39.95 | — | -$4.00 | $35.95 | $107.85 |
+| 1 bag, subscribe | $39.95 | -15% → $33.96 | -$0 | $33.96 | $33.96 |
+| 2 bags, subscribe | $39.95 | -15% → $33.96 | -$2.00 | $31.96 | **$63.92** |
+| 3 bags, subscribe | $39.95 | -15% → $33.96 | -$4.00 | $29.96 | **$89.88** |
+| 1 bag, pre-order, one-time | $39.95 | — | -$5.99 | $33.96 | $33.96 |
+| 2 bags, pre-order, one-time | $39.95 | — | -$7.99 | $31.96 | **$63.92** |
+| 3 bags, pre-order, one-time | $39.95 | — | -$9.99 | $29.96 | **$89.88** |
+| 2 bags, pre-order, subscribe | $39.95 | -15% → $33.96 | -$7.99 | $25.97 | **$51.94** |
 
-Тест-матриця:
+PDP після цього оновлення показуватиме точно ці значення — повна синхронізація з checkout.
 
-| Сценарій | Очікувана ціна на checkout |
-|----------|----------------------------|
-| 1 bag, one-time | $39.95 |
-| 2 bags, one-time | $75.90 |
-| 3 bags, one-time | $107.85 |
-| 1 bag, subscribe | $33.96 (Loop -15%) |
-| 2 bags, subscribe | $64.52 |
-| 3 bags, subscribe | $91.67 |
-| 2 bags, pre-order, one-time | $64.52 ($32.26 × 2) |
+---
 
-Якщо ціни на checkout відрізняються від PDP — перевір що EPD функція активна і tier-значення збереглись.
+## Чек-ліст після зміни
+
+- [ ] EPD `packs_standard` → Fixed amount per item: $0 / $2 / $4
+- [ ] EPD `packs_preorder` → Fixed amount per item: $5.99 / $7.99 / $9.99
+- [ ] Перевірити PDP в incognito: 2 bags subscribe має показати $63.92
+- [ ] Add to cart → cart drawer має показати ту саму суму
+- [ ] Proceed to checkout → final amount = PDP amount

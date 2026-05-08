@@ -1063,7 +1063,12 @@
         if (window.sectionMode === 'classic') {
           return Math.round((this.variant?.price || this.product.price) * this.quantity * this.subscriptionMultiplier);
         }
-        return Math.round(this.currentUnitPrice * this.quantity * this.subscriptionMultiplier);
+        // Packs: mirror Shopify checkout — Loop applies % to variant base, then EPD subtracts fixed pack discount.
+        // (variant × subMul − packDiscountPerItem) × qty
+        const basePrice = this.variant?.price || this.product.price;
+        const packDiscountPerItem = Math.max(0, basePrice - this.currentUnitPrice);
+        const subscribedUnit = Math.round(basePrice * this.subscriptionMultiplier);
+        return Math.max(0, subscribedUnit - packDiscountPerItem) * this.quantity;
       },
 
       getPackSavings(bottleCount, discountMultiplier) {
@@ -1125,8 +1130,18 @@
       },
 
       get preorderPrice() {
-        const currentPrice = this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
-        return Math.round(currentPrice * window.preorderDiscountMultiplier);
+        // For non-packs modes keep the original compounding behaviour.
+        if (window.sectionMode !== 'packs') {
+          const currentPrice = this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
+          return Math.round(currentPrice * window.preorderDiscountMultiplier);
+        }
+        // Packs: mirror checkout — pre-order is a fixed-amount discount applied per item on top of the
+        // already-discounted unit (one-time → variant; subscribe → variant × subMul). Pack discount is
+        // also a fixed amount subtracted per item. All linear, like Shopify cart math.
+        const basePrice = this.variant?.price || this.product.price;
+        const preorderDiscountPerItem = Math.round(basePrice * (1 - (window.preorderDiscountMultiplier || 0.85)));
+        const baseTotal = this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
+        return Math.max(0, baseTotal - preorderDiscountPerItem * this.quantity);
       },
 
       get preorderOriginalPrice() {
