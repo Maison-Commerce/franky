@@ -88,7 +88,7 @@ The subscription has 3 plans, each tied to a quantity:
 
 1. **PDP multiplier:** Customizer → section **Maison PDP Hero** → `Subscription Multiplier` (`0.85` = 15% off)
 2. **Plan ID per pack:** Customizer → section **Maison PDP Hero** → **Pack Option** block → `Subscription Plan ID (Loop)` field for each quantity
-3. **Frequency Label per pack:** Customizer → section **Maison PDP Hero** → **Pack Option** block → `Frequency Label (subscribe card)` field (e.g. "Ships every 4 weeks")
+3. **Frequency Label per pack:** Customizer → section **Maison PDP Hero** → **Pack Option** block → `Frequency Label (subscribe card)` field (e.g. "Deliver every 4 weeks")
 4. **Loop discount:** Admin → Apps → Loop Subscriptions → open each plan → `discount` field (all should match — `15.00%`)
 
 **All 4 values must match** — otherwise PDP shows one price and checkout shows another.
@@ -164,7 +164,7 @@ Current values:
    - `Number of Bottles to Display`: `5`
    - `Price per unit (cents)`: `3395`
    - `Subscription Plan ID (Loop)`: new plan ID from Loop (you need to create one in Loop first)
-   - `Frequency Label`: "Ships every 14 weeks" (for example)
+   - `Frequency Label`: "Deliver every 14 weeks" (for example)
 2. Admin → Apps → EPD → `packs_standard` → add tier: 5 → `$6.00 off`
 3. Admin → Apps → EPD → `packs_preorder` → add tier: 5 → `$11.99 off`
 4. Admin → Apps → Loop Subscriptions → create a new plan with 15% discount (if not yet)

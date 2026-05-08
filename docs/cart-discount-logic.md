@@ -88,7 +88,7 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
 
 1. **PDP multiplier:** Customizer → секція **Maison PDP Hero** → `Subscription Multiplier` (`0.85` = 15% off)
 2. **Plan ID per pack:** Customizer → секція **Maison PDP Hero** → блок **Pack Option** → поле `Subscription Plan ID (Loop)` для кожної кількості
-3. **Frequency Label per pack:** Customizer → секція **Maison PDP Hero** → блок **Pack Option** → поле `Frequency Label (subscribe card)` (наприклад "Ships every 4 weeks")
+3. **Frequency Label per pack:** Customizer → секція **Maison PDP Hero** → блок **Pack Option** → поле `Frequency Label (subscribe card)` (наприклад "Deliver every 4 weeks")
 4. **Loop discount:** Admin → Apps → Loop Subscriptions → відкрити кожен plan → поле `discount` (мають всі бути однакові — `15.00%`)
 
 **Усі 4 значення мають співпадати** — інакше PDP покаже одне, а checkout інше.
@@ -164,7 +164,7 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
    - `Number of Bottles to Display`: `5`
    - `Price per unit (cents)`: `3395`
    - `Subscription Plan ID (Loop)`: новий plan ID з Loop (треба створити план у Loop)
-   - `Frequency Label`: "Ships every 14 weeks" (наприклад)
+   - `Frequency Label`: "Deliver every 14 weeks" (наприклад)
 2. Admin → Apps → EPD → `packs_standard` → додати tier: 5 → `$6.00 off`
 3. Admin → Apps → EPD → `packs_preorder` → додати tier: 5 → `$11.99 off`
 4. Admin → Apps → Loop Subscriptions → створити новий plan з 15% discount (якщо ще немає)
