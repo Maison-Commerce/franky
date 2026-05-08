@@ -452,9 +452,27 @@
         {
           "type": "text",
           "id": "discount_multiplier",
-          "label": "Discount Multiplier",
-          "info": "1 = no discount, 0.9 = 10% off, 0.97 = 3% off",
+          "label": "Discount Multiplier (legacy)",
+          "info": "Used only if Price per unit (cents) is empty. 1 = no discount, 0.9 = 10% off",
           "default": "1"
+        },
+        {
+          "type": "number",
+          "id": "price_per_unit",
+          "label": "Price per unit (cents)",
+          "info": "Fixed price per bag in cents (e.g. 3995 = $39.95). When set, overrides Discount Multiplier."
+        },
+        {
+          "type": "text",
+          "id": "selling_plan_id",
+          "label": "Subscription Plan ID (Loop)",
+          "info": "Loop Subscriptions selling plan ID for this quantity. Leave empty if no subscription option for this pack."
+        },
+        {
+          "type": "text",
+          "id": "frequency_label",
+          "label": "Frequency Label (subscribe card)",
+          "info": "E.g. 'Ships every 4 weeks'. Shown on the subscribe-and-save card when this pack is selected."
         },
         {
           "type": "checkbox",
@@ -833,6 +851,27 @@
       {% endif %}
     {% endfor %}
   };
+  window.pricePerUnitByQuantity = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' and block.settings.price_per_unit %}
+        {{ block.settings.bottle_count }}: {{ block.settings.price_per_unit }},
+      {% endif %}
+    {% endfor %}
+  };
+  window.sellingPlanByQuantity = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' and block.settings.selling_plan_id != blank %}
+        {{ block.settings.bottle_count }}: '{{ block.settings.selling_plan_id }}',
+      {% endif %}
+    {% endfor %}
+  };
+  window.frequencyLabelByQuantity = {
+    {% for block in section.blocks %}
+      {% if block.type == 'pack_option' and block.settings.frequency_label != blank %}
+        {{ block.settings.bottle_count }}: "{{ block.settings.frequency_label | escape }}",
+      {% endif %}
+    {% endfor %}
+  };
   window.variantTitles = {
     {% for variant in product.variants %}
       {{ variant.id }}: "{{ variant.title | escape }}",
@@ -840,7 +879,15 @@
   };
   window.sellingPlanId = {{ section.settings.selling_plan_id | default: 'null' }};
   window.subscriptionMultiplier = parseFloat("{{ section.settings.subscription_multiplier | default: '0.8' }}") || 0.8;
-  window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+  {%- assign has_any_pack_plan = false -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'pack_option' and block.settings.selling_plan_id != blank -%}
+      {%- assign has_any_pack_plan = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  window.subscriptionDefaultSelected = {% if section.settings.selling_plan_id != blank or has_any_pack_plan %}{{ section.settings.subscription_default_selected | default: true }}{% else %}false{% endif %};
+  window.subscriptionAvailable = {% if section.settings.selling_plan_id != blank or has_any_pack_plan %}true{% else %}false{% endif %};
   window.sectionMode = "{{ section.settings.section_mode_default | default: 'packs' }}";
   window.bundleTierDiscounts = {
     1: {{ section.settings.bundle_tier1_discount_percent | default: 0 }},
@@ -881,9 +928,26 @@
       packPricing: window.packPricing || {},
       packNames: window.packNames || {},
       isSubscription: window.subscriptionDefaultSelected,
-      sellingPlanId: window.sellingPlanId,
       subscriptionMultiplier: window.subscriptionMultiplier,
       variantTitles: window.variantTitles || {},
+
+      get sellingPlanId() {
+        const planByQty = window.sellingPlanByQuantity || {};
+        if (planByQty[this.quantity]) return planByQty[this.quantity];
+        return window.sellingPlanId || null;
+      },
+
+      get currentFrequencyLabel() {
+        const labels = window.frequencyLabelByQuantity || {};
+        return labels[this.quantity] || '';
+      },
+
+      get currentUnitPrice() {
+        const fixed = (window.pricePerUnitByQuantity || {})[this.quantity];
+        if (fixed) return fixed;
+        const basePrice = this.variant?.price || this.product.price;
+        return Math.round(basePrice * (this.currentPackDiscount || 1));
+      },
 
       init() {
         console.log('[Subscription Debug] Alpine init - isSubscription:', this.isSubscription);
@@ -957,10 +1021,7 @@
         if (window.sectionMode === 'classic') {
           return (this.variant?.price || this.product.price) * this.quantity;
         }
-        const basePrice = this.variant?.price || this.product.price;
-        const packDiscount = this.currentPackDiscount || 1;
-        const fullPrice = basePrice * this.quantity;
-        return Math.round(fullPrice * packDiscount);
+        return this.currentUnitPrice * this.quantity;
       },
 
       get bundleAddonTotal() {
@@ -1002,11 +1063,7 @@
         if (window.sectionMode === 'classic') {
           return Math.round((this.variant?.price || this.product.price) * this.quantity * this.subscriptionMultiplier);
         }
-        const basePrice = this.variant?.price || this.product.price;
-        const packDiscount = this.currentPackDiscount || 1;
-        const fullPrice = basePrice * this.quantity;
-        const packDiscountedTotal = Math.round(fullPrice * packDiscount);
-        return Math.round(packDiscountedTotal * this.subscriptionMultiplier);
+        return Math.round(this.currentUnitPrice * this.quantity * this.subscriptionMultiplier);
       },
 
       getPackSavings(bottleCount, discountMultiplier) {
@@ -1106,6 +1163,45 @@
           ? this.getBundleGroupId()
           : null;
 
+        // Try merge for packs mode (no bundle addons), pre-order state
+        if (window.sectionMode === 'packs' && !hasBundleAddons) {
+          this.tryMergePackLine(this.variantId, this.quantity, true)
+            .then((merged) => {
+              if (merged) {
+                // After merge, sync cart attribute for Shopify Flow
+                return fetch('/cart.js')
+                  .then(r => r.json())
+                  .then((cart) => {
+                    const hasPreorder = cart.items.some((item) => {
+                      const bucket = item.properties?._mc_discount_bucket;
+                      return typeof bucket === 'string' && bucket.endsWith('_preorder');
+                    });
+                    return fetch('/cart/update.js', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ attributes: { 'pre-order': hasPreorder ? 'PRE-ORDER' : '' } }),
+                    });
+                  })
+                  .then(() => {
+                    maisonDispatch('maison:cart-drawer-reload');
+                    maisonDispatch('maison:cart-drawer-open');
+                    this.loading = false;
+                  });
+              }
+              return this._addToCartPreOrderNormal(hasBundleAddons, bundleGroupId);
+            })
+            .catch((err) => {
+              console.error('[PreOrder Merge] error, falling back to add:', err);
+              this._addToCartPreOrderNormal(hasBundleAddons, bundleGroupId);
+            });
+          return;
+        }
+
+        this._addToCartPreOrderNormal(hasBundleAddons, bundleGroupId);
+      },
+
+      _addToCartPreOrderNormal(hasBundleAddons, bundleGroupId) {
+
         const preorderProps = {
           _mc_discount_bucket: this.getDiscountBucket(true),
           'Pre-Order': this.preorderPropertyValue,
@@ -1202,6 +1298,57 @@
         });
       },
 
+      tryMergePackLine(variantId, addQty, isPreorder) {
+        // Returns Promise<boolean>: true if merge happened, false otherwise.
+        // Merges only when: same variant + same mode + same pre-order state + combined qty <= 3 + not bundle item.
+        if (window.sectionMode !== 'packs') return Promise.resolve(false);
+        const targetMode = this.isSubscription ? 'subscribe' : 'onetime';
+        return fetch('/cart.js')
+          .then(r => r.json())
+          .then((cart) => {
+            const existing = cart.items.find((item) => {
+              if (item.variant_id !== variantId) return false;
+              if (item.properties?._mc_bundle_group) return false;
+              const itemMode = item.selling_plan_allocation ? 'subscribe' : 'onetime';
+              if (itemMode !== targetMode) return false;
+              const itemBucket = item.properties?._mc_discount_bucket || '';
+              const itemPreorder = itemBucket.endsWith('_preorder');
+              if (itemPreorder !== isPreorder) return false;
+              return true;
+            });
+            if (!existing) return false;
+            const combinedQty = existing.quantity + addQty;
+            if (combinedQty > 3) return false;
+
+            const newPlan = (window.sellingPlanByQuantity || {})[combinedQty] || null;
+            const newProperties = {
+              ...(existing.properties || {}),
+              _mc_discount_bucket: isPreorder ? 'packs_preorder' : 'packs_standard',
+            };
+            const compareAt = this.variant?.compare_at_price || 0;
+            if (compareAt > 0) newProperties._mc_compare_at_unit = String(compareAt);
+            if (isPreorder) {
+              newProperties['Pre-Order'] = this.preorderPropertyValue;
+            }
+
+            const changeBody = {
+              id: existing.key,
+              quantity: combinedQty,
+              properties: newProperties,
+            };
+            if (this.isSubscription && newPlan) {
+              changeBody.selling_plan = newPlan;
+            }
+
+            console.log('[Cart Merge] line key:', existing.key, 'oldQty:', existing.quantity, 'addQty:', addQty, 'combinedQty:', combinedQty, 'newPlan:', newPlan);
+            return fetch('/cart/change.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(changeBody),
+            }).then(() => true);
+          });
+      },
+
       addToCart(variantId = null, qty = null) {
         if (this.loading) return;
         this.loading = true;
@@ -1209,6 +1356,37 @@
         const isRelated = variantId !== null;
         const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
         const discountBucket = !isRelated ? this.getDiscountBucket(false) : null;
+
+        const canMerge = !isRelated && !hasBundleAddons && window.sectionMode === 'packs';
+        if (canMerge) {
+          this.tryMergePackLine(variantId || this.variantId, qty || this.quantity, false)
+            .then((merged) => {
+              if (merged) {
+                maisonDispatch('maison:cart-drawer-reload');
+                maisonDispatch('maison:cart-drawer-open');
+                this.loading = false;
+                return null;
+              }
+              return this._addToCartNormal(variantId, qty);
+            })
+            .catch((err) => {
+              console.error('[AddToCart Merge] error, falling back to add:', err);
+              return this._addToCartNormal(variantId, qty);
+            });
+          return;
+        }
+
+        this._addToCartNormalInline(variantId, qty, isRelated, hasBundleAddons, discountBucket);
+      },
+
+      _addToCartNormal(variantId, qty) {
+        const isRelated = variantId !== null;
+        const hasBundleAddons = !isRelated && this.bundleAddonTotal > 0;
+        const discountBucket = !isRelated ? this.getDiscountBucket(false) : null;
+        return this._addToCartNormalInline(variantId, qty, isRelated, hasBundleAddons, discountBucket);
+      },
+
+      _addToCartNormalInline(variantId, qty, isRelated, hasBundleAddons, discountBucket) {
         const bundleGroupId = window.sectionMode === 'bundle' && hasBundleAddons
           ? this.getBundleGroupId()
           : null;
@@ -1748,22 +1926,26 @@
                     </div>
                     <div class="xmaison_pack-details">
                       <span class="xmaison_pack-name">{{ block.settings.pack_name }}</span>
-                      {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
-                      {% if discount_multiplier < 1 %}
-                        {% assign discount_percent = 1 | minus: discount_multiplier | times: 100 | round %}
-                        <div class="xmaison_pack-badge">
-                          {% if section.settings.preorder_enabled %}
-                            {% assign preorder_discount = settings.preorder_discount_percent | default: 15 %}
-                            {% assign combined_percent = discount_percent | plus: preorder_discount %}
-                            <span class="xmaison_pack-badge-text" x-text="isPreorder ? 'Save {{ combined_percent }}%' : 'Save {{ discount_percent }}%'">Save {{ discount_percent }}%</span>
-                          {% else %}
-                            <span class="xmaison_pack-badge-text">Save {{ discount_percent }}%</span>
-                          {% endif %}
-                        </div>
-                      {% elsif section.settings.preorder_enabled %}
-                        <div class="xmaison_pack-badge" x-show="isPreorder" x-cloak>
-                          <span class="xmaison_pack-badge-text">Save {{ settings.preorder_discount_percent | default: 15 }}%</span>
-                        </div>
+                      {% if block.settings.price_per_unit %}
+                        <span class="xmaison_pack-unit-price">{{ block.settings.price_per_unit | money }}/ea</span>
+                      {% else %}
+                        {% assign discount_multiplier = block.settings.discount_multiplier | times: 1.0 %}
+                        {% if discount_multiplier < 1 %}
+                          {% assign discount_percent = 1 | minus: discount_multiplier | times: 100 | round %}
+                          <div class="xmaison_pack-badge">
+                            {% if section.settings.preorder_enabled %}
+                              {% assign preorder_discount = settings.preorder_discount_percent | default: 15 %}
+                              {% assign combined_percent = discount_percent | plus: preorder_discount %}
+                              <span class="xmaison_pack-badge-text" x-text="isPreorder ? 'Save {{ combined_percent }}%' : 'Save {{ discount_percent }}%'">Save {{ discount_percent }}%</span>
+                            {% else %}
+                              <span class="xmaison_pack-badge-text">Save {{ discount_percent }}%</span>
+                            {% endif %}
+                          </div>
+                        {% elsif section.settings.preorder_enabled %}
+                          <div class="xmaison_pack-badge" x-show="isPreorder" x-cloak>
+                            <span class="xmaison_pack-badge-text">Save {{ settings.preorder_discount_percent | default: 15 }}%</span>
+                          </div>
+                        {% endif %}
                       {% endif %}
                     </div>
                     {% if block.settings.show_best_value %}
@@ -1911,7 +2093,7 @@
                 <div class="xmaison_subscription-content">
                   <div class="xmaison_subscription-header">
                     <div class="xmaison_subscription-title-row">
-                      <span class="xmaison_subscription-title">{{ section.settings.subscribe_title }}</span>
+                      <span class="xmaison_subscription-title" x-text="currentFrequencyLabel || '{{ section.settings.subscribe_title | escape }}'">{{ section.settings.subscribe_title }}</span>
                       <div class="xmaison_save-badge">
                         {% if section.settings.bundle_enabled and section.settings.section_mode_default == 'bundle' %}
                           <span class="xmaison_save-badge-text" x-text="bundleSavePercent > 0 ? 'SAVE ' + Math.round((1 - (bundleCalculatedPrice / bundleOriginalPrice) * subscriptionMultiplier) * 100) + '%' : '{{ section.settings.subscribe_save_badge }}'"></span>

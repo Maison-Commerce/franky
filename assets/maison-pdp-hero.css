@@ -564,6 +564,16 @@ img {
   line-height: 1.5;
 }
 
+.xmaison_pack-unit-price {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary, #7a6e6e);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
 .xmaison_pack-badge {
   display: inline-flex;
   align-items: center;

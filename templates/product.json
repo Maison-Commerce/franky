@@ -377,10 +377,13 @@
         "pack_option_GHhn3X": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "30 day supply",
+            "pack_name": "1 Bag",
             "bottle_count": 1,
             "badge_text": "",
             "discount_multiplier": "1",
+            "price_per_unit": 3995,
+            "selling_plan_id": "5080383721",
+            "frequency_label": "Ships every 4 weeks",
             "is_default_selected": true,
             "show_best_value": false,
             "variant_id": "",
@@ -390,10 +393,13 @@
         "pack_option_wRrbhV": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "60 day supply",
+            "pack_name": "2 Bags",
             "bottle_count": 2,
             "badge_text": "Bestseller",
             "discount_multiplier": "0.9",
+            "price_per_unit": 3795,
+            "selling_plan_id": "5271978217",
+            "frequency_label": "Ships every 6 weeks",
             "is_default_selected": false,
             "show_best_value": true,
             "variant_id": "",
@@ -403,10 +409,13 @@
         "pack_option_wrUnNn": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "90 day supply",
+            "pack_name": "3 Bags",
             "bottle_count": 3,
             "badge_text": "Best Value",
             "discount_multiplier": "0.85",
+            "price_per_unit": 3595,
+            "selling_plan_id": "5272010985",
+            "frequency_label": "Ships every 8 weeks",
             "is_default_selected": false,
             "show_best_value": true,
             "variant_id": "",
