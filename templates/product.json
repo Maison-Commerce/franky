@@ -510,6 +510,13 @@
             "badge_text": "1.2M sold last year"
           }
         },
+        "accordion_item_DparJ9": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "Who is Franky for?",
+            "accordion_content": "<p>Whether you're trying to upgrade your morning coffee, hit your protein goals, lose weight without losing muscle, or finally stop crashing at 10am, Franky has your back. And unlike most functional drinks, it actually tastes incredible: rich, smooth vanilla hazelnut that drinks like a coffee shop treat, not a supplement.</p><p>Not sure if it's for you? Franky may be a fit if you:</p><ul><li>Drink coffee every morning but want it to actually do something</li><li>Skip breakfast or grab something quick and regret it by 11am</li><li>Struggle to hit your daily protein target</li><li>Are on a GLP-1 (Ozempic, Wegovy, Mounjaro, Zepbound) and need an easy, high-protein way to protect lean muscle while appetite is suppressed</li><li>Want a low-calorie, low-sugar option that supports weight loss without leaving you hungry</li><li>Are tired of \"healthy\" products that taste like cardboard or chalk</li><li>Get the caffeine jitters or afternoon energy crashes</li><li>Want steady focus through long meetings or workouts</li><li>Deal with bloating or sluggish digestion</li><li>Train in the morning and need quick fuel before or after</li></ul><p>It's also a great fit if you've tried protein shakes and hated the chalky texture, or tried bulletproof coffee and missed actually getting protein.</p>"
+          }
+        },
         "accordion_item_KNehCE": {
           "type": "accordion_item",
           "settings": {
@@ -526,6 +533,7 @@
         },
         "accordion_item_BQRfcT": {
           "type": "accordion_item",
+          "disabled": true,
           "settings": {
             "accordion_title": "Details",
             "accordion_content": "<p>Your morning coffee may do more than wake you up. Franky is the complete morning formula with real coffee flavor, real nutrition, and functional ingredients that may help carry you through the entire morning from the first sip.</p><p>Each serving delivers <strong>10g of whey protein concentrate</strong>, which may help reduce hunger, manage cravings, and support lean muscle during weight loss. Combined with <strong>3 billion CFU probiotics</strong> and <strong>1,500mg of psyllium husk fiber</strong>, it may help support digestion, reduce bloating, and keep mid-morning cravings at bay.</p><p>Then there's the focus stack. <strong>300mg of lion's mane mushroom</strong> extract and <strong>200mg of L-theanine</strong> pair with <strong>50mg of natural caffeine</strong> for calm, steady energy that may help you stay sharp, without the jitters or crash.</p><p><strong>Zero sugar</strong>. <strong>No artificial fillers. Gluten-free, soy-free, and keto-friendly</strong>. Add two scoops to cold water or milk over ice, shake, and you're done in under 60 seconds. And it actually tastes incredible: rich, smooth vanilla hazelnut that you may find yourself looking forward to every single morning. <strong>Made in the USA.</strong></p><p>20 Servings · Net Weight 11.1 oz (314g) </p><p>Price per Serving: </p><p>1 Bag: $1.99/serving<br/>2 Bags: $1.43/serving · Save 28%<br/>3 Bags: $1.35/serving · Save 32%</p><p></p><p></p>"
@@ -533,9 +541,17 @@
         },
         "accordion_item_BMU6dj": {
           "type": "accordion_item",
+          "disabled": true,
           "settings": {
             "accordion_title": "Benefits & Ingredients",
             "accordion_content": "<p>Franky combines real coffee with <strong>10g of protein and functional ingredients</strong> designed to support steady energy, focus, and satiety. Instead of the typical caffeine spike and crash, the formula provides smoother energy through balanced caffeine and L-theanine.<br/>The blend includes <strong>protein for sustained fuel</strong>, <strong>natural caffeine for focus</strong>, and <strong>prebiotic fiber to support digestion and gut balance</strong>. Together, these ingredients help turn your morning coffee into a more complete and functional routine.</p>"
+          }
+        },
+        "accordion_item_hdeJXf": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_title": "How do I enjoy Franky?",
+            "accordion_content": "<p>Add one or two scoops to cold water, hot water, or your milk of joy (almond milk or oat milk work beautifully, and almond milk over a mountain of ice is our personal favorite). Shake or stir, done in 60 seconds flat. No blender, no barista, no drama.</p><p>Best served ice cold. Make it your morning ritual and you'll actually look forward to your alarm going off. Almost.</p><p><br/>Many people use Franky as part of their <strong>morning routine or as a light breakfast alternative</strong>, providing energy, focus, and satiety without the typical coffee crash.</p>"
           }
         },
         "accordion_item_fpnbqj": {
@@ -544,13 +560,6 @@
             "accordion_title": "Nutritional Information",
             "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is<strong> keto</strong>-<strong>friendly</strong> and <strong>gluten</strong>-<strong>free</strong>, with no fillers or unnecessary additives.  </p><p>Our Protein Coffee is a light and energizing choice, with just <strong>67 calories per serving</strong>. If you prefer a stronger boost and add two scoops, the total comes to <strong>134 calories. </strong>Still a low-calorie option that fits perfectly into an active lifestyle.</p><p></p>",
             "accordion_image": "shopify://shop_images/Franky_Nutritional_Info.png"
-          }
-        },
-        "accordion_item_hdeJXf": {
-          "type": "accordion_item",
-          "settings": {
-            "accordion_title": "How to Enjoy",
-            "accordion_content": "<p>Add one scoop to Cold Water, Hot Water, or your Milk of Joy — almond milk over a mountain of ice is our personal favorite. Shake or stir, done in 60 seconds flat. No blender, no barista, no drama.</p><p>Best served ice cold. Make it your morning ritual and you'll actually look forward to your alarm going off. Almost.</p><p><br/>Many people use Franky as part of their <strong>morning routine or as a light breakfast alternative</strong>, providing energy, focus, and satiety without the typical coffee crash.</p>"
           }
         },
         "accordion_item_UgPTiM": {
@@ -586,12 +595,13 @@
         "trust_badge_6RkdBR",
         "trust_badge_RY6LQE",
         "trust_badge_RDLj3F",
+        "accordion_item_DparJ9",
         "accordion_item_KNehCE",
         "accordion_item_M9jwRx",
         "accordion_item_BQRfcT",
         "accordion_item_BMU6dj",
-        "accordion_item_fpnbqj",
         "accordion_item_hdeJXf",
+        "accordion_item_fpnbqj",
         "accordion_item_UgPTiM",
         "accordion_item_MCYThT"
       ],
