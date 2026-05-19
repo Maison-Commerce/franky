@@ -484,40 +484,6 @@
     {% render 'service-worker' %}
 
     {% render 'lumin-styles-scripts' %}
-
-  
-{%- comment -%} frk-listicle-overrides v3 — page-handle-scoped, layout-injected {%- endcomment -%}
-{%- if page.handle == '11-reasons-why-this-high-protein-iced-coffee-is-the-1-trending-drink-for-spring-2026' -%}
-<style id="frk-listicle-overrides">
-  /* Hide Instagram "Join the franky community" app block on listicle page only */
-  #insta-feed,
-  .shopify-app-block[id*="instafeed"],
-  [id*="instafeed_app_block"] { display: none !important; }
-
-  /* Force theme HEADING font (Lust Text) on body text of customer_review,
-     rating, and promotional blocks so they match the numbered reason headlines. */
-  .content-review-name,
-  .content-review-text,
-  .content-review-text p,
-  .content-review-verified,
-  .content-review-rating span,
-  .content-rating-text,
-  .content-rating-number,
-  .content-text,
-  .content-text p,
-  .content-text strong,
-  .promotional-headline,
-  .promotional-headline-sub,
-  .promotional-content,
-  .promotional-content p,
-  .promotional-guarantee,
-  .promotional-review-count,
-  .promotional-rating,
-  .promotional-button {
-    font-family: var(--font-heading-family), serif !important;
-  }
-</style>
-{%- endif -%}
 </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
