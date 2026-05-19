@@ -102,14 +102,14 @@
         "headline_nyWPD8": {
           "type": "headline",
           "settings": {
-            "headline": "How This Smart LED Device Is Helping Thousands of Women Look Younger — Without Injectables or Expensive Treatments ✨",
+            "headline": "10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Spring 2026",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "400",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "For anyone who’s noticed fine lines, dull skin, or lost that youthful glow — this new at-home LED skincare breakthrough might be exactly what you’ve been searching for.",
+            "subheadline": "",
             "subheadline_size": 14,
             "subheadline_color": "#666666",
             "top_padding": 0,
@@ -119,10 +119,11 @@
         "author_YkGyXe": {
           "type": "author",
           "settings": {
+            "author_image": "shopify://shop_images/Customer_01.png",
             "author_name": "By Dr. Rebecca Hayes, MD",
             "author_name_size": 16,
             "verified": true,
-            "date": "Tuesday, July 28th, 2025",
+            "date": "Tuesday, April 28th, 2026",
             "date_size": 12,
             "top_padding": 20,
             "bottom_padding": 16
@@ -131,23 +132,24 @@
         "headline_3KPjnN": {
           "type": "headline",
           "settings": {
-            "headline": "The Problem No One Talks About…",
+            "headline": "1. NEW innovative guilt-free formula designed to fuel your body",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "We all reach that point where we start noticing changes in our skin — fine lines around the eyes, uneven tone, and that tired look that never quite goes away, no matter how much we sleep.You’ve probably tried serums, creams, or even considered professional treatments… but most either take forever to show results or cost hundreds per session.That’s why more and more women are turning to <strong>LED-based skincare</strong> — a science-backed way to <strong>stimulate collagen and restore firmness</strong> right from home. <em><strong>But not all LED devices are the same</strong></em>.",
+            "subheadline": "Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
-            "top_padding": 0,
+            "top_padding": 24,
             "bottom_padding": 0
           }
         },
         "image_6Rz4ck": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Franky_14.jpg",
             "image_radius": 12,
             "top_padding": 28,
             "bottom_padding": 4,
@@ -161,14 +163,14 @@
         "headline_3xCtmb": {
           "type": "headline",
           "settings": {
-            "headline": "Meet the Booster Pro — The Only Device You’ll Ever Need for Radiant, Wrinkle-Free Skin ✨",
+            "headline": "2. Beats the sugar cravings to keep you feeling satisfied",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "The <strong>Booster Pro</strong> by <em>Lumin Beauty</em> combines <strong>LED color therapy, sonic vibration, and heat technology</strong> to target fine lines, wrinkles, and dull skin — helping you look visibly smoother and more radiant in just weeks.This compact device uses <strong>professional-grade LED wavelengths</strong> to support skin renewal and boost product absorption, making your skincare routine work <em>5x more effectively.</em>",
+            "subheadline": "The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -178,6 +180,7 @@
         "image_eByPwc": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Customer_02.png",
             "image_radius": 12,
             "top_padding": 24,
             "bottom_padding": 16,
@@ -190,16 +193,15 @@
         },
         "headline_Rw7GYb": {
           "type": "headline",
-          "disabled": true,
           "settings": {
-            "headline": "💡 What Makes It Different?",
+            "headline": "3. It's your gut's new best friend thanks to prebiotics inside",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "",
+            "subheadline": "Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -221,21 +223,10 @@
             "bottom_padding": 10
           }
         },
-        "rating_summary_PnFk9d": {
-          "type": "rating_summary",
-          "settings": {
-            "rating": 4.9,
-            "review_count": "12,000",
-            "stars_size": 20,
-            "rating_text_size": 14,
-            "star_color": "#ffb100",
-            "top_padding": 0,
-            "bottom_padding": 0
-          }
-        },
         "image_97aaVX": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_9.png",
             "image_radius": 12,
             "top_padding": 24,
             "bottom_padding": 16,
@@ -249,63 +240,45 @@
         "headline_DY7Fa7": {
           "type": "headline",
           "settings": {
-            "headline": "How Does It Work?",
+            "headline": "4. It actually tastes like your favorite coffee shop drink",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "Using advanced <strong>ion technology</strong>, Booster Pro helps push active ingredients deeper into the skin’s layers — something that’s nearly impossible with hands alone.At the same time, <strong>micro-vibrations and LED energy</strong> activate skin renewal responses, helping improve tone and elasticity from within.Most users notice a visible difference in smoothness and glow within just <strong>2 weeks of consistent use.</strong>",
+            "subheadline": "While competitors flavor their protein to taste vaguely \"coffee-ish,\" Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
             "bottom_padding": 0
           }
         },
-        "promotional_EERUTw": {
-          "type": "promotional",
+        "image_qw7QeK": {
+          "type": "image",
           "settings": {
-            "show_rating": true,
-            "review_count": "1,524",
-            "headline_top": "<strong>In High Demand</strong> | Stock Keeps Selling Out",
-            "font_size_top": 14,
-            "head_text_color": "#ffffff",
-            "head_background_color": "#000000",
-            "headline": "Elevate Your Coffee Experience with the GEM Cafe with [30% OFF]",
-            "headline_subline": "",
-            "font_size_subline": 14,
-            "headline_subline_color": "#000000",
-            "button_text": "<strong>CHECK AVAILABILITY >></strong>",
-            "button_url": "",
-            "guarantee_text": "60-day money back guarantee",
-            "background_color": "#ffffff",
-            "highlight_color": "#22c55e",
-            "button_color": "#d2691e",
-            "border_width": 2,
-            "border_style": "dotted",
-            "border_color": "#000000",
-            "border_radius": 12,
-            "enable_shadow": true,
-            "shadow_color": "#b77677",
-            "shadow_blur": 20,
-            "shadow_offset_x": 0,
-            "shadow_offset_y": 4,
-            "top_padding": 36,
-            "bottom_padding": 16
+            "image": "shopify://shop_images/Customer_04.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
           }
         },
         "headline_yUUmgH": {
           "type": "headline",
           "settings": {
-            "headline": "Why Dermatologists Love It.",
+            "headline": "<strong>5. It easily replaces your $2,400-a-year coffee habit</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "Booster Pro’s <strong>precision LED contact sensor</strong> ensures safe light intensity and activates only when it touches your skin.This makes it not only <em>effective</em> but also <em>gentle enough for daily use.</em>No filters, no injections, no appointments — just your own personalized skincare tool, powered by science.",
+            "subheadline": "The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -315,6 +288,7 @@
         "image_eDTGPw": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Customer_06.png",
             "image_radius": 12,
             "top_padding": 24,
             "bottom_padding": 16,
@@ -328,16 +302,47 @@
         "headline_HmER6p": {
           "type": "headline",
           "settings": {
-            "headline": "Real Women, Real Confidence 🌷",
+            "headline": "<strong>6. It makes the perfect iced coffee in 60 seconds</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "",
+            "subheadline": "Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_kNAjXD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_12.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_AmDPXG": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>7. You avoid the mid-morning crash</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
             "top_padding": 24,
             "bottom_padding": 0
           }
@@ -345,6 +350,7 @@
         "image_bPKbQd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Milkfrohter_01_tiny.png",
             "image_radius": 12,
             "top_padding": 24,
             "bottom_padding": 16,
@@ -355,9 +361,103 @@
             "rich_text_margin_top": 16
           }
         },
+        "headline_rPMYMa": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>8. It helps you hit your daily protein target effortlessly</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_tipRie": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Franky_14.jpg",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_TMjddN": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>9. Backed by a 30-Day Money-Back Guarantee</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_c8RNwC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_10.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_eXQaKN": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>10. Join thousands of people who already swapped their café latte</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_RYBeiU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Franky_Product_images_4_1.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
         "customer_review_VWyQGN": {
           "type": "customer_review",
           "settings": {
+            "customer_avatar": "shopify://shop_images/Customer_02.png",
             "customer_name": "— Mandy W., Verified Buyer",
             "customer_name_size": 16,
             "customer_name_color": "#111827",
@@ -391,6 +491,7 @@
         "customer_review_dnnNBM": {
           "type": "customer_review",
           "settings": {
+            "customer_avatar": "shopify://shop_images/Customer_03.png",
             "customer_name": "— Sophie L., Verified Buyer",
             "customer_name_size": 16,
             "customer_name_color": "#111827",
@@ -425,9 +526,10 @@
           "type": "two_column",
           "settings": {
             "image_position": "left",
+            "image": "shopify://shop_images/Customer_05.png",
             "image_border_radius": 8,
             "title": "The Results Speak for Themselves ✨",
-            "text": "<p>92% noticed smoother skin texture<br/>88% reported reduced fine lines after 4 weeks<br/>95% said their skincare absorbed faster and worked better</p><h5><br/><em>(Based on internal consumer study, 2024)</em></h5>",
+            "text": "<ul><li><strong> Down 4 to 7 pounds in the first month</strong>, no dieting required.</li><li><strong>Cravings gone by week two.</strong> No more 10am snack runs.</li><li><strong>Steady energy all day.</strong> Zero crash, zero jitters.</li></ul><h5><br/><em>(Based on internal consumer study, 2026)</em></h5>",
             "button_text": "Learn More",
             "button_url": "",
             "background_color": "#f8f5f3",
@@ -451,6 +553,7 @@
         },
         "bullet_points_Xqcnck": {
           "type": "bullet_points",
+          "disabled": true,
           "settings": {
             "point_1": "Difficulty breathing, wheezing in the lungs",
             "icon": "arrow",
@@ -486,7 +589,7 @@
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "For a limited time, Booster Pro is available at <strong>€179,90 (Save 28%)</strong> with <strong>fast shipping and a 30-day money-back guarantee</strong>.✨ <strong>Get yours now and start feeling confident in your skin again — the natural way.</strong>",
+            "subheadline": "For a limited time, FRANKY Protein Coffee is available at $39.95 (Save 20%) with fast US shipping and a 30-day money-back guarantee. ✨ Grab your bag now and start every morning energized, focused, and full until lunch. The natural way.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -502,13 +605,14 @@
             "font_size_top": 14,
             "head_text_color": "#ffffff",
             "head_background_color": "#000000",
-            "headline": "Elevate Your Coffee Experience with the GEM Cafe with [30% OFF]",
+            "headline": "Upgrade Your Morning Coffee with FRANKY Protein Iced Coffee 20% OFF",
             "headline_subline": "",
             "font_size_subline": 14,
             "headline_subline_color": "#000000",
             "button_text": "<strong>CHECK AVAILABILITY >></strong>",
-            "button_url": "",
-            "guarantee_text": "60-day money back guarantee",
+            "button_url": "shopify://products/franky-protein-coffee",
+            "guarantee_text": "30-day money back guarantee",
+            "product_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
             "background_color": "#ffffff",
             "highlight_color": "#b77677",
             "button_color": "#d2691e",
@@ -525,11 +629,23 @@
             "bottom_padding": 16
           }
         },
+        "rating_summary_PnFk9d": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "12,000",
+            "stars_size": 20,
+            "rating_text_size": 14,
+            "star_color": "#ffb100",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
         "button_iKRm6h": {
           "type": "button",
           "settings": {
             "button_text": "<strong>Check Availability ➔</strong>",
-            "button_url": "",
+            "button_url": "shopify://products/franky-protein-coffee",
             "button_width": "full",
             "button_font_size": 16,
             "button_background_color": "#0b9f3c",
@@ -545,7 +661,7 @@
         "footer_eGUn4V": {
           "type": "footer",
           "settings": {
-            "footer_text": "<p>© 2025 Your Company Name. All rights reserved.</p><p><strong>Disclosure</strong></p><p>The Booster Pro device utilizes cosmetic-grade LED light technology designed to support skin appearance and overall complexion. It is intended for <strong>topical, external use only</strong> and should not be used as a substitute for professional medical treatments or procedures. The information provided regarding LED color therapy, skincare benefits, and results is based on general cosmetic research and consumer use; it is <strong>not intended to diagnose, treat, cure, or prevent any medical condition.</strong> Individual results may vary depending on skin type and routine. Always consult a qualified skincare professional or dermatologist before beginning any new skincare device regimen.</p><p>Individual results may vary depending on skin type, condition, and usage consistency. If irritation or discomfort occurs, discontinue use and consult a dermatologist. This product has not been evaluated by the FDA and is <strong>not intended to diagnose, treat, cure, or prevent any disease</strong>.</p><p>Use only as directed. Keep out of reach of children. For external use only.</p><p>All products, images, and brand references displayed on this page are the property of <strong>Medicube</strong>. They are used <strong>solely for demonstration and illustrative purposes</strong> to showcase product presentation and design examples. These items are <strong>not affiliated with, endorsed by, or sold by this store</strong>.<br/><br/>No Medicube products shown here are available for sale, and all trademarks, logos, and product names remain the property of their respective owners.</p>",
+            "footer_text": "<p><strong>Disclosure</strong></p><p>FRANKY Protein Coffee is a dietary supplement designed to support daily protein intake, energy, focus, and digestive wellness. It is intended for healthy adults as part of a balanced diet and is not a substitute for medical advice, diagnosis, or treatment. Information about whey protein, caffeine, L-theanine, lion's mane, probiotics, and psyllium husk is based on general nutritional research and consumer use. Individual results may vary depending on diet, body composition, activity level, and consistency of use.</p><p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before starting any new supplement, particularly if you are pregnant, nursing, taking medication, or have a medical condition. Contains milk (whey).</p><p>Use only as directed. Keep out of reach of children. Store in a cool, dry place.</p>",
             "footer_background_color": "#f8f9fa",
             "footer_text_color": "#666666",
             "footer_border_color": "#e9ecef",
@@ -554,6 +670,39 @@
             "footer_padding_bottom": 40,
             "footer_text_size": 12,
             "footer_text_align": "center"
+          }
+        },
+        "promotional_EERUTw": {
+          "type": "promotional",
+          "disabled": true,
+          "settings": {
+            "show_rating": true,
+            "review_count": "1,524",
+            "headline_top": "<strong>In High Demand</strong> | Stock Keeps Selling Out",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#000000",
+            "headline": "Elevate Your Coffee Experience with the GEM Cafe with [30% OFF]",
+            "headline_subline": "",
+            "font_size_subline": 14,
+            "headline_subline_color": "#000000",
+            "button_text": "<strong>CHECK AVAILABILITY >></strong>",
+            "button_url": "",
+            "guarantee_text": "60-day money back guarantee",
+            "background_color": "#ffffff",
+            "highlight_color": "#22c55e",
+            "button_color": "#d2691e",
+            "border_width": 2,
+            "border_style": "dotted",
+            "border_color": "#000000",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#b77677",
+            "shadow_blur": 20,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 4,
+            "top_padding": 36,
+            "bottom_padding": 16
           }
         }
       },
@@ -568,22 +717,31 @@
         "image_eByPwc",
         "headline_Rw7GYb",
         "text_9KQPJq",
-        "rating_summary_PnFk9d",
         "image_97aaVX",
         "headline_DY7Fa7",
-        "promotional_EERUTw",
+        "image_qw7QeK",
         "headline_yUUmgH",
         "image_eDTGPw",
         "headline_HmER6p",
+        "image_kNAjXD",
+        "headline_AmDPXG",
         "image_bPKbQd",
+        "headline_rPMYMa",
+        "image_tipRie",
+        "headline_TMjddN",
+        "image_c8RNwC",
+        "headline_eXQaKN",
+        "image_RYBeiU",
         "customer_review_VWyQGN",
         "customer_review_dnnNBM",
         "two_column_eCcK8x",
         "bullet_points_Xqcnck",
         "headline_q4PAgR",
         "promotional_zbxhxK",
+        "rating_summary_PnFk9d",
         "button_iKRm6h",
-        "footer_eGUn4V"
+        "footer_eGUn4V",
+        "promotional_EERUTw"
       ],
       "name": "Content Section with Review",
       "settings": {
