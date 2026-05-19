@@ -9,17 +9,24 @@
   ========================================================================
 {% endcomment %}
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-  /* Hide theme chrome */
-  .shopify-section-header, .shopify-section-group-header-group,
-  .shopify-section-footer, .shopify-section-group-footer-group,
-  header.site-header, header#shopify-section-header,
-  footer.site-footer, footer#shopify-section-footer,
-  #shopify-section-announcement-bar, .announcement-bar { display: none !important; }
+  /* Hide ALL theme chrome — listicle is self-contained */
+  [id^="shopify-section-sections--"],
+  .shopify-section-group-header-group,
+  .shopify-section-group-footer-group,
+  .shopify-section-group-popup-group,
+  .shopify-section-group-overlay-group,
+  .shopify-section-maison-cart-drawer,
+  #shopify-section-announcement-bar,
+  .announcement-bar { display: none !important; }
   body { padding-top: 0 !important; margin: 0 !important; background: #fff; }
 
   .frk-lst, .frk-lst * { box-sizing: border-box; }
-  .frk-lst { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+  .frk-lst { font-family: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
   .frk-promo { background: #0e2540; color: #fff; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.04em; }
   .frk-promo .frk-promo-text { font-weight: 700; text-transform: uppercase; }
   .frk-promo .frk-promo-text .sub { display: block; font-weight: 500; font-size: 11px; letter-spacing: 0.08em; opacity: 0.9; margin-top: 2px; text-transform: none; }
@@ -27,11 +34,11 @@
   .frk-promo .frk-timer .unit { background: rgba(255,255,255,0.10); padding: 4px 8px; border-radius: 4px; min-width: 38px; text-align: center; }
   .frk-promo .frk-timer .num { font-size: 16px; font-weight: 800; line-height: 1; }
   .frk-promo .frk-timer .lbl { font-size: 9px; opacity: 0.8; letter-spacing: 0.1em; display: block; }
-  .frk-logo-row { display: flex; justify-content: center; align-items: center; padding: 16px 20px; border-bottom: 1px solid #efeae0; background: #fff; }
-  .frk-logo-row img { height: 32px; width: auto; }
+  .frk-logo-row { display: flex; justify-content: center; align-items: center; padding: 18px 20px; border-bottom: 1px solid #efeae0; background: #fff; }
+  .frk-logo-row img { height: 40px; width: auto; }
   .frk-lst article { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
-  .frk-lst h1.frk-h1 { font-family: 'Georgia', 'Times New Roman', serif; font-size: 36px; line-height: 1.18; font-weight: 700; margin: 0 0 18px; color: #0e0e0e; }
-  .frk-lst h1.frk-h1 em { font-style: italic; color: #2c5d8c; }
+  .frk-lst h1.frk-h1 { font-family: 'Inter', sans-serif; font-size: 34px; line-height: 1.22; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 18px; color: #0e0e0e; }
+  .frk-lst h1.frk-h1 em { font-style: normal; color: #2c5d8c; }
   .frk-byline { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; padding-bottom: 16px; border-bottom: 1px solid #efeae0; font-size: 13px; color: #666; }
   .frk-byline .frk-avatar { width: 32px; height: 32px; border-radius: 50%; background: #c9d8e3 url('https://www.gravatar.com/avatar/?d=mp&s=64') center/cover; flex-shrink: 0; }
   .frk-byline strong { color: #1a1a1a; }
@@ -39,11 +46,11 @@
   .frk-callout strong { color: #0e2540; }
   .frk-tldr { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f0f7ee; border-radius: 8px; margin: 0 0 36px; font-size: 14px; color: #1a4d1a; font-weight: 600; }
   .frk-tldr .frk-check { width: 22px; height: 22px; background: #2e8b3e; color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 13px; }
-  .frk-reason { display: flex; gap: 18px; margin: 0 0 30px; padding: 0; align-items: flex-start; }
-  .frk-reason .frk-rimg { flex-shrink: 0; width: 160px; height: 160px; border-radius: 10px; overflow: hidden; background: #f4ede0; }
+  .frk-reason { display: flex; gap: 22px; margin: 0 0 36px; padding: 0; align-items: flex-start; }
+  .frk-reason .frk-rimg { flex-shrink: 0; width: 220px; height: 220px; border-radius: 12px; overflow: hidden; background: #f4ede0; }
   .frk-reason .frk-rimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .frk-reason .frk-rbody { flex: 1; min-width: 0; }
-  .frk-reason h2 { font-family: 'Georgia', serif; font-size: 21px; line-height: 1.3; font-weight: 700; margin: 0 0 8px; color: #0e0e0e; }
+  .frk-reason h2 { font-family: 'Inter', sans-serif; font-size: 21px; line-height: 1.3; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #0e0e0e; }
   .frk-reason h2 .num { color: #2c5d8c; }
   .frk-reason p { margin: 0 0 10px; font-size: 15px; color: #333; line-height: 1.55; }
   .frk-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; }
@@ -53,13 +60,13 @@
   .frk-rlink { display: inline-block; margin-top: 8px; color: #2c5d8c; font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #2c5d8c; }
   .frk-rlink:hover { color: #0e2540; border-bottom-color: #0e2540; }
   .frk-final { background: #0e2540; color: #fff; padding: 32px 24px; border-radius: 12px; margin: 40px 0 28px; text-align: center; }
-  .frk-final h3 { font-family: 'Georgia', serif; font-size: 26px; margin: 0 0 8px; }
+  .frk-final h3 { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; }
   .frk-final p { font-size: 14px; color: #cfd9e3; margin: 0 0 18px; }
   .frk-cta { display: inline-block; background: #2c5d8c; color: #fff !important; text-decoration: none !important; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 16px; letter-spacing: 0.02em; transition: background .15s ease, transform .15s ease; }
   .frk-cta:hover { background: #1f4a73; transform: translateY(-1px); }
   .frk-cta-sub { display: block; font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 6px; }
   .frk-reviews { padding: 36px 0 12px; }
-  .frk-reviews h2 { font-family: 'Georgia', serif; font-size: 28px; text-align: center; margin: 0 0 6px; color: #0e0e0e; }
+  .frk-reviews h2 { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.01em; text-align: center; margin: 0 0 6px; color: #0e0e0e; }
   .frk-reviews .frk-r-sub { text-align: center; color: #666; font-size: 14px; margin: 0 0 20px; }
   .frk-r-agg { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 28px; }
   .frk-r-agg .stars { color: #f5a623; font-size: 22px; letter-spacing: 2px; }
@@ -88,7 +95,7 @@
     .frk-lst article { padding: 22px 16px 50px; }
     .frk-lst h1.frk-h1 { font-size: 28px; }
     .frk-reason { flex-direction: column; gap: 12px; }
-    .frk-reason .frk-rimg { width: 100%; height: 200px; }
+    .frk-reason .frk-rimg { width: 100%; height: 260px; }
     .frk-r-grid { grid-template-columns: 1fr; }
     .frk-promo { gap: 10px; padding: 8px 12px; }
     .frk-promo .frk-promo-text { font-size: 11px; }
