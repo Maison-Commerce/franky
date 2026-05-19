@@ -1,0 +1,436 @@
+{% comment %}
+  FRANKY LISTICLE TEMPLATE — 10 REASONS
+  ========================================================================
+  File:    templates/page.listicle-10reasons.liquid
+  Page:    /pages/10-reasons-protein-coffee
+  Design:  Modeled on try.javvycoffee.com (promo bar + logo + reason cards
+           + reviews + minimal footer). Theme chrome hidden.
+  Edit:    Replace placeholder images (search "PLACEHOLDER_IMG"), swap GIFs
+           for static .jpg/.png when you have them, tweak copy in <article>.
+  ========================================================================
+{% endcomment %}
+
+<style>
+  /* Hide theme chrome */
+  .shopify-section-header, .shopify-section-group-header-group,
+  .shopify-section-footer, .shopify-section-group-footer-group,
+  header.site-header, header#shopify-section-header,
+  footer.site-footer, footer#shopify-section-footer,
+  #shopify-section-announcement-bar, .announcement-bar { display: none !important; }
+  body { padding-top: 0 !important; margin: 0 !important; background: #fff; }
+
+  /* Scoped to .frk-lst to avoid clashing with theme CSS */
+  .frk-lst, .frk-lst * { box-sizing: border-box; }
+  .frk-lst { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+
+  /* Promo bar */
+  .frk-promo { background: #0e2540; color: #fff; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.04em; }
+  .frk-promo .frk-promo-text { font-weight: 700; text-transform: uppercase; }
+  .frk-promo .frk-promo-text .sub { display: block; font-weight: 500; font-size: 11px; letter-spacing: 0.08em; opacity: 0.9; margin-top: 2px; text-transform: none; }
+  .frk-promo .frk-timer { display: flex; gap: 6px; font-variant-numeric: tabular-nums; }
+  .frk-promo .frk-timer .unit { background: rgba(255,255,255,0.10); padding: 4px 8px; border-radius: 4px; min-width: 38px; text-align: center; }
+  .frk-promo .frk-timer .num { font-size: 16px; font-weight: 800; line-height: 1; }
+  .frk-promo .frk-timer .lbl { font-size: 9px; opacity: 0.8; letter-spacing: 0.1em; display: block; }
+
+  /* Logo header */
+  .frk-logo-row { display: flex; justify-content: center; align-items: center; padding: 16px 20px; border-bottom: 1px solid #efeae0; background: #fff; }
+  .frk-logo-row img { height: 32px; width: auto; }
+
+  /* Article */
+  .frk-lst article { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
+  .frk-lst h1.frk-h1 { font-family: 'Georgia', 'Times New Roman', serif; font-size: 36px; line-height: 1.18; font-weight: 700; margin: 0 0 18px; color: #0e0e0e; }
+  .frk-lst h1.frk-h1 em { font-style: italic; color: #2c5d8c; }
+
+  .frk-byline { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; padding-bottom: 16px; border-bottom: 1px solid #efeae0; font-size: 13px; color: #666; }
+  .frk-byline .frk-avatar { width: 32px; height: 32px; border-radius: 50%; background: #c9d8e3 url('https://www.gravatar.com/avatar/?d=mp&s=64') center/cover; flex-shrink: 0; }
+  .frk-byline strong { color: #1a1a1a; }
+
+  .frk-callout { background: #e8f2fb; border-left: 4px solid #2c5d8c; padding: 14px 18px; border-radius: 4px; font-size: 15px; color: #1a3a5c; margin: 0 0 28px; }
+  .frk-callout strong { color: #0e2540; }
+
+  /* Comparison table */
+  .frk-compare { width: 100%; border-collapse: separate; border-spacing: 0; margin: 0 0 28px; font-size: 14px; background: #fff; border: 1px solid #efeae0; border-radius: 8px; overflow: hidden; }
+  .frk-compare th, .frk-compare td { padding: 12px 10px; text-align: center; border-bottom: 1px solid #efeae0; }
+  .frk-compare tr:last-child th, .frk-compare tr:last-child td { border-bottom: none; }
+  .frk-compare th { background: #f6f2e8; font-weight: 700; color: #0e0e0e; font-size: 13px; }
+  .frk-compare td:first-child, .frk-compare th:first-child { text-align: left; font-weight: 600; padding-left: 16px; }
+  .frk-compare .frk-col { background: #e8f2fb; color: #0e2540; font-weight: 800; }
+  .frk-compare .frk-col-head { background: #2c5d8c; color: #fff; font-size: 14px; }
+  .frk-compare .frk-table-note { font-size: 11px; color: #888; font-style: italic; padding: 8px 12px; text-align: left; background: #fafaf6; }
+
+  /* TL;DR badge */
+  .frk-tldr { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f0f7ee; border-radius: 8px; margin: 0 0 36px; font-size: 14px; color: #1a4d1a; font-weight: 600; }
+  .frk-tldr .frk-check { width: 22px; height: 22px; background: #2e8b3e; color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 13px; }
+
+  /* Reason card */
+  .frk-reason { display: flex; gap: 18px; margin: 0 0 30px; padding: 0; align-items: flex-start; }
+  .frk-reason .frk-rimg { flex-shrink: 0; width: 160px; height: 160px; border-radius: 10px; overflow: hidden; background: #f4ede0; }
+  .frk-reason .frk-rimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .frk-reason .frk-rbody { flex: 1; min-width: 0; }
+  .frk-reason h2 { font-family: 'Georgia', serif; font-size: 21px; line-height: 1.3; font-weight: 700; margin: 0 0 8px; color: #0e0e0e; }
+  .frk-reason h2 .num { color: #2c5d8c; }
+  .frk-reason p { margin: 0 0 10px; font-size: 15px; color: #333; line-height: 1.55; }
+  .frk-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; }
+  .frk-pill.blue { background: #2c5d8c; color: #fff; }
+  .frk-pill.beige { background: #f4ede0; color: #6b4f1d; }
+  .frk-pill.green { background: #e6f4ea; color: #1a5d2c; }
+  .frk-rlink { display: inline-block; margin-top: 8px; color: #2c5d8c; font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #2c5d8c; }
+  .frk-rlink:hover { color: #0e2540; border-bottom-color: #0e2540; }
+
+  /* Final CTA */
+  .frk-final { background: #0e2540; color: #fff; padding: 32px 24px; border-radius: 12px; margin: 40px 0 28px; text-align: center; }
+  .frk-final h3 { font-family: 'Georgia', serif; font-size: 26px; margin: 0 0 8px; }
+  .frk-final p { font-size: 14px; color: #cfd9e3; margin: 0 0 18px; }
+  .frk-cta { display: inline-block; background: #2c5d8c; color: #fff !important; text-decoration: none !important; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 16px; letter-spacing: 0.02em; transition: background .15s ease, transform .15s ease; }
+  .frk-cta:hover { background: #1f4a73; transform: translateY(-1px); }
+  .frk-cta-sub { display: block; font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 6px; }
+
+  /* Reviews */
+  .frk-reviews { padding: 36px 0 12px; }
+  .frk-reviews h2 { font-family: 'Georgia', serif; font-size: 28px; text-align: center; margin: 0 0 6px; color: #0e0e0e; }
+  .frk-reviews .frk-r-sub { text-align: center; color: #666; font-size: 14px; margin: 0 0 20px; }
+  .frk-r-agg { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 28px; }
+  .frk-r-agg .stars { color: #f5a623; font-size: 22px; letter-spacing: 2px; }
+  .frk-r-agg .rating { font-weight: 800; font-size: 18px; color: #0e0e0e; }
+  .frk-r-agg .count { color: #666; font-size: 14px; }
+  .frk-r-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .frk-review { background: #fff; border: 1px solid #efeae0; border-radius: 8px; padding: 16px 18px; }
+  .frk-review .stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
+  .frk-review .verified { display: inline-block; font-size: 10px; color: #2e8b3e; font-weight: 700; background: #e6f4ea; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.06em; text-transform: uppercase; }
+  .frk-review p { font-size: 14px; line-height: 1.5; margin: 8px 0; color: #333; font-style: italic; }
+  .frk-review .name { font-weight: 700; font-size: 13px; color: #0e0e0e; }
+  .frk-review .name span { font-weight: 400; color: #777; }
+
+  /* Footer */
+  .frk-foot { background: #fafaf6; padding: 36px 20px 28px; margin-top: 32px; border-top: 1px solid #efeae0; }
+  .frk-foot-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .frk-foot p { font-size: 11px; color: #888; line-height: 1.6; margin: 0 0 12px; }
+  .frk-foot .frk-foot-links { font-size: 12px; color: #666; margin: 12px 0 4px; }
+  .frk-foot .frk-foot-links a { color: #666; text-decoration: none; margin: 0 8px; }
+  .frk-foot .frk-foot-links a:hover { color: #0e0e0e; text-decoration: underline; }
+  .frk-foot .frk-copy { font-size: 11px; color: #aaa; margin-top: 10px; }
+
+  /* Sticky bar */
+  .frk-sticky { position: fixed; left: 0; right: 0; bottom: 0; background: #0e2540; color: #fff; padding: 12px 16px; display: none; align-items: center; justify-content: space-between; gap: 12px; z-index: 9999; box-shadow: 0 -4px 16px rgba(0,0,0,0.18); }
+  .frk-sticky.visible { display: flex; }
+  .frk-sticky .frk-st-text strong { display: block; font-size: 14px; }
+  .frk-sticky .frk-st-text { font-size: 12px; line-height: 1.3; }
+  .frk-sticky a.frk-st-btn { background: #2c5d8c; color: #fff !important; text-decoration: none !important; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .frk-lst article { padding: 22px 16px 50px; }
+    .frk-lst h1.frk-h1 { font-size: 28px; }
+    .frk-reason { flex-direction: column; gap: 12px; }
+    .frk-reason .frk-rimg { width: 100%; height: 200px; }
+    .frk-r-grid { grid-template-columns: 1fr; }
+    .frk-compare { font-size: 12px; }
+    .frk-compare th, .frk-compare td { padding: 9px 6px; }
+    .frk-promo { gap: 10px; padding: 8px 12px; }
+    .frk-promo .frk-promo-text { font-size: 11px; }
+    .frk-promo .frk-timer .unit { padding: 3px 6px; min-width: 32px; }
+    .frk-promo .frk-timer .num { font-size: 14px; }
+  }
+</style>
+
+<div class="frk-lst">
+
+  <!-- PROMO BAR + COUNTDOWN -->
+  <div class="frk-promo">
+    <div class="frk-promo-text">
+      &#127482;&#127480; SPRING SPECIAL &#10024; SAVE UP TO 25% + FREE SHIPPING
+      <span class="sub">Limited stock &middot; US warehouse ships in 2–3 days</span>
+    </div>
+    <div class="frk-timer" id="frkTimer">
+      <span class="unit"><span class="num" data-d>00</span><span class="lbl">DAYS</span></span>
+      <span class="unit"><span class="num" data-h>00</span><span class="lbl">HRS</span></span>
+      <span class="unit"><span class="num" data-m>00</span><span class="lbl">MIN</span></span>
+      <span class="unit"><span class="num" data-s>00</span><span class="lbl">SEC</span></span>
+    </div>
+  </div>
+
+  <!-- LOGO HEADER -->
+  <div class="frk-logo-row">
+    <a href="/" aria-label="Franky"><img src="https://frankynu.com/cdn/shop/files/LogoHeader.png?v=1772445122&width=300" alt="Franky Nutrition" /></a>
+  </div>
+
+  <article>
+
+    <h1 class="frk-h1">10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Spring 2026*</h1>
+
+    <div class="frk-byline">
+      <div class="frk-avatar"></div>
+      <div>By <strong>The Wellness Desk</strong> &middot; Last Updated May 19, 2026 &middot; 6 min read</div>
+    </div>
+
+    <div class="frk-callout">
+      <strong>Read this BEFORE your next coffee run.</strong> A new high-protein iced coffee is quietly taking over wellness TikTok this spring. Here is why.
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <table class="frk-compare">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th class="frk-col-head">Franky</th>
+          <th>Mainstream Coffees</th>
+          <th>Protein Drinks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Calories</td><td class="frk-col">120 cal / 2 scoops</td><td>150–400 cal</td><td>160–200 cal</td></tr>
+        <tr><td>Protein</td><td class="frk-col">20g / 2 scoops</td><td>2–12g</td><td>20g</td></tr>
+        <tr><td>Sugar</td><td class="frk-col">&lt;1g</td><td>20–50g</td><td>5g or artificial</td></tr>
+        <tr><td>Cost / serving</td><td class="frk-col">~$1.99</td><td>$5–$7</td><td>$3.50–$4.50</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="4" class="frk-table-note">Mainstream coffees based on a 16 oz café drink; protein drinks based on an 11–12 oz ready-to-drink shake.</td></tr>
+      </tfoot>
+    </table>
+
+    <!-- TLDR -->
+    <div class="frk-tldr">
+      <span class="frk-check">&#10003;</span>
+      <span>TL;DR — Drinking Franky Protein Coffee has 10+ life-changing benefits.</span>
+    </div>
+
+    <!-- REASON 1 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_15.jpg?v=1774604853" alt="Franky Protein Coffee" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">1.</span> NEW innovative guilt-free formula designed to fuel your body</h2>
+        <p>Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.</p>
+        <span class="frk-pill blue">&#9749; Coffee. Reinvented.</span>
+      </div>
+    </div>
+
+    <!-- REASON 2 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_08.png?v=1774179629" alt="Franky craving control" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">2.</span> Beats the sugar cravings to keep you feeling satisfied</h2>
+        <p>The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.</p>
+        <span class="frk-pill blue">&#128274; Craving Control</span>
+      </div>
+    </div>
+
+    <!-- REASON 3 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_03.png?v=1774604853" alt="Gut-friendly formula" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">3.</span> It's your gut's new best friend thanks to prebiotics inside</h2>
+        <p>Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.</p>
+        <span class="frk-pill green">&#127807; Better Digestion Support</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Better Digestion Support Starts Here &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 4 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_Product_images_14_1.png?v=1775818754" alt="Real coffee taste" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">4.</span> It actually tastes like your favorite coffee shop drink</h2>
+        <p>While competitors flavor their protein to taste vaguely "coffee-ish," Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.</p>
+        <span class="frk-pill beige">&#128683; No Chalky Shakes</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Enjoy Real Coffee Taste, Every Time &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 5 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Kopie_von_Franky_Graphics_9.png?v=1775818754" alt="Save money" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">5.</span> It easily replaces your $2,400-a-year coffee habit</h2>
+        <p>The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.</p>
+        <span class="frk-pill beige">&#128176; Save Big Yearly</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Start Saving With Every Cup &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 6 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_Product_images_3_1.png?v=1775818754" alt="Easy to make" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">6.</span> It makes the perfect iced coffee in 60 seconds</h2>
+        <p>Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.</p>
+        <span class="frk-pill blue">&#127919; Effortless Perfection</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Skip The Line, Brew At Home &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 7 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_05.png?v=1775818754" alt="Steady energy" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">7.</span> You avoid the mid-morning crash</h2>
+        <p>100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.</p>
+        <span class="frk-pill blue">&#9889; No Crash, Just Clarity</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Stay Clear, Stay Focused &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 8 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Kopie_von_Franky_Graphics_12.png?v=1775818754" alt="Hit your protein target" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">8.</span> It helps you hit your daily protein target effortlessly</h2>
+        <p>20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.</p>
+        <span class="frk-pill blue">&#128170; Extra Protein, Zero Effort</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Fuel Your Day With Every Sip &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 9 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_12_tiny.png?v=1775818754" alt="Money-back guarantee" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">9.</span> Backed by a 30-Day Money-Back Guarantee</h2>
+        <p>Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.</p>
+        <span class="frk-pill green">&#128077; Risk-Free Choice</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Start Your Risk-Free Journey &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 10 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/FrankyProductimagesgreybackground.png?v=1775818754" alt="Join the community" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">10.</span> Join thousands of people who already swapped their café latte</h2>
+        <p>4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.</p>
+        <span class="frk-pill beige">&#127759; Join The Switch</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Step Into The Coffee Revolution &rarr;</a>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="frk-final">
+      <h3>Ready to upgrade your morning?</h3>
+      <p>Ships from our US warehouse in 2–3 days. 30-day money-back guarantee. Free US shipping on $50+.</p>
+      <a href="#" class="frk-cta" data-franky-cta>
+        Shop Franky Protein Coffee
+        <span class="frk-cta-sub">Limited stock &middot; Selling out fast</span>
+      </a>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="frk-reviews">
+      <h2>The reviews are in</h2>
+      <p class="frk-r-sub">Real Franky drinkers sharing their morning upgrade.</p>
+      <div class="frk-r-agg">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating">4.9</span>
+        <span class="count">&middot; 1,200+ verified reviews</span>
+      </div>
+      <div class="frk-r-grid">
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with."</p><div class="name">Sarah K. <span>&middot; Austin, TX</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts."</p><div class="name">Megan R. <span>&middot; San Diego, CA</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Quit my $6 latte habit two weeks ago. Down four pounds, off the afternoon crash. Vanilla hazelnut is dangerously good."</p><div class="name">Jessica L. <span>&middot; Denver, CO</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip."</p><div class="name">James T. <span>&middot; Portland, OR</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months."</p><div class="name">Rachel M. <span>&middot; Nashville, TN</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Used to grab a coffee and a protein bar on the way out. This just does both and honestly tastes better than the bar."</p><div class="name">Linda W. <span>&middot; Tampa, FL</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Franky set me up with a routine that fits my life better than any strict plan ever could."</p><div class="name">Natalie B. <span>&middot; Boston, MA</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Tastes like the iced vanilla latte I used to buy every morning, just with way more protein and zero sugar crash."</p><div class="name">Daniela V. <span>&middot; Miami, FL</span></div></div>
+      </div>
+    </div>
+
+    <!-- LAST CTA -->
+    <div class="frk-final" style="margin-top:24px;">
+      <h3>Try Franky risk-free today</h3>
+      <p>Ships in 2–3 days from our US warehouse. 30-day money-back guarantee.</p>
+      <a href="#" class="frk-cta" data-franky-cta>
+        Shop Franky Now
+        <span class="frk-cta-sub">Selling out fast &middot; Free US shipping on $50+</span>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="frk-foot">
+    <div class="frk-foot-inner">
+      <p>*"#1 Trending" refers to relative social media share-of-voice growth in the high-protein coffee category in Q1 2026 based on the brand's internal tracking. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Always consult your doctor before starting a new supplement, particularly if you are pregnant, nursing, or have a medical condition.</p>
+      <div class="frk-foot-links">
+        <a href="/policies/terms-of-service">Terms of Service</a>&middot;
+        <a href="/policies/privacy-policy">Privacy Policy</a>&middot;
+        <a href="/policies/refund-policy">Refund Policy</a>&middot;
+        <a href="/policies/shipping-policy">Shipping Policy</a>
+      </div>
+      <p class="frk-copy">&copy; 2026 Swiss Ecom Group AG &middot; Franky&trade; is a registered trademark. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="frk-sticky" id="frkSticky">
+  <div class="frk-st-text">
+    <strong>20g protein. Zero sugar.</strong>
+    Free US shipping on $50+
+  </div>
+  <a href="#" class="frk-st-btn" data-franky-cta>Shop Franky &rarr;</a>
+</div>
+
+<script>
+(function () {
+  var PRODUCT_URL = 'https://frankynu.com/products/franky-protein-coffee';
+
+  // Forward UTMs/click IDs from current URL to product link
+  function buildCtaUrl() {
+    try {
+      var current = new URL(window.location.href);
+      var target = new URL(PRODUCT_URL);
+      current.searchParams.forEach(function (value, key) {
+        if (/^(utm_|gclid|fbclid|msclkid|ttclid|wbraid|gbraid|nb_|campaignid|adgroupid|adname|placement|device|network|keyword|medium)/i.test(key)) {
+          target.searchParams.set(key, value);
+        }
+      });
+      return target.toString();
+    } catch (e) { return PRODUCT_URL; }
+  }
+
+  function wireCtas() {
+    var url = buildCtaUrl();
+    document.querySelectorAll('[data-franky-cta]').forEach(function (el) { el.setAttribute('href', url); });
+  }
+
+  // 3-day rolling countdown (per visitor, stored in localStorage)
+  function startCountdown() {
+    var t = document.getElementById('frkTimer');
+    if (!t) return;
+    var dEl = t.querySelector('[data-d]'), hEl = t.querySelector('[data-h]'),
+        mEl = t.querySelector('[data-m]'), sEl = t.querySelector('[data-s]');
+    var KEY = 'frk_lst_deadline';
+    var deadline = parseInt(localStorage.getItem(KEY) || '0', 10);
+    var now = Date.now();
+    if (!deadline || deadline < now) {
+      deadline = now + 3 * 24 * 60 * 60 * 1000;
+      try { localStorage.setItem(KEY, String(deadline)); } catch (e) {}
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var diff = Math.max(0, deadline - Date.now());
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      dEl.textContent = pad(d); hEl.textContent = pad(h);
+      mEl.textContent = pad(m); sEl.textContent = pad(s);
+    }
+    tick(); setInterval(tick, 1000);
+  }
+
+  function wireSticky() {
+    var bar = document.getElementById('frkSticky'); if (!bar) return;
+    function onScroll() {
+      if (window.scrollY > 700 && window.innerWidth <= 720) bar.classList.add('visible');
+      else bar.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { wireCtas(); startCountdown(); wireSticky(); });
+  } else { wireCtas(); startCountdown(); wireSticky(); }
+})();
+</script>

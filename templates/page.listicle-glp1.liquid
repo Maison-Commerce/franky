@@ -1,0 +1,338 @@
+{% comment %}
+  FRANKY LISTICLE TEMPLATE — GLP-1 USERS (7 BENEFITS)
+  ========================================================================
+  File:    templates/page.listicle-glp1.liquid
+  Page:    /pages/glp1-protein-coffee
+  Audience: People on GLP-1 medications (Ozempic, Wegovy, Mounjaro, Zepbound)
+  Design:  Identical layout to /pages/10-reasons-protein-coffee.
+           Edit copy for this audience only; styles + countdown identical.
+  ========================================================================
+{% endcomment %}
+
+<style>
+  /* Hide theme chrome */
+  .shopify-section-header, .shopify-section-group-header-group,
+  .shopify-section-footer, .shopify-section-group-footer-group,
+  header.site-header, header#shopify-section-header,
+  footer.site-footer, footer#shopify-section-footer,
+  #shopify-section-announcement-bar, .announcement-bar { display: none !important; }
+  body { padding-top: 0 !important; margin: 0 !important; background: #fff; }
+
+  .frk-lst, .frk-lst * { box-sizing: border-box; }
+  .frk-lst { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+  .frk-promo { background: #0e2540; color: #fff; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.04em; }
+  .frk-promo .frk-promo-text { font-weight: 700; text-transform: uppercase; }
+  .frk-promo .frk-promo-text .sub { display: block; font-weight: 500; font-size: 11px; letter-spacing: 0.08em; opacity: 0.9; margin-top: 2px; text-transform: none; }
+  .frk-promo .frk-timer { display: flex; gap: 6px; font-variant-numeric: tabular-nums; }
+  .frk-promo .frk-timer .unit { background: rgba(255,255,255,0.10); padding: 4px 8px; border-radius: 4px; min-width: 38px; text-align: center; }
+  .frk-promo .frk-timer .num { font-size: 16px; font-weight: 800; line-height: 1; }
+  .frk-promo .frk-timer .lbl { font-size: 9px; opacity: 0.8; letter-spacing: 0.1em; display: block; }
+  .frk-logo-row { display: flex; justify-content: center; align-items: center; padding: 16px 20px; border-bottom: 1px solid #efeae0; background: #fff; }
+  .frk-logo-row img { height: 32px; width: auto; }
+  .frk-lst article { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
+  .frk-lst h1.frk-h1 { font-family: 'Georgia', 'Times New Roman', serif; font-size: 36px; line-height: 1.18; font-weight: 700; margin: 0 0 18px; color: #0e0e0e; }
+  .frk-lst h1.frk-h1 em { font-style: italic; color: #2c5d8c; }
+  .frk-byline { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; padding-bottom: 16px; border-bottom: 1px solid #efeae0; font-size: 13px; color: #666; }
+  .frk-byline .frk-avatar { width: 32px; height: 32px; border-radius: 50%; background: #c9d8e3 url('https://www.gravatar.com/avatar/?d=mp&s=64') center/cover; flex-shrink: 0; }
+  .frk-byline strong { color: #1a1a1a; }
+  .frk-callout { background: #e8f2fb; border-left: 4px solid #2c5d8c; padding: 14px 18px; border-radius: 4px; font-size: 15px; color: #1a3a5c; margin: 0 0 28px; }
+  .frk-callout strong { color: #0e2540; }
+  .frk-tldr { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #f0f7ee; border-radius: 8px; margin: 0 0 36px; font-size: 14px; color: #1a4d1a; font-weight: 600; }
+  .frk-tldr .frk-check { width: 22px; height: 22px; background: #2e8b3e; color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 13px; }
+  .frk-reason { display: flex; gap: 18px; margin: 0 0 30px; padding: 0; align-items: flex-start; }
+  .frk-reason .frk-rimg { flex-shrink: 0; width: 160px; height: 160px; border-radius: 10px; overflow: hidden; background: #f4ede0; }
+  .frk-reason .frk-rimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .frk-reason .frk-rbody { flex: 1; min-width: 0; }
+  .frk-reason h2 { font-family: 'Georgia', serif; font-size: 21px; line-height: 1.3; font-weight: 700; margin: 0 0 8px; color: #0e0e0e; }
+  .frk-reason h2 .num { color: #2c5d8c; }
+  .frk-reason p { margin: 0 0 10px; font-size: 15px; color: #333; line-height: 1.55; }
+  .frk-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; }
+  .frk-pill.blue { background: #2c5d8c; color: #fff; }
+  .frk-pill.beige { background: #f4ede0; color: #6b4f1d; }
+  .frk-pill.green { background: #e6f4ea; color: #1a5d2c; }
+  .frk-rlink { display: inline-block; margin-top: 8px; color: #2c5d8c; font-size: 13px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #2c5d8c; }
+  .frk-rlink:hover { color: #0e2540; border-bottom-color: #0e2540; }
+  .frk-final { background: #0e2540; color: #fff; padding: 32px 24px; border-radius: 12px; margin: 40px 0 28px; text-align: center; }
+  .frk-final h3 { font-family: 'Georgia', serif; font-size: 26px; margin: 0 0 8px; }
+  .frk-final p { font-size: 14px; color: #cfd9e3; margin: 0 0 18px; }
+  .frk-cta { display: inline-block; background: #2c5d8c; color: #fff !important; text-decoration: none !important; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 16px; letter-spacing: 0.02em; transition: background .15s ease, transform .15s ease; }
+  .frk-cta:hover { background: #1f4a73; transform: translateY(-1px); }
+  .frk-cta-sub { display: block; font-size: 12px; font-weight: 500; opacity: 0.85; margin-top: 6px; }
+  .frk-reviews { padding: 36px 0 12px; }
+  .frk-reviews h2 { font-family: 'Georgia', serif; font-size: 28px; text-align: center; margin: 0 0 6px; color: #0e0e0e; }
+  .frk-reviews .frk-r-sub { text-align: center; color: #666; font-size: 14px; margin: 0 0 20px; }
+  .frk-r-agg { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 28px; }
+  .frk-r-agg .stars { color: #f5a623; font-size: 22px; letter-spacing: 2px; }
+  .frk-r-agg .rating { font-weight: 800; font-size: 18px; color: #0e0e0e; }
+  .frk-r-agg .count { color: #666; font-size: 14px; }
+  .frk-r-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .frk-review { background: #fff; border: 1px solid #efeae0; border-radius: 8px; padding: 16px 18px; }
+  .frk-review .stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
+  .frk-review .verified { display: inline-block; font-size: 10px; color: #2e8b3e; font-weight: 700; background: #e6f4ea; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.06em; text-transform: uppercase; }
+  .frk-review p { font-size: 14px; line-height: 1.5; margin: 8px 0; color: #333; font-style: italic; }
+  .frk-review .name { font-weight: 700; font-size: 13px; color: #0e0e0e; }
+  .frk-review .name span { font-weight: 400; color: #777; }
+  .frk-foot { background: #fafaf6; padding: 36px 20px 28px; margin-top: 32px; border-top: 1px solid #efeae0; }
+  .frk-foot-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .frk-foot p { font-size: 11px; color: #888; line-height: 1.6; margin: 0 0 12px; }
+  .frk-foot .frk-foot-links { font-size: 12px; color: #666; margin: 12px 0 4px; }
+  .frk-foot .frk-foot-links a { color: #666; text-decoration: none; margin: 0 8px; }
+  .frk-foot .frk-foot-links a:hover { color: #0e0e0e; text-decoration: underline; }
+  .frk-foot .frk-copy { font-size: 11px; color: #aaa; margin-top: 10px; }
+  .frk-sticky { position: fixed; left: 0; right: 0; bottom: 0; background: #0e2540; color: #fff; padding: 12px 16px; display: none; align-items: center; justify-content: space-between; gap: 12px; z-index: 9999; box-shadow: 0 -4px 16px rgba(0,0,0,0.18); }
+  .frk-sticky.visible { display: flex; }
+  .frk-sticky .frk-st-text strong { display: block; font-size: 14px; }
+  .frk-sticky .frk-st-text { font-size: 12px; line-height: 1.3; }
+  .frk-sticky a.frk-st-btn { background: #2c5d8c; color: #fff !important; text-decoration: none !important; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+  @media (max-width: 640px) {
+    .frk-lst article { padding: 22px 16px 50px; }
+    .frk-lst h1.frk-h1 { font-size: 28px; }
+    .frk-reason { flex-direction: column; gap: 12px; }
+    .frk-reason .frk-rimg { width: 100%; height: 200px; }
+    .frk-r-grid { grid-template-columns: 1fr; }
+    .frk-promo { gap: 10px; padding: 8px 12px; }
+    .frk-promo .frk-promo-text { font-size: 11px; }
+    .frk-promo .frk-timer .unit { padding: 3px 6px; min-width: 32px; }
+    .frk-promo .frk-timer .num { font-size: 14px; }
+  }
+</style>
+
+<div class="frk-lst">
+
+  <!-- PROMO BAR + COUNTDOWN -->
+  <div class="frk-promo">
+    <div class="frk-promo-text">
+      &#127482;&#127480; SPRING SPECIAL &#10024; SAVE UP TO 25% + FREE SHIPPING
+      <span class="sub">Limited stock &middot; US warehouse ships in 2–3 days</span>
+    </div>
+    <div class="frk-timer" id="frkTimer">
+      <span class="unit"><span class="num" data-d>00</span><span class="lbl">DAYS</span></span>
+      <span class="unit"><span class="num" data-h>00</span><span class="lbl">HRS</span></span>
+      <span class="unit"><span class="num" data-m>00</span><span class="lbl">MIN</span></span>
+      <span class="unit"><span class="num" data-s>00</span><span class="lbl">SEC</span></span>
+    </div>
+  </div>
+
+  <!-- LOGO HEADER -->
+  <div class="frk-logo-row">
+    <a href="/" aria-label="Franky"><img src="https://frankynu.com/cdn/shop/files/LogoHeader.png?v=1772445122&width=300" alt="Franky Nutrition" /></a>
+  </div>
+
+  <article>
+
+    <h1 class="frk-h1">7 Reasons GLP-1 Users Are Switching Their Morning Coffee to <em>This High-Protein Drink</em></h1>
+
+    <div class="frk-byline">
+      <div class="frk-avatar"></div>
+      <div>By <strong>The Wellness Desk</strong> &middot; Last Updated May 19, 2026 &middot; 5 min read</div>
+    </div>
+
+    <div class="frk-callout">
+      <strong>Read this BEFORE your next coffee.</strong> If you're on Ozempic, Wegovy, Mounjaro, or Zepbound, what you eat (and drink) matters more than ever. Here's why thousands of GLP-1 users are switching to a high-protein iced coffee.
+    </div>
+
+    <div class="frk-tldr">
+      <span class="frk-check">&#10003;</span>
+      <span>TL;DR — Franky Protein Coffee delivers 20g of protein, zero sugar, and gentle digestion support in a single iced coffee.</span>
+    </div>
+
+    <!-- REASON 1 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_15.jpg?v=1774604853" alt="High protein for muscle protection" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">1.</span> 20g of high-quality whey protein to protect lean muscle</h2>
+        <p>GLP-1 medications drive rapid weight loss — but up to 30% of that loss can be lean muscle if you aren't getting enough protein. Franky delivers 20g of whey protein concentrate in a single iced coffee. That's the easiest 20g you'll get all day.</p>
+        <span class="frk-pill blue">&#128170; Protect Lean Muscle</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Lock In Your Protein With Every Cup &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 2 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_03.png?v=1774604853" alt="Gentle on slowed digestion" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">2.</span> Gentle on a slowed digestive system</h2>
+        <p>GLP-1s slow gastric emptying — heavy meals can feel rough. Franky is a liquid serving with 3 billion CFU of probiotic and 1,500mg of soluble psyllium fiber, designed to be gentle and supportive rather than heavy. Smooth in, no bloat after.</p>
+        <span class="frk-pill green">&#127807; Gut-Friendly Formula</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Why GLP-1 Users Love It &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 3 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_08.png?v=1774179629" alt="Drinkable nutrition when appetite is low" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">3.</span> Drinkable nutrition for the days food feels like too much</h2>
+        <p>One of the hardest parts of being on a GLP-1 is hitting your nutrition targets when food doesn't appeal. A 200-calorie iced coffee is something most people on these meds can finish — and it delivers more protein than most "meals" you'll force down.</p>
+        <span class="frk-pill blue">&#128261; Easy On Low Appetite Days</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Replace A Meal The Easy Way &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 4 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Kopie_von_Franky_Graphics_9.png?v=1775818754" alt="Zero added sugar" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">4.</span> Zero added sugar means zero blood-sugar spikes</h2>
+        <p>GLP-1 progress depends on stable blood sugar. Franky has zero added sugar, zero artificial sweeteners (no sucralose, no aspartame), and zero seed oils. Every gram on the label is one you'd choose to eat.</p>
+        <span class="frk-pill green">&#127819; Zero Sugar, Zero Setbacks</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>See The Full Ingredient List &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 5 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_05.png?v=1775818754" alt="Gentler caffeine for sensitive stomach" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">5.</span> Coffee that won't trigger nausea on injection day</h2>
+        <p>Many GLP-1 users find their regular coffee suddenly turns on them — nausea, queasy stomach, the works. Franky pairs 100mg of natural caffeine with 200mg of L-theanine and 20g of protein. The result is smoother, calmer energy that goes down without the burn.</p>
+        <span class="frk-pill blue">&#9889; Smoother Energy, Less Nausea</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Why It Sits Easier &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 6 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Kopie_von_Franky_Graphics_12.png?v=1775818754" alt="Hit your protein target" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">6.</span> Effortlessly hits the protein target your doctor talks about</h2>
+        <p>The common GLP-1 protein recommendation is 0.8–1.0g per pound of goal body weight. That's hard with a smaller appetite. One Franky is 20g — typically the entire breakfast portion handled in a drink you actually look forward to. Two daily and you're already ahead.</p>
+        <span class="frk-pill blue">&#127919; The Easiest 20g You'll Get</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Hit Your Protein Goal &rarr;</a>
+      </div>
+    </div>
+
+    <!-- REASON 7 -->
+    <div class="frk-reason">
+      <div class="frk-rimg"><img src="https://cdn.shopify.com/s/files/1/0783/8951/0377/files/Franky_12_tiny.png?v=1775818754" alt="Money-back guarantee" /></div>
+      <div class="frk-rbody">
+        <h2><span class="num">7.</span> Made in the USA, third-party tested, and risk-free to try</h2>
+        <p>Manufactured in a US facility. Independently lab-tested every batch for heavy metals and microbials. Backed by a 30-day money-back guarantee. If it doesn't fit your routine, we refund you.</p>
+        <span class="frk-pill green">&#128077; 30-Day Money-Back</span><br>
+        <a class="frk-rlink" href="#" data-franky-cta>Try Franky Risk-Free &rarr;</a>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="frk-final">
+      <h3>Built for the way GLP-1 users actually eat</h3>
+      <p>Ships in 2–3 days from our US warehouse. Free US shipping on $50+. 30-day money-back guarantee.</p>
+      <a href="#" class="frk-cta" data-franky-cta>
+        Shop Franky Protein Coffee
+        <span class="frk-cta-sub">Limited stock &middot; Selling out fast</span>
+      </a>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="frk-reviews">
+      <h2>The reviews are in</h2>
+      <p class="frk-r-sub">Real Franky drinkers — including many on GLP-1 medications — sharing their morning routine.</p>
+      <div class="frk-r-agg">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating">4.9</span>
+        <span class="count">&middot; 1,200+ verified reviews</span>
+      </div>
+      <div class="frk-r-grid">
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"On Mounjaro and finally found a breakfast I can finish. The protein actually stays down and I'm not nauseous after."</p><div class="name">Jennifer M. <span>&middot; Atlanta, GA</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"My doctor told me I need more protein on Wegovy. Two Frankys a day gets me there without forcing food."</p><div class="name">Rachel B. <span>&middot; Phoenix, AZ</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Started Zepbound two months ago. Regular coffee made me queasy. This one doesn't, and I get protein at the same time."</p><div class="name">Sarah K. <span>&middot; Austin, TX</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"I forgot to eat lunch yesterday because I had a Franky. Then I realized that's exactly the point — it's a meal in a glass."</p><div class="name">Megan T. <span>&middot; Denver, CO</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Down 38lbs on Ozempic. The hardest part has been protein. Franky is the only thing I look forward to in the morning."</p><div class="name">Linda W. <span>&middot; Tampa, FL</span></div></div>
+        <div class="frk-review"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">Verified buyer</span><p>"Tastes like an iced vanilla latte. Sits easy on the stomach. Two scoops, water, ice — and I'm done with breakfast."</p><div class="name">Daniela V. <span>&middot; Miami, FL</span></div></div>
+      </div>
+    </div>
+
+    <!-- LAST CTA -->
+    <div class="frk-final" style="margin-top:24px;">
+      <h3>Try Franky risk-free today</h3>
+      <p>Ships in 2–3 days from our US warehouse. 30-day money-back guarantee.</p>
+      <a href="#" class="frk-cta" data-franky-cta>
+        Shop Franky Now
+        <span class="frk-cta-sub">Selling out fast &middot; Free US shipping on $50+</span>
+      </a>
+    </div>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="frk-foot">
+    <div class="frk-foot-inner">
+      <p>Franky Protein Coffee is a dietary supplement and is not a treatment for, nor a substitute for, GLP-1 medications. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Always consult your doctor before starting a new supplement, particularly if you are on prescription medication, pregnant, nursing, or have a medical condition.</p>
+      <div class="frk-foot-links">
+        <a href="/policies/terms-of-service">Terms of Service</a>&middot;
+        <a href="/policies/privacy-policy">Privacy Policy</a>&middot;
+        <a href="/policies/refund-policy">Refund Policy</a>&middot;
+        <a href="/policies/shipping-policy">Shipping Policy</a>
+      </div>
+      <p class="frk-copy">&copy; 2026 Swiss Ecom Group AG &middot; Franky&trade; is a registered trademark. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="frk-sticky" id="frkSticky">
+  <div class="frk-st-text">
+    <strong>20g protein. Zero sugar.</strong>
+    Made for GLP-1 routines
+  </div>
+  <a href="#" class="frk-st-btn" data-franky-cta>Shop Franky &rarr;</a>
+</div>
+
+<script>
+(function () {
+  var PRODUCT_URL = 'https://frankynu.com/products/franky-protein-coffee';
+  function buildCtaUrl() {
+    try {
+      var current = new URL(window.location.href);
+      var target = new URL(PRODUCT_URL);
+      current.searchParams.forEach(function (value, key) {
+        if (/^(utm_|gclid|fbclid|msclkid|ttclid|wbraid|gbraid|nb_|campaignid|adgroupid|adname|placement|device|network|keyword|medium)/i.test(key)) {
+          target.searchParams.set(key, value);
+        }
+      });
+      return target.toString();
+    } catch (e) { return PRODUCT_URL; }
+  }
+  function wireCtas() {
+    var url = buildCtaUrl();
+    document.querySelectorAll('[data-franky-cta]').forEach(function (el) { el.setAttribute('href', url); });
+  }
+  function startCountdown() {
+    var t = document.getElementById('frkTimer');
+    if (!t) return;
+    var dEl = t.querySelector('[data-d]'), hEl = t.querySelector('[data-h]'),
+        mEl = t.querySelector('[data-m]'), sEl = t.querySelector('[data-s]');
+    var KEY = 'frk_lst_deadline';
+    var deadline = parseInt(localStorage.getItem(KEY) || '0', 10);
+    var now = Date.now();
+    if (!deadline || deadline < now) {
+      deadline = now + 3 * 24 * 60 * 60 * 1000;
+      try { localStorage.setItem(KEY, String(deadline)); } catch (e) {}
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var diff = Math.max(0, deadline - Date.now());
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      dEl.textContent = pad(d); hEl.textContent = pad(h);
+      mEl.textContent = pad(m); sEl.textContent = pad(s);
+    }
+    tick(); setInterval(tick, 1000);
+  }
+  function wireSticky() {
+    var bar = document.getElementById('frkSticky'); if (!bar) return;
+    function onScroll() {
+      if (window.scrollY > 700 && window.innerWidth <= 720) bar.classList.add('visible');
+      else bar.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { wireCtas(); startCountdown(); wireSticky(); });
+  } else { wireCtas(); startCountdown(); wireSticky(); }
+})();
+</script>
