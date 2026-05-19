@@ -1,36 +1,6 @@
-{%- comment -%} frk-listicle-overrides v1 (page-handle-scoped overrides) {%- endcomment -%}
-{%- if page.handle == '11-reasons-why-this-high-protein-iced-coffee-is-the-1-trending-drink-for-spring-2026' -%}
-<style>
-  /* Hide Instagram "Join the franky community" app block ONLY on this page */
-  #insta-feed,
-  .shopify-app-block[id*="instafeed"],
-  [id*="instafeed_app_block"] { display: none !important; }
-
-  /* Force theme HEADING font (Lust Text) on body text of customer_review,
-     rating, and promotional blocks so they match the numbered reason headlines. */
-  .content-review-name,
-  .content-review-text,
-  .content-review-text p,
-  .content-review-verified,
-  .content-review-rating span,
-  .content-rating-text,
-  .content-rating-number,
-  .content-text,
-  .content-text p,
-  .content-text strong,
-  .promotional-headline,
-  .promotional-headline-sub,
-  .promotional-content,
-  .promotional-content p,
-  .promotional-guarantee,
-  .promotional-review-count,
-  .promotional-rating,
-  .promotional-button {
-    font-family: var(--font-heading-family), serif !important;
-  }
-</style>
-{%- endif -%}
-
+<!-- FRK_PROBE_UNCOND v3 -->
+<style id="frk-probe">.frk-probe-marker{display:none}</style>
+{%- comment -%} FRK page handle = '{{ page.handle }}' template = '{{ template.suffix }}' {%- endcomment -%}
 
 <style>
     /* Content Section Styles */
@@ -6986,4 +6956,3 @@
   ]
 }
 {% endschema %}
-{%- comment -%} cache-bust 123922 {%- endcomment -%}
