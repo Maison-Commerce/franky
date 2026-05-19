@@ -26,7 +26,7 @@
           "disabled": true,
           "settings": {
             "hide_days": true,
-            "title": "⚡ FLASH SALE ENDING SOON ⚡",
+            "title": "\u26a1 FLASH SALE ENDING SOON \u26a1",
             "subtitle": "60% OFF + FREE SERUM - Limited Stock Available!",
             "icon": true,
             "days_label": "DAYS",
@@ -102,7 +102,7 @@
         "headline_nyWPD8": {
           "type": "headline",
           "settings": {
-            "headline": "10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Spring 2026",
+            "headline": "10 Reasons Why This High-Protein Iced Coffee is the\u00a0<em>#1 Trending Drink</em>\u00a0for Spring 2026",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -163,7 +163,7 @@
         "headline_3xCtmb": {
           "type": "headline",
           "settings": {
-            "headline": "2. Beats the sugar cravings to keep you feeling satisfied",
+            "headline": "2.\u00a0Beats the sugar cravings to keep you feeling satisfied",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -194,7 +194,7 @@
         "headline_Rw7GYb": {
           "type": "headline",
           "settings": {
-            "headline": "3. It's your gut's new best friend thanks to prebiotics inside",
+            "headline": "3.\u00a0It's your gut's new best friend thanks to prebiotics inside",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -212,7 +212,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>Unlike basic LED tools that just glow red, <strong>Booster Pro customizes color modes</strong> based on your skin goals:</p><p>🔴 <strong>Red LED</strong>: Boosts collagen & reduces fine lines<br/>🔵 <strong>Blue LED</strong>: Soothes and clears skin<br/>🟢 <strong>Green LED</strong>: Brightens and evens tone<br/>🟡 <strong>Yellow LED</strong>: Smooths texture and promotes radiance<br/></p><p>Each treatment gently warms the skin, <strong>enhancing serum absorption</strong> while stimulating natural elasticity — no irritation, no downtime.</p>",
+            "text": "<p>Unlike basic LED tools that just glow red, <strong>Booster Pro customizes color modes</strong> based on your skin goals:</p><p>\ud83d\udd34 <strong>Red LED</strong>: Boosts collagen & reduces fine lines<br/>\ud83d\udd35 <strong>Blue LED</strong>: Soothes and clears skin<br/>\ud83d\udfe2 <strong>Green LED</strong>: Brightens and evens tone<br/>\ud83d\udfe1 <strong>Yellow LED</strong>: Smooths texture and promotes radiance<br/></p><p>Each treatment gently warms the skin, <strong>enhancing serum absorption</strong> while stimulating natural elasticity \u2014 no irritation, no downtime.</p>",
             "text_size": 16,
             "text_color": "#000000",
             "highlighted_text_color": "#000000",
@@ -240,7 +240,7 @@
         "headline_DY7Fa7": {
           "type": "headline",
           "settings": {
-            "headline": "4. It actually tastes like your favorite coffee shop drink",
+            "headline": "4.\u00a0It actually tastes like your favorite coffee shop drink",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -271,14 +271,14 @@
         "headline_yUUmgH": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>5. It easily replaces your $2,400-a-year coffee habit</strong>",
+            "headline": "<strong>5.\u00a0It easily replaces your $2,400-a-year coffee habit</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.",
+            "subheadline": "The average American spends $2,400+ a year at caf\u00e9s. Franky lets you make a caf\u00e9-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -302,7 +302,7 @@
         "headline_HmER6p": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>6. It makes the perfect iced coffee in 60 seconds</strong>",
+            "headline": "<strong>6.\u00a0It makes the perfect iced coffee in 60 seconds</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -333,7 +333,7 @@
         "headline_AmDPXG": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>7. You avoid the mid-morning crash</strong>",
+            "headline": "<strong>7.\u00a0You avoid the mid-morning crash</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
@@ -364,14 +364,14 @@
         "headline_rPMYMa": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>8. It helps you hit your daily protein target effortlessly</strong>",
+            "headline": "<strong>8.\u00a0It helps you hit your daily protein target effortlessly</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "700",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.",
+            "subheadline": "20g of whey protein per serving \u2014 that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.",
             "subheadline_size": 18,
             "subheadline_color": "#666666",
             "top_padding": 24,
@@ -395,14 +395,14 @@
         "headline_TMjddN": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>9. Backed by a 30-Day Money-Back Guarantee</strong>",
+            "headline": "<strong>9.\u00a0Backed by a 30-Day Money-Back Guarantee</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "700",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.",
+            "subheadline": "Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you \u2014 no questions asked.",
             "subheadline_size": 18,
             "subheadline_color": "#666666",
             "top_padding": 24,
@@ -426,14 +426,14 @@
         "headline_eXQaKN": {
           "type": "headline",
           "settings": {
-            "headline": "<strong>10. Join thousands of people who already swapped their café latte</strong>",
+            "headline": "<strong>10.\u00a0Join thousands of people who already swapped their caf\u00e9 latte</strong>",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "700",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.",
+            "subheadline": "4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2\u20133 days.",
             "subheadline_size": 18,
             "subheadline_color": "#666666",
             "top_padding": 24,
@@ -458,7 +458,7 @@
           "type": "customer_review",
           "settings": {
             "customer_avatar": "shopify://shop_images/Customer_02.png",
-            "customer_name": "— Mandy W., Verified Buyer",
+            "customer_name": "\u2014 Mandy W., Verified Buyer",
             "customer_name_size": 16,
             "customer_name_color": "#111827",
             "show_verified": true,
@@ -474,7 +474,7 @@
             "review_title": "I didn't think this would work.. But it did!",
             "review_title_size": 20,
             "review_title_color": "#111827",
-            "review_text": "<p>“I’m 48 and have tried everything from expensive creams to LED masks. Booster Pro gave me visible results in under 3 weeks — my skin feels tighter, and my makeup sits better than ever.”<br/></p>",
+            "review_text": "<p>\u201cI\u2019m 48 and have tried everything from expensive creams to LED masks. Booster Pro gave me visible results in under 3 weeks \u2014 my skin feels tighter, and my makeup sits better than ever.\u201d<br/></p>",
             "review_text_size": 16,
             "review_text_color": "#374151",
             "review_size": "medium",
@@ -492,7 +492,7 @@
           "type": "customer_review",
           "settings": {
             "customer_avatar": "shopify://shop_images/Customer_03.png",
-            "customer_name": "— Sophie L., Verified Buyer",
+            "customer_name": "\u2014 Sophie L., Verified Buyer",
             "customer_name_size": 16,
             "customer_name_color": "#111827",
             "show_verified": true,
@@ -508,7 +508,7 @@
             "review_title": "Redness is gone!!",
             "review_title_size": 20,
             "review_title_color": "#111827",
-            "review_text": "<p>“My jawline looks firmer and the redness is gone. Honestly, this feels like having a facialist at home every night!”<br/></p>",
+            "review_text": "<p>\u201cMy jawline looks firmer and the redness is gone. Honestly, this feels like having a facialist at home every night!\u201d<br/></p>",
             "review_text_size": 16,
             "review_text_color": "#374151",
             "review_size": "medium",
@@ -528,7 +528,7 @@
             "image_position": "left",
             "image": "shopify://shop_images/Customer_05.png",
             "image_border_radius": 8,
-            "title": "The Results Speak for Themselves ✨",
+            "title": "The Results Speak for Themselves \u2728",
             "text": "<ul><li><strong> Down 4 to 7 pounds in the first month</strong>, no dieting required.</li><li><strong>Cravings gone by week two.</strong> No more 10am snack runs.</li><li><strong>Steady energy all day.</strong> Zero crash, zero jitters.</li></ul><h5><br/><em>(Based on internal consumer study, 2026)</em></h5>",
             "button_text": "Learn More",
             "button_url": "",
@@ -582,14 +582,14 @@
         "headline_q4PAgR": {
           "type": "headline",
           "settings": {
-            "headline": "Special Offer — Limited Time",
+            "headline": "Special Offer \u2014 Limited Time",
             "headline_size": 40,
             "headline_color": "#000000",
             "headline_font_family": "inherit",
             "headline_font_weight": "500",
             "headline_text_transform": "none",
             "headline_italic_font_family": "inherit",
-            "subheadline": "For a limited time, FRANKY Protein Coffee is available at $39.95 (Save 20%) with fast US shipping and a 30-day money-back guarantee. ✨ Grab your bag now and start every morning energized, focused, and full until lunch. The natural way.",
+            "subheadline": "For a limited time, FRANKY Protein Coffee is available at $39.95 (Save 20%) with fast US shipping and a 30-day money-back guarantee. \u2728 Grab your bag now and start every morning energized, focused, and full until lunch. The natural way.",
             "subheadline_size": 16,
             "subheadline_color": "#000000",
             "top_padding": 24,
@@ -644,7 +644,7 @@
         "button_iKRm6h": {
           "type": "button",
           "settings": {
-            "button_text": "<strong>Check Availability ➔</strong>",
+            "button_text": "<strong>Check Availability \u2794</strong>",
             "button_url": "shopify://products/franky-protein-coffee",
             "button_width": "full",
             "button_font_size": 16,
