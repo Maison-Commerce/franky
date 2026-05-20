@@ -580,5 +580,50 @@
     {% render 'lumin-recently-viewed-drawer' %}
     {% render 'lazy-loading' %}
     {% render 'performance-monitor' %}
+  
+    {%- comment -%} Listicle sale bar CSS+JS (injected by /pages/franky-listicle-clean) {%- endcomment -%}
+    <style>
+      .frk-salebar { background: #0e2540; color: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; font-family: 'DM Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+      .frk-salebar .frk-sb-text { text-align: left; }
+      .frk-salebar .frk-sb-title { font-weight: 700; font-size: 15px; letter-spacing: 0.04em; line-height: 1.2; display: block; }
+      .frk-salebar .frk-sb-sub { font-weight: 500; font-size: 11px; letter-spacing: 0.06em; opacity: 0.9; line-height: 1.3; margin-top: 4px; display: block; }
+      .frk-salebar .frk-sb-timer { display: flex; gap: 6px; font-variant-numeric: tabular-nums; }
+      .frk-salebar .frk-sb-timer .unit { background: #ffffff; color: #0e2540; padding: 6px 10px; border-radius: 6px; min-width: 44px; text-align: center; line-height: 1; }
+      .frk-salebar .frk-sb-timer .num { font-size: 18px; font-weight: 800; display: block; }
+      .frk-salebar .frk-sb-timer .lbl { font-size: 9px; font-weight: 600; opacity: 0.85; letter-spacing: 0.1em; display: block; margin-top: 2px; }
+      @media (max-width: 640px) {
+        .frk-salebar { gap: 14px; padding: 10px 12px; }
+        .frk-salebar .frk-sb-title { font-size: 13px; }
+        .frk-salebar .frk-sb-sub { font-size: 10px; }
+        .frk-salebar .frk-sb-timer .unit { padding: 5px 8px; min-width: 38px; }
+        .frk-salebar .frk-sb-timer .num { font-size: 16px; }
+      }
+    </style>
+    <script>
+      (function(){
+        var t = document.getElementById('frkSaleTimer');
+        if (!t) return;
+        var hEl = t.querySelector('[data-h]'), mEl = t.querySelector('[data-m]'), sEl = t.querySelector('[data-s]');
+        var KEY = 'frk_salebar_deadline';
+        var d = parseInt(localStorage.getItem(KEY) || '0', 10);
+        var now = Date.now();
+        if (!d || d < now) {
+          d = now + 48 * 60 * 60 * 1000;
+          try { localStorage.setItem(KEY, String(d)); } catch (e) {}
+        }
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        function tick() {
+          var diff = Math.max(0, d - Date.now());
+          var h = Math.floor(diff / 3600000);
+          var m = Math.floor((diff % 3600000) / 60000);
+          var s = Math.floor((diff % 60000) / 1000);
+          hEl.textContent = pad(h);
+          mEl.textContent = pad(m);
+          sEl.textContent = pad(s);
+        }
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
   </body>
 </html>
