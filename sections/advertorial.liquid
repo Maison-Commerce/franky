@@ -1,3 +1,21 @@
+{%- comment -%} FRANKY LISTICLE-CLEAN SCOPED OVERRIDES (added 2026-05-20) {%- endcomment -%}
+{%- if template.suffix == 'listicle-clean' -%}
+  <style>
+    /* Smaller images on the clean listicle */
+    [class*="listicle-clean"] .content-main-image,
+    body.template-page-listicle-clean .content-main-image { max-width: 100%; max-height: 320px; object-fit: cover; }
+    @media (min-width: 750px) {
+      [class*="listicle-clean"] .content-main-image,
+      body.template-page-listicle-clean .content-main-image { max-height: 380px; }
+    }
+    /* Label pill: first h6 in rich_text becomes a navy pill attached to image bottom */
+    .content-image-rich-text h6 { background: #0e2540; color: #fff !important; padding: 10px 14px; margin: -12px 0 14px; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0 0 12px 12px; line-height: 1.2; }
+    /* Inline CTA link styling */
+    .content-image-rich-text p { font-size: 15px; margin: 8px 0; line-height: 1.5; }
+    .content-image-rich-text a { color: #0e2540; font-weight: 600; text-decoration: underline; }
+  </style>
+{%- endif -%}
+
 <style>
     /* Content Section Styles */
 .content-section {
