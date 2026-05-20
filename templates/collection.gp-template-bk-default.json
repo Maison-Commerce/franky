@@ -1,0 +1,341 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "banner",
+    "hero_section_iMayec",
+    "collection_navigation_NcefxY",
+    "product-grid",
+    "maison_faq_VTX9GP",
+    "1774262510ca0dde16"
+  ],
+  "sections": {
+    "1774262510ca0dde16": {
+      "block_order": [
+        "instafeed_app_block_P4wCUF"
+      ],
+      "blocks": {
+        "instafeed_app_block_P4wCUF": {
+          "disabled": true,
+          "settings": {
+            "alignment": "center",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": "",
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "instafeed_margin_top": 0,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "show_instagram_link": false,
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0
+          },
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5"
+        }
+      },
+      "settings": {
+        "include_margins": true
+      },
+      "type": "apps"
+    },
+    "banner": {
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_collection_description": true,
+        "show_collection_image": false
+      },
+      "type": "main-collection-banner"
+    },
+    "collection_navigation_NcefxY": {
+      "block_order": [
+        "collection_button_r8Qpcw",
+        "collection_button_gXQjay",
+        "collection_button_GtpyCB",
+        "collection_button_4hGRcx",
+        "collection_button_trRHL8"
+      ],
+      "blocks": {
+        "collection_button_4hGRcx": {
+          "settings": {
+            "collection": "",
+            "label": "Passion & Libido"
+          },
+          "type": "collection_button"
+        },
+        "collection_button_GtpyCB": {
+          "settings": {
+            "collection": "",
+            "label": "Sleep & Calm"
+          },
+          "type": "collection_button"
+        },
+        "collection_button_gXQjay": {
+          "settings": {
+            "collection": "",
+            "label": "Energy & Focus"
+          },
+          "type": "collection_button"
+        },
+        "collection_button_r8Qpcw": {
+          "settings": {
+            "collection": "",
+            "label": "All Products"
+          },
+          "type": "collection_button"
+        },
+        "collection_button_trRHL8": {
+          "settings": {
+            "collection": "",
+            "label": "Beauty & Glow"
+          },
+          "type": "collection_button"
+        }
+      },
+      "disabled": true,
+      "name": "Collection Navigation",
+      "settings": {
+        "button_active_bg_color": "#3b2b2f",
+        "button_active_text_color": "#fbfbfb",
+        "button_border_radius": 12,
+        "button_font_size": 14,
+        "button_gap": 12,
+        "button_inactive_bg_color": "rgba(0,0,0,0)",
+        "button_inactive_text_color": "#34393d",
+        "button_padding_horizontal": 16,
+        "button_padding_vertical": 12,
+        "padding_bottom_desktop": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_desktop": 0,
+        "padding_left_mobile": 0,
+        "padding_right_desktop": 0,
+        "padding_right_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_top_mobile": 0,
+        "section_bg_color": "#ffffff"
+      },
+      "type": "collection-navigation"
+    },
+    "hero_section_iMayec": {
+      "block_order": [
+        "feature_6XLGDX",
+        "feature_HdVjP7",
+        "feature_yjQLXW"
+      ],
+      "blocks": {
+        "feature_6XLGDX": {
+          "settings": {
+            "text": "Sustained energy"
+          },
+          "type": "feature"
+        },
+        "feature_HdVjP7": {
+          "settings": {
+            "text": "10g protein"
+          },
+          "type": "feature"
+        },
+        "feature_yjQLXW": {
+          "settings": {
+            "text": "0g Sugar"
+          },
+          "type": "feature"
+        }
+      },
+      "name": "Hero Section",
+      "settings": {
+        "badge_font_size_desktop": 14,
+        "badge_font_size_mobile": 12,
+        "badge_gap": 8,
+        "badge_text": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "badge_text_color": "#3b2b2f",
+        "content_gap": 18,
+        "content_width_desktop": 560,
+        "description": "Real coffee with protein, focus support, and gut health — all in one cup that actually tastes incredible.",
+        "description_align": "left",
+        "description_color": "#3b2b2f",
+        "description_font_size_desktop": 16,
+        "description_font_size_mobile": 14,
+        "description_opacity": 75,
+        "feature_font_size_desktop": 16,
+        "feature_font_size_mobile": 14,
+        "feature_text_color": "#3b2b2f",
+        "features_gap": 24,
+        "hero_bg_color": "#f3f7fa",
+        "hero_border_radius": 8,
+        "hero_gap_desktop": 80,
+        "hero_gap_mobile": 32,
+        "hero_padding_desktop": 60,
+        "hero_padding_mobile": 24,
+        "icon_bg_color": "#f9f9f9",
+        "icon_size_desktop": 24,
+        "icon_size_mobile": 18,
+        "icon_text_gap": 12,
+        "image": "shopify://shop_images/Franky_03_3febdfa8-aadb-461b-a623-f5b3b6ba5c0c.png",
+        "image_border_radius": 0,
+        "image_position": "right",
+        "padding_bottom_desktop": 0,
+        "padding_bottom_mobile": 24,
+        "padding_left_desktop": 20,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 0,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 0,
+        "padding_top_mobile": 24,
+        "section_bg_color": "#f3f7fa",
+        "title": "Better Coffee. Better Morning. Better You.",
+        "title_align": "left",
+        "title_color": "#3b2b2f",
+        "title_font_size_desktop": 48,
+        "title_font_size_mobile": 32,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.2,
+        "title_uppercase": false
+      },
+      "type": "hero-section"
+    },
+    "maison_faq_VTX9GP": {
+      "block_order": [
+        "faq_item_CUU6EW",
+        "faq_item_LKK3EP",
+        "faq_item_cL4Fzp",
+        "faq_item_ghVQGC",
+        "faq_item_cRrQAK",
+        "faq_item_Bbrt93",
+        "faq_item_rpLtCz"
+      ],
+      "blocks": {
+        "faq_item_Bbrt93": {
+          "settings": {
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk, almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep, ready in under 60 seconds.</p>",
+            "question": "How do I prepare it?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_CUU6EW": {
+          "settings": {
+            "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving, giving you 20g of protein that may fuel your morning, support muscle recovery, keep you satisfied, and work toward your weight loss goals.</p>",
+            "question": "How much protein per serving?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_LKK3EP": {
+          "settings": {
+            "answer": "<p>That's exactly what it's designed for. The combination of 20g of whey protein (two scoops) and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, keeping you satisfied and away from unnecessary snacking until lunch.</p>",
+            "question": "Will it keep me full until lunch?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_cL4Fzp": {
+          "settings": {
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — and may give you calm, focused energy with no spike, no jitters, and no mid-morning crash. With two scoops, you're getting 100mg, roughly the equivalent of a regular cup of coffee.</p>",
+            "question": "Will I crash or get jitters?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_cRrQAK": {
+          "settings": {
+            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>",
+            "question": "What does it taste like?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_ghVQGC": {
+          "settings": {
+            "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>",
+            "question": "Is it good for gut health?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_rpLtCz": {
+          "settings": {
+            "answer": "<p>Franky contains whey protein concentrate, which is derived from milk, and is not suitable for those with a dairy allergy or intolerance. It is 100% gluten-free and non-GMO. Please review the full ingredient list before purchasing if you have any specific dietary concerns.</p>",
+            "question": "Does it contain dairy or allergens?"
+          },
+          "type": "faq_item"
+        }
+      },
+      "name": "Maison FAQ",
+      "settings": {
+        "border_color": "#2f393633",
+        "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
+        "faq_gap_desktop": 80,
+        "heading": "<p>Everything You Need To Know about Franky</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "image": "shopify://shop_images/Franky_06.png",
+        "image_border_radius": 16,
+        "image_width_desktop": 600,
+        "padding_bottom_desktop": 56,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 56,
+        "padding_top_mobile": 32,
+        "question_color": "#3b2b2f",
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_gap": 24,
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(243, 207, 203, 0.5) 100%)",
+        "toggle_icon_size": 32
+      },
+      "type": "maison-faq"
+    },
+    "product-grid": {
+      "block_order": [
+        "product_banner_a4V3HA"
+      ],
+      "blocks": {
+        "product_banner_a4V3HA": {
+          "disabled": true,
+          "settings": {
+            "banner_image": "shopify://shop_images/wafawgfawgawg3g.png",
+            "banner_overlay_text_1": "One sold every minute",
+            "banner_overlay_text_2": "",
+            "banner_rating": "4.8",
+            "banner_text": "<p>Rated <strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+            "position": 2
+          },
+          "type": "product_banner"
+        }
+      },
+      "settings": {
+        "color_scheme": "background-1",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "description_font_size": 14,
+        "description_word_limit": 20,
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "filter_type": "horizontal",
+        "image_no_crop": false,
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "products_per_page": 16,
+        "quick_add": "standard",
+        "show_product_description": false,
+        "show_rating": false,
+        "show_scroll_tags": false,
+        "show_secondary_image": false,
+        "show_vendor": false
+      },
+      "type": "main-collection-product-grid"
+    }
+  }
+}

@@ -1,0 +1,1810 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "main",
+    "maison_pdp_hero_mfQLMr",
+    "maison_ing_Pzf6La",
+    "maison_introducing_LXBj6d",
+    "maison_badge_list_Qxnb7C",
+    "maison_introducing_bnLFrb",
+    "maison_comp_flex_acwryg",
+    "maison_video_review_UWqfGU",
+    "1774045599b927268f",
+    "maison_advantages_YXMwHF",
+    "maison_introducing_xjgRKK",
+    "maison_faq_QLFLjc",
+    "maison_collection_slider_icVqir",
+    "maison_inst_img_XPMVhM",
+    "related-products",
+    "17741821203b2fdc66"
+  ],
+  "sections": {
+    "1774045599b927268f": {
+      "block_order": [
+        "okendo_reviews_widget_eqmDxx"
+      ],
+      "blocks": {
+        "okendo_reviews_widget_eqmDxx": {
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          },
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29"
+        }
+      },
+      "settings": {
+        "include_margins": true
+      },
+      "type": "apps"
+    },
+    "17741821203b2fdc66": {
+      "settings": {
+        "include_margins": true
+      },
+      "type": "apps"
+    },
+    "main": {
+      "block_order": [
+        "breadcrumbs_PydcAB",
+        "title_Fnnnm3",
+        "review_mMj4kD",
+        "price",
+        "variant_picker_LNQHHR",
+        "text_benefits_MezAmm",
+        "buy_buttons",
+        "payment_pcDBqV",
+        "feature_4LXVTq",
+        "feature_qcaUE7",
+        "feature_TPpkrj",
+        "collapsible_tab_ptCdTk",
+        "collapsible_tab_EBKNVc",
+        "collapsible_tab_j8XPyz",
+        "collapsible_tab_zf8ijz",
+        "usp_rbUihm",
+        "trust_feature_xnRc3U",
+        "lumin_cross_sells_PdKwRH"
+      ],
+      "blocks": {
+        "breadcrumbs_PydcAB": {
+          "settings": {
+            "margin_bottom": 16,
+            "margin_top": 0,
+            "padding_bottom": 0,
+            "padding_top": 0,
+            "padding_top_mb": 0,
+            "spacing": 1,
+            "text_size": 12,
+            "text_transform": "none",
+            "title_home": "Home"
+          },
+          "type": "breadcrumbs"
+        },
+        "buy_buttons": {
+          "settings": {
+            "button_custom_style": false,
+            "button_font_size": 24,
+            "button_height": 60,
+            "button_padding_bottom": 12,
+            "button_padding_top": 12,
+            "lm_main_button": "#000000",
+            "lm_main_button_border_color": "#000000",
+            "lm_main_button_border_width": 0,
+            "lm_main_button_gr": "",
+            "lm_main_button_gr_hover": "",
+            "lm_main_button_hover": "#ffffff",
+            "lm_main_text": "#ffffff",
+            "lm_main_text_hover": "#0b57d0",
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "skip_cart": false
+          },
+          "type": "buy_buttons"
+        },
+        "collapsible_tab_EBKNVc": {
+          "settings": {
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "heading": "Materiaal & Care",
+            "icon": "none",
+            "open_by_default": false,
+            "page": "",
+            "show_product_description": false
+          },
+          "type": "collapsible_tab"
+        },
+        "collapsible_tab_j8XPyz": {
+          "settings": {
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "heading": "Verzending",
+            "icon": "none",
+            "open_by_default": false,
+            "page": "",
+            "show_product_description": false
+          },
+          "type": "collapsible_tab"
+        },
+        "collapsible_tab_ptCdTk": {
+          "settings": {
+            "content": "<p>If you're unhappy with your purchase, we'll find a solution for you. Most of our products can be returned within 365 days. All returns are subject to a $9.95 return fee deducted from your refund amount. Returns will be refunded to the original payment method or as a store credit. We do our best to make you comfortable, because let's face it, you're the best.</p>",
+            "heading": "Specificaties",
+            "icon": "none",
+            "open_by_default": false,
+            "page": "",
+            "show_product_description": false
+          },
+          "type": "collapsible_tab"
+        },
+        "collapsible_tab_zf8ijz": {
+          "settings": {
+            "content": "<h3><strong>Washing Instructions</strong></h3><p>on a gentle cycle with like colors.<br/>mild detergent. Avoid bleach or fabric softeners—they can break down the fibers over time.<br/></p><p><strong>Drying Instructions</strong></p><p>or line dry for best results.<br/></p><p> <strong>General Tips</strong></p><p>Let me know if you'd like to format this for a product page, care card, or printable insert!</p>",
+            "heading": "Retour & Ruil",
+            "icon": "none",
+            "open_by_default": false,
+            "page": "",
+            "show_product_description": false
+          },
+          "type": "collapsible_tab"
+        },
+        "feature_4LXVTq": {
+          "settings": {
+            "alignment": "center",
+            "background_color": "",
+            "border_radius": 0,
+            "heading": "",
+            "heading_size": 20,
+            "icon_size": 20,
+            "inner_padding": 0,
+            "padding_bottom": 8,
+            "padding_top": 8,
+            "show_icon": true,
+            "text": "<p><strong>Bestel vóór 23:59</strong> — morgen in huis (NL/BE)</p>",
+            "text_size": 14
+          },
+          "type": "feature"
+        },
+        "feature_TPpkrj": {
+          "settings": {
+            "alignment": "center",
+            "background_color": "",
+            "border_radius": 0,
+            "heading": "",
+            "heading_size": 20,
+            "icon_size": 20,
+            "inner_padding": 0,
+            "padding_bottom": 8,
+            "padding_top": 8,
+            "show_icon": true,
+            "text": "<p><strong>Koop Nu, Betaal Later</strong> — met Klarna</p>",
+            "text_size": 14
+          },
+          "type": "feature"
+        },
+        "feature_qcaUE7": {
+          "settings": {
+            "alignment": "center",
+            "background_color": "",
+            "border_radius": 0,
+            "heading": "",
+            "heading_size": 20,
+            "icon_size": 20,
+            "inner_padding": 0,
+            "padding_bottom": 8,
+            "padding_top": 8,
+            "show_icon": true,
+            "text": "<p><strong>14 Dagen Garantie</strong> — Gratis Retourneren & Ruilen</p>",
+            "text_size": 14
+          },
+          "type": "feature"
+        },
+        "lumin_cross_sells_PdKwRH": {
+          "settings": {
+            "btn_style": "button--primary",
+            "color_scheme": "scheme-1",
+            "container_border_radius": 0,
+            "description": "<p>Save up to 50% with one click!</p>",
+            "description_font_size": "fs-sm",
+            "hue_rotate": 0,
+            "img_border_radius": 0,
+            "img_ratio": "ratio-1x1",
+            "metafield": "custom.cross_sells",
+            "title": "Frequently Bought Together",
+            "title_font_size": "fs-lg",
+            "title_text_style": "body"
+          },
+          "type": "lumin-cross-sells"
+        },
+        "payment_pcDBqV": {
+          "settings": {
+            "custom_icon_1_width": 34,
+            "custom_icon_2_width": 34,
+            "custom_icon_3_width": 34,
+            "original": "custom",
+            "payment_content_alignment": "center",
+            "payment_icon": "visa,master,paypal,apple_pay,shopify-pay,google-pay"
+          },
+          "type": "payment"
+        },
+        "price": {
+          "settings": {
+            "compare_price": "#868686",
+            "hide_tax_shipping": true,
+            "original_price": "#bc1e1e",
+            "price_text_size": 20,
+            "price_text_size_mb": 20,
+            "price_weight": "bold",
+            "reverse_price": true,
+            "save_bg": "#bc1e1e",
+            "save_border": "#bc1e1e",
+            "save_border_thickness": 1,
+            "save_corner_radius": 0,
+            "save_shadow_blur": 0,
+            "save_shadow_horizontal_offset": 2,
+            "save_shadow_opacity": 0,
+            "save_shadow_vertical_offset": 2,
+            "save_text": "#ffffff",
+            "save_text_size": 12,
+            "show_save_price": true
+          },
+          "type": "price"
+        },
+        "review_mMj4kD": {
+          "settings": {
+            "lrw_color": "#000000",
+            "lrw_star_color": "#08864e",
+            "lrw_star_color_disable": "#eeeeee",
+            "lrw_text": "4.8 From 136 Reviews",
+            "margin_bottom": 24,
+            "margin_top": 12,
+            "star_rating": 4.5,
+            "star_size": 0.7,
+            "star_style": "star_bg_2",
+            "text_size": 12
+          },
+          "type": "review"
+        },
+        "text_benefits_MezAmm": {
+          "disabled": true,
+          "settings": {
+            "benefits": "<p>✨ <strong>Body Scrub</strong> included for the next <strong>7 </strong>orders!</p>"
+          },
+          "type": "text_benefits"
+        },
+        "title_Fnnnm3": {
+          "settings": {
+            "title_font_weight": 400,
+            "title_letter_spacing": 1,
+            "title_line_height": 1.1,
+            "title_size_dt": 24,
+            "title_size_mb": 24,
+            "title_text_transform": "uppercase"
+          },
+          "type": "title"
+        },
+        "trust_feature_xnRc3U": {
+          "settings": {
+            "background_1": "#f2f2f2",
+            "background_2": "#f2f2f2",
+            "border_color_1": "#e5e5e5",
+            "border_color_2": "#e5e5e5",
+            "border_radius_1": 8,
+            "border_radius_2": 8,
+            "heading_1": "Free Shipping",
+            "heading_2": "24/7 Support",
+            "heading_size_1": 12,
+            "heading_size_2": 12,
+            "hide_icon_1": false,
+            "hide_icon_2": false,
+            "hide_second_feature": false,
+            "icon_size_1": 36,
+            "icon_size_2": 36,
+            "layout_mode": "auto",
+            "padding_bottom": 24,
+            "padding_top": 4,
+            "show_background_1": true,
+            "show_background_2": true,
+            "text_1": "<p>First feature description</p>",
+            "text_2": "<p>Free Global Shipping</p>",
+            "text_size_1": 10,
+            "text_size_2": 10,
+            "trust_alignment": "center"
+          },
+          "type": "trust-feature"
+        },
+        "usp_rbUihm": {
+          "settings": {
+            "background_color": "#ffffff",
+            "border_color": "#e5e5e5",
+            "border_radius": 100,
+            "border_width": 1,
+            "font_size_desktop": 12,
+            "font_size_mobile": 12,
+            "padding_bottom": 0,
+            "padding_top": 16,
+            "text_color": "#000000",
+            "usp_1_icon": "truck",
+            "usp_1_text": "Fast Shipping",
+            "usp_2_icon": "chat_bubble",
+            "usp_2_text": "24/7 support",
+            "usp_3_icon": "none",
+            "usp_3_text": ""
+          },
+          "type": "usp"
+        },
+        "variant_picker_LNQHHR": {
+          "settings": {
+            "chart_id": "Size Chart",
+            "font_size": 12,
+            "font_style": "bold",
+            "label_style": "subtitle",
+            "picker_type": "button",
+            "size_icon": "hanger",
+            "size_page": "",
+            "size_trigger": "",
+            "spaced_size": false,
+            "swatch_image_custom_radius_value": 0,
+            "swatch_image_height": "portrait",
+            "swatch_shape": "square",
+            "swatch_size": 6,
+            "swatch_type": "variant_image"
+          },
+          "type": "variant_picker"
+        }
+      },
+      "disabled": true,
+      "settings": {
+        "block_padding": 2,
+        "color_scheme": "background-1",
+        "constrain_to_viewport": true,
+        "container_bg": "#ffffff",
+        "container_bg_mb": "#ffffff",
+        "container_border_color": "#f2f2f2",
+        "container_border_color_mb": "#e6e6e6",
+        "container_padding": 20,
+        "container_padding_mb": 20,
+        "container_radius": 10,
+        "container_radius_mb": 8,
+        "container_text": "This Offer is<strong> For Limited Time </strong><em>Only</em>",
+        "container_text_animation": true,
+        "container_text_bg": "#f9f9f9",
+        "container_text_size": 12,
+        "container_text_speed": 20,
+        "container_text_txt": "#000000",
+        "enable_sticky_info": true,
+        "enable_video_looping": true,
+        "filtering_products": [],
+        "first_image_size": 100,
+        "gallery_layout": "vertical_left",
+        "hide_slider_buttons": false,
+        "hide_variants": false,
+        "image_zoom": "lightbox",
+        "media_fit": "cover",
+        "media_position": "left",
+        "media_size": "medium",
+        "mobile_slider_height": "portrait",
+        "mobile_thumbnails": "show",
+        "no_scroll": false,
+        "padding_bottom": 24,
+        "padding_top": 24,
+        "padding_top_mb": 0,
+        "second_image_size": 6,
+        "show_container": false,
+        "show_container_mb": false,
+        "show_feature_image_first": false,
+        "show_full_image": false,
+        "thumbnail_layout": "medium",
+        "thumbnail_radius": 4,
+        "thumbnail_size": 54,
+        "variant_image_filtering": "none"
+      },
+      "type": "main-product"
+    },
+    "maison_advantages_YXMwHF": {
+      "block_order": [
+        "advantage_UBFR9Q",
+        "advantage_nByq4z",
+        "advantage_4kJkrT",
+        "advantage_gaF8fw",
+        "advantage_BE7ALR",
+        "advantage_fRdWGH"
+      ],
+      "blocks": {
+        "advantage_4kJkrT": {
+          "settings": {
+            "description": "<p>Every ingredient has a job. Nothing comes along for the ride.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No artificial fillers"
+          },
+          "type": "advantage"
+        },
+        "advantage_BE7ALR": {
+          "settings": {
+            "description": "<p>Clean for sensitive stomachs. No compromises.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No gluten, No soy"
+          },
+          "type": "advantage"
+        },
+        "advantage_UBFR9Q": {
+          "settings": {
+            "description": "<p>Og per serving. Period. Zero spike, zero crash.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No Sugar"
+          },
+          "type": "advantage"
+        },
+        "advantage_fRdWGH": {
+          "settings": {
+            "description": "<p>Third party lab tested. Every batch, every time.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No heavy metals"
+          },
+          "type": "advantage"
+        },
+        "advantage_gaF8fw": {
+          "settings": {
+            "description": "<p>We never use artificial colors in our products. Real ingredients. Full stop.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No artificial colors"
+          },
+          "type": "advantage"
+        },
+        "advantage_nByq4z": {
+          "settings": {
+            "description": "<p>Sweetened with natural monk fruit & fermented Reb M™. No sucralose, dextrose, or maltodextrin.</p>",
+            "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
+            "title": "No Artificial Sweetners"
+          },
+          "type": "advantage"
+        }
+      },
+      "name": "Maison Advantages",
+      "settings": {
+        "card_bg_color": "#f4fafe",
+        "card_gap_desktop": 24,
+        "card_gap_mobile": 18,
+        "card_padding": 18,
+        "description_color": "#000000",
+        "description_font_size_desktop": 16,
+        "description_font_size_mobile": 14,
+        "heading": "<p>Let's be Frank, we said no to a lot of things.</p>",
+        "heading_color": "#000000",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "icon_content_gap": 12,
+        "icon_size_desktop": 60,
+        "icon_size_mobile": 44,
+        "padding_bottom_desktop": 70,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 60,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 60,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 70,
+        "padding_top_mobile": 32,
+        "section_bg_color": "#FFFFFF",
+        "title_color": "#000000",
+        "title_font_size_desktop": 18,
+        "title_font_size_mobile": 16
+      },
+      "type": "maison-advantages"
+    },
+    "maison_badge_list_Qxnb7C": {
+      "block_order": [
+        "badge_zwkR7p",
+        "badge_XzA84J",
+        "badge_VdXCPA",
+        "badge_RyTNBC",
+        "badge_W6YAML",
+        "badge_pYKmeY"
+      ],
+      "blocks": {
+        "badge_RyTNBC": {
+          "settings": {
+            "icon": "shopify://shop_images/sebebrfbrbt.png",
+            "text": "10g Protein"
+          },
+          "type": "badge"
+        },
+        "badge_VdXCPA": {
+          "settings": {
+            "icon": "shopify://shop_images/wagawg32gr.png",
+            "text": "0g Sugar"
+          },
+          "type": "badge"
+        },
+        "badge_W6YAML": {
+          "settings": {
+            "icon": "shopify://shop_images/jabvaeegasge.png",
+            "text": "No Fillers"
+          },
+          "type": "badge"
+        },
+        "badge_XzA84J": {
+          "settings": {
+            "icon": "shopify://shop_images/Bread-Gluten-Free--Streamline-Ultimate.png",
+            "text": "Gluten-Free"
+          },
+          "type": "badge"
+        },
+        "badge_pYKmeY": {
+          "settings": {
+            "icon": "shopify://shop_images/jagw4grbt.png",
+            "text": "Non-GMO"
+          },
+          "type": "badge"
+        },
+        "badge_zwkR7p": {
+          "settings": {
+            "icon": "shopify://shop_images/Non-Gmo-Lab--Streamline-Ultimate.png",
+            "text": "Real Coffee"
+          },
+          "type": "badge"
+        }
+      },
+      "name": "Maison Badge List",
+      "settings": {
+        "badge_gap_desktop": 8,
+        "badge_gap_mobile": 18,
+        "badge_text_color": "#ffffff",
+        "badge_text_font_size_desktop": 16,
+        "badge_text_font_size_mobile": 14,
+        "icon_size_desktop": 32,
+        "icon_size_mobile": 24,
+        "icon_text_gap": 12,
+        "marquee_speed": 20,
+        "padding_bottom_desktop": 18,
+        "padding_bottom_mobile": 12,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 18,
+        "padding_top_mobile": 12,
+        "section_bg_color": "linear-gradient(0deg, rgba(59, 43, 47, 1), rgba(59, 43, 47, 1) 100%)"
+      },
+      "type": "maison-badge-list"
+    },
+    "maison_collection_slider_icVqir": {
+      "block_order": [
+        "product_NcJU4C",
+        "product_8kFqQj",
+        "product_fGWrQJ"
+      ],
+      "blocks": {
+        "product_8kFqQj": {
+          "settings": {
+            "product": "brain-boost-gummies",
+            "show_best_seller_badge": false
+          },
+          "type": "product"
+        },
+        "product_NcJU4C": {
+          "settings": {
+            "product": "brain-boost-gummies-blackberry-plum",
+            "show_best_seller_badge": false
+          },
+          "type": "product"
+        },
+        "product_fGWrQJ": {
+          "settings": {
+            "product": "brain-boost-gummies-strawberry-tangerine",
+            "show_best_seller_badge": false
+          },
+          "type": "product"
+        }
+      },
+      "disabled": true,
+      "name": "Maison Collection Slider",
+      "settings": {
+        "collection": "frontpage",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "padding_bottom_desktop": 56,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 56,
+        "padding_top_mobile": 32,
+        "products_to_show": 4,
+        "section_heading_part1": "Top",
+        "section_heading_part2": "this month"
+      },
+      "type": "maison-collection-slider"
+    },
+    "maison_comp_flex_acwryg": {
+      "block_order": [
+        "comparison_row_Yn436X",
+        "comparison_row_y4kraR",
+        "comparison_row_qC6Dhj",
+        "comparison_row_tgm97y",
+        "comparison_row_8iWUkT",
+        "comparison_row_aYPXAz"
+      ],
+      "blocks": {
+        "comparison_row_8iWUkT": {
+          "settings": {
+            "label_col1": "Brain Support",
+            "label_col3": "Brain Support",
+            "label_featured": "Brain Support",
+            "value_col1": "No",
+            "value_col3": "No",
+            "value_featured": "Yes"
+          },
+          "type": "comparison_row"
+        },
+        "comparison_row_Yn436X": {
+          "settings": {
+            "label_col1": "Sugar",
+            "label_col3": "Sugar",
+            "label_featured": "Sugar",
+            "value_col1": "40-60g",
+            "value_col3": "<1g",
+            "value_featured": "0g"
+          },
+          "type": "comparison_row"
+        },
+        "comparison_row_aYPXAz": {
+          "settings": {
+            "label_col1": "Cost per serving",
+            "label_col3": "Cost per serving",
+            "label_featured": "Cost per serving",
+            "value_col1": "$5-7",
+            "value_col3": "$1,89",
+            "value_featured": "$1,99"
+          },
+          "type": "comparison_row"
+        },
+        "comparison_row_qC6Dhj": {
+          "settings": {
+            "label_col1": "Pre- & Probiotics",
+            "label_col3": "Pre- & Probiotics",
+            "label_featured": "Pre- & Probiotics",
+            "value_col1": "No",
+            "value_col3": "No",
+            "value_featured": "Yes"
+          },
+          "type": "comparison_row"
+        },
+        "comparison_row_tgm97y": {
+          "settings": {
+            "label_col1": "Fiber",
+            "label_col3": "Fiber",
+            "label_featured": "Fiber",
+            "value_col1": "No",
+            "value_col3": "No",
+            "value_featured": "Yes"
+          },
+          "type": "comparison_row"
+        },
+        "comparison_row_y4kraR": {
+          "settings": {
+            "label_col1": "Protein",
+            "label_col3": "Protein",
+            "label_featured": "Protein",
+            "value_col1": "0g",
+            "value_col3": "15g",
+            "value_featured": "2 scoops: 20g"
+          },
+          "type": "comparison_row"
+        }
+      },
+      "name": "Maison Comp Flex",
+      "settings": {
+        "bg_color_bottom": "#deeaf2",
+        "bg_color_top": "#ffffff",
+        "col1_image": "shopify://shop_images/Rectangle_4927.png",
+        "col1_title": "Coffee",
+        "col3_image": "shopify://shop_images/geg3g4rgse.png",
+        "col3_title": "Protein powder",
+        "featured_body_color": "#f5eddc",
+        "featured_header_color": "#3b2b2f",
+        "featured_header_text_color": "#f5eddc",
+        "featured_image": "shopify://shop_images/Franky_product_image_transparent.png",
+        "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
+        "featured_title": "franky",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "padding_bottom_desktop": 40,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 16,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 16,
+        "padding_top_desktop": 40,
+        "padding_top_mobile": 32,
+        "row_font_size_desktop": 16,
+        "row_font_size_mobile": 14,
+        "row_label_color": "#3b2b2f",
+        "row_value_color_competitor": "#92898b",
+        "row_value_color_featured": "#3b2b2f",
+        "section_heading": "Why Coffee Alone Sabotages Your Energy",
+        "section_subtitle": "Plain coffee wakes you up. Franky keeps you going.",
+        "subtitle_color": "#3b2b2f",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_opacity": 75
+      },
+      "type": "maison-comp-flex"
+    },
+    "maison_faq_QLFLjc": {
+      "block_order": [
+        "faq_item_x7BFRN",
+        "faq_item_acLwN7",
+        "faq_item_Gc3cd8",
+        "faq_item_G9iCMV",
+        "faq_item_Ermbtx",
+        "faq_item_BUczLQ",
+        "faq_item_gH3kcf",
+        "faq_item_AkrewH",
+        "faq_item_yrAef3"
+      ],
+      "blocks": {
+        "faq_item_AkrewH": {
+          "settings": {
+            "answer": "<p>Add one or two scoops to 8oz of cold water or your favorite milk, almond or regular milk over ice works best. Shake or stir well and enjoy. No coffee machine, no blender, no prep, ready in under 60 seconds.</p>",
+            "question": "How do I prepare it?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_BUczLQ": {
+          "settings": {
+            "answer": "<p>No. Franky contains 50mg of balanced caffeine combined with 200mg of L-theanine, which may help smooth out the energy boost — and may give you calm, focused energy with no spike, no jitters, and no mid-morning crash. With two scoops, you're getting 100mg, roughly the equivalent of a regular cup of coffee.</p>",
+            "question": "Will I crash or get jitters?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_Ermbtx": {
+          "settings": {
+            "answer": "<p>That's exactly what it's designed for. The combination of 20g of whey protein (two scoops) and 1,500mg of psyllium husk fiber may help reduce hunger and cravings, keeping you satisfied and away from unnecessary snacking until lunch.</p>",
+            "question": "Will it keep me full until lunch?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_G9iCMV": {
+          "settings": {
+            "answer": "<p>Our Protein Coffee is a light and energizing choice, with just <strong>67 calories per serving</strong>. If you prefer a stronger boost and add two scoops, the total comes to <strong>134 calories. </strong>Still a low-calorie option that fits perfectly into an active lifestyle. </p>",
+            "question": "How many calories?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_Gc3cd8": {
+          "settings": {
+            "answer": "<p>Each scoop contains <strong>10g of high-quality protein</strong>. For best results, we recommend two scoops per serving, giving you 20g of protein that may fuel your morning, support muscle recovery, keep you satisfied, and work toward your weight loss goals.</p>",
+            "question": "How much protein per serving?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_acLwN7": {
+          "settings": {
+            "answer": "<p>Let's be frank: what we leave out matters just as much as what we put in.</p><p><strong>No Sugar. No Fillers. No Compromises.</strong></p><ul><li><strong>Sugar:</strong> 0g per serving. Period.</li><li><strong>Sucrose:</strong> No table sugar hiding under a different name.</li><li><strong>Stevia:</strong> We use Monk Fruit Extract and Fermented Reb M instead, for a cleaner, smoother sweetness with zero bitter aftertaste.</li><li><strong>Dextrose & Maltodextrin:</strong> No cheap filler carbs that spike your blood sugar.</li><li><strong>Corn Syrup or High-Fructose Corn Syrup:</strong> None. Not even a trace.</li><li><strong>Seed Oils:</strong> No canola, soybean, sunflower, or other inflammatory oils.</li><li><strong>Artificial Sweeteners:</strong> No aspartame, sucralose, or acesulfame-K.</li><li><strong>Artificial Colors or Flavors:</strong> Nothing synthetic. Ever.</li><li><strong>Fillers or Proprietary Blends:</strong> Every ingredient is listed with its exact dose. No mystery formulas, no hidden shortcuts.</li><li><strong>Gluten:</strong> 100% gluten-free.</li><li><strong>Soy:</strong> Completely soy-free.</li><li><strong>GMOs:</strong> Non-GMO verified.</li><li><strong>Pesticides:</strong> Made with organically grown ingredients.</li><li><strong>Heavy Metals:</strong> Every batch is third-party lab tested for purity and safety.</li></ul><p>You deserve to know exactly what you're putting in your body: and exactly what you're not. That's why our label is fully transparent and our formula stays clean, always.</p>",
+            "question": "What is NOT in Franky Protein Coffee?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_gH3kcf": {
+          "settings": {
+            "answer": "<p>Yes. Every serving contains 3 billion CFU of clinically studied probiotics and 1,500mg of psyllium husk fiber, which may support healthy digestion, help reduce bloating, and contribute to a balanced gut microbiome.</p>",
+            "question": "Is it good for gut health?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_x7BFRN": {
+          "settings": {
+            "answer": "<p>Living well shouldn't mean giving up what you love — it should mean upgrading it.</p><p>Franky Protein Coffee tastes like your favorite coffee, just better. Incredibly creamy, rich, and smooth — with a subtle vanilla-hazelnut note and a natural sweetness that makes every sip genuinely enjoyable. Mix two scoops with your go-to milk and you've got something worth waking up for.</p>",
+            "question": "What does it taste like?"
+          },
+          "type": "faq_item"
+        },
+        "faq_item_yrAef3": {
+          "settings": {
+            "answer": "<p>Franky contains whey protein concentrate, which is derived from milk, and is not suitable for those with a dairy allergy or intolerance. It is <strong>100</strong>% <strong>gluten</strong>-<strong>free</strong> and <strong>non</strong>-<strong>GMO</strong>. Please review the full ingredient list before purchasing if you have any specific dietary concerns.</p>",
+            "question": "Does it contain dairy or allergens?"
+          },
+          "type": "faq_item"
+        }
+      },
+      "name": "Maison FAQ",
+      "settings": {
+        "border_color": "#2f393633",
+        "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
+        "faq_gap_desktop": 80,
+        "heading": "<p>Everything You Need To Know about Franky</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "image": "shopify://shop_images/Franky_02_59adcf53-434a-4b64-b86c-d6e1f5bd5666.png",
+        "image_border_radius": 16,
+        "image_width_desktop": 600,
+        "padding_bottom_desktop": 56,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 56,
+        "padding_top_mobile": 32,
+        "question_color": "#3b2b2f",
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_gap": 24,
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(243, 207, 203, 0.5) 100%)",
+        "toggle_icon_size": 32
+      },
+      "type": "maison-faq"
+    },
+    "maison_ing_Pzf6La": {
+      "block_order": [
+        "ingredient_7J6hnM",
+        "ingredient_tkt7Lc",
+        "ingredient_9mGBh6",
+        "ingredient_wp9ey8",
+        "ingredient_9NYLU7",
+        "ingredient_aB8HGE"
+      ],
+      "blocks": {
+        "ingredient_7J6hnM": {
+          "settings": {
+            "description": "May support clean, focused energy without the jitters.*",
+            "image": "shopify://shop_images/awfawfawfw.png",
+            "title": "Natural Caffeine"
+          },
+          "type": "ingredient"
+        },
+        "ingredient_9NYLU7": {
+          "settings": {
+            "description": "May support digestion and help you feel fuller for longer.*",
+            "image": "shopify://shop_images/aewgsebegwqg.png",
+            "title": "Probiotic Blend"
+          },
+          "type": "ingredient"
+        },
+        "ingredient_9mGBh6": {
+          "settings": {
+            "description": "May support calm, focused energy without the spike.*",
+            "image": "shopify://shop_images/wfagawgawg.png",
+            "title": "L-Theanine"
+          },
+          "type": "ingredient"
+        },
+        "ingredient_aB8HGE": {
+          "settings": {
+            "description": "May support sharper thinking and mental clarity.*",
+            "image": "shopify://shop_images/vdsvwegwebes.png",
+            "title": "Lion’s Mane"
+          },
+          "type": "ingredient"
+        },
+        "ingredient_tkt7Lc": {
+          "settings": {
+            "description": "May support satiety and help keep cravings in check.*",
+            "image": "shopify://shop_images/afawfawfwafawf.png",
+            "title": "Whey Protein"
+          },
+          "type": "ingredient"
+        },
+        "ingredient_wp9ey8": {
+          "settings": {
+            "description": "May support digestion and help you feel fuller for longer.*",
+            "image": "shopify://shop_images/gwawgsbesgw.png",
+            "title": "Psyllium Husk"
+          },
+          "type": "ingredient"
+        }
+      },
+      "name": "Maison ING",
+      "settings": {
+        "bg_gradient_end": "#fffffe",
+        "bg_gradient_start": "#deeaf2",
+        "card_bg_color": "#fefefe",
+        "card_desc_color": "#3b2b2f",
+        "card_desc_font_size_desktop": 16,
+        "card_desc_font_size_mobile": 14,
+        "card_title_color": "#3b2b2f",
+        "card_title_font_size_desktop": 18,
+        "card_title_font_size_mobile": 16,
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "padding_bottom_desktop": 40,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 80,
+        "padding_left_mobile": 16,
+        "padding_right_desktop": 80,
+        "padding_right_mobile": 16,
+        "padding_top_desktop": 40,
+        "padding_top_mobile": 32,
+        "section_heading": "Premium Ingredients",
+        "section_subtitle": "Frankly delicious. Genuinely functional.",
+        "subtitle_color": "#3b2b2f",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14
+      },
+      "type": "maison-ing"
+    },
+    "maison_inst_img_XPMVhM": {
+      "block_order": [
+        "instagram_image_QG3NX8",
+        "instagram_image_fjrhFc",
+        "instagram_image_9gtpe3",
+        "instagram_image_4MBPaK",
+        "instagram_image_nXny4k",
+        "instagram_image_8nz6DB"
+      ],
+      "blocks": {
+        "instagram_image_4MBPaK": {
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_01.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        },
+        "instagram_image_8nz6DB": {
+          "settings": {
+            "image": "shopify://shop_images/731gyfvhj43g3g.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        },
+        "instagram_image_9gtpe3": {
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_04jpg.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        },
+        "instagram_image_QG3NX8": {
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_05.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        },
+        "instagram_image_fjrhFc": {
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_02.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        },
+        "instagram_image_nXny4k": {
+          "settings": {
+            "image": "shopify://shop_images/Socialmedia_03.jpg",
+            "instagram_url": ""
+          },
+          "type": "instagram_image"
+        }
+      },
+      "disabled": true,
+      "name": "Maison Instagram Images",
+      "settings": {
+        "heading": "Explore Our Instagram",
+        "heading_color": "#201c19",
+        "heading_font_size_desktop": 32,
+        "heading_font_size_mobile": 24,
+        "heading_gap_desktop": 40,
+        "heading_gap_mobile": 32,
+        "image_border_radius_desktop": 16,
+        "image_border_radius_mobile": 11,
+        "image_gap_desktop": 12,
+        "image_gap_mobile": 8,
+        "image_size_desktop": 242,
+        "image_size_mobile": 161,
+        "padding_bottom_desktop": 44,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 0,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 0,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 44,
+        "padding_top_mobile": 32,
+        "section_bg_color": "#ffffff",
+        "slider_speed": 30
+      },
+      "type": "maison-inst-img"
+    },
+    "maison_introducing_LXBj6d": {
+      "block_order": [
+        "feature_X3Mg7X",
+        "feature_pcaLBH",
+        "feature_7iLXFG"
+      ],
+      "blocks": {
+        "feature_7iLXFG": {
+          "settings": {
+            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want.",
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "10g Protein Power"
+          },
+          "type": "feature"
+        },
+        "feature_X3Mg7X": {
+          "settings": {
+            "description": "Real coffee and protein for steady energy. No spike or crash.",
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Sustained Energy"
+          },
+          "type": "feature"
+        },
+        "feature_pcaLBH": {
+          "settings": {
+            "description": "Sharpens focus & keeps you locked in during work and workouts.",
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
+            "title": "Focus & Mental Clarity"
+          },
+          "type": "feature"
+        }
+      },
+      "name": "Maison Introducing",
+      "settings": {
+        "button_bg_color": "#3b2b2f",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "button_link": "",
+        "button_text": "Upgrade My Morning",
+        "button_text_color": "#fbfbfb",
+        "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "heading": "<p>Finally, a Coffee That Works With You</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "mobile_image_position": "bottom",
+        "padding_bottom_desktop": 70,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 60,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 60,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 70,
+        "padding_top_mobile": 20,
+        "product_image_desktop": "shopify://shop_images/Franky_08.png",
+        "product_image_mobile": "shopify://shop_images/Franky_08.png",
+        "row": "row-reverse",
+        "section_bg_color": "#fcfeff",
+        "social_proof_color": "#3b2b2f",
+        "social_proof_count": "",
+        "social_proof_font_size": 12,
+        "social_proof_suffix": "",
+        "social_proof_text": "",
+        "text_align": "center",
+        "trust_badge_color": "#3b2b2f",
+        "trust_badge_font_size": 14
+      },
+      "type": "maison-introducing"
+    },
+    "maison_introducing_bnLFrb": {
+      "block_order": [
+        "feature_wnh8C4",
+        "feature_TfKCVp",
+        "feature_Y8nRhj"
+      ],
+      "blocks": {
+        "feature_TfKCVp": {
+          "settings": {
+            "description": "Caffeine that energizes without anxiety.",
+            "icon": "shopify://shop_images/abwgabgkjawb.png",
+            "title": "No Jitters"
+          },
+          "type": "feature"
+        },
+        "feature_Y8nRhj": {
+          "settings": {
+            "description": "Replaces coffee + protein shake  in 60 seconds flat.",
+            "icon": "shopify://shop_images/Frame_1484580868.png",
+            "title": "Breakfast in One Cup"
+          },
+          "type": "feature"
+        },
+        "feature_wnh8C4": {
+          "settings": {
+            "description": "Added fiber and ingredients for digestion and balance.",
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Gut-Friendly Formula"
+          },
+          "type": "feature"
+        }
+      },
+      "name": "Maison Introducing",
+      "settings": {
+        "button_bg_color": "#3b2b2f",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "button_link": "",
+        "button_text": "Upgrade My Morning",
+        "button_text_color": "#fbfbfb",
+        "desc": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "heading": "<p>What’s Inside Matters</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "mobile_image_position": "bottom",
+        "padding_bottom_desktop": 70,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 60,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 60,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 70,
+        "padding_top_mobile": 20,
+        "product_image_desktop": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
+        "product_image_mobile": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
+        "row": "row",
+        "section_bg_color": "#fcfeff",
+        "social_proof_color": "#3b2b2f",
+        "social_proof_count": "",
+        "social_proof_font_size": 12,
+        "social_proof_suffix": "",
+        "social_proof_text": "",
+        "text_align": "center",
+        "trust_badge_color": "#3b2b2f",
+        "trust_badge_font_size": 14
+      },
+      "type": "maison-introducing"
+    },
+    "maison_introducing_xjgRKK": {
+      "block_order": [
+        "feature_dpKWdQ",
+        "feature_FaA4b4",
+        "feature_8kQiwH",
+        "trust_badge_ThXTfq",
+        "trust_badge_d3Xgzn",
+        "trust_badge_mrWmX7"
+      ],
+      "blocks": {
+        "feature_8kQiwH": {
+          "settings": {
+            "description": "May help support healthy digestion and may help reduce bloating",
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "Stay Balanced"
+          },
+          "type": "feature"
+        },
+        "feature_FaA4b4": {
+          "settings": {
+            "description": "Clean caffeine and L-theanine that may help support calm, steady focus",
+            "icon": "shopify://shop_images/ajbwfkjawb_fka_wk.png",
+            "title": "Energize Your Mind"
+          },
+          "type": "feature"
+        },
+        "feature_dpKWdQ": {
+          "settings": {
+            "description": "Protein that may help reduce energy dips",
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Fuel Your Body"
+          },
+          "type": "feature"
+        },
+        "trust_badge_ThXTfq": {
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/Shipment-Return--Streamline-Plump-Remix.svg",
+            "text": "Simple Returns"
+          },
+          "type": "trust_badge"
+        },
+        "trust_badge_d3Xgzn": {
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/3vesvsebdb.svg",
+            "text": "Secure checkout"
+          },
+          "type": "trust_badge"
+        },
+        "trust_badge_mrWmX7": {
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/bakjfbajkvbjkwa.svg",
+            "text": "1.2M sold last year"
+          },
+          "type": "trust_badge"
+        }
+      },
+      "name": "Maison Introducing",
+      "settings": {
+        "button_bg_color": "#3b2b2f",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "button_link": "shopify://collections/all",
+        "button_text": "Upgrade My Morning",
+        "button_text_color": "#fbfbfb",
+        "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 16,
+        "feature_text_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 14,
+        "heading": "<p>The Science Behind Steady Energy</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "mobile_image_position": "top",
+        "padding_bottom_desktop": 70,
+        "padding_bottom_mobile": 32,
+        "padding_left_desktop": 60,
+        "padding_left_mobile": 20,
+        "padding_right_desktop": 60,
+        "padding_right_mobile": 20,
+        "padding_top_desktop": 70,
+        "padding_top_mobile": 20,
+        "product_image_desktop": "shopify://shop_images/Franky_14.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_14.jpg",
+        "row": "row-reverse",
+        "section_bg_color": "#fcfeff",
+        "social_proof_color": "#3b2b2f",
+        "social_proof_count": "",
+        "social_proof_font_size": 12,
+        "social_proof_suffix": "",
+        "social_proof_text": "",
+        "text_align": "center",
+        "trust_badge_color": "#3b2b2f",
+        "trust_badge_font_size": 14
+      },
+      "type": "maison-introducing"
+    },
+    "maison_pdp_hero_mfQLMr": {
+      "block_order": [
+        "nutritional_info_xpfTdY",
+        "pack_option_GHhn3X",
+        "pack_option_wRrbhV",
+        "pack_option_wrUnNn",
+        "customer_video_WHqD7f",
+        "customer_video_tm3Rzp",
+        "customer_video_mEtUwE",
+        "feature_item_wRQD6i",
+        "feature_item_mkmkcY",
+        "feature_item_rJBaVy",
+        "subscription_benefit_VhX7iW",
+        "subscription_benefit_BxqJNr",
+        "subscription_benefit_K9ViRm",
+        "trust_badge_6RkdBR",
+        "trust_badge_RY6LQE",
+        "trust_badge_RDLj3F",
+        "accordion_item_DparJ9",
+        "accordion_item_KNehCE",
+        "accordion_item_M9jwRx",
+        "accordion_item_BQRfcT",
+        "accordion_item_BMU6dj",
+        "accordion_item_hdeJXf",
+        "accordion_item_fpnbqj",
+        "accordion_item_UgPTiM",
+        "accordion_item_MCYThT"
+      ],
+      "blocks": {
+        "accordion_item_BMU6dj": {
+          "disabled": true,
+          "settings": {
+            "accordion_content": "<p>Franky combines real coffee with <strong>10g of protein and functional ingredients</strong> designed to support steady energy, focus, and satiety. Instead of the typical caffeine spike and crash, the formula provides smoother energy through balanced caffeine and L-theanine.<br/>The blend includes <strong>protein for sustained fuel</strong>, <strong>natural caffeine for focus</strong>, and <strong>prebiotic fiber to support digestion and gut balance</strong>. Together, these ingredients help turn your morning coffee into a more complete and functional routine.</p>",
+            "accordion_title": "Benefits & Ingredients"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_BQRfcT": {
+          "disabled": true,
+          "settings": {
+            "accordion_content": "<p>Your morning coffee may do more than wake you up. Franky is the complete morning formula with real coffee flavor, real nutrition, and functional ingredients that may help carry you through the entire morning from the first sip.</p><p>Each serving delivers <strong>10g of whey protein concentrate</strong>, which may help reduce hunger, manage cravings, and support lean muscle during weight loss. Combined with <strong>3 billion CFU probiotics</strong> and <strong>1,500mg of psyllium husk fiber</strong>, it may help support digestion, reduce bloating, and keep mid-morning cravings at bay.</p><p>Then there's the focus stack. <strong>300mg of lion's mane mushroom</strong> extract and <strong>200mg of L-theanine</strong> pair with <strong>50mg of natural caffeine</strong> for calm, steady energy that may help you stay sharp, without the jitters or crash.</p><p><strong>Zero sugar</strong>. <strong>No artificial fillers. Gluten-free, soy-free, and keto-friendly</strong>. Add two scoops to cold water or milk over ice, shake, and you're done in under 60 seconds. And it actually tastes incredible: rich, smooth vanilla hazelnut that you may find yourself looking forward to every single morning. <strong>Made in the USA.</strong></p><p>20 Servings · Net Weight 11.1 oz (314g) </p><p>Price per Serving: </p><p>1 Bag: $1.99/serving<br/>2 Bags: $1.43/serving · Save 28%<br/>3 Bags: $1.35/serving · Save 32%</p><p></p><p></p>",
+            "accordion_title": "Details"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_DparJ9": {
+          "settings": {
+            "accordion_content": "<p>Whether you're trying to upgrade your morning coffee, hit your protein goals, lose weight without losing muscle, or finally stop crashing at 10am, Franky has your back. And unlike most functional drinks, it actually tastes incredible: rich, smooth vanilla hazelnut that drinks like a coffee shop treat, not a supplement.</p><p>Not sure if it's for you? Franky may be a fit if you:</p><ul><li>Drink coffee every morning but want it to actually do something</li><li>Skip breakfast or grab something quick and regret it by 11am</li><li>Struggle to hit your daily protein target</li><li>Are on a GLP-1 (Ozempic, Wegovy, Mounjaro, Zepbound) and need an easy, high-protein way to protect lean muscle while appetite is suppressed</li><li>Want a low-calorie, low-sugar option that supports weight loss without leaving you hungry</li><li>Are tired of \"healthy\" products that taste like cardboard or chalk</li><li>Get the caffeine jitters or afternoon energy crashes</li><li>Want steady focus through long meetings or workouts</li><li>Deal with bloating or sluggish digestion</li><li>Train in the morning and need quick fuel before or after</li></ul><p>It's also a great fit if you've tried protein shakes and hated the chalky texture, or tried bulletproof coffee and missed actually getting protein.</p>",
+            "accordion_title": "Who is Franky for?"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_KNehCE": {
+          "settings": {
+            "accordion_content": "<p>Rich, smooth vanilla hazelnut with a natural sweetness and zero bitter aftertaste. Think of the coffee shop drink you actually look forward to, just without the sugar bomb. Mix two scoops with cold water, almond milk, or your milk of choice over ice and it's coffee shop quality in 60 seconds.</p>",
+            "accordion_title": "What does Franky Protein Coffee taste like?"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_M9jwRx": {
+          "settings": {
+            "accordion_content": "<p>Most protein coffees stop at protein and caffeine. Franky adds the rest of what your morning actually needs: 10g of whey protein (20g for two scoops), 3 billion CFU probiotics, 1,500mg fiber, 300mg lion's mane, and 200mg L-theanine. That means real protein for satiety and muscle recovery, steady focus instead of a caffeine spike, and gut support. All for around $1.99 per serving versus $5 to $7 at a coffee shop.</p>",
+            "accordion_title": "How is Franky different from other protein coffees?"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_MCYThT": {
+          "disabled": true,
+          "settings": {
+            "accordion_content": "<p>Our Brain Boost Gummies are crafted with premium natural ingredients.</p>",
+            "accordion_title": "3rd Party Lab Testing Results"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_UgPTiM": {
+          "settings": {
+            "accordion_content": "<p><strong>Standard Shipping</strong><br/>3–5 business days · Free on orders over $50 · $4.95 on orders under $50</p><p><strong>Express Shipping</strong><br/>1–2 business days · $9.95</p><p>Orders ship from our Georgia warehouse within 1 business day.</p><p><strong>30-Day Money-Back Guarantee</strong><br/>Not happy? Zero risk — just reach out and we'll make it right.</p>",
+            "accordion_title": "Shipping & Returns"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_fpnbqj": {
+          "settings": {
+            "accordion_content": "<p>Each serving of Franky contains <strong>10g of protein</strong>, balanced caffeine comparable to a cup of coffee, and a low-sugar formula designed to support steady energy.<br/>The formula is<strong> keto</strong>-<strong>friendly</strong> and <strong>gluten</strong>-<strong>free</strong>, with no fillers or unnecessary additives.  </p><p>Our Protein Coffee is a light and energizing choice, with just <strong>67 calories per serving</strong>. If you prefer a stronger boost and add two scoops, the total comes to <strong>134 calories. </strong>Still a low-calorie option that fits perfectly into an active lifestyle.</p><p></p>",
+            "accordion_image": "shopify://shop_images/Franky_Nutritional_Info.png",
+            "accordion_title": "Nutritional Information"
+          },
+          "type": "accordion_item"
+        },
+        "accordion_item_hdeJXf": {
+          "settings": {
+            "accordion_content": "<p>Add one or two scoops to cold water, hot water, or your milk of joy (almond milk or oat milk work beautifully, and almond milk over a mountain of ice is our personal favorite). Shake or stir, done in 60 seconds flat. No blender, no barista, no drama.</p><p>Best served ice cold. Make it your morning ritual and you'll actually look forward to your alarm going off. Almost.</p><p><br/>Many people use Franky as part of their <strong>morning routine or as a light breakfast alternative</strong>, providing energy, focus, and satiety without the typical coffee crash.</p>",
+            "accordion_title": "How do I enjoy Franky?"
+          },
+          "type": "accordion_item"
+        },
+        "customer_video_WHqD7f": {
+          "settings": {
+            "alt_text": "Customer testimonial",
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4"
+          },
+          "type": "customer_video"
+        },
+        "customer_video_mEtUwE": {
+          "settings": {
+            "alt_text": "Customer testimonial",
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
+          },
+          "type": "customer_video"
+        },
+        "customer_video_tm3Rzp": {
+          "settings": {
+            "alt_text": "Customer testimonial",
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4"
+          },
+          "type": "customer_video"
+        },
+        "feature_item_mkmkcY": {
+          "settings": {
+            "feature_text_bold": "Helps you focus",
+            "feature_text_regular": "during work",
+            "icon_type": "checkmark"
+          },
+          "type": "feature_item"
+        },
+        "feature_item_rJBaVy": {
+          "settings": {
+            "feature_text_bold": "Supports mental",
+            "feature_text_regular": "clarity so you can get \"in the zone\"",
+            "icon_type": "checkmark"
+          },
+          "type": "feature_item"
+        },
+        "feature_item_wRQD6i": {
+          "settings": {
+            "feature_text_bold": "Energizes",
+            "feature_text_regular": "with a spark of tart pomegranate",
+            "icon_type": "checkmark"
+          },
+          "type": "feature_item"
+        },
+        "nutritional_info_xpfTdY": {
+          "disabled": true,
+          "settings": {
+            "button_text": "Nutritional Information",
+            "popup_content": "<p>Nutritional information content goes here.</p>"
+          },
+          "type": "nutritional_info"
+        },
+        "pack_option_GHhn3X": {
+          "settings": {
+            "badge_text": "",
+            "bottle_count": 1,
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
+            "discount_multiplier": "1",
+            "frequency_label": "Deliver every 4 weeks",
+            "is_default_selected": true,
+            "pack_name": "1 Bag",
+            "price_per_unit": 3995,
+            "selling_plan_id": "5080383721",
+            "show_best_value": false,
+            "variant_id": ""
+          },
+          "type": "pack_option"
+        },
+        "pack_option_wRrbhV": {
+          "settings": {
+            "badge_text": "Bestseller",
+            "bottle_count": 2,
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
+            "discount_multiplier": "0.9",
+            "frequency_label": "Deliver every 6 weeks",
+            "is_default_selected": false,
+            "pack_name": "2 Bags",
+            "price_per_unit": 3795,
+            "selling_plan_id": "5271978217",
+            "show_best_value": true,
+            "variant_id": ""
+          },
+          "type": "pack_option"
+        },
+        "pack_option_wrUnNn": {
+          "settings": {
+            "badge_text": "Best Value",
+            "bottle_count": 3,
+            "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
+            "discount_multiplier": "0.85",
+            "frequency_label": "Deliver every 8 weeks",
+            "is_default_selected": false,
+            "pack_name": "3 Bags",
+            "price_per_unit": 3595,
+            "selling_plan_id": "5272010985",
+            "show_best_value": true,
+            "variant_id": ""
+          },
+          "type": "pack_option"
+        },
+        "subscription_benefit_BxqJNr": {
+          "settings": {
+            "benefit_text": "Best value for consistent results",
+            "icon_type": "checkmark"
+          },
+          "type": "subscription_benefit"
+        },
+        "subscription_benefit_K9ViRm": {
+          "settings": {
+            "benefit_text": "Free US shipping with 2 bags",
+            "icon_type": "checkmark"
+          },
+          "type": "subscription_benefit"
+        },
+        "subscription_benefit_VhX7iW": {
+          "settings": {
+            "benefit_text": "Zero commitment — cancel anytime",
+            "icon_type": "checkmark"
+          },
+          "type": "subscription_benefit"
+        },
+        "trust_badge_6RkdBR": {
+          "settings": {
+            "badge_text": "30 Day Money Back Guarantee",
+            "icon_type": "returns"
+          },
+          "type": "trust_badge"
+        },
+        "trust_badge_RDLj3F": {
+          "disabled": true,
+          "settings": {
+            "badge_text": "1.2M sold last year",
+            "icon_type": "star_badge"
+          },
+          "type": "trust_badge"
+        },
+        "trust_badge_RY6LQE": {
+          "settings": {
+            "badge_text": "Secure checkout",
+            "icon_type": "shield"
+          },
+          "type": "trust_badge"
+        }
+      },
+      "name": "Maison PDP Hero",
+      "settings": {
+        "add_to_cart_loading_text": "Adding...",
+        "add_to_cart_price": "$24.75",
+        "add_to_cart_text": "Add To Cart",
+        "best_value_text": "Best Value",
+        "bundle_enabled": true,
+        "bundle_products": [
+          "franky-magic-frother",
+          "franky-protein-coffee"
+        ],
+        "bundle_tier1_discount_percent": 0,
+        "bundle_tier1_label": "1 bag",
+        "bundle_tier1_price": "$34.95/bag",
+        "bundle_tier2_discount_percent": 5,
+        "bundle_tier2_label": "2 bags",
+        "bundle_tier2_price": "$32.95/bag",
+        "bundle_tier3_discount_percent": 10,
+        "bundle_tier3_label": "3 bags",
+        "bundle_tier3_price": "$30.95/bag",
+        "bundle_tier4_discount_percent": 15,
+        "bundle_tier4_label": "4+ bags",
+        "bundle_tier4_price": "$24.95/bag",
+        "bundle_title": "BUILD YOUR BUNDLE:",
+        "customer_gallery_title": "",
+        "natural_badge_alt": "100% Natural Ingredients",
+        "onetime_price": "$39.90",
+        "onetime_price_original": "$49.90",
+        "onetime_title": "One-time purchase",
+        "pack_size_label": "3 packs",
+        "preorder_button_text": "Add Pre-Order To Cart",
+        "preorder_enabled": true,
+        "preorder_loading_text": "Adding...",
+        "preorder_property_text": "Estimated to ship [delivery_date]",
+        "product_list": [
+          "franky-protein-coffee"
+        ],
+        "rating_count": "8,450+",
+        "rating_score": "4.8/5",
+        "related_add_button_text": "Add",
+        "related_products": [
+          "franky-magic-frother"
+        ],
+        "related_products_title": "Better together, add the Franky Frother.",
+        "section_mode_default": "packs",
+        "selling_plan_id": "5080383721",
+        "shipping_text": "Ship on Sun from our warehouse in Georgia",
+        "stock_status_text": "In Stock",
+        "subscribe_popular_tag": "Most Popular",
+        "subscribe_save_badge": "You Save 15%",
+        "subscribe_title": "Deliver every 4 weeks",
+        "subscription_default_selected": true,
+        "subscription_header_label": "SUBSCRIBE AND SAVE 15%",
+        "subscription_multiplier": "0.85",
+        "test_results_badge_text": "COMPLETE",
+        "test_results_cta_text": "Download Certificate of Analysis",
+        "test_results_description": "Passed strict quality, safety, and regulatory standards.",
+        "test_results_link_text": "Learn more",
+        "test_results_popup_title": "Test Results",
+        "test_results_title": "3rd Party Testing"
+      },
+      "type": "maison-pdp-hero"
+    },
+    "maison_video_review_UWqfGU": {
+      "block_order": [
+        "video_hnYthk",
+        "video_b6CnWJ",
+        "video_hGCtPz",
+        "video_E6NaUR",
+        "video_B8bWKa",
+        "video_tKJnhR",
+        "video_3bqHpK",
+        "review_FT7eUG",
+        "review_z3MKXm",
+        "review_FpXG9p",
+        "review_UATFJa",
+        "review_WyUFjR",
+        "review_fLFXEj",
+        "review_4LdLKr",
+        "review_W6bmRm",
+        "review_KbXRfR",
+        "review_XLdtjw"
+      ],
+      "blocks": {
+        "review_4LdLKr": {
+          "disabled": true,
+          "settings": {
+            "purchase_date": "Purchased on 05 Feb 2026",
+            "rating": 5,
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Harper, RN, 55",
+            "slider_position": "bottom",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_FT7eUG": {
+          "settings": {
+            "purchase_date": "Purchased on 18 Jan 2026",
+            "rating": 5,
+            "review_image": "shopify://shop_images/Review_image_02.jpg",
+            "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with</p>",
+            "reviewer_name": "Hannah, 45",
+            "slider_position": "top",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_FpXG9p": {
+          "settings": {
+            "purchase_date": "Purchased on 9 March 2026",
+            "rating": 5,
+            "review_image": "shopify://shop_images/Review_03.jpg",
+            "review_text": "<p>Franky set me up with a routine that totally fits my life better than any strict plan ever could</p>",
+            "reviewer_name": "Isabella, 43",
+            "slider_position": "top",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_KbXRfR": {
+          "disabled": true,
+          "settings": {
+            "purchase_date": "Purchased on 18 Jan 2026",
+            "rating": 5,
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Jasmin, RN, 31",
+            "slider_position": "bottom",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_UATFJa": {
+          "settings": {
+            "purchase_date": "Purchased on 12 March 2026",
+            "rating": 5,
+            "review_image": "shopify://shop_images/Customer_06.png",
+            "review_text": "<p>Didn't expect much. Most \"healthy\" products taste like cardboard. This actually tastes amazing. Smooth, clean, no fake sweetness. Look forward to it daily.</p>",
+            "reviewer_name": "Mia, 27",
+            "slider_position": "top",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_W6bmRm": {
+          "disabled": true,
+          "settings": {
+            "purchase_date": "Purchased on 17 Jan 2026",
+            "rating": 5,
+            "review_text": "<p>\"AROSE gave me what discipline couldn't—a routine that actually works with my life.\"</p>",
+            "reviewer_name": "Evelyn, Verified Buyer",
+            "slider_position": "bottom",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_WyUFjR": {
+          "settings": {
+            "purchase_date": "Purchased on 18 Feb 2026",
+            "rating": 5,
+            "review_image": "shopify://shop_images/Customer_04.png",
+            "review_text": "<p>Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts</p>",
+            "reviewer_name": "Charlotte, 25",
+            "slider_position": "top",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_XLdtjw": {
+          "disabled": true,
+          "settings": {
+            "purchase_date": "Purchased on 18 March 2025",
+            "rating": 5,
+            "review_text": "<p>\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"</p>",
+            "reviewer_name": "Emma, RN, 33",
+            "slider_position": "bottom",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_fLFXEj": {
+          "disabled": true,
+          "settings": {
+            "purchase_date": "Purchased on 7 March 2026",
+            "rating": 5,
+            "review_text": "<p>\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"</p>",
+            "reviewer_name": "Amelia, RN, 49",
+            "slider_position": "bottom",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "review_z3MKXm": {
+          "settings": {
+            "purchase_date": "Purchased on 21 Feb 2026",
+            "rating": 5,
+            "review_image": "shopify://shop_images/Customer_05.png",
+            "review_text": "<p>Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts</p>",
+            "reviewer_name": "Sophia, 31",
+            "slider_position": "top",
+            "verified_buyer": true
+          },
+          "type": "review"
+        },
+        "video_3bqHpK": {
+          "disabled": true,
+          "settings": {},
+          "type": "video"
+        },
+        "video_B8bWKa": {
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/ad808f305da9498fb7be719bbf063395.HD-720p-1.6Mbps-69851676.mp4"
+          },
+          "type": "video"
+        },
+        "video_E6NaUR": {
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4"
+          },
+          "type": "video"
+        },
+        "video_b6CnWJ": {
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
+          },
+          "type": "video"
+        },
+        "video_hGCtPz": {
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154204032_web.mp4"
+          },
+          "type": "video"
+        },
+        "video_hnYthk": {
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4"
+          },
+          "type": "video"
+        },
+        "video_tKJnhR": {
+          "disabled": true,
+          "settings": {},
+          "type": "video"
+        }
+      },
+      "name": "Maison Video Review",
+      "settings": {
+        "card_gap_desktop": 18,
+        "card_gap_mobile": 12,
+        "card_width_desktop": 342,
+        "card_width_mobile": 256,
+        "heading": "<p>Join the community</p>",
+        "heading_color": "#3b2b2f",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "overall_rating": 4.8,
+        "padding_bottom_desktop": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_desktop": 0,
+        "padding_left_mobile": 0,
+        "padding_right_desktop": 0,
+        "padding_right_mobile": 0,
+        "padding_top_desktop": 24,
+        "padding_top_mobile": 24,
+        "play_button_bg_color": "#ffffff",
+        "play_button_size": 50,
+        "rating_font_size_desktop": 14,
+        "rating_font_size_mobile": 14,
+        "rating_text_color": "#3b2b2f",
+        "review_count": "8,450+",
+        "section_bg_gradient": "linear-gradient(180deg, rgba(222, 234, 242, 1), rgba(251, 246, 234, 0) 100%)",
+        "star_color": "#ff8c00",
+        "video_border_radius": 18,
+        "video_gap_desktop": 18,
+        "video_gap_mobile": 12,
+        "video_padding": 12
+      },
+      "type": "maison-video-review"
+    },
+    "related-products": {
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading": "Others also bought",
+        "heading_size": "h2",
+        "image_no_crop": false,
+        "image_ratio": "portrait",
+        "padding_bottom": 40,
+        "padding_top": 40,
+        "products_to_show": 4,
+        "show_rating": false,
+        "show_scroll_tags": false,
+        "show_secondary_image": true,
+        "show_vendor": false
+      },
+      "type": "related-products"
+    }
+  }
+}
