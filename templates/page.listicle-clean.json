@@ -1,0 +1,760 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "advertorial_EQ83Nh": {
+      "type": "advertorial",
+      "blocks": {
+        "countdown_timer_BeaLcb": {
+          "type": "countdown_timer",
+          "disabled": true,
+          "settings": {
+            "hide_days": true,
+            "title": "⚡ FLASH SALE ENDING SOON ⚡",
+            "subtitle": "60% OFF + FREE SERUM - Limited Stock Available!",
+            "icon": true,
+            "days_label": "DAYS",
+            "hours_label": "HRS",
+            "minutes_label": "MIN",
+            "seconds_label": "SEC",
+            "background_color": "#333333",
+            "title_color": "#ffffff",
+            "subtitle_color": "#ffffff",
+            "timer_color": "#333333",
+            "timer_background_color": "#ffffff",
+            "title_size": 20,
+            "subtitle_size": 12,
+            "title_size_mobile": 16,
+            "subtitle_size_mobile": 10,
+            "show_day_as_zero": true,
+            "countdown_days": 99,
+            "countdown_hours": 3,
+            "countdown_minutes": 18,
+            "countdown_seconds": 0,
+            "title_weight": "400",
+            "subtitle_weight": "400",
+            "padding_vertical": 6,
+            "padding_horizontal": 16,
+            "margin_vertical": 0,
+            "border_radius": 0,
+            "timer_padding": 12,
+            "timer_border_radius": 4,
+            "timer_number_size_desktop": 20,
+            "timer_separator_size_desktop": 18,
+            "timer_label_size_desktop": 10,
+            "timer_number_size_mobile": 18,
+            "timer_separator_size_mobile": 16,
+            "timer_label_size_mobile": 9,
+            "hide_on_complete": false,
+            "completed_text": "Sale Ended!",
+            "completed_text_color": "#ff0000",
+            "completed_text_size": 16
+          }
+        },
+        "top_header_Hj9Cb6": {
+          "type": "top_header",
+          "disabled": true,
+          "settings": {
+            "main_text": "SELF-CARE",
+            "sub_text": "TIPS",
+            "trending_text": "Trending in the UK",
+            "background_color": "#f5f5f5",
+            "main_text_color": "#4ecdc4",
+            "sub_text_color": "#333333",
+            "trending_text_color": "#666666",
+            "separator_color": "#333333",
+            "main_text_size_desktop": 18,
+            "sub_text_size_desktop": 18,
+            "trending_text_size_desktop": 14,
+            "logo_size_desktop": 32,
+            "icon_size_desktop": 20,
+            "main_text_weight": "700",
+            "sub_text_weight": "700",
+            "main_text_size_mobile": 14,
+            "sub_text_size_mobile": 14,
+            "trending_text_size_mobile": 12,
+            "logo_size_mobile": 24,
+            "icon_size_mobile": 16,
+            "padding_vertical": 12,
+            "padding_horizontal": 20,
+            "margin_vertical": 0,
+            "border_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "headline_nyWPD8": {
+          "type": "headline",
+          "settings": {
+            "headline": "10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Spring 2026",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "400",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "",
+            "subheadline_size": 14,
+            "subheadline_color": "#666666",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "author_YkGyXe": {
+          "type": "author",
+          "settings": {
+            "author_image": "shopify://shop_images/Customer_01.png",
+            "author_name": "By The Wellness Desk",
+            "author_name_size": 16,
+            "verified": false,
+            "date": "Updated May 20, 2026 · 6 min read",
+            "date_size": 12,
+            "top_padding": 20,
+            "bottom_padding": 16
+          }
+        },
+        "headline_3KPjnN": {
+          "type": "headline",
+          "settings": {
+            "headline": "1. NEW innovative guilt-free formula designed to fuel your body",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_6Rz4ck": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Franky_14.jpg",
+            "image_radius": 12,
+            "top_padding": 28,
+            "bottom_padding": 4,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_3xCtmb": {
+          "type": "headline",
+          "settings": {
+            "headline": "2. Beats the sugar cravings to keep you feeling satisfied",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_eByPwc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Customer_02.png",
+            "image_radius": 12,
+            "top_padding": 24,
+            "bottom_padding": 16,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 14
+          }
+        },
+        "headline_Rw7GYb": {
+          "type": "headline",
+          "settings": {
+            "headline": "3. It's your gut's new best friend thanks to prebiotics inside",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "text_9KQPJq": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the <strong>added prebiotics</strong> promote smoother digestion and a happier, healthier microbiome. It is a delicious way to show your digestive system some love.</p>",
+            "text_size": 16,
+            "text_color": "#000000",
+            "highlighted_text_color": "#000000",
+            "highlighted_text_background": "#fcc947",
+            "accent_text_color": "#f44336",
+            "accent_text_background": "#fff5f5",
+            "top_padding": 10,
+            "bottom_padding": 10
+          }
+        },
+        "image_97aaVX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_9.png",
+            "image_radius": 12,
+            "top_padding": 24,
+            "bottom_padding": 16,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_DY7Fa7": {
+          "type": "headline",
+          "settings": {
+            "headline": "4. It actually tastes like your favorite coffee shop drink",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "While competitors flavor their protein to taste vaguely \"coffee-ish,\" Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 12
+          }
+        },
+        "image_qw7QeK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Customer_04.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_yUUmgH": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>5. It easily replaces your $2,400-a-year coffee habit</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_eDTGPw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Customer_06.png",
+            "image_radius": 12,
+            "top_padding": 24,
+            "bottom_padding": 16,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_HmER6p": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>6. It makes the perfect iced coffee in 60 seconds</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 12
+          }
+        },
+        "image_kNAjXD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_12.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_AmDPXG": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>7. You avoid the mid-morning crash</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_bPKbQd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Milkfrohter_01_tiny.png",
+            "image_radius": 12,
+            "top_padding": 24,
+            "bottom_padding": 16,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_rPMYMa": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>8. It helps you hit your daily protein target effortlessly</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 12
+          }
+        },
+        "image_tipRie": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Franky_14.jpg",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_TMjddN": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>9. Backed by a 30-Day Money-Back Guarantee</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "image_c8RNwC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kopie_von_Franky_Graphics_10.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "headline_eXQaKN": {
+          "type": "headline",
+          "settings": {
+            "headline": "<strong>10. Join thousands of people who already swapped their café latte</strong>",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "700",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.",
+            "subheadline_size": 18,
+            "subheadline_color": "#666666",
+            "top_padding": 24,
+            "bottom_padding": 12
+          }
+        },
+        "image_RYBeiU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Franky_Product_images_4_1.png",
+            "image_radius": 0,
+            "top_padding": 0,
+            "bottom_padding": 0,
+            "rich_text": "",
+            "rich_text_size": 16,
+            "rich_text_color": "#333333",
+            "rich_text_alignment": "left",
+            "rich_text_margin_top": 16
+          }
+        },
+        "customer_review_VWyQGN": {
+          "type": "customer_review",
+          "settings": {
+            "customer_avatar": "shopify://shop_images/Customer_02.png",
+            "customer_name": "— Mandy W., Verified Buyer",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Review | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#10b981",
+            "rating": 5,
+            "stars_size": 20,
+            "star_color": "#fbbf24",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "I quit my $6 latte habit",
+            "review_title_size": 20,
+            "review_title_color": "#111827",
+            "review_text": "<p>“Two weeks in. Off the 11am crash, off the sugary lattes. Vanilla hazelnut is dangerously good — I actually look forward to it every morning. Why did no one tell me about this sooner?”</p>",
+            "review_text_size": 16,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 12,
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#f3f4f6",
+            "avatar_icon_color": "#9ca3af",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "customer_review_dnnNBM": {
+          "type": "customer_review",
+          "settings": {
+            "customer_avatar": "shopify://shop_images/Customer_03.png",
+            "customer_name": "— Sophie L., Verified Buyer",
+            "customer_name_size": 16,
+            "customer_name_color": "#111827",
+            "show_verified": true,
+            "verified_text": "Verified Review | Rating:",
+            "verified_text_color": "#6b7280",
+            "verified_icon_color": "#10b981",
+            "rating": 5,
+            "stars_size": 20,
+            "star_color": "#fbbf24",
+            "star_empty_color": "#d1d5db",
+            "rating_text_size": 14,
+            "rating_text_color": "#6b7280",
+            "review_title": "Finally a morning routine that sticks",
+            "review_title_size": 20,
+            "review_title_color": "#111827",
+            "review_text": "<p>“I make this every morning with oat milk and ice. 20g of protein, real coffee taste, and I am full all the way to lunch. Replaced both my breakfast AND my Starbucks run.”</p>",
+            "review_text_size": 16,
+            "review_text_color": "#374151",
+            "review_size": "medium",
+            "border_radius": 12,
+            "background_color": "#ffffff",
+            "border_color": "#e5e7eb",
+            "shadow_color": "#0000001a",
+            "avatar_background_color": "#f3f4f6",
+            "avatar_icon_color": "#9ca3af",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "two_column_eCcK8x": {
+          "type": "two_column",
+          "settings": {
+            "image_position": "left",
+            "image": "shopify://shop_images/Customer_05.png",
+            "image_border_radius": 8,
+            "title": "The Results Speak for Themselves ✨",
+            "text": "<ul><li><strong>20g protein in every cup</strong> — no shaker, no chalky aftertaste.</li><li><strong>Cravings cool off by week two.</strong> No more 10am snack runs.</li><li><strong>Steady energy all morning.</strong> No jitters, no 11am crash.</li></ul>",
+            "button_text": "Learn More",
+            "button_url": "",
+            "background_color": "#f8f5f3",
+            "title_color": "#000000",
+            "title_size": 32,
+            "title_weight": "700",
+            "text_color": "#333333",
+            "text_size": 16,
+            "text_line_height": 1.6,
+            "text_alignment": "left",
+            "button_color": "#007bff",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 6,
+            "padding_vertical": 0,
+            "padding_horizontal": 20,
+            "margin_vertical": 28
+          }
+        },
+        "bullet_points_Xqcnck": {
+          "type": "bullet_points",
+          "disabled": true,
+          "settings": {
+            "point_1": "Difficulty breathing, wheezing in the lungs",
+            "icon": "arrow",
+            "point_2": "Constant coughing, frequent seasonal colds",
+            "icon_2": "arrow",
+            "point_3": "Chronic and acute bronchitis, pneumonia",
+            "icon_3": "arrow",
+            "point_4": "COPD, bronchial asthma, pleurisy",
+            "icon_4": "arrow",
+            "point_5": "",
+            "icon_5": "arrow",
+            "point_6": "",
+            "icon_6": "arrow",
+            "list_size": "small",
+            "background_color": "#f8f5f3",
+            "border_color": "#f8f5f3",
+            "border_radius": 12,
+            "icon_color": "#10b981",
+            "cross_icon_color": "#ff1010",
+            "text_color": "#374151",
+            "text_size": 16,
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "headline_q4PAgR": {
+          "type": "headline",
+          "settings": {
+            "headline": "Special Offer — Limited Time",
+            "headline_size": 40,
+            "headline_color": "#000000",
+            "headline_font_family": "inherit",
+            "headline_font_weight": "500",
+            "headline_text_transform": "none",
+            "headline_italic_font_family": "inherit",
+            "subheadline": "For a limited time, FRANKY Protein Coffee is available at $39.95 (Save 20%) with fast US shipping and a 30-day money-back guarantee. ✨ Grab your bag now and start every morning energized, focused, and full until lunch. The natural way.",
+            "subheadline_size": 16,
+            "subheadline_color": "#000000",
+            "top_padding": 24,
+            "bottom_padding": 0
+          }
+        },
+        "promotional_zbxhxK": {
+          "type": "promotional",
+          "settings": {
+            "show_rating": true,
+            "review_count": "1,524",
+            "headline_top": "<strong>In High Demand</strong> | Stock Keeps Selling Out",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#000000",
+            "headline": "Upgrade Your Morning Coffee with FRANKY Protein Iced Coffee 20% OFF",
+            "headline_subline": "",
+            "font_size_subline": 14,
+            "headline_subline_color": "#000000",
+            "button_text": "<strong>CHECK AVAILABILITY >></strong>",
+            "button_url": "shopify://products/franky-protein-coffee",
+            "guarantee_text": "30-day money back guarantee",
+            "product_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
+            "background_color": "#ffffff",
+            "highlight_color": "#b77677",
+            "button_color": "#d2691e",
+            "border_width": 2,
+            "border_style": "dotted",
+            "border_color": "#b77677",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#b77677",
+            "shadow_blur": 20,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 4,
+            "top_padding": 36,
+            "bottom_padding": 16
+          }
+        },
+        "rating_summary_PnFk9d": {
+          "type": "rating_summary",
+          "settings": {
+            "rating": 4.9,
+            "review_count": "12,000",
+            "stars_size": 20,
+            "rating_text_size": 14,
+            "star_color": "#ffb100",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "button_iKRm6h": {
+          "type": "button",
+          "settings": {
+            "button_text": "<strong>Check Availability ➔</strong>",
+            "button_url": "shopify://products/franky-protein-coffee",
+            "button_width": "full",
+            "button_font_size": 16,
+            "button_background_color": "#0b9f3c",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#0b9f3c",
+            "button_border_width": 0,
+            "button_border_radius": 8,
+            "button_alignment": "center",
+            "top_padding": 0,
+            "bottom_padding": 0
+          }
+        },
+        "footer_eGUn4V": {
+          "type": "footer",
+          "settings": {
+            "footer_text": "<p><strong>Disclosure</strong></p><p>FRANKY Protein Coffee is a dietary supplement designed to support daily protein intake, energy, focus, and digestive wellness. It is intended for healthy adults as part of a balanced diet and is not a substitute for medical advice, diagnosis, or treatment. Information about whey protein, caffeine, L-theanine, lion's mane, probiotics, and psyllium husk is based on general nutritional research and consumer use. Individual results may vary depending on diet, body composition, activity level, and consistency of use.</p><p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before starting any new supplement, particularly if you are pregnant, nursing, taking medication, or have a medical condition. Contains milk (whey).</p><p>Use only as directed. Keep out of reach of children. Store in a cool, dry place.</p>",
+            "footer_background_color": "#f8f9fa",
+            "footer_text_color": "#666666",
+            "footer_border_color": "#e9ecef",
+            "footer_border_width": 1,
+            "footer_padding_top": 40,
+            "footer_padding_bottom": 40,
+            "footer_text_size": 12,
+            "footer_text_align": "center"
+          }
+        },
+        "promotional_EERUTw": {
+          "type": "promotional",
+          "disabled": true,
+          "settings": {
+            "show_rating": true,
+            "review_count": "1,524",
+            "headline_top": "<strong>In High Demand</strong> | Stock Keeps Selling Out",
+            "font_size_top": 14,
+            "head_text_color": "#ffffff",
+            "head_background_color": "#000000",
+            "headline": "Elevate Your Coffee Experience with the GEM Cafe with [30% OFF]",
+            "headline_subline": "",
+            "font_size_subline": 14,
+            "headline_subline_color": "#000000",
+            "button_text": "<strong>CHECK AVAILABILITY >></strong>",
+            "button_url": "",
+            "guarantee_text": "60-day money back guarantee",
+            "background_color": "#ffffff",
+            "highlight_color": "#22c55e",
+            "button_color": "#d2691e",
+            "border_width": 2,
+            "border_style": "dotted",
+            "border_color": "#000000",
+            "border_radius": 12,
+            "enable_shadow": true,
+            "shadow_color": "#b77677",
+            "shadow_blur": 20,
+            "shadow_offset_x": 0,
+            "shadow_offset_y": 4,
+            "top_padding": 36,
+            "bottom_padding": 16
+          }
+        }
+      },
+      "block_order": [
+        "countdown_timer_BeaLcb",
+        "top_header_Hj9Cb6",
+        "headline_nyWPD8",
+        "author_YkGyXe",
+        "headline_3KPjnN",
+        "image_6Rz4ck",
+        "headline_3xCtmb",
+        "image_eByPwc",
+        "headline_Rw7GYb",
+        "text_9KQPJq",
+        "image_97aaVX",
+        "headline_DY7Fa7",
+        "image_qw7QeK",
+        "headline_yUUmgH",
+        "image_eDTGPw",
+        "headline_HmER6p",
+        "image_kNAjXD",
+        "headline_AmDPXG",
+        "image_bPKbQd",
+        "headline_rPMYMa",
+        "image_tipRie",
+        "headline_TMjddN",
+        "image_c8RNwC",
+        "headline_eXQaKN",
+        "image_RYBeiU",
+        "customer_review_VWyQGN",
+        "customer_review_dnnNBM",
+        "two_column_eCcK8x",
+        "bullet_points_Xqcnck",
+        "headline_q4PAgR",
+        "promotional_zbxhxK",
+        "rating_summary_PnFk9d",
+        "button_iKRm6h",
+        "footer_eGUn4V",
+        "promotional_EERUTw"
+      ],
+      "name": "Content Section with Review",
+      "settings": {
+        "section_color_scheme": "",
+        "max_width": 1100,
+        "section_padding_top": 40,
+        "section_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "advertorial_EQ83Nh"
+  ],
+  "layout": "listicle-clean"
+}
