@@ -467,25 +467,33 @@
             "feature_text_regular": "clarity so you can get \"in the zone\""
           }
         },
-        "subscription_benefit_VhX7iW": {
-          "type": "subscription_benefit",
-          "settings": {
-            "icon_type": "checkmark",
-            "benefit_text": "Zero commitment — cancel anytime"
-          }
-        },
         "subscription_benefit_BxqJNr": {
           "type": "subscription_benefit",
+          "disabled": true,
           "settings": {
             "icon_type": "checkmark",
             "benefit_text": "Best value for consistent results"
+          }
+        },
+        "subscription_benefit_fdPFrj": {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "30-Day Money-Back Guarantee"
           }
         },
         "subscription_benefit_K9ViRm": {
           "type": "subscription_benefit",
           "settings": {
             "icon_type": "checkmark",
-            "benefit_text": "Free US shipping"
+            "benefit_text": "FREE & FAST shipping"
+          }
+        },
+        "subscription_benefit_VhX7iW": {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "Pause or cancel any time"
           }
         },
         "trust_badge_6RkdBR": {
@@ -589,9 +597,10 @@
         "feature_item_wRQD6i",
         "feature_item_mkmkcY",
         "feature_item_rJBaVy",
-        "subscription_benefit_VhX7iW",
         "subscription_benefit_BxqJNr",
+        "subscription_benefit_fdPFrj",
         "subscription_benefit_K9ViRm",
+        "subscription_benefit_VhX7iW",
         "trust_badge_6RkdBR",
         "trust_badge_RY6LQE",
         "trust_badge_RDLj3F",
