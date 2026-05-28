@@ -344,18 +344,55 @@
         "review_border": "#c1d5e5",
         "avatar_bg": "#fff8f6",
         "avatar_text_color": "#ffbea9",
-        "star_color": "#fbaa19"
+        "star_color": "#fbaa19",
+        "slider_duration_seconds": 40
       }
     },
     "footer": {
       "type": "maison-listicle-footer",
       "blocks": {
-        "link_privacy": { "type": "link", "settings": { "label": "Privacy Policy" } },
-        "link_shipping": { "type": "link", "settings": { "label": "Shipping Policy" } },
-        "link_refund": { "type": "link", "settings": { "label": "Refund Policy" } },
-        "link_contact": { "type": "link", "settings": { "label": "Contact Information" } },
-        "link_terms": { "type": "link", "settings": { "label": "Terms Of Service" } },
-        "link_cookie": { "type": "link", "settings": { "label": "Cookie preferences" } }
+        "link_privacy": {
+          "type": "link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": "shopify://policies/privacy-policy"
+          }
+        },
+        "link_shipping": {
+          "type": "link",
+          "settings": {
+            "label": "Shipping Policy",
+            "url": "shopify://policies/shipping-policy"
+          }
+        },
+        "link_refund": {
+          "type": "link",
+          "settings": {
+            "label": "Refund Policy",
+            "url": "shopify://policies/refund-policy"
+          }
+        },
+        "link_contact": {
+          "type": "link",
+          "settings": {
+            "label": "Contact Information",
+            "url": "shopify://policies/contact-information"
+          }
+        },
+        "link_terms": {
+          "type": "link",
+          "settings": {
+            "label": "Terms Of Service",
+            "url": "shopify://policies/terms-of-service"
+          }
+        },
+        "link_cookie": {
+          "type": "link",
+          "settings": {
+            "label": "Cookie preferences",
+            "url": ""
+          }
+        }
       },
       "block_order": [
         "link_privacy",
@@ -366,8 +403,8 @@
         "link_cookie"
       ],
       "settings": {
-        "bg_color": "#3B2B2F",
-        "text_color": "#F7F3E6",
+        "bg_color": "#3b2b2f",
+        "text_color": "#f7f3e6",
         "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
       }
     },
