@@ -1,0 +1,325 @@
+{%- liquid
+  assign s = section.settings
+  assign stat_blocks = section.blocks | where: 'type', 'stat'
+-%}
+
+<section
+  id="shopify-section-{{ section.id }}-hero-glp1"
+  class="mlh2"
+  style="--mlh2-bg-start: {{ s.bg_start }}; --mlh2-bg-end: {{ s.bg_end }}; --mlh2-text: {{ s.text_color }}; --mlh2-muted: {{ s.muted_color }}; --mlh2-divider: {{ s.divider_color }};"
+>
+  <div class="mlh2__container">
+    <div class="mlh2__head">
+      <div class="mlh2__title-group">
+        {%- if s.title != blank -%}
+          <h1 class="mlh2__title">{{ s.title }}</h1>
+        {%- endif -%}
+        {%- if s.subtitle != blank -%}
+          <p class="mlh2__subtitle">{{ s.subtitle }}</p>
+        {%- endif -%}
+      </div>
+      {%- if s.updated_label != blank or s.updated_date != blank -%}
+        <p class="mlh2__updated">
+          {%- if s.updated_label != blank -%}<strong>{{ s.updated_label }}</strong>{%- endif -%}
+          {%- if s.updated_date != blank -%} {{ s.updated_date }}{%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- if stat_blocks.size > 0 -%}
+      <div class="mlh2__stats">
+        {%- for block in stat_blocks -%}
+          <div class="mlh2__stat" {{ block.shopify_attributes }}>
+            <span class="mlh2__stat-value">{{ block.settings.value }}</span>
+            <span class="mlh2__stat-label">{{ block.settings.label }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if s.cta_text != blank -%}
+      {%- assign cta_href = s.cta_url | default: '#' -%}
+      <a class="mlh2__cta" href="{{ cta_href }}">{{ s.cta_text }} →</a>
+    {%- endif -%}
+
+    {%- if s.mobile_image != blank -%}
+      <div class="mlh2__mobile-image-wrap">
+        {{ s.mobile_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'mlh2__mobile-image', sizes: '(max-width: 768px) 100vw, 335px' }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .mlh2 {
+    background: linear-gradient(to bottom, var(--mlh2-bg-start), var(--mlh2-bg-end));
+    width: 100%;
+    padding: 48px 0 32px;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlh2-text);
+    box-sizing: border-box;
+  }
+  .mlh2__container {
+    width: 100%;
+    max-width: 1040px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .mlh2__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .mlh2__title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .mlh2__title {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--mlh2-text);
+    width: 100%;
+  }
+  .mlh2__title > p {
+    margin: 0;
+  }
+  .mlh2__subtitle {
+    margin: 0;
+    width: 600px;
+    max-width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mlh2-muted);
+  }
+  .mlh2__updated {
+    margin: 0;
+    width: 600px;
+    max-width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mlh2-muted);
+  }
+  .mlh2__updated strong {
+    font-weight: 700;
+  }
+
+  /* Stats */
+  .mlh2__stats {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 768px;
+  }
+  .mlh2__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .mlh2__stat + .mlh2__stat {
+    position: relative;
+  }
+  .mlh2__stat + .mlh2__stat::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 64px;
+    background: var(--mlh2-divider);
+  }
+  .mlh2__stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--mlh2-text);
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+  .mlh2__stat-label {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mlh2-muted);
+    white-space: nowrap;
+  }
+
+  .mlh2__cta {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--mlh2-text);
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-style: solid;
+  }
+
+  .mlh2__mobile-image-wrap {
+    display: none;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mlh2 {
+      padding: 32px 20px 12px;
+    }
+    .mlh2__container {
+      max-width: 100%;
+      align-items: flex-start;
+      text-align: left;
+      gap: 32px;
+    }
+    .mlh2__head {
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .mlh2__title-group {
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .mlh2__title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .mlh2__subtitle {
+      width: 100%;
+      font-size: 16px;
+    }
+    /* Updated meta + stats are desktop-only in the design */
+    .mlh2__updated,
+    .mlh2__stats {
+      display: none;
+    }
+    .mlh2__cta {
+      font-size: 16px;
+    }
+    .mlh2__mobile-image-wrap {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 335 / 311;
+    }
+    .mlh2__mobile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Hero (GLP-1)",
+  "tag": "section",
+  "class": "section-maison-listicle-hero-glp1",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color", "id": "bg_start", "label": "Gradient (top)", "default": "#F8FBFC" },
+    { "type": "color", "id": "bg_end",   "label": "Gradient (bottom)", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#3B2B2F" },
+    { "type": "color", "id": "muted_color", "label": "Muted text", "default": "#3B2B2FBF" },
+    { "type": "color", "id": "divider_color", "label": "Stats divider", "default": "#3B2B2F33" },
+
+    { "type": "header", "content": "Title" },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>7 Reasons GLP-1 Users Are Switching to Franky (and it's not just the protein)</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "If you're on a GLP-1, your old breakfast routine probably isn't working anymore. Here's what's quietly changing — and why."
+    },
+
+    { "type": "header", "content": "Updated meta (desktop only)" },
+    {
+      "type": "text",
+      "id": "updated_label",
+      "label": "Updated label",
+      "default": "Updated:"
+    },
+    {
+      "type": "text",
+      "id": "updated_date",
+      "label": "Updated date",
+      "default": "May 24, 2026"
+    },
+
+    { "type": "header", "content": "CTA" },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "info": "Trailing arrow (→) is added automatically.",
+      "default": "See the 7 Reasons"
+    },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
+
+    { "type": "header", "content": "Mobile image (mobile only)" },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile hero image",
+      "info": "Shown only on screens ≤768px below the CTA link."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat (desktop only)",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "20g"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Protein"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Hero (GLP-1)",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "20g", "label": "Protein" } },
+        { "type": "stat", "settings": { "value": "0g", "label": "Sugar" } },
+        { "type": "stat", "settings": { "value": "Real Coffee", "label": "Not Extract" } },
+        { "type": "stat", "settings": { "value": "Natural", "label": "Ingredients" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

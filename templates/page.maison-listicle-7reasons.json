@@ -18,6 +18,34 @@
         "text_color": "#3B2B2F"
       }
     },
+    "hero": {
+      "type": "maison-listicle-hero-glp1",
+      "blocks": {
+        "stat_protein": { "type": "stat", "settings": { "value": "20g", "label": "Protein" } },
+        "stat_sugar":   { "type": "stat", "settings": { "value": "0g", "label": "Sugar" } },
+        "stat_coffee":  { "type": "stat", "settings": { "value": "Real Coffee", "label": "Not Extract" } },
+        "stat_natural": { "type": "stat", "settings": { "value": "Natural", "label": "Ingredients" } }
+      },
+      "block_order": [
+        "stat_protein",
+        "stat_sugar",
+        "stat_coffee",
+        "stat_natural"
+      ],
+      "settings": {
+        "bg_start": "#F8FBFC",
+        "bg_end": "#FFFFFF",
+        "text_color": "#3B2B2F",
+        "muted_color": "#3B2B2FBF",
+        "divider_color": "#3B2B2F33",
+        "title": "<p>7 Reasons GLP-1 Users Are Switching to Franky (and it's not just the protein)</p>",
+        "subtitle": "If you're on a GLP-1, your old breakfast routine probably isn't working anymore. Here's what's quietly changing — and why.",
+        "updated_label": "Updated:",
+        "updated_date": "May 24, 2026",
+        "cta_text": "See the 7 Reasons",
+        "cta_url": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -30,6 +58,7 @@
   },
   "order": [
     "announcement_bar",
+    "hero",
     "main"
   ]
 }
