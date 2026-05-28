@@ -1,0 +1,298 @@
+{%- liquid
+  assign bg_color = section.settings.bg_color
+  assign text_color = section.settings.text_color
+  assign countdown_enabled = section.settings.countdown_enabled
+  assign countdown_end = section.settings.countdown_end_iso
+  assign expired_behavior = section.settings.countdown_expired_behavior
+-%}
+
+<section
+  id="shopify-section-{{ section.id }}-bar"
+  class="maison-listicle-announcement-bar"
+  data-end="{{ countdown_end | escape }}"
+  data-expired-behavior="{{ expired_behavior }}"
+  style="background: {{ bg_color }}; color: {{ text_color }};"
+>
+  <div class="maison-listicle-announcement-bar__inner">
+    <div class="maison-listicle-announcement-bar__text">
+      {%- if section.settings.headline_text != blank -%}
+        <p class="maison-listicle-announcement-bar__headline">{{ section.settings.headline_text }}</p>
+      {%- endif -%}
+      {%- if section.settings.subheadline_text != blank -%}
+        <p class="maison-listicle-announcement-bar__subheadline">{{ section.settings.subheadline_text }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if countdown_enabled and countdown_end != blank -%}
+      <div class="maison-listicle-announcement-bar__countdown" data-countdown>
+        <div class="maison-listicle-announcement-bar__cell">
+          <span class="maison-listicle-announcement-bar__value" data-unit="days">--</span>
+          <span class="maison-listicle-announcement-bar__label">{{ section.settings.label_days }}</span>
+        </div>
+        <span class="maison-listicle-announcement-bar__sep" aria-hidden="true"><span></span><span></span></span>
+        <div class="maison-listicle-announcement-bar__cell">
+          <span class="maison-listicle-announcement-bar__value" data-unit="hrs">--</span>
+          <span class="maison-listicle-announcement-bar__label">{{ section.settings.label_hrs }}</span>
+        </div>
+        <span class="maison-listicle-announcement-bar__sep" aria-hidden="true"><span></span><span></span></span>
+        <div class="maison-listicle-announcement-bar__cell">
+          <span class="maison-listicle-announcement-bar__value" data-unit="min">--</span>
+          <span class="maison-listicle-announcement-bar__label">{{ section.settings.label_min }}</span>
+        </div>
+        <span class="maison-listicle-announcement-bar__sep" aria-hidden="true"><span></span><span></span></span>
+        <div class="maison-listicle-announcement-bar__cell">
+          <span class="maison-listicle-announcement-bar__value" data-unit="sec">--</span>
+          <span class="maison-listicle-announcement-bar__label">{{ section.settings.label_sec }}</span>
+        </div>
+      </div>
+      <div class="maison-listicle-announcement-bar__expired" data-expired hidden>
+        {{ section.settings.countdown_expired_message }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .maison-listicle-announcement-bar { width: 100%; }
+  .maison-listicle-announcement-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 8px 80px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .maison-listicle-announcement-bar__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    text-align: center;
+  }
+  .maison-listicle-announcement-bar__headline {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .maison-listicle-announcement-bar__subheadline {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(59, 43, 47, 0.75);
+  }
+  .maison-listicle-announcement-bar__countdown {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .maison-listicle-announcement-bar__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    width: 42px;
+    height: 42px;
+    background: rgba(59, 43, 47, 0.08);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .maison-listicle-announcement-bar__value {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .maison-listicle-announcement-bar__label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(59, 43, 47, 0.75);
+  }
+  .maison-listicle-announcement-bar__sep {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 2px;
+  }
+  .maison-listicle-announcement-bar__sep > span {
+    width: 2px;
+    height: 2px;
+    background: #3B2B2F;
+    opacity: 0.2;
+    border-radius: 50%;
+  }
+  .maison-listicle-announcement-bar__expired {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .maison-listicle-announcement-bar__inner {
+      padding: 8px 20px;
+    }
+    .maison-listicle-announcement-bar__text {
+      flex: 1 0 0;
+      min-width: 0;
+      text-align: left;
+    }
+    .maison-listicle-announcement-bar__headline {
+      font-size: 12px;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .maison-listicle-announcement-bar__subheadline {
+      display: none;
+    }
+    .maison-listicle-announcement-bar__value {
+      font-size: 14px;
+    }
+    .maison-listicle-announcement-bar__sep {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var bar = document.getElementById('shopify-section-{{ section.id }}-bar');
+    if (!bar) return;
+    var endStr = bar.getAttribute('data-end');
+    if (!endStr) return;
+    var endTime = new Date(endStr).getTime();
+    if (isNaN(endTime)) return;
+
+    var expiredBehavior = bar.getAttribute('data-expired-behavior') || 'hide';
+    var countdownEl = bar.querySelector('[data-countdown]');
+    var expiredEl = bar.querySelector('[data-expired]');
+    var values = {
+      days: bar.querySelector('[data-unit="days"]'),
+      hrs:  bar.querySelector('[data-unit="hrs"]'),
+      min:  bar.querySelector('[data-unit="min"]'),
+      sec:  bar.querySelector('[data-unit="sec"]')
+    };
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function update() {
+      var diff = endTime - Date.now();
+      if (diff <= 0) {
+        if (countdownEl) countdownEl.style.display = 'none';
+        if (expiredBehavior === 'message' && expiredEl) expiredEl.hidden = false;
+        clearInterval(timer);
+        return;
+      }
+      var days = Math.floor(diff / 86400000);
+      var hrs  = Math.floor(diff / 3600000) % 24;
+      var min  = Math.floor(diff / 60000) % 60;
+      var sec  = Math.floor(diff / 1000) % 60;
+      if (values.days) values.days.textContent = pad(days);
+      if (values.hrs)  values.hrs.textContent  = pad(hrs);
+      if (values.min)  values.min.textContent  = pad(min);
+      if (values.sec)  values.sec.textContent  = pad(sec);
+    }
+
+    update();
+    var timer = setInterval(update, 1000);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Listicle Announcement Bar",
+  "tag": "section",
+  "class": "section-maison-listicle-announcement-bar",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    {
+      "type": "text",
+      "id": "headline_text",
+      "label": "Headline",
+      "default": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING"
+    },
+    {
+      "type": "text",
+      "id": "subheadline_text",
+      "label": "Subheadline (desktop only)",
+      "default": "Limited stock · US warehouse ships in 2–3 days"
+    },
+    { "type": "header", "content": "Countdown" },
+    {
+      "type": "checkbox",
+      "id": "countdown_enabled",
+      "label": "Show countdown",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_end_iso",
+      "label": "Countdown end date/time",
+      "info": "ISO 8601 format in viewer's local time. Example: 2026-08-31T23:59:00",
+      "default": "2026-08-31T23:59:00"
+    },
+    {
+      "type": "select",
+      "id": "countdown_expired_behavior",
+      "label": "When expired",
+      "options": [
+        { "value": "hide", "label": "Hide countdown" },
+        { "value": "message", "label": "Show message" }
+      ],
+      "default": "hide"
+    },
+    {
+      "type": "text",
+      "id": "countdown_expired_message",
+      "label": "Expired message",
+      "default": "Offer ended"
+    },
+    {
+      "type": "text",
+      "id": "label_days",
+      "label": "Days label",
+      "default": "DAYS"
+    },
+    {
+      "type": "text",
+      "id": "label_hrs",
+      "label": "Hours label",
+      "default": "HRS"
+    },
+    {
+      "type": "text",
+      "id": "label_min",
+      "label": "Minutes label",
+      "default": "MIN"
+    },
+    {
+      "type": "text",
+      "id": "label_sec",
+      "label": "Seconds label",
+      "default": "SEC"
+    },
+    { "type": "header", "content": "Style" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#C1D5E5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#3B2B2F"
+    }
+  ],
+  "presets": [
+    { "name": "Listicle Announcement Bar" }
+  ]
+}
+{% endschema %}
