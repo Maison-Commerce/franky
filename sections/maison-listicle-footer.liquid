@@ -1,0 +1,182 @@
+{%- liquid
+  assign s = section.settings
+  assign link_blocks = section.blocks | where: 'type', 'link'
+-%}
+
+<footer
+  id="shopify-section-{{ section.id }}-footer"
+  class="mlfooter"
+  style="--mlf-bg: {{ s.bg_color }}; --mlf-text: {{ s.text_color }};"
+>
+  <div class="mlfooter__inner">
+    {%- if link_blocks.size > 0 -%}
+      <nav class="mlfooter__links" aria-label="Footer links">
+        {%- for block in link_blocks -%}
+          <a
+            class="mlfooter__link"
+            href="{{ block.settings.url | default: '#' }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.label }}
+          </a>
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+
+    <hr class="mlfooter__divider" aria-hidden="true">
+
+    {%- if s.copyright_text != blank -%}
+      <p class="mlfooter__copyright">{{ s.copyright_text }}</p>
+    {%- endif -%}
+  </div>
+</footer>
+
+<style>
+  .mlfooter {
+    background: var(--mlf-bg);
+    color: var(--mlf-text);
+    width: 100%;
+    padding: 32px 80px;
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+  }
+  .mlfooter__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .mlfooter__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+  .mlfooter__link {
+    position: relative;
+    color: var(--mlf-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+  }
+  .mlfooter__link:hover,
+  .mlfooter__link:focus-visible {
+    opacity: 0.7;
+  }
+  .mlfooter__link:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background: currentColor;
+    opacity: 0.2;
+  }
+
+  .mlfooter__divider {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid currentColor;
+    opacity: 0.1;
+    width: 100%;
+  }
+
+  .mlfooter__copyright {
+    margin: 0;
+    text-align: center;
+    color: var(--mlf-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .mlfooter {
+      padding: 32px 20px;
+    }
+    .mlfooter__inner {
+      gap: 16px;
+    }
+    .mlfooter__links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 8px;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+    .mlfooter__link {
+      padding: 8px 0;
+      font-size: 12px;
+      white-space: normal;
+    }
+    .mlfooter__link::after {
+      display: none;
+    }
+    .mlfooter__copyright {
+      font-size: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Footer",
+  "tag": "section",
+  "class": "section-maison-listicle-footer",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#3B2B2F" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#F7F3E6" },
+
+    { "type": "header", "content": "Copyright" },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Privacy Policy"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Footer",
+      "blocks": [
+        { "type": "link", "settings": { "label": "Privacy Policy" } },
+        { "type": "link", "settings": { "label": "Shipping Policy" } },
+        { "type": "link", "settings": { "label": "Refund Policy" } },
+        { "type": "link", "settings": { "label": "Contact Information" } },
+        { "type": "link", "settings": { "label": "Terms Of Service" } },
+        { "type": "link", "settings": { "label": "Cookie preferences" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
