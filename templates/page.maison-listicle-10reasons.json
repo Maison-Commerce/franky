@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "announcement_bar": {
+      "type": "maison-listicle-announcement-bar",
+      "settings": {
+        "headline_text": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING",
+        "subheadline_text": "Limited stock · US warehouse ships in 2–3 days",
+        "countdown_enabled": true,
+        "countdown_end_iso": "2026-08-31T23:59:00",
+        "countdown_expired_behavior": "hide",
+        "countdown_expired_message": "Offer ended",
+        "label_days": "DAYS",
+        "label_hrs": "HRS",
+        "label_min": "MIN",
+        "label_sec": "SEC",
+        "bg_color": "#C1D5E5",
+        "text_color": "#3B2B2F"
+      }
+    },
+    "hero": {
+      "type": "maison-listicle-hero",
+      "blocks": {
+        "row_calories": {
+          "type": "comparison_row",
+          "settings": {
+            "label": "📋 Calories",
+            "franky_value": "120 cal",
+            "franky_sub": "in 2 scoops",
+            "competitor_1": "150–400 cal",
+            "competitor_2": "160–200 cal"
+          }
+        },
+        "row_protein": {
+          "type": "comparison_row",
+          "settings": {
+            "label": "💪 Protein",
+            "franky_value": "20g",
+            "franky_sub": "in 2 scoops",
+            "competitor_1": "2–12g",
+            "competitor_2": "20g"
+          }
+        },
+        "row_sugar": {
+          "type": "comparison_row",
+          "settings": {
+            "label": "🥄 Sugar",
+            "franky_value": "<1g",
+            "franky_sub": "",
+            "competitor_1": "20–50g",
+            "competitor_2": "5g or artificial"
+          }
+        },
+        "row_cost": {
+          "type": "comparison_row",
+          "settings": {
+            "label": "💰 Cost / serving",
+            "franky_value": "~$1.99",
+            "franky_sub": "",
+            "competitor_1": "$5–$7",
+            "competitor_2": "$3.50–$4.50"
+          }
+        }
+      },
+      "block_order": [
+        "row_calories",
+        "row_protein",
+        "row_sugar",
+        "row_cost"
+      ],
+      "settings": {
+        "bg_start": "#F8FBFC",
+        "bg_end": "#FFFFFF",
+        "headline_before": "10 Reasons Why This High-Protein Iced Coffee is the",
+        "headline_highlight": "#1 Trending Drink",
+        "headline_after": "for Summer 2026",
+        "highlight_color": "#FFBEA9",
+        "author_prefix": "By",
+        "author_name": "The Wellness Desk",
+        "author_meta": "Last Updated May 20, 2026 · 6 min read",
+        "callout_bold": "Read this BEFORE your next coffee run.",
+        "callout_text": "A new high-protein iced coffee is quietly taking over wellness TikTok this summer. Here is why.",
+        "callout_bg": "#FFF8F6",
+        "callout_border": "#FFBEA9",
+        "franky_logo_alt": "franky",
+        "column_2_header": "Mainstream Coffees",
+        "column_3_header": "Protein Drinks",
+        "franky_col_bg": "#EEF4F8",
+        "franky_col_border": "#C1D5E5",
+        "competitor_header_bg": "#FFF5F5",
+        "competitor_header_text": "#B32134",
+        "table_footnote": "Mainstream coffees based on a 16 oz café drink; protein drinks based on an 11–12 oz ready-to-drink shake.",
+        "tldr_bold": "TLDR:",
+        "tldr_text": "Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇"
+      }
+    }
+  },
+  "order": [
+    "announcement_bar",
+    "hero",
+    "main"
+  ]
+}
