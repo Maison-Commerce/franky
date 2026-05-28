@@ -679,17 +679,17 @@
         </div>
       </div>
     </div>
-  </div>
 
-  {% if section.settings.show_background_logo and section.settings.logo_image_bg != blank %}
-    <div class="maison_commerce_footer__background-logo">
-      {{
-        section.settings.logo_image_bg
-        | image_url: width: 1440
-        | image_tag: loading: 'lazy', alt: 'Background Logo', class: 'maison_commerce_footer__background-logo-img'
-      }}
-    </div>
-  {% endif %}
+    {% if section.settings.show_background_logo and section.settings.logo_image_bg != blank %}
+      <div class="maison_commerce_footer__background-logo">
+        {{
+          section.settings.logo_image_bg
+          | image_url: width: 1440
+          | image_tag: loading: 'lazy', alt: 'Background Logo', class: 'maison_commerce_footer__background-logo-img'
+        }}
+      </div>
+    {% endif %}
+  </div>
   {% if section.settings.logo_image_shape != blank %}
     {{
         section.settings.logo_image_shape
