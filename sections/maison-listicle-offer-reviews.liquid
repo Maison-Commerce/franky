@@ -580,10 +580,13 @@
         clearInterval(timer);
         return;
       }
-      var hrs = Math.floor(diff / 3600000);
-      var min = Math.floor(diff / 60000) % 60;
-      var sec = Math.floor(diff / 1000) % 60;
-      timerEl.textContent = pad(hrs) + ':' + pad(min) + ':' + pad(sec);
+      var days = Math.floor(diff / 86400000);
+      var hrs  = Math.floor(diff / 3600000) % 24;
+      var min  = Math.floor(diff / 60000) % 60;
+      var sec  = Math.floor(diff / 1000) % 60;
+      var formatted = pad(hrs) + ':' + pad(min) + ':' + pad(sec);
+      if (days > 0) formatted = pad(days) + ':' + formatted;
+      timerEl.textContent = formatted;
     }
 
     update();
