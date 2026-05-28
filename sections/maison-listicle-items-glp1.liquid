@@ -1,0 +1,365 @@
+{%- liquid
+  assign s = section.settings
+-%}
+
+<section
+  id="shopify-section-{{ section.id }}-items-glp1"
+  class="mli2"
+  style="--mli2-bg: {{ s.bg_color }}; --mli2-accent: {{ s.accent_color }}; --mli2-body: {{ s.body_color }}; --mli2-pill-bg: {{ s.pill_bg }}; --mli2-pill-border: {{ s.pill_border }}; --mli2-pill-text: {{ s.pill_text_color }}; --mli2-pill-accent: {{ s.pill_accent_color }};"
+>
+  <div class="mli2__container">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'item' -%}
+        {%- liquid
+          if block.settings.number_override != blank
+            assign item_number = block.settings.number_override
+          else
+            assign item_number = forloop.index | prepend: '0' | slice: -2, 2
+          endif
+        -%}
+        <article class="mli2__item" {{ block.shopify_attributes }}>
+          <div class="mli2__content">
+            <header class="mli2__heading">
+              <span class="mli2__number">{{ item_number }}</span>
+              {%- if block.settings.title != blank -%}
+                <h3 class="mli2__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </header>
+
+            {%- if block.settings.body != blank -%}
+              <div class="mli2__body">{{ block.settings.body }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.pill != blank -%}
+              <div class="mli2__pill-wrap">
+                <div class="mli2__pill">{{ block.settings.pill }}</div>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="mli2__media">
+            <div class="mli2__image-wrap">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'mli2__image', sizes: '(max-width: 768px) 100vw, 560px' }}
+              {%- else -%}
+                <div class="mli2__image mli2__image--placeholder" aria-hidden="true"></div>
+              {%- endif -%}
+            </div>
+          </div>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+  .mli2 {
+    background: var(--mli2-bg);
+    width: 100%;
+    padding: 48px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: #3B2B2F;
+  }
+  .mli2__container {
+    width: 100%;
+    max-width: 1040px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .mli2__item {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+  }
+
+  .mli2__content {
+    flex: 0 0 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .mli2__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--mli2-accent);
+    width: 100%;
+  }
+  .mli2__number {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--mli2-accent);
+  }
+  .mli2__title {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--mli2-accent);
+    text-transform: capitalize;
+  }
+  .mli2__body {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mli2-body);
+  }
+  .mli2__body > p {
+    margin: 0 0 1em 0;
+  }
+  .mli2__body > p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Pill badge */
+  .mli2__pill-wrap {
+    display: inline-flex;
+  }
+  .mli2__pill {
+    display: inline-flex;
+    align-items: center;
+    background: var(--mli2-pill-bg);
+    border: 1px solid var(--mli2-pill-border);
+    border-radius: 999px;
+    padding: 5px 17px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--mli2-pill-text);
+  }
+  .mli2__pill > p {
+    margin: 0;
+  }
+  .mli2__pill strong {
+    color: var(--mli2-pill-accent);
+    font-weight: 700;
+  }
+  .mli2__pill em {
+    color: var(--mli2-pill-accent);
+    font-style: normal;
+  }
+
+  /* Media (image right on desktop) */
+  .mli2__media {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .mli2__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .mli2__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mli2__image--placeholder {
+    background: #D9D9D9;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mli2 {
+      padding: 48px 20px;
+    }
+    .mli2__container {
+      max-width: 100%;
+      gap: 40px;
+    }
+    .mli2__item {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+    .mli2__media {
+      width: 100%;
+      flex: none;
+      order: 2;
+    }
+    .mli2__image-wrap {
+      height: 272px;
+    }
+    /* Flatten .mli2__content so its children sit alongside .mli2__media
+       under .mli2__item — heading on top, image, body, pill. */
+    .mli2__content {
+      display: contents;
+    }
+    .mli2__heading {
+      order: 1;
+      gap: 4px;
+    }
+    .mli2__number {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .mli2__title {
+      font-size: 24px;
+      line-height: 1.4;
+    }
+    .mli2__body {
+      order: 3;
+      font-size: 16px;
+    }
+    .mli2__pill-wrap {
+      order: 4;
+    }
+    .mli2__pill {
+      font-size: 12px;
+      padding: 5px 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Items (GLP-1)",
+  "tag": "section",
+  "class": "section-maison-listicle-items-glp1",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color", "id": "bg_color", "label": "Section background", "default": "#FFFFFF" },
+
+    { "type": "header", "content": "Item style" },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Number + title color",
+      "default": "#8AB4CC"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text color",
+      "default": "#3B2B2FBF"
+    },
+
+    { "type": "header", "content": "Pill badge" },
+    { "type": "color", "id": "pill_bg", "label": "Background", "default": "#FFF8F6" },
+    { "type": "color", "id": "pill_border", "label": "Border", "default": "#FFDBCF" },
+    { "type": "color", "id": "pill_text_color", "label": "Body text", "default": "#44332D" },
+    { "type": "color", "id": "pill_accent_color", "label": "Bold / em text", "default": "#FFBEA9" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "limit": 20,
+      "settings": [
+        { "type": "header", "content": "Image" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        { "type": "header", "content": "Text" },
+        {
+          "type": "text",
+          "id": "number_override",
+          "label": "Number override",
+          "info": "Leave blank to auto-number (01, 02, …)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Item title"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Body copy.</p>"
+        },
+        { "type": "header", "content": "Pill badge" },
+        {
+          "type": "richtext",
+          "id": "pill",
+          "label": "Pill text",
+          "info": "Use bold (strong) or italic (em) for the highlighted opening segment.",
+          "default": "<p><strong>✦ 20g OF COMPLETE</strong> WHEY PROTEIN PER SERVING</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Items (GLP-1)",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "title": "Eating less only works if you're still getting enough protein",
+            "body": "<p>GLP-1s kill your appetite. That's the point. But eating less also means less protein — and that's how fatigue, muscle loss, and stalled results creep in after a few months. The fix isn't forcing yourself to eat more. It's making the little you do eat pull serious weight. That's why GLP-1 users are swapping plain coffee for Franky — same morning ritual, 20 grams of real whey protein already built in.</p>",
+            "pill": "<p><strong>✦ 20g OF COMPLETE</strong> WHEY PROTEIN PER SERVING</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "GLP-1s slow everything down. (Including your digestion.)",
+            "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
+            "pill": "<p><strong>✦ PREBIOTICS BUILT IN</strong> - NO EXTRA PRODUCTS</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Your appetite shrank. Your body's needs didn't.",
+            "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
+            "pill": "<p><strong>✦ WORKS WHEN FOOD DOESN'T SOUND GOOD</strong></p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Protect your muscle while the weight comes off",
+            "body": "<p>A GLP-1 can quietly cost you strength, tone, and metabolism — especially once protein intake drops alongside appetite. The goal was never to just weigh less. It was to look and feel better in the process. Twenty grams of protein before lunch, every morning, without cooking or choking down a shake, is one of the simplest ways to protect that.</p>",
+            "pill": "<p><strong>✦ 20g PROTEIN</strong> · &lt;1g SUGAR</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Under-fueled energy hits different when you're on a GLP-1",
+            "body": "<p>Eating less. Somehow even more tired. Sound familiar? Caffeine alone is a short-term patch — that's why the afternoon crash keeps showing up even though \"nothing changed.\" Franky pairs 100mg of natural caffeine with 200mg of L-theanine specifically to smooth the curve. No jitter spike. No 11am dip. Just steady focus through your morning.</p>",
+            "pill": "<p><strong>✦ 100mg CAFFEINE</strong> + 200mg L-THEANINE</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "If it's not easy, it won't stick",
+            "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
+            "pill": "<p><strong>✦ SCOOP. STIR. SIP.</strong></p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Consistency is the whole game — and this makes it cheap enough to keep",
+            "body": "<p>Long-term results come from one simple thing, repeated daily, even on the mornings you don't feel like it. On a GLP-1, that one thing has to do more than it used to. Protein. Prebiotics. Caffeine. Zero prep. One cup. And at under $2 a serving, it's a routine you can actually afford to keep.</p>",
+            "pill": "<p><strong>✦ UNDER $2/SERVING</strong> VS. $5–$7 AT A COFFEE SHOP</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
