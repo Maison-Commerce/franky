@@ -1,0 +1,627 @@
+{%- liquid
+  assign s = section.settings
+  assign highlight_color = s.highlight_color
+  assign bg_start = s.bg_start
+  assign bg_end = s.bg_end
+-%}
+
+<section
+  id="shopify-section-{{ section.id }}-hero"
+  class="maison-listicle-hero"
+  style="--mlh-bg-start: {{ bg_start }}; --mlh-bg-end: {{ bg_end }}; --mlh-highlight: {{ highlight_color }}; --mlh-callout-bg: {{ s.callout_bg }}; --mlh-callout-border: {{ s.callout_border }}; --mlh-franky-col-bg: {{ s.franky_col_bg }}; --mlh-franky-col-border: {{ s.franky_col_border }}; --mlh-competitor-header-bg: {{ s.competitor_header_bg }}; --mlh-competitor-header-text: {{ s.competitor_header_text }};"
+>
+  <div class="mlh__container">
+    {%- if s.headline_before != blank or s.headline_highlight != blank or s.headline_after != blank -%}
+      <h1 class="mlh__title">
+        {%- if s.headline_before != blank -%}<span>{{ s.headline_before }} </span>{%- endif -%}
+        {%- if s.headline_highlight != blank -%}<span class="mlh__title-highlight">{{ s.headline_highlight }}</span>{%- endif -%}
+        {%- if s.headline_after != blank -%}<span> {{ s.headline_after }}</span>{%- endif -%}
+      </h1>
+    {%- endif -%}
+
+    <div class="mlh__author">
+      {%- if s.author_avatar != blank -%}
+        {{ s.author_avatar | image_url: width: 100 | image_tag: loading: 'lazy', alt: s.author_name, class: 'mlh__author-avatar' }}
+      {%- else -%}
+        <div class="mlh__author-avatar mlh__author-avatar--placeholder" aria-hidden="true"></div>
+      {%- endif -%}
+      <div class="mlh__author-text">
+        <p class="mlh__author-byline">
+          {{ s.author_prefix }} <strong>{{ s.author_name }}</strong>
+        </p>
+        <p class="mlh__author-meta">{{ s.author_meta }}</p>
+      </div>
+    </div>
+
+    {%- if s.callout_bold != blank or s.callout_text != blank -%}
+      <div class="mlh__callout">
+        {%- if s.callout_bold != blank -%}<strong>{{ s.callout_bold }}</strong>{%- endif -%}
+        {%- if s.callout_text != blank -%} {{ s.callout_text }}{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- assign comparison_rows = section.blocks | where: 'type', 'comparison_row' -%}
+    {%- if comparison_rows.size > 0 -%}
+      <div class="mlh__table-wrapper">
+        <div class="mlh__table">
+          <div class="mlh__col mlh__col-labels">
+            <div class="mlh__cell mlh__cell-header mlh__cell-label-header" aria-hidden="true"></div>
+            {%- for block in comparison_rows -%}
+              <div class="mlh__cell mlh__cell-label" {{ block.shopify_attributes }}>
+                {{ block.settings.label }}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <div class="mlh__col mlh__col-franky">
+            <div class="mlh__cell mlh__cell-header mlh__cell-franky-header">
+              {%- if s.franky_logo != blank -%}
+                {{ s.franky_logo | image_url: width: 200 | image_tag: loading: 'lazy', alt: s.franky_logo_alt, class: 'mlh__franky-logo' }}
+              {%- else -%}
+                <span class="mlh__franky-logo-text">{{ s.franky_logo_alt | default: 'franky' }}</span>
+              {%- endif -%}
+            </div>
+            {%- for block in comparison_rows -%}
+              <div class="mlh__cell mlh__cell-franky-value">
+                <span class="mlh__franky-value-main">{{ block.settings.franky_value }}</span>
+                {%- if block.settings.franky_sub != blank -%}
+                  <span class="mlh__franky-value-sub">{{ block.settings.franky_sub }}</span>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <div class="mlh__col mlh__col-competitor">
+            <div class="mlh__cell mlh__cell-header mlh__cell-competitor-header">{{ s.column_2_header }}</div>
+            {%- for block in comparison_rows -%}
+              <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_1 }}</div>
+            {%- endfor -%}
+          </div>
+
+          <div class="mlh__col mlh__col-competitor">
+            <div class="mlh__cell mlh__cell-header mlh__cell-competitor-header mlh__cell-competitor-header--last">{{ s.column_3_header }}</div>
+            {%- for block in comparison_rows -%}
+              <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_2 }}</div>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- if s.table_footnote != blank -%}
+          <p class="mlh__table-footnote">{{ s.table_footnote }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if s.tldr_bold != blank or s.tldr_text != blank -%}
+      <p class="mlh__tldr">
+        {%- if s.tldr_bold != blank -%}<strong>{{ s.tldr_bold }}</strong>{%- endif -%}
+        {%- if s.tldr_text != blank -%} {{ s.tldr_text }}{%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .maison-listicle-hero {
+    background: linear-gradient(to bottom, var(--mlh-bg-start), var(--mlh-bg-end));
+    width: 100%;
+    padding: 48px 0 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: #3B2B2F;
+  }
+  .mlh__container {
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Title */
+  .mlh__title {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+    color: #3B2B2F;
+    word-break: break-word;
+  }
+  .mlh__title-highlight {
+    color: var(--mlh-highlight);
+  }
+
+  /* Author */
+  .mlh__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .mlh__author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .mlh__author-avatar--placeholder {
+    background: rgba(59, 43, 47, 0.08);
+  }
+  .mlh__author-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .mlh__author-byline,
+  .mlh__author-meta {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #3B2B2F;
+    font-weight: 400;
+  }
+  .mlh__author-byline strong {
+    font-weight: 700;
+  }
+
+  /* Callout */
+  .mlh__callout {
+    background: var(--mlh-callout-bg);
+    border-left: 3px solid var(--mlh-callout-border);
+    padding: 8px 16px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #44332D;
+    font-weight: 400;
+  }
+  .mlh__callout strong {
+    font-weight: 700;
+  }
+
+  /* Table */
+  .mlh__table-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .mlh__table {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+  .mlh__col {
+    display: flex;
+    flex-direction: column;
+    width: 192px;
+    padding-bottom: 8px;
+  }
+  .mlh__col-franky {
+    background: var(--mlh-franky-col-bg);
+    border: 2px solid var(--mlh-franky-col-border);
+    border-radius: 8px;
+    padding: 12px 12px 8px;
+  }
+  .mlh__cell {
+    height: 56px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    border-bottom: 1px dashed rgba(59, 43, 47, 0.24);
+  }
+  .mlh__cell:last-child {
+    border-bottom: none;
+  }
+  .mlh__col-franky .mlh__cell {
+    border-bottom-color: #CEDEEA;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .mlh__cell-header {
+    height: 56px;
+  }
+  .mlh__cell-label-header {
+    border-bottom: none;
+  }
+  .mlh__cell-label {
+    justify-content: flex-start;
+    font-weight: 600;
+    color: #3B2B2F;
+    white-space: nowrap;
+  }
+  .mlh__cell-franky-header {
+    border-bottom-color: #CEDEEA;
+  }
+  .mlh__franky-logo {
+    max-width: 100%;
+    max-height: 32px;
+    object-fit: contain;
+  }
+  .mlh__franky-logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #3B2B2F;
+  }
+  .mlh__cell-franky-value {
+    flex-direction: column;
+    gap: 0;
+    color: #3B2B2F;
+  }
+  .mlh__franky-value-main {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .mlh__franky-value-sub {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3B2B2F;
+  }
+  .mlh__cell-competitor-header {
+    background: var(--mlh-competitor-header-bg);
+    color: var(--mlh-competitor-header-text);
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom-color: var(--mlh-competitor-header-bg);
+  }
+  .mlh__cell-competitor-header--last {
+    border-top-right-radius: 8px;
+  }
+  .mlh__cell-competitor-value {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3B2B2F;
+  }
+  .mlh__table-footnote {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(59, 43, 47, 0.75);
+    font-weight: 400;
+  }
+
+  /* TLDR */
+  .mlh__tldr {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3B2B2F;
+    font-weight: 400;
+  }
+  .mlh__tldr strong {
+    font-weight: 700;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .maison-listicle-hero {
+      padding: 32px 20px 0;
+    }
+    .mlh__container {
+      max-width: 100%;
+    }
+    .mlh__title {
+      font-size: 24px;
+      line-height: 1.4;
+    }
+    .mlh__author-avatar,
+    .mlh__author-avatar--placeholder {
+      width: 42px;
+      height: 42px;
+    }
+    .mlh__author-byline,
+    .mlh__author-meta {
+      font-size: 12px;
+    }
+    .mlh__callout {
+      font-size: 16px;
+    }
+
+    .mlh__col {
+      width: auto;
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .mlh__col-labels {
+      flex: 0 0 84px;
+    }
+    .mlh__col-franky {
+      flex: 0 0 88px;
+      padding: 12px 4px 8px;
+    }
+    .mlh__cell {
+      height: 44px;
+      padding: 12px 4px;
+      font-size: 14px;
+    }
+    .mlh__cell-header {
+      height: 56px;
+    }
+    .mlh__cell-label {
+      padding: 12px 0 12px 0;
+      padding-right: 8px;
+      font-size: 14px;
+    }
+    .mlh__col-franky .mlh__cell {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .mlh__franky-value-main {
+      font-size: 14px;
+    }
+    .mlh__franky-value-sub {
+      font-size: 10px;
+    }
+    .mlh__franky-logo-text {
+      font-size: 18px;
+    }
+    .mlh__franky-logo {
+      max-height: 24px;
+    }
+    .mlh__cell-competitor-header {
+      font-size: 12px;
+      white-space: normal;
+    }
+    .mlh__cell-competitor-value {
+      font-size: 12px;
+    }
+    .mlh__tldr {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Hero",
+  "tag": "section",
+  "class": "section-maison-listicle-hero",
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color", "id": "bg_start", "label": "Background gradient (top)", "default": "#F8FBFC" },
+    { "type": "color", "id": "bg_end", "label": "Background gradient (bottom)", "default": "#FFFFFF" },
+
+    { "type": "header", "content": "Headline" },
+    {
+      "type": "text",
+      "id": "headline_before",
+      "label": "Headline — before highlight",
+      "default": "10 Reasons Why This High-Protein Iced Coffee is the"
+    },
+    {
+      "type": "text",
+      "id": "headline_highlight",
+      "label": "Headline — highlighted part",
+      "default": "#1 Trending Drink"
+    },
+    {
+      "type": "text",
+      "id": "headline_after",
+      "label": "Headline — after highlight",
+      "default": "for Summer 2026"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#FFBEA9"
+    },
+
+    { "type": "header", "content": "Author" },
+    {
+      "type": "image_picker",
+      "id": "author_avatar",
+      "label": "Author avatar"
+    },
+    {
+      "type": "text",
+      "id": "author_prefix",
+      "label": "Prefix",
+      "default": "By"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author name",
+      "default": "The Wellness Desk"
+    },
+    {
+      "type": "text",
+      "id": "author_meta",
+      "label": "Meta line",
+      "default": "Last Updated May 20, 2026 · 6 min read"
+    },
+
+    { "type": "header", "content": "Callout" },
+    {
+      "type": "text",
+      "id": "callout_bold",
+      "label": "Bold lead-in",
+      "default": "Read this BEFORE your next coffee run."
+    },
+    {
+      "type": "textarea",
+      "id": "callout_text",
+      "label": "Body text",
+      "default": "A new high-protein iced coffee is quietly taking over wellness TikTok this summer. Here is why."
+    },
+    {
+      "type": "color",
+      "id": "callout_bg",
+      "label": "Background",
+      "default": "#FFF8F6"
+    },
+    {
+      "type": "color",
+      "id": "callout_border",
+      "label": "Border (left accent)",
+      "default": "#FFBEA9"
+    },
+
+    { "type": "header", "content": "Comparison Table" },
+    {
+      "type": "image_picker",
+      "id": "franky_logo",
+      "label": "Franky column logo",
+      "info": "Wordmark shown above the Franky column. If empty the alt text is rendered as styled text."
+    },
+    {
+      "type": "text",
+      "id": "franky_logo_alt",
+      "label": "Franky logo alt / text fallback",
+      "default": "franky"
+    },
+    {
+      "type": "text",
+      "id": "column_2_header",
+      "label": "Column 2 header",
+      "default": "Mainstream Coffees"
+    },
+    {
+      "type": "text",
+      "id": "column_3_header",
+      "label": "Column 3 header",
+      "default": "Protein Drinks"
+    },
+    {
+      "type": "color",
+      "id": "franky_col_bg",
+      "label": "Franky column background",
+      "default": "#EEF4F8"
+    },
+    {
+      "type": "color",
+      "id": "franky_col_border",
+      "label": "Franky column border",
+      "default": "#C1D5E5"
+    },
+    {
+      "type": "color",
+      "id": "competitor_header_bg",
+      "label": "Competitor header background",
+      "default": "#FFF5F5"
+    },
+    {
+      "type": "color",
+      "id": "competitor_header_text",
+      "label": "Competitor header text",
+      "default": "#B32134"
+    },
+    {
+      "type": "textarea",
+      "id": "table_footnote",
+      "label": "Footnote",
+      "default": "Mainstream coffees based on a 16 oz café drink; protein drinks based on an 11–12 oz ready-to-drink shake."
+    },
+
+    { "type": "header", "content": "TLDR Line" },
+    {
+      "type": "text",
+      "id": "tldr_bold",
+      "label": "Bold lead-in",
+      "default": "TLDR:"
+    },
+    {
+      "type": "text",
+      "id": "tldr_text",
+      "label": "Body text",
+      "default": "Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label (with emoji)",
+          "default": "📋 Calories"
+        },
+        {
+          "type": "text",
+          "id": "franky_value",
+          "label": "Franky value",
+          "default": "120 cal"
+        },
+        {
+          "type": "text",
+          "id": "franky_sub",
+          "label": "Franky sub-value (optional)",
+          "info": "Small text under the main Franky value (e.g., \"in 2 scoops\"). Leave blank to hide.",
+          "default": "in 2 scoops"
+        },
+        {
+          "type": "text",
+          "id": "competitor_1",
+          "label": "Column 2 value",
+          "default": "150–400 cal"
+        },
+        {
+          "type": "text",
+          "id": "competitor_2",
+          "label": "Column 3 value",
+          "default": "160–200 cal"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Hero",
+      "blocks": [
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label": "📋 Calories",
+            "franky_value": "120 cal",
+            "franky_sub": "in 2 scoops",
+            "competitor_1": "150–400 cal",
+            "competitor_2": "160–200 cal"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label": "💪 Protein",
+            "franky_value": "20g",
+            "franky_sub": "in 2 scoops",
+            "competitor_1": "2–12g",
+            "competitor_2": "20g"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label": "🥄 Sugar",
+            "franky_value": "<1g",
+            "franky_sub": "",
+            "competitor_1": "20–50g",
+            "competitor_2": "5g or artificial"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "label": "💰 Cost / serving",
+            "franky_value": "~$1.99",
+            "franky_sub": "",
+            "competitor_1": "$5–$7",
+            "competitor_2": "$3.50–$4.50"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
