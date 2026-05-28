@@ -1,0 +1,431 @@
+{%- liquid
+  assign s = section.settings
+-%}
+
+<section
+  id="shopify-section-{{ section.id }}-items"
+  class="mli"
+  style="--mli-bg: {{ s.bg_color }}; --mli-accent: {{ s.accent_color }}; --mli-badge-bg: {{ s.badge_bg }}; --mli-badge-text: {{ s.badge_text_color }};"
+>
+  <div class="mli__container">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'item' -%}
+        {%- liquid
+          if block.settings.number_override != blank
+            assign item_number = block.settings.number_override
+          else
+            assign item_number = forloop.index | prepend: '0' | slice: -2, 2
+          endif
+        -%}
+        <article class="mli__item" {{ block.shopify_attributes }}>
+          <div class="mli__media">
+            <div class="mli__image-wrap">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'mli__image', widths: '375,540,768,1024', sizes: '(max-width: 768px) 100vw, 360px' }}
+              {%- else -%}
+                <div class="mli__image mli__image--placeholder" aria-hidden="true"></div>
+              {%- endif -%}
+              {%- if block.settings.badge_text != blank -%}
+                <div class="mli__badge"><span>{{ block.settings.badge_text }}</span></div>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="mli__content">
+            <header class="mli__heading">
+              <span class="mli__number">{{ item_number }}</span>
+              {%- if block.settings.title != blank -%}
+                <h3 class="mli__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </header>
+
+            {%- if block.settings.body != blank -%}
+              <div class="mli__body">{{ block.settings.body }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.cta_text != blank -%}
+              {%- assign cta_href = block.settings.cta_url | default: '#' -%}
+              <a class="mli__cta" href="{{ cta_href }}">
+                {%- if block.settings.cta_prefix != blank -%}
+                  <span class="mli__cta-prefix">{{ block.settings.cta_prefix }}</span>
+                {%- endif -%}
+                <span class="mli__cta-text">{{ block.settings.cta_text }} →</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+  .mli {
+    background: var(--mli-bg);
+    width: 100%;
+    padding: 48px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: #3B2B2F;
+  }
+  .mli__container {
+    width: 100%;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .mli__item {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+  }
+
+  /* Media (image + badge) */
+  .mli__media {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .mli__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .mli__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mli__image--placeholder {
+    background: #D9D9D9;
+  }
+  .mli__badge {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 300px;
+    max-width: 100%;
+    padding: 12px;
+    background: var(--mli-badge-bg);
+    color: var(--mli-badge-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .mli__badge > span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--mli-badge-text);
+    white-space: nowrap;
+  }
+
+  /* Content */
+  .mli__content {
+    flex: 0 0 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  /* Extra gap before CTA to match design's 32px from body (16px gap + 16px margin) */
+  .mli__cta {
+    margin-top: 16px;
+  }
+  .mli__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--mli-accent);
+    width: 100%;
+  }
+  .mli__number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--mli-accent);
+  }
+  .mli__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--mli-accent);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .mli__body {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(59, 43, 47, 0.75);
+  }
+  .mli__body > p {
+    margin: 0 0 1em 0;
+  }
+  .mli__body > p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* CTA */
+  .mli__cta {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #3B2B2F;
+    text-decoration: none;
+  }
+  .mli__cta-prefix {
+    margin-right: 4px;
+    text-decoration: none;
+  }
+  .mli__cta-text {
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-style: solid;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mli {
+      padding: 48px 20px;
+    }
+    .mli__container {
+      max-width: 100%;
+      gap: 40px;
+    }
+    .mli__item {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+    .mli__media {
+      width: 100%;
+      flex: none;
+      order: 2;
+    }
+    .mli__image-wrap {
+      height: 335px;
+    }
+    .mli__badge {
+      width: 335px;
+    }
+    /* Flatten .mli__content so its children (heading, body, cta) interleave with .mli__media
+       directly under .mli__item — letting us place the image between heading and body. */
+    .mli__content {
+      display: contents;
+    }
+    .mli__heading {
+      order: 1;
+    }
+    .mli__body {
+      order: 3;
+    }
+    .mli__cta {
+      order: 4;
+      margin-top: 4px; /* 20px parent gap + 4px = 24px total before CTA */
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Items",
+  "tag": "section",
+  "class": "section-maison-listicle-items",
+  "max_blocks": 20,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    { "type": "header", "content": "Item style" },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Number + title color",
+      "default": "#8AB4CC"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge background",
+      "default": "#C1D5E5"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#34393D"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "limit": 20,
+      "settings": [
+        { "type": "header", "content": "Image" },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "info": "Pill at the bottom of the image. Include an emoji for the icon (e.g. ☕ Coffee. Reinvented.)",
+          "default": "☕ Coffee. Reinvented."
+        },
+        { "type": "header", "content": "Text" },
+        {
+          "type": "text",
+          "id": "number_override",
+          "label": "Number override",
+          "info": "Leave blank to auto-number (01, 02, …)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Item title"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Describe the benefit in 2–3 short sentences.</p>"
+        },
+        { "type": "header", "content": "CTA (optional)" },
+        {
+          "type": "text",
+          "id": "cta_prefix",
+          "label": "CTA prefix (emoji)",
+          "default": "👉"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA text",
+          "info": "Leave blank to hide the CTA. The trailing arrow (→) is added automatically."
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Items",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "☕ Coffee. Reinvented.",
+            "title": "NEW innovative guilt-free formula designed to fuel your body",
+            "body": "<p>Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "🔒 Craving Control",
+            "title": "Beats the sugar cravings to keep you feeling satisfied",
+            "body": "<p>The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "🌿 Better Digestion Support",
+            "title": "It's your gut's new best friend thanks to prebiotics inside",
+            "body": "<p>Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.</p>",
+            "cta_text": "Better Digestion Support Starts Here"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "🚫 No Chalky Shakes",
+            "title": "It actually tastes like your favorite coffee shop drink",
+            "body": "<p>While competitors flavor their protein to taste vaguely \"coffee-ish,\" Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.</p>",
+            "cta_text": "Enjoy Real Coffee Taste, Every Time"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "💰 Save Big Yearly",
+            "title": "It easily replaces your $2,400-a-year coffee habit",
+            "body": "<p>The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.</p>",
+            "cta_text": "Start Saving With Every Cup"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "🎯 Effortless Perfection",
+            "title": "It makes the perfect iced coffee in 60 seconds",
+            "body": "<p>Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.</p>",
+            "cta_text": "Skip The Line, Brew At Home"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "⚡ No Crash, Just Clarity",
+            "title": "You avoid the mid-morning crash",
+            "body": "<p>100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.</p>",
+            "cta_text": "Stay Clear, Stay Focused"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "💪 Extra Protein, Zero Effort",
+            "title": "It helps you hit your daily protein target effortlessly",
+            "body": "<p>20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.</p>",
+            "cta_text": "Fuel Your Day With Every Sip"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "👍 Risk-Free Choice",
+            "title": "Backed by a 30-Day Money-Back Guarantee",
+            "body": "<p>Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.</p>",
+            "cta_text": "Start Your Risk-Free Journey"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "badge_text": "🌏 Join The Switch",
+            "title": "Join thousands of people who already swapped their café latte",
+            "body": "<p>4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.</p>",
+            "cta_text": "Step Into The Coffee Revolution"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -102,6 +102,117 @@
         "tldr": "<p><strong>TLDR:</strong> Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇</p>"
       }
     },
+    "items": {
+      "type": "maison-listicle-items",
+      "blocks": {
+        "item_01": {
+          "type": "item",
+          "settings": {
+            "badge_text": "☕ Coffee. Reinvented.",
+            "title": "NEW innovative guilt-free formula designed to fuel your body",
+            "body": "<p>Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.</p>"
+          }
+        },
+        "item_02": {
+          "type": "item",
+          "settings": {
+            "badge_text": "🔒 Craving Control",
+            "title": "Beats the sugar cravings to keep you feeling satisfied",
+            "body": "<p>The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.</p>"
+          }
+        },
+        "item_03": {
+          "type": "item",
+          "settings": {
+            "badge_text": "🌿 Better Digestion Support",
+            "title": "It's your gut's new best friend thanks to prebiotics inside",
+            "body": "<p>Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.</p>",
+            "cta_text": "Better Digestion Support Starts Here"
+          }
+        },
+        "item_04": {
+          "type": "item",
+          "settings": {
+            "badge_text": "🚫 No Chalky Shakes",
+            "title": "It actually tastes like your favorite coffee shop drink",
+            "body": "<p>While competitors flavor their protein to taste vaguely \"coffee-ish,\" Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.</p>",
+            "cta_text": "Enjoy Real Coffee Taste, Every Time"
+          }
+        },
+        "item_05": {
+          "type": "item",
+          "settings": {
+            "badge_text": "💰 Save Big Yearly",
+            "title": "It easily replaces your $2,400-a-year coffee habit",
+            "body": "<p>The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.</p>",
+            "cta_text": "Start Saving With Every Cup"
+          }
+        },
+        "item_06": {
+          "type": "item",
+          "settings": {
+            "badge_text": "🎯 Effortless Perfection",
+            "title": "It makes the perfect iced coffee in 60 seconds",
+            "body": "<p>Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.</p>",
+            "cta_text": "Skip The Line, Brew At Home"
+          }
+        },
+        "item_07": {
+          "type": "item",
+          "settings": {
+            "badge_text": "⚡ No Crash, Just Clarity",
+            "title": "You avoid the mid-morning crash",
+            "body": "<p>100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.</p>",
+            "cta_text": "Stay Clear, Stay Focused"
+          }
+        },
+        "item_08": {
+          "type": "item",
+          "settings": {
+            "badge_text": "💪 Extra Protein, Zero Effort",
+            "title": "It helps you hit your daily protein target effortlessly",
+            "body": "<p>20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.</p>",
+            "cta_text": "Fuel Your Day With Every Sip"
+          }
+        },
+        "item_09": {
+          "type": "item",
+          "settings": {
+            "badge_text": "👍 Risk-Free Choice",
+            "title": "Backed by a 30-Day Money-Back Guarantee",
+            "body": "<p>Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.</p>",
+            "cta_text": "Start Your Risk-Free Journey"
+          }
+        },
+        "item_10": {
+          "type": "item",
+          "settings": {
+            "badge_text": "🌏 Join The Switch",
+            "title": "Join thousands of people who already swapped their café latte",
+            "body": "<p>4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.</p>",
+            "cta_text": "Step Into The Coffee Revolution"
+          }
+        }
+      },
+      "block_order": [
+        "item_01",
+        "item_02",
+        "item_03",
+        "item_04",
+        "item_05",
+        "item_06",
+        "item_07",
+        "item_08",
+        "item_09",
+        "item_10"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "accent_color": "#8AB4CC",
+        "badge_bg": "#C1D5E5",
+        "badge_text_color": "#34393D"
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -115,6 +226,7 @@
   "order": [
     "announcement_bar",
     "hero",
+    "items",
     "main"
   ]
 }
