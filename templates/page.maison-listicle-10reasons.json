@@ -80,9 +80,7 @@
       "settings": {
         "bg_start": "#f8fbfc",
         "bg_end": "#ffffff",
-        "headline_before": "10 Reasons Why This High-Protein Iced Coffee is the",
-        "headline_highlight": "#1 Trending Drink",
-        "headline_after": "for Summer 2026",
+        "headline": "<p>10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Summer 2026</p>",
         "highlight_color": "#ffbea9",
         "author_avatar": "shopify://shop_images/lis-avatar-hero.png",
         "author_prefix": "By",
@@ -101,8 +99,7 @@
         "competitor_header_bg": "#fff5f5",
         "competitor_header_text": "#b32134",
         "table_footnote": "Mainstream coffees based on a 16 oz café drink; protein drinks based on an 11–12 oz ready-to-drink shake.",
-        "tldr_bold": "TLDR:",
-        "tldr_text": "Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇"
+        "tldr": "<p><strong>TLDR:</strong> Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇</p>"
       }
     },
     "main": {

@@ -11,12 +11,8 @@
   style="--mlh-bg-start: {{ bg_start }}; --mlh-bg-end: {{ bg_end }}; --mlh-highlight: {{ highlight_color }}; --mlh-callout-bg: {{ s.callout_bg }}; --mlh-callout-border: {{ s.callout_border }}; --mlh-franky-col-bg: {{ s.franky_col_bg }}; --mlh-franky-col-border: {{ s.franky_col_border }}; --mlh-competitor-header-bg: {{ s.competitor_header_bg }}; --mlh-competitor-header-text: {{ s.competitor_header_text }};"
 >
   <div class="mlh__container">
-    {%- if s.headline_before != blank or s.headline_highlight != blank or s.headline_after != blank -%}
-      <h1 class="mlh__title">
-        {%- if s.headline_before != blank -%}<span>{{ s.headline_before }} </span>{%- endif -%}
-        {%- if s.headline_highlight != blank -%}<span class="mlh__title-highlight">{{ s.headline_highlight }}</span>{%- endif -%}
-        {%- if s.headline_after != blank -%}<span> {{ s.headline_after }}</span>{%- endif -%}
-      </h1>
+    {%- if s.headline != blank -%}
+      <div class="mlh__title">{{ s.headline }}</div>
     {%- endif -%}
 
     <div class="mlh__author">
@@ -86,11 +82,8 @@
       </div>
     {%- endif -%}
 
-    {%- if s.tldr_bold != blank or s.tldr_text != blank -%}
-      <p class="mlh__tldr">
-        {%- if s.tldr_bold != blank -%}<strong>{{ s.tldr_bold }}</strong>{%- endif -%}
-        {%- if s.tldr_text != blank -%} {{ s.tldr_text }}{%- endif -%}
-      </p>
+    {%- if s.tldr != blank -%}
+      <div class="mlh__tldr">{{ s.tldr }}</div>
     {%- endif -%}
   </div>
 </section>
@@ -124,8 +117,12 @@
     color: #3B2B2F;
     word-break: break-word;
   }
-  .mlh__title-highlight {
+  .mlh__title > p {
+    margin: 0;
+  }
+  .mlh__title em {
     color: var(--mlh-highlight);
+    font-style: normal;
   }
 
   /* Author */
@@ -296,6 +293,13 @@
     color: #3B2B2F;
     font-weight: 400;
   }
+  .mlh__tldr > p {
+    margin: 0;
+  }
+  .mlh__tldr em {
+    color: var(--mlh-highlight);
+    font-style: normal;
+  }
   .mlh__tldr strong {
     font-weight: 700;
   }
@@ -387,22 +391,11 @@
 
     { "type": "header", "content": "Headline" },
     {
-      "type": "text",
-      "id": "headline_before",
-      "label": "Headline — before highlight",
-      "default": "10 Reasons Why This High-Protein Iced Coffee is the"
-    },
-    {
-      "type": "text",
-      "id": "headline_highlight",
-      "label": "Headline — highlighted part",
-      "default": "#1 Trending Drink"
-    },
-    {
-      "type": "text",
-      "id": "headline_after",
-      "label": "Headline — after highlight",
-      "default": "for Summer 2026"
+      "type": "richtext",
+      "id": "headline",
+      "label": "Headline",
+      "info": "Wrap a word in italic (em) to render it in the highlight color.",
+      "default": "<p>10 Reasons Why This High-Protein Iced Coffee is the <em>#1 Trending Drink</em> for Summer 2026</p>"
     },
     {
       "type": "color",
@@ -520,16 +513,11 @@
 
     { "type": "header", "content": "TLDR Line" },
     {
-      "type": "text",
-      "id": "tldr_bold",
-      "label": "Bold lead-in",
-      "default": "TLDR:"
-    },
-    {
-      "type": "text",
-      "id": "tldr_text",
-      "label": "Body text",
-      "default": "Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇"
+      "type": "richtext",
+      "id": "tldr",
+      "label": "TLDR text",
+      "info": "Use bold (strong) for the lead-in and italic (em) to render text in the highlight color.",
+      "default": "<p><strong>TLDR:</strong> Drinking Franky Protein Coffee has 10+ life-changing benefits. 👇</p>"
     }
   ],
   "blocks": [
