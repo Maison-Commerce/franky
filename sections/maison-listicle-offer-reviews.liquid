@@ -96,7 +96,7 @@
         </div>
 
         {%- if review_blocks.size > 0 -%}
-          <div class="mlor__reviews-list">
+          {%- capture review_card_set -%}
             {%- for block in review_blocks -%}
               {%- assign rating = block.settings.rating | default: 5 -%}
               <article class="mlor__review-card" {{ block.shopify_attributes }}>
@@ -117,6 +117,12 @@
                 </div>
               </article>
             {%- endfor -%}
+          {%- endcapture -%}
+          <div class="mlor__reviews-viewport" data-mlor-slider>
+            <div class="mlor__reviews-track" style="--mlor-slide-duration: {{ s.slider_duration_seconds | default: 40 }}s;">
+              {{ review_card_set }}
+              {{ review_card_set }}
+            </div>
           </div>
         {%- endif -%}
       </div>
@@ -392,15 +398,36 @@
     color: rgba(59, 43, 47, 0.75);
     text-align: center;
   }
-  .mlor__reviews-list {
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
+  .mlor__reviews-viewport {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    padding-bottom: 4px;
+    overflow: hidden;
+    /* Soft fade edges so cards visually enter / exit the marquee */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+  }
+  .mlor__reviews-track {
+    --mlor-slide-gap: 20px;
+    --mlor-slide-duration: 40s;
+    display: flex;
+    gap: var(--mlor-slide-gap);
+    align-items: stretch;
+    width: max-content;
+    animation: mlor-marquee var(--mlor-slide-duration) linear infinite;
+    will-change: transform;
+  }
+  .mlor__reviews-track:hover,
+  .mlor__reviews-track:focus-within {
+    animation-play-state: paused;
+  }
+  @keyframes mlor-marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(calc(-50% - var(--mlor-slide-gap) / 2), 0, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mlor__reviews-track {
+      animation: none;
+      transform: none;
+    }
   }
   .mlor__review-card {
     flex: 0 0 320px;
@@ -413,7 +440,6 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 12px;
-    scroll-snap-align: start;
   }
   .mlor__review-stars {
     display: flex;
@@ -525,8 +551,8 @@
       font-size: 14px;
       text-align: left;
     }
-    .mlor__reviews-list {
-      gap: 12px;
+    .mlor__reviews-track {
+      --mlor-slide-gap: 12px;
     }
     .mlor__review-card {
       flex: 0 0 320px;
@@ -691,7 +717,18 @@
     { "type": "color", "id": "review_border", "label": "Card border", "default": "#C1D5E5" },
     { "type": "color", "id": "avatar_bg", "label": "Avatar background", "default": "#FFF8F6" },
     { "type": "color", "id": "avatar_text_color", "label": "Avatar / label color", "default": "#FFBEA9" },
-    { "type": "color", "id": "star_color", "label": "Star color", "default": "#FBAA19" }
+    { "type": "color", "id": "star_color", "label": "Star color", "default": "#FBAA19" },
+    {
+      "type": "range",
+      "id": "slider_duration_seconds",
+      "label": "Auto-slide duration (seconds for one full loop)",
+      "info": "Slower values = calmer scroll. Hover pauses the slider.",
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "unit": "s",
+      "default": 40
+    }
   ],
   "blocks": [
     {
