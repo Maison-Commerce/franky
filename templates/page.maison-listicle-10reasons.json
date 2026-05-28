@@ -372,6 +372,13 @@
             "url": "shopify://policies/refund-policy"
           }
         },
+        "link_cookie": {
+          "type": "link",
+          "settings": {
+            "label": "Subscription Policy",
+            "url": "shopify://policies/subscription-policy"
+          }
+        },
         "link_contact": {
           "type": "link",
           "settings": {
@@ -385,22 +392,15 @@
             "label": "Terms Of Service",
             "url": "shopify://policies/terms-of-service"
           }
-        },
-        "link_cookie": {
-          "type": "link",
-          "settings": {
-            "label": "Cookie preferences",
-            "url": ""
-          }
         }
       },
       "block_order": [
         "link_privacy",
         "link_shipping",
         "link_refund",
+        "link_cookie",
         "link_contact",
-        "link_terms",
-        "link_cookie"
+        "link_terms"
       ],
       "settings": {
         "bg_color": "#3b2b2f",
