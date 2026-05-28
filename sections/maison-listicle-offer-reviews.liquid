@@ -1,0 +1,796 @@
+{%- liquid
+  assign s = section.settings
+-%}
+
+{%- capture star_svg -%}
+<svg class="mlor__star" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+  <path d="M13.9389 5.03971C13.8102 4.6855 13.4721 4.44819 13.0917 4.44539H9.43322C9.30677 4.44534 9.19389 4.36693 9.15088 4.24927L7.84135 0.564589C7.70173 0.223167 7.36657 -0.000223282 6.99421 1.67477e-07C6.615 0.00179603 6.27803 0.239919 6.15314 0.594304L4.83767 4.26117C4.79466 4.37882 4.68177 4.45723 4.55533 4.45728H0.896684C0.515798 4.45834 0.176631 4.69627 0.0496689 5.05158C-0.0722558 5.40236 0.0349451 5.79123 0.320125 6.03218L3.43179 8.58769C3.52762 8.66495 3.56572 8.79229 3.52814 8.90858L2.21835 12.7895C2.09178 13.1582 2.22184 13.5657 2.53957 13.7956C2.85729 14.0255 3.2892 14.0248 3.60615 13.7939L6.81404 11.4641C6.91904 11.3859 7.06357 11.3859 7.16844 11.4641L10.3824 13.7939C10.6975 14.0532 11.1501 14.0696 11.4833 13.8332C11.8168 13.5971 11.9469 13.1682 11.8003 12.7895L10.4905 8.90858C10.4529 8.79229 10.491 8.66495 10.5867 8.58769L13.7046 6.02625C13.9807 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
+</svg>
+{%- endcapture -%}
+
+<section
+  id="shopify-section-{{ section.id }}-offer-reviews"
+  class="mlor"
+  style="--mlor-bg-start: {{ s.bg_start }}; --mlor-bg-end: {{ s.bg_end }}; --mlor-ribbon-bg: {{ s.ribbon_bg }}; --mlor-ribbon-text: {{ s.ribbon_text_color }}; --mlor-highlight: {{ s.highlight_color }}; --mlor-cta-bg: {{ s.cta_bg }}; --mlor-cta-text: {{ s.cta_text_color }}; --mlor-card-border: {{ s.card_border }}; --mlor-review-border: {{ s.review_border }}; --mlor-avatar-bg: {{ s.avatar_bg }}; --mlor-avatar-text: {{ s.avatar_text_color }}; --mlor-danger: {{ s.danger_color }};"
+>
+  <div class="mlor__container">
+
+    {%- comment -%} ===== PROMO CARD ===== {%- endcomment -%}
+    <div class="mlor__promo-wrap">
+      {%- if s.ribbon_text != blank -%}
+        <div class="mlor__ribbon"><span>{{ s.ribbon_text }}</span></div>
+      {%- endif -%}
+
+      <div class="mlor__promo-card">
+        <div class="mlor__promo-image">
+          {%- if s.promo_image != blank -%}
+            {{ s.promo_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'mlor__promo-image-img', sizes: '(max-width: 768px) 100vw, 384px' }}
+          {%- else -%}
+            <div class="mlor__promo-image-img mlor__promo-image-img--placeholder" aria-hidden="true"></div>
+          {%- endif -%}
+        </div>
+
+        <div class="mlor__promo-content">
+          <div class="mlor__promo-header">
+            {%- if s.promo_top_label != blank -%}
+              <div class="mlor__promo-label"><span>{{ s.promo_top_label }}</span></div>
+            {%- endif -%}
+            {%- if s.promo_title != blank -%}
+              <div class="mlor__promo-title">{{ s.promo_title }}</div>
+            {%- endif -%}
+            {%- if s.promo_subtitle != blank -%}
+              <p class="mlor__promo-subtitle">{{ s.promo_subtitle }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="mlor__promo-body">
+            <div class="mlor__promo-cta-block">
+              {%- if s.cta_text != blank -%}
+                {%- assign cta_href = s.cta_url | default: '#' -%}
+                <a class="mlor__promo-cta" href="{{ cta_href }}">
+                  <span>{{ s.cta_text }}</span>
+                </a>
+              {%- endif -%}
+
+              {%- if s.timer_enabled and s.timer_end_iso != blank -%}
+                <div class="mlor__promo-timer">
+                  {%- if s.timer_label != blank -%}<span>{{ s.timer_label }} </span>{%- endif -%}
+                  <span class="mlor__timer-value" data-timer-end="{{ s.timer_end_iso | escape }}">--:--:--</span>
+                </div>
+              {%- endif -%}
+
+              {%- if s.risk_left != blank or s.risk_right != blank -%}
+                <div class="mlor__promo-risk">
+                  {%- if s.risk_left != blank -%}
+                    <div class="mlor__risk-piece">{{ s.risk_left }}</div>
+                  {%- endif -%}
+                  {%- if s.risk_left != blank and s.risk_right != blank -%}
+                    <div class="mlor__risk-divider" aria-hidden="true"></div>
+                  {%- endif -%}
+                  {%- if s.risk_right != blank -%}
+                    <div class="mlor__risk-piece">{{ s.risk_right }}</div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if s.guarantee_text != blank -%}
+              <p class="mlor__guarantee">{{ s.guarantee_text }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%} ===== REVIEWS ===== {%- endcomment -%}
+    {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+    {%- if review_blocks.size > 0 or s.reviews_title != blank or s.reviews_subtitle != blank -%}
+      <div class="mlor__reviews">
+        <div class="mlor__reviews-heading">
+          {%- if s.reviews_title != blank -%}
+            <h2 class="mlor__reviews-title">{{ s.reviews_title }}</h2>
+          {%- endif -%}
+          {%- if s.reviews_subtitle != blank -%}
+            <p class="mlor__reviews-subtitle">{{ s.reviews_subtitle }}</p>
+          {%- endif -%}
+        </div>
+
+        {%- if review_blocks.size > 0 -%}
+          <div class="mlor__reviews-list">
+            {%- for block in review_blocks -%}
+              {%- assign rating = block.settings.rating | default: 5 -%}
+              <article class="mlor__review-card" {{ block.shopify_attributes }}>
+                <div class="mlor__review-stars" aria-label="{{ rating }} out of 5 stars">
+                  {%- for i in (1..rating) -%}{{ star_svg }}{%- endfor -%}
+                </div>
+                {%- if block.settings.quote != blank -%}
+                  <p class="mlor__review-quote">{{ block.settings.quote }}</p>
+                {%- endif -%}
+                <div class="mlor__review-author">
+                  <div class="mlor__review-avatar"><span>{{ block.settings.reviewer_initials }}</span></div>
+                  <div class="mlor__review-meta">
+                    <div class="mlor__review-name">{{ block.settings.reviewer_name }}</div>
+                    {%- if block.settings.reviewer_label != blank -%}
+                      <div class="mlor__review-label">{{ block.settings.reviewer_label }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .mlor {
+    background: linear-gradient(to bottom, var(--mlor-bg-start), var(--mlor-bg-end));
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    overflow: hidden;
+    padding: 80px;
+    font-family: 'DM Sans', sans-serif;
+    color: #3B2B2F;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+  .mlor__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  /* ===== Promo card ===== */
+  .mlor__promo-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 768px;
+    max-width: 100%;
+  }
+  .mlor__ribbon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    padding: 4px 16px;
+    background: var(--mlor-ribbon-bg);
+    color: var(--mlor-ribbon-text);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .mlor__ribbon > span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--mlor-ribbon-text);
+  }
+  .mlor__promo-card {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border: 1px dashed var(--mlor-card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    filter: drop-shadow(0px 12px 8px rgba(16, 24, 40, 0.08)) drop-shadow(0px 4px 3px rgba(16, 24, 40, 0.03));
+  }
+  .mlor__promo-image {
+    flex: 1 1 0;
+    min-width: 0;
+    position: relative;
+    align-self: stretch;
+  }
+  .mlor__promo-image-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mlor__promo-image-img--placeholder {
+    background: #D9D9D9;
+  }
+  .mlor__promo-content {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #FFFFFF;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .mlor__promo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+  .mlor__promo-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 285px;
+    max-width: 100%;
+  }
+  .mlor__promo-label::before,
+  .mlor__promo-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(59, 43, 47, 0.1);
+  }
+  .mlor__promo-label > span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #3B2B2F;
+    white-space: nowrap;
+  }
+  .mlor__promo-title {
+    width: 285px;
+    max-width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #3B2B2F;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .mlor__promo-title > p {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 24px;
+  }
+  .mlor__promo-title em {
+    color: var(--mlor-highlight);
+    font-style: normal;
+  }
+  .mlor__promo-subtitle {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(59, 43, 47, 0.75);
+  }
+  .mlor__promo-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+  .mlor__promo-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .mlor__promo-cta {
+    background: var(--mlor-cta-bg);
+    color: var(--mlor-cta-text);
+    width: 100%;
+    height: 56px;
+    border-radius: 16px;
+    padding: 16px 32px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .mlor__promo-cta > span {
+    color: var(--mlor-cta-text);
+  }
+  .mlor__promo-timer {
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #3B2B2F;
+    text-align: center;
+  }
+  .mlor__timer-value {
+    color: var(--mlor-danger);
+  }
+  .mlor__promo-risk {
+    width: 100%;
+    background: #FFF8F6;
+    border: 1px dashed #FFDBCF;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .mlor__risk-piece {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3B2B2F;
+    white-space: nowrap;
+  }
+  .mlor__risk-piece > p {
+    margin: 0;
+  }
+  .mlor__risk-piece strong {
+    font-weight: 700;
+  }
+  .mlor__risk-piece em {
+    color: var(--mlor-danger);
+    font-style: normal;
+  }
+  .mlor__risk-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(59, 43, 47, 0.1);
+  }
+  .mlor__guarantee {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3B2B2F;
+  }
+
+  /* ===== Reviews ===== */
+  .mlor__reviews {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .mlor__reviews-heading {
+    width: 768px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  .mlor__reviews-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.18;
+    text-transform: capitalize;
+    color: #3B2B2F;
+    text-align: center;
+  }
+  .mlor__reviews-subtitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(59, 43, 47, 0.75);
+    text-align: center;
+  }
+  .mlor__reviews-list {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+  }
+  .mlor__review-card {
+    flex: 0 0 320px;
+    background: #FFFFFF;
+    border: 1px solid var(--mlor-review-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    scroll-snap-align: start;
+  }
+  .mlor__review-stars {
+    display: flex;
+    align-items: center;
+  }
+  .mlor__review-stars .mlor__star {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .mlor__review-quote {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3B2B2F;
+  }
+  .mlor__review-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mlor__review-avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--mlor-avatar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mlor__review-avatar > span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mlor-avatar-text);
+    line-height: 1.5;
+  }
+  .mlor__review-meta {
+    display: flex;
+    flex-direction: column;
+  }
+  .mlor__review-name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #3B2B2F;
+  }
+  .mlor__review-label {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mlor-avatar-text);
+  }
+
+  /* ===== Mobile ===== */
+  @media (max-width: 768px) {
+    .mlor {
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      padding: 40px 20px 32px;
+      gap: 40px;
+    }
+    .mlor__container {
+      gap: 40px;
+    }
+
+    .mlor__promo-wrap {
+      width: 100%;
+    }
+    .mlor__ribbon {
+      height: 40px;
+      padding: 4px 16px;
+    }
+    .mlor__ribbon > span {
+      font-size: 18px;
+      font-weight: 600;
+      color: #34393D;
+    }
+    .mlor__promo-card {
+      flex-direction: column;
+    }
+    .mlor__promo-image {
+      width: 100%;
+      height: 260px;
+      flex: none;
+    }
+    .mlor__promo-image-img {
+      position: relative;
+      inset: auto;
+    }
+    .mlor__promo-content {
+      padding: 32px 20px;
+    }
+
+    .mlor__reviews {
+      gap: 24px;
+    }
+    .mlor__reviews-heading {
+      gap: 12px;
+      text-align: left;
+    }
+    .mlor__reviews-title {
+      font-size: 24px;
+      line-height: 1.4;
+      text-align: left;
+    }
+    .mlor__reviews-subtitle {
+      font-size: 14px;
+      text-align: left;
+    }
+    .mlor__reviews-list {
+      gap: 12px;
+    }
+    .mlor__review-card {
+      flex: 0 0 320px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}-offer-reviews');
+    if (!root) return;
+    var timerEl = root.querySelector('.mlor__timer-value');
+    if (!timerEl) return;
+    var endStr = timerEl.getAttribute('data-timer-end');
+    if (!endStr) return;
+    var endTime = new Date(endStr).getTime();
+    if (isNaN(endTime)) return;
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function update() {
+      var diff = endTime - Date.now();
+      if (diff <= 0) {
+        timerEl.textContent = '00:00:00';
+        clearInterval(timer);
+        return;
+      }
+      var hrs = Math.floor(diff / 3600000);
+      var min = Math.floor(diff / 60000) % 60;
+      var sec = Math.floor(diff / 1000) % 60;
+      timerEl.textContent = pad(hrs) + ':' + pad(min) + ':' + pad(sec);
+    }
+
+    update();
+    var timer = setInterval(update, 1000);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Listicle Offer + Reviews",
+  "tag": "section",
+  "class": "section-maison-listicle-offer-reviews",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color", "id": "bg_start", "label": "Gradient (top)", "default": "#FBF6EA" },
+    { "type": "color", "id": "bg_end",   "label": "Gradient (bottom)", "default": "#DEEAF2" },
+
+    { "type": "header", "content": "Floating ribbon" },
+    {
+      "type": "text",
+      "id": "ribbon_text",
+      "label": "Ribbon text",
+      "default": "🇺🇸 SUMMER SPECIAL ✨"
+    },
+    { "type": "color", "id": "ribbon_bg", "label": "Ribbon background", "default": "#C2D6E5" },
+    { "type": "color", "id": "ribbon_text_color", "label": "Ribbon text color", "default": "#515960" },
+
+    { "type": "header", "content": "Promo card" },
+    {
+      "type": "image_picker",
+      "id": "promo_image",
+      "label": "Card image"
+    },
+    {
+      "type": "text",
+      "id": "promo_top_label",
+      "label": "Top label (with dividers)",
+      "default": "🎁 FREE SHIPPING ON YOUR ORDER"
+    },
+    {
+      "type": "richtext",
+      "id": "promo_title",
+      "label": "Title",
+      "info": "Wrap text in italic (em) to highlight in accent color.",
+      "default": "<p><em>UP TO 32% OFF</em> FOR A</p><p>LIMITED TIME ONLY!</p>"
+    },
+    { "type": "color", "id": "highlight_color", "label": "Highlight color (em)", "default": "#FFBEA9" },
+    {
+      "type": "textarea",
+      "id": "promo_subtitle",
+      "label": "Subtitle",
+      "default": "High demand this season, stock ships from our US warehouse in 2–3 days."
+    },
+    {
+      "type": "color",
+      "id": "card_border",
+      "label": "Card border",
+      "default": "#99A9B6"
+    },
+
+    { "type": "header", "content": "CTA button" },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "GET 32% OFF →"
+    },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
+    { "type": "color", "id": "cta_bg", "label": "CTA background", "default": "#3B2B2F" },
+    { "type": "color", "id": "cta_text_color", "label": "CTA text color", "default": "#F7F3E6" },
+
+    { "type": "header", "content": "Countdown timer" },
+    { "type": "checkbox", "id": "timer_enabled", "label": "Show timer", "default": true },
+    {
+      "type": "text",
+      "id": "timer_label",
+      "label": "Timer label",
+      "default": "DEAL ENDING IN:"
+    },
+    {
+      "type": "text",
+      "id": "timer_end_iso",
+      "label": "Timer end date/time",
+      "info": "ISO 8601 (e.g. 2026-08-31T23:59:00). Displays as HH:MM:SS countdown.",
+      "default": "2026-08-31T23:59:00"
+    },
+    {
+      "type": "color",
+      "id": "danger_color",
+      "label": "Highlight (timer + risk)",
+      "default": "#CF0000"
+    },
+
+    { "type": "header", "content": "Risk badge" },
+    {
+      "type": "richtext",
+      "id": "risk_left",
+      "label": "Left text",
+      "info": "Use bold (strong) for emphasis and italic (em) for danger color.",
+      "default": "<p>Sell-Out Risk: <em><strong>High</strong></em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "risk_right",
+      "label": "Right text",
+      "default": "<p><strong>FREE</strong> shipping</p>"
+    },
+
+    { "type": "header", "content": "Guarantee" },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "Try it risk-free with a 30-Day Money-Back Guarantee!"
+    },
+
+    { "type": "header", "content": "Reviews" },
+    {
+      "type": "text",
+      "id": "reviews_title",
+      "label": "Title",
+      "default": "The Reviews Are In"
+    },
+    {
+      "type": "text",
+      "id": "reviews_subtitle",
+      "label": "Subtitle",
+      "default": "Real Franky drinkers sharing their morning upgrade."
+    },
+    { "type": "color", "id": "review_border", "label": "Card border", "default": "#C1D5E5" },
+    { "type": "color", "id": "avatar_bg", "label": "Avatar background", "default": "#FFF8F6" },
+    { "type": "color", "id": "avatar_text_color", "label": "Avatar / label color", "default": "#FFBEA9" },
+    { "type": "color", "id": "star_color", "label": "Star color", "default": "#FBAA19" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "\"Quote from a happy customer.\""
+        },
+        {
+          "type": "text",
+          "id": "reviewer_initials",
+          "label": "Avatar initials",
+          "default": "AB"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "Alex B."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_label",
+          "label": "Reviewer label",
+          "default": "Verified Buyer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Offer + Reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"",
+            "reviewer_initials": "SK",
+            "reviewer_name": "Sarah K.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"",
+            "reviewer_initials": "MR",
+            "reviewer_name": "Megan R.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Quit my $6 latte habit two weeks ago. Down four pounds, off the afternoon crash. Vanilla hazelnut is dangerously good.\"",
+            "reviewer_initials": "JL",
+            "reviewer_name": "Jessica L.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.\"",
+            "reviewer_initials": "JT",
+            "reviewer_name": "James T.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.\"",
+            "reviewer_initials": "RM",
+            "reviewer_name": "Rachel M.",
+            "reviewer_label": "Verified Buyer"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
