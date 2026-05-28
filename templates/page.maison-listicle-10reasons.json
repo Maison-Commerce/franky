@@ -1,4 +1,5 @@
 {
+  "layout": "listicle-clean",
   "sections": {
     "main": {
       "type": "main-page",
