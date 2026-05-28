@@ -289,6 +289,41 @@
         "slider_duration_seconds": 40
       }
     },
+    "footer": {
+      "type": "maison-listicle-footer",
+      "blocks": {
+        "link_privacy": { "type": "link", "settings": { "label": "Privacy Policy" } },
+        "link_shipping": { "type": "link", "settings": { "label": "Shipping Policy" } },
+        "link_refund": { "type": "link", "settings": { "label": "Refund Policy" } },
+        "link_contact": { "type": "link", "settings": { "label": "Contact Information" } },
+        "link_terms": { "type": "link", "settings": { "label": "Terms Of Service" } },
+        "link_cookie": { "type": "link", "settings": { "label": "Cookie preferences" } }
+      },
+      "block_order": [
+        "link_privacy",
+        "link_shipping",
+        "link_refund",
+        "link_contact",
+        "link_terms",
+        "link_cookie"
+      ],
+      "settings": {
+        "bg_color": "#3B2B2F",
+        "text_color": "#F7F3E6",
+        "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+      }
+    },
+    "sticky_cta": {
+      "type": "maison-listicle-sticky-cta",
+      "settings": {
+        "button_text": "Proceed to Offer →",
+        "button_url": "",
+        "bg_color": "#FFFFFF",
+        "border_color": "#3B2B2F33",
+        "button_bg": "#3B2B2F",
+        "button_text_color": "#F7F3E6"
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -304,6 +339,8 @@
     "hero",
     "items",
     "offer_reviews",
+    "footer",
+    "sticky_cta",
     "main"
   ]
 }
