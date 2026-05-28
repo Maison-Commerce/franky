@@ -1,0 +1,103 @@
+{%- liquid
+  assign s = section.settings
+-%}
+
+{%- if s.button_text != blank -%}
+  <div
+    id="shopify-section-{{ section.id }}-sticky-cta"
+    class="mlcta"
+    style="--mlcta-bg: {{ s.bg_color }}; --mlcta-button-bg: {{ s.button_bg }}; --mlcta-button-text: {{ s.button_text_color }}; --mlcta-border: {{ s.border_color }};"
+    aria-hidden="false"
+  >
+    <a class="mlcta__button" href="{{ s.button_url | default: '#' }}">
+      {{ s.button_text }}
+    </a>
+  </div>
+{%- endif -%}
+
+<style>
+  .mlcta {
+    display: none;
+  }
+
+  .mlcta__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 44px;
+    padding: 16px 32px;
+    box-sizing: border-box;
+    background: var(--mlcta-button-bg);
+    color: var(--mlcta-button-text);
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .mlcta__button:hover,
+  .mlcta__button:focus-visible {
+    opacity: 0.92;
+  }
+
+  @media (max-width: 768px) {
+    .mlcta {
+      display: flex;
+      align-items: stretch;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 90;
+      padding: 12px 20px;
+      background: var(--mlcta-bg);
+      border-top: 1px solid var(--mlcta-border);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -8px 30px 0 rgba(45, 38, 34, 0.07);
+      box-sizing: border-box;
+      /* Respect iOS home-indicator safe area */
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  /* Hide sticky CTA when the cart drawer is open so it does not overlap. */
+  html.maison-cart-open .mlcta {
+    display: none !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Sticky CTA",
+  "tag": null,
+  "class": "section-maison-listicle-sticky-cta",
+  "settings": [
+    { "type": "header", "content": "Button" },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Proceed to Offer →"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "bg_color", "label": "Bar background", "default": "#FFFFFF" },
+    { "type": "color", "id": "border_color", "label": "Top border color", "default": "#3B2B2F33" },
+    { "type": "color", "id": "button_bg", "label": "Button background", "default": "#3B2B2F" },
+    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#F7F3E6" }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Sticky CTA"
+    }
+  ]
+}
+{% endschema %}

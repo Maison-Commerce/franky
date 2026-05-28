@@ -348,6 +348,17 @@
         "slider_duration_seconds": 40
       }
     },
+    "sticky_cta": {
+      "type": "maison-listicle-sticky-cta",
+      "settings": {
+        "button_text": "Proceed to Offer →",
+        "button_url": "",
+        "bg_color": "#FFFFFF",
+        "border_color": "#3B2B2F33",
+        "button_bg": "#3B2B2F",
+        "button_text_color": "#F7F3E6"
+      }
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "blocks": {
@@ -424,6 +435,7 @@
     "items",
     "offer_reviews",
     "footer",
+    "sticky_cta",
     "main"
   ]
 }

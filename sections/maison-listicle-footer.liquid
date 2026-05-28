@@ -100,7 +100,8 @@
 
   @media (max-width: 768px) {
     .mlfooter {
-      padding: 32px 20px;
+      /* Extra bottom space so the sticky CTA bar does not cover the copyright */
+      padding: 32px 20px calc(32px + 68px + env(safe-area-inset-bottom, 0px));
     }
     .mlfooter__inner {
       gap: 16px;
