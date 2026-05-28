@@ -42,19 +42,12 @@
 
     {%- assign comparison_rows = section.blocks | where: 'type', 'comparison_row' -%}
     {%- if comparison_rows.size > 0 -%}
+      {%- assign total_rows = comparison_rows.size | plus: 1 -%}
       <div class="mlh__table-wrapper">
         <div class="mlh__table">
-          <div class="mlh__col mlh__col-labels">
-            <div class="mlh__cell mlh__cell-header mlh__cell-label-header" aria-hidden="true"></div>
-            {%- for block in comparison_rows -%}
-              <div class="mlh__cell mlh__cell-label" {{ block.shopify_attributes }}>
-                {{ block.settings.label }}
-              </div>
-            {%- endfor -%}
-          </div>
-
-          <div class="mlh__col mlh__col-franky">
-            <div class="mlh__cell mlh__cell-header mlh__cell-franky-header">
+          {%- comment -%} Franky column wrapper — explicit grid placement, spans col 2 across all rows {%- endcomment -%}
+          <div class="mlh__col-franky" style="grid-row: 1 / span {{ total_rows }};">
+            <div class="mlh__cell mlh__cell-franky-header">
               {%- if s.franky_logo != blank -%}
                 {{ s.franky_logo | image_url: width: 200 | image_tag: loading: 'lazy', alt: s.franky_logo_alt, class: 'mlh__franky-logo' }}
               {%- else -%}
@@ -71,19 +64,20 @@
             {%- endfor -%}
           </div>
 
-          <div class="mlh__col mlh__col-competitor">
-            <div class="mlh__cell mlh__cell-header mlh__cell-competitor-header">{{ s.column_2_header }}</div>
-            {%- for block in comparison_rows -%}
-              <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_1 }}</div>
-            {%- endfor -%}
-          </div>
+          {%- comment -%}
+            Remaining cells flow through CSS grid auto-placement. Col 2 is occupied by
+            the Franky wrapper above, so auto-flow naturally skips it. Header row first,
+            then one row per comparison_row block.
+          {%- endcomment -%}
+          <div class="mlh__cell mlh__cell-label-header" aria-hidden="true"></div>
+          <div class="mlh__cell mlh__cell-competitor-header">{{ s.column_2_header }}</div>
+          <div class="mlh__cell mlh__cell-competitor-header mlh__cell-competitor-header--last">{{ s.column_3_header }}</div>
 
-          <div class="mlh__col mlh__col-competitor">
-            <div class="mlh__cell mlh__cell-header mlh__cell-competitor-header mlh__cell-competitor-header--last">{{ s.column_3_header }}</div>
-            {%- for block in comparison_rows -%}
-              <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_2 }}</div>
-            {%- endfor -%}
-          </div>
+          {%- for block in comparison_rows -%}
+            <div class="mlh__cell mlh__cell-label" {{ block.shopify_attributes }}>{{ block.settings.label }}</div>
+            <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_1 }}</div>
+            <div class="mlh__cell mlh__cell-competitor-value">{{ block.settings.competitor_2 }}</div>
+          {%- endfor -%}
         </div>
 
         {%- if s.table_footnote != blank -%}
@@ -188,24 +182,37 @@
     width: 100%;
   }
   .mlh__table {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 192px 192px 192px 192px;
+    grid-auto-rows: 56px;
     width: 100%;
   }
-  .mlh__col {
-    display: flex;
-    flex-direction: column;
-    width: 192px;
-    padding-bottom: 8px;
-  }
+
+  /* Franky column — wrapper spanning col 2 over all rows; visually extends above and below the grid */
   .mlh__col-franky {
+    grid-column: 2;
     background: var(--mlh-franky-col-bg);
     border: 2px solid var(--mlh-franky-col-border);
     border-radius: 8px;
     padding: 12px 12px 8px;
+    margin-top: -12px;
+    margin-bottom: -8px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    box-sizing: border-box;
+    z-index: 1;
   }
+  .mlh__col-franky > .mlh__cell {
+    flex: 0 0 56px;
+    border-bottom: 1px dashed #CEDEEA;
+    padding: 12px 24px;
+  }
+  .mlh__col-franky > .mlh__cell:last-child {
+    border-bottom: none;
+  }
+
   .mlh__cell {
-    height: 56px;
     padding: 12px 24px;
     display: flex;
     align-items: center;
@@ -214,18 +221,13 @@
     line-height: 1.5;
     text-align: center;
     border-bottom: 1px dashed rgba(59, 43, 47, 0.24);
+    box-sizing: border-box;
   }
-  .mlh__cell:last-child {
+  /* Last data row across columns 1, 3, 4 — strip bottom border */
+  .mlh__table > .mlh__cell:nth-last-child(-n+3) {
     border-bottom: none;
   }
-  .mlh__col-franky .mlh__cell {
-    border-bottom-color: #CEDEEA;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .mlh__cell-header {
-    height: 56px;
-  }
+
   .mlh__cell-label-header {
     border-bottom: none;
   }
@@ -234,9 +236,6 @@
     font-weight: 600;
     color: #3B2B2F;
     white-space: nowrap;
-  }
-  .mlh__cell-franky-header {
-    border-bottom-color: #CEDEEA;
   }
   .mlh__franky-logo {
     max-width: 100%;
@@ -325,34 +324,30 @@
       font-size: 16px;
     }
 
-    .mlh__col {
-      width: auto;
-      flex: 1 1 0;
-      min-width: 0;
-    }
-    .mlh__col-labels {
-      flex: 0 0 84px;
+    .mlh__table {
+      grid-template-columns: 84px 88px 1fr 1fr;
+      grid-template-rows: 56px;
+      grid-auto-rows: 44px;
     }
     .mlh__col-franky {
-      flex: 0 0 88px;
       padding: 12px 4px 8px;
     }
+    .mlh__col-franky > .mlh__cell-franky-header {
+      flex: 0 0 56px;
+    }
+    .mlh__col-franky > .mlh__cell-franky-value {
+      flex: 0 0 44px;
+      padding: 12px 4px;
+    }
     .mlh__cell {
-      height: 44px;
       padding: 12px 4px;
       font-size: 14px;
     }
-    .mlh__cell-header {
-      height: 56px;
-    }
     .mlh__cell-label {
-      padding: 12px 0 12px 0;
+      padding-left: 0;
       padding-right: 8px;
+      justify-content: flex-start;
       font-size: 14px;
-    }
-    .mlh__col-franky .mlh__cell {
-      padding-left: 4px;
-      padding-right: 4px;
     }
     .mlh__franky-value-main {
       font-size: 14px;
