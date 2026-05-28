@@ -176,10 +176,30 @@
     "offer_reviews": {
       "type": "maison-listicle-offer-reviews-glp1",
       "blocks": {
-        "feature_protein": { "type": "feature", "settings": { "label": "20g Protein" } },
-        "feature_caffeine": { "type": "feature", "settings": { "label": "100mg Caffeine" } },
-        "feature_vanilla": { "type": "feature", "settings": { "label": "Vanilla Hazelnut" } },
-        "feature_zero_sugar": { "type": "feature", "settings": { "label": "Zero Sugar" } },
+        "feature_protein": {
+          "type": "feature",
+          "settings": {
+            "label": "20g Protein"
+          }
+        },
+        "feature_caffeine": {
+          "type": "feature",
+          "settings": {
+            "label": "100mg Caffeine"
+          }
+        },
+        "feature_vanilla": {
+          "type": "feature",
+          "settings": {
+            "label": "Vanilla Hazelnut"
+          }
+        },
+        "feature_zero_sugar": {
+          "type": "feature",
+          "settings": {
+            "label": "Zero Sugar"
+          }
+        },
         "review_sarah": {
           "type": "review",
           "settings": {
@@ -243,28 +263,29 @@
         "review_rachel"
       ],
       "settings": {
-        "bg_start": "#FBF6EA",
-        "bg_end": "#DEEAF2",
+        "bg_start": "#fbf6ea",
+        "bg_end": "#deeaf2",
         "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
-        "highlight_color": "#FFBEA9",
+        "highlight_color": "#ffbea9",
         "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
-        "card_border": "#99A9B6",
+        "promo_image": "shopify://shop_images/list-pr-img-2.png",
+        "card_border": "#99a9b6",
         "rating_full": 4,
         "rating_has_half": true,
         "rating_text": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
-        "star_color": "#FBAA19",
-        "star_empty_color": "#D2D2D2",
+        "star_color": "#fbaa19",
+        "star_empty_color": "#d2d2d2",
         "cta_text": "GET UP TO 32% OFF + FREE SHIPPING →",
         "cta_url": "",
-        "cta_bg": "#3B2B2F",
-        "cta_text_color": "#F7F3E6",
-        "check_ring_color": "#DCD5C6",
-        "check_color": "#3B2B2F",
+        "cta_bg": "#3b2b2f",
+        "cta_text_color": "#f7f3e6",
+        "check_ring_color": "#dcd5c6",
+        "check_color": "#3b2b2f",
         "reviews_title": "The Reviews Are In",
         "reviews_subtitle": "Real Franky drinkers sharing their morning upgrade.",
-        "review_border": "#C1D5E5",
-        "avatar_bg": "#FFF8F6",
-        "avatar_text_color": "#FFBEA9",
+        "review_border": "#c1d5e5",
+        "avatar_bg": "#fff8f6",
+        "avatar_text_color": "#ffbea9",
         "slider_duration_seconds": 40
       }
     },
@@ -286,4 +307,3 @@
     "main"
   ]
 }
-
