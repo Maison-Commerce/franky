@@ -173,6 +173,101 @@
         "pill_accent_color": "#ffbea9"
       }
     },
+    "offer_reviews": {
+      "type": "maison-listicle-offer-reviews-glp1",
+      "blocks": {
+        "feature_protein": { "type": "feature", "settings": { "label": "20g Protein" } },
+        "feature_caffeine": { "type": "feature", "settings": { "label": "100mg Caffeine" } },
+        "feature_vanilla": { "type": "feature", "settings": { "label": "Vanilla Hazelnut" } },
+        "feature_zero_sugar": { "type": "feature", "settings": { "label": "Zero Sugar" } },
+        "review_sarah": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"",
+            "reviewer_initials": "SK",
+            "reviewer_name": "Sarah K.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_megan": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"",
+            "reviewer_initials": "MR",
+            "reviewer_name": "Megan R.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_jessica": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Quit my $6 latte habit two weeks ago. Down four pounds, off the afternoon crash. Vanilla hazelnut is dangerously good.\"",
+            "reviewer_initials": "JL",
+            "reviewer_name": "Jessica L.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_james": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.\"",
+            "reviewer_initials": "JT",
+            "reviewer_name": "James T.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_rachel": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.\"",
+            "reviewer_initials": "RM",
+            "reviewer_name": "Rachel M.",
+            "reviewer_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_protein",
+        "feature_caffeine",
+        "feature_vanilla",
+        "feature_zero_sugar",
+        "review_sarah",
+        "review_megan",
+        "review_jessica",
+        "review_james",
+        "review_rachel"
+      ],
+      "settings": {
+        "bg_start": "#FBF6EA",
+        "bg_end": "#DEEAF2",
+        "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
+        "highlight_color": "#FFBEA9",
+        "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
+        "card_border": "#99A9B6",
+        "rating_full": 4,
+        "rating_has_half": true,
+        "rating_text": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "star_color": "#FBAA19",
+        "star_empty_color": "#D2D2D2",
+        "cta_text": "GET UP TO 32% OFF + FREE SHIPPING →",
+        "cta_url": "",
+        "cta_bg": "#3B2B2F",
+        "cta_text_color": "#F7F3E6",
+        "check_ring_color": "#DCD5C6",
+        "check_color": "#3B2B2F",
+        "reviews_title": "The Reviews Are In",
+        "reviews_subtitle": "Real Franky drinkers sharing their morning upgrade.",
+        "review_border": "#C1D5E5",
+        "avatar_bg": "#FFF8F6",
+        "avatar_text_color": "#FFBEA9",
+        "slider_duration_seconds": 40
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -187,6 +282,7 @@
     "announcement_bar",
     "hero",
     "items",
+    "offer_reviews",
     "main"
   ]
 }
