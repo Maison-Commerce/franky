@@ -1,0 +1,35 @@
+{
+  "layout": "listicle-clean",
+  "sections": {
+    "announcement_bar": {
+      "type": "maison-listicle-announcement-bar",
+      "settings": {
+        "headline_text": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING",
+        "subheadline_text": "Limited stock · US warehouse ships in 2–3 days",
+        "countdown_enabled": true,
+        "countdown_end_iso": "2026-08-31T23:59:00",
+        "countdown_expired_behavior": "hide",
+        "countdown_expired_message": "Offer ended",
+        "label_days": "DAYS",
+        "label_hrs": "HRS",
+        "label_min": "MIN",
+        "label_sec": "SEC",
+        "bg_color": "#C1D5E5",
+        "text_color": "#3B2B2F"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement_bar",
+    "main"
+  ]
+}
