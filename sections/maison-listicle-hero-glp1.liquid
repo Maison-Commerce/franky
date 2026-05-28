@@ -18,11 +18,8 @@
           <p class="mlh2__subtitle">{{ s.subtitle }}</p>
         {%- endif -%}
       </div>
-      {%- if s.updated_label != blank or s.updated_date != blank -%}
-        <p class="mlh2__updated">
-          {%- if s.updated_label != blank -%}<strong>{{ s.updated_label }}</strong>{%- endif -%}
-          {%- if s.updated_date != blank -%} {{ s.updated_date }}{%- endif -%}
-        </p>
+      {%- if s.updated != blank -%}
+        <div class="mlh2__updated">{{ s.updated }}</div>
       {%- endif -%}
     </div>
 
@@ -106,7 +103,6 @@
     color: var(--mlh2-muted);
   }
   .mlh2__updated {
-    margin: 0;
     width: 600px;
     max-width: 100%;
     font-size: 20px;
@@ -114,8 +110,15 @@
     line-height: 1.5;
     color: var(--mlh2-muted);
   }
+  .mlh2__updated > p {
+    margin: 0;
+  }
   .mlh2__updated strong {
     font-weight: 700;
+  }
+  .mlh2__updated em {
+    color: var(--mlh2-text);
+    font-style: normal;
   }
 
   /* Stats */
@@ -259,16 +262,11 @@
 
     { "type": "header", "content": "Updated meta (desktop only)" },
     {
-      "type": "text",
-      "id": "updated_label",
-      "label": "Updated label",
-      "default": "Updated:"
-    },
-    {
-      "type": "text",
-      "id": "updated_date",
-      "label": "Updated date",
-      "default": "May 24, 2026"
+      "type": "richtext",
+      "id": "updated",
+      "label": "Updated meta",
+      "info": "Use bold (strong) for the label.",
+      "default": "<p><strong>Updated:</strong> May 24, 2026</p>"
     },
 
     { "type": "header", "content": "CTA" },
