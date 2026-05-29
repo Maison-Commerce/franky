@@ -39,9 +39,6 @@
         "count_text": "#f7f3e6"
       }
     },
-    "morning_routine": {
-      "type": "maison-listicle-morning-routine"
-    },
     "hero": {
       "type": "maison-listicle-hero-morning",
       "settings": {
@@ -62,6 +59,53 @@
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
         "image": "shopify://shop_images/list-hero-img-morning.png"
+      }
+    },
+    "morning_routine": {
+      "type": "maison-listicle-morning-routine",
+      "blocks": {
+        "feature_3AGbX7": {
+          "type": "feature",
+          "settings": {
+            "icon": "flash",
+            "title": "Sustained Energy",
+            "body": "<p>Real coffee and 20g of protein working together for steady, hours-long energy. No spike on the way up. No crash at 11. No 3pm wall dragging you into the afternoon.</p>"
+          }
+        },
+        "feature_nLtyq9": {
+          "type": "feature",
+          "settings": {
+            "icon": "target",
+            "title": "Focus & Mental Clarity",
+            "body": "<p>100mg of caffeine paired with 200mg of L-theanine sharpens focus and keeps you locked in - through work, workouts, and everything between.</p>"
+          }
+        },
+        "feature_K6Kh4x": {
+          "type": "feature",
+          "settings": {
+            "icon": "hand",
+            "title": "20g Protein Per Serving",
+            "body": "<p>Complete whey protein aids muscle recovery, curbs hunger, and fuels you without the weight of a heavy shake.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_3AGbX7",
+        "feature_nLtyq9",
+        "feature_K6Kh4x"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "text_color": "#3b2b2f",
+        "muted_color": "#3b2b2fbf",
+        "title": "<p>Finally, a Morning Routine That Actually Works for You</p>",
+        "subtitle": "Most people fuel their morning with caffeine and hope. Franky is built differently - every ingredient earns its place.",
+        "image": "shopify://shop_images/list-img-routine.png",
+        "image_radius": 16,
+        "badge_bg": "#ffffff",
+        "badge_text_color": "#3b2b2f",
+        "icon_bg": "#d8e4ee",
+        "icon_color": "#ffffff"
       }
     },
     "footer": {
