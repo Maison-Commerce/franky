@@ -1,0 +1,234 @@
+{%- liquid
+  assign s = section.settings
+  assign cart_icon = 'icon-cart-bag.svg' | inline_asset_content
+-%}
+
+<header
+  id="shopify-section-{{ section.id }}-header"
+  class="mlheader"
+  style="--mlheader-bg: {{ s.bg_color }}; --mlheader-text: {{ s.text_color }}; --mlheader-border: {{ s.border_color }}; --mlheader-count-bg: {{ s.count_bg }}; --mlheader-count-text: {{ s.count_text }};"
+>
+  <div class="mlheader__container">
+    <a class="mlheader__logo" href="{{ s.logo_url | default: '/' }}" aria-label="{{ shop.name | escape }}">
+      {%- if s.logo != blank -%}
+        {%- assign logo_height = s.logo_width | divided_by: s.logo.aspect_ratio -%}
+        {{ s.logo | image_url: width: 600 | image_tag:
+          loading: 'eager',
+          width: s.logo_width,
+          height: logo_height,
+          class: 'mlheader__logo-image',
+          alt: s.logo.alt | default: shop.name
+        }}
+      {%- elsif settings.logo != blank -%}
+        {%- assign logo_height = s.logo_width | divided_by: settings.logo.aspect_ratio -%}
+        {{ settings.logo | image_url: width: 600 | image_tag:
+          loading: 'eager',
+          width: s.logo_width,
+          height: logo_height,
+          class: 'mlheader__logo-image',
+          alt: settings.logo.alt | default: shop.name
+        }}
+      {%- else -%}
+        <span class="mlheader__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <button
+      type="button"
+      class="mlheader__cart"
+      aria-label="{{ 'templates.cart.cart' | t }}"
+      onclick="maisonDispatch('maison:cart-drawer-open'); maisonDispatch('maison:cart-drawer-reload');"
+    >
+      <span class="mlheader__cart-icon" aria-hidden="true">{{ cart_icon }}</span>
+      <span class="mlheader__cart-count {% if cart == empty %}mlheader__cart-count--hidden{% endif %}" data-cart-count>
+        {%- if cart.item_count < 100 -%}
+          <span>{{ cart.item_count }}</span>
+        {%- else -%}
+          <span>99+</span>
+        {%- endif -%}
+      </span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .mlheader {
+    background: var(--mlheader-bg);
+    width: 100%;
+    border-bottom: 1px solid var(--mlheader-border);
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlheader-text);
+  }
+  .mlheader__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 64px;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .mlheader__logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--mlheader-text);
+    line-height: 0;
+  }
+  .mlheader__logo-image {
+    display: block;
+    height: auto;
+    max-height: 40px;
+    width: auto;
+  }
+  .mlheader__logo-text {
+    font-family: 'Cabin', 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--mlheader-text);
+  }
+
+  .mlheader__cart {
+    position: relative;
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--mlheader-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    line-height: 0;
+  }
+  .mlheader__cart:hover,
+  .mlheader__cart:focus-visible {
+    background: color-mix(in srgb, var(--mlheader-text) 6%, transparent);
+    outline: none;
+  }
+
+  .mlheader__cart-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+  }
+  .mlheader__cart-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mlheader__cart-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--mlheader-count-bg);
+    color: var(--mlheader-count-text);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+  .mlheader__cart-count--hidden {
+    display: none;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mlheader__container {
+      height: 60px;
+      padding: 0 20px;
+    }
+    .mlheader__logo-image {
+      max-height: 32px;
+    }
+    .mlheader__logo-text {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var section = document.getElementById('shopify-section-{{ section.id }}-header');
+    if (!section) return;
+    var bubble = section.querySelector('[data-cart-count]');
+    if (!bubble) return;
+
+    function updateBubble(count) {
+      var span = bubble.querySelector('span');
+      if (span) span.textContent = count < 100 ? String(count) : '99+';
+      if (count > 0) {
+        bubble.classList.remove('mlheader__cart-count--hidden');
+      } else {
+        bubble.classList.add('mlheader__cart-count--hidden');
+      }
+    }
+
+    function refresh() {
+      fetch('{{ routes.cart_url }}.js', { headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (cart) { updateBubble(cart.item_count || 0); })
+        .catch(function () {});
+    }
+
+    document.addEventListener('maison:cart-drawer-reload', refresh);
+    document.addEventListener('cart:refresh', refresh);
+    document.addEventListener('cart:added', refresh);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Listicle Header",
+  "tag": "header",
+  "class": "section-maison-listicle-header",
+  "settings": [
+    { "type": "header", "content": "Logo" },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (override)",
+      "info": "Leave empty to use the theme-level logo (Theme settings → Logo)."
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 60,
+      "max": 240,
+      "step": 4,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 112
+    },
+    {
+      "type": "url",
+      "id": "logo_url",
+      "label": "Logo link",
+      "info": "Defaults to homepage (/)."
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Text / icon", "default": "#3B2B2F" },
+    { "type": "color", "id": "border_color", "label": "Bottom border", "default": "#3B2B2F1A" },
+    { "type": "color", "id": "count_bg", "label": "Cart count background", "default": "#3B2B2F" },
+    { "type": "color", "id": "count_text", "label": "Cart count text", "default": "#F7F3E6" }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Header"
+    }
+  ]
+}
+{% endschema %}

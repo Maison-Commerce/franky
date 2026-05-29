@@ -1,0 +1,28 @@
+{
+  "layout": "listicle-clean",
+  "sections": {
+    "announcement_bar": {
+      "type": "maison-listicle-announcement-bar"
+    },
+    "header": {
+      "type": "maison-listicle-header"
+    },
+    "footer": {
+      "type": "maison-listicle-footer"
+    },
+    "sticky_cta": {
+      "type": "maison-listicle-sticky-cta"
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true
+    }
+  },
+  "order": [
+    "announcement_bar",
+    "header",
+    "footer",
+    "sticky_cta",
+    "main"
+  ]
+}
