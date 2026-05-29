@@ -81,10 +81,7 @@
 
       {%- if s.cta_text != blank -%}
         <a class="mlhm__cta" href="{{ s.cta_url | default: '#' }}">
-          <span>{{ s.cta_text }}</span>
-          <svg class="mlhm__cta-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="currentColor" stroke-width="1.66" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <span>{{ s.cta_text }} →</span>
         </a>
       {%- endif -%}
     </div>
@@ -237,13 +234,6 @@
     opacity: 0.92;
     outline: none;
   }
-  .mlhm__cta-arrow {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-  }
-
   /* Media — flush right, full bleed (no padding) */
   .mlhm__media {
     position: relative;
