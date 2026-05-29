@@ -64,6 +64,34 @@
     "morning_routine": {
       "type": "maison-listicle-morning-routine",
       "blocks": {
+        "badge_kWaeaH": {
+          "type": "badge",
+          "settings": {
+            "emoji": "💪",
+            "text": "20g OF PROTEIN"
+          }
+        },
+        "badge_pVELAg": {
+          "type": "badge",
+          "settings": {
+            "emoji": "☕",
+            "text": "100% REAL COFFEE"
+          }
+        },
+        "badge_R9xV4a": {
+          "type": "badge",
+          "settings": {
+            "emoji": "✨",
+            "text": "PREBIOTICS & L-THEANINE"
+          }
+        },
+        "badge_XqLWdt": {
+          "type": "badge",
+          "settings": {
+            "emoji": "🏆",
+            "text": "TOP #1 TRENDING"
+          }
+        },
         "feature_3AGbX7": {
           "type": "feature",
           "settings": {
@@ -90,6 +118,10 @@
         }
       },
       "block_order": [
+        "badge_kWaeaH",
+        "badge_pVELAg",
+        "badge_R9xV4a",
+        "badge_XqLWdt",
         "feature_3AGbX7",
         "feature_nLtyq9",
         "feature_K6Kh4x"
