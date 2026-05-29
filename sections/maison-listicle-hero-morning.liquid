@@ -258,8 +258,10 @@
     padding: 1px;
   }
 
-  /* Mobile */
-  @media (max-width: 768px) {
+  /* Mobile / cramped desktop — collapses to single column earlier than the
+     global 768px breakpoint because the 680/760 grid gets tight well before
+     that on tablets and small desktops. */
+  @media (max-width: 1024px) {
     .mlhm__container {
       grid-template-columns: 1fr;
       align-items: stretch;
