@@ -16,13 +16,13 @@
 -%}
 
 {%- capture star_full_svg -%}
-<svg class="mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+<svg class="franky-rating-star mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
   <path d="M13.9389 5.03971C13.8102 4.6855 13.4721 4.44819 13.0917 4.44539H9.43322C9.30677 4.44534 9.19389 4.36693 9.15088 4.24927L7.84135 0.564589C7.70173 0.223167 7.36657 -0.000223282 6.99421 1.67477e-07C6.615 0.00179603 6.27803 0.239919 6.15314 0.594304L4.83767 4.26117C4.79466 4.37882 4.68177 4.45723 4.55533 4.45728H0.896684C0.515798 4.45834 0.176631 4.69627 0.0496689 5.05158C-0.0722558 5.40236 0.0349451 5.79123 0.320125 6.03218L3.43179 8.58769C3.52762 8.66495 3.56572 8.79229 3.52814 8.90858L2.21835 12.7895C2.09178 13.1582 2.22184 13.5657 2.53957 13.7956C2.85729 14.0255 3.2892 14.0248 3.60615 13.7939L6.81404 11.4641C6.91904 11.3859 7.06357 11.3859 7.16844 11.4641L10.3824 13.7939C10.6975 14.0532 11.1501 14.0696 11.4833 13.8332C11.8168 13.5971 11.9469 13.1682 11.8003 12.7895L10.4905 8.90858C10.4529 8.79229 10.491 8.66495 10.5867 8.58769L13.7046 6.02625C13.9807 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
 </svg>
 {%- endcapture -%}
 
 {%- capture star_half_svg -%}
-<svg class="mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+<svg class="franky-rating-star mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
   <mask id="mlhm-half-mask-{{ section.id }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
     <path d="M14 0H0V14H14V0Z" fill="#D9D9D9"/>
   </mask>
@@ -43,7 +43,7 @@
 <section
   id="shopify-section-{{ section.id }}-hero-morning"
   class="mlhm"
-  style="--mlhm-bg-start: {{ s.bg_start }}; --mlhm-bg-end: {{ s.bg_end }}; --mlhm-text: {{ s.text_color }}; --mlhm-muted: {{ s.muted_color }}; --mlhm-cta-bg: {{ s.cta_bg }}; --mlhm-cta-text: {{ s.cta_text_color }};"
+  style="--mlhm-bg: {{ s.bg_color }}; --mlhm-text: {{ s.text_color }}; --mlhm-muted: {{ s.muted_color }}; --mlhm-cta-bg: {{ s.cta_bg }}; --mlhm-cta-text: {{ s.cta_text_color }};"
 >
   <div class="mlhm__container">
     <div class="mlhm__content">
@@ -102,7 +102,7 @@
 
 <style>
   .mlhm {
-    background: linear-gradient(180deg, var(--mlhm-bg-start), var(--mlhm-bg-end));
+    background: var(--mlhm-bg);
     width: 100%;
     padding: 24px 0;
     display: flex;
@@ -322,8 +322,13 @@
   "max_blocks": 6,
   "settings": [
     { "type": "header", "content": "Background" },
-    { "type": "color", "id": "bg_start", "label": "Gradient (top)", "default": "#F0F4F9" },
-    { "type": "color", "id": "bg_end", "label": "Gradient (bottom)", "default": "#FFFFFF" },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background",
+      "info": "Solid color or gradient. Default is a soft top-to-bottom gradient.",
+      "default": "linear-gradient(180deg, #F0F4F9 0%, #FFFFFF 100%)"
+    },
     { "type": "color", "id": "text_color", "label": "Text color", "default": "#3B2B2F" },
     { "type": "color", "id": "muted_color", "label": "Muted text color", "default": "#3B2B2FBF" },
 
