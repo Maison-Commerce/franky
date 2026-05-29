@@ -42,8 +42,7 @@
     "hero": {
       "type": "maison-listicle-hero-morning",
       "settings": {
-        "bg_start": "#f0f4f9",
-        "bg_end": "#ffffff",
+        "bg_color": "linear-gradient(180deg, #FBF6EA 0%, #DEEAF2 100%)",
         "text_color": "#3b2b2f",
         "muted_color": "#3b2b2fbf",
         "rating": 4.5,
