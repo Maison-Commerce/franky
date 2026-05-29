@@ -151,7 +151,9 @@
     right: 20px;
     bottom: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Tries to lay out 2 badges per row; auto-falls back to 1 column when
+       the longest badge text wouldn't fit at the 2-column track width. */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 12px;
     z-index: 1;
   }
