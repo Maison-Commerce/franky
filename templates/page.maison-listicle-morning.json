@@ -7,6 +7,9 @@
     "header": {
       "type": "maison-listicle-header"
     },
+    "hero": {
+      "type": "maison-listicle-hero-morning"
+    },
     "footer": {
       "type": "maison-listicle-footer"
     },
@@ -21,6 +24,7 @@
   "order": [
     "announcement_bar",
     "header",
+    "hero",
     "footer",
     "sticky_cta",
     "main"

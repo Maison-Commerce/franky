@@ -1,0 +1,421 @@
+{%- liquid
+  assign s = section.settings
+  assign feature_blocks = section.blocks | where: 'type', 'feature'
+
+  assign rating = s.rating | default: 4.8
+  assign rating_floor = rating | floor
+  assign rating_remainder = rating | minus: rating_floor
+  assign full_stars = rating_floor
+  assign has_half = false
+  if rating_remainder >= 0.25 and rating_remainder < 0.75
+    assign has_half = true
+  endif
+  if rating_remainder >= 0.75
+    assign full_stars = rating_floor | plus: 1
+  endif
+-%}
+
+{%- capture star_full_svg -%}
+<svg class="mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+  <path d="M13.9389 5.03971C13.8102 4.6855 13.4721 4.44819 13.0917 4.44539H9.43322C9.30677 4.44534 9.19389 4.36693 9.15088 4.24927L7.84135 0.564589C7.70173 0.223167 7.36657 -0.000223282 6.99421 1.67477e-07C6.615 0.00179603 6.27803 0.239919 6.15314 0.594304L4.83767 4.26117C4.79466 4.37882 4.68177 4.45723 4.55533 4.45728H0.896684C0.515798 4.45834 0.176631 4.69627 0.0496689 5.05158C-0.0722558 5.40236 0.0349451 5.79123 0.320125 6.03218L3.43179 8.58769C3.52762 8.66495 3.56572 8.79229 3.52814 8.90858L2.21835 12.7895C2.09178 13.1582 2.22184 13.5657 2.53957 13.7956C2.85729 14.0255 3.2892 14.0248 3.60615 13.7939L6.81404 11.4641C6.91904 11.3859 7.06357 11.3859 7.16844 11.4641L10.3824 13.7939C10.6975 14.0532 11.1501 14.0696 11.4833 13.8332C11.8168 13.5971 11.9469 13.1682 11.8003 12.7895L10.4905 8.90858C10.4529 8.79229 10.491 8.66495 10.5867 8.58769L13.7046 6.02625C13.9807 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture star_half_svg -%}
+<svg class="mlhm__star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+  <mask id="mlhm-half-mask-{{ section.id }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+    <path d="M14 0H0V14H14V0Z" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mlhm-half-mask-{{ section.id }})">
+    <path d="M13.9389 5.03971C13.8105 4.6855 13.4723 4.44819 13.0918 4.44539H9.43342C9.30684 4.44534 9.19396 4.36693 9.15108 4.24927L7.84128 0.564589C7.70251 0.224922 7.37006 0.00207737 7 1.4446e-05L6.99426 1.67477e-07C6.61505 0.00179603 6.27795 0.239919 6.15331 0.594304L4.83757 4.26117C4.79469 4.37882 4.68168 4.45723 4.55523 4.45728H0.89669C0.515802 4.45834 0.176632 4.69627 0.0496692 5.05158C-0.0722564 5.40236 0.0349454 5.79123 0.320127 6.03218L3.43194 8.58769C3.52752 8.66495 3.56575 8.79229 3.52804 8.90857L2.21837 12.7895C2.09179 13.1582 2.22199 13.5657 2.53946 13.7956C2.85732 14.0255 3.28909 14.0248 3.60605 13.7939L6.81408 11.4641C6.86898 11.4232 6.93473 11.4036 7 11.4056C7.05943 11.4073 7.11845 11.4268 7.1685 11.4641L10.3825 13.7939C10.6976 14.0532 11.1501 14.0696 11.4836 13.8332C11.8168 13.5971 11.947 13.1682 11.8002 12.7895L10.4907 8.90857C10.4529 8.79229 10.4911 8.66495 10.5868 8.58769L13.7046 6.02625C13.9808 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
+    <path d="M13.0922 4.44539C13.4727 4.44819 13.8108 4.6855 13.9392 5.03971C14.0742 5.38487 13.9812 5.77666 13.7049 6.02625L10.5872 8.58769C10.4915 8.66495 10.4532 8.79228 10.4911 8.90857L11.8006 12.7895C11.9473 13.1682 11.8172 13.5971 11.4839 13.8332C11.1504 14.0696 10.698 14.0532 10.3828 13.7939L7.16887 11.4641C7.11882 11.4268 7.0598 11.4073 7.00037 11.4056V1.42785e-05C7.37043 0.00207721 7.70288 0.224922 7.84165 0.564588L9.15145 4.24927C9.19433 4.36693 9.30721 4.44534 9.43379 4.44539H13.0922Z" fill="{{ s.star_empty_color | default: '#D2D2D2' }}"/>
+  </g>
+</svg>
+{%- endcapture -%}
+
+{%- capture check_svg -%}
+<svg class="mlhm__check" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+  <circle cx="11" cy="11" r="11" fill="{{ s.check_bg | default: '#D8E4EE' }}"/>
+  <path d="M16 7.9541L9.125 14.8291L6 11.7041" stroke="{{ s.check_color | default: '#3B2B2F' }}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+<section
+  id="shopify-section-{{ section.id }}-hero-morning"
+  class="mlhm"
+  style="--mlhm-bg-start: {{ s.bg_start }}; --mlhm-bg-end: {{ s.bg_end }}; --mlhm-text: {{ s.text_color }}; --mlhm-muted: {{ s.muted_color }}; --mlhm-cta-bg: {{ s.cta_bg }}; --mlhm-cta-text: {{ s.cta_text_color }};"
+>
+  <div class="mlhm__container">
+    <div class="mlhm__content">
+      <div class="mlhm__rating">
+        <span class="mlhm__stars" aria-hidden="true">
+          {%- for i in (1..full_stars) -%}{{ star_full_svg }}{%- endfor -%}
+          {%- if has_half -%}{{ star_half_svg }}{%- endif -%}
+        </span>
+        {%- if s.rating_label != blank -%}
+          <span class="mlhm__rating-text">{{ s.rating_label }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- if s.title != blank -%}
+        <h1 class="mlhm__title mlhm__title--desktop">{{ s.title }}</h1>
+      {%- endif -%}
+      {%- if s.title_mobile != blank -%}
+        <h1 class="mlhm__title mlhm__title--mobile">{{ s.title_mobile }}</h1>
+      {%- endif -%}
+
+      {%- if s.subtitle != blank -%}
+        <p class="mlhm__subtitle">{{ s.subtitle }}</p>
+      {%- endif -%}
+
+      {%- if feature_blocks.size > 0 -%}
+        <ul class="mlhm__features">
+          {%- for block in feature_blocks -%}
+            <li class="mlhm__feature" {{ block.shopify_attributes }}>
+              {{ check_svg }}
+              <span class="mlhm__feature-label">{{ block.settings.label }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if s.cta_text != blank -%}
+        <a class="mlhm__cta" href="{{ s.cta_url | default: '#' }}">
+          <span>{{ s.cta_text }}</span>
+          <span class="mlhm__cta-arrow" aria-hidden="true">→</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if s.image != blank -%}
+      <div class="mlhm__media">
+        {{ s.image | image_url: width: 1400 | image_tag:
+          loading: 'eager',
+          class: 'mlhm__image',
+          sizes: '(max-width: 768px) 100vw, 600px',
+          widths: '400, 600, 800, 1200, 1400'
+        }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .mlhm {
+    background: linear-gradient(180deg, var(--mlhm-bg-start), var(--mlhm-bg-end));
+    width: 100%;
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlhm-text);
+    box-sizing: border-box;
+  }
+  .mlhm__container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    box-sizing: border-box;
+  }
+
+  .mlhm__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 560px;
+  }
+
+  /* Rating */
+  .mlhm__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mlhm__stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+  }
+  .mlhm__stars .mlhm__star + .mlhm__star {
+    margin-left: 1px;
+  }
+  .mlhm__rating-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--mlhm-text);
+    line-height: 1.4;
+  }
+  .mlhm__rating-text p {
+    margin: 0;
+    display: inline;
+  }
+  .mlhm__rating-text strong {
+    font-weight: 700;
+  }
+
+  /* Title */
+  .mlhm__title {
+    margin: 0;
+    font-family: 'Lust Text', serif;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--mlhm-text);
+    letter-spacing: -0.01em;
+  }
+  .mlhm__title p {
+    margin: 0;
+  }
+  .mlhm__title--mobile {
+    display: none;
+  }
+
+  /* Subtitle */
+  .mlhm__subtitle {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mlhm-muted);
+    max-width: 520px;
+  }
+
+  /* Features */
+  .mlhm__features {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .mlhm__feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mlhm__check {
+    flex-shrink: 0;
+  }
+  .mlhm__feature-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--mlhm-text);
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .mlhm__cta {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 560px;
+    min-height: 60px;
+    padding: 18px 28px;
+    background: var(--mlhm-cta-bg);
+    color: var(--mlhm-cta-text);
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease;
+  }
+  .mlhm__cta:hover,
+  .mlhm__cta:focus-visible {
+    opacity: 0.92;
+    outline: none;
+  }
+  .mlhm__cta-arrow {
+    font-size: 18px;
+  }
+
+  /* Media */
+  .mlhm__media {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mlhm__image {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mlhm {
+      padding: 24px 0 0;
+    }
+    .mlhm__container {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+      gap: 24px;
+      text-align: center;
+    }
+    .mlhm__content {
+      align-items: center;
+      gap: 16px;
+      max-width: 100%;
+      order: 1;
+    }
+    .mlhm__media {
+      order: 2;
+    }
+    .mlhm__rating {
+      justify-content: center;
+    }
+    .mlhm__title {
+      font-size: 36px;
+      line-height: 1.1;
+    }
+    .mlhm__title--desktop {
+      display: none;
+    }
+    .mlhm__title--mobile {
+      display: block;
+    }
+    /* If no mobile title set, keep desktop title visible on mobile */
+    .mlhm__title--desktop:only-of-type {
+      display: block;
+    }
+    .mlhm__subtitle {
+      font-size: 15px;
+      max-width: 100%;
+    }
+    .mlhm__features {
+      justify-content: center;
+      gap: 10px 16px;
+    }
+    .mlhm__feature-label {
+      font-size: 15px;
+    }
+    .mlhm__cta {
+      font-size: 14px;
+      max-width: 100%;
+    }
+    .mlhm__image {
+      max-width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Hero Morning",
+  "tag": "section",
+  "class": "section-maison-listicle-hero-morning",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color", "id": "bg_start", "label": "Gradient (top)", "default": "#F0F4F9" },
+    { "type": "color", "id": "bg_end", "label": "Gradient (bottom)", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#3B2B2F" },
+    { "type": "color", "id": "muted_color", "label": "Muted text color", "default": "#3B2B2FBF" },
+
+    { "type": "header", "content": "Rating row" },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Rating value",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.8
+    },
+    {
+      "type": "richtext",
+      "id": "rating_label",
+      "label": "Rating label",
+      "info": "Use bold for the rating number and review count.",
+      "default": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>"
+    },
+    { "type": "color", "id": "star_color", "label": "Star (filled)", "default": "#FBAA19" },
+    { "type": "color", "id": "star_empty_color", "label": "Star (empty)", "default": "#D2D2D2" },
+
+    { "type": "header", "content": "Title" },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title (desktop)",
+      "default": "<p>Stop Buying Coffee That Leaves You Running On Empty</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "title_mobile",
+      "label": "Title (mobile)",
+      "info": "Shown only on mobile (≤768px). Leave empty to use the desktop title on both.",
+      "default": "<p>Make Your Morning Work Harder</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Protein-powered iced coffee that fuels focus, supports gut health, and keeps you steady — no crash, no chaos. Delivered to your door every month."
+    },
+
+    { "type": "header", "content": "Check icon (features)" },
+    { "type": "color", "id": "check_bg", "label": "Check background", "default": "#D8E4EE" },
+    { "type": "color", "id": "check_color", "label": "Check stroke", "default": "#3B2B2F" },
+
+    { "type": "header", "content": "CTA" },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "info": "Trailing arrow (→) is added automatically.",
+      "default": "Subscribe & Save 20% + Free Shipping"
+    },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
+    { "type": "color", "id": "cta_bg", "label": "CTA background", "default": "#3B2B2F" },
+    { "type": "color", "id": "cta_text_color", "label": "CTA text", "default": "#F7F3E6" },
+
+    { "type": "header", "content": "Image" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image",
+      "info": "Right side on desktop, below content on mobile."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Sustained Energy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Hero Morning",
+      "blocks": [
+        { "type": "feature", "settings": { "label": "Sustained Energy" } },
+        { "type": "feature", "settings": { "label": "20g Protein" } },
+        { "type": "feature", "settings": { "label": "Zero Crash" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
