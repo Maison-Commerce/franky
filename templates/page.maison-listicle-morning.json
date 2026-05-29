@@ -1,24 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "listicle-clean",
   "sections": {
     "announcement_bar": {
-      "type": "maison-listicle-announcement-bar"
+      "type": "maison-listicle-announcement-bar",
+      "settings": {
+        "headline_text": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING",
+        "subheadline_text": "Limited stock · US warehouse ships in 2–3 days",
+        "countdown_enabled": true,
+        "countdown_end_iso": "2026-08-31T23:59:00",
+        "countdown_expired_behavior": "hide",
+        "countdown_expired_message": "Offer ended",
+        "label_days": "DAYS",
+        "label_hrs": "HRS",
+        "label_min": "MIN",
+        "label_sec": "SEC",
+        "bg_color": "#c1d5e5",
+        "text_color": "#3b2b2f"
+      }
     },
     "header": {
-      "type": "maison-listicle-header"
+      "type": "maison-listicle-header",
+      "settings": {
+        "logo_width": 112,
+        "logo_url": "",
+        "bg_color": "#ffffff",
+        "text_color": "#3b2b2f",
+        "border_color": "#3b2b2f1a",
+        "count_bg": "#3b2b2f",
+        "count_text": "#f7f3e6"
+      }
     },
     "hero": {
-      "type": "maison-listicle-hero-morning"
+      "type": "maison-listicle-hero-morning",
+      "settings": {
+        "bg_start": "#f0f4f9",
+        "bg_end": "#ffffff",
+        "text_color": "#3b2b2f",
+        "muted_color": "#3b2b2fbf",
+        "rating": 4.5,
+        "rating_label": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "star_color": "#fbaa19",
+        "star_empty_color": "#d2d2d2",
+        "title": "<p>Stop Buying Coffee That Leaves You Running On Empty</p>",
+        "title_mobile": "<p>Make Your Morning Work Harder</p>",
+        "subtitle": "Protein-powered iced coffee that fuels focus, supports gut health, and keeps you steady — no crash, no chaos. Delivered to your door every month.",
+        "check_bg": "#d8e4ee",
+        "check_color": "#3b2b2f",
+        "cta_text": "Subscribe & Save 20% + Free Shipping",
+        "cta_url": "",
+        "cta_bg": "#3b2b2f",
+        "cta_text_color": "#f7f3e6"
+      }
     },
     "footer": {
-      "type": "maison-listicle-footer"
+      "type": "maison-listicle-footer",
+      "settings": {
+        "bg_color": "#3b2b2f",
+        "text_color": "#f7f3e6",
+        "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+      }
     },
     "sticky_cta": {
-      "type": "maison-listicle-sticky-cta"
+      "type": "maison-listicle-sticky-cta",
+      "settings": {
+        "button_text": "Proceed to Offer →",
+        "button_url": "",
+        "bg_color": "#ffffff",
+        "border_color": "#3b2b2f33",
+        "button_bg": "#3b2b2f",
+        "button_text_color": "#f7f3e6"
+      }
     },
     "main": {
       "type": "main-page",
-      "disabled": true
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
