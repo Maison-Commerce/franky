@@ -57,7 +57,8 @@
         "cta_text": "Subscribe & Save 20% + Free Shipping",
         "cta_url": "",
         "cta_bg": "#3b2b2f",
-        "cta_text_color": "#f7f3e6"
+        "cta_text_color": "#f7f3e6",
+        "image": "shopify://shop_images/list-hero-img-morning.png"
       }
     },
     "footer": {
