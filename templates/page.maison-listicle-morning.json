@@ -39,6 +39,9 @@
         "count_text": "#f7f3e6"
       }
     },
+    "morning_routine": {
+      "type": "maison-listicle-morning-routine"
+    },
     "hero": {
       "type": "maison-listicle-hero-morning",
       "settings": {
@@ -94,6 +97,7 @@
     "announcement_bar",
     "header",
     "hero",
+    "morning_routine",
     "footer",
     "sticky_cta",
     "main"

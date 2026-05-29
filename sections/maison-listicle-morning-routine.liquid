@@ -1,0 +1,497 @@
+{%- liquid
+  assign s = section.settings
+  assign badge_blocks = section.blocks | where: 'type', 'badge'
+  assign feature_blocks = section.blocks | where: 'type', 'feature'
+-%}
+
+{%- capture icon_flash -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path d="M23.847 10.8147C23.8003 10.7188 23.7272 10.6381 23.6363 10.5823C23.5454 10.5265 23.4404 10.4979 23.3337 10.4997H14.7237L16.9053 0.711375C16.9454 0.571898 16.9332 0.422575 16.8709 0.291506C16.8086 0.160438 16.7005 0.0566618 16.567 -0.000292033C16.4437 -0.0544559 16.3055 -0.0642975 16.1758 -0.0281469C16.0461 0.00800375 15.9328 0.0879199 15.8553 0.198041L4.18868 16.5314C4.13175 16.6223 4.10156 16.7274 4.10156 16.8347C4.10156 16.942 4.13175 17.0471 4.18868 17.138C4.22709 17.2367 4.29216 17.3228 4.37661 17.3866C4.46107 17.4505 4.56161 17.4896 4.66701 17.4997H13.277L11.0953 27.288C11.0552 27.4275 11.0675 27.5768 11.1298 27.7079C11.1921 27.839 11.3002 27.9428 11.4337 27.9997C11.5576 28.0496 11.6945 28.0572 11.8232 28.0214C11.9519 27.9855 12.0651 27.9082 12.1453 27.8014L23.812 11.468C23.884 11.3758 23.926 11.2637 23.9322 11.1469C23.9385 11.03 23.9087 10.9141 23.847 10.8147Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture icon_target -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path d="M14.0001 -0.00537109C21.735 -0.00532131 28.0057 6.26518 28.0057 14.0001C28.0054 21.735 21.735 28.0054 14.0001 28.0057C6.26521 28.0054 -0.00532131 21.735 -0.00537109 14.0001C-0.00537109 6.26518 6.26518 -0.00531915 14.0001 -0.00537109ZM14.0001 3.49464C8.19819 3.49469 3.49464 8.19816 3.49464 14.0001C3.49467 19.802 8.19822 24.5055 14.0001 24.5056C19.802 24.5055 24.5055 19.802 24.5056 14.0001C24.5056 8.19816 19.802 3.49467 14.0001 3.49464ZM14.0001 7.00284C17.8652 7.00284 20.9974 10.135 20.9974 14.0001C20.9972 17.865 17.865 20.9974 14.0001 20.9974C10.1351 20.9974 7.00301 17.865 7.00284 14.0001C7.00284 10.135 10.135 7.00284 14.0001 7.00284Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture icon_hand -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5236 0.875C10.2634 0.875 9.26777 0.948587 8.58538 1.02255C8.24413 1.05954 7.98117 1.09662 7.80255 1.12465C7.71318 1.13867 7.64493 1.15043 7.59856 1.15879C7.57534 1.16296 7.55755 1.16629 7.54536 1.16862L7.53124 1.17136L7.52733 1.17213L7.52617 1.17237C7.52611 1.17238 7.52553 1.17249 7.58333 1.45837L7.52617 1.17237C7.511 1.17543 7.49543 1.17984 7.4809 1.18527C6.38499 1.59624 5.67783 2.72267 5.30932 3.92432C4.93819 5.13452 4.88176 6.50796 5.16301 7.52774C5.39014 8.35129 6.13836 8.82333 6.90212 8.96157C7.83423 9.13033 9.31228 9.23411 11.1377 8.80174C11.3216 8.75817 11.4972 8.69184 11.6647 8.6093C11.6398 7.68705 11.3745 7.10704 11.0689 6.76293C10.7499 6.40377 10.3223 6.22638 9.8581 6.21827C9.37492 6.20987 8.9901 5.81134 8.9985 5.32816C9.00696 4.84499 9.40543 4.46013 9.88861 4.46855C10.7993 4.48444 11.7059 4.84482 12.3773 5.60078C12.8441 6.12628 13.1653 6.80587 13.317 7.61932C13.7999 9.59309 14.6918 11.9018 15.5008 13.7951C15.8789 14.6799 16.2405 15.4779 16.5369 16.1139C12.2324 12.2363 7.75478 12.0671 4.56472 12.8738C2.49964 13.396 1.21238 15.2766 1.02289 17.3441C0.938047 18.2699 0.875 19.3623 0.875 20.5652C0.875 21.9031 0.952992 23.1044 1.05222 24.0917C1.23302 25.8904 2.79864 27.1297 4.57037 27.125C13.1674 27.1022 18.5869 26.9765 21.9305 26.8478C24.9529 26.7314 27.2291 24.2922 27.0146 21.2626C26.8914 19.5222 26.6724 17.5937 26.2835 15.9756C25.5861 13.074 23.805 10.1544 21.9295 7.70041C20.0505 5.24185 18.0584 3.22697 16.9126 2.13367C16.246 1.4975 15.3973 1.09622 14.4742 1.01002C13.7313 0.940648 12.714 0.875 11.5236 0.875ZM9.03163 18.2259C7.62469 18.0919 6.38896 18.3763 5.73534 18.812C5.33324 19.0801 4.78999 18.9714 4.52194 18.5693C4.25389 18.1672 4.36256 17.624 4.76466 17.3559C5.86104 16.6251 7.54198 16.3262 9.19753 16.4838C10.8754 16.6436 12.6897 17.2862 14.0354 18.6319C14.3771 18.9736 14.3771 19.5276 14.0354 19.8693C13.6937 20.211 13.1397 20.211 12.798 19.8694C11.8103 18.8818 10.4163 18.3578 9.03163 18.2259Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+<section
+  id="shopify-section-{{ section.id }}-morning-routine"
+  class="mlmr"
+  style="--mlmr-bg: {{ s.bg_color }}; --mlmr-text: {{ s.text_color }}; --mlmr-muted: {{ s.muted_color }}; --mlmr-icon-bg: {{ s.icon_bg }}; --mlmr-icon-color: {{ s.icon_color }}; --mlmr-badge-bg: {{ s.badge_bg }}; --mlmr-badge-text: {{ s.badge_text_color }}; --mlmr-image-radius: {{ s.image_radius }}px;"
+>
+  <div class="mlmr__container">
+    <div class="mlmr__media">
+      <div class="mlmr__image-wrap">
+        {%- if s.image != blank -%}
+          {{ s.image | image_url: width: 1200 | image_tag:
+            loading: 'lazy',
+            class: 'mlmr__image',
+            sizes: '(max-width: 1024px) 100vw, 600px',
+            widths: '400, 600, 800, 1200'
+          }}
+        {%- else -%}
+          <div class="mlmr__image mlmr__image--placeholder" aria-hidden="true"></div>
+        {%- endif -%}
+
+        {%- if badge_blocks.size > 0 -%}
+          <div class="mlmr__badges">
+            {%- for block in badge_blocks -%}
+              <div class="mlmr__badge" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon != blank -%}
+                  <span class="mlmr__badge-icon" aria-hidden="true">
+                    {{ block.settings.icon | image_url: width: 64 | image_tag: loading: 'lazy', class: 'mlmr__badge-icon-img' }}
+                  </span>
+                {%- elsif block.settings.emoji != blank -%}
+                  <span class="mlmr__badge-icon mlmr__badge-icon--emoji" aria-hidden="true">{{ block.settings.emoji }}</span>
+                {%- endif -%}
+                <span class="mlmr__badge-text">{{ block.settings.text }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="mlmr__content">
+      <div class="mlmr__head">
+        {%- if s.title != blank -%}
+          <h2 class="mlmr__title">{{ s.title }}</h2>
+        {%- endif -%}
+        {%- if s.subtitle != blank -%}
+          <p class="mlmr__subtitle">{{ s.subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if feature_blocks.size > 0 -%}
+        <ul class="mlmr__features">
+          {%- for block in feature_blocks -%}
+            {%- assign chosen_icon = block.settings.icon -%}
+            <li class="mlmr__feature" {{ block.shopify_attributes }}>
+              <div class="mlmr__feature-icon">
+                {%- case chosen_icon -%}
+                  {%- when 'flash' -%}{{ icon_flash }}
+                  {%- when 'target' -%}{{ icon_target }}
+                  {%- when 'hand' -%}{{ icon_hand }}
+                  {%- else -%}{{ icon_flash }}
+                {%- endcase -%}
+              </div>
+              <div class="mlmr__feature-body">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="mlmr__feature-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <div class="mlmr__feature-text">{{ block.settings.body }}</div>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mlmr {
+    background: var(--mlmr-bg);
+    width: 100%;
+    padding: 64px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlmr-text);
+    box-sizing: border-box;
+  }
+  .mlmr__container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    box-sizing: border-box;
+  }
+
+  /* Media + image + floating badges */
+  .mlmr__media {
+    width: 100%;
+  }
+  .mlmr__image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--mlmr-image-radius);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .mlmr__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mlmr__image--placeholder {
+    background: #D9D9D9;
+  }
+
+  .mlmr__badges {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    z-index: 1;
+  }
+  .mlmr__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 43px;
+    padding: 8px 14px;
+    background: var(--mlmr-badge-bg);
+    color: var(--mlmr-badge-text);
+    border-radius: 999px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(45, 38, 34, 0.08);
+  }
+  .mlmr__badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .mlmr__badge-icon--emoji {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .mlmr__badge-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mlmr__badge-text {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* Content (heading + features) */
+  .mlmr__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 16px;
+  }
+  .mlmr__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mlmr__title {
+    margin: 0;
+    font-family: 'Lust Text', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--mlmr-text);
+    letter-spacing: -0.01em;
+  }
+  .mlmr__title p {
+    margin: 0;
+  }
+  .mlmr__subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--mlmr-muted);
+  }
+
+  .mlmr__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .mlmr__feature {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .mlmr__feature-icon {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--mlmr-icon-bg);
+    color: var(--mlmr-icon-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mlmr__feature-icon svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+  .mlmr__feature-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mlmr__feature-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--mlmr-text);
+  }
+  .mlmr__feature-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mlmr-muted);
+  }
+  .mlmr__feature-text p {
+    margin: 0 0 0.5em 0;
+  }
+  .mlmr__feature-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Mobile / cramped desktop */
+  @media (max-width: 1024px) {
+    .mlmr {
+      padding: 40px 0;
+    }
+    .mlmr__container {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+      gap: 28px;
+    }
+    .mlmr__media {
+      order: 2;
+    }
+    .mlmr__content {
+      order: 1;
+      gap: 28px;
+      padding-top: 0;
+      text-align: center;
+      align-items: center;
+    }
+    .mlmr__title {
+      font-size: 32px;
+    }
+    .mlmr__subtitle {
+      font-size: 16px;
+    }
+    .mlmr__features {
+      gap: 20px;
+      width: 100%;
+    }
+    .mlmr__feature {
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    .mlmr__feature-icon {
+      width: 56px;
+      height: 56px;
+    }
+    .mlmr__feature-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .mlmr__feature-title {
+      font-size: 18px;
+    }
+    .mlmr__feature-text {
+      font-size: 15px;
+    }
+
+    .mlmr__badges {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      gap: 8px;
+    }
+    .mlmr__badge {
+      min-height: 36px;
+      padding: 6px 10px;
+    }
+    .mlmr__badge-text {
+      font-size: 11px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Morning Routine",
+  "tag": "section",
+  "class": "section-maison-listicle-morning-routine",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#3B2B2F" },
+    { "type": "color", "id": "muted_color", "label": "Muted text", "default": "#3B2B2FBF" },
+
+    { "type": "header", "content": "Heading" },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Finally, A Morning Routine That Actually Works For You</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Most people fuel their morning with caffeine and hope. Franky is built differently — every ingredient earns its place."
+    },
+
+    { "type": "header", "content": "Image" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 16
+    },
+
+    { "type": "header", "content": "Image badges (overlay)" },
+    { "type": "color", "id": "badge_bg", "label": "Badge background", "default": "#FFFFFF" },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text", "default": "#3B2B2F" },
+
+    { "type": "header", "content": "Feature icons" },
+    { "type": "color", "id": "icon_bg", "label": "Icon background", "default": "#D8E4EE" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#3B2B2F" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Image badge",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Icon emoji (fallback)",
+          "info": "Used if no icon image is uploaded.",
+          "default": "💪"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "20g of Protein"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "flash", "label": "Lightning" },
+            { "value": "target", "label": "Target / circle" },
+            { "value": "hand", "label": "Hand / muscle" }
+          ],
+          "default": "flash"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Sustained Energy"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Body text.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Morning Routine",
+      "blocks": [
+        { "type": "badge", "settings": { "emoji": "💪", "text": "20g of Protein" } },
+        { "type": "badge", "settings": { "emoji": "☕", "text": "100% Real Coffee" } },
+        { "type": "badge", "settings": { "emoji": "✨", "text": "Prebiotics & L-Theanine" } },
+        { "type": "badge", "settings": { "emoji": "🏆", "text": "Top #1 Trending" } },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "flash",
+            "title": "Sustained Energy",
+            "body": "<p>Real coffee and 20g of protein working together for steady, hours-long energy. No spike on the way up. No crash at 11. No 3pm wall dragging you into the afternoon.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "target",
+            "title": "Focus & Mental Clarity",
+            "body": "<p>100mg of caffeine paired with 200mg of L-theanine sharpens focus and keeps you locked in — through work, workouts, and everything between.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "hand",
+            "title": "20g Protein Per Serving",
+            "body": "<p>Complete whey protein aids muscle recovery, curbs hunger, and fuels you without the weight of a heavy shake.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
