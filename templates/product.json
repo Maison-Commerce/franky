@@ -1119,16 +1119,10 @@
             "video": "shopify://files/videos/AD21_Brooke_web.mp4"
           }
         },
-        "video_b6CnWJ": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
-          }
-        },
         "video_E6NaUR": {
           "type": "video",
           "settings": {
-            "video": "shopify://files/videos/AD7_Beth_web.mp4"
+            "video": "shopify://files/videos/30ee5739_web.mp4"
           }
         },
         "video_hnYthk": {
@@ -1159,6 +1153,12 @@
             "review_text": "<p>I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with</p>",
             "reviewer_name": "Hannah, 45",
             "verified_buyer": true
+          }
+        },
+        "video_b6CnWJ": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
           }
         },
         "review_z3MKXm": {
@@ -1273,12 +1273,12 @@
       "block_order": [
         "video_B8bWKa",
         "video_tKJnhR",
-        "video_b6CnWJ",
         "video_E6NaUR",
         "video_hnYthk",
         "video_hGCtPz",
         "video_3bqHpK",
         "review_FT7eUG",
+        "video_b6CnWJ",
         "review_z3MKXm",
         "review_FpXG9p",
         "review_UATFJa",
