@@ -1145,8 +1145,9 @@
         },
         "video_3bqHpK": {
           "type": "video",
-          "disabled": true,
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4"
+          }
         },
         "review_FT7eUG": {
           "type": "review",
