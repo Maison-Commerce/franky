@@ -422,17 +422,17 @@
             "custom_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png"
           }
         },
+        "customer_video_tm3Rzp": {
+          "type": "customer_video",
+          "settings": {
+            "video": "shopify://files/videos/Taste Reaction_web.mp4",
+            "alt_text": "Customer testimonial"
+          }
+        },
         "customer_video_WHqD7f": {
           "type": "customer_video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4",
-            "alt_text": "Customer testimonial"
-          }
-        },
-        "customer_video_tm3Rzp": {
-          "type": "customer_video",
-          "settings": {
-            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4",
             "alt_text": "Customer testimonial"
           }
         },
@@ -590,8 +590,8 @@
         "pack_option_GHhn3X",
         "pack_option_wRrbhV",
         "pack_option_wrUnNn",
-        "customer_video_WHqD7f",
         "customer_video_tm3Rzp",
+        "customer_video_WHqD7f",
         "customer_video_mEtUwE",
         "feature_item_wRQD6i",
         "feature_item_mkmkcY",
