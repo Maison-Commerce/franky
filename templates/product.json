@@ -1113,6 +1113,12 @@
             "video": "shopify://files/videos/Taste Reaction_web.mp4"
           }
         },
+        "video_tKJnhR": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/AD21_Brooke_web.mp4"
+          }
+        },
         "video_b6CnWJ": {
           "type": "video",
           "settings": {
@@ -1129,13 +1135,6 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4"
-          }
-        },
-        "video_tKJnhR": {
-          "type": "video",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/Franky_Kayla_AD6_web.mp4"
           }
         },
         "video_hGCtPz": {
@@ -1272,10 +1271,10 @@
       },
       "block_order": [
         "video_B8bWKa",
+        "video_tKJnhR",
         "video_b6CnWJ",
         "video_E6NaUR",
         "video_hnYthk",
-        "video_tKJnhR",
         "video_hGCtPz",
         "video_3bqHpK",
         "review_FT7eUG",
