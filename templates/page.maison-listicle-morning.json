@@ -363,7 +363,7 @@
         "subscribe_disclaimer": "Subscription orders billed {frequency} · {price} + free shipping · Skip or cancel anytime",
         "show_nutritional_button": true,
         "nutritional_button_text": "Nutritional Information",
-        "nutritional_content": "",
+        "nutritional_content": "<p><strong>Serving Size:<\/strong> 1 scoop (28 g) · <strong>Servings per bag:<\/strong> 30<\/p><p><strong>Per serving:<\/strong> 110 calories · 20 g whey protein · &lt;1 g sugar · 2 g carbs · 100 mg natural caffeine · 200 mg L-theanine · 3 g prebiotic fiber.<\/p><p><strong>Ingredients:<\/strong> Whey protein concentrate, instant coffee, natural vanilla flavor, organic hazelnut extract, L-theanine, prebiotic fiber blend (chicory root, acacia), monk fruit, sea salt.<\/p><p><em>Contains milk. Manufactured in a facility that also processes tree nuts.<\/em><\/p>",
         "stock_text": "In Stock - Ship on Sun from our Ohio warehouse",
         "stock_highlight_text": "In Stock",
         "stock_highlight_color": "#5eb116",
