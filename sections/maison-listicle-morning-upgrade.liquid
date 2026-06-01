@@ -68,7 +68,7 @@
 <section
   id="shopify-section-{{ section.id }}-morning-upgrade"
   class="mlmu"
-  style="--mlmu-bg: {{ s.bg_color }}; --mlmu-text: {{ s.text_color }}; --mlmu-muted: {{ s.muted_color }}; --mlmu-card-bg: {{ s.card_bg }}; --mlmu-card-border: {{ s.card_border }}; --mlmu-verified: {{ s.verified_color }};"
+  style="--mlmu-bg: {{ s.bg_color }}; --mlmu-text: {{ s.text_color }}; --mlmu-muted: {{ s.muted_color }}; --mlmu-card-bg: {{ s.card_bg }}; --mlmu-card-border: {{ s.card_border }}; --mlmu-author-bg: {{ s.author_pill_bg }}; --mlmu-verified: {{ s.verified_color }};"
 >
   <div class="mlmu__container">
     <header class="mlmu__head">
@@ -383,9 +383,10 @@
     font-size: 12px;
     color: var(--mlmu-text);
     flex-wrap: wrap;
-    padding: var(--4, 4px) var(--12, 12px);
+    padding: 4px 12px;
     border-radius: 999px;
-    background: rgba(59, 43, 47, 0.08);
+    background: var(--mlmu-author-bg);
+    width: fit-content;
   }
   .mlmu__card-name {
     color: var(--mlmu-text);
@@ -478,6 +479,7 @@
     { "type": "header", "content": "Card styling" },
     { "type": "color_background", "id": "card_bg", "label": "Card background", "default": "#FAF6EB" },
     { "type": "color", "id": "card_border", "label": "Card border", "default": "rgba(59, 43, 47, 0.08)" },
+    { "type": "color_background", "id": "author_pill_bg", "label": "Author pill background", "default": "rgba(59, 43, 47, 0.08)" },
     { "type": "color", "id": "verified_color", "label": "Verified badge", "default": "#3B2B2F" },
     { "type": "color", "id": "verified_check_color", "label": "Verified check mark", "default": "#FEFEF1" },
 
