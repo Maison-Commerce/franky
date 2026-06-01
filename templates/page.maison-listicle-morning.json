@@ -447,7 +447,38 @@
       }
     },
     "morning_upgrade": {
-      "type": "maison-listicle-morning-upgrade"
+      "type": "maison-listicle-morning-upgrade",
+      "blocks": {
+        "review_4gGb6x": {
+          "type": "review",
+          "settings": {
+            "video_url": "",
+            "rating": 5,
+            "date_text": "Bought on 14 August 2025",
+            "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.",
+            "reviewer_name": "James T.",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "review_4gGb6x"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "text_color": "#3b2b2f",
+        "muted_color": "rgba(59, 43, 47, 0.75)",
+        "rating": 4.8,
+        "rating_label": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "star_color": "#fbaa19",
+        "star_empty_color": "#d2d2d2",
+        "title": "<p>Join The Morning Upgrade</p>",
+        "subtitle": "Real Franky subscribers sharing what changed when their routine did.",
+        "card_bg": "#FAF6EB",
+        "card_border": "#3b2b2f14",
+        "verified_color": "#2eaa63",
+        "slider_duration_seconds": 50
+      }
     },
     "footer": {
       "type": "maison-listicle-footer",
@@ -492,4 +523,3 @@
     "main"
   ]
 }
-
