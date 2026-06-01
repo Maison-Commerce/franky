@@ -132,14 +132,14 @@
         {%- endfor -%}
       {%- endcapture -%}
       <div class="mlmu__viewport">
-        <div class="mlmu__track mlmu__track--photo" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+        <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.photo_duration_seconds | default: 60 }}s;">
           {{ photo_card_set }}
           {{ photo_card_set }}
         </div>
       </div>
     {%- endif -%}
 
-    {%- comment -%} ===== ROW 2 + 3 — TEXT-ONLY CARDS (opposite directions) ===== {%- endcomment -%}
+    {%- comment -%} ===== ROW 2 + 3 — TEXT-ONLY CARDS (both scroll left) ===== {%- endcomment -%}
     {%- if text_blocks.size > 0 -%}
       {%- capture text_card_set -%}
         {%- for i in (1..text_repeat) -%}
@@ -170,13 +170,13 @@
         {%- endfor -%}
       {%- endcapture -%}
       <div class="mlmu__viewport">
-        <div class="mlmu__track mlmu__track--text-ltr" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+        <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.text_top_duration_seconds | default: 70 }}s;">
           {{ text_card_set }}
           {{ text_card_set }}
         </div>
       </div>
       <div class="mlmu__viewport">
-        <div class="mlmu__track mlmu__track--text-rtl" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+        <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.text_bottom_duration_seconds | default: 80 }}s;">
           {{ text_card_set }}
           {{ text_card_set }}
         </div>
@@ -265,15 +265,7 @@
     align-items: stretch;
     width: max-content;
     will-change: transform;
-  }
-  .mlmu__track--photo {
     animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
-  }
-  .mlmu__track--text-ltr {
-    animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
-  }
-  .mlmu__track--text-rtl {
-    animation: mlmu-marquee-rtl var(--mlmu-slide-duration) linear infinite;
   }
   .mlmu__track:hover,
   .mlmu__track:focus-within {
@@ -282,10 +274,6 @@
   @keyframes mlmu-marquee {
     from { transform: translate3d(0, 0, 0); }
     to   { transform: translate3d(calc(-50% - var(--mlmu-slide-gap) / 2), 0, 0); }
-  }
-  @keyframes mlmu-marquee-rtl {
-    from { transform: translate3d(calc(-50% - var(--mlmu-slide-gap) / 2), 0, 0); }
-    to   { transform: translate3d(0, 0, 0); }
   }
   @media (prefers-reduced-motion: reduce) {
     .mlmu__track { animation: none; transform: none; }
@@ -485,21 +473,40 @@
     { "type": "color", "id": "card_border", "label": "Card border", "default": "rgba(59, 43, 47, 0.08)" },
     { "type": "color", "id": "verified_color", "label": "Verified badge", "default": "#2EAA63" },
 
-    { "type": "header", "content": "Marquee speed" },
+    { "type": "header", "content": "Marquee speed (per row)" },
+    {
+      "type": "paragraph",
+      "content": "All rows scroll to the left. Higher value = slower scroll. Each row can have its own duration."
+    },
     {
       "type": "range",
-      "id": "slider_duration_seconds",
-      "label": "Loop duration",
+      "id": "photo_duration_seconds",
+      "label": "Photo row — loop duration",
       "min": 20, "max": 180, "step": 5,
       "unit": "s",
-      "default": 60,
-      "info": "Higher = slower scroll."
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "text_top_duration_seconds",
+      "label": "Text row 1 — loop duration",
+      "min": 20, "max": 180, "step": 5,
+      "unit": "s",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "text_bottom_duration_seconds",
+      "label": "Text row 2 — loop duration",
+      "min": 20, "max": 180, "step": 5,
+      "unit": "s",
+      "default": 80
     }
   ],
   "blocks": [
     {
       "type": "photo_review",
-      "name": "Photo / video review (top row)",
+      "name": "Photo / video (top row)",
       "limit": 24,
       "settings": [
         {
