@@ -1199,18 +1199,32 @@
     }
     .mlbb__title { font-size: 26px; }
     .mlbb__price-current { font-size: 22px; }
+    .mlbb__packs { gap: 8px; }
     .mlbb__pack {
-      min-height: 124px;
-      padding: 8px;
-      gap: 8px;
+      min-height: 136px;
+      padding: 12px 8px 8px;
+      gap: 6px;
     }
     .mlbb__pack-name { font-size: 14px; }
-    .mlbb__pack-badge { font-size: 10px; padding: 2px 6px; }
-    .mlbb__pack-visual { height: 44px; }
-    .mlbb__pack-bottle { width: 44px; height: 44px; }
-    .mlbb__pack-bottle + .mlbb__pack-bottle { margin-left: -28px; }
+    .mlbb__pack-badge { font-size: 10px; padding: 2px 6px; letter-spacing: 0; }
+    .mlbb__pack-visual { height: 58px; }
+    .mlbb__pack-bottle { width: 58px; height: 58px; }
+    .mlbb__pack-bottle + .mlbb__pack-bottle { margin-left: -40px; }
+    .mlbb__pack-best { font-size: 9px; padding: 2px 6px; top: -8px; }
     .mlbb__cta { font-size: 15px; min-height: 56px; }
     .mlbb__tastes-list { gap: 8px; }
+
+    /* Smaller trust-badge icon container per Figma mobile spec */
+    .mlbb__trust { gap: 8px; }
+    .mlbb__trust-icon {
+      width: 32px;
+      height: 32px;
+    }
+    .mlbb__trust-icon-img {
+      width: 16px;
+      height: 16px;
+    }
+    .mlbb__trust-item { font-size: 11px; }
 
     /* Move Nutritional Information out of the media column on mobile —
        it sits between description and price inside content. */
