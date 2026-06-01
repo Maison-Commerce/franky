@@ -39,6 +39,8 @@
     --mlbb-select-bg: {{ s.select_bg }};
     --mlbb-select-border: {{ s.select_border }};
     --mlbb-stock-highlight: {{ s.stock_highlight_color }};
+    --mlbb-taste-bg: {{ s.taste_bg }};
+    --mlbb-taste-text: {{ s.taste_text_color }};
   "
   x-data="maisonListicleBuyBox()"
   x-cloak
@@ -1112,16 +1114,16 @@
 
   /* Tastes Like */
   .mlbb__tastes {
-    margin-top: 24px;
+    margin-top: 8px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     align-items: center;
   }
   .mlbb__tastes-title {
     margin: 0;
     font-family: 'Lust Text', serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 400;
     color: var(--mlbb-text);
     text-align: center;
@@ -1142,8 +1144,9 @@
     gap: 4px;
     padding: 12px 8px;
     text-align: center;
-    border-radius: var(--16, 16px);
-    background: #FAF6EB;
+    border-radius: 16px;
+    background: var(--mlbb-taste-bg);
+    color: var(--mlbb-taste-text);
   }
   .mlbb__taste-img {
     width: 48px;
@@ -1161,7 +1164,7 @@
   .mlbb__taste-label {
     font-size: 16px;
     font-weight: 600;
-    color: var(--mlbb-text);
+    color: inherit;
   }
 
   /* Mobile */
@@ -1398,6 +1401,18 @@
       "id": "tastes_title",
       "label": "Section heading",
       "default": "Tastes Like"
+    },
+    {
+      "type": "color_background",
+      "id": "taste_bg",
+      "label": "Tile background",
+      "default": "#FAF6EB"
+    },
+    {
+      "type": "color",
+      "id": "taste_text_color",
+      "label": "Tile text",
+      "default": "#3B2B2F"
     },
 
     { "type": "header", "content": "Colors" },
