@@ -358,16 +358,17 @@
     justify-content: center;
   }
   .mlmu__card-date {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--mlmu-muted);
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
   }
   .mlmu__card-quote {
     margin: 0;
-    font-size: 14px;
-    line-height: 1.45;
-    color: var(--mlmu-text);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mlmu-muted);
+    font-weight: 400;
     text-align: center;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -380,8 +381,11 @@
     justify-content: center;
     gap: 6px;
     font-size: 12px;
-    color: var(--mlmu-muted);
+    color: var(--mlmu-text);
     flex-wrap: wrap;
+    padding: var(--4, 4px) var(--12, 12px);
+    border-radius: 999px;
+    background: rgba(59, 43, 47, 0.08);
   }
   .mlmu__card-name {
     color: var(--mlmu-text);
@@ -397,7 +401,8 @@
   .mlmu__card-verified {
     display: inline-flex;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
+    font-weight: 400;
   }
   .mlmu__check { flex-shrink: 0; }
 
