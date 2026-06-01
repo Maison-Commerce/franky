@@ -278,6 +278,10 @@
                 <span class="mlbb__trust-icon" style="--trust-bg: {{ block.settings.icon_bg | default: '#D8E4EE' }}">
                   {%- if block.settings.icon != blank -%}
                     {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', class: 'mlbb__trust-icon-img' }}
+                  {%- else -%}
+                    <svg class="mlbb__trust-placeholder" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/>
+                    </svg>
                   {%- endif -%}
                 </span>
                 <span class="mlbb__trust-text">{{ block.settings.text }}</span>
@@ -317,9 +321,14 @@
             <ul class="mlbb__tastes-list">
               {%- for block in taste_blocks -%}
                 <li class="mlbb__taste" {{ block.shopify_attributes }}>
-                  <span class="mlbb__taste-img">
+                  <span class="mlbb__taste-img" {% if block.settings.image == blank %}aria-hidden="true"{% endif %}>
                     {%- if block.settings.image != blank -%}
                       {{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', class: 'mlbb__taste-img-tag' }}
+                    {%- else -%}
+                      <svg class="mlbb__taste-placeholder" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M8 12c1.5-2 6.5-2 8 0"/>
+                      </svg>
                     {%- endif -%}
                   </span>
                   <span class="mlbb__taste-label">{{ block.settings.label }}</span>
@@ -1049,6 +1058,8 @@
     height: 20px;
     object-fit: contain;
   }
+  .mlbb__trust-placeholder { color: var(--mlbb-text); }
+  .mlbb__taste-placeholder { color: var(--mlbb-text); opacity: 0.5; }
 
   /* Accordions */
   .mlbb__accordions {
