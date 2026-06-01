@@ -275,7 +275,7 @@
         "star_color": "#fbaa19",
         "star_empty_color": "#d2d2d2",
         "cta_text": "GET UP TO 32% OFF + FREE SHIPPING →",
-        "cta_url": "",
+        "cta_url": "shopify://products/franky-protein-coffee",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
         "check_ring_color": "#dcd5c6",
@@ -291,12 +291,48 @@
     "footer": {
       "type": "maison-listicle-footer",
       "blocks": {
-        "link_privacy": { "type": "link", "settings": { "label": "Privacy Policy" } },
-        "link_shipping": { "type": "link", "settings": { "label": "Shipping Policy" } },
-        "link_refund": { "type": "link", "settings": { "label": "Refund Policy" } },
-        "link_contact": { "type": "link", "settings": { "label": "Contact Information" } },
-        "link_terms": { "type": "link", "settings": { "label": "Terms Of Service" } },
-        "link_cookie": { "type": "link", "settings": { "label": "Cookie preferences" } }
+        "link_privacy": {
+          "type": "link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": ""
+          }
+        },
+        "link_shipping": {
+          "type": "link",
+          "settings": {
+            "label": "Shipping Policy",
+            "url": ""
+          }
+        },
+        "link_refund": {
+          "type": "link",
+          "settings": {
+            "label": "Refund Policy",
+            "url": ""
+          }
+        },
+        "link_contact": {
+          "type": "link",
+          "settings": {
+            "label": "Contact Information",
+            "url": ""
+          }
+        },
+        "link_terms": {
+          "type": "link",
+          "settings": {
+            "label": "Terms Of Service",
+            "url": ""
+          }
+        },
+        "link_cookie": {
+          "type": "link",
+          "settings": {
+            "label": "Cookie preferences",
+            "url": ""
+          }
+        }
       },
       "block_order": [
         "link_privacy",
@@ -307,8 +343,8 @@
         "link_cookie"
       ],
       "settings": {
-        "bg_color": "#3B2B2F",
-        "text_color": "#F7F3E6",
+        "bg_color": "#3b2b2f",
+        "text_color": "#f7f3e6",
         "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
       }
     },
@@ -317,10 +353,10 @@
       "settings": {
         "button_text": "Proceed to Offer →",
         "button_url": "",
-        "bg_color": "#FFFFFF",
-        "border_color": "#3B2B2F33",
-        "button_bg": "#3B2B2F",
-        "button_text_color": "#F7F3E6"
+        "bg_color": "#ffffff",
+        "border_color": "#3b2b2f33",
+        "button_bg": "#3b2b2f",
+        "button_text_color": "#f7f3e6"
       }
     },
     "main": {
