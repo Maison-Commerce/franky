@@ -224,9 +224,9 @@
                     @change="setFlavor(i, parseInt($event.target.value))"
                   >
                     {%- for variant in p.variants -%}
-                      <option value="{{ variant.id }}"{% unless variant.available %} disabled{% endunless %}>
-                        {{ variant.title }}{% unless variant.available %} — Out of stock{% endunless %}
-                      </option>
+                      {%- if variant.available -%}
+                        <option value="{{ variant.id }}">{{ variant.title }}</option>
+                      {%- endif -%}
                     {%- endfor -%}
                   </select>
                   <svg class="mlbb__chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
