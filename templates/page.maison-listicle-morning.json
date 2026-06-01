@@ -140,6 +140,9 @@
         "icon_color": "#ffffff"
       }
     },
+    "built_for_morning": {
+      "type": "maison-listicle-built-for-morning"
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -174,6 +177,7 @@
     "header",
     "hero",
     "morning_routine",
+    "built_for_morning",
     "footer",
     "sticky_cta",
     "main"

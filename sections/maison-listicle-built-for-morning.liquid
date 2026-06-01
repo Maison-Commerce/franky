@@ -1,0 +1,474 @@
+{%- liquid
+  assign s = section.settings
+  assign feature_blocks = section.blocks | where: 'type', 'feature'
+-%}
+
+{%- capture icon_stomach -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0338 26.7032C14.7442 27.6236 11.1405 26.775 8.6828 23.7924V24.6582C8.6828 26.5038 7.1866 28 5.34092 28C3.49524 28 1.99902 26.5038 1.99902 24.6582V19.0426C1.99902 16.4314 4.11584 14.3146 6.72704 14.3146C7.69128 14.3146 8.63248 14.6094 9.42442 15.1595L11.3106 16.4698V10.2643C9.58212 9.54766 8.43936 8.45698 7.75004 7.0591C6.9992 5.53652 6.83902 3.75164 6.86514 1.941C6.88106 0.839112 7.79002 0 8.85016 0H12.1478C13.2629 0 14.1309 0.90193 14.1579 1.97579C14.1889 3.20296 14.3085 3.8333 14.5074 4.16744C14.6185 4.35406 14.8111 4.5607 15.5953 4.577C17.7737 4.62228 20.543 5.53044 22.6816 7.48924C24.8594 9.48372 26.3446 12.5352 25.9292 16.7278C25.4092 21.9762 21.9828 25.5984 18.0338 26.7032Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture icon_person -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path d="M13.9995 8.20465C16.823 8.20465 18.6272 10.5323 19.4216 12.4333C20.3232 14.5905 22.5538 16.0158 25.7074 16.3611C26.6117 16.46 27.2652 17.2745 27.1662 18.1787C27.0671 19.0825 26.2543 19.7346 25.3503 19.6359C22.0963 19.2798 19.0825 17.9081 17.2936 15.3559V19.919L23.4202 21.9617C24.6785 22.3812 25.5284 23.5595 25.5289 24.8859C25.5286 26.5883 24.1478 27.9694 22.4454 27.9694H9.34943L15.9135 24.6881C16.5231 24.3829 16.7698 23.6414 16.4653 23.0315C16.1603 22.4216 15.4186 22.1734 14.8085 22.4781L4.33104 27.7152C3.23692 27.2417 2.47026 26.1538 2.47006 24.8859C2.47059 23.5597 3.32051 22.3814 4.57874 21.9617L10.7054 19.919V15.3575C8.91639 17.9091 5.9022 19.2798 2.6486 19.6359C1.74485 19.7344 0.931809 19.0825 0.832656 18.1787C0.733717 17.2745 1.38742 16.4602 2.29152 16.3611C5.44518 16.0158 7.67576 14.5905 8.57737 12.4333C9.3717 10.5323 11.1761 8.2048 13.9995 8.20465ZM13.9995 -0.0306396C15.8188 -0.0306396 17.2936 1.44419 17.2936 3.26348C17.2936 5.08277 15.8188 6.5576 13.9995 6.5576C12.1803 6.55746 10.7054 5.08269 10.7054 3.26348C10.7054 1.44427 12.1803 -0.0305079 13.9995 -0.0306396Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture icon_cup -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3998 1.4C15.3998 1.0287 15.2523 0.672601 14.9898 0.410051C14.7272 0.1475 14.3711 0 13.9998 0C13.6285 0 13.2724 0.1475 13.0099 0.410051C12.7473 0.672601 12.5998 1.0287 12.5998 1.4V4.2C12.5998 4.5713 12.7473 4.9274 13.0099 5.18995C13.2724 5.4525 13.6285 5.6 13.9998 5.6C14.3711 5.6 14.7272 5.4525 14.9898 5.18995C15.2523 4.9274 15.3998 4.5713 15.3998 4.2V1.4ZM2.7998 9.8C2.7998 9.4287 2.9473 9.0726 3.20986 8.81005C3.47241 8.5475 3.8285 8.4 4.1998 8.4H19.5998C21.085 8.4 22.5094 8.99 23.5596 10.0402C24.6098 11.0904 25.1998 12.5148 25.1998 14C25.1998 15.4852 24.6098 16.9096 23.5596 17.9598C22.5094 19.01 21.085 19.6 19.5998 19.6V22.4C19.5998 23.8852 19.0098 25.3096 17.9596 26.3598C16.9094 27.41 15.485 28 13.9998 28H8.3998C6.91459 28 5.49021 27.41 4.44001 26.3598C3.3898 25.3096 2.7998 23.8852 2.7998 22.4V9.8ZM19.5998 16.8C20.3424 16.8 21.0546 16.505 21.5797 15.9799C22.1048 15.4548 22.3998 14.7426 22.3998 14C22.3998 13.2574 22.1048 12.5452 21.5797 12.0201C21.0546 11.495 20.3424 11.2 19.5998 11.2V16.8ZM9.7998 1.4C9.7998 1.0287 9.6523 0.672601 9.38975 0.410051C9.1272 0.1475 8.77111 0 8.3998 0C8.0285 0 7.67241 0.1475 7.40986 0.410051C7.1473 0.672601 6.9998 1.0287 6.9998 1.4V4.2C6.9998 4.5713 7.1473 4.9274 7.40986 5.18995C7.67241 5.4525 8.0285 5.6 8.3998 5.6C8.77111 5.6 9.1272 5.4525 9.38975 5.18995C9.6523 4.9274 9.7998 4.5713 9.7998 4.2V1.4Z" fill="currentColor"/>
+</svg>
+{%- endcapture -%}
+
+<section
+  id="shopify-section-{{ section.id }}-built-for-morning"
+  class="mlbm"
+  style="--mlbm-bg: {{ s.bg_color }}; --mlbm-text: {{ s.text_color }}; --mlbm-muted: {{ s.muted_color }}; --mlbm-icon-bg: {{ s.icon_bg }}; --mlbm-icon-color: {{ s.icon_color }}; --mlbm-cta-bg: {{ s.cta_bg }}; --mlbm-cta-text: {{ s.cta_text_color }}; --mlbm-image-radius: {{ s.image_radius }}px;"
+>
+  <div class="mlbm__container">
+    <div class="mlbm__content">
+      <div class="mlbm__head">
+        {%- if s.title != blank -%}
+          <h2 class="mlbm__title mlbm__title--desktop">{{ s.title }}</h2>
+        {%- endif -%}
+        {%- if s.title_mobile != blank -%}
+          <h2 class="mlbm__title mlbm__title--mobile">{{ s.title_mobile }}</h2>
+        {%- endif -%}
+
+        {%- if s.subtitle != blank -%}
+          <p class="mlbm__subtitle mlbm__subtitle--desktop">{{ s.subtitle }}</p>
+        {%- endif -%}
+        {%- if s.subtitle_mobile != blank -%}
+          <p class="mlbm__subtitle mlbm__subtitle--mobile">{{ s.subtitle_mobile }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if feature_blocks.size > 0 -%}
+        <ul class="mlbm__features">
+          {%- for block in feature_blocks -%}
+            {%- assign chosen_icon = block.settings.icon -%}
+            <li class="mlbm__feature" {{ block.shopify_attributes }}>
+              <div class="mlbm__feature-icon">
+                {%- case chosen_icon -%}
+                  {%- when 'stomach' -%}{{ icon_stomach }}
+                  {%- when 'person' -%}{{ icon_person }}
+                  {%- when 'cup' -%}{{ icon_cup }}
+                  {%- else -%}{{ icon_stomach }}
+                {%- endcase -%}
+              </div>
+              <div class="mlbm__feature-body">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="mlbm__feature-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <div class="mlbm__feature-text">{{ block.settings.body }}</div>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if s.cta_text != blank -%}
+        <a class="mlbm__cta" href="{{ s.cta_url | default: '#' }}">
+          <span>{{ s.cta_text }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="mlbm__media">
+      <div class="mlbm__image-wrap">
+        {%- if s.image != blank -%}
+          {{ s.image | image_url: width: 1200 | image_tag:
+            loading: 'lazy',
+            class: 'mlbm__image',
+            sizes: '(max-width: 1024px) 100vw, 600px',
+            widths: '400, 600, 800, 1200'
+          }}
+        {%- else -%}
+          <div class="mlbm__image mlbm__image--placeholder" aria-hidden="true"></div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mlbm {
+    background: var(--mlbm-bg);
+    width: 100%;
+    padding: 64px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlbm-text);
+    box-sizing: border-box;
+  }
+  .mlbm__container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .mlbm__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .mlbm__head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mlbm__title {
+    margin: 0;
+    font-family: 'Lust Text', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--mlbm-text);
+    letter-spacing: -0.01em;
+  }
+  .mlbm__title p {
+    margin: 0;
+  }
+  .mlbm__subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--mlbm-muted);
+  }
+  /* Hide mobile variants by default; toggle at breakpoint */
+  .mlbm__title--mobile,
+  .mlbm__subtitle--mobile {
+    display: none;
+  }
+
+  .mlbm__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .mlbm__feature {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .mlbm__feature-icon {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--mlbm-icon-bg);
+    color: var(--mlbm-icon-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mlbm__feature-icon svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+  .mlbm__feature-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mlbm__feature-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--mlbm-text);
+  }
+  .mlbm__feature-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mlbm-muted);
+  }
+  .mlbm__feature-text p {
+    margin: 0 0 0.5em 0;
+  }
+  .mlbm__feature-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* CTA */
+  .mlbm__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 56px;
+    padding: 16px 32px;
+    background: var(--mlbm-cta-bg);
+    color: var(--mlbm-cta-text);
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease;
+  }
+  .mlbm__cta:hover,
+  .mlbm__cta:focus-visible {
+    opacity: 0.92;
+    outline: none;
+  }
+
+  /* Media (right column) */
+  .mlbm__media {
+    width: 100%;
+  }
+  .mlbm__image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--mlbm-image-radius);
+    overflow: hidden;
+  }
+  .mlbm__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mlbm__image--placeholder {
+    background: #D9D9D9;
+  }
+
+  /* Mobile / cramped desktop */
+  @media (max-width: 1024px) {
+    .mlbm {
+      padding: 40px 0;
+    }
+    .mlbm__container {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+      gap: 28px;
+    }
+    .mlbm__media {
+      order: 1;
+    }
+    .mlbm__content {
+      order: 2;
+      gap: 28px;
+      text-align: center;
+      align-items: center;
+    }
+    .mlbm__head {
+      text-align: center;
+    }
+    .mlbm__title {
+      font-size: 32px;
+    }
+    .mlbm__subtitle {
+      font-size: 16px;
+    }
+    /* Swap desktop/mobile copy on smaller screens */
+    .mlbm__title--desktop,
+    .mlbm__subtitle--desktop {
+      display: none;
+    }
+    .mlbm__title--mobile,
+    .mlbm__subtitle--mobile {
+      display: block;
+    }
+    /* If no mobile copy provided, fall back to desktop on mobile */
+    .mlbm__title--desktop:only-of-type,
+    .mlbm__subtitle--desktop:only-of-type {
+      display: block;
+    }
+
+    .mlbm__features {
+      gap: 20px;
+      width: 100%;
+    }
+    .mlbm__feature {
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    .mlbm__feature-icon {
+      width: 52px;
+      height: 52px;
+    }
+    .mlbm__feature-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    .mlbm__feature-title {
+      font-size: 18px;
+    }
+    .mlbm__feature-text {
+      font-size: 15px;
+    }
+    .mlbm__cta {
+      font-size: 14px;
+      padding: 16px 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Built For",
+  "tag": "section",
+  "class": "section-maison-listicle-built-for-morning",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#3B2B2F" },
+    { "type": "color", "id": "muted_color", "label": "Muted text", "default": "#3B2B2FBF" },
+
+    { "type": "header", "content": "Heading (desktop)" },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Built For The Morning You Actually Have</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Not the one where you have 15 minutes and a blender. The one where you have 60 seconds and need to work."
+    },
+
+    { "type": "header", "content": "Heading (mobile override)" },
+    {
+      "type": "richtext",
+      "id": "title_mobile",
+      "label": "Title (mobile)",
+      "info": "Shown only on screens ≤1024px. Leave empty to use the desktop title.",
+      "default": "<p>What's Inside Matters</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle_mobile",
+      "label": "Subtitle (mobile)",
+      "info": "Shown only on screens ≤1024px. Leave empty to use the desktop subtitle.",
+      "default": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers."
+    },
+
+    { "type": "header", "content": "Image" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Image corner radius",
+      "default": 16
+    },
+
+    { "type": "header", "content": "Feature icons" },
+    { "type": "color", "id": "icon_bg", "label": "Icon background", "default": "#D8E4EE" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#3B2B2F" },
+
+    { "type": "header", "content": "CTA" },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →"
+    },
+    { "type": "url", "id": "cta_url", "label": "CTA link" },
+    { "type": "color", "id": "cta_bg", "label": "CTA background", "default": "#3B2B2F" },
+    { "type": "color", "id": "cta_text_color", "label": "CTA text", "default": "#F7F3E6" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "stomach", "label": "Stomach / gut" },
+            { "value": "person", "label": "Person" },
+            { "value": "cup", "label": "Cup" }
+          ],
+          "default": "stomach"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Feature description.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Built For",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "stomach",
+            "title": "Gut-Friendly Formula",
+            "body": "<p>Added prebiotics and fiber support digestion and keep things moving — morning after morning.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "person",
+            "title": "No Jitters, No Anxiety",
+            "body": "<p>The L-theanine and caffeine ratio is dialed in specifically to energize without the edge. Smooth from the first sip.</p>"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "cup",
+            "title": "Breakfast in One Cup",
+            "body": "<p>Replaces your coffee and your protein shake in under 60 seconds. Two scoops into cold water or milk, thirty seconds to stir — one cup that handles your entire morning.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
