@@ -270,6 +270,24 @@
     "buy_box": {
       "type": "maison-listicle-buy-box",
       "blocks": {
+        "trust_badge_YJjLwR": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "Try 30 Days Risk-Free"
+          }
+        },
+        "trust_badge_kQw9E7": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "Pause or Cancel Anytime"
+          }
+        },
+        "trust_badge_8fihWF": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "Autoship at $59.99"
+          }
+        },
         "pack_option_xpmNTk": {
           "type": "pack_option",
           "settings": {
@@ -311,6 +329,9 @@
         }
       },
       "block_order": [
+        "trust_badge_YJjLwR",
+        "trust_badge_kQw9E7",
+        "trust_badge_8fihWF",
         "pack_option_xpmNTk",
         "pack_option_KnGWG3",
         "pack_option_Ce4VxD"
