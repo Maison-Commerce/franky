@@ -16,15 +16,16 @@
 
 ### Як влаштовано Every Possible Discount
 
-В апці є 5 активних discount-функцій (Tiered, Automatic). Кожна — для свого сценарію:
+В апці є 6 активних discount-функцій (Tiered, Automatic). Кожна — для свого сценарію:
 
 | Функція | Коли застосовується | Тип |
 |---------|---------------------|-----|
-| `packs_standard` | Режим Packs, звичайна купівля | Fixed amount per item |
-| `packs_preorder` | Режим Packs + pre-order | Fixed amount per item |
-| `bundle_standard` | Режим Bundle, звичайна купівля | Tiered Percentage |
-| `bundle_preorder` | Режим Bundle + pre-order | Tiered Percentage |
-| `classic_preorder` | Режим Classic + pre-order | Tiered Percentage |
+| `packs_standard` | Режим Packs (PDP), звичайна купівля | Fixed amount per item |
+| `packs_preorder` | Режим Packs (PDP) + pre-order | Fixed amount per item |
+| `bundle_standard` | Режим Bundle (PDP), звичайна купівля | Tiered Percentage |
+| `bundle_preorder` | Режим Bundle (PDP) + pre-order | Tiered Percentage |
+| `classic_preorder` | Режим Classic (PDP) + pre-order | Tiered Percentage |
+| **`bundle_listicle`** | **Секція Listicle Buy Box (landing-page funnel)** | **Tiered Percentage** |
 
 Тема при додаванні товару в корзину автоматично ставить "тег" (`_mc_discount_bucket`) з відповідним значенням, і апка знаходить потрібну функцію та застосовує її tiered-знижку.
 
@@ -104,6 +105,40 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
 - 3 items → 25%
 - 4+ items → 30%
 
+### 5. Listicle bundle знижка (нова — для landing-page funnel)
+
+Окрема знижка для секції **Listicle Buy Box** яка вмонтована в listicle сторінки (наприклад `maison-listicle-morning`). Працює як Tiered Percentage по quantity:
+
+| Quantity | Discount (від variant base) |
+|----------|------------------------------|
+| 1 | 0% |
+| 2 | **10%** |
+| 3 | **15%** |
+
+Знижка від підписки (15% через Loop) **стекається додатково** — для 2/3 packs subscribe фактична знижка = bundle% × subscription% (compound):
+
+| Сценарій | Math | Per unit | Total |
+|----------|------|----------|-------|
+| 1 bag, one-time | $39.95 | $39.95 | $39.95 |
+| 2 bags, one-time | $39.95 × 0.9 | $35.96 | $71.91 |
+| 3 bags, one-time | $39.95 × 0.85 | $33.96 | $101.87 |
+| 1 bag, subscribe | $39.95 × 0.85 | $33.96 | $33.96 |
+| 2 bags, subscribe | round(3596 × 0.85) | $30.57 | **$61.14** |
+| 3 bags, subscribe | round(3396 × 0.85) | $28.87 | **$86.61** |
+
+**Де змінити:**
+
+- **PDP ціни (one-time):** Customizer → секція **Listicle Buy Box** → блоки **Pack Option** → поле `Price per unit (cents)` АБО `Discount multiplier` (наприклад `0.9` для 10% off).
+- **Subscription %:** Customizer → секція **Listicle Buy Box** → `Subscription discount (%)` (default `15`)
+- **Plan ID per pack:** ті самі що в PDP — Pack Option → `Subscription Plan ID (Loop)`
+- **Checkout discount:** Admin → Apps → **Every Possible Discount** → функція `bundle_listicle` → tiers (Tiered Percentage):
+  - 1 → `0%`
+  - 2 → `10%`
+  - 3 → `15%`
+- **EPD bucket trigger** (для розробника): кожен cart item з listicle buy-box має `_mc_discount_bucket: bundle_listicle` property. Якщо клієнт хоче змінити назву bucket — це робиться через customizer `Listicle Buy Box → EPD discount bucket`, а в EPD функції теж треба змінити condition Value.
+
+> **Pre-order не підтримується** в Listicle Buy Box (свідомо — landing funnel для in-stock товарів). EPD не має `bundle_listicle_preorder` функції.
+
 ---
 
 ## Як знижки складаються (приклади)
@@ -136,6 +171,10 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
 | Subscribe frequency text | Customizer → PDP Hero → Pack Option → `Frequency Label` |
 | Увімкнути pre-order на товарі | Customizer → PDP Hero → `Enable Pre-Order` |
 | Bundle % | Код теми (потребує розробника) |
+| Listicle bundle % (PDP) | Customizer → Listicle Buy Box → Pack Option → `Discount multiplier` |
+| Listicle subscription % (PDP) | Customizer → Listicle Buy Box → `Subscription discount (%)` |
+| Listicle bundle % (checkout) | Admin → Apps → **EPD** → `bundle_listicle` → tier discount |
+| Listicle EPD bucket name | Customizer → Listicle Buy Box → `EPD discount bucket` |
 
 ---
 
@@ -183,7 +222,9 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
 
 ## Cart merge поведінка
 
-При додаванні pack у корзину тема **автоматично об'єднує** з existing line item (Same variant + Same mode + Same pre-order state, qty ≤ 3) і перепризначає правильний plan ID.
+### PDP merge (Maison PDP Hero)
+
+При додаванні pack у корзину з PDP тема **автоматично об'єднує** з existing line item (Same variant + Same mode + Same pre-order state, qty ≤ 3) і перепризначає правильний plan ID.
 
 Приклад:
 - Корзина: 1 Bag subscribe (4-week plan)
@@ -191,7 +232,13 @@ final = (variant × Loop_subscription_%) − EPD_fixed_amount_per_item
 
 Якщо combined qty > 3 — створюється **окрема лінія** (без merge).
 
-При зміні quantity у cart drawer (`+` / `−` кнопки) — plan теж автоматично swap'ається на правильний для нової кількості.
+### Listicle Buy Box (новий flow)
+
+Не мерджить з cart — додавання завжди створює **нову line**. За замовчуванням після ATC одразу redirect на `/checkout` (`What happens after add-to-cart: Redirect to checkout`). Альтернативно в кастомайзері можна обрати "Open cart drawer (no redirect)" — тоді ATC просто відкриє drawer.
+
+### Cart drawer quantity swap (працює на ВСІХ сторінках)
+
+При зміні quantity у cart drawer (`+` / `−` кнопки) — plan **автоматично swap'ається** на правильний для нової кількості. Тепер працює не тільки на PDP/listicle, а й на **будь-якій сторінці** (collection, blog, home), бо `_qty_plans` property зберігається на cart line при ATC.
 
 ---
 

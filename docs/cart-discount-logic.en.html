@@ -4,11 +4,156 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Franky Theme Discounts — Client Guide</title>
+  <title>cart-discount-logic.en</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,12 +170,8 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="data:text/css;base64,Ym9keXtmb250LWZhbWlseTotYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxzYW5zLXNlcmlmO21heC13aWR0aDo3ODBweDttYXJnaW46NDBweCBhdXRvO3BhZGRpbmc6MCAyMHB4O2xpbmUtaGVpZ2h0OjEuNjtjb2xvcjojMjIyfWgxe2JvcmRlci1ib3R0b206MnB4IHNvbGlkICMzMzM7cGFkZGluZy1ib3R0b206OHB4fWgye21hcmdpbi10b3A6MzJweDtjb2xvcjojMWExYTFhfWgze2NvbG9yOiMzMzN9dGFibGV7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO3dpZHRoOjEwMCU7bWFyZ2luOjEycHggMH10aCx0ZHtib3JkZXI6MXB4IHNvbGlkICNkZGQ7cGFkZGluZzo4cHggMTJweDt0ZXh0LWFsaWduOmxlZnR9dGh7YmFja2dyb3VuZDojZjVmNWY1fWNvZGV7YmFja2dyb3VuZDojZjRmNGY0O3BhZGRpbmc6MnB4IDZweDtib3JkZXItcmFkaXVzOjNweDtmb250LXNpemU6MC45ZW19YmxvY2txdW90ZXtib3JkZXItbGVmdDo0cHggc29saWQgI2ZmYTUwMDtiYWNrZ3JvdW5kOiNmZmY4ZTE7cGFkZGluZzoxMHB4IDE2cHg7bWFyZ2luOjE2cHggMH1ocntib3JkZXI6bm9uZTtib3JkZXItdG9wOjFweCBzb2xpZCAjZGRkO21hcmdpbjoyNHB4IDB9Cg==" />
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Franky Theme Discounts — Client Guide</h1>
-</header>
 <h1 id="cart-discounts-in-the-franky-theme-client-guide">Cart Discounts
 in the Franky Theme — Client Guide</h1>
 <p>A short guide explaining where and how to change discounts in Shopify
@@ -52,7 +193,7 @@ the site and a different price at checkout. <strong>Always update all
 relevant places.</strong></p>
 <h3 id="how-every-possible-discount-is-set-up">How Every Possible
 Discount is Set Up</h3>
-<p>The app has 5 active discount functions (Tiered, Automatic). Each one
+<p>The app has 6 active discount functions (Tiered, Automatic). Each one
 covers a specific scenario:</p>
 <table>
 <colgroup>
@@ -70,28 +211,33 @@ covers a specific scenario:</p>
 <tbody>
 <tr>
 <td><code>packs_standard</code></td>
-<td>Packs mode, regular purchase</td>
+<td>Packs mode (PDP), regular purchase</td>
 <td>Fixed amount per item</td>
 </tr>
 <tr>
 <td><code>packs_preorder</code></td>
-<td>Packs mode + pre-order</td>
+<td>Packs mode (PDP) + pre-order</td>
 <td>Fixed amount per item</td>
 </tr>
 <tr>
 <td><code>bundle_standard</code></td>
-<td>Bundle mode, regular purchase</td>
+<td>Bundle mode (PDP), regular purchase</td>
 <td>Tiered Percentage</td>
 </tr>
 <tr>
 <td><code>bundle_preorder</code></td>
-<td>Bundle mode + pre-order</td>
+<td>Bundle mode (PDP) + pre-order</td>
 <td>Tiered Percentage</td>
 </tr>
 <tr>
 <td><code>classic_preorder</code></td>
-<td>Classic mode + pre-order</td>
+<td>Classic mode (PDP) + pre-order</td>
 <td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><strong><code>bundle_listicle</code></strong></td>
+<td><strong>Listicle Buy Box section (landing-page funnel)</strong></td>
+<td><strong>Tiered Percentage</strong></td>
 </tr>
 </tbody>
 </table>
@@ -206,6 +352,117 @@ price and checkout shows another.</p>
 hardcoded in the theme (Tiered Percentage in EPD also needs
 updating).</p>
 <p>Current values: - 2 items → 20% - 3 items → 25% - 4+ items → 30%</p>
+<h3 id="listicle-bundle-discount-new-landing-page-funnel">5. Listicle
+bundle discount (new — landing-page funnel)</h3>
+<p>Separate discount for the <strong>Listicle Buy Box</strong> section
+embedded in the listicle pages
+(e.g. <code>maison-listicle-morning</code>). Tiered percentage by
+quantity:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Discount (off variant base)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>10%</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>15%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The subscription discount (15% via Loop) <strong>stacks on
+top</strong> — for 2/3 packs subscribe the effective discount is bundle%
+× subscription% (compound):</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Math</th>
+<th>Per unit</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 bag, one-time</td>
+<td>$39.95</td>
+<td>$39.95</td>
+<td>$39.95</td>
+</tr>
+<tr>
+<td>2 bags, one-time</td>
+<td>$39.95 × 0.9</td>
+<td>$35.96</td>
+<td>$71.91</td>
+</tr>
+<tr>
+<td>3 bags, one-time</td>
+<td>$39.95 × 0.85</td>
+<td>$33.96</td>
+<td>$101.87</td>
+</tr>
+<tr>
+<td>1 bag, subscribe</td>
+<td>$39.95 × 0.85</td>
+<td>$33.96</td>
+<td>$33.96</td>
+</tr>
+<tr>
+<td>2 bags, subscribe</td>
+<td>round(3596 × 0.85)</td>
+<td>$30.57</td>
+<td><strong>$61.14</strong></td>
+</tr>
+<tr>
+<td>3 bags, subscribe</td>
+<td>round(3396 × 0.85)</td>
+<td>$28.87</td>
+<td><strong>$86.61</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where to change it:</strong></p>
+<ul>
+<li><strong>PDP prices (one-time):</strong> Customizer → section
+<strong>Listicle Buy Box</strong> → <strong>Pack Option</strong> blocks
+→ <code>Price per unit (cents)</code> field OR
+<code>Discount multiplier</code> (e.g. <code>0.9</code> for 10%
+off).</li>
+<li><strong>Subscription %:</strong> Customizer → section
+<strong>Listicle Buy Box</strong> →
+<code>Subscription discount (%)</code> (default <code>15</code>)</li>
+<li><strong>Plan ID per pack:</strong> same as PDP — Pack Option →
+<code>Subscription Plan ID (Loop)</code></li>
+<li><strong>Checkout discount:</strong> Admin → Apps → <strong>Every
+Possible Discount</strong> → function <code>bundle_listicle</code> →
+tiers (Tiered Percentage):
+<ul>
+<li>1 → <code>0%</code></li>
+<li>2 → <code>10%</code></li>
+<li>3 → <code>15%</code></li>
+</ul></li>
+<li><strong>EPD bucket trigger</strong> (developer note): each cart item
+from the listicle buy-box gets
+<code>_mc_discount_bucket: bundle_listicle</code> line item property. If
+the client wants to rename the bucket, do it via Customizer →
+<code>Listicle Buy Box → EPD discount bucket</code> AND in the EPD
+function condition Value.</li>
+</ul>
+<blockquote>
+<p><strong>Pre-order is not supported</strong> in Listicle Buy Box (by
+design — funnel for in-stock products). No
+<code>bundle_listicle_preorder</code> function in EPD.</p>
+</blockquote>
 <hr />
 <h2 id="how-discounts-combine-examples">How Discounts Combine
 (Examples)</h2>
@@ -314,6 +571,26 @@ tier discount</td>
 <td>Bundle %</td>
 <td>Theme code (developer required)</td>
 </tr>
+<tr>
+<td>Listicle bundle % (PDP)</td>
+<td>Customizer → Listicle Buy Box → Pack Option →
+<code>Discount multiplier</code></td>
+</tr>
+<tr>
+<td>Listicle subscription % (PDP)</td>
+<td>Customizer → Listicle Buy Box →
+<code>Subscription discount (%)</code></td>
+</tr>
+<tr>
+<td>Listicle bundle % (checkout)</td>
+<td>Admin → Apps → <strong>EPD</strong> → <code>bundle_listicle</code> →
+tier discount</td>
+</tr>
+<tr>
+<td>Listicle EPD bucket name</td>
+<td>Customizer → Listicle Buy Box →
+<code>EPD discount bucket</code></td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -381,18 +658,30 @@ change discount to <code>20.00%</code></li>
 </ol>
 <hr />
 <h2 id="cart-merge-behaviour">Cart Merge Behaviour</h2>
-<p>When a pack is added to the cart, the theme <strong>automatically
-merges</strong> with an existing line item (same variant + same mode +
-same pre-order state, combined qty ≤ 3) and reassigns the correct plan
-ID.</p>
+<h3 id="pdp-merge-maison-pdp-hero">PDP merge (Maison PDP Hero)</h3>
+<p>When a pack is added to the cart from the PDP, the theme
+<strong>automatically merges</strong> with an existing line item (same
+variant + same mode + same pre-order state, combined qty ≤ 3) and
+reassigns the correct plan ID.</p>
 <p>Example: - Cart: 1 Bag subscribe (4-week plan) - User adds 2 Bags
 subscribe → <strong>one line: 3 Bags @ 8-week plan,
 $35.95/ea</strong></p>
 <p>If combined qty &gt; 3 — a <strong>separate line</strong> is created
 (no merge).</p>
-<p>When quantity changes via cart drawer (<code>+</code> /
-<code>−</code> buttons) — the plan also auto-swaps to the correct one
-for the new quantity.</p>
+<h3 id="listicle-buy-box-new-flow">Listicle Buy Box (new flow)</h3>
+<p>No merge — every add creates a <strong>new line item</strong>. By
+default the section redirects to <code>/checkout</code> right after add
+(<code>What happens after add-to-cart: Redirect to checkout</code>). The
+alternative <code>Open cart drawer (no redirect)</code> keeps the user
+on the page and pops the drawer instead.</p>
+<h3 id="cart-drawer-quantity-swap-works-on-all-pages">Cart drawer
+quantity swap (works on ALL pages)</h3>
+<p>When the quantity changes via cart drawer (<code>+</code> /
+<code>−</code> buttons), the plan <strong>auto-swaps</strong> to the
+correct one for the new quantity. This now works not only on
+PDP/listicle but on <strong>any page</strong> (collection, blog, home),
+because the <code>_qty_plans</code> map is stored on the cart line
+itself at add-to-cart time.</p>
 <hr />
 <h2 id="checklist-after-changing-discounts">Checklist After Changing
 Discounts</h2>

@@ -4,11 +4,156 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Знижки в темі Franky</title>
+  <title>cart-discount-logic</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,12 +170,8 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="data:text/css;base64,Ym9keXtmb250LWZhbWlseTotYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxzYW5zLXNlcmlmO21heC13aWR0aDo3ODBweDttYXJnaW46NDBweCBhdXRvO3BhZGRpbmc6MCAyMHB4O2xpbmUtaGVpZ2h0OjEuNjtjb2xvcjojMjIyfWgxe2JvcmRlci1ib3R0b206MnB4IHNvbGlkICMzMzM7cGFkZGluZy1ib3R0b206OHB4fWgye21hcmdpbi10b3A6MzJweDtjb2xvcjojMWExYTFhfWgze2NvbG9yOiMzMzN9dGFibGV7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO3dpZHRoOjEwMCU7bWFyZ2luOjEycHggMH10aCx0ZHtib3JkZXI6MXB4IHNvbGlkICNkZGQ7cGFkZGluZzo4cHggMTJweDt0ZXh0LWFsaWduOmxlZnR9dGh7YmFja2dyb3VuZDojZjVmNWY1fWNvZGV7YmFja2dyb3VuZDojZjRmNGY0O3BhZGRpbmc6MnB4IDZweDtib3JkZXItcmFkaXVzOjNweDtmb250LXNpemU6MC45ZW19YmxvY2txdW90ZXtib3JkZXItbGVmdDo0cHggc29saWQgI2ZmYTUwMDtiYWNrZ3JvdW5kOiNmZmY4ZTE7cGFkZGluZzoxMHB4IDE2cHg7bWFyZ2luOjE2cHggMH1ocntib3JkZXI6bm9uZTtib3JkZXItdG9wOjFweCBzb2xpZCAjZGRkO21hcmdpbjoyNHB4IDB9Cg==" />
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Знижки в темі Franky</h1>
-</header>
 <h1 id="знижки-в-темі-franky-як-змінювати">Знижки в темі Franky — як
 змінювати</h1>
 <p>Короткий гайд для клієнта: де і що міняти в Shopify admin, щоб
@@ -51,7 +192,7 @@
 оплаті. <strong>Завжди оновлюй всі задіяні місця.</strong></p>
 <h3 id="як-влаштовано-every-possible-discount">Як влаштовано Every
 Possible Discount</h3>
-<p>В апці є 5 активних discount-функцій (Tiered, Automatic). Кожна — для
+<p>В апці є 6 активних discount-функцій (Tiered, Automatic). Кожна — для
 свого сценарію:</p>
 <table>
 <colgroup>
@@ -69,28 +210,33 @@ Possible Discount</h3>
 <tbody>
 <tr>
 <td><code>packs_standard</code></td>
-<td>Режим Packs, звичайна купівля</td>
+<td>Режим Packs (PDP), звичайна купівля</td>
 <td>Fixed amount per item</td>
 </tr>
 <tr>
 <td><code>packs_preorder</code></td>
-<td>Режим Packs + pre-order</td>
+<td>Режим Packs (PDP) + pre-order</td>
 <td>Fixed amount per item</td>
 </tr>
 <tr>
 <td><code>bundle_standard</code></td>
-<td>Режим Bundle, звичайна купівля</td>
+<td>Режим Bundle (PDP), звичайна купівля</td>
 <td>Tiered Percentage</td>
 </tr>
 <tr>
 <td><code>bundle_preorder</code></td>
-<td>Режим Bundle + pre-order</td>
+<td>Режим Bundle (PDP) + pre-order</td>
 <td>Tiered Percentage</td>
 </tr>
 <tr>
 <td><code>classic_preorder</code></td>
-<td>Режим Classic + pre-order</td>
+<td>Режим Classic (PDP) + pre-order</td>
 <td>Tiered Percentage</td>
+</tr>
+<tr>
+<td><strong><code>bundle_listicle</code></strong></td>
+<td><strong>Секція Listicle Buy Box (landing-page funnel)</strong></td>
+<td><strong>Tiered Percentage</strong></td>
 </tr>
 </tbody>
 </table>
@@ -204,6 +350,117 @@ every 4 weeks”)</li>
 коді теми (Tiered Percentage у EPD теж треба оновити).</p>
 <p>Поточні значення: - 2 items → 20% - 3 items → 25% - 4+ items →
 30%</p>
+<h3 id="listicle-bundle-знижка-нова-для-landing-page-funnel">5. Listicle
+bundle знижка (нова — для landing-page funnel)</h3>
+<p>Окрема знижка для секції <strong>Listicle Buy Box</strong> яка
+вмонтована в listicle сторінки (наприклад
+<code>maison-listicle-morning</code>). Працює як Tiered Percentage по
+quantity:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Discount (від variant base)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>10%</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>15%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Знижка від підписки (15% через Loop) <strong>стекається
+додатково</strong> — для 2/3 packs subscribe фактична знижка = bundle% ×
+subscription% (compound):</p>
+<table>
+<thead>
+<tr>
+<th>Сценарій</th>
+<th>Math</th>
+<th>Per unit</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 bag, one-time</td>
+<td>$39.95</td>
+<td>$39.95</td>
+<td>$39.95</td>
+</tr>
+<tr>
+<td>2 bags, one-time</td>
+<td>$39.95 × 0.9</td>
+<td>$35.96</td>
+<td>$71.91</td>
+</tr>
+<tr>
+<td>3 bags, one-time</td>
+<td>$39.95 × 0.85</td>
+<td>$33.96</td>
+<td>$101.87</td>
+</tr>
+<tr>
+<td>1 bag, subscribe</td>
+<td>$39.95 × 0.85</td>
+<td>$33.96</td>
+<td>$33.96</td>
+</tr>
+<tr>
+<td>2 bags, subscribe</td>
+<td>round(3596 × 0.85)</td>
+<td>$30.57</td>
+<td><strong>$61.14</strong></td>
+</tr>
+<tr>
+<td>3 bags, subscribe</td>
+<td>round(3396 × 0.85)</td>
+<td>$28.87</td>
+<td><strong>$86.61</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Де змінити:</strong></p>
+<ul>
+<li><strong>PDP ціни (one-time):</strong> Customizer → секція
+<strong>Listicle Buy Box</strong> → блоки <strong>Pack Option</strong> →
+поле <code>Price per unit (cents)</code> АБО
+<code>Discount multiplier</code> (наприклад <code>0.9</code> для 10%
+off).</li>
+<li><strong>Subscription %:</strong> Customizer → секція
+<strong>Listicle Buy Box</strong> →
+<code>Subscription discount (%)</code> (default <code>15</code>)</li>
+<li><strong>Plan ID per pack:</strong> ті самі що в PDP — Pack Option →
+<code>Subscription Plan ID (Loop)</code></li>
+<li><strong>Checkout discount:</strong> Admin → Apps → <strong>Every
+Possible Discount</strong> → функція <code>bundle_listicle</code> →
+tiers (Tiered Percentage):
+<ul>
+<li>1 → <code>0%</code></li>
+<li>2 → <code>10%</code></li>
+<li>3 → <code>15%</code></li>
+</ul></li>
+<li><strong>EPD bucket trigger</strong> (для розробника): кожен cart
+item з listicle buy-box має
+<code>_mc_discount_bucket: bundle_listicle</code> property. Якщо клієнт
+хоче змінити назву bucket — це робиться через customizer
+<code>Listicle Buy Box → EPD discount bucket</code>, а в EPD функції теж
+треба змінити condition Value.</li>
+</ul>
+<blockquote>
+<p><strong>Pre-order не підтримується</strong> в Listicle Buy Box
+(свідомо — landing funnel для in-stock товарів). EPD не має
+<code>bundle_listicle_preorder</code> функції.</p>
+</blockquote>
 <hr />
 <h2 id="як-знижки-складаються-приклади">Як знижки складаються
 (приклади)</h2>
@@ -312,6 +569,26 @@ tier discount</td>
 <td>Bundle %</td>
 <td>Код теми (потребує розробника)</td>
 </tr>
+<tr>
+<td>Listicle bundle % (PDP)</td>
+<td>Customizer → Listicle Buy Box → Pack Option →
+<code>Discount multiplier</code></td>
+</tr>
+<tr>
+<td>Listicle subscription % (PDP)</td>
+<td>Customizer → Listicle Buy Box →
+<code>Subscription discount (%)</code></td>
+</tr>
+<tr>
+<td>Listicle bundle % (checkout)</td>
+<td>Admin → Apps → <strong>EPD</strong> → <code>bundle_listicle</code> →
+tier discount</td>
+</tr>
+<tr>
+<td>Listicle EPD bucket name</td>
+<td>Customizer → Listicle Buy Box →
+<code>EPD discount bucket</code></td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -378,7 +655,8 @@ discount (якщо ще немає)</li>
 </ol>
 <hr />
 <h2 id="cart-merge-поведінка">Cart merge поведінка</h2>
-<p>При додаванні pack у корзину тема <strong>автоматично
+<h3 id="pdp-merge-maison-pdp-hero">PDP merge (Maison PDP Hero)</h3>
+<p>При додаванні pack у корзину з PDP тема <strong>автоматично
 об’єднує</strong> з existing line item (Same variant + Same mode + Same
 pre-order state, qty ≤ 3) і перепризначає правильний plan ID.</p>
 <p>Приклад: - Корзина: 1 Bag subscribe (4-week plan) - Користувач додає
@@ -386,9 +664,20 @@ pre-order state, qty ≤ 3) і перепризначає правильний p
 $35.95/ea</strong></p>
 <p>Якщо combined qty &gt; 3 — створюється <strong>окрема лінія</strong>
 (без merge).</p>
+<h3 id="listicle-buy-box-новий-flow">Listicle Buy Box (новий flow)</h3>
+<p>Не мерджить з cart — додавання завжди створює <strong>нову
+line</strong>. За замовчуванням після ATC одразу redirect на
+<code>/checkout</code>
+(<code>What happens after add-to-cart: Redirect to checkout</code>).
+Альтернативно в кастомайзері можна обрати “Open cart drawer (no
+redirect)” — тоді ATC просто відкриє drawer.</p>
+<h3 id="cart-drawer-quantity-swap-працює-на-всіх-сторінках">Cart drawer
+quantity swap (працює на ВСІХ сторінках)</h3>
 <p>При зміні quantity у cart drawer (<code>+</code> / <code>−</code>
-кнопки) — plan теж автоматично swap’ається на правильний для нової
-кількості.</p>
+кнопки) — plan <strong>автоматично swap’ається</strong> на правильний
+для нової кількості. Тепер працює не тільки на PDP/listicle, а й на
+<strong>будь-якій сторінці</strong> (collection, blog, home), бо
+<code>_qty_plans</code> property зберігається на cart line при ATC.</p>
 <hr />
 <h2 id="чеклист-після-зміни-знижок">Чеклист після зміни знижок</h2>
 <ul class="task-list">

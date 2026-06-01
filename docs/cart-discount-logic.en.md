@@ -16,15 +16,16 @@ If you change only one of them, the customer will see one price on the site and 
 
 ### How Every Possible Discount is Set Up
 
-The app has 5 active discount functions (Tiered, Automatic). Each one covers a specific scenario:
+The app has 6 active discount functions (Tiered, Automatic). Each one covers a specific scenario:
 
 | Function | When it applies | Type |
 |----------|-----------------|------|
-| `packs_standard` | Packs mode, regular purchase | Fixed amount per item |
-| `packs_preorder` | Packs mode + pre-order | Fixed amount per item |
-| `bundle_standard` | Bundle mode, regular purchase | Tiered Percentage |
-| `bundle_preorder` | Bundle mode + pre-order | Tiered Percentage |
-| `classic_preorder` | Classic mode + pre-order | Tiered Percentage |
+| `packs_standard` | Packs mode (PDP), regular purchase | Fixed amount per item |
+| `packs_preorder` | Packs mode (PDP) + pre-order | Fixed amount per item |
+| `bundle_standard` | Bundle mode (PDP), regular purchase | Tiered Percentage |
+| `bundle_preorder` | Bundle mode (PDP) + pre-order | Tiered Percentage |
+| `classic_preorder` | Classic mode (PDP) + pre-order | Tiered Percentage |
+| **`bundle_listicle`** | **Listicle Buy Box section (landing-page funnel)** | **Tiered Percentage** |
 
 When a product is added to the cart, the theme automatically attaches a "tag" (`_mc_discount_bucket`) with the matching value, and the app finds the corresponding function and applies its tiered discount.
 
@@ -104,6 +105,40 @@ Current values:
 - 3 items → 25%
 - 4+ items → 30%
 
+### 5. Listicle bundle discount (new — landing-page funnel)
+
+Separate discount for the **Listicle Buy Box** section embedded in the listicle pages (e.g. `maison-listicle-morning`). Tiered percentage by quantity:
+
+| Quantity | Discount (off variant base) |
+|----------|------------------------------|
+| 1 | 0% |
+| 2 | **10%** |
+| 3 | **15%** |
+
+The subscription discount (15% via Loop) **stacks on top** — for 2/3 packs subscribe the effective discount is bundle% × subscription% (compound):
+
+| Scenario | Math | Per unit | Total |
+|----------|------|----------|-------|
+| 1 bag, one-time | $39.95 | $39.95 | $39.95 |
+| 2 bags, one-time | $39.95 × 0.9 | $35.96 | $71.91 |
+| 3 bags, one-time | $39.95 × 0.85 | $33.96 | $101.87 |
+| 1 bag, subscribe | $39.95 × 0.85 | $33.96 | $33.96 |
+| 2 bags, subscribe | round(3596 × 0.85) | $30.57 | **$61.14** |
+| 3 bags, subscribe | round(3396 × 0.85) | $28.87 | **$86.61** |
+
+**Where to change it:**
+
+- **PDP prices (one-time):** Customizer → section **Listicle Buy Box** → **Pack Option** blocks → `Price per unit (cents)` field OR `Discount multiplier` (e.g. `0.9` for 10% off).
+- **Subscription %:** Customizer → section **Listicle Buy Box** → `Subscription discount (%)` (default `15`)
+- **Plan ID per pack:** same as PDP — Pack Option → `Subscription Plan ID (Loop)`
+- **Checkout discount:** Admin → Apps → **Every Possible Discount** → function `bundle_listicle` → tiers (Tiered Percentage):
+  - 1 → `0%`
+  - 2 → `10%`
+  - 3 → `15%`
+- **EPD bucket trigger** (developer note): each cart item from the listicle buy-box gets `_mc_discount_bucket: bundle_listicle` line item property. If the client wants to rename the bucket, do it via Customizer → `Listicle Buy Box → EPD discount bucket` AND in the EPD function condition Value.
+
+> **Pre-order is not supported** in Listicle Buy Box (by design — funnel for in-stock products). No `bundle_listicle_preorder` function in EPD.
+
 ---
 
 ## How Discounts Combine (Examples)
@@ -136,6 +171,10 @@ Current values:
 | Subscribe frequency text | Customizer → PDP Hero → Pack Option → `Frequency Label` |
 | Enable pre-order on a product | Customizer → PDP Hero → `Enable Pre-Order` |
 | Bundle % | Theme code (developer required) |
+| Listicle bundle % (PDP) | Customizer → Listicle Buy Box → Pack Option → `Discount multiplier` |
+| Listicle subscription % (PDP) | Customizer → Listicle Buy Box → `Subscription discount (%)` |
+| Listicle bundle % (checkout) | Admin → Apps → **EPD** → `bundle_listicle` → tier discount |
+| Listicle EPD bucket name | Customizer → Listicle Buy Box → `EPD discount bucket` |
 
 ---
 
@@ -183,7 +222,9 @@ Current values:
 
 ## Cart Merge Behaviour
 
-When a pack is added to the cart, the theme **automatically merges** with an existing line item (same variant + same mode + same pre-order state, combined qty ≤ 3) and reassigns the correct plan ID.
+### PDP merge (Maison PDP Hero)
+
+When a pack is added to the cart from the PDP, the theme **automatically merges** with an existing line item (same variant + same mode + same pre-order state, combined qty ≤ 3) and reassigns the correct plan ID.
 
 Example:
 - Cart: 1 Bag subscribe (4-week plan)
@@ -191,7 +232,13 @@ Example:
 
 If combined qty > 3 — a **separate line** is created (no merge).
 
-When quantity changes via cart drawer (`+` / `−` buttons) — the plan also auto-swaps to the correct one for the new quantity.
+### Listicle Buy Box (new flow)
+
+No merge — every add creates a **new line item**. By default the section redirects to `/checkout` right after add (`What happens after add-to-cart: Redirect to checkout`). The alternative `Open cart drawer (no redirect)` keeps the user on the page and pops the drawer instead.
+
+### Cart drawer quantity swap (works on ALL pages)
+
+When the quantity changes via cart drawer (`+` / `−` buttons), the plan **auto-swaps** to the correct one for the new quantity. This now works not only on PDP/listicle but on **any page** (collection, blog, home), because the `_qty_plans` map is stored on the cart line itself at add-to-cart time.
 
 ---
 
