@@ -268,7 +268,37 @@
       }
     },
     "buy_box": {
-      "type": "maison-listicle-buy-box"
+      "type": "maison-listicle-buy-box",
+      "settings": {
+        "product": "franky-magic-frother",
+        "title_override": "",
+        "description": "",
+        "banner_text": "Limited Time: Summer Sale | Up to 32% Off",
+        "banner_bg": "#f4a09c",
+        "banner_text_color": "#3b2b2f",
+        "rating": 4.8,
+        "reviews_count": "8,450+",
+        "star_color": "#fbaa19",
+        "subscription_multiplier": 0.8,
+        "subscription_default_selected": true,
+        "onetime_label": "One-Time Purchase",
+        "show_nutritional_button": true,
+        "nutritional_button_text": "Nutritional Information",
+        "stock_text": "In Stock · Ships in 2–3 days from our US warehouse",
+        "cta_text": "Start Now →",
+        "cta_disclaimer": "Subscription orders billed every 4 weeks · $24.95 + free shipping · Skip or cancel anytime",
+        "bg_color": "#FFFFFF",
+        "card_bg": "#ffffff",
+        "card_border": "#e5e0d5",
+        "text_color": "#3b2b2f",
+        "muted_color": "#3b2b2f99",
+        "pack_border": "#e5e0d5",
+        "pack_active_border": "#3b2b2f",
+        "save_bg": "#f4a09c",
+        "save_text_color": "#3b2b2f",
+        "cta_bg": "#2eaa63",
+        "cta_text_color": "#ffffff"
+      }
     },
     "footer": {
       "type": "maison-listicle-footer",
@@ -312,4 +342,3 @@
     "main"
   ]
 }
-
