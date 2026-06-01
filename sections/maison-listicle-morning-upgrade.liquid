@@ -96,39 +96,37 @@
       {%- capture photo_card_set -%}
         {%- for i in (1..photo_repeat) -%}
           {%- for block in photo_blocks -%}
-            {%- assign r = block.settings.rating | default: 5 -%}
             <article class="mlmu__photo-card" {{ block.shopify_attributes }}>
-              {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: block.settings.reviewer_name | default: 'Customer review' }}
+              {%- if block.settings.video != blank -%}
+                {%- comment -%} Shopify-hosted video: autoplay loop muted "live photo" feel {%- endcomment -%}
+                <video
+                  class="mlmu__photo-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  {% if block.settings.image != blank %}poster="{{ block.settings.image | image_url: width: 600 }}"{% endif %}
+                >
+                  {%- for source in block.settings.video.sources -%}
+                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                  {%- endfor -%}
+                </video>
+              {%- elsif block.settings.video_url != blank -%}
+                {%- comment -%} External video link: poster image + play button overlay {%- endcomment -%}
+                <a class="mlmu__video-link" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Play video review">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
+                  {%- else -%}
+                    <div class="mlmu__photo-img mlmu__photo-img--placeholder" aria-hidden="true"></div>
+                  {%- endif -%}
+                  <span class="mlmu__play" aria-hidden="true">{{ play_icon }}</span>
+                </a>
+              {%- elsif block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Customer review' }}
               {%- else -%}
                 <div class="mlmu__photo-img mlmu__photo-img--placeholder" aria-hidden="true"></div>
               {%- endif -%}
-              {%- if block.settings.video_url != blank -%}
-                <a class="mlmu__play" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Play video review">
-                  {{ play_icon }}
-                </a>
-              {%- endif -%}
-              <div class="mlmu__photo-overlay">
-                <div class="mlmu__card-stars" aria-label="{{ r }} out of 5 stars">
-                  {%- for i in (1..r) -%}{{ star_full }}{%- endfor -%}
-                </div>
-                {%- if block.settings.date_text != blank -%}
-                  <div class="mlmu__card-date">{{ block.settings.date_text }}</div>
-                {%- endif -%}
-                {%- if block.settings.quote != blank -%}
-                  <p class="mlmu__card-quote mlmu__card-quote--photo">{{ block.settings.quote }}</p>
-                {%- endif -%}
-                <div class="mlmu__card-author">
-                  <span class="mlmu__card-name">{{ block.settings.reviewer_name }}</span>
-                  {%- if block.settings.verified_label != blank -%}
-                    <span class="mlmu__card-dot" aria-hidden="true"></span>
-                    <span class="mlmu__card-verified">
-                      {{ check_badge }}
-                      <span>{{ block.settings.verified_label }}</span>
-                    </span>
-                  {%- endif -%}
-                </div>
-              </div>
             </article>
           {%- endfor -%}
         {%- endfor -%}
@@ -304,7 +302,8 @@
     background: #E5E0D5;
     box-sizing: border-box;
   }
-  .mlmu__photo-img {
+  .mlmu__photo-img,
+  .mlmu__photo-video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -315,15 +314,22 @@
   .mlmu__photo-img--placeholder {
     background: linear-gradient(135deg, #E5E0D5 0%, #D5CFC0 100%);
   }
+  .mlmu__video-link {
+    position: absolute;
+    inset: 0;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
   .mlmu__play {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--mlmu-text);
     display: inline-flex;
     align-items: center;
@@ -331,29 +337,14 @@
     text-decoration: none;
     transition: transform 0.15s ease, background 0.15s ease;
     z-index: 2;
+    pointer-events: none;
   }
-  .mlmu__play:hover, .mlmu__play:focus-visible {
+  .mlmu__video-link:hover .mlmu__play,
+  .mlmu__video-link:focus-visible .mlmu__play {
     background: #FFFFFF;
-    transform: translate(-50%, -50%) scale(1.05);
-    outline: none;
+    transform: translate(-50%, -50%) scale(1.08);
   }
-  .mlmu__photo-overlay {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    background: var(--mlmu-card-bg);
-    border-radius: 12px;
-    padding: 12px 14px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-shadow: 0 6px 16px rgba(45, 38, 34, 0.12);
-    z-index: 1;
-  }
-  .mlmu__card-quote--photo {
-    -webkit-line-clamp: 3;
-  }
+  .mlmu__video-link:focus-visible { outline: none; }
 
   /* ===== Text card (bottom rows) ===== */
   .mlmu__text-card {
@@ -508,27 +499,31 @@
   "blocks": [
     {
       "type": "photo_review",
-      "name": "Photo review (top row)",
+      "name": "Photo / video review (top row)",
       "limit": 24,
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Photo" },
+        {
+          "type": "paragraph",
+          "content": "Media-only card for the top marquee. Add either a photo, a Shopify-hosted video, or an external video URL. Text reviews go in the Text review block."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo / video poster",
+          "info": "Shown directly when no video is set. Used as the poster (frozen preview) when a Shopify-hosted video is set, or as the thumbnail when an external video URL is set."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video (Shopify-hosted)",
+          "info": "Uploaded video plays inline, muted and looping, like a live photo. Overrides external video URL."
+        },
         {
           "type": "url",
           "id": "video_url",
-          "label": "Video URL (optional)",
-          "info": "If set, a play button overlays the photo and opens the URL in a new tab."
-        },
-        {
-          "type": "range",
-          "id": "rating",
-          "label": "Star rating",
-          "min": 1, "max": 5, "step": 1,
-          "default": 5
-        },
-        { "type": "text", "id": "date_text", "label": "Date", "default": "Bought on 14 August 2025" },
-        { "type": "textarea", "id": "quote", "label": "Quote", "default": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip." },
-        { "type": "text", "id": "reviewer_name", "label": "Reviewer name", "default": "James T." },
-        { "type": "text", "id": "verified_label", "label": "Verified label", "default": "Verified Buyer" }
+          "label": "External video URL",
+          "info": "YouTube / Vimeo / external link. Used only if no Shopify-hosted video is uploaded. Adds a play button overlay; clicking opens the URL in a new tab."
+        }
       ]
     },
     {
@@ -554,10 +549,10 @@
     {
       "name": "Listicle Morning Upgrade",
       "blocks": [
-        { "type": "photo_review", "settings": { "reviewer_name": "James T.", "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.", "date_text": "Bought on 14 August 2025" } },
-        { "type": "photo_review", "settings": { "reviewer_name": "Sarah K.", "quote": "Down four pounds and off the afternoon coffee. Easiest swap I've made all year.", "date_text": "Bought on 18 August 2025" } },
-        { "type": "photo_review", "settings": { "reviewer_name": "Rachel N.", "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.", "date_text": "Bought on 16 August 2025" } },
-        { "type": "photo_review", "settings": { "reviewer_name": "Patty 48", "quote": "Quit my $6 latte habit. Down four pounds and the afternoon slump is gone.", "date_text": "Bought on 12 August 2025" } },
+        { "type": "photo_review" },
+        { "type": "photo_review" },
+        { "type": "photo_review" },
+        { "type": "photo_review" },
         { "type": "text_review", "settings": { "reviewer_name": "Hannah, RN, 45", "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.", "date_text": "Bought on 8 August 2025" } },
         { "type": "text_review", "settings": { "reviewer_name": "Patty, 48", "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.", "date_text": "Bought on 11 August 2025" } },
         { "type": "text_review", "settings": { "reviewer_name": "James T.", "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.", "date_text": "Bought on 14 August 2025" } },
