@@ -410,15 +410,19 @@
 
       get subscriptionDisclaimer() {
         const pack = this.currentPack;
-        const freq = (pack && pack.frequencyLabel) ? pack.frequencyLabel : 'Ships every 4 weeks';
-        const txt = cfg.subscribeDisclaimer;
+        // Strip any leading "Ships" / "Delivered" / "Deliver" / "Billed" prefix from the
+        // pack's frequency label so the disclaimer reads naturally when concatenated.
+        const raw = (pack && pack.frequencyLabel) ? pack.frequencyLabel : 'every 4 weeks';
+        const freq = raw.replace(/^\s*(ships?|delivered|deliver|billed)\s+/i, '').trim() || raw;
         const subPrice = this.formatMoney(this.subscriptionTotal);
+        const txt = cfg.subscribeDisclaimer;
         if (txt && txt.length > 0) {
           return txt
             .replace('{frequency}', freq)
+            .replace('{frequency_raw}', raw)
             .replace('{price}', subPrice);
         }
-        return 'Subscription orders ' + freq.toLowerCase() + ' · ' + subPrice + ' + free shipping · Skip or cancel anytime';
+        return 'Subscription orders billed ' + freq + ' · ' + subPrice + ' + free shipping · Skip or cancel anytime';
       },
 
       get modeToggleLabel() {
@@ -634,10 +638,10 @@
     margin: 0;
     font-family: 'Lust Text', serif;
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.2;
     color: var(--mlbb-text);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.005em;
   }
 
   /* Rating */
@@ -722,15 +726,17 @@
     background: #FFFFFF;
     border: 1.5px solid var(--mlbb-pack-border);
     border-radius: 12px;
-    padding: 12px;
+    padding: 16px 12px 12px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    text-align: left;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
     position: relative;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
     min-height: 137px;
+    overflow: visible;
   }
   .mlbb__pack:hover { border-color: var(--mlbb-pack-active); }
   .mlbb__pack.is-active {
@@ -740,16 +746,17 @@
   .mlbb__pack-best {
     position: absolute;
     top: -10px;
-    right: 12px;
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--mlbb-best-bg);
     color: var(--mlbb-best-text);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
     border-radius: 999px;
-    padding: 3px 10px;
+    padding: 3px 12px;
     white-space: nowrap;
-    z-index: 1;
+    z-index: 2;
   }
   .mlbb__pack-visual {
     width: 100%;
@@ -758,6 +765,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: 4px;
   }
   .mlbb__pack-bottle {
     width: 58px;
@@ -770,15 +778,17 @@
   }
   .mlbb__pack-meta {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    flex-wrap: wrap;
+    gap: 4px;
+    width: 100%;
+    margin-top: auto;
   }
   .mlbb__pack-name {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--mlbb-text);
+    line-height: 1.2;
   }
   .mlbb__pack-badge {
     font-size: 11px;
@@ -786,7 +796,7 @@
     color: var(--mlbb-save-text);
     background: var(--mlbb-save-bg);
     border-radius: 999px;
-    padding: 3px 9px;
+    padding: 3px 10px;
     letter-spacing: 0.02em;
   }
 
@@ -1174,8 +1184,8 @@
       "type": "text",
       "id": "subscribe_disclaimer",
       "label": "Subscription disclaimer",
-      "info": "Use {frequency} and {price} placeholders.",
-      "default": "Subscription orders {frequency} · {price} + free shipping · Skip or cancel anytime"
+      "info": "Use {frequency} (auto-strips 'Ships'/'Billed' prefix) or {frequency_raw} (verbatim) and {price} placeholders.",
+      "default": "Subscription orders billed {frequency} · {price} + free shipping · Skip or cancel anytime"
     },
 
     { "type": "header", "content": "Nutritional info" },
