@@ -1142,13 +1142,38 @@
       grid-template-columns: 1fr;
       gap: 24px;
     }
+    /* Gallery becomes single column on mobile: image on top,
+       thumbs in a horizontal scrollable row below it. */
     .mlbb__gallery {
-      grid-template-columns: 56px 1fr;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .mlbb__main-image {
+      align-self: auto;
+      order: 0;
+    }
+    .mlbb__thumbs-wrap {
+      align-self: auto;
+      order: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+      min-height: 0;
+    }
+    .mlbb__thumbs {
+      position: static;
+      flex-direction: row;
       gap: 8px;
+      height: auto;
+      width: max-content;
+    }
+    .mlbb__thumbs-wrap::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
     }
     .mlbb__thumb {
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
     }
     .mlbb__title { font-size: 26px; }
     .mlbb__price-current { font-size: 22px; }
