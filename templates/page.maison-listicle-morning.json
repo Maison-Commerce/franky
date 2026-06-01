@@ -38,7 +38,7 @@
         "check_bg": "#d8e4ee",
         "check_color": "#3b2b2f",
         "cta_text": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →",
-        "cta_url": "#listicle-pr-main",
+        "cta_url": "",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
         "image": "shopify://shop_images/list-hero-img-morning.png"
@@ -169,7 +169,7 @@
         "icon_bg": "#d8e4ee",
         "icon_color": "#ffffff",
         "cta_text": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →",
-        "cta_url": "#listicle-pr-main",
+        "cta_url": "",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6"
       }
@@ -278,28 +278,28 @@
           "type": "accordion",
           "settings": {
             "title": "Benefits & Ingredients",
-            "body": ""
+            "body": "<p><strong>What's inside:</strong> Real coffee, 20g whey protein isolate, 100mg natural caffeine, 200mg L-theanine, prebiotic fiber (chicory root + acacia), MCTs, sea salt, monk fruit, natural vanilla and hazelnut.</p><p><strong>What it does:</strong> Sustained energy without the 11am crash. Focus and mental clarity for 4+ hours. Curbs hunger so you don't reach for snacks. Supports gut health with prebiotic fiber.</p><p><strong>Free of:</strong> Gluten, artificial sweeteners, added sugar, soy, gums.</p>"
           }
         },
         "accordion_HkGe3z": {
           "type": "accordion",
           "settings": {
             "title": "How to Enjoy",
-            "body": ""
+            "body": "<p><strong>The 60-second routine:</strong></p><ol><li>Add two scoops (28g) to 8–10oz of cold water or milk of choice.</li><li>Shake or stir for 30 seconds until smooth.</li><li>Add ice. Sip.</li></ol><p>Best in the morning before noon — the caffeine kicks in within 20 minutes and lasts 4+ hours. Works great post-workout too.</p><p><strong>Pro tip:</strong> Try it with oat milk for a creamier texture, or blend with frozen banana for a thicker smoothie.</p>"
           }
         },
         "accordion_NdcUbT": {
           "type": "accordion",
           "settings": {
             "title": "Why Subscribe?",
-            "body": ""
+            "body": "<p><strong>Save 15%</strong> on every order — that's around $6 off per bag.</p><p><strong>Free shipping</strong> on every subscription delivery.</p><p><strong>Skip or cancel anytime</strong> from your account — no calls, no hold music. Two clicks.</p><p><strong>You never run out.</strong> Pick a 4, 6, or 8-week cadence to match how fast you go through a bag. Need to push the next order? Adjust it from your inbox.</p>"
           }
         },
         "accordion_Qyr4RC": {
           "type": "accordion",
           "settings": {
             "title": "Shipping & Returns",
-            "body": ""
+            "body": "<p><strong>Shipping:</strong> Free on all subscription orders. One-time orders ship from our US warehouse in 2–3 business days. Most US orders arrive within 5 business days of placing the order.</p><p><strong>Returns:</strong> 30-day money-back guarantee. Don't love it? Email <a href=\"mailto:hello@drinkfranky.com\">hello@drinkfranky.com</a> within 30 days of delivery for a full refund — even if the bag is half-empty.</p><p><strong>Need help?</strong> Reach us at <a href=\"mailto:hello@drinkfranky.com\">hello@drinkfranky.com</a> — we usually reply within a few hours during business days.</p>"
           }
         },
         "trust_badge_YJjLwR": {
@@ -744,7 +744,7 @@
         "avatar_2": "shopify://shop_images/avatar-2.png",
         "avatar_3": "shopify://shop_images/avatar-3.png",
         "button_text": "START MY SUBSCRIPTION",
-        "button_link": "shopify://products/franky-protein-coffee",
+        "button_link": "#listicle-pr-main",
         "padding_top_desktop": 70,
         "padding_bottom_desktop": 70,
         "padding_left_desktop": 60,
