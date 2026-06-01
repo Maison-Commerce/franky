@@ -75,16 +75,18 @@
         </div>
 
         {%- if s.show_nutritional_button -%}
-          <button type="button" class="mlbb__nutrition-toggle" @click="nutritionOpen = !nutritionOpen" :aria-expanded="nutritionOpen">
-            <svg class="mlbb__nutrition-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            <span>{{ s.nutritional_button_text | default: 'Nutritional Information' }}</span>
-          </button>
-          <div class="mlbb__nutrition-body" x-show="nutritionOpen" x-collapse>
-            {{ s.nutritional_content }}
+          <div class="mlbb__nutrition mlbb__nutrition--desktop">
+            <button type="button" class="mlbb__nutrition-toggle" @click="nutritionOpen = !nutritionOpen" :aria-expanded="nutritionOpen">
+              <svg class="mlbb__nutrition-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span>{{ s.nutritional_button_text | default: 'Nutritional Information' }}</span>
+            </button>
+            <div class="mlbb__nutrition-body" x-show="nutritionOpen" x-collapse>
+              {{ s.nutritional_content }}
+            </div>
           </div>
         {%- endif -%}
       </div>
@@ -130,6 +132,22 @@
 
         {%- if s.description != blank -%}
           <div class="mlbb__description">{{ s.description }}</div>
+        {%- endif -%}
+
+        {%- if s.show_nutritional_button -%}
+          <div class="mlbb__nutrition mlbb__nutrition--mobile">
+            <button type="button" class="mlbb__nutrition-toggle" @click="nutritionOpen = !nutritionOpen" :aria-expanded="nutritionOpen">
+              <svg class="mlbb__nutrition-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span>{{ s.nutritional_button_text | default: 'Nutritional Information' }}</span>
+            </button>
+            <div class="mlbb__nutrition-body" x-show="nutritionOpen" x-collapse>
+              {{ s.nutritional_content }}
+            </div>
+          </div>
         {%- endif -%}
 
         <div class="mlbb__price">
@@ -621,6 +639,10 @@
     object-fit: cover;
     display: block;
   }
+
+  /* Show desktop copy by default; mobile copy is hidden until <=1024px */
+  .mlbb__nutrition--mobile { display: none; }
+  .mlbb__nutrition--desktop { display: block; }
 
   .mlbb__nutrition-toggle {
     appearance: none;
@@ -1189,6 +1211,11 @@
     .mlbb__pack-bottle + .mlbb__pack-bottle { margin-left: -28px; }
     .mlbb__cta { font-size: 15px; min-height: 56px; }
     .mlbb__tastes-list { gap: 8px; }
+
+    /* Move Nutritional Information out of the media column on mobile —
+       it sits between description and price inside content. */
+    .mlbb__nutrition--desktop { display: none; }
+    .mlbb__nutrition--mobile { display: block; }
   }
 
   @media (max-width: 480px) {
