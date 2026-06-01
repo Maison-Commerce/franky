@@ -416,7 +416,8 @@
     subscribeLabel: {{ s.subscribe_label | default: 'Subscribe & Save' | json }},
     subscribeDisclaimer: {{ s.subscribe_disclaimer | default: '' | json }},
     discountBucket: {{ s.discount_bucket | default: 'bundle_listicle' | json }},
-    singleFlavorForAllPacks: {{ s.single_flavor_for_all_packs | default: true }}
+    singleFlavorForAllPacks: {{ s.single_flavor_for_all_packs | default: true }},
+    postAddAction: {{ s.post_add_action | default: 'checkout' | json }}
   };
 
   function maisonListicleBuyBox() {
@@ -574,7 +575,24 @@
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify({ items: items })
           });
-          window.location.href = '/checkout';
+
+          // Always refresh the cart drawer state so it reflects the new line
+          // (works regardless of the post-add action below — if the user navigates
+          // back from checkout the drawer is already up-to-date).
+          if (typeof window.maisonDispatch === 'function') {
+            window.maisonDispatch('maison:cart-drawer-reload');
+          }
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+          const action = cfg.postAddAction || 'checkout';
+          if (action === 'cart_drawer') {
+            if (typeof window.maisonDispatch === 'function') {
+              window.maisonDispatch('maison:cart-drawer-open');
+            }
+            this.loading = false;
+          } else {
+            window.location.href = '/checkout';
+          }
         } catch (err) {
           console.error('[mlbb] addToCart failed', err);
           this.loading = false;
@@ -1404,6 +1422,19 @@
       "label": "EPD discount bucket",
       "info": "Line item property (_mc_discount_bucket) sent on add-to-cart so the matching EPD function applies. Default: bundle_listicle.",
       "default": "bundle_listicle"
+    },
+
+    { "type": "header", "content": "After add-to-cart" },
+    {
+      "type": "select",
+      "id": "post_add_action",
+      "label": "What happens after add-to-cart",
+      "info": "The cart drawer is always refreshed in the background so it stays in sync with the new line item.",
+      "options": [
+        { "value": "checkout", "label": "Redirect to checkout" },
+        { "value": "cart_drawer", "label": "Open cart drawer (no redirect)" }
+      ],
+      "default": "checkout"
     },
 
     { "type": "header", "content": "Flavor selection" },
