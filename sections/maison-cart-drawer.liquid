@@ -628,11 +628,15 @@
           return;
         }
 
-        // Packs item with quantity-dependent selling plan: use /cart/change.js to also swap the plan
+        // Packs / listicle bundle item with quantity-dependent selling plan:
+        // use /cart/change.js to also swap the plan so the displayed frequency
+        // matches the new quantity tier (e.g. "Every 4 weeks" -> "Every 6 weeks").
         const planByQty = window.sellingPlanByQuantity || {};
-        const isPacksItem = typeof discountBucket === 'string' && discountBucket.startsWith('packs_');
+        const qtyDependentBuckets = ['packs_', 'bundle_listicle'];
+        const isQtyDependentItem = typeof discountBucket === 'string'
+          && qtyDependentBuckets.some(prefix => discountBucket === prefix || discountBucket.startsWith(prefix));
         const isSubscribe = !!item?.selling_plan_allocation;
-        const canSwapPlan = item && isPacksItem && quantity > 0 && quantity <= 3 && Object.keys(planByQty).length > 0;
+        const canSwapPlan = item && isQtyDependentItem && quantity > 0 && quantity <= 3 && Object.keys(planByQty).length > 0;
 
         if (canSwapPlan) {
           item.quantity = quantity;

@@ -382,6 +382,21 @@
     {% endfor %}
   ];
 
+  // Expose the pack -> selling_plan map globally so the shared cart drawer
+  // (maison-cart-drawer) can swap the selling_plan when the customer changes
+  // quantity via the +/- buttons. The drawer also reads
+  // window.frequencyLabelByQuantity for the "Delivery & Payment" line.
+  window.sellingPlanByQuantity = window.sellingPlanByQuantity || {};
+  window.frequencyLabelByQuantity = window.frequencyLabelByQuantity || {};
+  {% for block in pack_blocks %}
+    {% if block.settings.selling_plan_id != blank %}
+      window.sellingPlanByQuantity[{{ block.settings.bottle_count | default: 1 }}] = {{ block.settings.selling_plan_id | json }};
+    {% endif %}
+    {% if block.settings.frequency_label != blank %}
+      window.frequencyLabelByQuantity[{{ block.settings.bottle_count | default: 1 }}] = {{ block.settings.frequency_label | json }};
+    {% endif %}
+  {% endfor %}
+
   window.mlbbConfig = window.mlbbConfig || {};
   window.mlbbConfig["{{ section.id }}"] = {
     subscriptionMultiplier: (function () {
