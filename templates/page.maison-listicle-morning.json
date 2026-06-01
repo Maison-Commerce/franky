@@ -346,7 +346,7 @@
         "pack_option_Ce4VxD"
       ],
       "settings": {
-        "product": "franky-magic-frother",
+        "product": "franky-protein-coffee-test",
         "title_override": "",
         "description": "",
         "pill_text": "Limited Time: Summer Sale | Up to 32% Off",
@@ -372,6 +372,7 @@
         "image_bg": "#f7f3e6",
         "text_color": "#3b2b2f",
         "muted_color": "rgba(59, 43, 47, 0.75)",
+        "pack_bg": "rgba(250, 246, 235, 0.30)",
         "pack_border": "#e5e0d5",
         "pack_active_border": "#3b2b2f",
         "save_bg": "rgba(255, 201, 157, 0.70)",
