@@ -364,8 +364,8 @@
             "bottle_count": 2,
             "badge_text": "Save 10%",
             "discount_multiplier": "0.9",
-            "selling_plan_id": "",
-            "frequency_label": "",
+            "selling_plan_id": "5271978217",
+            "frequency_label": "Deliver every 6 weeks",
             "is_default_selected": false,
             "show_best_value": false,
             "custom_image": "shopify://shop_images/list-pack-option.png"
