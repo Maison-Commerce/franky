@@ -374,7 +374,7 @@
         "muted_color": "rgba(59, 43, 47, 0.75)",
         "pack_border": "#e5e0d5",
         "pack_active_border": "#3b2b2f",
-        "save_bg": "#f4a09c",
+        "save_bg": "rgba(255, 201, 157, 0.70)",
         "save_text_color": "#3b2b2f",
         "best_bg": "#3b2b2f",
         "best_text_color": "#ffffff",
