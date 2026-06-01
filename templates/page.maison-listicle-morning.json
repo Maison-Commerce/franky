@@ -264,7 +264,7 @@
         "featured_title": "Franky Coffee",
         "featured_header_color": "#3b2b2f",
         "featured_header_text_color": "#f5eddc",
-        "featured_body_color": "linear-gradient(180deg, #FAEDDC 0%, #F8DCD0 100%)",
+        "featured_body_color": "linear-gradient(180deg, rgba(250, 237, 220, 1), rgba(248, 220, 208, 1) 100%)",
         "col1_title": "Coffee",
         "col3_title": "Protein powder",
         "row_font_size_desktop": 16,
