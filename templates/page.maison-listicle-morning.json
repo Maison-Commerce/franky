@@ -10,23 +10,6 @@
 {
   "layout": "listicle-clean",
   "sections": {
-    "announcement_bar": {
-      "type": "maison-listicle-announcement-bar",
-      "settings": {
-        "headline_text": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING",
-        "subheadline_text": "Limited stock · US warehouse ships in 2–3 days",
-        "countdown_enabled": true,
-        "countdown_end_iso": "2026-08-31T23:59:00",
-        "countdown_expired_behavior": "hide",
-        "countdown_expired_message": "Offer ended",
-        "label_days": "DAYS",
-        "label_hrs": "HRS",
-        "label_min": "MIN",
-        "label_sec": "SEC",
-        "bg_color": "#c1d5e5",
-        "text_color": "#3b2b2f"
-      }
-    },
     "header": {
       "type": "maison-listicle-header",
       "settings": {
@@ -889,6 +872,90 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
+    "maison_faq_jKJakC": {
+      "type": "maison-faq",
+      "blocks": {
+        "faq_item_g77Rfq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much protein per serving?",
+            "answer": "<p>Each serving contains <strong>10g of high-quality protein</strong> to help support energy, focus, and satiety throughout your morning.</p>"
+          }
+        },
+        "faq_item_LrfjAk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much caffeine?",
+            "answer": "<p>Each serving contains about <strong>90–100mg of caffeine</strong>, roughly the same as a standard cup of coffee.</p>"
+          }
+        },
+        "faq_item_M64qLL": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I crash?",
+            "answer": "<p>No. Franky is formulated to provide <strong>smooth, sustained energy</strong> without the sudden spikes and crashes often associated with traditional coffee.</p>"
+          }
+        },
+        "faq_item_H3fBjn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I replace breakfast?",
+            "answer": "<p>Franky can be used as a <strong>light breakfast option</strong> or alongside your morning routine, but it’s not intended to fully replace a balanced meal.</p>"
+          }
+        },
+        "faq_item_C4bGCH": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it dairy-free?",
+            "answer": "<p>Yes. Franky is <strong>dairy-free</strong> and designed to be easy to digest.</p>"
+          }
+        },
+        "faq_item_XyqX7Q": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I drink daily?",
+            "answer": "<p>Yes. Franky is designed to be enjoyed <strong>daily as part of your morning routine</strong>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_g77Rfq",
+        "faq_item_LrfjAk",
+        "faq_item_M64qLL",
+        "faq_item_H3fBjn",
+        "faq_item_C4bGCH",
+        "faq_item_XyqX7Q"
+      ],
+      "name": "Maison FAQ",
+      "settings": {
+        "padding_top_desktop": 56,
+        "padding_bottom_desktop": 56,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(243, 207, 203, 0.5) 100%)",
+        "heading": "<p>Everything You Need To Know about Franky</p>",
+        "description": "<p>**These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease</p>",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 32,
+        "heading_color": "#3b2b2f",
+        "image": "shopify://shop_images/2f14f82783b17bb261b2a47eabd9eca8cc440b70_518cc6f7-bc00-4f91-9e1f-cca0865996fb.png",
+        "image_width_desktop": 600,
+        "image_border_radius": 16,
+        "faq_gap_desktop": 80,
+        "question_font_size_desktop": 18,
+        "question_font_size_mobile": 16,
+        "question_color": "#3b2b2f",
+        "question_padding_desktop": 20,
+        "question_padding_mobile": 18,
+        "question_gap": 24,
+        "border_color": "#2f393633",
+        "toggle_icon_size": 32
+      }
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -919,7 +986,6 @@
     }
   },
   "order": [
-    "announcement_bar",
     "header",
     "hero",
     "morning_routine",
@@ -930,6 +996,7 @@
     "morning_upgrade",
     "maison_comp_flex_iMdMHJ",
     "maison_introducing_kPpEwH",
+    "maison_faq_jKJakC",
     "footer",
     "sticky_cta",
     "main"
