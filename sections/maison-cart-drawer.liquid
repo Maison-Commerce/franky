@@ -524,7 +524,14 @@
         document.addEventListener('maison:cart-drawer-close', () => {
           document.querySelector('html').classList.remove('maison-cart-open');
           document.body.style.top = '';
-          window.scrollTo(0, this._scrollY || 0);
+          // Force an INSTANT scroll restore — pages with scroll-behavior: smooth
+          // would otherwise animate this back to the user's previous position
+          // and the user sees the page glide downwards after closing the drawer.
+          try {
+            window.scrollTo({ top: this._scrollY || 0, left: 0, behavior: 'instant' });
+          } catch (_) {
+            window.scrollTo(0, this._scrollY || 0);
+          }
         });
 
         document.addEventListener('maison:cart-drawer-reload', () => {
