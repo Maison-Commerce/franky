@@ -181,6 +181,7 @@
         "subtitle": "Not the one where you have 15 minutes and a blender. The one where you have 60 seconds and need to work.",
         "title_mobile": "<p>What's Inside Matters</p>",
         "subtitle_mobile": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
+        "image": "shopify://shop_images/list-img-bann.png",
         "image_radius": 16,
         "icon_bg": "#d8e4ee",
         "icon_color": "#ffffff",
