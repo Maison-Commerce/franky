@@ -351,7 +351,7 @@
             "badge_text": "",
             "discount_multiplier": "1",
             "selling_plan_id": "5080383721",
-            "frequency_label": "",
+            "frequency_label": "Deliver every 4 weeks",
             "is_default_selected": false,
             "show_best_value": false,
             "custom_image": "shopify://shop_images/list-pack-option.png"
