@@ -48,19 +48,21 @@
       {%- comment -%} ========= IMAGE COLUMN ========= {%- endcomment -%}
       <div class="mlbb__media">
         <div class="mlbb__gallery">
-          <div class="mlbb__thumbs" role="tablist" aria-label="Product image thumbnails">
-            {%- for image in p.images limit: 6 -%}
-              <button
-                type="button"
-                class="mlbb__thumb"
-                :class="{ 'is-active': activeImageIndex === {{ forloop.index0 }} }"
-                @click="activeImageIndex = {{ forloop.index0 }}"
-                role="tab"
-                aria-label="Image {{ forloop.index }}"
-              >
-                {{ image | image_url: width: 200 | image_tag: loading: 'lazy', class: 'mlbb__thumb-img', alt: image.alt | default: p.title }}
-              </button>
-            {%- endfor -%}
+          <div class="mlbb__thumbs-wrap">
+            <div class="mlbb__thumbs" role="tablist" aria-label="Product image thumbnails">
+              {%- for image in p.images limit: 12 -%}
+                <button
+                  type="button"
+                  class="mlbb__thumb"
+                  :class="{ 'is-active': activeImageIndex === {{ forloop.index0 }} }"
+                  @click="activeImageIndex = {{ forloop.index0 }}"
+                  role="tab"
+                  aria-label="Image {{ forloop.index }}"
+                >
+                  {{ image | image_url: width: 200 | image_tag: loading: 'lazy', class: 'mlbb__thumb-img', alt: image.alt | default: p.title }}
+                </button>
+              {%- endfor -%}
+            </div>
           </div>
 
           <div class="mlbb__main-image">
@@ -543,11 +545,36 @@
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 12px;
+    align-items: stretch;
+  }
+  /* Wrapper sits in the grid cell — its children are absolute, so it doesn't
+     contribute to the row height. That lets the main image (aspect-ratio 1/1)
+     dictate the row height, and the wrapper stretches to match it. */
+  .mlbb__thumbs-wrap {
+    position: relative;
+    align-self: stretch;
+    min-height: 0;
   }
   .mlbb__thumbs {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 43, 47, 0.25) transparent;
+  }
+  .mlbb__thumbs::-webkit-scrollbar {
+    width: 4px;
+  }
+  .mlbb__thumbs::-webkit-scrollbar-thumb {
+    background: rgba(59, 43, 47, 0.25);
+    border-radius: 4px;
+  }
+  .mlbb__thumbs::-webkit-scrollbar-track {
+    background: transparent;
   }
   .mlbb__thumb {
     appearance: none;
@@ -578,6 +605,8 @@
     overflow: hidden;
     aspect-ratio: 1 / 1;
     position: relative;
+    align-self: start;
+    width: 100%;
   }
   .mlbb__slide {
     position: absolute;
@@ -631,10 +660,10 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 6px 16px;
     background: var(--mlbb-pill-bg);
     color: var(--mlbb-pill-text);
-    border-radius: 999px;
+    border-radius: 8px;
     border: 1px dashed var(--mlbb-pill-text);
     font-size: 16px;
     font-weight: 600;
