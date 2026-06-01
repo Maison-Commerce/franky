@@ -258,7 +258,8 @@
         "row_probiotics"
       ],
       "settings": {
-        "section_heading": "Why Your Morning Coffee Is Working Against You",
+        "section_heading": "<p>Why Your Morning Coffee Is Working Against You</p>",
+        "heading_max_width_desktop": 410,
         "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation. The difference is what's in the cup.",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
@@ -750,7 +751,8 @@
       ],
       "name": "Maison Comp Flex",
       "settings": {
-        "section_heading": "Why Your Morning Coffee Is Working Against You",
+        "section_heading": "<p>Why Your Morning Coffee </p><p>Is Working Against You</p>",
+        "heading_max_width_desktop": 470,
         "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation. The difference is what's in the cup.",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
