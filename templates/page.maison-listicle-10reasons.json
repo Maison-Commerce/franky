@@ -141,7 +141,7 @@
             "body": "<p>Support your gut with a coffee crafted for wellness. The high protein, the lack of artificial ingredients, and the added prebiotics promote smoother digestion and a happier, healthier microbiome.</p>",
             "cta_prefix": "👉",
             "cta_text": "Better Digestion Support Starts Here",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_04": {
@@ -154,7 +154,7 @@
             "body": "<p>While competitors flavor their protein to taste vaguely \"coffee-ish,\" Franky uses real coffee in the formula. Rich, smooth vanilla-hazelnut. No chalky aftertaste. The coffee shop drink, just better for you.</p>",
             "cta_prefix": "👉",
             "cta_text": "Enjoy Real Coffee Taste, Every Time",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_05": {
@@ -167,7 +167,7 @@
             "body": "<p>The average American spends $2,400+ a year at cafés. Franky lets you make a café-quality iced coffee at home for under $2 a cup. Same flavor, more protein, a fraction of the price.</p>",
             "cta_prefix": "👉",
             "cta_text": "Start Saving With Every Cup",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_06": {
@@ -180,7 +180,7 @@
             "body": "<p>Two scoops, cold water or milk, ice. Sixty seconds. Done. No espresso machine, no syrups, no plastic cups. The simplest possible upgrade to your morning routine.</p>",
             "cta_prefix": "👉",
             "cta_text": "Skip The Line, Brew At Home",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_07": {
@@ -193,7 +193,7 @@
             "body": "<p>100mg of natural caffeine paired with 200mg of L-theanine smooths the curve. No jitters, no 11am crash, just steady focus through your morning. The opposite of a sugary latte.</p>",
             "cta_prefix": "👉",
             "cta_text": "Stay Clear, Stay Focused",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_08": {
@@ -206,7 +206,7 @@
             "body": "<p>20g of whey protein per serving — that's roughly 20% of your daily protein needs handled before lunch. No prep, no clean-up, no chalky shake. Just an iced coffee that pulls real nutritional weight.</p>",
             "cta_prefix": "👉",
             "cta_text": "Fuel Your Day With Every Sip",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_09": {
@@ -219,7 +219,7 @@
             "body": "<p>Changing your morning routine takes time. We make it risk-free. Try Franky for 30 days. If it's not the upgrade we say it is, we'll refund you — no questions asked.</p>",
             "cta_prefix": "👉",
             "cta_text": "Start Your Risk-Free Journey",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_10": {
@@ -232,7 +232,7 @@
             "body": "<p>4.9-star reviews and growing fast. Once people switch, they don't go back. Made in the USA. Third-party tested. Ships from a US warehouse in 2–3 days.</p>",
             "cta_prefix": "👉",
             "cta_text": "Step Into The Coffee Revolution",
-            "cta_url": ""
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         }
       },
@@ -329,7 +329,7 @@
         "promo_subtitle": "High demand this season, stock ships from our US warehouse in 2–3 days.",
         "card_border": "#99a9b6",
         "cta_text": "GET 32% OFF →",
-        "cta_url": "",
+        "cta_url": "shopify://products/franky-protein-coffee",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
         "timer_enabled": true,
@@ -346,17 +346,6 @@
         "avatar_text_color": "#ffbea9",
         "star_color": "#fbaa19",
         "slider_duration_seconds": 40
-      }
-    },
-    "sticky_cta": {
-      "type": "maison-listicle-sticky-cta",
-      "settings": {
-        "button_text": "Proceed to Offer →",
-        "button_url": "",
-        "bg_color": "#FFFFFF",
-        "border_color": "#3B2B2F33",
-        "button_bg": "#3B2B2F",
-        "button_text_color": "#F7F3E6"
       }
     },
     "footer": {
@@ -419,6 +408,17 @@
         "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
       }
     },
+    "sticky_cta": {
+      "type": "maison-listicle-sticky-cta",
+      "settings": {
+        "button_text": "Proceed to Offer →",
+        "button_url": "",
+        "bg_color": "#ffffff",
+        "border_color": "#3b2b2f33",
+        "button_bg": "#3b2b2f",
+        "button_text_color": "#f7f3e6"
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -439,4 +439,3 @@
     "main"
   ]
 }
-
