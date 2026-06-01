@@ -384,7 +384,14 @@
 
   window.mlbbConfig = window.mlbbConfig || {};
   window.mlbbConfig["{{ section.id }}"] = {
-    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.8' | json }}) || 0.8,
+    subscriptionMultiplier: (function () {
+      var pct = {{ s.subscription_discount_percent | default: 15 | json }};
+      var num = parseFloat(pct);
+      if (!isNaN(num)) return Math.max(0, Math.min(1, 1 - num / 100));
+      // Legacy fallback for templates saved with the old multiplier-based setting
+      var legacy = parseFloat({{ s.subscription_multiplier | default: '0.85' | json }});
+      return isNaN(legacy) ? 0.85 : legacy;
+    })(),
     subscriptionDefaultSelected: {{ s.subscription_default_selected | default: true }},
     moneyFormat: {{ shop.money_format | json }},
     onetimeLabel: {{ s.onetime_label | default: 'One-Time Purchase' | json }},
@@ -1310,11 +1317,12 @@
     { "type": "header", "content": "Pricing & subscription" },
     {
       "type": "range",
-      "id": "subscription_multiplier",
-      "label": "Subscription multiplier",
-      "info": "0.8 = 20% off subscription. Used when a pack has a selling plan.",
-      "min": 0.5, "max": 1, "step": 0.1,
-      "default": 0.8
+      "id": "subscription_discount_percent",
+      "label": "Subscription discount (%)",
+      "info": "Percentage off when a pack is purchased on subscription. Must match the Loop selling plan discount.",
+      "min": 0, "max": 50, "step": 1,
+      "unit": "%",
+      "default": 15
     },
     {
       "type": "checkbox",
