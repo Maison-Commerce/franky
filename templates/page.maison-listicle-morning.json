@@ -38,7 +38,7 @@
         "check_bg": "#d8e4ee",
         "check_color": "#3b2b2f",
         "cta_text": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →",
-        "cta_url": "",
+        "cta_url": "#listicle-pr-main",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
         "image": "shopify://shop_images/list-hero-img-morning.png"
@@ -169,7 +169,7 @@
         "icon_bg": "#d8e4ee",
         "icon_color": "#ffffff",
         "cta_text": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →",
-        "cta_url": "",
+        "cta_url": "#listicle-pr-main",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6"
       }
