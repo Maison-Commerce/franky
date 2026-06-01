@@ -446,6 +446,9 @@
         "select_border": "#e5e0d5"
       }
     },
+    "morning_upgrade": {
+      "type": "maison-listicle-morning-upgrade"
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -483,6 +486,7 @@
     "built_for_morning",
     "maison_badge_list_CPyDpR",
     "buy_box",
+    "morning_upgrade",
     "footer",
     "sticky_cta",
     "main"

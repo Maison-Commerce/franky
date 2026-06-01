@@ -1,0 +1,498 @@
+{%- liquid
+  assign s = section.settings
+  assign review_blocks = section.blocks | where: 'type', 'review'
+
+  assign rating = s.rating | default: 4.8
+  assign rating_floor = rating | floor
+  assign rating_remainder = rating | minus: rating_floor
+  assign full_stars = rating_floor
+  assign has_half = false
+  if rating_remainder >= 0.25 and rating_remainder < 0.75
+    assign has_half = true
+  endif
+  if rating_remainder >= 0.75
+    assign full_stars = rating_floor | plus: 1
+  endif
+-%}
+
+{%- capture star_full -%}
+<svg class="franky-rating-star mlmu__star" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+  <path d="M13.9389 5.03971C13.8102 4.6855 13.4721 4.44819 13.0917 4.44539H9.43322C9.30677 4.44534 9.19389 4.36693 9.15088 4.24927L7.84135 0.564589C7.70173 0.223167 7.36657 -0.000223282 6.99421 1.67477e-07C6.615 0.00179603 6.27803 0.239919 6.15314 0.594304L4.83767 4.26117C4.79466 4.37882 4.68177 4.45723 4.55533 4.45728H0.896684C0.515798 4.45834 0.176631 4.69627 0.0496689 5.05158C-0.0722558 5.40236 0.0349451 5.79123 0.320125 6.03218L3.43179 8.58769C3.52762 8.66495 3.56572 8.79229 3.52814 8.90858L2.21835 12.7895C2.09178 13.1582 2.22184 13.5657 2.53957 13.7956C2.85729 14.0255 3.2892 14.0248 3.60615 13.7939L6.81404 11.4641C6.91904 11.3859 7.06357 11.3859 7.16844 11.4641L10.3824 13.7939C10.6975 14.0532 11.1501 14.0696 11.4833 13.8332C11.8168 13.5971 11.9469 13.1682 11.8003 12.7895L10.4905 8.90858C10.4529 8.79229 10.491 8.66495 10.5867 8.58769L13.7046 6.02625C13.9807 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture star_half -%}
+<svg class="franky-rating-star mlmu__star" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+  <mask id="mlmu-half-{{ section.id }}" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+    <path d="M14 0H0V14H14V0Z" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mlmu-half-{{ section.id }})">
+    <path d="M13.9389 5.03971C13.8105 4.6855 13.4723 4.44819 13.0918 4.44539H9.43342C9.30684 4.44534 9.19396 4.36693 9.15108 4.24927L7.84128 0.564589C7.70251 0.224922 7.37006 0.00207737 7 1.4446e-05L6.99426 1.67477e-07C6.61505 0.00179603 6.27795 0.239919 6.15331 0.594304L4.83757 4.26117C4.79469 4.37882 4.68168 4.45723 4.55523 4.45728H0.89669C0.515802 4.45834 0.176632 4.69627 0.0496692 5.05158C-0.0722564 5.40236 0.0349454 5.79123 0.320127 6.03218L3.43194 8.58769C3.52752 8.66495 3.56575 8.79229 3.52804 8.90857L2.21837 12.7895C2.09179 13.1582 2.22199 13.5657 2.53946 13.7956C2.85732 14.0255 3.28909 14.0248 3.60605 13.7939L6.81408 11.4641C6.86898 11.4232 6.93473 11.4036 7 11.4056C7.05943 11.4073 7.11845 11.4268 7.1685 11.4641L10.3825 13.7939C10.6976 14.0532 11.1501 14.0696 11.4836 13.8332C11.8168 13.5971 11.947 13.1682 11.8002 12.7895L10.4907 8.90857C10.4529 8.79229 10.4911 8.66495 10.5868 8.58769L13.7046 6.02625C13.9808 5.77666 14.0738 5.38487 13.9389 5.03971Z" fill="{{ s.star_color | default: '#FBAA19' }}"/>
+    <path d="M13.0922 4.44539C13.4727 4.44819 13.8108 4.6855 13.9392 5.03971C14.0742 5.38487 13.9812 5.77666 13.7049 6.02625L10.5872 8.58769C10.4915 8.66495 10.4532 8.79228 10.4911 8.90857L11.8006 12.7895C11.9473 13.1682 11.8172 13.5971 11.4839 13.8332C11.1504 14.0696 10.698 14.0532 10.3828 13.7939L7.16887 11.4641C7.11882 11.4268 7.0598 11.4073 7.00037 11.4056V1.42785e-05C7.37043 0.00207721 7.70288 0.224922 7.84165 0.564588L9.15145 4.24927C9.19433 4.36693 9.30721 4.44534 9.43379 4.44539H13.0922Z" fill="{{ s.star_empty_color | default: '#D2D2D2' }}"/>
+  </g>
+</svg>
+{%- endcapture -%}
+
+{%- capture check_badge -%}
+<svg class="mlmu__check" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+  <path d="M8 1.333L9.961 5.305L14.345 5.943L11.172 9.035L11.922 13.4L8 11.338L4.078 13.4L4.828 9.035L1.655 5.943L6.039 5.305L8 1.333Z" fill="{{ s.verified_color | default: '#2EAA63' }}" stroke="{{ s.verified_color | default: '#2EAA63' }}" stroke-width="0.6"/>
+  <path d="M5.6 8L7.2 9.6L10.4 6.4" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{%- endcapture -%}
+
+{%- capture play_icon -%}
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <path d="M8 5v14l11-7z"/>
+</svg>
+{%- endcapture -%}
+
+<section
+  id="shopify-section-{{ section.id }}-morning-upgrade"
+  class="mlmu"
+  style="--mlmu-bg: {{ s.bg_color }}; --mlmu-text: {{ s.text_color }}; --mlmu-muted: {{ s.muted_color }}; --mlmu-card-bg: {{ s.card_bg }}; --mlmu-card-border: {{ s.card_border }}; --mlmu-verified: {{ s.verified_color }};"
+>
+  <div class="mlmu__container">
+    <header class="mlmu__head">
+      {%- if s.rating_label != blank -%}
+        <div class="mlmu__rating">
+          <span class="mlmu__stars" aria-hidden="true">
+            {%- for i in (1..full_stars) -%}{{ star_full }}{%- endfor -%}
+            {%- if has_half -%}{{ star_half }}{%- endif -%}
+          </span>
+          <span class="mlmu__rating-text">{{ s.rating_label }}</span>
+        </div>
+      {%- endif -%}
+
+      {%- if s.title != blank -%}
+        <h2 class="mlmu__title">{{ s.title }}</h2>
+      {%- endif -%}
+
+      {%- if s.subtitle != blank -%}
+        <p class="mlmu__subtitle">{{ s.subtitle }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if review_blocks.size > 0 -%}
+      {%- capture review_card_set -%}
+        {%- for block in review_blocks -%}
+          {%- assign r = block.settings.rating | default: 5 -%}
+          <article class="mlmu__card" {{ block.shopify_attributes }}>
+            <div class="mlmu__media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo', alt: block.settings.reviewer_name | default: 'Customer review' }}
+              {%- else -%}
+                <div class="mlmu__photo mlmu__photo--placeholder" aria-hidden="true"></div>
+              {%- endif -%}
+              {%- if block.settings.video_url != blank -%}
+                <a class="mlmu__play" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Play video review">
+                  {{ play_icon }}
+                </a>
+              {%- endif -%}
+            </div>
+            <div class="mlmu__text">
+              <div class="mlmu__card-stars" aria-label="{{ r }} out of 5 stars">
+                {%- for i in (1..r) -%}{{ star_full }}{%- endfor -%}
+              </div>
+              {%- if block.settings.date_text != blank -%}
+                <div class="mlmu__card-date">{{ block.settings.date_text }}</div>
+              {%- endif -%}
+              {%- if block.settings.quote != blank -%}
+                <p class="mlmu__card-quote">{{ block.settings.quote }}</p>
+              {%- endif -%}
+              <div class="mlmu__card-author">
+                <span class="mlmu__card-name">{{ block.settings.reviewer_name }}</span>
+                {%- if block.settings.verified_label != blank -%}
+                  <span class="mlmu__card-dot" aria-hidden="true"></span>
+                  <span class="mlmu__card-verified">
+                    {{ check_badge }}
+                    <span>{{ block.settings.verified_label }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+            </div>
+          </article>
+        {%- endfor -%}
+      {%- endcapture -%}
+      <div class="mlmu__viewport" data-mlmu-slider>
+        <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 50 }}s;">
+          {{ review_card_set }}
+          {{ review_card_set }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .mlmu {
+    background: var(--mlmu-bg);
+    width: 100%;
+    padding: 56px 0 64px;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlmu-text);
+    box-sizing: border-box;
+  }
+  .mlmu__container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  /* ===== Heading ===== */
+  .mlmu__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 600px;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .mlmu__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--mlmu-text);
+  }
+  .mlmu__stars {
+    display: inline-flex;
+    gap: 1px;
+  }
+  .mlmu__rating-text p {
+    margin: 0;
+    display: inline;
+  }
+  .mlmu__rating-text strong { font-weight: 700; }
+
+  .mlmu__title {
+    margin: 0;
+    font-family: 'Lust Text', serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    color: var(--mlmu-text);
+  }
+  .mlmu__title p { margin: 0; }
+  .mlmu__subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--mlmu-muted);
+  }
+
+  /* ===== Marquee ===== */
+  .mlmu__viewport {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  }
+  .mlmu__track {
+    --mlmu-slide-gap: 18px;
+    --mlmu-slide-duration: 50s;
+    display: flex;
+    gap: var(--mlmu-slide-gap);
+    align-items: stretch;
+    width: max-content;
+    animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
+    will-change: transform;
+  }
+  .mlmu__track:hover,
+  .mlmu__track:focus-within {
+    animation-play-state: paused;
+  }
+  @keyframes mlmu-marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(calc(-50% - var(--mlmu-slide-gap) / 2), 0, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mlmu__track { animation: none; transform: none; }
+  }
+
+  /* ===== Card ===== */
+  .mlmu__card {
+    flex: 0 0 242px;
+    width: 242px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .mlmu__media {
+    width: 100%;
+    aspect-ratio: 242 / 290;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: #E5E0D5;
+  }
+  .mlmu__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mlmu__photo--placeholder { background: #E5E0D5; }
+  .mlmu__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--mlmu-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .mlmu__play:hover, .mlmu__play:focus-visible {
+    background: #FFFFFF;
+    transform: translate(-50%, -50%) scale(1.05);
+    outline: none;
+  }
+
+  .mlmu__text {
+    margin-top: -36px;
+    background: var(--mlmu-card-bg);
+    border: 1px solid var(--mlmu-card-border);
+    border-radius: 16px;
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(45, 38, 34, 0.06);
+    position: relative;
+    z-index: 1;
+  }
+  .mlmu__card-stars {
+    display: inline-flex;
+    gap: 1px;
+    justify-content: center;
+  }
+  .mlmu__card-date {
+    font-size: 11px;
+    color: var(--mlmu-muted);
+    text-align: center;
+    font-weight: 500;
+  }
+  .mlmu__card-quote {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--mlmu-text);
+    text-align: center;
+    /* Limit to ~4 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .mlmu__card-author {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--mlmu-muted);
+    flex-wrap: wrap;
+  }
+  .mlmu__card-name {
+    color: var(--mlmu-text);
+    font-weight: 600;
+  }
+  .mlmu__card-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--mlmu-muted);
+    display: inline-block;
+  }
+  .mlmu__card-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .mlmu__check { flex-shrink: 0; }
+
+  /* Mobile */
+  @media (max-width: 1024px) {
+    .mlmu { padding: 40px 0 48px; }
+    .mlmu__container { gap: 24px; }
+    .mlmu__title { font-size: 30px; }
+    .mlmu__subtitle { font-size: 15px; }
+    .mlmu__card { flex: 0 0 200px; width: 200px; }
+    .mlmu__media { aspect-ratio: 200 / 240; }
+    .mlmu__viewport {
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
+              mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Listicle Morning Upgrade",
+  "tag": "section",
+  "class": "section-maison-listicle-morning-upgrade",
+  "max_blocks": 24,
+  "settings": [
+    { "type": "header", "content": "Background" },
+    { "type": "color_background", "id": "bg_color", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#3B2B2F" },
+    { "type": "color_background", "id": "muted_color", "label": "Muted text", "default": "rgba(59, 43, 47, 0.75)" },
+
+    { "type": "header", "content": "Rating row" },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Rating value",
+      "min": 0, "max": 5, "step": 0.1,
+      "default": 4.8
+    },
+    {
+      "type": "richtext",
+      "id": "rating_label",
+      "label": "Rating label",
+      "default": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>"
+    },
+    { "type": "color", "id": "star_color", "label": "Star (filled)", "default": "#FBAA19" },
+    { "type": "color", "id": "star_empty_color", "label": "Star (empty)", "default": "#D2D2D2" },
+
+    { "type": "header", "content": "Heading" },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Join The Morning Upgrade</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Real Franky subscribers sharing what changed when their routine did."
+    },
+
+    { "type": "header", "content": "Review card" },
+    { "type": "color_background", "id": "card_bg", "label": "Card background", "default": "#FAF6EB" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "rgba(59, 43, 47, 0.08)" },
+    { "type": "color", "id": "verified_color", "label": "Verified badge color", "default": "#2EAA63" },
+
+    { "type": "header", "content": "Marquee speed" },
+    {
+      "type": "range",
+      "id": "slider_duration_seconds",
+      "label": "Loop duration",
+      "min": 20, "max": 120, "step": 5,
+      "unit": "s",
+      "default": 50,
+      "info": "Higher = slower scroll."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 24,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL (optional)",
+          "info": "If set, a play button overlays the photo and opens the URL in a new tab."
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 1, "max": 5, "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "date_text",
+          "label": "Date",
+          "default": "Bought on 14 August 2025"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "James T."
+        },
+        {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Verified label",
+          "default": "Verified Buyer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Morning Upgrade",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 14 August 2025",
+            "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.",
+            "reviewer_name": "James T.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 18 August 2025",
+            "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.",
+            "reviewer_name": "Sarah K.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 16 August 2025",
+            "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.",
+            "reviewer_name": "Rachel N.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 12 August 2025",
+            "quote": "Quit my $6 latte habit. Down four pounds, off the afternoon coffee. Easiest swap I've made all year.",
+            "reviewer_name": "Patty 48",
+            "verified_label": "Verified Buyer"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
