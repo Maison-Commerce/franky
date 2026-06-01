@@ -956,23 +956,64 @@
         "toggle_icon_size": 32
       }
     },
-    "footer": {
+    "maison_listicle_footer_rjfJ9W": {
       "type": "maison-listicle-footer",
+      "blocks": {
+        "link_RbqKer": {
+          "type": "link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": "shopify://policies/privacy-policy"
+          }
+        },
+        "link_RPeDVW": {
+          "type": "link",
+          "settings": {
+            "label": "Shipping Policy",
+            "url": "shopify://policies/shipping-policy"
+          }
+        },
+        "link_nThzMj": {
+          "type": "link",
+          "settings": {
+            "label": "Refund Policy",
+            "url": "shopify://policies/refund-policy"
+          }
+        },
+        "link_FncdRf": {
+          "type": "link",
+          "settings": {
+            "label": "Subscription Policy",
+            "url": "shopify://policies/subscription-policy"
+          }
+        },
+        "link_YDyREz": {
+          "type": "link",
+          "settings": {
+            "label": "Contact Information",
+            "url": "shopify://policies/contact-information"
+          }
+        },
+        "link_JBtBXA": {
+          "type": "link",
+          "settings": {
+            "label": "Terms Of Service",
+            "url": "shopify://policies/terms-of-service"
+          }
+        }
+      },
+      "block_order": [
+        "link_RbqKer",
+        "link_RPeDVW",
+        "link_nThzMj",
+        "link_FncdRf",
+        "link_YDyREz",
+        "link_JBtBXA"
+      ],
       "settings": {
         "bg_color": "#3b2b2f",
         "text_color": "#f7f3e6",
         "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
-      }
-    },
-    "sticky_cta": {
-      "type": "maison-listicle-sticky-cta",
-      "settings": {
-        "button_text": "Proceed to Offer →",
-        "button_url": "",
-        "bg_color": "#ffffff",
-        "border_color": "#3b2b2f33",
-        "button_bg": "#3b2b2f",
-        "button_text_color": "#f7f3e6"
       }
     },
     "main": {
@@ -997,8 +1038,7 @@
     "maison_comp_flex_iMdMHJ",
     "maison_introducing_kPpEwH",
     "maison_faq_jKJakC",
-    "footer",
-    "sticky_cta",
+    "maison_listicle_footer_rjfJ9W",
     "main"
   ]
 }
