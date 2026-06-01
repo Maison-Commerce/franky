@@ -141,7 +141,54 @@
       }
     },
     "built_for_morning": {
-      "type": "maison-listicle-built-for-morning"
+      "type": "maison-listicle-built-for-morning",
+      "blocks": {
+        "feature_E9MxrV": {
+          "type": "feature",
+          "settings": {
+            "icon": "stomach",
+            "title": "Gut-Friendly Formula",
+            "body": "<p>Added prebiotics and fiber support digestion and keep things moving - morning after morning.</p>"
+          }
+        },
+        "feature_TMWjVe": {
+          "type": "feature",
+          "settings": {
+            "icon": "stomach",
+            "title": "No Jitters, No Anxiety",
+            "body": "<p>The L-theanine and caffeine ratio is dialed in specifically to energize without the edge. Smooth from the first sip.</p>"
+          }
+        },
+        "feature_fdDpAX": {
+          "type": "feature",
+          "settings": {
+            "icon": "stomach",
+            "title": "Breakfast in One Cup",
+            "body": "<p>Replaces your coffee and your protein shake in under 60 seconds. Two scoops into cold water or milk, thirty seconds to stir - one cup that handles your entire morning.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_E9MxrV",
+        "feature_TMWjVe",
+        "feature_fdDpAX"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "text_color": "#3b2b2f",
+        "muted_color": "#3b2b2fbf",
+        "title": "<p>Built For The Morning You Actually Have</p>",
+        "subtitle": "Not the one where you have 15 minutes and a blender. The one where you have 60 seconds and need to work.",
+        "title_mobile": "<p>What's Inside Matters</p>",
+        "subtitle_mobile": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
+        "image_radius": 16,
+        "icon_bg": "#d8e4ee",
+        "icon_color": "#ffffff",
+        "cta_text": "SUBSCRIBE & SAVE 20% + FREE SHIPPING →",
+        "cta_url": "",
+        "cta_bg": "#3b2b2f",
+        "cta_text_color": "#f7f3e6"
+      }
     },
     "footer": {
       "type": "maison-listicle-footer",
