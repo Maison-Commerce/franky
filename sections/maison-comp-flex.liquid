@@ -201,9 +201,10 @@
       "default": "#F5EDDC"
     },
     {
-      "type": "color",
+      "type": "color_background",
       "id": "featured_body_color",
       "label": "Featured Card Body Background",
+      "info": "Solid color or gradient (e.g. linear-gradient(180deg, #F8DCD0, #FAEDDC)).",
       "default": "#F5EDDC"
     },
     {
@@ -422,7 +423,7 @@
             {%- endif -%}
           </div>
           <div class="maison_commerce_comp_flex__col-body maison_commerce_comp_flex__col-body--featured"
-               style="background-color: {{ section.settings.featured_body_color }};">
+               style="background: {{ section.settings.featured_body_color }};">
             {%- if section.settings.featured_image != blank -%}
               <div class="maison_commerce_comp_flex__product-image">
                 {{
