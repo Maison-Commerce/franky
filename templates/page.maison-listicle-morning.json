@@ -260,14 +260,34 @@
       "settings": {
         "section_heading": "Why Your Morning Coffee Is Working Against You",
         "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation. The difference is what's in the cup.",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#3b2b2f",
+        "subtitle_opacity": 75,
+        "bg_color_top": "#faf6eb",
+        "bg_color_bottom": "#deeaf2",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16,
         "featured_title": "Franky Coffee",
+        "featured_header_color": "#3b2b2f",
+        "featured_header_text_color": "#f5eddc",
+        "featured_body_color": "linear-gradient(180deg, #FAEDDC 0%, #F8DCD0 100%)",
         "col1_title": "Coffee",
         "col3_title": "Protein powder",
-        "featured_header_color": "#3b2b2f",
-        "featured_header_text_color": "#F5EDDC",
-        "featured_body_color": "linear-gradient(180deg, #FAEDDC 0%, #F8DCD0 100%)",
-        "bg_color_top": "#FAF6EB",
-        "bg_color_bottom": "#DEEAF2"
+        "row_font_size_desktop": 16,
+        "row_font_size_mobile": 14,
+        "row_label_color": "#3b2b2f",
+        "row_value_color_competitor": "#92898b",
+        "row_value_color_featured": "#3b2b2f"
       }
     },
     "maison_badge_list_CPyDpR": {
@@ -662,6 +682,110 @@
         "text_bottom_duration_seconds": 80
       }
     },
+    "maison_comp_flex_iMdMHJ": {
+      "type": "maison-comp-flex",
+      "blocks": {
+        "comparison_row_xMGUB3": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Sugar",
+            "value_col1": "40-60g",
+            "label_featured": "Sugar",
+            "value_featured": "<1g",
+            "label_col3": "Sugar",
+            "value_col3": "As much as 60g"
+          }
+        },
+        "comparison_row_8k8x3m": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Protein",
+            "value_col1": "0g",
+            "label_featured": "Protein",
+            "value_featured": "10g",
+            "label_col3": "Protein",
+            "value_col3": "15g"
+          }
+        },
+        "comparison_row_XAfeXe": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Gluten-Free",
+            "value_col1": "No",
+            "label_featured": "Gluten-Free",
+            "value_featured": "Yes",
+            "label_col3": "Gluten-Free",
+            "value_col3": "No"
+          }
+        },
+        "comparison_row_za4KAW": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Fiber",
+            "value_col1": "No",
+            "label_featured": "Brain Boosting MCTs",
+            "value_featured": "Yes",
+            "label_col3": "Fiber",
+            "value_col3": "Fiber"
+          }
+        },
+        "comparison_row_NLTTmQ": {
+          "type": "comparison_row",
+          "settings": {
+            "label_col1": "Pre- & Probiotics",
+            "value_col1": "Sometimes",
+            "label_featured": "Prebiotics",
+            "value_featured": "Yes",
+            "label_col3": "Pre- & Probiotics",
+            "value_col3": "Sometimes"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_xMGUB3",
+        "comparison_row_8k8x3m",
+        "comparison_row_XAfeXe",
+        "comparison_row_za4KAW",
+        "comparison_row_NLTTmQ"
+      ],
+      "name": "Maison Comp Flex",
+      "settings": {
+        "section_heading": "Why Coffee Alone Sabotages Your Energy",
+        "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation.",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 14,
+        "subtitle_color": "#3b2b2f",
+        "subtitle_opacity": 75,
+        "bg_color_top": "#ffffff",
+        "bg_color_bottom": "#deeaf2",
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16,
+        "featured_title": "franky",
+        "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
+        "featured_image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
+        "featured_header_color": "#3b2b2f",
+        "featured_header_text_color": "#f5eddc",
+        "featured_body_color": "linear-gradient(180deg, #F8F4E7 0%, #F2E6D2 52.4%, #F3CFCB 100%)",
+        "col1_title": "Coffee",
+        "col1_image": "shopify://shop_images/Rectangle_4927.png",
+        "col3_title": "Protein powder",
+        "col3_image": "shopify://shop_images/geg3g4rgse.png",
+        "row_font_size_desktop": 18,
+        "row_font_size_mobile": 14,
+        "row_label_color": "#3b2b2f",
+        "row_value_color_competitor": "#92898b",
+        "row_value_color_featured": "#3b2b2f"
+      }
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -701,6 +825,7 @@
     "maison_badge_list_CPyDpR",
     "buy_box",
     "morning_upgrade",
+    "maison_comp_flex_iMdMHJ",
     "footer",
     "sticky_cta",
     "main"
