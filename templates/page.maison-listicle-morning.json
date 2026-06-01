@@ -274,6 +274,7 @@
           "type": "trust_badge",
           "settings": {
             "icon": "shopify://shop_images/list-icon-1.svg",
+            "icon_bg": "#d8e4ee",
             "text": "Try 30 Days Risk-Free"
           }
         },
@@ -281,6 +282,7 @@
           "type": "trust_badge",
           "settings": {
             "icon": "shopify://shop_images/list-icon-1.svg",
+            "icon_bg": "#d8e4ee",
             "text": "Pause or Cancel Anytime"
           }
         },
@@ -288,6 +290,7 @@
           "type": "trust_badge",
           "settings": {
             "icon": "shopify://shop_images/list-icon-3.svg",
+            "icon_bg": "#d8e4ee",
             "text": "Autoship at $59.99"
           }
         },
@@ -301,7 +304,8 @@
             "selling_plan_id": "",
             "frequency_label": "",
             "is_default_selected": false,
-            "show_best_value": false
+            "show_best_value": false,
+            "custom_image": "shopify://shop_images/list-pack-option.png"
           }
         },
         "pack_option_KnGWG3": {
@@ -314,7 +318,8 @@
             "selling_plan_id": "",
             "frequency_label": "",
             "is_default_selected": false,
-            "show_best_value": false
+            "show_best_value": false,
+            "custom_image": "shopify://shop_images/list-pack-option.png"
           }
         },
         "pack_option_Ce4VxD": {
@@ -326,8 +331,9 @@
             "discount_multiplier": "1",
             "selling_plan_id": "",
             "frequency_label": "",
-            "is_default_selected": false,
-            "show_best_value": false
+            "is_default_selected": true,
+            "show_best_value": true,
+            "custom_image": "shopify://shop_images/list-pack-option.png"
           }
         }
       },
@@ -343,26 +349,39 @@
         "product": "franky-magic-frother",
         "title_override": "",
         "description": "",
+        "pill_text": "Limited Time: Summer Sale | Up to 32% Off",
+        "pill_icon": "🇺🇸",
+        "pill_bg": "#f4a09c",
+        "pill_text_color": "#3b2b2f",
         "rating": 4.8,
         "reviews_count": "8,450+",
         "star_color": "#fbaa19",
         "subscription_multiplier": 0.8,
         "subscription_default_selected": true,
+        "subscribe_label": "Subscribe & Save",
         "onetime_label": "One-Time Purchase",
+        "subscribe_disclaimer": "Subscription orders billed {frequency} · {price} + free shipping · Skip or cancel anytime",
         "show_nutritional_button": true,
         "nutritional_button_text": "Nutritional Information",
+        "nutritional_content": "",
         "stock_text": "In Stock · Ships in 2–3 days from our US warehouse",
         "cta_text": "Start Now →",
+        "tastes_title": "Tastes Like",
         "bg_color": "#FFFFFF",
         "card_bg": "#ffffff",
+        "image_bg": "#f7f3e6",
         "text_color": "#3b2b2f",
         "muted_color": "#3b2b2f99",
         "pack_border": "#e5e0d5",
         "pack_active_border": "#3b2b2f",
         "save_bg": "#f4a09c",
         "save_text_color": "#3b2b2f",
+        "best_bg": "#3b2b2f",
+        "best_text_color": "#ffffff",
         "cta_bg": "#2eaa63",
-        "cta_text_color": "#ffffff"
+        "cta_text_color": "#ffffff",
+        "select_bg": "#ffffff",
+        "select_border": "#e5e0d5"
       }
     },
     "footer": {
