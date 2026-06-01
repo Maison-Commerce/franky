@@ -663,7 +663,7 @@
         "photo_review_aUwyzC"
       ],
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%), linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%)",
         "text_color": "#3b2b2f",
         "muted_color": "rgba(59, 43, 47, 0.75)",
         "rating": 4.8,
