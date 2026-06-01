@@ -453,9 +453,49 @@
           "type": "text_review",
           "settings": {
             "rating": 5,
-            "date_text": "Bought on 14 August 2025",
-            "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.",
+            "date_text": "Bought on 24 August 2025",
+            "quote": "\"Perfect way to get protein and caffeine\nwithout the sugar crash. Game changer for morning workouts.\"",
             "reviewer_name": "Sarah K.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "text_review_XJQVfT": {
+          "type": "text_review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 23 August 2025",
+            "quote": "\"I finally have energy that lasts all day. No crashes, no cravings. This is the only\nmorning routine I've ever stuck with.\"",
+            "reviewer_name": "Maria L.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "text_review_kaBeHi": {
+          "type": "text_review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 14 August 2025",
+            "quote": "\"The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.\"",
+            "reviewer_name": "James T.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "text_review_C4mCpx": {
+          "type": "text_review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 18 August 2025",
+            "quote": "\"Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.\"",
+            "reviewer_name": "Rachel M.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "text_review_weaAhA": {
+          "type": "text_review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 11 August 2025",
+            "quote": "\"Quit my $6 latte habit two weeks ago.\nDown four pounds, off the afternoon crash. This is dangerously good.\"",
+            "reviewer_name": "Jessica L.",
             "verified_label": "Verified Buyer"
           }
         },
@@ -468,6 +508,10 @@
       },
       "block_order": [
         "text_review_DNcREb",
+        "text_review_XJQVfT",
+        "text_review_kaBeHi",
+        "text_review_C4mCpx",
+        "text_review_weaAhA",
         "photo_review_rqLmWr"
       ],
       "settings": {
@@ -482,6 +526,7 @@
         "subtitle": "Real Franky subscribers sharing what changed when their routine did.",
         "card_bg": "#FFF",
         "card_border": "#3b2b2f14",
+        "author_pill_bg": "rgba(59, 43, 47, 0.08)",
         "verified_color": "#3b2b2f",
         "verified_check_color": "#fefef1",
         "photo_duration_seconds": 60,
