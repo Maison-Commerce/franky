@@ -1,6 +1,7 @@
 {%- liquid
   assign s = section.settings
-  assign review_blocks = section.blocks | where: 'type', 'review'
+  assign photo_blocks = section.blocks | where: 'type', 'photo_review'
+  assign text_blocks = section.blocks | where: 'type', 'text_review'
 
   assign rating = s.rating | default: 4.8
   assign rating_floor = rating | floor
@@ -12,6 +13,24 @@
   endif
   if rating_remainder >= 0.75
     assign full_stars = rating_floor | plus: 1
+  endif
+
+  comment
+    Pad each marquee row so that even a couple of blocks fill the viewport.
+    Each row repeats its block set enough times to reach ~8 cards minimum,
+    then the track itself duplicates the whole padded set twice for the
+    seamless -50% scroll.
+  endcomment
+  assign min_cards_per_row = 8
+
+  assign photo_repeat = 1
+  if photo_blocks.size > 0
+    assign photo_repeat = min_cards_per_row | divided_by: photo_blocks.size | plus: 1 | at_most: 12
+  endif
+
+  assign text_repeat = 1
+  if text_blocks.size > 0
+    assign text_repeat = min_cards_per_row | divided_by: text_blocks.size | plus: 1 | at_most: 12
   endif
 -%}
 
@@ -46,6 +65,17 @@
 </svg>
 {%- endcapture -%}
 
+{%- comment -%} ===== TEXT CARD INNER (reused by photo + text-only cards) ===== {%- endcomment -%}
+{%- capture render_text_card -%}
+  <div class="mlmu__card-stars" aria-label="5 out of 5 stars">{{ '{{stars}}' }}</div>
+  {{ '{{date_block}}' }}
+  {{ '{{quote_block}}' }}
+  <div class="mlmu__card-author">
+    <span class="mlmu__card-name">{{ '{{name}}' }}</span>
+    {{ '{{verified_block}}' }}
+  </div>
+{%- endcapture -%}
+
 <section
   id="shopify-section-{{ section.id }}-morning-upgrade"
   class="mlmu"
@@ -72,24 +102,63 @@
       {%- endif -%}
     </header>
 
-    {%- if review_blocks.size > 0 -%}
-      {%- capture review_card_set -%}
-        {%- for block in review_blocks -%}
-          {%- assign r = block.settings.rating | default: 5 -%}
-          <article class="mlmu__card" {{ block.shopify_attributes }}>
-            <div class="mlmu__media">
+    {%- comment -%} ===== ROW 1 — PHOTO CARDS ===== {%- endcomment -%}
+    {%- if photo_blocks.size > 0 -%}
+      {%- capture photo_card_set -%}
+        {%- for i in (1..photo_repeat) -%}
+          {%- for block in photo_blocks -%}
+            {%- assign r = block.settings.rating | default: 5 -%}
+            <article class="mlmu__photo-card" {{ block.shopify_attributes }}>
               {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo', alt: block.settings.reviewer_name | default: 'Customer review' }}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: block.settings.reviewer_name | default: 'Customer review' }}
               {%- else -%}
-                <div class="mlmu__photo mlmu__photo--placeholder" aria-hidden="true"></div>
+                <div class="mlmu__photo-img mlmu__photo-img--placeholder" aria-hidden="true"></div>
               {%- endif -%}
               {%- if block.settings.video_url != blank -%}
                 <a class="mlmu__play" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Play video review">
                   {{ play_icon }}
                 </a>
               {%- endif -%}
-            </div>
-            <div class="mlmu__text">
+              <div class="mlmu__photo-overlay">
+                <div class="mlmu__card-stars" aria-label="{{ r }} out of 5 stars">
+                  {%- for i in (1..r) -%}{{ star_full }}{%- endfor -%}
+                </div>
+                {%- if block.settings.date_text != blank -%}
+                  <div class="mlmu__card-date">{{ block.settings.date_text }}</div>
+                {%- endif -%}
+                {%- if block.settings.quote != blank -%}
+                  <p class="mlmu__card-quote mlmu__card-quote--photo">{{ block.settings.quote }}</p>
+                {%- endif -%}
+                <div class="mlmu__card-author">
+                  <span class="mlmu__card-name">{{ block.settings.reviewer_name }}</span>
+                  {%- if block.settings.verified_label != blank -%}
+                    <span class="mlmu__card-dot" aria-hidden="true"></span>
+                    <span class="mlmu__card-verified">
+                      {{ check_badge }}
+                      <span>{{ block.settings.verified_label }}</span>
+                    </span>
+                  {%- endif -%}
+                </div>
+              </div>
+            </article>
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      <div class="mlmu__viewport">
+        <div class="mlmu__track mlmu__track--photo" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+          {{ photo_card_set }}
+          {{ photo_card_set }}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ===== ROW 2 + 3 — TEXT-ONLY CARDS (opposite directions) ===== {%- endcomment -%}
+    {%- if text_blocks.size > 0 -%}
+      {%- capture text_card_set -%}
+        {%- for i in (1..text_repeat) -%}
+          {%- for block in text_blocks -%}
+            {%- assign r = block.settings.rating | default: 5 -%}
+            <article class="mlmu__text-card" {{ block.shopify_attributes }}>
               <div class="mlmu__card-stars" aria-label="{{ r }} out of 5 stars">
                 {%- for i in (1..r) -%}{{ star_full }}{%- endfor -%}
               </div>
@@ -109,14 +178,20 @@
                   </span>
                 {%- endif -%}
               </div>
-            </div>
-          </article>
+            </article>
+          {%- endfor -%}
         {%- endfor -%}
       {%- endcapture -%}
-      <div class="mlmu__viewport" data-mlmu-slider>
-        <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 50 }}s;">
-          {{ review_card_set }}
-          {{ review_card_set }}
+      <div class="mlmu__viewport">
+        <div class="mlmu__track mlmu__track--text-ltr" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+          {{ text_card_set }}
+          {{ text_card_set }}
+        </div>
+      </div>
+      <div class="mlmu__viewport">
+        <div class="mlmu__track mlmu__track--text-rtl" style="--mlmu-slide-duration: {{ s.slider_duration_seconds | default: 60 }}s;">
+          {{ text_card_set }}
+          {{ text_card_set }}
         </div>
       </div>
     {%- endif -%}
@@ -140,7 +215,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 32px;
     box-sizing: border-box;
   }
 
@@ -188,7 +263,7 @@
     color: var(--mlmu-muted);
   }
 
-  /* ===== Marquee ===== */
+  /* ===== Marquee viewport (shared) ===== */
   .mlmu__viewport {
     width: 100%;
     overflow: hidden;
@@ -197,13 +272,21 @@
   }
   .mlmu__track {
     --mlmu-slide-gap: 18px;
-    --mlmu-slide-duration: 50s;
+    --mlmu-slide-duration: 60s;
     display: flex;
     gap: var(--mlmu-slide-gap);
     align-items: stretch;
     width: max-content;
-    animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
     will-change: transform;
+  }
+  .mlmu__track--photo {
+    animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
+  }
+  .mlmu__track--text-ltr {
+    animation: mlmu-marquee var(--mlmu-slide-duration) linear infinite;
+  }
+  .mlmu__track--text-rtl {
+    animation: mlmu-marquee-rtl var(--mlmu-slide-duration) linear infinite;
   }
   .mlmu__track:hover,
   .mlmu__track:focus-within {
@@ -213,34 +296,36 @@
     from { transform: translate3d(0, 0, 0); }
     to   { transform: translate3d(calc(-50% - var(--mlmu-slide-gap) / 2), 0, 0); }
   }
+  @keyframes mlmu-marquee-rtl {
+    from { transform: translate3d(calc(-50% - var(--mlmu-slide-gap) / 2), 0, 0); }
+    to   { transform: translate3d(0, 0, 0); }
+  }
   @media (prefers-reduced-motion: reduce) {
     .mlmu__track { animation: none; transform: none; }
   }
 
-  /* ===== Card ===== */
-  .mlmu__card {
-    flex: 0 0 242px;
-    width: 242px;
+  /* ===== Photo card (top row) ===== */
+  .mlmu__photo-card {
+    flex: 0 0 241px;
+    width: 241px;
+    height: 379px;
     position: relative;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  }
-  .mlmu__media {
-    width: 100%;
-    aspect-ratio: 242 / 290;
     border-radius: 16px;
     overflow: hidden;
-    position: relative;
     background: #E5E0D5;
+    box-sizing: border-box;
   }
-  .mlmu__photo {
+  .mlmu__photo-img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  .mlmu__photo--placeholder { background: #E5E0D5; }
+  .mlmu__photo-img--placeholder {
+    background: linear-gradient(135deg, #E5E0D5 0%, #D5CFC0 100%);
+  }
   .mlmu__play {
     position: absolute;
     top: 50%;
@@ -256,26 +341,47 @@
     justify-content: center;
     text-decoration: none;
     transition: transform 0.15s ease, background 0.15s ease;
+    z-index: 2;
   }
   .mlmu__play:hover, .mlmu__play:focus-visible {
     background: #FFFFFF;
     transform: translate(-50%, -50%) scale(1.05);
     outline: none;
   }
+  .mlmu__photo-overlay {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: var(--mlmu-card-bg);
+    border-radius: 12px;
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 6px 16px rgba(45, 38, 34, 0.12);
+    z-index: 1;
+  }
+  .mlmu__card-quote--photo {
+    -webkit-line-clamp: 3;
+  }
 
-  .mlmu__text {
-    margin-top: -36px;
+  /* ===== Text card (bottom rows) ===== */
+  .mlmu__text-card {
+    flex: 0 0 340px;
+    width: 340px;
+    min-height: 175px;
     background: var(--mlmu-card-bg);
     border: 1px solid var(--mlmu-card-border);
     border-radius: 16px;
-    padding: 14px 16px 16px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    box-shadow: 0 4px 14px rgba(45, 38, 34, 0.06);
-    position: relative;
-    z-index: 1;
+    box-sizing: border-box;
   }
+
+  /* ===== Shared card pieces ===== */
   .mlmu__card-stars {
     display: inline-flex;
     gap: 1px;
@@ -289,11 +395,10 @@
   }
   .mlmu__card-quote {
     margin: 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.45;
     color: var(--mlmu-text);
     text-align: center;
-    /* Limit to ~4 lines */
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -304,7 +409,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--mlmu-muted);
     flex-wrap: wrap;
   }
@@ -329,11 +434,22 @@
   /* Mobile */
   @media (max-width: 1024px) {
     .mlmu { padding: 40px 0 48px; }
-    .mlmu__container { gap: 24px; }
+    .mlmu__container { gap: 20px; }
     .mlmu__title { font-size: 30px; }
     .mlmu__subtitle { font-size: 15px; }
-    .mlmu__card { flex: 0 0 200px; width: 200px; }
-    .mlmu__media { aspect-ratio: 200 / 240; }
+
+    .mlmu__photo-card {
+      flex: 0 0 200px;
+      width: 200px;
+      height: 314px;
+    }
+    .mlmu__text-card {
+      flex: 0 0 280px;
+      width: 280px;
+      min-height: 160px;
+      padding: 14px;
+    }
+    .mlmu__card-quote { font-size: 13px; }
     .mlmu__viewport {
       -webkit-mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
               mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
@@ -346,7 +462,7 @@
   "name": "Listicle Morning Upgrade",
   "tag": "section",
   "class": "section-maison-listicle-morning-upgrade",
-  "max_blocks": 24,
+  "max_blocks": 48,
   "settings": [
     { "type": "header", "content": "Background" },
     { "type": "color_background", "id": "bg_color", "label": "Section background", "default": "#FFFFFF" },
@@ -384,26 +500,26 @@
       "default": "Real Franky subscribers sharing what changed when their routine did."
     },
 
-    { "type": "header", "content": "Review card" },
+    { "type": "header", "content": "Card styling" },
     { "type": "color_background", "id": "card_bg", "label": "Card background", "default": "#FAF6EB" },
     { "type": "color", "id": "card_border", "label": "Card border", "default": "rgba(59, 43, 47, 0.08)" },
-    { "type": "color", "id": "verified_color", "label": "Verified badge color", "default": "#2EAA63" },
+    { "type": "color", "id": "verified_color", "label": "Verified badge", "default": "#2EAA63" },
 
     { "type": "header", "content": "Marquee speed" },
     {
       "type": "range",
       "id": "slider_duration_seconds",
       "label": "Loop duration",
-      "min": 20, "max": 120, "step": 5,
+      "min": 20, "max": 180, "step": 5,
       "unit": "s",
-      "default": 50,
+      "default": 60,
       "info": "Higher = slower scroll."
     }
   ],
   "blocks": [
     {
-      "type": "review",
-      "name": "Review",
+      "type": "photo_review",
+      "name": "Photo review (top row)",
       "limit": 24,
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Photo" },
@@ -420,30 +536,28 @@
           "min": 1, "max": 5, "step": 1,
           "default": 5
         },
+        { "type": "text", "id": "date_text", "label": "Date", "default": "Bought on 14 August 2025" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip." },
+        { "type": "text", "id": "reviewer_name", "label": "Reviewer name", "default": "James T." },
+        { "type": "text", "id": "verified_label", "label": "Verified label", "default": "Verified Buyer" }
+      ]
+    },
+    {
+      "type": "text_review",
+      "name": "Text review (bottom rows)",
+      "limit": 24,
+      "settings": [
         {
-          "type": "text",
-          "id": "date_text",
-          "label": "Date",
-          "default": "Bought on 14 August 2025"
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 1, "max": 5, "step": 1,
+          "default": 5
         },
-        {
-          "type": "textarea",
-          "id": "quote",
-          "label": "Quote",
-          "default": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip."
-        },
-        {
-          "type": "text",
-          "id": "reviewer_name",
-          "label": "Reviewer name",
-          "default": "James T."
-        },
-        {
-          "type": "text",
-          "id": "verified_label",
-          "label": "Verified label",
-          "default": "Verified Buyer"
-        }
+        { "type": "text", "id": "date_text", "label": "Date", "default": "Bought on 14 August 2025" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with." },
+        { "type": "text", "id": "reviewer_name", "label": "Reviewer name", "default": "Sarah K." },
+        { "type": "text", "id": "verified_label", "label": "Verified label", "default": "Verified Buyer" }
       ]
     }
   ],
@@ -451,46 +565,15 @@
     {
       "name": "Listicle Morning Upgrade",
       "blocks": [
-        {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "date_text": "Bought on 14 August 2025",
-            "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.",
-            "reviewer_name": "James T.",
-            "verified_label": "Verified Buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "date_text": "Bought on 18 August 2025",
-            "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.",
-            "reviewer_name": "Sarah K.",
-            "verified_label": "Verified Buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "date_text": "Bought on 16 August 2025",
-            "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.",
-            "reviewer_name": "Rachel N.",
-            "verified_label": "Verified Buyer"
-          }
-        },
-        {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "date_text": "Bought on 12 August 2025",
-            "quote": "Quit my $6 latte habit. Down four pounds, off the afternoon coffee. Easiest swap I've made all year.",
-            "reviewer_name": "Patty 48",
-            "verified_label": "Verified Buyer"
-          }
-        }
+        { "type": "photo_review", "settings": { "reviewer_name": "James T.", "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.", "date_text": "Bought on 14 August 2025" } },
+        { "type": "photo_review", "settings": { "reviewer_name": "Sarah K.", "quote": "Down four pounds and off the afternoon coffee. Easiest swap I've made all year.", "date_text": "Bought on 18 August 2025" } },
+        { "type": "photo_review", "settings": { "reviewer_name": "Rachel N.", "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.", "date_text": "Bought on 16 August 2025" } },
+        { "type": "photo_review", "settings": { "reviewer_name": "Patty 48", "quote": "Quit my $6 latte habit. Down four pounds and the afternoon slump is gone.", "date_text": "Bought on 12 August 2025" } },
+        { "type": "text_review", "settings": { "reviewer_name": "Hannah, RN, 45", "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.", "date_text": "Bought on 8 August 2025" } },
+        { "type": "text_review", "settings": { "reviewer_name": "Patty, 48", "quote": "Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.", "date_text": "Bought on 11 August 2025" } },
+        { "type": "text_review", "settings": { "reviewer_name": "James T.", "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.", "date_text": "Bought on 14 August 2025" } },
+        { "type": "text_review", "settings": { "reviewer_name": "Sarah K.", "quote": "I finally have energy that lasts all day. No crashes, no cravings. The only morning routine I've stuck with.", "date_text": "Bought on 18 August 2025" } },
+        { "type": "text_review", "settings": { "reviewer_name": "Rachel N.", "quote": "Down four pounds. Easiest swap I've made all year.", "date_text": "Bought on 16 August 2025" } }
       ]
     }
   ]
