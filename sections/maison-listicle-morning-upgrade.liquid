@@ -65,17 +65,6 @@
 </svg>
 {%- endcapture -%}
 
-{%- comment -%} ===== TEXT CARD INNER (reused by photo + text-only cards) ===== {%- endcomment -%}
-{%- capture render_text_card -%}
-  <div class="mlmu__card-stars" aria-label="5 out of 5 stars">{{ '{{stars}}' }}</div>
-  {{ '{{date_block}}' }}
-  {{ '{{quote_block}}' }}
-  <div class="mlmu__card-author">
-    <span class="mlmu__card-name">{{ '{{name}}' }}</span>
-    {{ '{{verified_block}}' }}
-  </div>
-{%- endcapture -%}
-
 <section
   id="shopify-section-{{ section.id }}-morning-upgrade"
   class="mlmu"
