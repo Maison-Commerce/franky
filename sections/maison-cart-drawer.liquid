@@ -580,18 +580,21 @@
       },
 
       updateCartBubble() {
-        const bubble = document.querySelector('.cart-count-bubble');
-        if (!bubble) return;
-
         const count = this.cart?.item_count || 0;
 
-        const visible = bubble.querySelector('[aria-hidden="true"]');
-        const hidden = bubble.querySelector('.visually-hidden');
+        // Standard theme bubble (.cart-count-bubble)
+        const bubble = document.querySelector('.cart-count-bubble');
+        if (bubble) {
+          const visible = bubble.querySelector('[aria-hidden="true"]');
+          const hidden = bubble.querySelector('.visually-hidden');
+          if (visible) visible.textContent = count;
+          if (hidden) hidden.textContent = `${count} item${count === 1 ? '' : 's'}`;
+          bubble.classList.toggle('hidden', count === 0);
+        }
 
-        if (visible) visible.textContent = count;
-        if (hidden) hidden.textContent = `${count} item${count === 1 ? '' : 's'}`;
-
-        bubble.classList.toggle('hidden', count === 0);
+        // Any custom listener (e.g. listicle header) — broadcast the new count.
+        document.dispatchEvent(new CustomEvent('maison:cart-updated', { detail: { count: count } }));
+        document.dispatchEvent(new CustomEvent('cart:refresh', { detail: { count: count } }));
       },
 
       updateQuantity(keyOrVariantId, quantity) {
