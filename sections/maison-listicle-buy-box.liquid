@@ -208,13 +208,16 @@
           </div>
         {%- endif -%}
 
-        {%- comment -%} ===== FLAVOR PACK DROPDOWNS (N = quantity) ===== {%- endcomment -%}
+        {%- comment -%} ===== FLAVOR PACK DROPDOWNS (visibleFlavorCount, capped by quantity) ===== {%- endcomment -%}
         {%- if p.variants.size > 0 -%}
           <div class="mlbb__flavors">
-            <template x-for="(idx, i) in Array.from({length: quantity}, (_, k) => k + 1)" :key="i">
+            <template x-for="(idx, i) in Array.from({length: visibleFlavorCount}, (_, k) => k + 1)" :key="i">
               <div class="mlbb__flavor-row">
                 <div class="mlbb__field-label">
-                  <span class="mlbb__field-label-title" x-text="'FLAVOR PACK ' + idx + ':'"></span>
+                  <span
+                    class="mlbb__field-label-title"
+                    x-text="visibleFlavorCount === 1 ? 'FLAVOR:' : ('FLAVOR PACK ' + idx + ':')"
+                  ></span>
                   <span class="mlbb__field-label-value" x-text="variantTitles[flavorSelections[i] || flavorSelections[0]] || ''"></span>
                 </div>
                 <div class="mlbb__select-wrap">
@@ -412,7 +415,8 @@
     onetimeLabel: {{ s.onetime_label | default: 'One-Time Purchase' | json }},
     subscribeLabel: {{ s.subscribe_label | default: 'Subscribe & Save' | json }},
     subscribeDisclaimer: {{ s.subscribe_disclaimer | default: '' | json }},
-    discountBucket: {{ s.discount_bucket | default: 'bundle_listicle' | json }}
+    discountBucket: {{ s.discount_bucket | default: 'bundle_listicle' | json }},
+    maxFlavorDropdownsVisible: {{ s.max_flavor_dropdowns_visible | default: 1 }}
   };
 
   function maisonListicleBuyBox() {
@@ -493,8 +497,25 @@
         if (pack) this.packLabel = pack.packName || (bottleCount + ' Pack');
       },
 
+      get visibleFlavorCount() {
+        const max = parseInt(cfg.maxFlavorDropdownsVisible, 10) || 1;
+        return Math.min(this.quantity, Math.max(1, max));
+      },
+
       setFlavor(index, variantId) {
-        this.flavorSelections = this.flavorSelections.map((v, i) => i === index ? variantId : v);
+        // Sync mode: when fewer dropdowns are visible than the pack qty,
+        // the single visible dropdown drives the flavor for every pack so
+        // the right variant is added for all line items.
+        if (this.visibleFlavorCount < this.quantity) {
+          this.flavorSelections = this.flavorSelections.map((v, i) =>
+            i < this.quantity ? variantId : v
+          );
+        } else {
+          // Independent mode — each visible dropdown only controls its own slot.
+          this.flavorSelections = this.flavorSelections.map((v, i) =>
+            i === index ? variantId : v
+          );
+        }
       },
 
       formatMoney(cents) {
@@ -1384,6 +1405,16 @@
       "label": "EPD discount bucket",
       "info": "Line item property (_mc_discount_bucket) sent on add-to-cart so the matching EPD function applies. Default: bundle_listicle.",
       "default": "bundle_listicle"
+    },
+
+    { "type": "header", "content": "Flavor selection" },
+    {
+      "type": "range",
+      "id": "max_flavor_dropdowns_visible",
+      "label": "Max flavor dropdowns shown",
+      "info": "How many FLAVOR PACK dropdowns to render at most. If this is less than the chosen pack quantity, the single visible dropdown syncs to every pack on add-to-cart. Set to 3 when customers should pick a different flavor per pack.",
+      "min": 1, "max": 6, "step": 1,
+      "default": 1
     },
 
     { "type": "header", "content": "Nutritional info" },
