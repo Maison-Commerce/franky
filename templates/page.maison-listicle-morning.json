@@ -273,18 +273,21 @@
         "trust_badge_YJjLwR": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/list-icon-1.svg",
             "text": "Try 30 Days Risk-Free"
           }
         },
         "trust_badge_kQw9E7": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/list-icon-1.svg",
             "text": "Pause or Cancel Anytime"
           }
         },
         "trust_badge_8fihWF": {
           "type": "trust_badge",
           "settings": {
+            "icon": "shopify://shop_images/list-icon-3.svg",
             "text": "Autoship at $59.99"
           }
         },
@@ -340,9 +343,6 @@
         "product": "franky-magic-frother",
         "title_override": "",
         "description": "",
-        "banner_text": "Limited Time: Summer Sale | Up to 32% Off",
-        "banner_bg": "#f4a09c",
-        "banner_text_color": "#3b2b2f",
         "rating": 4.8,
         "reviews_count": "8,450+",
         "star_color": "#fbaa19",
@@ -353,10 +353,8 @@
         "nutritional_button_text": "Nutritional Information",
         "stock_text": "In Stock · Ships in 2–3 days from our US warehouse",
         "cta_text": "Start Now →",
-        "cta_disclaimer": "Subscription orders billed every 4 weeks · $24.95 + free shipping · Skip or cancel anytime",
         "bg_color": "#FFFFFF",
         "card_bg": "#ffffff",
-        "card_border": "#e5e0d5",
         "text_color": "#3b2b2f",
         "muted_color": "#3b2b2f99",
         "pack_border": "#e5e0d5",
