@@ -26,6 +26,7 @@
     --mlbb-image-bg: {{ s.image_bg }};
     --mlbb-pill-bg: {{ s.pill_bg }};
     --mlbb-pill-text: {{ s.pill_text_color }};
+    --mlbb-pack-bg: {{ s.pack_bg }};
     --mlbb-pack-border: {{ s.pack_border }};
     --mlbb-pack-active: {{ s.pack_active_border }};
     --mlbb-save-bg: {{ s.save_bg }};
@@ -623,13 +624,14 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 14px;
+    padding: 8px 16px;
     background: var(--mlbb-pill-bg);
     color: var(--mlbb-pill-text);
     border-radius: 999px;
-    font-size: 13px;
+    border: 1px dashed var(--mlbb-pill-text);
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0em;
   }
   .mlbb__pill-icon { font-size: 14px; }
 
@@ -638,10 +640,10 @@
     margin: 0;
     font-family: 'Lust Text', serif;
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2;
     color: var(--mlbb-text);
-    letter-spacing: -0.005em;
+    letter-spacing: 0em;
   }
 
   /* Rating */
@@ -650,7 +652,7 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: var(--mlbb-muted);
+    color: var(--mlbb-text);
   }
   .mlbb__stars { display: inline-flex; gap: 1px; }
   .mlbb__rating-text strong { color: var(--mlbb-text); font-weight: 600; }
@@ -673,12 +675,14 @@
   }
   .mlbb__price-current {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--mlbb-text);
   }
   .mlbb__price-compare {
     font-size: 16px;
-    color: var(--mlbb-muted);
+    color: var(--mlbb-text);
+    opacity: 0.5;
+    font-weight: 500;
     text-decoration: line-through;
   }
   .mlbb__price-save {
@@ -686,9 +690,9 @@
     color: var(--mlbb-save-text);
     border-radius: 999px;
     padding: 4px 10px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0em;
     text-transform: uppercase;
   }
 
@@ -703,15 +707,15 @@
     display: inline-flex;
     gap: 8px;
     font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: 0em;
     text-transform: uppercase;
-    color: var(--mlbb-muted);
+    color: var(--mlbb-text);
   }
   .mlbb__field-label-value {
-    color: var(--mlbb-text);
+    color: var(--mlbb-muted);
     text-transform: none;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0;
   }
 
@@ -723,10 +727,10 @@
   }
   .mlbb__pack {
     appearance: none;
-    background: #FFFFFF;
-    border: 1.5px solid var(--mlbb-pack-border);
-    border-radius: 12px;
-    padding: 16px 12px 12px;
+    background: var(--mlbb-pack-bg);
+    border: 1px solid var(--mlbb-pack-border);
+    border-radius: 8px;
+    padding: 12px 16px 12px 12px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -750,11 +754,11 @@
     transform: translateX(-50%);
     background: var(--mlbb-best-bg);
     color: var(--mlbb-best-text);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0em;
     border-radius: 999px;
-    padding: 3px 12px;
+    padding: 2px 8px;
     white-space: nowrap;
     z-index: 2;
   }
@@ -1235,7 +1239,8 @@
     { "type": "color", "id": "image_bg", "label": "Image background", "default": "#F7F3E6" },
     { "type": "color", "id": "text_color", "label": "Text", "default": "#3B2B2F" },
     { "type": "color_background", "id": "muted_color", "label": "Muted text", "default": "rgba(59, 43, 47, 0.75)" },
-    { "type": "color", "id": "pack_border", "label": "Pack/card border", "default": "#E5E0D5" },
+    { "type": "color_background", "id": "pack_bg", "label": "Pack tile background", "default": "rgba(250, 246, 235, 0.30)" },
+    { "type": "color", "id": "pack_border", "label": "Pack/card border", "default": "#E6DED6" },
     { "type": "color", "id": "pack_active_border", "label": "Pack active border", "default": "#3B2B2F" },
     { "type": "color_background", "id": "save_bg", "label": "Save badge background", "default": "rgba(255, 201, 157, 0.70)" },
     { "type": "color", "id": "save_text_color", "label": "Save badge text", "default": "#C24A3E" },
