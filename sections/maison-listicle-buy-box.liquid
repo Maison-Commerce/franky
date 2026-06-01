@@ -416,7 +416,7 @@
     subscribeLabel: {{ s.subscribe_label | default: 'Subscribe & Save' | json }},
     subscribeDisclaimer: {{ s.subscribe_disclaimer | default: '' | json }},
     discountBucket: {{ s.discount_bucket | default: 'bundle_listicle' | json }},
-    maxFlavorDropdownsVisible: {{ s.max_flavor_dropdowns_visible | default: 1 }}
+    singleFlavorForAllPacks: {{ s.single_flavor_for_all_packs | default: true }}
   };
 
   function maisonListicleBuyBox() {
@@ -498,15 +498,14 @@
       },
 
       get visibleFlavorCount() {
-        const max = parseInt(cfg.maxFlavorDropdownsVisible, 10) || 1;
-        return Math.min(this.quantity, Math.max(1, max));
+        // Checkbox ON → always show a single FLAVOR dropdown (syncs to every pack).
+        // Checkbox OFF → show one dropdown per pack (independent picks).
+        return cfg.singleFlavorForAllPacks ? 1 : this.quantity;
       },
 
       setFlavor(index, variantId) {
-        // Sync mode: when fewer dropdowns are visible than the pack qty,
-        // the single visible dropdown drives the flavor for every pack so
-        // the right variant is added for all line items.
-        if (this.visibleFlavorCount < this.quantity) {
+        if (cfg.singleFlavorForAllPacks) {
+          // Sync mode: the single dropdown drives the flavor for every pack.
           this.flavorSelections = this.flavorSelections.map((v, i) =>
             i < this.quantity ? variantId : v
           );
@@ -1409,12 +1408,11 @@
 
     { "type": "header", "content": "Flavor selection" },
     {
-      "type": "range",
-      "id": "max_flavor_dropdowns_visible",
-      "label": "Max flavor dropdowns shown",
-      "info": "How many FLAVOR PACK dropdowns to render at most. If this is less than the chosen pack quantity, the single visible dropdown syncs to every pack on add-to-cart. Set to 3 when customers should pick a different flavor per pack.",
-      "min": 1, "max": 6, "step": 1,
-      "default": 1
+      "type": "checkbox",
+      "id": "single_flavor_for_all_packs",
+      "label": "Use one flavor for all packs",
+      "info": "When ON only the first FLAVOR dropdown is shown and it sets the flavor for every pack. Turn OFF to give each pack its own dropdown (2 dropdowns for 2 Packs, 3 for 3 Packs).",
+      "default": true
     },
 
     { "type": "header", "content": "Nutritional info" },
