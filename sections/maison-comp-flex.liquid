@@ -3,10 +3,20 @@
   "name": "Maison Comp Flex",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "section_heading",
       "label": "Section Heading",
-      "default": "Why Coffee Alone Sabotages Your Energy"
+      "default": "<p>Why Coffee Alone Sabotages Your Energy</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width_desktop",
+      "min": 200,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "label": "Heading Max Width (Desktop)",
+      "default": 410
     },
     {
       "type": "text",
@@ -544,8 +554,12 @@
     color: {{ section.settings.heading_color }};
     margin: 0;
     text-transform: capitalize;
-    max-width: 410px;
+    max-width: {{ section.settings.heading_max_width_desktop }}px;
   }
+  .maison_commerce_comp_flex__heading > p { margin: 0; }
+  .maison_commerce_comp_flex__heading > p + p { margin-top: 0.25em; }
+  .maison_commerce_comp_flex__heading em { font-style: italic; }
+  .maison_commerce_comp_flex__heading strong { font-weight: 600; }
 
   .maison_commerce_comp_flex__subtitle {
     font-family: "DM Sans", sans-serif;
