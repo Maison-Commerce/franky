@@ -174,110 +174,6 @@
         "cta_text_color": "#f7f3e6"
       }
     },
-    "morning_comparison": {
-      "type": "maison-comp-flex",
-      "blocks": {
-        "row_sugar": {
-          "type": "comparison_row",
-          "settings": {
-            "label_col1": "Sugar",
-            "value_col1": "40-60g",
-            "label_featured": "Sugar",
-            "value_featured": "<1g",
-            "label_col3": "Sugar",
-            "value_col3": "As much as 60g"
-          }
-        },
-        "row_protein": {
-          "type": "comparison_row",
-          "settings": {
-            "label_col1": "Protein",
-            "value_col1": "0g",
-            "label_featured": "Protein",
-            "value_featured": "10g",
-            "label_col3": "Protein",
-            "value_col3": "15g"
-          }
-        },
-        "row_gluten": {
-          "type": "comparison_row",
-          "settings": {
-            "label_col1": "Gluten-Free",
-            "value_col1": "No",
-            "label_featured": "Gluten-Free",
-            "value_featured": "Yes",
-            "label_col3": "Gluten-Free",
-            "value_col3": "No"
-          }
-        },
-        "row_fiber": {
-          "type": "comparison_row",
-          "settings": {
-            "label_col1": "Fiber",
-            "value_col1": "No",
-            "label_featured": "Fiber",
-            "value_featured": "Yes",
-            "label_col3": "Fiber",
-            "value_col3": "Fiber"
-          }
-        },
-        "row_probiotics": {
-          "type": "comparison_row",
-          "settings": {
-            "label_col1": "Pre- & Probiotics",
-            "value_col1": "Sometimes",
-            "label_featured": "Pre- & Probiotics",
-            "value_featured": "Yes",
-            "label_col3": "Pre- & Probiotics",
-            "value_col3": "Sometimes"
-          }
-        }
-      },
-      "block_order": [
-        "row_sugar",
-        "row_protein",
-        "row_gluten",
-        "row_fiber",
-        "row_probiotics"
-      ],
-      "settings": {
-        "section_heading": "<p>Why Your Morning Coffee Is Working Against You</p>",
-        "heading_max_width_desktop": 410,
-        "section_subtitle": "This isn't about discipline. Your body needs fuel, not just stimulation. The difference is what's in the cup.",
-        "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
-        "heading_color": "#3b2b2f",
-        "subtitle_font_size_desktop": 18,
-        "subtitle_font_size_mobile": 14,
-        "subtitle_color": "#3b2b2f",
-        "subtitle_opacity": 75,
-        "bg_color_top": "#faf6eb",
-        "bg_color_bottom": "#deeaf2",
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40,
-        "padding_left_desktop": 80,
-        "padding_right_desktop": 80,
-        "padding_top_mobile": 32,
-        "padding_bottom_mobile": 32,
-        "padding_left_mobile": 16,
-        "padding_right_mobile": 16,
-        "featured_title": "Franky Coffee",
-        "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
-        "featured_image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
-        "featured_header_color": "#3b2b2f",
-        "featured_header_text_color": "#f5eddc",
-        "featured_body_color": "linear-gradient(180deg, rgba(250, 237, 220, 1), rgba(248, 220, 208, 1) 100%)",
-        "col1_title": "Coffee",
-        "col1_image": "shopify://shop_images/Rectangle_4927.png",
-        "col3_title": "Protein powder",
-        "col3_image": "shopify://shop_images/geg3g4rgse.png",
-        "row_font_size_desktop": 16,
-        "row_font_size_mobile": 14,
-        "row_label_color": "#3b2b2f",
-        "row_value_color_competitor": "#92898b",
-        "row_value_color_featured": "#3b2b2f"
-      }
-    },
     "maison_badge_list_CPyDpR": {
       "type": "maison-badge-list",
       "blocks": {
@@ -1035,7 +931,6 @@
     "hero",
     "morning_routine",
     "built_for_morning",
-    "morning_comparison",
     "maison_badge_list_CPyDpR",
     "buy_box",
     "morning_upgrade",
