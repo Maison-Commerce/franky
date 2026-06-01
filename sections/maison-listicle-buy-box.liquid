@@ -153,10 +153,10 @@
         {%- endif -%}
 
         <div class="mlbb__price">
-          <template x-if="comparePerUnit > unitPriceSubscribed">
-            <span class="mlbb__price-compare" x-text="formatMoney(comparePerUnit)"></span>
+          <template x-if="compareAtTotal > displayedPrice">
+            <span class="mlbb__price-compare" x-text="formatMoney(compareAtTotal)"></span>
           </template>
-          <span class="mlbb__price-current" x-text="formatMoney(displayedPrice / quantity)"></span>
+          <span class="mlbb__price-current" x-text="formatMoney(displayedPrice)"></span>
           <template x-if="savePercent > 0">
             <span class="mlbb__price-save" x-text="'You Save ' + savePercent + '%'"></span>
           </template>
