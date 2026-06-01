@@ -58,6 +58,13 @@
 </header>
 
 <style>
+  /* Sticky must be applied to the outer <header class="shopify-section ..."> so
+     the containing block is the page <main>, not just this section's content. */
+  .section-maison-listicle-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+  }
   .mlheader {
     background: var(--mlheader-bg);
     width: 100%;
@@ -65,9 +72,6 @@
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
     color: var(--mlheader-text);
-    position: sticky;
-    top: 0;
-    z-index: 80;
   }
   .mlheader__container {
     max-width: 1440px;
