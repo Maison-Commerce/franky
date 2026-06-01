@@ -389,7 +389,8 @@
     moneyFormat: {{ shop.money_format | json }},
     onetimeLabel: {{ s.onetime_label | default: 'One-Time Purchase' | json }},
     subscribeLabel: {{ s.subscribe_label | default: 'Subscribe & Save' | json }},
-    subscribeDisclaimer: {{ s.subscribe_disclaimer | default: '' | json }}
+    subscribeDisclaimer: {{ s.subscribe_disclaimer | default: '' | json }},
+    discountBucket: {{ s.discount_bucket | default: 'bundle_listicle' | json }}
   };
 
   function maisonListicleBuyBox() {
@@ -499,6 +500,7 @@
       buildCartItems() {
         const pack = this.currentPack;
         const sellingPlan = (this.isSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
+        const bucket = cfg.discountBucket || 'bundle_listicle';
         const selections = this.flavorSelections.slice(0, this.quantity);
         const grouped = {};
         selections.forEach(variantId => {
@@ -506,7 +508,11 @@
           grouped[variantId] = (grouped[variantId] || 0) + 1;
         });
         return Object.keys(grouped).map(variantId => {
-          const item = { id: parseInt(variantId), quantity: grouped[variantId] };
+          const item = {
+            id: parseInt(variantId),
+            quantity: grouped[variantId],
+            properties: { _mc_discount_bucket: bucket }
+          };
           if (sellingPlan) item.selling_plan = sellingPlan;
           return item;
         });
@@ -1345,6 +1351,13 @@
       "label": "Subscription disclaimer",
       "info": "Use {frequency} (auto-strips 'Ships'/'Billed' prefix) or {frequency_raw} (verbatim) and {price} placeholders.",
       "default": "Subscription orders billed {frequency} · {price} + free shipping · Skip or cancel anytime"
+    },
+    {
+      "type": "text",
+      "id": "discount_bucket",
+      "label": "EPD discount bucket",
+      "info": "Line item property (_mc_discount_bucket) sent on add-to-cart so the matching EPD function applies. Default: bundle_listicle.",
+      "default": "bundle_listicle"
     },
 
     { "type": "header", "content": "Nutritional info" },
