@@ -265,11 +265,11 @@
           <span x-text="subscriptionDisclaimer"></span>
         </p>
 
-        <button type="button" class="mlbb__mode-toggle" @click="isSubscription = !isSubscription">
-          <span class="mlbb__mode-toggle-label" x-text="modeToggleLabel"></span>
-          <span class="mlbb__mode-toggle-price" x-text="formatMoney(modeToggleTotal)"></span>
-          <template x-if="modeToggleCompare > modeToggleTotal">
-            <span class="mlbb__mode-toggle-compare" x-text="formatMoney(modeToggleCompare)"></span>
+        <button type="button" class="mlbb__mode-toggle" @click="addToCart('onetime')" :disabled="loading">
+          <span class="mlbb__mode-toggle-label">{{ s.onetime_label | default: 'One-Time Purchase' }} —</span>
+          <span class="mlbb__mode-toggle-price" x-text="formatMoney(onetimeTotal)"></span>
+          <template x-if="compareAtTotal > onetimeTotal">
+            <span class="mlbb__mode-toggle-compare" x-text="formatMoney(compareAtTotal)"></span>
           </template>
         </button>
 
@@ -465,20 +465,6 @@
         return 'Subscription orders billed ' + freq + ' · ' + subPrice + ' + free shipping · Skip or cancel anytime';
       },
 
-      get modeToggleLabel() {
-        if (this.isSubscription) return cfg.onetimeLabel + ' —';
-        return cfg.subscribeLabel + ' ' + this.subscribePercent + '% —';
-      },
-
-      get modeToggleTotal() {
-        return this.isSubscription ? this.onetimeTotal : this.subscriptionTotal;
-      },
-
-      get modeToggleCompare() {
-        // For one-time price, show compare-at total as struck-through
-        return this.isSubscription ? this.compareAtTotal : 0;
-      },
-
       selectPack(bottleCount) {
         this.quantity = bottleCount;
         const pack = packs.find(p => p.bottleCount === bottleCount);
@@ -497,9 +483,12 @@
         return '$' + (cents / 100).toFixed(2);
       },
 
-      buildCartItems() {
+      buildCartItems(forceMode) {
         const pack = this.currentPack;
-        const sellingPlan = (this.isSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
+        let useSubscription = this.isSubscription;
+        if (forceMode === 'subscribe') useSubscription = true;
+        if (forceMode === 'onetime') useSubscription = false;
+        const sellingPlan = (useSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
         const bucket = cfg.discountBucket || 'bundle_listicle';
         const selections = this.flavorSelections.slice(0, this.quantity);
         const grouped = {};
@@ -518,9 +507,9 @@
         });
       },
 
-      async addToCart() {
+      async addToCart(forceMode) {
         if (this.loading) return;
-        const items = this.buildCartItems();
+        const items = this.buildCartItems(forceMode);
         if (items.length === 0) return;
         this.loading = true;
         try {
