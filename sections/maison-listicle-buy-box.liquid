@@ -265,11 +265,11 @@
           <span x-text="subscriptionDisclaimer"></span>
         </p>
 
-        <button type="button" class="mlbb__mode-toggle" @click="addToCart('onetime')" :disabled="loading">
-          <span class="mlbb__mode-toggle-label">{{ s.onetime_label | default: 'One-Time Purchase' }} —</span>
-          <span class="mlbb__mode-toggle-price" x-text="formatMoney(onetimeTotal)"></span>
-          <template x-if="compareAtTotal > onetimeTotal">
-            <span class="mlbb__mode-toggle-compare" x-text="formatMoney(compareAtTotal)"></span>
+        <button type="button" class="mlbb__mode-toggle" @click="isSubscription = !isSubscription">
+          <span class="mlbb__mode-toggle-label" x-text="modeToggleLabel"></span>
+          <span class="mlbb__mode-toggle-price" x-text="formatMoney(modeToggleTotal)"></span>
+          <template x-if="modeToggleCompare > modeToggleTotal">
+            <span class="mlbb__mode-toggle-compare" x-text="formatMoney(modeToggleCompare)"></span>
           </template>
         </button>
 
@@ -384,7 +384,7 @@
 
   window.mlbbConfig = window.mlbbConfig || {};
   window.mlbbConfig["{{ section.id }}"] = {
-    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.85' | json }}) || 0.85,
+    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.8' | json }}) || 0.8,
     subscriptionDefaultSelected: {{ s.subscription_default_selected | default: true }},
     moneyFormat: {{ shop.money_format | json }},
     onetimeLabel: {{ s.onetime_label | default: 'One-Time Purchase' | json }},
@@ -465,6 +465,20 @@
         return 'Subscription orders billed ' + freq + ' · ' + subPrice + ' + free shipping · Skip or cancel anytime';
       },
 
+      get modeToggleLabel() {
+        if (this.isSubscription) return cfg.onetimeLabel + ' —';
+        return cfg.subscribeLabel + ' ' + this.subscribePercent + '% —';
+      },
+
+      get modeToggleTotal() {
+        return this.isSubscription ? this.onetimeTotal : this.subscriptionTotal;
+      },
+
+      get modeToggleCompare() {
+        // For one-time price, show compare-at total as struck-through
+        return this.isSubscription ? this.compareAtTotal : 0;
+      },
+
       selectPack(bottleCount) {
         this.quantity = bottleCount;
         const pack = packs.find(p => p.bottleCount === bottleCount);
@@ -483,12 +497,9 @@
         return '$' + (cents / 100).toFixed(2);
       },
 
-      buildCartItems(forceMode) {
+      buildCartItems() {
         const pack = this.currentPack;
-        let useSubscription = this.isSubscription;
-        if (forceMode === 'subscribe') useSubscription = true;
-        if (forceMode === 'onetime') useSubscription = false;
-        const sellingPlan = (useSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
+        const sellingPlan = (this.isSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
         const bucket = cfg.discountBucket || 'bundle_listicle';
         const selections = this.flavorSelections.slice(0, this.quantity);
         const grouped = {};
@@ -507,9 +518,9 @@
         });
       },
 
-      async addToCart(forceMode) {
+      async addToCart() {
         if (this.loading) return;
-        const items = this.buildCartItems(forceMode);
+        const items = this.buildCartItems();
         if (items.length === 0) return;
         this.loading = true;
         try {
@@ -1312,9 +1323,9 @@
       "type": "range",
       "id": "subscription_multiplier",
       "label": "Subscription multiplier",
-      "info": "0.85 = 15% off subscription. Used when a pack has a selling plan. Must match the Loop subscription plan discount.",
-      "min": 0.5, "max": 1, "step": 0.05,
-      "default": 0.85
+      "info": "0.8 = 20% off subscription. Used when a pack has a selling plan.",
+      "min": 0.5, "max": 1, "step": 0.1,
+      "default": 0.8
     },
     {
       "type": "checkbox",
