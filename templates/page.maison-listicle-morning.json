@@ -313,8 +313,8 @@
           "settings": {
             "pack_name": "2 Packs",
             "bottle_count": 2,
-            "badge_text": "",
-            "discount_multiplier": "1",
+            "badge_text": "Save 10%",
+            "discount_multiplier": "0.9",
             "selling_plan_id": "",
             "frequency_label": "",
             "is_default_selected": false,
@@ -327,8 +327,8 @@
           "settings": {
             "pack_name": "3 Packs",
             "bottle_count": 3,
-            "badge_text": "",
-            "discount_multiplier": "1",
+            "badge_text": "Save 15%",
+            "discount_multiplier": "0.85",
             "selling_plan_id": "",
             "frequency_label": "",
             "is_default_selected": true,
