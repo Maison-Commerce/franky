@@ -1,0 +1,1164 @@
+{%- liquid
+  assign s = section.settings
+  assign p = s.product
+  assign pack_blocks = section.blocks | where: 'type', 'pack_option'
+  assign trust_blocks = section.blocks | where: 'type', 'trust_badge'
+-%}
+
+{%- if p == blank -%}
+  <section class="mlbb mlbb--empty" id="shopify-section-{{ section.id }}-buy-box">
+    <div class="mlbb__container">
+      <p class="mlbb__placeholder">Select a product in the section settings to display the buy box.</p>
+    </div>
+  </section>
+{%- else -%}
+
+<section
+  id="shopify-section-{{ section.id }}-buy-box"
+  class="mlbb"
+  style="
+    --mlbb-bg: {{ s.bg_color }};
+    --mlbb-text: {{ s.text_color }};
+    --mlbb-muted: {{ s.muted_color }};
+    --mlbb-card-border: {{ s.card_border }};
+    --mlbb-card-bg: {{ s.card_bg }};
+    --mlbb-banner-bg: {{ s.banner_bg }};
+    --mlbb-banner-text: {{ s.banner_text_color }};
+    --mlbb-cta-bg: {{ s.cta_bg }};
+    --mlbb-cta-text: {{ s.cta_text_color }};
+    --mlbb-pack-border: {{ s.pack_border }};
+    --mlbb-pack-active: {{ s.pack_active_border }};
+    --mlbb-save-bg: {{ s.save_bg }};
+    --mlbb-save-text: {{ s.save_text_color }};
+    --mlbb-star: {{ s.star_color }};
+  "
+  x-data="maisonListicleBuyBox()"
+  x-cloak
+>
+  <div class="mlbb__container">
+    <div class="mlbb__card">
+      {%- if s.banner_text != blank -%}
+        <div class="mlbb__banner">{{ s.banner_text }}</div>
+      {%- endif -%}
+
+      <div class="mlbb__grid">
+        {%- comment -%} ========= IMAGE COLUMN ========= {%- endcomment -%}
+        <div class="mlbb__media">
+          <div class="mlbb__thumbs" role="tablist" aria-label="Product image thumbnails">
+            {%- assign image_count = 0 -%}
+            {%- for image in p.images limit: 6 -%}
+              <button
+                type="button"
+                class="mlbb__thumb"
+                :class="{ 'is-active': activeImageIndex === {{ forloop.index0 }} }"
+                @click="activeImageIndex = {{ forloop.index0 }}"
+                role="tab"
+                aria-label="Image {{ forloop.index }}"
+              >
+                {{ image | image_url: width: 200 | image_tag: loading: 'lazy', class: 'mlbb__thumb-img', alt: image.alt | default: p.title }}
+              </button>
+              {%- assign image_count = forloop.index -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="mlbb__main-image">
+            {%- for image in p.images limit: 6 -%}
+              <div class="mlbb__slide" x-show="activeImageIndex === {{ forloop.index0 }}" :class="{ 'is-active': activeImageIndex === {{ forloop.index0 }} }">
+                {{ image | image_url: width: 1200 | image_tag: loading: 'eager', class: 'mlbb__main-img', alt: image.alt | default: p.title }}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if s.show_nutritional_button -%}
+            <button type="button" class="mlbb__nutrition-toggle" @click="nutritionOpen = !nutritionOpen" :aria-expanded="nutritionOpen">
+              <span class="mlbb__nutrition-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+              </span>
+              <span>{{ s.nutritional_button_text | default: 'Nutritional Information' }}</span>
+            </button>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} ========= CONTENT COLUMN ========= {%- endcomment -%}
+        <div class="mlbb__content">
+          <h1 class="mlbb__title">{{ s.title_override | default: p.title }}</h1>
+
+          {%- if s.rating > 0 -%}
+            <div class="mlbb__rating">
+              <span class="mlbb__stars" aria-hidden="true">
+                {%- assign rating = s.rating -%}
+                {%- assign full_stars = rating | floor -%}
+                {%- assign rating_remainder = rating | minus: full_stars -%}
+                {%- assign has_half = false -%}
+                {%- if rating_remainder >= 0.25 and rating_remainder < 0.75 -%}{%- assign has_half = true -%}{%- endif -%}
+                {%- if rating_remainder >= 0.75 -%}{%- assign full_stars = full_stars | plus: 1 -%}{%- endif -%}
+                {%- for i in (1..full_stars) -%}
+                  <svg class="franky-rating-star mlbb__star" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M13.94 5.04C13.81 4.69 13.47 4.45 13.09 4.45H9.43C9.31 4.45 9.19 4.37 9.15 4.25L7.84 0.56C7.7 0.22 7.37 0 7 0C6.62 0 6.28 0.24 6.15 0.59L4.84 4.26C4.79 4.38 4.68 4.46 4.56 4.46H0.9C0.52 4.46 0.18 4.7 0.05 5.05C-0.07 5.4 0.03 5.79 0.32 6.03L3.43 8.59C3.53 8.66 3.57 8.79 3.53 8.91L2.22 12.79C2.09 13.16 2.22 13.57 2.54 13.8C2.86 14.03 3.29 14.02 3.61 13.79L6.81 11.46C6.92 11.39 7.06 11.39 7.17 11.46L10.38 13.79C10.7 14.05 11.15 14.07 11.48 13.83C11.82 13.6 11.95 13.17 11.8 12.79L10.49 8.91C10.45 8.79 10.49 8.66 10.59 8.59L13.7 6.03C13.98 5.78 14.07 5.38 13.94 5.04Z" fill="var(--mlbb-star)"/>
+                  </svg>
+                {%- endfor -%}
+                {%- if has_half -%}
+                  <svg class="franky-rating-star mlbb__star" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <mask id="mlbb-half-{{ section.id }}"><rect width="7" height="14" fill="white"/></mask>
+                    <path d="M13.94 5.04C13.81 4.69 13.47 4.45 13.09 4.45H9.43C9.31 4.45 9.19 4.37 9.15 4.25L7.84 0.56C7.7 0.22 7.37 0 7 0C6.62 0 6.28 0.24 6.15 0.59L4.84 4.26C4.79 4.38 4.68 4.46 4.56 4.46H0.9C0.52 4.46 0.18 4.7 0.05 5.05C-0.07 5.4 0.03 5.79 0.32 6.03L3.43 8.59C3.53 8.66 3.57 8.79 3.53 8.91L2.22 12.79C2.09 13.16 2.22 13.57 2.54 13.8C2.86 14.03 3.29 14.02 3.61 13.79L6.81 11.46C6.92 11.39 7.06 11.39 7.17 11.46L10.38 13.79C10.7 14.05 11.15 14.07 11.48 13.83C11.82 13.6 11.95 13.17 11.8 12.79L10.49 8.91C10.45 8.79 10.49 8.66 10.59 8.59L13.7 6.03C13.98 5.78 14.07 5.38 13.94 5.04Z" fill="#D2D2D2"/>
+                    <path d="M13.94 5.04C13.81 4.69 13.47 4.45 13.09 4.45H9.43C9.31 4.45 9.19 4.37 9.15 4.25L7.84 0.56C7.7 0.22 7.37 0 7 0C6.62 0 6.28 0.24 6.15 0.59L4.84 4.26C4.79 4.38 4.68 4.46 4.56 4.46H0.9C0.52 4.46 0.18 4.7 0.05 5.05C-0.07 5.4 0.03 5.79 0.32 6.03L3.43 8.59C3.53 8.66 3.57 8.79 3.53 8.91L2.22 12.79C2.09 13.16 2.22 13.57 2.54 13.8C2.86 14.03 3.29 14.02 3.61 13.79L6.81 11.46C6.92 11.39 7.06 11.39 7.17 11.46L10.38 13.79C10.7 14.05 11.15 14.07 11.48 13.83C11.82 13.6 11.95 13.17 11.8 12.79L10.49 8.91C10.45 8.79 10.49 8.66 10.59 8.59L13.7 6.03C13.98 5.78 14.07 5.38 13.94 5.04Z" fill="var(--mlbb-star)" mask="url(#mlbb-half-{{ section.id }})"/>
+                  </svg>
+                {%- endif -%}
+              </span>
+              <span class="mlbb__rating-text">
+                <strong>{{ s.rating }}/5</strong> on <strong>{{ s.reviews_count }}</strong> reviews
+              </span>
+            </div>
+          {%- endif -%}
+
+          {%- if s.description != blank -%}
+            <div class="mlbb__description">{{ s.description }}</div>
+          {%- endif -%}
+
+          <div class="mlbb__price">
+            <span class="mlbb__price-current" x-text="formatMoney(displayedPrice)"></span>
+            <template x-if="compareAtTotal > displayedPrice">
+              <span class="mlbb__price-compare" x-text="formatMoney(compareAtTotal)"></span>
+            </template>
+            <template x-if="savePercent > 0">
+              <span class="mlbb__price-save" x-text="'You Save ' + savePercent + '%'"></span>
+            </template>
+          </div>
+
+          {%- comment -%} ===== QUANTITY (PACK) SELECTOR ===== {%- endcomment -%}
+          {%- if pack_blocks.size > 0 -%}
+            <div class="mlbb__field">
+              <div class="mlbb__field-label">
+                <span class="mlbb__field-label-title">QUANTITY:</span>
+                <span class="mlbb__field-label-value" x-text="packLabel"></span>
+              </div>
+              <div class="mlbb__packs">
+                {%- for block in pack_blocks -%}
+                  {%- assign bottle_count = block.settings.bottle_count | default: 1 -%}
+                  {%- assign pack_name = block.settings.pack_name -%}
+                  {%- assign badge_text = block.settings.badge_text -%}
+                  {%- assign price_per_unit = block.settings.price_per_unit -%}
+                  {%- assign is_default = block.settings.is_default_selected -%}
+                  {%- assign show_best = block.settings.show_best_value -%}
+                  <button
+                    type="button"
+                    class="mlbb__pack"
+                    :class="{ 'is-active': quantity === {{ bottle_count }} }"
+                    @click="selectPack({{ bottle_count }})"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- if show_best -%}<span class="mlbb__pack-best">BEST VALUE</span>{%- endif -%}
+                    <span class="mlbb__pack-name">{{ pack_name }}</span>
+                    {%- if price_per_unit and price_per_unit > 0 -%}
+                      {%- assign unit_money = price_per_unit | money -%}
+                      <span class="mlbb__pack-unit">{{ unit_money }}/ea</span>
+                    {%- endif -%}
+                    {%- if badge_text != blank -%}
+                      <span class="mlbb__pack-badge">{{ badge_text }}</span>
+                    {%- endif -%}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} ===== FLAVOR PACK DROPDOWNS (N = quantity) ===== {%- endcomment -%}
+          {%- if p.variants.size > 1 -%}
+            <div class="mlbb__field mlbb__flavors">
+              <template x-for="(idx, i) in Array.from({length: quantity}, (_, k) => k + 1)" :key="i">
+                <div class="mlbb__flavor-row">
+                  <div class="mlbb__field-label">
+                    <span class="mlbb__field-label-title" x-text="'FLAVOR PACK ' + idx + ':'"></span>
+                    <span class="mlbb__field-label-value" x-text="variantTitles[flavorSelections[i] || flavorSelections[0]] || ''"></span>
+                  </div>
+                  <div class="mlbb__select-wrap">
+                    <select
+                      class="mlbb__select"
+                      :value="flavorSelections[i] || flavorSelections[0]"
+                      @change="setFlavor(i, parseInt($event.target.value))"
+                    >
+                      {%- for variant in p.variants -%}
+                        {%- if variant.available -%}
+                          <option value="{{ variant.id }}">{{ variant.title }}</option>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </select>
+                    <svg class="mlbb__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </div>
+                </div>
+              </template>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} ===== SUBSCRIBE / ONE-TIME ===== {%- endcomment -%}
+          <div class="mlbb__purchase">
+            <label class="mlbb__purchase-row mlbb__purchase-row--sub" :class="{ 'is-active': isSubscription }">
+              <input type="radio" name="mlbb-purchase-{{ section.id }}" :checked="isSubscription" @change="isSubscription = true">
+              <span class="mlbb__radio" aria-hidden="true"></span>
+              <span class="mlbb__purchase-info">
+                <span class="mlbb__purchase-title">
+                  <span x-text="subscriptionTitle"></span>
+                  <span class="mlbb__purchase-tag" x-text="'Save ' + subscribePercent + '%'"></span>
+                </span>
+                <span class="mlbb__purchase-sub" x-text="subscriptionDescription"></span>
+              </span>
+              <span class="mlbb__purchase-price" x-text="formatMoney(subscriptionPrice)"></span>
+            </label>
+            <label class="mlbb__purchase-row" :class="{ 'is-active': !isSubscription }">
+              <input type="radio" name="mlbb-purchase-{{ section.id }}" :checked="!isSubscription" @change="isSubscription = false">
+              <span class="mlbb__radio" aria-hidden="true"></span>
+              <span class="mlbb__purchase-info">
+                <span class="mlbb__purchase-title">{{ s.onetime_label | default: 'One-Time Purchase' }}</span>
+              </span>
+              <span class="mlbb__purchase-price" x-text="formatMoney(onetimePrice)"></span>
+            </label>
+          </div>
+
+          {%- if s.stock_text != blank -%}
+            <p class="mlbb__stock">
+              <span class="mlbb__stock-dot" aria-hidden="true"></span>
+              {{ s.stock_text }}
+            </p>
+          {%- endif -%}
+
+          <button
+            type="button"
+            class="mlbb__cta"
+            :disabled="loading"
+            @click="addToCart"
+          >
+            <span x-show="!loading">{{ s.cta_text | default: 'Start Now →' }}</span>
+            <span x-show="loading">Adding…</span>
+          </button>
+
+          {%- if s.cta_disclaimer != blank -%}
+            <p class="mlbb__disclaimer">{{ s.cta_disclaimer }}</p>
+          {%- endif -%}
+
+          {%- if trust_blocks.size > 0 -%}
+            <ul class="mlbb__trust">
+              {%- for block in trust_blocks -%}
+                <li class="mlbb__trust-item" {{ block.shopify_attributes }}>
+                  {%- if block.settings.icon != blank -%}
+                    <span class="mlbb__trust-icon">
+                      {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', class: 'mlbb__trust-icon-img' }}
+                    </span>
+                  {%- endif -%}
+                  <span class="mlbb__trust-text">{{ block.settings.text }}</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.mlbbProductData = {
+    id: {{ p.id }},
+    title: {{ p.title | json }},
+    price: {{ p.price | default: 0 }},
+    compareAtPrice: {{ p.compare_at_price | default: 0 }},
+    variants: [
+      {% for variant in p.variants %}
+        {
+          id: {{ variant.id }},
+          title: {{ variant.title | json }},
+          price: {{ variant.price | default: 0 }},
+          compareAtPrice: {{ variant.compare_at_price | default: 0 }},
+          available: {{ variant.available }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  };
+
+  window.mlbbVariantTitles = {
+    {% for variant in p.variants %}
+      {{ variant.id }}: {{ variant.title | json }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  window.mlbbPackOptions = [
+    {% for block in pack_blocks %}
+      {
+        bottleCount: {{ block.settings.bottle_count | default: 1 }},
+        packName: {{ block.settings.pack_name | json }},
+        pricePerUnit: {{ block.settings.price_per_unit | default: 0 }},
+        discountMultiplier: parseFloat({{ block.settings.discount_multiplier | default: '1' | json }}) || 1,
+        sellingPlanId: {{ block.settings.selling_plan_id | json }},
+        frequencyLabel: {{ block.settings.frequency_label | json }},
+        isDefault: {{ block.settings.is_default_selected | default: false }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  window.mlbbConfig = {
+    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.85' | json }}) || 0.85,
+    subscriptionDefaultSelected: {{ s.subscription_default_selected | default: true }},
+    moneyFormat: {{ shop.money_format | json }}
+  };
+
+  function maisonListicleBuyBox() {
+    const product = window.mlbbProductData;
+    const packs = window.mlbbPackOptions;
+    const cfg = window.mlbbConfig;
+
+    const defaultPack = packs.find(p => p.isDefault) || packs[0] || { bottleCount: 1, discountMultiplier: 1, sellingPlanId: null };
+    const defaultVariantId = product.variants[0] ? product.variants[0].id : null;
+
+    return {
+      product: product,
+      variantTitles: window.mlbbVariantTitles,
+      quantity: defaultPack.bottleCount,
+      packLabel: defaultPack.packName || (defaultPack.bottleCount + ' Pack'),
+      activeImageIndex: 0,
+      nutritionOpen: false,
+      isSubscription: cfg.subscriptionDefaultSelected,
+      loading: false,
+      // One variant id per pack slot, length up to max quantity
+      flavorSelections: Array.from({ length: 6 }, () => defaultVariantId),
+
+      get currentPack() {
+        return packs.find(p => p.bottleCount === this.quantity) || packs[0] || defaultPack;
+      },
+
+      get currentUnitPrice() {
+        const pack = this.currentPack;
+        if (pack && pack.pricePerUnit && pack.pricePerUnit > 0) return pack.pricePerUnit;
+        const base = product.price || 0;
+        const mult = (pack && pack.discountMultiplier) || 1;
+        return Math.round(base * mult);
+      },
+
+      get onetimePrice() {
+        return this.currentUnitPrice * this.quantity;
+      },
+
+      get subscriptionPrice() {
+        return Math.round(this.currentUnitPrice * this.quantity * cfg.subscriptionMultiplier);
+      },
+
+      get displayedPrice() {
+        return this.isSubscription ? this.subscriptionPrice : this.onetimePrice;
+      },
+
+      get compareAtTotal() {
+        const compare = (product.compareAtPrice && product.compareAtPrice > product.price)
+          ? product.compareAtPrice
+          : product.price;
+        return compare * this.quantity;
+      },
+
+      get savePercent() {
+        const original = this.compareAtTotal;
+        if (original <= 0 || this.displayedPrice >= original) return 0;
+        return Math.round((1 - this.displayedPrice / original) * 100);
+      },
+
+      get subscribePercent() {
+        return Math.round((1 - cfg.subscriptionMultiplier) * 100);
+      },
+
+      get subscriptionTitle() {
+        return 'Subscribe & Save ' + this.subscribePercent + '%';
+      },
+
+      get subscriptionDescription() {
+        const pack = this.currentPack;
+        if (pack && pack.frequencyLabel) return pack.frequencyLabel + ' · Skip or cancel anytime';
+        return 'Skip or cancel anytime';
+      },
+
+      selectPack(bottleCount) {
+        this.quantity = bottleCount;
+        const pack = packs.find(p => p.bottleCount === bottleCount);
+        if (pack) this.packLabel = pack.packName || (bottleCount + ' Pack');
+      },
+
+      setFlavor(index, variantId) {
+        this.flavorSelections = this.flavorSelections.map((v, i) => i === index ? variantId : v);
+      },
+
+      formatMoney(cents) {
+        if (typeof cents !== 'number' || isNaN(cents)) cents = 0;
+        const value = (cents / 100).toFixed(2);
+        if (typeof Shopify !== 'undefined' && typeof Shopify.formatMoney === 'function') {
+          return Shopify.formatMoney(cents, cfg.moneyFormat);
+        }
+        return '$' + value;
+      },
+
+      buildCartItems() {
+        const pack = this.currentPack;
+        const sellingPlan = (this.isSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
+        const selections = this.flavorSelections.slice(0, this.quantity);
+
+        // Group same variants together
+        const grouped = {};
+        selections.forEach(variantId => {
+          if (!variantId) return;
+          grouped[variantId] = (grouped[variantId] || 0) + 1;
+        });
+
+        const items = Object.keys(grouped).map(variantId => {
+          const item = {
+            id: parseInt(variantId),
+            quantity: grouped[variantId]
+          };
+          if (sellingPlan) item.selling_plan = sellingPlan;
+          return item;
+        });
+
+        return items;
+      },
+
+      async addToCart() {
+        if (this.loading) return;
+        const items = this.buildCartItems();
+        if (items.length === 0) return;
+        this.loading = true;
+        try {
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            },
+            body: JSON.stringify({ items: items })
+          });
+          window.location.href = '/checkout';
+        } catch (err) {
+          console.error('[mlbb] addToCart failed', err);
+          this.loading = false;
+        }
+      }
+    };
+  }
+</script>
+
+<style>
+  .mlbb {
+    background: var(--mlbb-bg);
+    width: 100%;
+    padding: 48px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mlbb-text);
+    box-sizing: border-box;
+  }
+  .mlbb__container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .mlbb--empty .mlbb__placeholder {
+    text-align: center;
+    color: var(--mlbb-muted, #888);
+    padding: 40px 0;
+  }
+
+  .mlbb__card {
+    background: var(--mlbb-card-bg);
+    border: 1px solid var(--mlbb-card-border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .mlbb__banner {
+    background: var(--mlbb-banner-bg);
+    color: var(--mlbb-banner-text);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .mlbb__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+  /* Image column */
+  .mlbb__media {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    align-items: start;
+    align-content: start;
+  }
+  .mlbb__thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mlbb__thumb {
+    appearance: none;
+    background: #F7F3E6;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    transition: border-color 0.15s ease;
+  }
+  .mlbb__thumb.is-active {
+    border-color: var(--mlbb-pack-active);
+  }
+  .mlbb__thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mlbb__main-image {
+    background: #F7F3E6;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    position: relative;
+  }
+  .mlbb__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .mlbb__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mlbb__nutrition-toggle {
+    grid-column: 2 / -1;
+    appearance: none;
+    background: #DDE6EE;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mlbb-text);
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .mlbb__nutrition-icon {
+    display: inline-flex;
+  }
+
+  /* Content column */
+  .mlbb__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mlbb__title {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--mlbb-text);
+  }
+  .mlbb__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__stars {
+    display: inline-flex;
+    gap: 1px;
+  }
+  .mlbb__rating-text strong {
+    color: var(--mlbb-text);
+    font-weight: 600;
+  }
+  .mlbb__description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__description p {
+    margin: 0 0 0.5em 0;
+  }
+
+  .mlbb__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .mlbb__price-current {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--mlbb-text);
+  }
+  .mlbb__price-compare {
+    font-size: 16px;
+    color: var(--mlbb-muted);
+    text-decoration: line-through;
+  }
+  .mlbb__price-save {
+    background: var(--mlbb-save-bg);
+    color: var(--mlbb-save-text);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Generic field label */
+  .mlbb__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mlbb__field-label {
+    display: inline-flex;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__field-label-value {
+    color: var(--mlbb-text);
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  /* Pack tiles */
+  .mlbb__packs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .mlbb__pack {
+    appearance: none;
+    background: #FFFFFF;
+    border: 1.5px solid var(--mlbb-pack-border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    text-align: center;
+    position: relative;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    min-height: 78px;
+  }
+  .mlbb__pack:hover {
+    border-color: var(--mlbb-pack-active);
+  }
+  .mlbb__pack.is-active {
+    border-color: var(--mlbb-pack-active);
+    box-shadow: 0 0 0 1.5px var(--mlbb-pack-active);
+  }
+  .mlbb__pack-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mlbb-text);
+  }
+  .mlbb__pack-unit {
+    font-size: 12px;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__pack-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mlbb-save-text);
+    background: var(--mlbb-save-bg);
+    border-radius: 999px;
+    padding: 2px 8px;
+    margin-top: 4px;
+  }
+  .mlbb__pack-best {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mlbb-pack-active);
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  /* Flavor dropdowns */
+  .mlbb__flavors {
+    gap: 10px;
+  }
+  .mlbb__flavor-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .mlbb__flavor-row:last-child {
+    margin-bottom: 0;
+  }
+  .mlbb__select-wrap {
+    position: relative;
+  }
+  .mlbb__select {
+    appearance: none;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid var(--mlbb-card-border);
+    border-radius: 10px;
+    padding: 12px 36px 12px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--mlbb-text);
+    cursor: pointer;
+  }
+  .mlbb__chev {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--mlbb-muted);
+  }
+
+  /* Subscribe / one-time radios */
+  .mlbb__purchase {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mlbb__purchase-row {
+    display: grid;
+    grid-template-columns: 20px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 16px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--mlbb-card-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .mlbb__purchase-row.is-active {
+    border-color: var(--mlbb-pack-active);
+  }
+  .mlbb__purchase-row input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .mlbb__radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--mlbb-card-border);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .mlbb__purchase-row.is-active .mlbb__radio {
+    border-color: var(--mlbb-pack-active);
+  }
+  .mlbb__purchase-row.is-active .mlbb__radio::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--mlbb-pack-active);
+  }
+  .mlbb__purchase-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .mlbb__purchase-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mlbb-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mlbb__purchase-tag {
+    background: var(--mlbb-save-bg);
+    color: var(--mlbb-save-text);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .mlbb__purchase-sub {
+    font-size: 12px;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__purchase-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--mlbb-text);
+  }
+
+  /* Stock indicator */
+  .mlbb__stock {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 13px;
+    color: var(--mlbb-muted);
+  }
+  .mlbb__stock-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2EAA63;
+    flex-shrink: 0;
+  }
+
+  /* CTA */
+  .mlbb__cta {
+    appearance: none;
+    background: var(--mlbb-cta-bg);
+    color: var(--mlbb-cta-text);
+    border: none;
+    border-radius: 14px;
+    width: 100%;
+    min-height: 56px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-sizing: border-box;
+  }
+  .mlbb__cta:hover:not(:disabled),
+  .mlbb__cta:focus-visible {
+    opacity: 0.92;
+    outline: none;
+  }
+  .mlbb__cta:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  .mlbb__disclaimer {
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--mlbb-muted);
+  }
+
+  /* Trust badges row */
+  .mlbb__trust {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--mlbb-card-border);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .mlbb__trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--mlbb-muted);
+    line-height: 1.3;
+  }
+  .mlbb__trust-icon {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+  }
+  .mlbb__trust-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .mlbb {
+      padding: 24px 0;
+    }
+    .mlbb__container {
+      padding: 0 16px;
+    }
+    .mlbb__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 16px;
+    }
+    .mlbb__media {
+      grid-template-columns: 56px 1fr;
+      gap: 8px;
+    }
+    .mlbb__thumb {
+      width: 56px;
+      height: 56px;
+    }
+    .mlbb__title {
+      font-size: 20px;
+    }
+    .mlbb__price-current {
+      font-size: 22px;
+    }
+    .mlbb__pack {
+      min-height: 70px;
+      padding: 10px 6px;
+    }
+    .mlbb__pack-name {
+      font-size: 13px;
+    }
+    .mlbb__cta {
+      font-size: 15px;
+      min-height: 52px;
+    }
+    .mlbb__trust {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .mlbb__trust-item {
+      font-size: 10px;
+    }
+  }
+</style>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Listicle Buy Box",
+  "tag": "section",
+  "class": "section-maison-listicle-buy-box",
+  "settings": [
+    { "type": "header", "content": "Product" },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "title_override",
+      "label": "Title (override)",
+      "info": "Leave empty to use the product's own title."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Short description"
+    },
+
+    { "type": "header", "content": "Limited time banner (top)" },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner text",
+      "info": "Leave empty to hide the top banner.",
+      "default": "Limited Time: Summer Sale | Up to 32% Off"
+    },
+    { "type": "color", "id": "banner_bg", "label": "Banner background", "default": "#F4A09C" },
+    { "type": "color", "id": "banner_text_color", "label": "Banner text", "default": "#3B2B2F" },
+
+    { "type": "header", "content": "Rating" },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Rating value",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.8
+    },
+    {
+      "type": "text",
+      "id": "reviews_count",
+      "label": "Reviews count text",
+      "default": "8,450+"
+    },
+    { "type": "color", "id": "star_color", "label": "Star color", "default": "#FBAA19" },
+
+    { "type": "header", "content": "Pricing" },
+    {
+      "type": "range",
+      "id": "subscription_multiplier",
+      "label": "Subscription multiplier",
+      "info": "0.8 = 20% off subscription. Used when a pack has a selling plan.",
+      "min": 0.5,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.8
+    },
+    {
+      "type": "checkbox",
+      "id": "subscription_default_selected",
+      "label": "Default to Subscribe & Save",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "onetime_label",
+      "label": "One-time purchase label",
+      "default": "One-Time Purchase"
+    },
+
+    { "type": "header", "content": "Nutritional info button" },
+    {
+      "type": "checkbox",
+      "id": "show_nutritional_button",
+      "label": "Show Nutritional Information button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "nutritional_button_text",
+      "label": "Button text",
+      "default": "Nutritional Information"
+    },
+
+    { "type": "header", "content": "Stock & CTA" },
+    {
+      "type": "text",
+      "id": "stock_text",
+      "label": "Stock indicator text",
+      "default": "In Stock · Ships in 2–3 days from our US warehouse"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA button text",
+      "default": "Start Now →"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_disclaimer",
+      "label": "CTA disclaimer",
+      "default": "Subscription orders billed every 4 weeks · $24.95 + free shipping · Skip or cancel anytime"
+    },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color_background", "id": "bg_color", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#E5E0D5" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#3B2B2F" },
+    { "type": "color", "id": "muted_color", "label": "Muted text", "default": "#3B2B2F99" },
+    { "type": "color", "id": "pack_border", "label": "Pack tile border", "default": "#E5E0D5" },
+    { "type": "color", "id": "pack_active_border", "label": "Pack tile active border", "default": "#3B2B2F" },
+    { "type": "color", "id": "save_bg", "label": "Save badge background", "default": "#F4A09C" },
+    { "type": "color", "id": "save_text_color", "label": "Save badge text", "default": "#3B2B2F" },
+    { "type": "color", "id": "cta_bg", "label": "CTA background", "default": "#2EAA63" },
+    { "type": "color", "id": "cta_text_color", "label": "CTA text", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "pack_option",
+      "name": "Pack Option",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "pack_name", "label": "Pack name", "default": "1 Pack" },
+        {
+          "type": "range",
+          "id": "bottle_count",
+          "label": "Bottle count (quantity)",
+          "min": 1, "max": 5, "step": 1,
+          "default": 1
+        },
+        { "type": "text", "id": "badge_text", "label": "Badge text", "info": "E.g., 'Save 5%'. Empty for none." },
+        { "type": "text", "id": "discount_multiplier", "label": "Discount multiplier (legacy)", "default": "1" },
+        { "type": "number", "id": "price_per_unit", "label": "Price per unit (cents)", "info": "E.g. 2495 = $24.95. Overrides multiplier." },
+        { "type": "text", "id": "selling_plan_id", "label": "Subscription Plan ID (Loop)" },
+        { "type": "text", "id": "frequency_label", "label": "Frequency label", "info": "E.g. 'Ships every 4 weeks'." },
+        { "type": "checkbox", "id": "is_default_selected", "label": "Default selected", "default": false },
+        { "type": "checkbox", "id": "show_best_value", "label": "Show 'BEST VALUE' tag", "default": false }
+      ]
+    },
+    {
+      "type": "trust_badge",
+      "name": "Trust badge",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "text", "label": "Text", "default": "60 Day Money Back" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Buy Box",
+      "blocks": [
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "1 Pack",
+            "bottle_count": 1,
+            "price_per_unit": 3995,
+            "is_default_selected": true
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "2 Packs",
+            "bottle_count": 2,
+            "price_per_unit": 3795,
+            "badge_text": "Save 5%"
+          }
+        },
+        {
+          "type": "pack_option",
+          "settings": {
+            "pack_name": "3 Packs",
+            "bottle_count": 3,
+            "price_per_unit": 3595,
+            "badge_text": "Save 10%",
+            "show_best_value": true
+          }
+        },
+        { "type": "trust_badge", "settings": { "text": "60 Day Money Back" } },
+        { "type": "trust_badge", "settings": { "text": "Pause or Cancel Anytime" } },
+        { "type": "trust_badge", "settings": { "text": "Trusted by 8500+ verified" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

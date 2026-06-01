@@ -267,6 +267,9 @@
         "marquee_speed": 20
       }
     },
+    "buy_box": {
+      "type": "maison-listicle-buy-box"
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -303,6 +306,7 @@
     "morning_routine",
     "built_for_morning",
     "maison_badge_list_CPyDpR",
+    "buy_box",
     "footer",
     "sticky_cta",
     "main"
