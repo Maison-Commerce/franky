@@ -502,6 +502,49 @@
         "photo_review_rqLmWr": {
           "type": "photo_review",
           "settings": {
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_KhRmU8": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154204032_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_TzhDGF": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_BEQANt": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_aPf96y": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/Taste Reaction_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_U9YXUU": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/AD7_Beth_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_aUwyzC": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/30ee5739_web.mp4",
             "video_url": ""
           }
         }
@@ -512,7 +555,13 @@
         "text_review_kaBeHi",
         "text_review_C4mCpx",
         "text_review_weaAhA",
-        "photo_review_rqLmWr"
+        "photo_review_rqLmWr",
+        "photo_review_KhRmU8",
+        "photo_review_TzhDGF",
+        "photo_review_BEQANt",
+        "photo_review_aPf96y",
+        "photo_review_U9YXUU",
+        "photo_review_aUwyzC"
       ],
       "settings": {
         "bg_color": "#FFFFFF",
