@@ -412,7 +412,7 @@
         "rating": 4.8,
         "reviews_count": "8,450+",
         "star_color": "#fbaa19",
-        "subscription_multiplier": 0.8,
+        "subscription_multiplier": 0.85,
         "subscription_default_selected": true,
         "subscribe_label": "Subscribe & Save",
         "onetime_label": "One-Time Purchase",

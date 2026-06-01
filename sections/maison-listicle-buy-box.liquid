@@ -384,7 +384,7 @@
 
   window.mlbbConfig = window.mlbbConfig || {};
   window.mlbbConfig["{{ section.id }}"] = {
-    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.8' | json }}) || 0.8,
+    subscriptionMultiplier: parseFloat({{ s.subscription_multiplier | default: '0.85' | json }}) || 0.85,
     subscriptionDefaultSelected: {{ s.subscription_default_selected | default: true }},
     moneyFormat: {{ shop.money_format | json }},
     onetimeLabel: {{ s.onetime_label | default: 'One-Time Purchase' | json }},
@@ -1323,9 +1323,9 @@
       "type": "range",
       "id": "subscription_multiplier",
       "label": "Subscription multiplier",
-      "info": "0.8 = 20% off subscription. Used when a pack has a selling plan.",
-      "min": 0.5, "max": 1, "step": 0.1,
-      "default": 0.8
+      "info": "0.85 = 15% off subscription. Used when a pack has a selling plan. Must match the Loop subscription plan discount.",
+      "min": 0.5, "max": 1, "step": 0.05,
+      "default": 0.85
     },
     {
       "type": "checkbox",
