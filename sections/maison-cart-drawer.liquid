@@ -631,7 +631,22 @@
         // Packs / listicle bundle item with quantity-dependent selling plan:
         // use /cart/change.js to also swap the plan so the displayed frequency
         // matches the new quantity tier (e.g. "Every 4 weeks" -> "Every 6 weeks").
-        const planByQty = window.sellingPlanByQuantity || {};
+        //
+        // Resolution order for the qty -> plan map:
+        //   1. _qty_plans line-item property (set at ATC time) — works on
+        //      any page, since the data travels with the cart line.
+        //   2. window.sellingPlanByQuantity — fallback for sections that
+        //      populate it (PDP hero, listicle buy-box).
+        let planByQty = {};
+        const itemPlansJson = item?.properties?._qty_plans;
+        if (typeof itemPlansJson === 'string' && itemPlansJson.length > 0) {
+          try { planByQty = JSON.parse(itemPlansJson) || {}; }
+          catch (_) { planByQty = {}; }
+        }
+        if (Object.keys(planByQty).length === 0) {
+          planByQty = window.sellingPlanByQuantity || {};
+        }
+
         const qtyDependentBuckets = ['packs_', 'bundle_listicle'];
         const isQtyDependentItem = typeof discountBucket === 'string'
           && qtyDependentBuckets.some(prefix => discountBucket === prefix || discountBucket.startsWith(prefix));

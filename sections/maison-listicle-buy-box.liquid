@@ -512,6 +512,16 @@
         if (forceMode === 'onetime') useSubscription = false;
         const sellingPlan = (useSubscription && pack && pack.sellingPlanId) ? pack.sellingPlanId : null;
         const bucket = cfg.discountBucket || 'bundle_listicle';
+
+        // Build qty -> selling_plan map so the cart drawer can swap the plan
+        // when the customer changes quantity later — on ANY page, not just
+        // this listicle. Stored as a stringified JSON line-item property so
+        // it travels with the cart line.
+        const qtyPlans = {};
+        packs.forEach(function (p) {
+          if (p.sellingPlanId) qtyPlans[p.bottleCount] = p.sellingPlanId;
+        });
+
         const selections = this.flavorSelections.slice(0, this.quantity);
         const grouped = {};
         selections.forEach(variantId => {
@@ -519,10 +529,14 @@
           grouped[variantId] = (grouped[variantId] || 0) + 1;
         });
         return Object.keys(grouped).map(variantId => {
+          const properties = { _mc_discount_bucket: bucket };
+          if (Object.keys(qtyPlans).length > 0) {
+            properties._qty_plans = JSON.stringify(qtyPlans);
+          }
           const item = {
             id: parseInt(variantId),
             quantity: grouped[variantId],
-            properties: { _mc_discount_bucket: bucket }
+            properties: properties
           };
           if (sellingPlan) item.selling_plan = sellingPlan;
           return item;
