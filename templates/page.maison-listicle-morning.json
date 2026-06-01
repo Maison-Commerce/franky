@@ -191,6 +191,82 @@
         "cta_text_color": "#f7f3e6"
       }
     },
+    "maison_badge_list_CPyDpR": {
+      "type": "maison-badge-list",
+      "blocks": {
+        "badge_iYbiKY": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/Non-Gmo-Lab--Streamline-Ultimate.png",
+            "text": "Real Coffee"
+          }
+        },
+        "badge_cnyECy": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/Bread-Gluten-Free--Streamline-Ultimate.png",
+            "text": "Gluten-Free"
+          }
+        },
+        "badge_PAXztz": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/wagawg32gr.png",
+            "text": "No Added Sugar"
+          }
+        },
+        "badge_LHfg3R": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/sebebrfbrbt.png",
+            "text": "10g Protein"
+          }
+        },
+        "badge_iLcmXh": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/jabvaeegasge.png",
+            "text": "No Fillers"
+          }
+        },
+        "badge_6efWkR": {
+          "type": "badge",
+          "settings": {
+            "icon": "shopify://shop_images/jagw4grbt.png",
+            "text": "Non-GMO"
+          }
+        }
+      },
+      "block_order": [
+        "badge_iYbiKY",
+        "badge_cnyECy",
+        "badge_PAXztz",
+        "badge_LHfg3R",
+        "badge_iLcmXh",
+        "badge_6efWkR"
+      ],
+      "name": "Maison Badge List",
+      "settings": {
+        "padding_top_desktop": 12,
+        "padding_bottom_desktop": 12,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "linear-gradient(0deg, rgba(59, 43, 47, 1), rgba(59, 43, 47, 1) 100%)",
+        "badge_text_font_size_desktop": 16,
+        "badge_text_font_size_mobile": 14,
+        "badge_text_color": "#ffffff",
+        "icon_size_desktop": 24,
+        "icon_size_mobile": 24,
+        "badge_gap_desktop": 8,
+        "badge_gap_mobile": 18,
+        "icon_text_gap": 12,
+        "marquee_speed": 20
+      }
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -226,6 +302,7 @@
     "hero",
     "morning_routine",
     "built_for_morning",
+    "maison_badge_list_CPyDpR",
     "footer",
     "sticky_cta",
     "main"
