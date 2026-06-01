@@ -788,6 +788,107 @@
         "row_value_color_featured": "#3b2b2f"
       }
     },
+    "maison_introducing_kPpEwH": {
+      "type": "maison-introducing",
+      "blocks": {
+        "feature_gT7mHB": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "Sustained Energy",
+            "description": "Real coffee + 20g complete protein = steady focus that holds without the crash."
+          }
+        },
+        "feature_eeCiCX": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/awfawfwf.svg",
+            "title": "Complete Functional Blend",
+            "description": "Protein, L-theanine, balanced caffeine, prebiotics, and fiber — all in one cup. Nothing missing."
+          }
+        },
+        "feature_VwkV7g": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/sfawfwfw.svg",
+            "title": "Effortless Daily Routine",
+            "description": "Replaces breakfast and coffee in under 60 seconds. Subscribed means it's always there."
+          }
+        },
+        "trust_badge_tPbCth": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/Shield-Check--Streamline-Plump-Remix.svg",
+            "text": "GMP-Certified Facility"
+          }
+        },
+        "trust_badge_kYJJzQ": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/la_flag-usa.svg",
+            "text": "Made in USA"
+          }
+        },
+        "trust_badge_aWtKpw": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "shopify://shop_images/hugeicons_leaf-01.svg",
+            "text": "Third-Party Lab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "feature_gT7mHB",
+        "feature_eeCiCX",
+        "feature_VwkV7g",
+        "trust_badge_tPbCth",
+        "trust_badge_kYJJzQ",
+        "trust_badge_aWtKpw"
+      ],
+      "name": "Maison Introducing",
+      "settings": {
+        "row": "row-reverse",
+        "mobile_image_position": "top",
+        "text_align": "center",
+        "product_image_desktop": "shopify://shop_images/Franky_08.png",
+        "product_image_mobile": "shopify://shop_images/Franky_08.png",
+        "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
+        "desc": "",
+        "social_proof_text": "Join",
+        "social_proof_count": "our customers",
+        "social_proof_suffix": "who've upgraded their mornings with FRANKY",
+        "avatar_1": "shopify://shop_images/avatar-1.png",
+        "avatar_2": "shopify://shop_images/avatar-2.png",
+        "avatar_3": "shopify://shop_images/avatar-3.png",
+        "button_text": "START MY SUBSCRIPTION",
+        "button_link": "shopify://products/franky-protein-coffee",
+        "padding_top_desktop": 70,
+        "padding_bottom_desktop": 70,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10,
+        "padding_left_mobile": 16,
+        "padding_right_mobile": 16,
+        "section_bg_color": "#fcfeff",
+        "heading_font_size_desktop": 40,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#3b2b2f",
+        "feature_title_font_size_desktop": 18,
+        "feature_title_font_size_mobile": 18,
+        "feature_description_font_size_desktop": 18,
+        "feature_description_font_size_mobile": 14,
+        "feature_text_color": "#3b2b2f",
+        "social_proof_font_size": 12,
+        "social_proof_color": "#3b2b2f",
+        "button_bg_color": "#3b2b2f",
+        "button_text_color": "#fbfbfb",
+        "button_font_size_desktop": 16,
+        "button_font_size_mobile": 14,
+        "trust_badge_font_size": 14,
+        "trust_badge_color": "#3b2b2f"
+      }
+    },
     "footer": {
       "type": "maison-listicle-footer",
       "settings": {
@@ -828,6 +929,7 @@
     "buy_box",
     "morning_upgrade",
     "maison_comp_flex_iMdMHJ",
+    "maison_introducing_kPpEwH",
     "footer",
     "sticky_cta",
     "main"
