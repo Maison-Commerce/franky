@@ -270,6 +270,55 @@
     "buy_box": {
       "type": "maison-listicle-buy-box",
       "blocks": {
+        "taste_tile_pfA6hY": {
+          "type": "taste_tile",
+          "settings": {
+            "image": "shopify://shop_images/list-pr-icon-taste-1.png",
+            "label": "Vanilla Hazelnut"
+          }
+        },
+        "taste_tile_qcADdi": {
+          "type": "taste_tile",
+          "settings": {
+            "image": "shopify://shop_images/list-pr-icon-taste-2.png",
+            "label": "Rich & Smooth"
+          }
+        },
+        "taste_tile_U4AQLN": {
+          "type": "taste_tile",
+          "settings": {
+            "image": "shopify://shop_images/list-pr-icon-taste-3.png",
+            "label": "Naturally Sweet"
+          }
+        },
+        "accordion_BcLhMA": {
+          "type": "accordion",
+          "settings": {
+            "title": "Benefits & Ingredients",
+            "body": ""
+          }
+        },
+        "accordion_HkGe3z": {
+          "type": "accordion",
+          "settings": {
+            "title": "How to Enjoy",
+            "body": ""
+          }
+        },
+        "accordion_NdcUbT": {
+          "type": "accordion",
+          "settings": {
+            "title": "Why Subscribe?",
+            "body": ""
+          }
+        },
+        "accordion_Qyr4RC": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "body": ""
+          }
+        },
         "trust_badge_YJjLwR": {
           "type": "trust_badge",
           "settings": {
@@ -338,6 +387,13 @@
         }
       },
       "block_order": [
+        "taste_tile_pfA6hY",
+        "taste_tile_qcADdi",
+        "taste_tile_U4AQLN",
+        "accordion_BcLhMA",
+        "accordion_HkGe3z",
+        "accordion_NdcUbT",
+        "accordion_Qyr4RC",
         "trust_badge_YJjLwR",
         "trust_badge_kQw9E7",
         "trust_badge_8fihWF",
