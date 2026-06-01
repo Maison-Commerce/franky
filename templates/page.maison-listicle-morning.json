@@ -449,20 +449,31 @@
     "morning_upgrade": {
       "type": "maison-listicle-morning-upgrade",
       "blocks": {
-        "review_4gGb6x": {
-          "type": "review",
+        "text_review_DNcREb": {
+          "type": "text_review",
+          "settings": {
+            "rating": 5,
+            "date_text": "Bought on 14 August 2025",
+            "quote": "I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.",
+            "reviewer_name": "Sarah K.",
+            "verified_label": "Verified Buyer"
+          }
+        },
+        "photo_review_rqLmWr": {
+          "type": "photo_review",
           "settings": {
             "video_url": "",
             "rating": 5,
-            "date_text": "Bought on 14 August 2025",
-            "quote": "The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.",
-            "reviewer_name": "James T.",
-            "verified_label": "Verified Buyer"
+            "date_text": "",
+            "quote": "",
+            "reviewer_name": "",
+            "verified_label": ""
           }
         }
       },
       "block_order": [
-        "review_4gGb6x"
+        "text_review_DNcREb",
+        "photo_review_rqLmWr"
       ],
       "settings": {
         "bg_color": "#FFFFFF",
@@ -523,4 +534,3 @@
     "main"
   ]
 }
-
