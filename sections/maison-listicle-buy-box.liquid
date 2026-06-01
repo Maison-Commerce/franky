@@ -209,7 +209,7 @@
         {%- endif -%}
 
         {%- comment -%} ===== FLAVOR PACK DROPDOWNS (N = quantity) ===== {%- endcomment -%}
-        {%- if p.variants.size > 1 -%}
+        {%- if p.variants.size > 0 -%}
           <div class="mlbb__flavors">
             <template x-for="(idx, i) in Array.from({length: quantity}, (_, k) => k + 1)" :key="i">
               <div class="mlbb__flavor-row">
