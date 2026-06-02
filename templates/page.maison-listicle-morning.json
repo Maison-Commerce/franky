@@ -634,7 +634,7 @@
           "settings": {
             "label_col1": "Fiber",
             "value_col1": "No",
-            "label_featured": "Brain Boosting MCTs",
+            "label_featured": "Fiber",
             "value_featured": "Yes",
             "label_col3": "Fiber",
             "value_col3": "Fiber"
@@ -645,7 +645,7 @@
           "settings": {
             "label_col1": "Pre- & Probiotics",
             "value_col1": "Sometimes",
-            "label_featured": "Prebiotics",
+            "label_featured": "Pre- & Probiotics",
             "value_featured": "Yes",
             "label_col3": "Pre- & Probiotics",
             "value_col3": "Sometimes"
