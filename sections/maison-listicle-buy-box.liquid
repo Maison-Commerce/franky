@@ -746,6 +746,7 @@
     padding: 16px 20px;
     font-size: 14px;
     color: var(--mlbb-text);
+    margin-top: 16px;
   }
   .mlbb__nutrition-body p { margin: 0 0 0.5em 0; }
   .mlbb__nutrition-body p:last-child { margin-bottom: 0; }
@@ -1178,6 +1179,29 @@
   }
   .mlbb__acc-body p { margin: 0 0 0.5em 0; }
   .mlbb__acc-body p:last-child { margin-bottom: 0; }
+  .mlbb__acc-body ul,
+  .mlbb__acc-body ol {
+    margin: 0 0 0.75em 0;
+    padding-left: 1.5em;
+  }
+  .mlbb__acc-body ul:last-child,
+  .mlbb__acc-body ol:last-child {
+    margin-bottom: 0;
+  }
+  .mlbb__acc-body ul { list-style: disc; }
+  .mlbb__acc-body ol { list-style: decimal; }
+  .mlbb__acc-body li {
+    margin: 0 0 0.25em 0;
+    padding-left: 0.25em;
+  }
+  .mlbb__acc-body li:last-child { margin-bottom: 0; }
+  .mlbb__acc-body li::marker { color: var(--mlbb-text); }
+  .mlbb__acc-body a {
+    color: var(--mlbb-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .mlbb__acc-body strong { color: var(--mlbb-text); font-weight: 600; }
 
   /* Tastes Like */
   .mlbb__tastes {
@@ -1257,6 +1281,9 @@
     .mlbb__grid {
       grid-template-columns: 1fr;
       gap: 24px;
+    }
+    .mlbb__acc-title {
+      font-size: 14px;
     }
     /* Gallery becomes single column on mobile: image on top,
        thumbs in a horizontal scrollable row below it. */
