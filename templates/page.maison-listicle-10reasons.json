@@ -111,11 +111,11 @@
             "image": "shopify://shop_images/list-1.png",
             "badge_text": "☕ Coffee. Reinvented.",
             "number_override": "",
-            "title": "NEW innovative guilt-free formula designed to fuel your body",
-            "body": "<p>Franky created an iced coffee that works for your body instead of against it. The combination of protein, real coffee, and functional ingredients is built around feeling your best, recovering faster, and staying focused longer.</p>",
+            "title": "Meet FRANKY: the iced coffee that works with your body",
+            "body": "<p>Most protein coffees are just powder with a coffee flavor. FRANKY is the opposite. We start with real coffee, then load every cup with 10g of protein, fiber, probiotics, and functional ingredients. The result is a cold, creamy drink that fills you up, keeps your energy steady, and helps you recover.</p>",
             "cta_prefix": "👉",
-            "cta_text": "",
-            "cta_url": ""
+            "cta_text": "See What's Inside",
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_02": {
