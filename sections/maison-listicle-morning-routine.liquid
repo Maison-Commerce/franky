@@ -291,15 +291,24 @@
       padding: 0 20px;
       gap: 28px;
     }
+    /* Flatten .mlmr__content so its children sit alongside .mlmr__media
+       under .mlmr__container — order them: head (title+subtitle) → media
+       (image) → features. */
+    .mlmr__content {
+      display: contents;
+    }
+    .mlmr__head {
+      order: 1;
+      text-align: center;
+      align-self: center;
+      align-items: center;
+      width: 100%;
+    }
     .mlmr__media {
       order: 2;
     }
-    .mlmr__content {
-      order: 1;
-      gap: 28px;
-      padding-top: 0;
-      text-align: center;
-      align-items: center;
+    .mlmr__features {
+      order: 3;
     }
     .mlmr__title {
       font-size: 32px;
