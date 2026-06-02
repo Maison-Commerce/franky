@@ -54,7 +54,7 @@
           "type": "comparison_row",
           "settings": {
             "label": "🥄 Sugar",
-            "franky_value": "<1g",
+            "franky_value": "0g",
             "franky_sub": "",
             "competitor_1": "20–50g",
             "competitor_2": "5g or artificial"
