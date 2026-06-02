@@ -75,7 +75,7 @@
         "subtitle": "If you're on a GLP-1, your old breakfast routine probably isn't working anymore. Here's what's quietly changing — and why.",
         "updated": "<p><strong>Updated:</strong> May 24, 2026</p>",
         "cta_text": "See the 7 Reasons",
-        "cta_url": "",
+        "cta_url": "#list-items-7-list",
         "mobile_image": "shopify://shop_images/list-hero-img-mob.png"
       }
     },
@@ -87,7 +87,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-11.png",
             "number_override": "",
-            "title": "Eating less only works if you're still getting enough protein",
+            "title": "<p>Eating less only works if you're still getting enough protein</p>",
             "body": "<p>GLP-1s kill your appetite. That's the point. But eating less also means less protein — and that's how fatigue, muscle loss, and stalled results creep in after a few months. The fix isn't forcing yourself to eat more. It's making the little you do eat pull serious weight. That's why GLP-1 users are swapping plain coffee for Franky — same morning ritual, 20 grams of real whey protein already built in.</p>",
             "pill": "<p><strong>✦ 20g OF COMPLETE</strong> WHEY PROTEIN PER SERVING</p>"
           }
@@ -97,7 +97,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-12.png",
             "number_override": "",
-            "title": "GLP-1s slow everything down. (Including your digestion.)",
+            "title": "<p>GLP-1s slow everything down. (Including your digestion.)</p>",
             "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
             "pill": "<p><strong>✦ PREBIOTICS BUILT IN</strong> - NO EXTRA PRODUCTS</p>"
           }
@@ -107,7 +107,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-13.png",
             "number_override": "",
-            "title": "Your appetite shrank. Your body's needs didn't.",
+            "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
             "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
             "pill": "<p><strong>✦ WORKS WHEN FOOD DOESN'T SOUND GOOD</strong></p>"
           }
@@ -117,7 +117,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-14.png",
             "number_override": "",
-            "title": "Protect your muscle while the weight comes off",
+            "title": "<p>Protect your muscle while the weight comes off</p>",
             "body": "<p>A GLP-1 can quietly cost you strength, tone, and metabolism — especially once protein intake drops alongside appetite. The goal was never to just weigh less. It was to look and feel better in the process. Twenty grams of protein before lunch, every morning, without cooking or choking down a shake, is one of the simplest ways to protect that.</p>",
             "pill": "<p><strong>✦ 20g PROTEIN</strong> · &lt;1g SUGAR</p>"
           }
@@ -127,7 +127,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-15.png",
             "number_override": "",
-            "title": "Under-fueled energy hits different when you're on a GLP-1",
+            "title": "<p>Under-fueled energy hits different when you're on a GLP-1</p>",
             "body": "<p>Eating less. Somehow even more tired. Sound familiar? Caffeine alone is a short-term patch — that's why the afternoon crash keeps showing up even though \"nothing changed.\" Franky pairs 100mg of natural caffeine with 200mg of L-theanine specifically to smooth the curve. No jitter spike. No 11am dip. Just steady focus through your morning.</p>",
             "pill": "<p><strong>✦ 100mg CAFFEINE</strong> + 200mg L-THEANINE</p>"
           }
@@ -137,7 +137,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-16.png",
             "number_override": "",
-            "title": "If it's not easy, it won't stick",
+            "title": "<p>If it's not easy, it won't stick</p>",
             "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
             "pill": "<p><strong>✦ SCOOP. STIR. SIP.</strong></p>"
           }
@@ -147,7 +147,7 @@
           "settings": {
             "image": "shopify://shop_images/list-img-17.png",
             "number_override": "",
-            "title": "Consistency is the whole game — and this makes it cheap enough to keep",
+            "title": "<p>Consistency is the whole game — and this makes it cheap enough to keep</p>",
             "body": "<p>Long-term results come from one simple thing, repeated daily, even on the mornings you don't feel like it. On a GLP-1, that one thing has to do more than it used to. Protein. Prebiotics. Caffeine. Zero prep. One cup. And at under $2 a serving, it's a routine you can actually afford to keep.</p>",
             "pill": "<p><strong>✦ UNDER $2/SERVING</strong> VS. $5–$7 AT A COFFEE SHOP</p>"
           }
