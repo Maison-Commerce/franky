@@ -841,7 +841,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Can I cancel my subscription?",
-            "answer": "<p>Yes — anytime, in two clicks. Log in to your account, open \"Subscriptions\" and hit Cancel — no calls, no hold music, no cancellation form. You can also pause it (skip the next delivery) or change the cadence from the same page if you just need a break instead of stopping.</p><p>Or email us at <a href=\"mailto:hello@drinkfranky.com\" target=\"_blank\"><strong>hello@drinkfranky.com</strong></a> and we'll handle it for you — usually within a few hours during business days.</p><p>You're not locked into a contract. The first month is risk-free with our 30-day money-back guarantee, and after that you decide when (or if) the next bag ships.</p>"
+            "answer": "<p>Yes — anytime, in two clicks from your account → Subscriptions. No fees, no contract, no cancellation form. Need a break instead? Skip an order or change the cadence from the same page.</p>"
           }
         }
       },
