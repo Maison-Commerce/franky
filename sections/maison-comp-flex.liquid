@@ -19,10 +19,10 @@
       "default": 410
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "section_subtitle",
       "label": "Section Subtitle",
-      "default": "This isn't about discipline. Your body needs fuel, not just stimulation."
+      "default": "<p>This isn't about discipline. Your body needs fuel, not just stimulation.</p>"
     },
     {
       "type": "range",
@@ -409,7 +409,7 @@
         <h2 class="maison_commerce_comp_flex__heading">{{ section.settings.section_heading }}</h2>
       {%- endif -%}
       {%- if section.settings.section_subtitle != blank -%}
-        <p class="maison_commerce_comp_flex__subtitle">{{ section.settings.section_subtitle }}</p>
+        <div class="maison_commerce_comp_flex__subtitle">{{ section.settings.section_subtitle }}</div>
       {%- endif -%}
     </div>
 
@@ -557,7 +557,6 @@
     max-width: {{ section.settings.heading_max_width_desktop }}px;
   }
   .maison_commerce_comp_flex__heading > p { margin: 0; }
-  .maison_commerce_comp_flex__heading > p + p { margin-top: 0.25em; }
   .maison_commerce_comp_flex__heading em { font-style: italic; }
   .maison_commerce_comp_flex__heading strong { font-weight: 600; }
 
@@ -569,6 +568,15 @@
     color: {{ section.settings.subtitle_color }};
     opacity: {{ section.settings.subtitle_opacity | divided_by: 100.0 }};
     margin: 0;
+  }
+  .maison_commerce_comp_flex__subtitle > p { margin: 0; }
+  .maison_commerce_comp_flex__subtitle > p + p { margin-top: 0.5em; }
+  .maison_commerce_comp_flex__subtitle em { font-style: italic; }
+  .maison_commerce_comp_flex__subtitle strong { font-weight: 600; }
+  .maison_commerce_comp_flex__subtitle a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   /* ── Cards layout ── */
