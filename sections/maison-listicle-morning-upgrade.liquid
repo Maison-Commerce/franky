@@ -139,10 +139,14 @@
                   section-level modal. Sources are embedded as an HTML-escaped
                   JSON string on a data attribute, then parsed on click — that
                   avoids the double-quote-inside-double-quote attribute trap.
+                  Poster resolution order: client-set image > Shopify's
+                  auto-generated video.preview_image > beige placeholder.
                 {%- endcomment -%}
                 {%- capture video_sources_json -%}[{%- for source in block.settings.video.sources -%}{"url":{{ source.url | json }},"type":{{ source.mime_type | json }}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]{%- endcapture -%}
                 {%- if block.settings.image != blank -%}
                   {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
+                {%- elsif block.settings.video.preview_image != blank -%}
+                  {{ block.settings.video.preview_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
                 {%- else -%}
                   <div class="mlmu__photo-img mlmu__photo-img--placeholder" aria-hidden="true"></div>
                 {%- endif -%}
