@@ -246,13 +246,13 @@
         {%- endfor -%}
       {%- endcapture -%}
 
-      <div class="mlmu__viewport">
+      <div class="mlmu__viewport mlmu__viewport--text-row-1">
         <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.text_top_duration_seconds | default: 70 }}s;">
           {{ text_card_set }}
           {{ text_card_set }}
         </div>
       </div>
-      <div class="mlmu__viewport">
+      <div class="mlmu__viewport mlmu__viewport--text-row-2">
         <div class="mlmu__track" style="--mlmu-slide-duration: {{ s.text_bottom_duration_seconds | default: 80 }}s;">
           {{ text_card_set_reversed }}
           {{ text_card_set_reversed }}
@@ -554,6 +554,10 @@
     }
     .mlmu__rating {
       font-size: 12px;
+    }
+    /* Show a single text-reviews marquee on mobile */
+    .mlmu__viewport--text-row-2 {
+      display: none;
     }
   }
 
