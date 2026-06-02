@@ -39,7 +39,21 @@
 
           <div class="mli2__media">
             <div class="mli2__image-wrap">
-              {%- if block.settings.image != blank -%}
+              {%- if block.settings.media_type == 'video' and block.settings.video != blank -%}
+                <video
+                  class="mli2__image mli2__video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  {% if block.settings.image != blank %}poster="{{ block.settings.image | image_url: width: 1200 }}"{% endif %}
+                >
+                  {%- for source in block.settings.video.sources -%}
+                    <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                  {%- endfor -%}
+                </video>
+              {%- elsif block.settings.image != blank -%}
                 {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'mli2__image', sizes: '(max-width: 768px) 100vw, 560px' }}
               {%- else -%}
                 <div class="mli2__image mli2__image--placeholder" aria-hidden="true"></div>
@@ -272,11 +286,29 @@
       "name": "Item",
       "limit": 20,
       "settings": [
-        { "type": "header", "content": "Image" },
+        { "type": "header", "content": "Media" },
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Video" }
+          ],
+          "default": "image",
+          "info": "Choose whether this item shows an image or a video."
+        },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Image",
+          "info": "Used when Media type is Image. Also used as the video poster/fallback."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Used when Media type is Video. Plays muted, looped and autoplays."
         },
         { "type": "header", "content": "Text" },
         {
