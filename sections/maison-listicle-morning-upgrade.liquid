@@ -69,6 +69,42 @@
   id="shopify-section-{{ section.id }}-morning-upgrade"
   class="mlmu"
   style="--mlmu-bg: {{ s.bg_color }}; --mlmu-text: {{ s.text_color }}; --mlmu-muted: {{ s.muted_color }}; --mlmu-card-bg: {{ s.card_bg }}; --mlmu-card-border: {{ s.card_border }}; --mlmu-author-bg: {{ s.author_pill_bg }}; --mlmu-verified: {{ s.verified_color }};"
+  x-data="{
+    videoOpen: false,
+    activeSources: [],
+    openVideo(sources) {
+      this.activeSources = Array.isArray(sources) ? sources : [];
+      this.videoOpen = true;
+      document.documentElement.classList.add('mlmu-modal-open');
+      this.$nextTick(() => {
+        var vid = this.$refs.modalVid;
+        if (!vid) return;
+        while (vid.firstChild) vid.removeChild(vid.firstChild);
+        this.activeSources.forEach(function (src) {
+          var node = document.createElement('source');
+          node.src = src.url;
+          if (src.type) node.type = src.type;
+          vid.appendChild(node);
+        });
+        vid.load();
+        var p = vid.play();
+        if (p && typeof p.catch === 'function') p.catch(function () {});
+      });
+    },
+    closeVideo() {
+      var vid = this.$refs.modalVid;
+      if (vid) {
+        try { vid.pause(); } catch (_) {}
+        while (vid.firstChild) vid.removeChild(vid.firstChild);
+        vid.removeAttribute('src');
+        vid.load();
+      }
+      this.videoOpen = false;
+      this.activeSources = [];
+      document.documentElement.classList.remove('mlmu-modal-open');
+    }
+  }"
+  @keydown.escape.window="if (videoOpen) closeVideo()"
 >
   <div class="mlmu__container">
     <header class="mlmu__head">
@@ -98,33 +134,21 @@
           {%- for block in photo_blocks -%}
             <article class="mlmu__photo-card" {{ block.shopify_attributes }}>
               {%- if block.settings.video != blank -%}
-                {%- comment -%} Shopify-hosted video: click play button to start, native controls appear, marquee pauses {%- endcomment -%}
-                <div class="mlmu__video-wrap" x-data="{ playing: false }">
-                  <video
-                    x-ref="vid"
-                    class="mlmu__photo-video"
-                    :controls="playing"
-                    playsinline
-                    preload="metadata"
-                    {% if block.settings.image != blank %}poster="{{ block.settings.image | image_url: width: 600 }}"{% endif %}
-                    @ended="playing = false"
-                    @pause="playing = false"
-                    @play="playing = true"
-                  >
-                    {%- for source in block.settings.video.sources -%}
-                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
-                    {%- endfor -%}
-                  </video>
-                  <button
-                    type="button"
-                    class="mlmu__play mlmu__play--button"
-                    x-show="!playing"
-                    @click="$refs.vid.play()"
-                    aria-label="Play video review"
-                  >{{ play_icon }}</button>
-                </div>
+                {%- comment -%} Shopify-hosted video: poster + play button that opens the section-level modal {%- endcomment -%}
+                {%- capture video_sources_json -%}[{%- for source in block.settings.video.sources -%}{"url":{{ source.url | json }},"type":{{ source.mime_type | json }}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]{%- endcapture -%}
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
+                {%- else -%}
+                  <div class="mlmu__photo-img mlmu__photo-img--placeholder" aria-hidden="true"></div>
+                {%- endif -%}
+                <button
+                  type="button"
+                  class="mlmu__play mlmu__play--button"
+                  @click="openVideo({{ video_sources_json }})"
+                  aria-label="Play video review"
+                >{{ play_icon }}</button>
               {%- elsif block.settings.video_url != blank -%}
-                {%- comment -%} External video link: poster image + play button overlay {%- endcomment -%}
+                {%- comment -%} External video link: poster image + play button overlay (new tab) {%- endcomment -%}
                 <a class="mlmu__video-link" href="{{ block.settings.video_url }}" target="_blank" rel="noopener" aria-label="Play video review">
                   {%- if block.settings.image != blank -%}
                     {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
@@ -226,6 +250,39 @@
       </div>
     {%- endif -%}
   </div>
+
+  {%- comment -%} ===== VIDEO MODAL ===== {%- endcomment -%}
+  <div
+    class="mlmu__modal"
+    x-show="videoOpen"
+    x-cloak
+    role="dialog"
+    aria-modal="true"
+    aria-label="Video review"
+    @click.self="closeVideo()"
+    x-transition.opacity
+  >
+    <div class="mlmu__modal-inner" @click.stop>
+      <button
+        type="button"
+        class="mlmu__modal-close"
+        @click="closeVideo()"
+        aria-label="Close video"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <video
+        x-ref="modalVid"
+        class="mlmu__modal-video"
+        controls
+        playsinline
+        preload="metadata"
+      ></video>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -321,11 +378,6 @@
   @media (prefers-reduced-motion: reduce) {
     .mlmu__track { animation: none; transform: none; }
   }
-  /* Pause the marquee row when any embedded video is playing */
-  .mlmu__track:has(.mlmu__video-wrap [controls]) {
-    animation-play-state: paused;
-  }
-
   /* ===== Photo card (top row) ===== */
   .mlmu__photo-card {
     flex: 0 0 241px;
@@ -337,17 +389,12 @@
     background: #E5E0D5;
     box-sizing: border-box;
   }
-  .mlmu__video-wrap {
-    position: absolute;
-    inset: 0;
-  }
   .mlmu__play--button {
     appearance: none;
     border: none;
     cursor: pointer;
   }
-  .mlmu__photo-img,
-  .mlmu__photo-video {
+  .mlmu__photo-img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -495,6 +542,72 @@
       -webkit-mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
               mask-image: linear-gradient(to right, transparent, #000 16px, #000 calc(100% - 16px), transparent);
     }
+  }
+
+  /* ===== Video modal ===== */
+  .mlmu__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 10, 12, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .mlmu__modal-inner {
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    max-height: calc(100vh - 48px);
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  }
+  .mlmu__modal-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #000;
+  }
+  .mlmu__modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    appearance: none;
+    border: none;
+    background: rgba(15, 10, 12, 0.6);
+    color: #FFFFFF;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .mlmu__modal-close:hover,
+  .mlmu__modal-close:focus-visible {
+    background: rgba(15, 10, 12, 0.85);
+    outline: none;
+  }
+  /* Lock background scroll while the modal is open */
+  html.mlmu-modal-open,
+  html.mlmu-modal-open body {
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .mlmu__modal { padding: 12px; }
+    .mlmu__modal-close { width: 32px; height: 32px; top: 6px; right: 6px; }
   }
 </style>
 
