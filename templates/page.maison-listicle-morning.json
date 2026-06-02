@@ -665,7 +665,7 @@
         "heading_max_width_desktop": 470,
         "section_subtitle": "<p>This isn't about discipline. Your body needs fuel, not just stimulation. </p><p>The difference is what's in the cup.</p>",
         "heading_font_size_desktop": 40,
-        "heading_font_size_mobile": 24,
+        "heading_font_size_mobile": 32,
         "heading_color": "#3b2b2f",
         "subtitle_font_size_desktop": 18,
         "subtitle_font_size_mobile": 14,
@@ -692,7 +692,7 @@
         "col3_title": "Protein powder",
         "col3_image": "shopify://shop_images/geg3g4rgse.png",
         "row_font_size_desktop": 18,
-        "row_font_size_mobile": 14,
+        "row_font_size_mobile": 12,
         "row_label_color": "#3b2b2f",
         "row_value_color_competitor": "#92898b",
         "row_value_color_featured": "#3b2b2f"
