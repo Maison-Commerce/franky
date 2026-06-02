@@ -412,7 +412,7 @@
       "type": "maison-listicle-sticky-cta",
       "settings": {
         "button_text": "Proceed to Offer →",
-        "button_url": "",
+        "button_url": "shopify://products/franky-protein-coffee",
         "bg_color": "#ffffff",
         "border_color": "#3b2b2f33",
         "button_bg": "#3b2b2f",
