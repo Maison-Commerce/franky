@@ -568,10 +568,11 @@
   }
   .mlmu__modal-inner {
     position: relative;
-    width: 100%;
-    max-width: 920px;
-    max-height: calc(100vh - 48px);
-    aspect-ratio: 16 / 9;
+    /* Reviews are filmed vertically (9:16). Drive the panel from height so
+       the player stays as a portrait phone-sized rectangle on every screen. */
+    height: min(90vh, 780px);
+    aspect-ratio: 9 / 16;
+    max-width: calc(100vw - 48px);
     background: #000;
     border-radius: 14px;
     overflow: hidden;
