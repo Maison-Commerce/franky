@@ -799,6 +799,66 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
+    "maison_base_usps_CHyHVV": {
+      "type": "maison-base-usps",
+      "blocks": {
+        "usp_9JWJN7": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Shipment-Upload--Streamline-Ultimate.svg",
+            "title": "Free US Shipping",
+            "description": "On all orders over $50"
+          }
+        },
+        "usp_wmhDc8": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Frame.svg",
+            "title": "Subscribe & Save",
+            "description": "Save 15% with a subscription"
+          }
+        },
+        "usp_LJgzKX": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Love-Heart-Hands-Hold-3--Streamline-Ultimate.svg",
+            "title": "Exceptional Support",
+            "description": "Real humans, real help, 7 days a week"
+          }
+        }
+      },
+      "block_order": [
+        "usp_9JWJN7",
+        "usp_wmhDc8",
+        "usp_LJgzKX"
+      ],
+      "name": "Maison Base USPs",
+      "settings": {
+        "section_bg_color": "#fcfeff",
+        "padding_top_desktop": 44,
+        "padding_bottom_desktop": 44,
+        "padding_left_desktop": 60,
+        "padding_right_desktop": 60,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "card_gap_desktop": 40,
+        "card_gap_mobile": 24,
+        "icon_size": 70,
+        "icon_border_radius": 90,
+        "icon_bg_color": "#bdd9ef",
+        "icon_color": "#ffffff",
+        "title_font_size_desktop": 32,
+        "title_font_size_mobile": 24,
+        "title_line_height_desktop": 1.2,
+        "title_line_height_mobile": 1.3,
+        "title_color": "#3b2b2f",
+        "description_font_size_desktop": 16,
+        "description_font_size_mobile": 16,
+        "description_color": "#3b2b2f"
+      }
+    },
     "maison_faq_jKJakC": {
       "type": "maison-faq",
       "blocks": {
@@ -963,6 +1023,7 @@
     "morning_upgrade",
     "maison_comp_flex_iMdMHJ",
     "maison_introducing_kPpEwH",
+    "maison_base_usps_CHyHVV",
     "maison_faq_jKJakC",
     "maison_listicle_footer_rjfJ9W",
     "main"
