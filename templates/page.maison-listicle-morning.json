@@ -24,6 +24,31 @@
     },
     "hero": {
       "type": "maison-listicle-hero-morning",
+      "blocks": {
+        "feature_iCMHte": {
+          "type": "feature",
+          "settings": {
+            "label": "Sustained Energy"
+          }
+        },
+        "feature_b6tRVK": {
+          "type": "feature",
+          "settings": {
+            "label": "20g Protein"
+          }
+        },
+        "feature_XXwQKq": {
+          "type": "feature",
+          "settings": {
+            "label": "Zero Crash"
+          }
+        }
+      },
+      "block_order": [
+        "feature_iCMHte",
+        "feature_b6tRVK",
+        "feature_XXwQKq"
+      ],
       "settings": {
         "bg_color": "linear-gradient(180deg, rgba(251, 246, 234, 1), rgba(222, 234, 242, 1) 100%)",
         "text_color": "#3b2b2f",
@@ -401,6 +426,8 @@
         "onetime_label": "One-Time Purchase",
         "subscribe_disclaimer": "Subscription orders billed {frequency} · {price} + free shipping · Skip or cancel anytime",
         "discount_bucket": "bundle_listicle",
+        "post_add_action": "checkout",
+        "single_flavor_for_all_packs": true,
         "show_nutritional_button": true,
         "nutritional_button_text": "Nutritional Information",
         "nutritional_content": "<p><strong>Serving Size:</strong> 1 scoop (28 g) · <strong>Servings per bag:</strong> 30</p><p><strong>Per serving:</strong> 110 calories · 20 g whey protein · &lt;1 g sugar · 2 g carbs · 100 mg natural caffeine · 200 mg L-theanine · 3 g prebiotic fiber.</p><p><strong>Ingredients:</strong> Whey protein concentrate, instant coffee, natural vanilla flavor, organic hazelnut extract, L-theanine, prebiotic fiber blend (chicory root, acacia), monk fruit, sea salt.</p><p><em>Contains milk. Manufactured in a facility that also processes tree nuts.</em></p>",
