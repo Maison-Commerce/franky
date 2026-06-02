@@ -134,7 +134,12 @@
           {%- for block in photo_blocks -%}
             <article class="mlmu__photo-card" {{ block.shopify_attributes }}>
               {%- if block.settings.video != blank -%}
-                {%- comment -%} Shopify-hosted video: poster + play button that opens the section-level modal {%- endcomment -%}
+                {%- comment -%}
+                  Shopify-hosted video: poster + play button that opens the
+                  section-level modal. Sources are embedded as an HTML-escaped
+                  JSON string on a data attribute, then parsed on click — that
+                  avoids the double-quote-inside-double-quote attribute trap.
+                {%- endcomment -%}
                 {%- capture video_sources_json -%}[{%- for source in block.settings.video.sources -%}{"url":{{ source.url | json }},"type":{{ source.mime_type | json }}}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}]{%- endcapture -%}
                 {%- if block.settings.image != blank -%}
                   {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mlmu__photo-img', alt: 'Video review' }}
@@ -144,7 +149,8 @@
                 <button
                   type="button"
                   class="mlmu__play mlmu__play--button"
-                  @click="openVideo({{ video_sources_json }})"
+                  data-mlmu-sources="{{ video_sources_json | escape }}"
+                  @click="openVideo(JSON.parse($event.currentTarget.dataset.mlmuSources || '[]'))"
                   aria-label="Play video review"
                 >{{ play_icon }}</button>
               {%- elsif block.settings.video_url != blank -%}
