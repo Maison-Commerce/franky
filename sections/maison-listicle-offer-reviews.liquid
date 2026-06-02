@@ -408,6 +408,11 @@
   .mlor__reviews-track {
     --mlor-slide-gap: 20px;
     --mlor-slide-duration: 40s;
+    /* Distance to translate per loop. JS sets this in pixels after measuring
+       the first card-set; CSS fallback uses -50% so the marquee still works
+       before the script runs (close enough on Chrome, may stutter on Safari
+       which handles % + gap math differently in transform keyframes). */
+    --mlor-translate-distance: -50%;
     display: flex;
     gap: var(--mlor-slide-gap);
     align-items: stretch;
@@ -421,7 +426,7 @@
   }
   @keyframes mlor-marquee {
     from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(calc(-50% - var(--mlor-slide-gap) / 2), 0, 0); }
+    to   { transform: translate3d(var(--mlor-translate-distance), 0, 0); }
   }
   @media (prefers-reduced-motion: reduce) {
     .mlor__reviews-track {
@@ -592,6 +597,64 @@
 
     update();
     var timer = setInterval(update, 1000);
+  })();
+</script>
+
+<script>
+  /**
+   * Marquee distance fix — measures the width of the first card-set (half
+   * of the duplicated track) in pixels and sets it on --mlor-translate-distance.
+   * Safari's % + flexbox gap math inside transform keyframes is unreliable, so
+   * computing the exact pixel distance gives a seamless loop AND a consistent
+   * speed across browsers.
+   */
+  (function () {
+    var root = document.getElementById('shopify-section-{{ section.id }}-offer-reviews');
+    if (!root) return;
+    var track = root.querySelector('.mlor__reviews-track');
+    if (!track) return;
+
+    function measure() {
+      var cards = track.querySelectorAll('.mlor__review-card');
+      if (cards.length < 2) return;
+
+      var halfCount = Math.floor(cards.length / 2);
+      if (halfCount === 0) return;
+
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) || 0;
+
+      // Sum widths of the first card-set + the gap that follows each card in
+      // that set (the last card in the set is followed by a gap before the
+      // first card of the duplicate set — that's the gap we need to cover).
+      var distance = 0;
+      for (var i = 0; i < halfCount; i++) {
+        distance += cards[i].getBoundingClientRect().width + gap;
+      }
+      if (distance <= 0) return;
+
+      track.style.setProperty('--mlor-translate-distance', '-' + distance + 'px');
+    }
+
+    // Initial measure after fonts/images settle.
+    if (document.readyState === 'complete') {
+      measure();
+    } else {
+      window.addEventListener('load', measure, { once: true });
+    }
+    // Also measure on next frame in case images aren't loaded yet — covers SSR cache hits.
+    requestAnimationFrame(measure);
+
+    // Re-measure on viewport changes (debounced).
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(measure, 120);
+    });
+
+    // Re-measure if a thumbnail image loads after initial paint.
+    track.querySelectorAll('img').forEach(function (img) {
+      if (!img.complete) img.addEventListener('load', measure, { once: true });
+    });
   })();
 </script>
 
