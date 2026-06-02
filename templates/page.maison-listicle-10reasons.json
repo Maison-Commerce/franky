@@ -124,11 +124,11 @@
             "image": "shopify://shop_images/list-2.png",
             "badge_text": "🔒 Craving Control",
             "number_override": "",
-            "title": "Beats the sugar cravings to keep you feeling satisfied",
-            "body": "<p>The balanced blend of 20g of protein and natural caffeine helps cut the mid-morning sugar urge that derails most healthy routines. The result: you stay full longer and stop reaching for the sweet stuff at 11am.</p>",
+            "title": "Crushes sugar cravings before they crush your day",
+            "body": "<p>Those mid-day sugar cravings? Gone. FRANKY pairs 10g of protein per scoop (two for a full 20g) with a serious hit of fiber. The protein keeps you full for hours while the fiber steadies your blood sugar, so cravings never get the chance to build.</p>",
             "cta_prefix": "👉",
-            "cta_text": "",
-            "cta_url": ""
+            "cta_text": "Stay Full Longer",
+            "cta_url": "shopify://products/franky-protein-coffee"
           }
         },
         "item_03": {
