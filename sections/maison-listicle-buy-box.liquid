@@ -68,7 +68,7 @@
           </div>
 
           <div class="mlbb__main-image">
-            {%- for image in p.images limit: 6 -%}
+            {%- for image in p.images limit: 12 -%}
               <div class="mlbb__slide" x-show="activeImageIndex === {{ forloop.index0 }}">
                 {{ image | image_url: width: 1200 | image_tag: loading: 'eager', class: 'mlbb__main-img', alt: image.alt | default: p.title }}
               </div>
