@@ -1138,6 +1138,18 @@
             "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4"
           }
         },
+        "review_z3MKXm": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 21 Feb 2026",
+            "review_image": "shopify://shop_images/Customer_05.png",
+            "review_text": "<p>Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts</p>",
+            "reviewer_name": "Sophia, 31",
+            "verified_buyer": true
+          }
+        },
         "review_FT7eUG": {
           "type": "review",
           "settings": {
@@ -1154,18 +1166,6 @@
           "type": "video",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4"
-          }
-        },
-        "review_z3MKXm": {
-          "type": "review",
-          "settings": {
-            "slider_position": "top",
-            "rating": 5,
-            "purchase_date": "Purchased on 21 Feb 2026",
-            "review_image": "shopify://shop_images/Customer_05.png",
-            "review_text": "<p>Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts</p>",
-            "reviewer_name": "Sophia, 31",
-            "verified_buyer": true
           }
         },
         "review_FpXG9p": {
@@ -1271,9 +1271,9 @@
         "video_E6NaUR",
         "video_hnYthk",
         "video_3bqHpK",
+        "review_z3MKXm",
         "review_FT7eUG",
         "video_b6CnWJ",
-        "review_z3MKXm",
         "review_FpXG9p",
         "review_UATFJa",
         "review_WyUFjR",
@@ -1489,8 +1489,8 @@
         "row": "row-reverse",
         "mobile_image_position": "top",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_14.jpg",
-        "product_image_mobile": "shopify://shop_images/Franky_14.jpg",
+        "product_image_desktop": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
         "heading": "<p>The Science Behind Steady Energy</p>",
         "desc": "Caffeine wakes you up. Protein keeps you fueled. Lion's mane sharpens your focus. L-theanine smooths it all out. That's not a coincidence — that's the formula.",
         "social_proof_text": "",
@@ -1619,7 +1619,7 @@
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
         "heading_color": "#3b2b2f",
-        "image": "shopify://shop_images/Franky_02_59adcf53-434a-4b64-b86c-d6e1f5bd5666.png",
+        "image": "shopify://shop_images/Franky_03.jpg",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
