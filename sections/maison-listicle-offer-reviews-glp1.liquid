@@ -56,7 +56,23 @@
         {%- endif -%}
       </div>
 
-      {%- if s.promo_image != blank -%}
+      {%- if s.promo_media_type == 'video' and s.promo_video != blank -%}
+        <div class="mlor2__promo-image">
+          <video
+            class="mlor2__promo-image-img mlor2__promo-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            {% if s.promo_image != blank %}poster="{{ s.promo_image | image_url: width: 1200 }}"{% endif %}
+          >
+            {%- for source in s.promo_video.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        </div>
+      {%- elsif s.promo_image != blank -%}
         <div class="mlor2__promo-image">
           {{ s.promo_image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'mlor2__promo-image-img', sizes: '(max-width: 768px) 295px, 672px' }}
         </div>
@@ -557,9 +573,27 @@
       "default": "✨ We don't do this for everyone... this is a first-order deal, just for you."
     },
     {
+      "type": "select",
+      "id": "promo_media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether the card shows an image or a video."
+    },
+    {
       "type": "image_picker",
       "id": "promo_image",
-      "label": "Card image"
+      "label": "Card image",
+      "info": "Used when Media type is Image. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "promo_video",
+      "label": "Card video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     },
     { "type": "color", "id": "card_border", "label": "Card border", "default": "#99A9B6" },
 

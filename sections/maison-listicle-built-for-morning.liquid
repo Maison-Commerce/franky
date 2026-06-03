@@ -79,7 +79,21 @@
 
     <div class="mlbm__media">
       <div class="mlbm__image-wrap">
-        {%- if s.image != blank -%}
+        {%- if s.media_type == 'video' and s.video != blank -%}
+          <video
+            class="mlbm__image mlbm__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            {% if s.image != blank %}poster="{{ s.image | image_url: width: 1200 }}"{% endif %}
+          >
+            {%- for source in s.video.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        {%- elsif s.image != blank -%}
           {{ s.image | image_url: width: 1200 | image_tag:
             loading: 'lazy',
             class: 'mlbm__image',
@@ -381,11 +395,29 @@
       "default": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers."
     },
 
-    { "type": "header", "content": "Image" },
+    { "type": "header", "content": "Media" },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether this shows an image or a video."
+    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Image",
+      "info": "Used when Media type is Image. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     },
     {
       "type": "range",

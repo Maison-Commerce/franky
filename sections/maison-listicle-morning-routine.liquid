@@ -30,7 +30,21 @@
   <div class="mlmr__container">
     <div class="mlmr__media">
       <div class="mlmr__image-wrap">
-        {%- if s.image != blank -%}
+        {%- if s.media_type == 'video' and s.video != blank -%}
+          <video
+            class="mlmr__image mlmr__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            {% if s.image != blank %}poster="{{ s.image | image_url: width: 1200 }}"{% endif %}
+          >
+            {%- for source in s.video.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        {%- elsif s.image != blank -%}
           {{ s.image | image_url: width: 1200 | image_tag:
             loading: 'lazy',
             class: 'mlmr__image',
@@ -395,11 +409,29 @@
       "default": "Most people fuel their morning with caffeine and hope. Franky is built differently — every ingredient earns its place."
     },
 
-    { "type": "header", "content": "Image" },
+    { "type": "header", "content": "Media" },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether this shows an image or a video."
+    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "Image",
+      "info": "Used when Media type is Image. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     },
     {
       "type": "range",

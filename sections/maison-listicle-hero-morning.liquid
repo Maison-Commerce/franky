@@ -86,7 +86,23 @@
       {%- endif -%}
     </div>
 
-    {%- if s.image != blank -%}
+    {%- if s.media_type == 'video' and s.video != blank -%}
+      <div class="mlhm__media">
+        <video
+          class="mlhm__image mlhm__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if s.image != blank %}poster="{{ s.image | image_url: width: 1400 }}"{% endif %}
+        >
+          {%- for source in s.video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      </div>
+    {%- elsif s.image != blank -%}
       <div class="mlhm__media">
         {{ s.image | image_url: width: 1400 | image_tag:
           loading: 'eager',
@@ -386,12 +402,29 @@
     { "type": "color", "id": "cta_bg", "label": "CTA background", "default": "#3B2B2F" },
     { "type": "color", "id": "cta_text_color", "label": "CTA text", "default": "#F7F3E6" },
 
-    { "type": "header", "content": "Image" },
+    { "type": "header", "content": "Media" },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether the hero shows an image or a video."
+    },
     {
       "type": "image_picker",
       "id": "image",
       "label": "Hero image",
-      "info": "Right side on desktop, below content on mobile."
+      "info": "Right side on desktop, below content on mobile. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Hero video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     }
   ],
   "blocks": [
