@@ -122,9 +122,9 @@
         "item_02": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-2.png",
-            "video": "shopify://files/videos/No1.mp4",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
             "badge_text": "🔒 Craving Control",
             "number_override": "",
             "title": "Crushes sugar cravings before they crush your day",
@@ -137,8 +137,9 @@
         "item_03": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-3.png",
+            "video": "shopify://files/videos/Angela_Jeans.mp4",
             "badge_text": "🌿 Better Digestion Support",
             "number_override": "",
             "title": "Your gut's new best friend, thanks to 3 billion CFU of probiotics",
@@ -151,7 +152,7 @@
         "item_04": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "video": "shopify://files/videos/No1.mp4",
             "badge_text": "🚫 No Chalky Shakes",
             "number_override": "",
@@ -165,8 +166,9 @@
         "item_05": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-5.png",
+            "video": "shopify://files/videos/hf_04.mp4",
             "badge_text": "🎯 Hit Your Protein Goal",
             "number_override": "",
             "title": "The easiest way to hit your protein goal",
@@ -179,8 +181,9 @@
         "item_06": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-6.png",
+            "video": "shopify://files/videos/Angela_Happy_After.mp4",
             "badge_text": "☕ Steady All-Morning Energy",
             "number_override": "",
             "title": "Steady energy and focus all morning, zero crash",
@@ -207,8 +210,9 @@
         "item_08": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-8.png",
+            "video": "shopify://files/videos/Making_Coffee.mp4",
             "badge_text": "💪 Extra Protein, Zero Effort",
             "number_override": "",
             "title": "Ready in 60 seconds, no espresso machine required",
@@ -222,7 +226,7 @@
           "type": "item",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/list-9.png",
+            "image": "shopify://shop_images/list-2.png",
             "badge_text": "👍 Try risk free",
             "number_override": "",
             "title": "Backed by a 30-Day Money-Back Guarantee",
@@ -236,7 +240,7 @@
           "type": "item",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/list-10.png",
+            "image": "shopify://shop_images/Customer_05.png",
             "badge_text": "🌏 Join the movement",
             "number_override": "",
             "title": "4.9 stars from thousands of real reviews",
