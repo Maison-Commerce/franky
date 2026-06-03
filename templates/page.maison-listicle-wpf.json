@@ -1,0 +1,396 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "listicle-clean",
+  "sections": {
+    "announcement_bar": {
+      "type": "maison-listicle-announcement-bar",
+      "settings": {
+        "headline_text": "🇺🇸 SUMMER SPECIAL ✨ SAVE UP TO 32% + FREE SHIPPING",
+        "subheadline_text": "Limited stock · US warehouse ships in 2–3 days",
+        "countdown_enabled": true,
+        "countdown_end_iso": "2026-08-31T23:59:00",
+        "countdown_expired_behavior": "hide",
+        "countdown_expired_message": "Offer ended",
+        "label_days": "DAYS",
+        "label_hrs": "HRS",
+        "label_min": "MIN",
+        "label_sec": "SEC",
+        "bg_color": "#c1d5e5",
+        "text_color": "#3b2b2f"
+      }
+    },
+    "hero": {
+      "type": "maison-listicle-hero-glp1",
+      "blocks": {
+        "stat_protein": {
+          "type": "stat",
+          "settings": {
+            "value": "20g",
+            "label": "Protein"
+          }
+        },
+        "stat_sugar": {
+          "type": "stat",
+          "settings": {
+            "value": "0g",
+            "label": "Sugar"
+          }
+        },
+        "stat_coffee": {
+          "type": "stat",
+          "settings": {
+            "value": "Real Coffee",
+            "label": "Not Extract"
+          }
+        },
+        "stat_natural": {
+          "type": "stat",
+          "settings": {
+            "value": "Natural",
+            "label": "Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "stat_protein",
+        "stat_sugar",
+        "stat_coffee",
+        "stat_natural"
+      ],
+      "settings": {
+        "bg_start": "#f8fbfc",
+        "bg_end": "#ffffff",
+        "text_color": "#3b2b2f",
+        "muted_color": "#3b2b2fbf",
+        "divider_color": "#3b2b2f33",
+        "title": "<p>7 Reasons GLP-1 Users Are Switching to Franky (and it's not just the protein)</p>",
+        "subtitle": "If you're on a GLP-1, your old breakfast routine probably isn't working anymore. Here's what's quietly changing — and why.",
+        "updated": "<p><strong>Updated:</strong> May 24, 2026</p>",
+        "cta_text": "See the 7 Reasons",
+        "cta_url": "#list-items-7-list",
+        "mobile_media_type": "image",
+        "mobile_image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg"
+      }
+    },
+    "items": {
+      "type": "maison-listicle-items-glp1",
+      "blocks": {
+        "item_01": {
+          "type": "item",
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/list-img-11.png",
+            "video": "shopify://files/videos/Making_Coffee.mp4",
+            "number_override": "",
+            "title": "<p>Eating less only works if you're still getting enough protein</p>",
+            "body": "<p>GLP-1s kill your appetite. That's the point. But eating less also means less protein — and that's how fatigue, muscle loss, and stalled results creep in after a few months. The fix isn't forcing yourself to eat more. It's making the little you do eat pull serious weight. That's why GLP-1 users are swapping plain coffee for Franky — same morning ritual, 20 grams of real whey protein already built in.</p>",
+            "pill": "<p><strong>✦ 20g OF COMPLETE</strong> WHEY PROTEIN PER SERVING</p>"
+          }
+        },
+        "item_02": {
+          "type": "item",
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/list-img-12.png",
+            "video": "shopify://files/videos/Angela_Before (1).mp4",
+            "number_override": "",
+            "title": "<p>GLP-1s slow everything down. (Including your digestion.)</p>",
+            "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
+            "pill": "<p><strong>✦ PREBIOTICS BUILT IN</strong> - NO EXTRA PRODUCTS</p>"
+          }
+        },
+        "item_03": {
+          "type": "item",
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/list-img-13.png",
+            "video": "shopify://files/videos/hf_2499dd47_1x1.mp4",
+            "number_override": "",
+            "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
+            "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
+            "pill": "<p><strong>✦ WORKS WHEN FOOD DOESN'T SOUND GOOD</strong></p>"
+          }
+        },
+        "item_04": {
+          "type": "item",
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/list-img-14.png",
+            "video": "shopify://files/videos/Kayla_1x1.mp4",
+            "number_override": "",
+            "title": "<p>Protect your muscle while the weight comes off</p>",
+            "body": "<p>A GLP-1 can quietly cost you strength, tone, and metabolism — especially once protein intake drops alongside appetite. The goal was never to just weigh less. It was to look and feel better in the process. Twenty grams of protein before lunch, every morning, without cooking or choking down a shake, is one of the simplest ways to protect that.</p>",
+            "pill": "<p><strong>✦ 20g PROTEIN</strong> · &lt;1g SUGAR</p>"
+          }
+        },
+        "item_05": {
+          "type": "item",
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/Franky_06.jpg",
+            "video": "shopify://files/videos/Tiffany_1x1.mp4",
+            "number_override": "",
+            "title": "<p>Under-fueled energy hits different when you're on a GLP-1</p>",
+            "body": "<p>Eating less. Somehow even more tired. Sound familiar? Caffeine alone is a short-term patch — that's why the afternoon crash keeps showing up even though \"nothing changed.\" Franky pairs 100mg of natural caffeine with 200mg of L-theanine specifically to smooth the curve. No jitter spike. No 11am dip. Just steady focus through your morning.</p>",
+            "pill": "<p><strong>✦ 100mg CAFFEINE</strong> + 200mg L-THEANINE</p>"
+          }
+        },
+        "item_06": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Franky_03.jpg",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
+            "number_override": "",
+            "title": "<p>If it's not easy, it won't stick</p>",
+            "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
+            "pill": "<p><strong>✦ SCOOP. STIR. SIP.</strong></p>"
+          }
+        },
+        "item_07": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Franky_02.jpg",
+            "number_override": "",
+            "title": "<p>Consistency is the whole game — and this makes it cheap enough to keep</p>",
+            "body": "<p>Long-term results come from one simple thing, repeated daily, even on the mornings you don't feel like it. On a GLP-1, that one thing has to do more than it used to. Protein. Prebiotics. Caffeine. Zero prep. One cup. And at under $2 a serving, it's a routine you can actually afford to keep.</p>",
+            "pill": "<p><strong>✦ UNDER $2/SERVING</strong> VS. $5–$7 AT A COFFEE SHOP</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_01",
+        "item_02",
+        "item_03",
+        "item_04",
+        "item_05",
+        "item_06",
+        "item_07"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "accent_color": "#8ab4cc",
+        "body_color": "#3b2b2fbf",
+        "pill_bg": "#fff8f6",
+        "pill_border": "#ffdbcf",
+        "pill_text_color": "#44332d",
+        "pill_accent_color": "#ffbea9"
+      }
+    },
+    "offer_reviews": {
+      "type": "maison-listicle-offer-reviews-glp1",
+      "blocks": {
+        "feature_protein": {
+          "type": "feature",
+          "settings": {
+            "label": "20g Protein"
+          }
+        },
+        "feature_caffeine": {
+          "type": "feature",
+          "settings": {
+            "label": "100mg Caffeine"
+          }
+        },
+        "feature_vanilla": {
+          "type": "feature",
+          "settings": {
+            "label": "Vanilla Hazelnut"
+          }
+        },
+        "feature_zero_sugar": {
+          "type": "feature",
+          "settings": {
+            "label": "Zero Sugar"
+          }
+        },
+        "review_sarah": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"I finally have energy that lasts all day. No crashes, no cravings. This is the only morning routine I've ever stuck with.\"",
+            "reviewer_initials": "SK",
+            "reviewer_name": "Sarah K.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_megan": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Perfect way to get protein and caffeine without the sugar crash. Game changer for morning workouts.\"",
+            "reviewer_initials": "MR",
+            "reviewer_name": "Megan R.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_jessica": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Quit my $6 latte habit two weeks ago. Down four pounds, off the afternoon crash. Vanilla hazelnut is dangerously good.\"",
+            "reviewer_initials": "JL",
+            "reviewer_name": "Jessica L.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_james": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"The L-theanine plus caffeine combo is the difference. I am focused all morning without the 11am dip.\"",
+            "reviewer_initials": "JT",
+            "reviewer_name": "James T.",
+            "reviewer_label": "Verified Buyer"
+          }
+        },
+        "review_rachel": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "\"Pulled out a pair of jeans I hadn't worn in over a year. They buttoned. Franky has been my breakfast for two months.\"",
+            "reviewer_initials": "RM",
+            "reviewer_name": "Rachel M.",
+            "reviewer_label": "Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "feature_protein",
+        "feature_caffeine",
+        "feature_vanilla",
+        "feature_zero_sugar",
+        "review_sarah",
+        "review_megan",
+        "review_jessica",
+        "review_james",
+        "review_rachel"
+      ],
+      "settings": {
+        "bg_start": "#fbf6ea",
+        "bg_end": "#deeaf2",
+        "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
+        "highlight_color": "#ffbea9",
+        "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
+        "promo_media_type": "image",
+        "promo_image": "shopify://shop_images/list-pr-img-2.png",
+        "card_border": "#99a9b6",
+        "rating_full": 4,
+        "rating_has_half": true,
+        "rating_text": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "star_color": "#fbaa19",
+        "star_empty_color": "#d2d2d2",
+        "cta_text": "GET UP TO 32% OFF + FREE SHIPPING →",
+        "cta_url": "shopify://products/franky-protein-coffee",
+        "cta_bg": "#3b2b2f",
+        "cta_text_color": "#f7f3e6",
+        "check_ring_color": "#dcd5c6",
+        "check_color": "#3b2b2f",
+        "reviews_title": "The Reviews Are In",
+        "reviews_subtitle": "Real Franky drinkers sharing their morning upgrade.",
+        "review_border": "#c1d5e5",
+        "avatar_bg": "#fff8f6",
+        "avatar_text_color": "#ffbea9",
+        "slider_duration_seconds": 40
+      }
+    },
+    "footer": {
+      "type": "maison-listicle-footer",
+      "blocks": {
+        "link_privacy": {
+          "type": "link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": ""
+          }
+        },
+        "link_shipping": {
+          "type": "link",
+          "settings": {
+            "label": "Shipping Policy",
+            "url": ""
+          }
+        },
+        "link_refund": {
+          "type": "link",
+          "settings": {
+            "label": "Refund Policy",
+            "url": ""
+          }
+        },
+        "link_contact": {
+          "type": "link",
+          "settings": {
+            "label": "Contact Information",
+            "url": ""
+          }
+        },
+        "link_terms": {
+          "type": "link",
+          "settings": {
+            "label": "Terms Of Service",
+            "url": ""
+          }
+        },
+        "link_cookie": {
+          "type": "link",
+          "settings": {
+            "label": "Cookie preferences",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_privacy",
+        "link_shipping",
+        "link_refund",
+        "link_contact",
+        "link_terms",
+        "link_cookie"
+      ],
+      "settings": {
+        "bg_color": "#c1d6e6",
+        "text_color": "#f7f3e6",
+        "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+      }
+    },
+    "sticky_cta": {
+      "type": "maison-listicle-sticky-cta",
+      "settings": {
+        "button_text": "Proceed to Offer →",
+        "button_url": "shopify://products/franky-protein-coffee",
+        "bg_color": "#ffffff",
+        "border_color": "#3b2b2f33",
+        "button_bg": "#3b2b2f",
+        "button_text_color": "#f7f3e6"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement_bar",
+    "hero",
+    "items",
+    "offer_reviews",
+    "footer",
+    "sticky_cta",
+    "main"
+  ]
+}
