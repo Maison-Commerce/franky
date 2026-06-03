@@ -22,8 +22,8 @@
         "benefit_3": "0g Sugar",
         "button_text": "Start Your Ritual",
         "button_link": "shopify://products/franky-protein-coffee",
-        "product_image_desktop": "shopify://shop_images/Franky_03_3febdfa8-aadb-461b-a623-f5b3b6ba5c0c.png",
-        "product_image_mobile": "shopify://shop_images/Franky_03.png",
+        "product_image_desktop": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 80,
         "padding_left_desktop": 40,
@@ -140,8 +140,8 @@
         "row": "row-reverse",
         "mobile_image_position": "top",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_08.png",
-        "product_image_mobile": "shopify://shop_images/Franky_08.png",
+        "product_image_desktop": "shopify://shop_images/Franky_02.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_02.jpg",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "desc": "",
         "social_proof_text": "Join",
@@ -347,19 +347,6 @@
     "maison_review_slider_RyQYLB": {
       "type": "maison-review-slider",
       "blocks": {
-        "review_MEcgQA": {
-          "type": "review",
-          "settings": {
-            "product_image": "shopify://shop_images/Review_image_02.jpg",
-            "star_rating": 5,
-            "purchase_date": "Purchased on 2 Feb 2026",
-            "review_text": "<p>\"I was skeptical about protein coffee but this completely changed my mind. It tastes incredible, keeps my gut happy, and it helps me to reach my protein goals\"</p>",
-            "reviewer_name": "Patty",
-            "reviewer_profession": "",
-            "reviewer_age": "48",
-            "show_verified_badge": true
-          }
-        },
         "review_Y7BXCR": {
           "type": "review",
           "settings": {
@@ -368,6 +355,19 @@
             "purchase_date": "Purchased on 18 Feb 2026",
             "review_text": "<p>\"I've been using Franky for 6 weeks and the difference in my appetite is real. I used to snack constantly before lunch — now I barely think about food until 1pm. And it actually tastes like a proper iced coffee.\"</p>",
             "reviewer_name": "Sara",
+            "reviewer_profession": "RN",
+            "reviewer_age": "45",
+            "show_verified_badge": true
+          }
+        },
+        "review_gTmP6V": {
+          "type": "review",
+          "settings": {
+            "product_image": "shopify://shop_images/Review_03.jpg",
+            "star_rating": 5,
+            "purchase_date": "Purchased on 11 March 2026",
+            "review_text": "<p>\"I've tried every protein coffee out there. This is the only one with no weird aftertaste and no crash. It actually tastes super nice\"</p>",
+            "reviewer_name": "Sam",
             "reviewer_profession": "RN",
             "reviewer_age": "45",
             "show_verified_badge": true
@@ -386,25 +386,25 @@
             "show_verified_badge": true
           }
         },
-        "review_gTmP6V": {
+        "review_MEcgQA": {
           "type": "review",
           "settings": {
-            "product_image": "shopify://shop_images/Review_03.jpg",
+            "product_image": "shopify://shop_images/Review_image_02.jpg",
             "star_rating": 5,
-            "purchase_date": "Purchased on 11 March 2026",
-            "review_text": "<p>\"I've tried every protein coffee out there. This is the only one with no weird aftertaste and no crash. It actually tastes super nice\"</p>",
-            "reviewer_name": "Sam",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
+            "purchase_date": "Purchased on 2 Feb 2026",
+            "review_text": "<p>\"I was skeptical about protein coffee but this completely changed my mind. It tastes incredible, keeps my gut happy, and it helps me to reach my protein goals\"</p>",
+            "reviewer_name": "Patty",
+            "reviewer_profession": "",
+            "reviewer_age": "48",
             "show_verified_badge": true
           }
         }
       },
       "block_order": [
-        "review_MEcgQA",
         "review_Y7BXCR",
+        "review_gTmP6V",
         "review_bk7tmm",
-        "review_gTmP6V"
+        "review_MEcgQA"
       ],
       "name": "Maison Review Slider",
       "settings": {
@@ -507,8 +507,8 @@
         "row": "row",
         "mobile_image_position": "top",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_05.png",
-        "product_image_mobile": "shopify://shop_images/Franky_05.png",
+        "product_image_desktop": "shopify://shop_images/Franky_03.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_03.jpg",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "desc": "",
         "social_proof_text": "Join",

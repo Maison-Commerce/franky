@@ -103,7 +103,7 @@
       ],
       "name": "Maison Footer",
       "settings": {
-        "footer_bg_color": "linear-gradient(180deg, #FBF6EA 0%, #DEEAF2 100%)",
+        "footer_bg_color": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(222, 234, 242, 1) 100%)",
         "padding_top_desktop": 64,
         "padding_bottom_desktop": 64,
         "padding_left_desktop": 80,
