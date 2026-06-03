@@ -109,7 +109,7 @@
           "type": "item",
           "settings": {
             "media_type": "video",
-            "video": "shopify://files/videos/30ee5739_web.mp4",
+            "video": "shopify://files/videos/Making_Coffee.mp4",
             "badge_text": "☕ Coffee. Reinvented.",
             "number_override": "",
             "title": "Meet FRANKY: the iced coffee that works with your body",
@@ -124,6 +124,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/list-2.png",
+            "video": "shopify://files/videos/No1.mp4",
             "badge_text": "🔒 Craving Control",
             "number_override": "",
             "title": "Crushes sugar cravings before they crush your day",
@@ -151,7 +152,7 @@
           "type": "item",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/list-4.png",
+            "video": "shopify://files/videos/No1.mp4",
             "badge_text": "🚫 No Chalky Shakes",
             "number_override": "",
             "title": "Tastes like your favorite café drink, not a chalky protein shake",
@@ -332,6 +333,7 @@
         "ribbon_text": "🇺🇸 SUMMER SPECIAL ✨",
         "ribbon_bg": "#c2d6e5",
         "ribbon_text_color": "#515960",
+        "promo_media_type": "image",
         "promo_image": "shopify://shop_images/list-pr-img.png",
         "promo_top_label": "🎁 FREE SHIPPING ON YOUR ORDER",
         "promo_title": "<p><em>UP TO 32% OFF</em> FOR A</p><p>LIMITED TIME ONLY!</p>",
