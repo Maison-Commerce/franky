@@ -122,8 +122,9 @@
         "item_04": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-img-14.png",
+            "video": "shopify://files/videos/Kayla_1x1.mp4",
             "number_override": "",
             "title": "<p>Protect your muscle while the weight comes off</p>",
             "body": "<p>A GLP-1 can quietly cost you strength, tone, and metabolism — especially once protein intake drops alongside appetite. The goal was never to just weigh less. It was to look and feel better in the process. Twenty grams of protein before lunch, every morning, without cooking or choking down a shake, is one of the simplest ways to protect that.</p>",
@@ -133,8 +134,9 @@
         "item_05": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/Franky_06.jpg",
+            "video": "shopify://files/videos/Tiffany_1x1.mp4",
             "number_override": "",
             "title": "<p>Under-fueled energy hits different when you're on a GLP-1</p>",
             "body": "<p>Eating less. Somehow even more tired. Sound familiar? Caffeine alone is a short-term patch — that's why the afternoon crash keeps showing up even though \"nothing changed.\" Franky pairs 100mg of natural caffeine with 200mg of L-theanine specifically to smooth the curve. No jitter spike. No 11am dip. Just steady focus through your morning.</p>",
