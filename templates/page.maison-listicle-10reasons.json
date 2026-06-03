@@ -139,7 +139,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-3.png",
-            "video": "shopify://files/videos/Angela_Jeans.mp4",
+            "video": "shopify://files/videos/Angela_Before (1).mp4",
             "badge_text": "🌿 Better Digestion Support",
             "number_override": "",
             "title": "Your gut's new best friend, thanks to 3 billion CFU of probiotics",
@@ -196,8 +196,9 @@
         "item_07": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/list-7.png",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
             "badge_text": "💰 Save Big Yearly",
             "number_override": "",
             "title": "Swap your $7 latte for under $2 a cup, save $1,800+ a year",
@@ -226,7 +227,7 @@
           "type": "item",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/list-2.png",
+            "image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
             "badge_text": "👍 Try risk free",
             "number_override": "",
             "title": "Backed by a 30-Day Money-Back Guarantee",
@@ -240,7 +241,7 @@
           "type": "item",
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/Customer_05.png",
+            "image": "shopify://shop_images/Franky_03.jpg",
             "badge_text": "🌏 Join the movement",
             "number_override": "",
             "title": "4.9 stars from thousands of real reviews",
@@ -338,7 +339,7 @@
         "ribbon_bg": "#c2d6e5",
         "ribbon_text_color": "#515960",
         "promo_media_type": "image",
-        "promo_image": "shopify://shop_images/list-pr-img.png",
+        "promo_image": "shopify://shop_images/Franky_02.jpg",
         "promo_top_label": "🎁 FREE SHIPPING ON YOUR ORDER",
         "promo_title": "<p><em>UP TO 32% OFF</em> FOR A</p><p>LIMITED TIME ONLY!</p>",
         "highlight_color": "#ffbea9",
