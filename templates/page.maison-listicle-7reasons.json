@@ -76,7 +76,8 @@
         "updated": "<p><strong>Updated:</strong> May 24, 2026</p>",
         "cta_text": "See the 7 Reasons",
         "cta_url": "#list-items-7-list",
-        "mobile_image": "shopify://shop_images/list-hero-img-mob.png"
+        "mobile_media_type": "image",
+        "mobile_image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg"
       }
     },
     "items": {
@@ -85,7 +86,9 @@
         "item_01": {
           "type": "item",
           "settings": {
+            "media_type": "video",
             "image": "shopify://shop_images/list-img-11.png",
+            "video": "shopify://files/videos/Making_Coffee.mp4",
             "number_override": "",
             "title": "<p>Eating less only works if you're still getting enough protein</p>",
             "body": "<p>GLP-1s kill your appetite. That's the point. But eating less also means less protein — and that's how fatigue, muscle loss, and stalled results creep in after a few months. The fix isn't forcing yourself to eat more. It's making the little you do eat pull serious weight. That's why GLP-1 users are swapping plain coffee for Franky — same morning ritual, 20 grams of real whey protein already built in.</p>",
@@ -95,7 +98,9 @@
         "item_02": {
           "type": "item",
           "settings": {
+            "media_type": "video",
             "image": "shopify://shop_images/list-img-12.png",
+            "video": "shopify://files/videos/Angela_Before_806bcc57-cc67-49f1-8f83-922f9653b9df.mp4",
             "number_override": "",
             "title": "<p>GLP-1s slow everything down. (Including your digestion.)</p>",
             "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
@@ -105,7 +110,9 @@
         "item_03": {
           "type": "item",
           "settings": {
+            "media_type": "video",
             "image": "shopify://shop_images/list-img-13.png",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
             "number_override": "",
             "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
             "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
@@ -115,6 +122,7 @@
         "item_04": {
           "type": "item",
           "settings": {
+            "media_type": "image",
             "image": "shopify://shop_images/list-img-14.png",
             "number_override": "",
             "title": "<p>Protect your muscle while the weight comes off</p>",
@@ -125,6 +133,7 @@
         "item_05": {
           "type": "item",
           "settings": {
+            "media_type": "image",
             "image": "shopify://shop_images/list-img-15.png",
             "number_override": "",
             "title": "<p>Under-fueled energy hits different when you're on a GLP-1</p>",
@@ -135,7 +144,9 @@
         "item_06": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/list-img-16.png",
+            "media_type": "image",
+            "image": "shopify://shop_images/Franky_03.jpg",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
             "number_override": "",
             "title": "<p>If it's not easy, it won't stick</p>",
             "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
@@ -145,7 +156,8 @@
         "item_07": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/list-img-17.png",
+            "media_type": "image",
+            "image": "shopify://shop_images/Franky_02.jpg",
             "number_override": "",
             "title": "<p>Consistency is the whole game — and this makes it cheap enough to keep</p>",
             "body": "<p>Long-term results come from one simple thing, repeated daily, even on the mornings you don't feel like it. On a GLP-1, that one thing has to do more than it used to. Protein. Prebiotics. Caffeine. Zero prep. One cup. And at under $2 a serving, it's a routine you can actually afford to keep.</p>",
@@ -267,6 +279,7 @@
         "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
         "highlight_color": "#ffbea9",
         "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
+        "promo_media_type": "image",
         "promo_image": "shopify://shop_images/list-pr-img-2.png",
         "card_border": "#99a9b6",
         "rating_full": 4,
