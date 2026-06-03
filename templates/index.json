@@ -81,14 +81,6 @@
     "maison_introducing_GH37PA": {
       "type": "maison-introducing",
       "blocks": {
-        "feature_xPeaw4": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame1.svg",
-            "title": "A Gut That Actually Feels Good",
-            "description": "Probiotics and psyllium husk fiber work together to support digestion, may help reduce bloating, and keep your gut happy all day."
-          }
-        },
         "feature_W7ER6e": {
           "type": "feature",
           "settings": {
@@ -103,6 +95,14 @@
             "icon": "shopify://shop_images/sfawfwfw.svg",
             "title": "Steady Energy All Morning",
             "description": "No sugar crash. No jitters. L-theanine and lion's mane may help support calm, lasting focus throughout the day."
+          }
+        },
+        "feature_xPeaw4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame1.svg",
+            "title": "A Gut That Actually Feels Good",
+            "description": "Probiotics and psyllium husk fiber work together to support digestion, may help reduce bloating, and keep your gut happy all day."
           }
         },
         "trust_badge_8URhmJ": {
@@ -128,9 +128,9 @@
         }
       },
       "block_order": [
-        "feature_xPeaw4",
         "feature_W7ER6e",
         "feature_ULyHhk",
+        "feature_xPeaw4",
         "trust_badge_8URhmJ",
         "trust_badge_46VeGw",
         "trust_badge_btqjAN"
@@ -187,7 +187,15 @@
           "settings": {
             "icon": "shopify://shop_images/wafwafwf.png",
             "title": "Real Coffee + Real Protein",
-            "description": "<p>Real brewed coffee with 10g protein — no artificial blends.</p>"
+            "description": "<p>Real brewed instant coffee with 10g protein — no artificial blends.</p>"
+          }
+        },
+        "advantage_DiPbcN": {
+          "type": "advantage",
+          "settings": {
+            "icon": "shopify://shop_images/agawgwagw.png",
+            "title": "Actually Tastes Good",
+            "description": "<p>Creamy, smooth, café-level flavor — no chalky texture, no weird aftertaste.</p>"
           }
         },
         "advantage_3y7PD8": {
@@ -214,14 +222,6 @@
             "description": "<p>No fillers or added sugar. Just what works.</p>"
           }
         },
-        "advantage_DiPbcN": {
-          "type": "advantage",
-          "settings": {
-            "icon": "shopify://shop_images/agawgwagw.png",
-            "title": "Actually Tastes Good",
-            "description": "<p>Creamy, smooth, café-level flavor — no chalky texture, no weird aftertaste.</p>"
-          }
-        },
         "advantage_F7Uejg": {
           "type": "advantage",
           "settings": {
@@ -233,10 +233,10 @@
       },
       "block_order": [
         "advantage_VtpNTw",
+        "advantage_DiPbcN",
         "advantage_3y7PD8",
         "advantage_hXDpGW",
         "advantage_JidVQn",
-        "advantage_DiPbcN",
         "advantage_F7Uejg"
       ],
       "name": "Maison Advantages",
@@ -509,7 +509,7 @@
         "text_align": "center",
         "product_image_desktop": "shopify://shop_images/Franky_03.jpg",
         "product_image_mobile": "shopify://shop_images/Franky_03.jpg",
-        "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
+        "heading": "<p>Frankly the best Protein Iced Coffee you will ever try. </p>",
         "desc": "",
         "social_proof_text": "Join",
         "social_proof_count": "our customers",
@@ -765,6 +765,7 @@
         },
         "advantage_NFyzmg": {
           "type": "advantage",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/no-sign-icon_1b11da93-8d8e-4ccc-9ed3-f6a6b751bbd7.png",
             "title": "No heavy metals",
