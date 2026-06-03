@@ -23,7 +23,21 @@
 
       <div class="mlor__promo-card">
         <div class="mlor__promo-image">
-          {%- if s.promo_image != blank -%}
+          {%- if s.promo_media_type == 'video' and s.promo_video != blank -%}
+            <video
+              class="mlor__promo-image-img mlor__promo-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              {% if s.promo_image != blank %}poster="{{ s.promo_image | image_url: width: 800 }}"{% endif %}
+            >
+              {%- for source in s.promo_video.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- elsif s.promo_image != blank -%}
             {{ s.promo_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'mlor__promo-image-img', sizes: '(max-width: 768px) 100vw, 384px' }}
           {%- else -%}
             <div class="mlor__promo-image-img mlor__promo-image-img--placeholder" aria-hidden="true"></div>
@@ -681,9 +695,27 @@
 
     { "type": "header", "content": "Promo card" },
     {
+      "type": "select",
+      "id": "promo_media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether the card shows an image or a video."
+    },
+    {
       "type": "image_picker",
       "id": "promo_image",
-      "label": "Card image"
+      "label": "Card image",
+      "info": "Used when Media type is Image. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "promo_video",
+      "label": "Card video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     },
     {
       "type": "text",

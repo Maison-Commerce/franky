@@ -39,7 +39,23 @@
       <a class="mlh2__cta" href="{{ cta_href }}">{{ s.cta_text }} →</a>
     {%- endif -%}
 
-    {%- if s.mobile_image != blank -%}
+    {%- if s.mobile_media_type == 'video' and s.mobile_video != blank -%}
+      <div class="mlh2__mobile-image-wrap">
+        <video
+          class="mlh2__mobile-image mlh2__mobile-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {% if s.mobile_image != blank %}poster="{{ s.mobile_image | image_url: width: 800 }}"{% endif %}
+        >
+          {%- for source in s.mobile_video.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      </div>
+    {%- elsif s.mobile_image != blank -%}
       <div class="mlh2__mobile-image-wrap">
         {{ s.mobile_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'mlh2__mobile-image', sizes: '(max-width: 768px) 100vw, 335px' }}
       </div>
@@ -280,12 +296,29 @@
     },
     { "type": "url", "id": "cta_url", "label": "CTA link" },
 
-    { "type": "header", "content": "Mobile image (mobile only)" },
+    { "type": "header", "content": "Mobile media (mobile only)" },
+    {
+      "type": "select",
+      "id": "mobile_media_type",
+      "label": "Media type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "info": "Choose whether the mobile hero shows an image or a video."
+    },
     {
       "type": "image_picker",
       "id": "mobile_image",
       "label": "Mobile hero image",
-      "info": "Shown only on screens ≤768px below the CTA link."
+      "info": "Shown only on screens ≤768px below the CTA link. Also used as the video poster/fallback."
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Mobile hero video",
+      "info": "Used when Media type is Video. Plays muted, looped and autoplays."
     }
   ],
   "blocks": [
