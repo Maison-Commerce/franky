@@ -691,7 +691,7 @@
         "featured_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
         "featured_header_color": "#3b2b2f",
         "featured_header_text_color": "#f5eddc",
-        "featured_body_color": "linear-gradient(180deg, rgba(248, 244, 231, 1), rgba(242, 230, 210, 1) 52.4%, rgba(243, 207, 203, 1) 100%)",
+        "featured_body_color": "linear-gradient(180deg, rgba(251, 248, 241, 1), rgba(242, 230, 210, 1) 52.4%, rgba(223, 234, 244, 1) 100%)",
         "col1_title": "Coffee",
         "col1_image": "shopify://shop_images/Rectangle_4927.png",
         "col3_title": "Protein powder",
