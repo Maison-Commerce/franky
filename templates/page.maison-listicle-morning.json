@@ -514,25 +514,10 @@
             "verified_label": "Verified Buyer"
           }
         },
-        "photo_review_U9YXUU": {
-          "type": "photo_review",
-          "settings": {
-            "video": "shopify://files/videos/AD7_Beth_web.mp4",
-            "video_url": ""
-          }
-        },
         "photo_review_KhRmU8": {
           "type": "photo_review",
           "settings": {
             "video": "shopify://files/videos/AD21_Brooke_web.mp4",
-            "video_url": ""
-          }
-        },
-        "photo_review_TzhDGF": {
-          "type": "photo_review",
-          "disabled": true,
-          "settings": {
-            "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4",
             "video_url": ""
           }
         },
@@ -557,10 +542,24 @@
             "video_url": ""
           }
         },
+        "photo_review_TzhDGF": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4",
+            "video_url": ""
+          }
+        },
         "photo_review_rqLmWr": {
           "type": "photo_review",
           "settings": {
             "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_U9YXUU": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/AD7_Beth_web.mp4",
             "video_url": ""
           }
         }
@@ -571,13 +570,13 @@
         "text_review_kaBeHi",
         "text_review_C4mCpx",
         "text_review_weaAhA",
-        "photo_review_U9YXUU",
         "photo_review_KhRmU8",
-        "photo_review_TzhDGF",
         "photo_review_BEQANt",
         "photo_review_aPf96y",
         "photo_review_aUwyzC",
-        "photo_review_rqLmWr"
+        "photo_review_TzhDGF",
+        "photo_review_rqLmWr",
+        "photo_review_U9YXUU"
       ],
       "settings": {
         "bg_color": "linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%), linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%)",
@@ -689,7 +688,7 @@
         "padding_right_mobile": 16,
         "featured_title": "franky",
         "featured_logo_image": "shopify://shop_images/sgebhsebes.png",
-        "featured_image": "shopify://shop_images/dda2b2ea9c5b45989ea6b03bde7ee3ce.mp4.png",
+        "featured_image": "shopify://shop_images/franky-protein-coffee-1-pack_tiny.png",
         "featured_header_color": "#3b2b2f",
         "featured_header_text_color": "#f5eddc",
         "featured_body_color": "linear-gradient(180deg, rgba(248, 244, 231, 1), rgba(242, 230, 210, 1) 52.4%, rgba(243, 207, 203, 1) 100%)",
@@ -766,8 +765,8 @@
         "row": "row-reverse",
         "mobile_image_position": "top",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/list-img-routine.png",
-        "product_image_mobile": "shopify://shop_images/list-hero-img-mob.png",
+        "product_image_desktop": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
         "heading": "<p>Meet Franky:<br/>Coffee That Fuels, Fills & Focuses</p>",
         "desc": "",
         "social_proof_text": "Join",
@@ -935,7 +934,7 @@
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 32,
         "heading_color": "#3b2b2f",
-        "image": "shopify://shop_images/2f14f82783b17bb261b2a47eabd9eca8cc440b70_518cc6f7-bc00-4f91-9e1f-cca0865996fb.png",
+        "image": "shopify://shop_images/Franky_02.jpg",
         "image_width_desktop": 600,
         "image_border_radius": 16,
         "faq_gap_desktop": 80,
