@@ -66,6 +66,7 @@
         "cta_url": "#listicle-pr-main",
         "cta_bg": "#3b2b2f",
         "cta_text_color": "#f7f3e6",
+        "media_type": "image",
         "image": "shopify://shop_images/list-hero-img-morning.png"
       }
     },
@@ -140,7 +141,9 @@
         "muted_color": "#3b2b2fbf",
         "title": "<p>Finally, a Morning Routine That Actually Works for You</p>",
         "subtitle": "Most people fuel their morning with caffeine and hope. Franky is built differently - every ingredient earns its place.",
+        "media_type": "video",
         "image": "shopify://shop_images/list-img-routine.png",
+        "video": "shopify://files/videos/No1_2c94d186-af99-4cf2-8ef3-7c7c8d702d7c.mp4",
         "image_radius": 16,
         "badge_bg": "#f7f3e6",
         "badge_text_color": "#3b2b2f",
@@ -189,7 +192,9 @@
         "subtitle": "Not the one where you have 15 minutes and a blender. The one where you have 60 seconds and need to work.",
         "title_mobile": "<p>What's Inside Matters</p>",
         "subtitle_mobile": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
+        "media_type": "video",
         "image": "shopify://shop_images/list-img-bann.png",
+        "video": "shopify://files/videos/Making_Coffee.mp4",
         "image_radius": 16,
         "icon_bg": "#d8e4ee",
         "icon_color": "#ffffff",
@@ -509,31 +514,32 @@
             "verified_label": "Verified Buyer"
           }
         },
-        "photo_review_rqLmWr": {
+        "photo_review_U9YXUU": {
           "type": "photo_review",
           "settings": {
-            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4",
+            "video": "shopify://files/videos/AD7_Beth_web.mp4",
             "video_url": ""
           }
         },
         "photo_review_KhRmU8": {
           "type": "photo_review",
           "settings": {
-            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154204032_web.mp4",
+            "video": "shopify://files/videos/AD21_Brooke_web.mp4",
             "video_url": ""
           }
         },
         "photo_review_TzhDGF": {
           "type": "photo_review",
+          "disabled": true,
           "settings": {
-            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154186511_web.mp4",
+            "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4",
             "video_url": ""
           }
         },
         "photo_review_BEQANt": {
           "type": "photo_review",
           "settings": {
-            "video": "shopify://files/videos/ssstik.io_@franky.nutrition_1778154265400_web.mp4",
+            "video": "shopify://files/videos/30ee5739_web.mp4",
             "video_url": ""
           }
         },
@@ -544,17 +550,17 @@
             "video_url": ""
           }
         },
-        "photo_review_U9YXUU": {
-          "type": "photo_review",
-          "settings": {
-            "video": "shopify://files/videos/AD7_Beth_web.mp4",
-            "video_url": ""
-          }
-        },
         "photo_review_aUwyzC": {
           "type": "photo_review",
           "settings": {
             "video": "shopify://files/videos/30ee5739_web.mp4",
+            "video_url": ""
+          }
+        },
+        "photo_review_rqLmWr": {
+          "type": "photo_review",
+          "settings": {
+            "video": "shopify://files/videos/ssstik.io_@heyitsjas24_1778153646289_web.mp4",
             "video_url": ""
           }
         }
@@ -565,13 +571,13 @@
         "text_review_kaBeHi",
         "text_review_C4mCpx",
         "text_review_weaAhA",
-        "photo_review_rqLmWr",
+        "photo_review_U9YXUU",
         "photo_review_KhRmU8",
         "photo_review_TzhDGF",
         "photo_review_BEQANt",
         "photo_review_aPf96y",
-        "photo_review_U9YXUU",
-        "photo_review_aUwyzC"
+        "photo_review_aUwyzC",
+        "photo_review_rqLmWr"
       ],
       "settings": {
         "bg_color": "linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%), linear-gradient(180deg, #DEEAF2 0%, #FBF6EA 100%)",
