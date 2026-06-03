@@ -767,12 +767,20 @@
     "maison_introducing_LXBj6d": {
       "type": "maison-introducing",
       "blocks": {
+        "feature_7iLXFG": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/vjasehgth3y432.png",
+            "title": "10g Protein Power",
+            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want."
+          }
+        },
         "feature_X3Mg7X": {
           "type": "feature",
           "settings": {
             "icon": "shopify://shop_images/Frame1.svg",
             "title": "Sustained Energy",
-            "description": "Real coffee and protein for steady energy. No spike or crash."
+            "description": "Real instant coffee and protein for steady energy. No spike or crash."
           }
         },
         "feature_pcaLBH": {
@@ -782,28 +790,20 @@
             "title": "Focus & Mental Clarity",
             "description": "Sharpens focus & keeps you locked in during work and workouts."
           }
-        },
-        "feature_7iLXFG": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/vjasehgth3y432.png",
-            "title": "10g Protein Power",
-            "description": "Enough protein to support recovery and keep hunger in check, in a drink that actually tastes like something you want."
-          }
         }
       },
       "block_order": [
+        "feature_7iLXFG",
         "feature_X3Mg7X",
-        "feature_pcaLBH",
-        "feature_7iLXFG"
+        "feature_pcaLBH"
       ],
       "name": "Maison Introducing",
       "settings": {
         "row": "row-reverse",
         "mobile_image_position": "bottom",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_08.png",
-        "product_image_mobile": "shopify://shop_images/Franky_08.png",
+        "product_image_desktop": "shopify://shop_images/Franky_02.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_02.jpg",
         "heading": "<p>Finally, a Coffee That Works With You</p>",
         "desc": "You already know you need more protein. You already drink coffee every morning. We just put the two together and made sure it actually tastes good.",
         "social_proof_text": "",
@@ -917,6 +917,14 @@
     "maison_introducing_bnLFrb": {
       "type": "maison-introducing",
       "blocks": {
+        "feature_Y8nRhj": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1484580868.png",
+            "title": "Breakfast in One Cup",
+            "description": "Replaces coffee + protein shake  in 60 seconds flat."
+          }
+        },
         "feature_wnh8C4": {
           "type": "feature",
           "settings": {
@@ -932,28 +940,20 @@
             "title": "No Jitters",
             "description": "Caffeine that energizes without anxiety."
           }
-        },
-        "feature_Y8nRhj": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/Frame_1484580868.png",
-            "title": "Breakfast in One Cup",
-            "description": "Replaces coffee + protein shake  in 60 seconds flat."
-          }
         }
       },
       "block_order": [
+        "feature_Y8nRhj",
         "feature_wnh8C4",
-        "feature_TfKCVp",
-        "feature_Y8nRhj"
+        "feature_TfKCVp"
       ],
       "name": "Maison Introducing",
       "settings": {
         "row": "row",
         "mobile_image_position": "bottom",
         "text_align": "center",
-        "product_image_desktop": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
-        "product_image_mobile": "shopify://shop_images/Franky_06_df3ae1c8-c5b9-4d00-a83a-6e11170062a9.png",
+        "product_image_desktop": "shopify://shop_images/Franky_05.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_05.jpg",
         "heading": "<p>What’s Inside Matters</p>",
         "desc": "Each ingredient is chosen for a reason — to energize, nourish, and support your body without unnecessary fillers.",
         "social_proof_text": "",
@@ -1068,8 +1068,9 @@
       ],
       "name": "Maison Comp Flex",
       "settings": {
-        "section_heading": "Why Coffee Alone Sabotages Your Energy",
-        "section_subtitle": "Plain coffee wakes you up. Franky keeps you going.",
+        "section_heading": "<p>Why Coffee Alone Sabotages Your Energy</p>",
+        "heading_max_width_desktop": 410,
+        "section_subtitle": "<p>Plain coffee wakes you up. Franky keeps you going.</p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
@@ -1092,7 +1093,7 @@
         "featured_image": "shopify://shop_images/Franky_product_image_transparent.png",
         "featured_header_color": "#3b2b2f",
         "featured_header_text_color": "#f5eddc",
-        "featured_body_color": "#f5eddc",
+        "featured_body_color": "#f6f6f6",
         "col1_title": "Coffee",
         "col1_image": "shopify://shop_images/Rectangle_4927.png",
         "col3_title": "Protein powder",
