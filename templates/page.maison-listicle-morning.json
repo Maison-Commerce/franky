@@ -77,7 +77,7 @@
           "type": "badge",
           "settings": {
             "emoji": "💪",
-            "text": "20g OF PROTEIN"
+            "text": "10g OF PROTEIN"
           }
         },
         "badge_pVELAg": {
@@ -91,14 +91,14 @@
           "type": "badge",
           "settings": {
             "emoji": "✨",
-            "text": "PREBIOTICS & L-THEANINE"
+            "text": "PREBIOTICS & FIBER"
           }
         },
         "badge_XqLWdt": {
           "type": "badge",
           "settings": {
             "emoji": "🏆",
-            "text": "TOP #1 TRENDING"
+            "text": "L-THEANINE & LIONS MANE"
           }
         },
         "feature_3AGbX7": {
@@ -139,7 +139,7 @@
         "bg_color": "#FFFFFF",
         "text_color": "#3b2b2f",
         "muted_color": "#3b2b2fbf",
-        "title": "<p>Finally, a Morning Routine That Actually Works for You</p>",
+        "title": "<p>The breakfast swap that keeps you full on fewer calories</p>",
         "subtitle": "Most people fuel their morning with caffeine and hope. Franky is built differently - every ingredient earns its place.",
         "media_type": "video",
         "image": "shopify://shop_images/list-img-routine.png",
