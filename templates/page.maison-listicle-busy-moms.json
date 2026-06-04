@@ -100,7 +100,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-12.png",
-            "video": "shopify://files/videos/Angela_Before (1).mp4",
+            "video": "shopify://files/videos/Brooke_1x1.mp4",
             "number_override": "",
             "title": "<p>GLP-1s slow everything down. (Including your digestion.)</p>",
             "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
@@ -112,7 +112,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-13.png",
-            "video": "shopify://files/videos/hf_2499dd47_1x1.mp4",
+            "video": "shopify://files/videos/IMG_8690_1x1.mp4",
             "number_override": "",
             "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
             "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
@@ -148,7 +148,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Franky_03.jpg",
-            "video": "shopify://files/videos/Taste_Reaction.mp4",
+            "video": "shopify://files/videos/Angela_Taste_Test.mp4",
             "number_override": "",
             "title": "<p>If it's not easy, it won't stick</p>",
             "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
@@ -158,8 +158,9 @@
         "item_07": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/Franky_02.jpg",
+            "video": "shopify://files/videos/Brooke_02_1x1.mp4",
             "number_override": "",
             "title": "<p>Consistency is the whole game — and this makes it cheap enough to keep</p>",
             "body": "<p>Long-term results come from one simple thing, repeated daily, even on the mornings you don't feel like it. On a GLP-1, that one thing has to do more than it used to. Protein. Prebiotics. Caffeine. Zero prep. One cup. And at under $2 a serving, it's a routine you can actually afford to keep.</p>",
