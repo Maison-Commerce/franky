@@ -225,14 +225,14 @@
           "type": "badge",
           "settings": {
             "icon": "shopify://shop_images/wagawg32gr.png",
-            "text": "No Added Sugar"
+            "text": "0g sugar"
           }
         },
         "badge_LHfg3R": {
           "type": "badge",
           "settings": {
             "icon": "shopify://shop_images/sebebrfbrbt.png",
-            "text": "20g Protein"
+            "text": "10g Protein"
           }
         },
         "badge_iLcmXh": {
