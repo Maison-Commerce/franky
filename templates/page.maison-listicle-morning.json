@@ -25,28 +25,28 @@
     "hero": {
       "type": "maison-listicle-hero-morning",
       "blocks": {
-        "feature_iCMHte": {
-          "type": "feature",
-          "settings": {
-            "label": "Sustained Energy"
-          }
-        },
         "feature_b6tRVK": {
           "type": "feature",
           "settings": {
-            "label": "20g Protein"
+            "label": "10g Protein"
+          }
+        },
+        "feature_iCMHte": {
+          "type": "feature",
+          "settings": {
+            "label": "0g Sugar"
           }
         },
         "feature_XXwQKq": {
           "type": "feature",
           "settings": {
-            "label": "Zero Crash"
+            "label": "Fiber & Probiotics"
           }
         }
       },
       "block_order": [
-        "feature_iCMHte",
         "feature_b6tRVK",
+        "feature_iCMHte",
         "feature_XXwQKq"
       ],
       "settings": {
