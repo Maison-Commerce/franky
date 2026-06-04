@@ -54,7 +54,7 @@
         "text_color": "#3b2b2f",
         "muted_color": "#3b2b2fbf",
         "rating": 4.5,
-        "rating_label": "<p><strong>4.8/5</strong> based on <strong>8,450+</strong> reviews.</p>",
+        "rating_label": "<p><strong>4.8/5</strong> based on <strong>1,150+</strong> reviews.</p>",
         "star_color": "#fbaa19",
         "star_empty_color": "#d2d2d2",
         "title": "<p>Stop Buying Coffee That Leaves You Running On Empty</p>",
@@ -1005,7 +1005,8 @@
       "settings": {
         "bg_color": "#3b2b2f",
         "text_color": "#f7f3e6",
-        "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+        "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved.",
+        "disclaimer_text": ""
       }
     },
     "main": {
