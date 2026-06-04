@@ -101,20 +101,20 @@
             "text": "L-THEANINE & LIONS MANE"
           }
         },
-        "feature_3AGbX7": {
-          "type": "feature",
-          "settings": {
-            "icon": "flash",
-            "title": "Sustained Energy",
-            "body": "<p>Real coffee and 10 of protein working together for steady, hours-long energy. No spike on the way up. No crash at 11. No 3pm wall dragging you into the afternoon.</p>"
-          }
-        },
         "feature_nLtyq9": {
           "type": "feature",
           "settings": {
             "icon": "target",
-            "title": "Focus & Mental Clarity",
-            "body": "<p>100mg of caffeine paired with 200mg of L-theanine sharpens focus and keeps you locked in - through work, workouts, and everything between.</p>"
+            "title": "Full For Hours, Not Minutes",
+            "body": "<p>10g of protein and 1,500mg of fiber per serving work together to keep you genuinely full, so the mid-morning snacking and the starving-by-lunch spiral quietly stop.</p>"
+          }
+        },
+        "feature_3AGbX7": {
+          "type": "feature",
+          "settings": {
+            "icon": "flash",
+            "title": "Replaces Breakfast, Saves The Calories",
+            "body": "<p>One serving stands in for the breakfast you skip or the sugary coffee-shop drink you don't need. A satisfying, protein-rich start that holds you till lunch, for a fraction of the calories.</p>"
           }
         },
         "feature_K6Kh4x": {
@@ -122,7 +122,7 @@
           "settings": {
             "icon": "hand",
             "title": "10g Protein Per Serving",
-            "body": "<p>Complete whey protein aids muscle recovery, curbs hunger, and fuels you without the weight of a heavy shake.</p>"
+            "body": "<p>Just 67 calories per serving, real coffee with 10g of whey protein. Two scoops gets you 20g, about three eggs' worth, for roughly 134 calories. Hitting your protein goal has never been this simple.</p>"
           }
         }
       },
@@ -131,8 +131,8 @@
         "badge_pVELAg",
         "badge_R9xV4a",
         "badge_XqLWdt",
-        "feature_3AGbX7",
         "feature_nLtyq9",
+        "feature_3AGbX7",
         "feature_K6Kh4x"
       ],
       "settings": {
