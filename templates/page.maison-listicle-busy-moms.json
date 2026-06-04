@@ -147,9 +147,9 @@
         "item_06": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/Franky_03.jpg",
-            "video": "shopify://files/videos/Angela_Taste_Test.mp4",
+            "video": "shopify://files/videos/Taste_Reaction.mp4",
             "number_override": "",
             "title": "<p>If it's not easy, it won't stick</p>",
             "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
