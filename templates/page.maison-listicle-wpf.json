@@ -77,7 +77,7 @@
         "cta_text": "See the 7 Reasons",
         "cta_url": "#list-items-7-list",
         "mobile_media_type": "image",
-        "mobile_image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg"
+        "mobile_image": "shopify://shop_images/Franky_02.jpg"
       }
     },
     "items": {
@@ -112,7 +112,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-13.png",
-            "video": "shopify://files/videos/hf_2499dd47_1x1.mp4",
+            "video": "shopify://files/videos/hf_04.mp4",
             "number_override": "",
             "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
             "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
