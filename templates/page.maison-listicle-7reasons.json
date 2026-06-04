@@ -192,7 +192,7 @@
         "feature_protein": {
           "type": "feature",
           "settings": {
-            "label": "20g Protein"
+            "label": "10g Protein"
           }
         },
         "feature_caffeine": {
@@ -204,7 +204,7 @@
         "feature_vanilla": {
           "type": "feature",
           "settings": {
-            "label": "Vanilla Hazelnut"
+            "label": "Natural Sweetener"
           }
         },
         "feature_zero_sugar": {
