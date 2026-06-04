@@ -28,6 +28,10 @@
     {%- if s.copyright_text != blank -%}
       <p class="mlfooter__copyright">{{ s.copyright_text }}</p>
     {%- endif -%}
+
+    {%- if s.disclaimer_text != blank -%}
+      <div class="mlfooter__disclaimer">{{ s.disclaimer_text }}</div>
+    {%- endif -%}
   </div>
 </footer>
 
@@ -98,6 +102,20 @@
     line-height: 1.5;
   }
 
+  .mlfooter__disclaimer {
+    text-align: center;
+    color: var(--mlf-text);
+    opacity: 0.7;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .mlfooter__disclaimer p {
+    margin: 0;
+  }
+
   @media (max-width: 768px) {
     .mlfooter {
       /* Extra bottom space so the sticky CTA bar does not cover the copyright */
@@ -124,6 +142,9 @@
     .mlfooter__copyright {
       font-size: 12px;
     }
+    .mlfooter__disclaimer {
+      font-size: 11px;
+    }
   }
 </style>
 
@@ -144,6 +165,14 @@
       "id": "copyright_text",
       "label": "Copyright text",
       "default": "© 2026 Franky Nutrition Inc. All Rights Reserved."
+    },
+
+    { "type": "header", "content": "Disclaimer" },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text",
+      "info": "Compliance / legal disclaimer shown below the copyright."
     }
   ],
   "blocks": [
