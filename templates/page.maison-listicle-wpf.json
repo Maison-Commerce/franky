@@ -100,7 +100,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-12.png",
-            "video": "shopify://files/videos/Angela_Before (1).mp4",
+            "video": "shopify://files/videos/Snacking_1x1.mp4",
             "number_override": "",
             "title": "<p>GLP-1s slow everything down. (Including your digestion.)</p>",
             "body": "<p>That's literally how they work — slower stomach, smaller appetite, less food. But the same mechanism that kills your hunger also backs up everything downstream. Bloat. Discomfort. Mornings that just don't move the way they used to. Coffee plus prebiotics keeps things moving. Not harsh. Not urgent. Just regular again.</p>",
@@ -112,7 +112,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-13.png",
-            "video": "shopify://files/videos/hf_04.mp4",
+            "video": "shopify://files/videos/Body_1x1.mp4",
             "number_override": "",
             "title": "<p>Your appetite shrank. </p><p>Your body's needs didn't.</p>",
             "body": "<p>That's why mid-morning hits you shaky, foggy, and off — even when food doesn't sound appealing at all. You don't need a full breakfast. You need something your body can actually use, in a format your appetite will still say yes to. A cold iced coffee takes about ten seconds to make. That's a format that works.</p>",
@@ -124,7 +124,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/list-img-14.png",
-            "video": "shopify://files/videos/Kayla_1x1.mp4",
+            "video": "shopify://files/videos/Angela_Jeans.mp4",
             "number_override": "",
             "title": "<p>Protect your muscle while the weight comes off</p>",
             "body": "<p>A GLP-1 can quietly cost you strength, tone, and metabolism — especially once protein intake drops alongside appetite. The goal was never to just weigh less. It was to look and feel better in the process. Twenty grams of protein before lunch, every morning, without cooking or choking down a shake, is one of the simplest ways to protect that.</p>",
@@ -136,7 +136,7 @@
           "settings": {
             "media_type": "video",
             "image": "shopify://shop_images/Franky_06.jpg",
-            "video": "shopify://files/videos/Tiffany_1x1.mp4",
+            "video": "shopify://files/videos/Angela_Taste_Test.mp4",
             "number_override": "",
             "title": "<p>Under-fueled energy hits different when you're on a GLP-1</p>",
             "body": "<p>Eating less. Somehow even more tired. Sound familiar? Caffeine alone is a short-term patch — that's why the afternoon crash keeps showing up even though \"nothing changed.\" Franky pairs 100mg of natural caffeine with 200mg of L-theanine specifically to smooth the curve. No jitter spike. No 11am dip. Just steady focus through your morning.</p>",
@@ -146,9 +146,9 @@
         "item_06": {
           "type": "item",
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/Franky_03.jpg",
-            "video": "shopify://files/videos/Taste_Reaction.mp4",
+            "video": "shopify://files/videos/Tiffany_1x1.mp4",
             "number_override": "",
             "title": "<p>If it's not easy, it won't stick</p>",
             "body": "<p>You're not cooking breakfast on a low-appetite morning. You're not choking down a thick protein shake before you're even awake. The only routine that survives a GLP-1 is the one that barely feels like a routine. Two scoops. Cold water or milk. Ice. Sixty seconds. That's it.</p>",
@@ -276,8 +276,8 @@
         "review_rachel"
       ],
       "settings": {
-        "bg_start": "#fbf6ea",
-        "bg_end": "#deeaf2",
+        "bg_start": "#fff8f7",
+        "bg_end": "#c1d7e7",
         "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
         "highlight_color": "#ffbea9",
         "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
