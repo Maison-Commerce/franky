@@ -76,8 +76,9 @@
         "updated": "<p><strong>Updated:</strong> May 24, 2026</p>",
         "cta_text": "See the 7 Reasons",
         "cta_url": "#list-items-7-list",
-        "mobile_media_type": "image",
-        "mobile_image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg"
+        "mobile_media_type": "video",
+        "mobile_image": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
+        "mobile_video": "shopify://files/videos/Angela_Taste_Test.mp4"
       }
     },
     "items": {
