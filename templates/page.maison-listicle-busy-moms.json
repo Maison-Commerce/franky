@@ -279,7 +279,7 @@
       ],
       "settings": {
         "bg_start": "#fff8f7",
-        "bg_end": "#deeaf2",
+        "bg_end": "#c1d6e6",
         "promo_title": "<p><em>GET UP TO 32% OFF + FREE SHIPPING</em></p><p>WITH YOUR FIRST ORDER</p>",
         "highlight_color": "#ffbea9",
         "promo_subtitle": "✨ We don't do this for everyone... this is a first-order deal, just for you.",
@@ -360,7 +360,7 @@
         "link_cookie"
       ],
       "settings": {
-        "bg_color": "#dfeaf2",
+        "bg_color": "#c1d6e6",
         "text_color": "#f7f3e6",
         "copyright_text": "© 2026 Franky Nutrition Inc. All Rights Reserved."
       }
