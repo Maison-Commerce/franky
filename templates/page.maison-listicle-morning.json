@@ -365,7 +365,7 @@
             "discount_multiplier": "1",
             "selling_plan_id": "5080383721",
             "frequency_label": "Deliver every 4 weeks",
-            "is_default_selected": false,
+            "is_default_selected": true,
             "show_best_value": false,
             "custom_image": "shopify://shop_images/list-pack-option.png"
           }
@@ -393,7 +393,7 @@
             "discount_multiplier": "0.85",
             "selling_plan_id": "5272010985",
             "frequency_label": "Deliver every 8 weeks",
-            "is_default_selected": true,
+            "is_default_selected": false,
             "show_best_value": true,
             "custom_image": "shopify://shop_images/list-pack-option.png"
           }
