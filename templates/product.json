@@ -505,6 +505,7 @@
         },
         "trust_badge_RY6LQE": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon_type": "shield",
             "badge_text": "Secure checkout"
@@ -537,7 +538,7 @@
           "type": "accordion_item",
           "settings": {
             "accordion_title": "Who is Franky for?",
-            "accordion_content": "<p>Whether you're trying to upgrade your morning coffee, hit your protein goals, lose weight without losing muscle, or finally stop crashing at 10am, Franky has your back. And unlike most functional drinks, it actually tastes incredible: rich, smooth vanilla hazelnut that drinks like a coffee shop treat, not a supplement.</p><p>Not sure if it's for you? Franky may be a fit if you:</p><ul><li>Drink coffee every morning but want it to actually do something</li><li>Skip breakfast or grab something quick and regret it by 11am</li><li>Struggle to hit your daily protein target</li><li>Are on a GLP-1 (Ozempic, Wegovy, Mounjaro, Zepbound) and need an easy, high-protein way to protect lean muscle while appetite is suppressed</li><li>Want a low-calorie, low-sugar option that supports weight loss without leaving you hungry</li><li>Are tired of \"healthy\" products that taste like cardboard or chalk</li><li>Get the caffeine jitters or afternoon energy crashes</li><li>Want steady focus through long meetings or workouts</li><li>Deal with bloating or sluggish digestion</li><li>Train in the morning and need quick fuel before or after</li></ul>"
+            "accordion_content": "<p>Upgrade your coffee. Hit your protein goals. Stay full and focused until lunch. Franky does all of it, and it actually tastes incredible: rich, smooth vanilla hazelnut that drinks like a coffee shop treat, not a supplement.</p><p>Franky is for you if you:</p><ul><li>Want to lose weight without going hungry</li><li>Struggle to hit your daily protein target</li><li>Take a GLP-1 (Ozempic, Wegovy, Mounjaro, Zepbound) and need easy protein to protect lean muscle</li><li>Are tired of \"healthy\" products that taste like chalk</li><li>Get caffeine jitters or the 2pm crash</li><li>Need steady focus for long meetings or workouts</li><li>Deal with bloating or sluggish digestion</li><li>Train in the morning and need quick fuel</li><li>Drink coffee every morning and want it to do more</li></ul>"
           }
         },
         "accordion_item_KNehCE": {
