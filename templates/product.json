@@ -583,7 +583,7 @@
           "type": "accordion_item",
           "settings": {
             "accordion_title": "Shipping & Returns",
-            "accordion_content": "<p><strong>Standard Shipping</strong><br/>3–5 business days · Free on orders over $50 · $4.95 on orders under $50</p><p><strong>Express Shipping</strong><br/>1–2 business days · $9.95</p><p>Orders ship from our Georgia warehouse within 1 business day.</p><p><strong>30-Day Money-Back Guarantee</strong><br/>Not happy? Zero risk. Just reach out and we'll make it right.</p>"
+            "accordion_content": "<p><strong>Standard Shipping</strong><br/>3–5 business days · Free on orders over $50 · $4.95 on orders under $50</p><p><strong>Express Shipping</strong><br/>1–2 business days · $9.95</p><p>Orders ship within 1 business day from our warehouse in <strong>Georgia</strong>, <strong>USA</strong>.</p><p><strong>30-Day Money-Back Guarantee</strong><br/>Not happy? Zero risk. Just reach out and we'll make it right.</p>"
           }
         },
         "accordion_item_MCYThT": {
