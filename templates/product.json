@@ -694,7 +694,7 @@
           "settings": {
             "image": "shopify://shop_images/awfawfawfw.png",
             "title": "Natural Caffeine",
-            "description": "May support clean, focused energy without the jitters.*"
+            "description": "Support clean, focused energy without the jitters.*"
           }
         },
         "ingredient_tkt7Lc": {
@@ -702,15 +702,7 @@
           "settings": {
             "image": "shopify://shop_images/afawfawfwafawf.png",
             "title": "Whey Protein",
-            "description": "May support satiety and help keep cravings in check.*"
-          }
-        },
-        "ingredient_9mGBh6": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/wfagawgawg.png",
-            "title": "L-Theanine",
-            "description": "May support calm, focused energy without the spike.*"
+            "description": "Support satiety, keeps cravings in check and supports lean muscle.*"
           }
         },
         "ingredient_wp9ey8": {
@@ -718,7 +710,7 @@
           "settings": {
             "image": "shopify://shop_images/gwawgsbesgw.png",
             "title": "Psyllium Husk Fiber",
-            "description": "May support digestion and help you feel fuller for longer.*"
+            "description": "Support digestion and help you feel fuller for longer.*"
           }
         },
         "ingredient_9NYLU7": {
@@ -726,7 +718,15 @@
           "settings": {
             "image": "shopify://shop_images/aewgsebegwqg.png",
             "title": "Probiotic Blend",
-            "description": "May support digestion and help you feel fuller for longer.*"
+            "description": "Three clinically studied strains for a balanced, happy gut.*"
+          }
+        },
+        "ingredient_9mGBh6": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wfagawgawg.png",
+            "title": "L-Theanine",
+            "description": "Smooths out the caffeine for calm, steady focus.*"
           }
         },
         "ingredient_aB8HGE": {
@@ -734,16 +734,16 @@
           "settings": {
             "image": "shopify://shop_images/vdsvwegwebes.png",
             "title": "Lion’s Mane",
-            "description": "May support sharper thinking and mental clarity.*"
+            "description": "Sharper thinking and mental clarity.*"
           }
         }
       },
       "block_order": [
         "ingredient_7J6hnM",
         "ingredient_tkt7Lc",
-        "ingredient_9mGBh6",
         "ingredient_wp9ey8",
         "ingredient_9NYLU7",
+        "ingredient_9mGBh6",
         "ingredient_aB8HGE"
       ],
       "name": "Maison ING",
