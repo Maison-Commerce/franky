@@ -497,6 +497,7 @@
         },
         "trust_badge_RY6LQE": {
           "type": "trust_badge",
+          "disabled": true,
           "settings": {
             "icon_type": "shield",
             "badge_text": "Secure checkout"
