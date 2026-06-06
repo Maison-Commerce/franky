@@ -81,23 +81,32 @@
             "show_payment_methods": true
           }
         },
+        "link_list_wjYCfK": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Navigate",
+            "menu": ""
+          }
+        },
         "link_list_JDAfjf": {
           "type": "link_list",
           "settings": {
-            "heading": "Support",
+            "heading": "Lets be Frank",
             "menu": "footer"
           }
         },
         "link_list_HmF37b": {
           "type": "link_list",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Support",
             "menu": "footer-2"
           }
         }
       },
       "block_order": [
         "customer_support_AUtKti",
+        "link_list_wjYCfK",
         "link_list_JDAfjf",
         "link_list_HmF37b"
       ],
