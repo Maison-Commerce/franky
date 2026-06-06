@@ -382,6 +382,8 @@
             "bottle_count": 1,
             "badge_text": "",
             "discount_multiplier": "1",
+            "selling_plan_id": "",
+            "frequency_label": "",
             "is_default_selected": false,
             "show_best_value": false,
             "variant_id": ""
@@ -395,6 +397,8 @@
             "bottle_count": 2,
             "badge_text": "",
             "discount_multiplier": "0.9",
+            "selling_plan_id": "",
+            "frequency_label": "",
             "is_default_selected": false,
             "show_best_value": false,
             "variant_id": ""
@@ -408,6 +412,8 @@
             "bottle_count": 3,
             "badge_text": "Best Value",
             "discount_multiplier": "0.85",
+            "selling_plan_id": "",
+            "frequency_label": "",
             "is_default_selected": true,
             "show_best_value": true,
             "variant_id": ""
@@ -508,7 +514,7 @@
           "type": "accordion_item",
           "settings": {
             "accordion_title": "Details",
-            "accordion_content": "<p>The Franky Magic Frother turns your protein iced coffee into a smooth, café-quality drink in seconds — no clumps, no settling, no stirring forever with a spoon. Powered by a high-speed motor, it blends every scoop of Franky into a perfectly mixed, frothy drink that tastes the way it was meant to. </p><p>Compact, lightweight, and rechargeable, it fits in your gym bag, your desk drawer, or your kitchen counter without taking up space.</p><p>The stainless steel whisk head is easy to rinse clean and built to last through your daily routine. Whether you're mixing with cold water, almond milk, or oat milk over ice, the Magic Frother gives you that creamy, blended texture you'd expect from a coffee shop — at home, in under 10 seconds. One button. </p><p>Zero effort. Just a better cup, every single morning.</p><p>Weight: 2.4 oz (68g) · Dimensions: 6.5 × 1.5 × 1.5 in</p>"
+            "accordion_content": "<p>The Franky Magic Frother turns your protein iced coffee into a <strong>smooth</strong>, <strong>café-quality drink in seconds</strong> — no clumps, no settling, no stirring forever with a spoon. Powered by a high-speed motor, it blends every scoop of Franky into a perfectly mixed, frothy drink that tastes the way it was meant to. </p><p>Compact, lightweight, and rechargeable, it fits in your gym bag, your desk drawer, or your kitchen counter without taking up space.</p><p>The stainless steel whisk head is easy to rinse clean and built to last through your daily routine. Whether you're mixing with cold water, almond milk, or oat milk over ice, the Magic Frother gives you that creamy, blended texture you'd expect from a coffee shop — at home, in under 10 seconds. One button. </p><p>Zero effort. Just a better cup, every single morning.</p><p>Weight: 2.4 oz (68g) · Dimensions: 6.5 × 1.5 × 1.5 in</p>"
           }
         },
         "accordion_item_hdeJXf": {
@@ -936,8 +942,9 @@
       "disabled": true,
       "name": "Maison Comp Flex",
       "settings": {
-        "section_heading": "Why Coffee Alone Sabotages Your Energy",
-        "section_subtitle": "Plain coffee wakes you up. Franky keeps you going.",
+        "section_heading": "<p>Why Coffee Alone Sabotages Your Energy</p>",
+        "heading_max_width_desktop": 410,
+        "section_subtitle": "<p>Plain coffee wakes you up. Franky keeps you going.</p>",
         "heading_font_size_desktop": 40,
         "heading_font_size_mobile": 24,
         "heading_color": "#3b2b2f",
@@ -1073,6 +1080,24 @@
         "trust_badge_color": "#3b2b2f"
       }
     },
+    "1774045599b927268f": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_eqmDxx": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_eqmDxx"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "maison_introducing_LXBj6d": {
       "type": "maison-introducing",
       "blocks": {
@@ -1145,24 +1170,6 @@
         "button_font_size_mobile": 14,
         "trust_badge_font_size": 14,
         "trust_badge_color": "#3b2b2f"
-      }
-    },
-    "1774045599b927268f": {
-      "type": "apps",
-      "blocks": {
-        "okendo_reviews_widget_eqmDxx": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{product}}",
-            "widget_type": "reviews_widget"
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_widget_eqmDxx"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "maison_video_review_UWqfGU": {
