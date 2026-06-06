@@ -474,13 +474,6 @@
             "benefit_text": "Save 15%"
           }
         },
-        "subscription_benefit_K9ViRm": {
-          "type": "subscription_benefit",
-          "settings": {
-            "icon_type": "checkmark",
-            "benefit_text": "FREE & Avg 3-Day US shipping"
-          }
-        },
         "subscription_benefit_VhX7iW": {
           "type": "subscription_benefit",
           "settings": {
@@ -493,6 +486,13 @@
           "settings": {
             "icon_type": "checkmark",
             "benefit_text": "30-Day Money-Back Guarantee"
+          }
+        },
+        "subscription_benefit_K9ViRm": {
+          "type": "subscription_benefit",
+          "settings": {
+            "icon_type": "checkmark",
+            "benefit_text": "FREE & Avg 3-Day US shipping"
           }
         },
         "trust_badge_6RkdBR": {
@@ -606,9 +606,9 @@
         "feature_item_mkmkcY",
         "feature_item_rJBaVy",
         "subscription_benefit_BxqJNr",
-        "subscription_benefit_K9ViRm",
         "subscription_benefit_VhX7iW",
         "subscription_benefit_fdPFrj",
+        "subscription_benefit_K9ViRm",
         "trust_badge_6RkdBR",
         "trust_badge_RY6LQE",
         "trust_badge_RDLj3F",
