@@ -469,10 +469,9 @@
         },
         "subscription_benefit_BxqJNr": {
           "type": "subscription_benefit",
-          "disabled": true,
           "settings": {
             "icon_type": "checkmark",
-            "benefit_text": "Best value for consistent results"
+            "benefit_text": "Save 15%"
           }
         },
         "subscription_benefit_fdPFrj": {
