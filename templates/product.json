@@ -377,7 +377,7 @@
         "pack_option_GHhn3X": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "1 Bag",
+            "pack_name": "1 Month Supply",
             "bottle_count": 1,
             "badge_text": "",
             "discount_multiplier": "1",
@@ -393,7 +393,7 @@
         "pack_option_wRrbhV": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "2 Bags",
+            "pack_name": "2 Month Supply",
             "bottle_count": 2,
             "badge_text": "Bestseller",
             "discount_multiplier": "0.9",
@@ -409,7 +409,7 @@
         "pack_option_wrUnNn": {
           "type": "pack_option",
           "settings": {
-            "pack_name": "3 Bags",
+            "pack_name": "3 Month Supply",
             "bottle_count": 3,
             "badge_text": "Best Value",
             "discount_multiplier": "0.85",
