@@ -1804,7 +1804,7 @@
       "type": "maison-sticky-atc",
       "name": "Maison Sticky ATC",
       "settings": {
-        "button_text": "Add To Cart",
+        "button_text": "Add +",
         "button_loading_text": "Adding...",
         "show_rating": true,
         "show_on_mobile": true
