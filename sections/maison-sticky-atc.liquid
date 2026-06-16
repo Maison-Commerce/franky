@@ -7,10 +7,29 @@
       "content": "A floating add-to-cart bar that scrolls into view once the Maison PDP Hero is out of view. Add this section to the same product template, below the Maison PDP Hero."
     },
     {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "select",
+      "id": "button_action",
+      "label": "Button action",
+      "info": "Add to cart hides the bar as the cart drawer slides in. Scroll to offer jumps back up to the Maison PDP Hero.",
+      "options": [
+        { "value": "add", "label": "Add to cart" },
+        { "value": "scroll", "label": "Scroll to offer" }
+      ],
+      "default": "add"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
       "type": "text",
       "id": "button_text",
       "label": "Button text",
-      "default": "Add To Cart"
+      "default": "Add"
     },
     {
       "type": "text",
@@ -29,6 +48,154 @@
       "id": "show_on_mobile",
       "label": "Show on mobile",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "social_font_size",
+      "label": "Social proof font size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "label": "Price font size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Spacing & shape"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 360,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "bottom_offset",
+      "label": "Distance from bottom",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "label": "Vertical padding",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "label": "Horizontal padding",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Spacing between elements",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Product image size",
+      "min": 32,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "label": "Button horizontal padding",
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Button height",
+      "min": 36,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 48
     }
   ],
   "presets": [
@@ -101,6 +268,22 @@
   x-transition:leave-start="xmaison_sticky-atc-onscreen"
   x-transition:leave-end="xmaison_sticky-atc-offscreen"
   class="xmaison_sticky-atc{% unless section.settings.show_on_mobile %} xmaison_sticky-atc--desktop-only{% endunless %}"
+  style="
+    --sticky-max-width: {{ section.settings.max_width | default: 600 }}px;
+    --sticky-bottom: {{ section.settings.bottom_offset | default: 16 }}px;
+    --sticky-padding-y: {{ section.settings.padding_y | default: 12 }}px;
+    --sticky-padding-x: {{ section.settings.padding_x | default: 16 }}px;
+    --sticky-gap: {{ section.settings.gap | default: 16 }}px;
+    --sticky-image-size: {{ section.settings.image_size | default: 48 }}px;
+    --sticky-card-radius: {{ section.settings.card_radius | default: 18 }}px;
+    --sticky-title-size: {{ section.settings.title_font_size | default: 18 }}px;
+    --sticky-social-size: {{ section.settings.social_font_size | default: 13 }}px;
+    --sticky-price-size: {{ section.settings.price_font_size | default: 18 }}px;
+    --sticky-button-size: {{ section.settings.button_font_size | default: 15 }}px;
+    --sticky-button-radius: {{ section.settings.button_radius | default: 12 }}px;
+    --sticky-button-padding-x: {{ section.settings.button_padding_x | default: 28 }}px;
+    --sticky-button-height: {{ section.settings.button_height | default: 48 }}px;
+  "
   role="region"
   aria-label="Add {{ product.title | escape }} to cart"
 >
@@ -166,9 +349,9 @@
         type="button"
         class="xmaison_sticky-atc-button"
         :disabled="loading"
-        @click="addToCart()"
+        @click="primaryAction()"
       >
-        <span class="xmaison_sticky-atc-button-text" x-text="loading ? {{ section.settings.button_loading_text | default: 'Adding...' | json }} : {{ section.settings.button_text | default: 'Add To Cart' | json }}"></span>
+        <span class="xmaison_sticky-atc-button-text" x-text="loading ? loadingText : buttonText"></span>
       </button>
     </div>
   </div>
@@ -177,10 +360,20 @@
 <script>
   function maisonStickyAtc() {
     return {
-      visible: false,
+      offerOutOfView: false,
+      cartOpen: false,
       loading: false,
       displayPrice: {{ sticky_default_price | default: 0 }},
       comparePrice: {{ sticky_compare_price | default: 0 }},
+      buttonText: {{ section.settings.button_text | default: 'Add' | json }},
+      loadingText: {{ section.settings.button_loading_text | default: 'Adding...' | json }},
+      buttonAction: {{ section.settings.button_action | default: 'add' | json }},
+
+      // The bar shows once the offer is out of view, but tucks itself back
+      // out of the way while the cart drawer is open so they don't overlap.
+      get visible() {
+        return this.offerOutOfView && !this.cartOpen;
+      },
 
       init() {
         const setupObserver = () => {
@@ -190,7 +383,7 @@
           // primary offer has scrolled out of view, and hides when it returns.
           const target = hero.querySelector('.xmaison_add-to-cart-section') || hero;
           const observer = new IntersectionObserver((entries) => {
-            this.visible = !entries[0].isIntersecting;
+            this.offerOutOfView = !entries[0].isIntersecting;
           }, { threshold: 0 });
           observer.observe(target);
         };
@@ -210,15 +403,43 @@
         document.addEventListener('maison:pdp-loading', (e) => {
           this.loading = !!e.detail;
         });
+
+        // Slide the bar away as the cart drawer comes in, bring it back when
+        // the drawer closes (if the offer is still out of view).
+        document.addEventListener('maison:cart-drawer-open', () => {
+          this.cartOpen = true;
+        });
+        document.addEventListener('maison:cart-drawer-close', () => {
+          this.cartOpen = false;
+        });
+      },
+
+      primaryAction() {
+        if (this.buttonAction === 'scroll') {
+          this.scrollToOffer();
+        } else {
+          this.addToCart();
+        }
       },
 
       scrollToOffer() {
         const hero = document.querySelector('.xmaison_product-section');
-        if (hero) {
-          hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
+        if (!hero) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
         }
+        // Offset for any sticky/fixed site header so the offer isn't hidden
+        // behind it after scrolling.
+        let headerOffset = 0;
+        const header = document.querySelector('.shopify-section-header, .section-header, header[role="banner"], #shopify-section-header, .header-wrapper');
+        if (header) {
+          const pos = window.getComputedStyle(header).position;
+          if (pos === 'fixed' || pos === 'sticky') {
+            headerOffset = header.getBoundingClientRect().height;
+          }
+        }
+        const top = hero.getBoundingClientRect().top + window.pageYOffset - headerOffset - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       },
 
       addToCart() {

@@ -10,10 +10,10 @@
 .xmaison_sticky-atc {
   position: fixed;
   left: 50%;
-  bottom: 16px;
+  bottom: var(--sticky-bottom, 16px);
   z-index: 9000;
   width: calc(100% - 32px);
-  max-width: 600px;
+  max-width: var(--sticky-max-width, 600px);
   transform: translateX(-50%);
 }
 
@@ -24,7 +24,7 @@
 
 .xmaison_sticky-atc-offscreen {
   opacity: 0;
-  transform: translate(-50%, calc(100% + 16px));
+  transform: translate(-50%, calc(100% + var(--sticky-bottom, 16px)));
 }
 
 .xmaison_sticky-atc-onscreen {
@@ -36,11 +36,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 12px 12px 12px 16px;
+  gap: var(--sticky-gap, 16px);
+  padding: var(--sticky-padding-y, 12px) var(--sticky-padding-x, 16px);
   background-color: var(--white, #FFFFFF);
   border: 1px solid var(--color-brand-1-200, #E9EBE9);
-  border-radius: 18px;
+  border-radius: var(--sticky-card-radius, 18px);
   box-shadow: 0 8px 32px rgba(59, 43, 47, 0.16);
 }
 
@@ -48,7 +48,7 @@
 .xmaison_sticky-atc-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--sticky-gap, 16px) * 0.75);
   min-width: 0;
   flex: 1 1 auto;
   padding: 0;
@@ -61,9 +61,9 @@
 
 .xmaison_sticky-atc-image {
   flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: var(--sticky-image-size, 48px);
+  height: var(--sticky-image-size, 48px);
+  border-radius: calc(var(--sticky-card-radius, 18px) * 0.5);
   object-fit: cover;
   background-color: var(--color-brand-1-100, #FBFBFB);
 }
@@ -77,7 +77,7 @@
 
 .xmaison_sticky-atc-title {
   font-family: var(--font-heading, serif);
-  font-size: 18px;
+  font-size: var(--sticky-title-size, 18px);
   font-weight: 400;
   line-height: 1.2;
   color: var(--text-primary, #3B2B2F);
@@ -105,7 +105,7 @@
 
 .xmaison_sticky-atc-social-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 13px;
+  font-size: var(--sticky-social-size, 13px);
   font-weight: 300;
   line-height: 1.4;
   color: var(--text-secondary, rgba(59, 43, 47, 0.75));
@@ -116,7 +116,7 @@
 .xmaison_sticky-atc-action {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--sticky-gap, 16px) * 0.75);
   flex: 0 0 auto;
 }
 
@@ -129,7 +129,7 @@
 
 .xmaison_sticky-atc-price-current {
   font-family: var(--font-body, sans-serif);
-  font-size: 18px;
+  font-size: var(--sticky-price-size, 18px);
   font-weight: 600;
   color: var(--color-brand-1-1800, #3B2B2F);
 }
@@ -146,11 +146,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 28px;
+  height: var(--sticky-button-height, 48px);
+  padding: 0 var(--sticky-button-padding-x, 28px);
   background-color: var(--color-brand-1-1800, #3B2B2F);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--sticky-button-radius, 12px);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -171,7 +171,7 @@
 
 .xmaison_sticky-atc-button-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 15px;
+  font-size: var(--sticky-button-size, 15px);
   font-weight: 600;
   line-height: 1;
   color: var(--white, #FFFFFF);
@@ -188,48 +188,15 @@
   }
 }
 
-/* Mobile tuning */
+/* Mobile tuning — keep the side gutters tighter; element sizing is driven
+   by the section settings (CSS custom properties) so it stays configurable. */
 @media (max-width: 600px) {
   .xmaison_sticky-atc {
     width: calc(100% - 24px);
-    bottom: 12px;
-  }
-
-  .xmaison_sticky-atc-inner {
-    gap: 10px;
-    padding: 10px 10px 10px 12px;
-    border-radius: 16px;
-  }
-
-  .xmaison_sticky-atc-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-  }
-
-  .xmaison_sticky-atc-title {
-    font-size: 15px;
-  }
-
-  .xmaison_sticky-atc-social-text {
-    font-size: 12px;
-  }
-
-  .xmaison_sticky-atc-action {
-    gap: 8px;
-  }
-
-  .xmaison_sticky-atc-price-current {
-    font-size: 16px;
   }
 
   .xmaison_sticky-atc-button {
-    height: 44px;
-    padding: 0 18px;
-  }
-
-  .xmaison_sticky-atc-button-text {
-    font-size: 14px;
+    padding: 0 max(16px, calc(var(--sticky-button-padding-x, 28px) * 0.65));
   }
 }
 
