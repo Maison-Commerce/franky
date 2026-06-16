@@ -1520,6 +1520,15 @@
         "slider_speed": 30
       }
     },
+    "maison_sticky_atc": {
+      "type": "maison-sticky-atc",
+      "settings": {
+        "button_text": "Add To Cart",
+        "button_loading_text": "Adding...",
+        "show_rating": true,
+        "show_on_mobile": true
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -1554,6 +1563,7 @@
     "maison_faq_XGaHRG",
     "maison_collection_slider_icVqir",
     "maison_inst_img_XPMVhM",
-    "related-products"
+    "related-products",
+    "maison_sticky_atc"
   ]
 }
