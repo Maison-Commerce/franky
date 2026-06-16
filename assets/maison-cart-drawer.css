@@ -784,7 +784,7 @@
   
   .xmaison_cart-container .xmaison_save-text {
     font-family: var(--xmaison-font-body);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     line-height: var(--xmaison-line-height-normal);
     color: #3B2B2F;
@@ -1143,7 +1143,7 @@
   
     .xmaison_product-selling-plan {
       font-family: var(--xmaison-font-system);
-      font-size: 10px;
+      font-size: 12px;
       padding: 5px 8px;
     }
   
@@ -1274,7 +1274,7 @@
     }
   
     .xmaison_upsell-product-name {
-      font-size: 10px;
+      font-size: 12px;
       text-align: left;
     }
   
@@ -1468,7 +1468,7 @@
 
   .xmaison_delivery-payment-label,
   .xmaison_delivery-payment-frequency {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .xmaison_delivery-check-icon {
@@ -1477,6 +1477,6 @@
   }
 
   .xmaison_delivery-payment-text {
-    font-size: 10px;
+    font-size: 12px;
   }
 }

@@ -140,7 +140,7 @@
   }
 
   .card__best-seller-badge span {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -225,7 +225,7 @@
   }
 
   .card__rating-count {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .card__rating-wrapper{

@@ -605,7 +605,7 @@ img {
 
 .xmaison_best-value-text {
   font-family: var(--font-alliance);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-brand-1-100);
   text-transform: uppercase;
@@ -727,7 +727,7 @@ img {
 
 .xmaison_product-section .xmaison_save-badge-text {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--color-brand-1-1800);
   line-height: 1.5;
@@ -805,7 +805,7 @@ img {
 
 .xmaison_most-popular-text {
   font-family: var(--font-alliance);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-brand-1-100);
   text-transform: uppercase;
@@ -1826,7 +1826,7 @@ img {
   }
 
   .xmaison_product-section .xmaison_trust-text {
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     white-space: nowrap;
   }
@@ -2194,7 +2194,7 @@ user-select: none;
 }
 
 .xmaison_bundle-tier-price {
-  font-size: 10px;
+  font-size: 12px;
 }
 }
 
@@ -2414,7 +2414,7 @@ user-select: none;
 
 .xmaison_test-results-trigger-badge {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   color: #3B2B2F;
@@ -2699,11 +2699,11 @@ user-select: none;
   }
 
   .xmaison_test-results-trigger-desc {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .xmaison_test-results-trigger-link {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .xmaison_test-results-trigger-arrow {
