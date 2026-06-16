@@ -975,12 +975,42 @@
           console.log('[Price Debug] displayedPrice:', this.isPreorder ? this.preorderPrice : (this.isSubscription ? this.subscriptionPrice : this.onetimePrice));
           console.log('[Price Debug] preorderPrice:', this.preorderPrice);
           console.log('[Price Debug] preorderOriginalPrice:', this.preorderOriginalPrice);
+
+          // Broadcast the current offer so companion UI (e.g. the sticky
+          // add-to-cart bar) can mirror the live price and selection.
+          const displayPrice = this.isPreorder
+            ? this.preorderPrice
+            : (this.isSubscription ? this.subscriptionPrice : this.onetimePrice);
+          let comparePrice = 0;
+          if (this.isPreorder) {
+            comparePrice = window.sectionMode === 'bundle' ? this.bundleOriginalPrice : this.preorderOriginalPrice;
+          } else if (this.variant && this.variant.compare_at_price && this.variant.compare_at_price > this.variant.price) {
+            comparePrice = this.variant.compare_at_price * this.quantity;
+          }
+          document.dispatchEvent(new CustomEvent('maison:pdp-state-change', {
+            detail: { displayPrice: displayPrice, comparePrice: comparePrice },
+          }));
         };
 
         this.$watch('variantId', () => logPriceInfo());
         this.$watch('quantity', () => logPriceInfo());
         this.$watch('currentPackDiscount', () => logPriceInfo());
         this.$watch('isSubscription', () => logPriceInfo());
+        this.$watch('bundleAddonSlots', () => logPriceInfo());
+        this.$watch('loading', (value) => {
+          document.dispatchEvent(new CustomEvent('maison:pdp-loading', { detail: value }));
+        });
+
+        // The sticky add-to-cart bar delegates here so all cart logic
+        // (pre-order, bundles, selling plans) lives in one place.
+        document.addEventListener('maison:sticky-atc-add', () => {
+          if (this.isPreorder) {
+            this.addToCartPreOrder();
+          } else {
+            this.addToCart();
+          }
+        });
+
         logPriceInfo();
       },
       nutritionalOpen: false,

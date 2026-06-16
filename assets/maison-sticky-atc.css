@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Maison Sticky ATC
+   A floating add-to-cart bar that mirrors the Maison PDP Hero styling.
+   ========================================================================== */
+
+[x-cloak] {
+  display: none !important;
+}
+
+.xmaison_sticky-atc {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 9000;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  transform: translateX(-50%);
+}
+
+/* Enter / leave transitions (slide up + fade) */
+.xmaison_sticky-atc-trans {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.xmaison_sticky-atc-offscreen {
+  opacity: 0;
+  transform: translate(-50%, calc(100% + 16px));
+}
+
+.xmaison_sticky-atc-onscreen {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.xmaison_sticky-atc-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 12px 12px 16px;
+  background-color: var(--white, #FFFFFF);
+  border: 1px solid var(--color-brand-1-200, #E9EBE9);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(59, 43, 47, 0.16);
+}
+
+/* Left: image + title + social proof (also the scroll-to-offer trigger) */
+.xmaison_sticky-atc-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body, sans-serif);
+}
+
+.xmaison_sticky-atc-image {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: var(--color-brand-1-100, #FBFBFB);
+}
+
+.xmaison_sticky-atc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.xmaison_sticky-atc-title {
+  font-family: var(--font-heading, serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary, #3B2B2F);
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.xmaison_sticky-atc-social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.xmaison_sticky-atc-stars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.xmaison_sticky-atc-star {
+  width: 14px;
+  height: 14px;
+}
+
+.xmaison_sticky-atc-social-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text-secondary, rgba(59, 43, 47, 0.75));
+  white-space: nowrap;
+}
+
+/* Right: price + add-to-cart button */
+.xmaison_sticky-atc-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.xmaison_sticky-atc-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.xmaison_sticky-atc-price-current {
+  font-family: var(--font-body, sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-brand-1-1800, #3B2B2F);
+}
+
+.xmaison_sticky-atc-price-compare {
+  font-family: var(--font-body, sans-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted, #857B7E);
+  text-decoration: line-through;
+}
+
+.xmaison_sticky-atc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 28px;
+  background-color: var(--color-brand-1-1800, #3B2B2F);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.xmaison_sticky-atc-button:hover {
+  background-color: var(--color-brand-1-1400, #455846);
+}
+
+.xmaison_sticky-atc-button:disabled {
+  pointer-events: none;
+  background: rgba(218, 215, 216, 0.50);
+}
+
+.xmaison_sticky-atc-button:disabled .xmaison_sticky-atc-button-text {
+  color: var(--text-primary, #3B2B2F);
+  opacity: 0.5;
+}
+
+.xmaison_sticky-atc-button-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white, #FFFFFF);
+  white-space: nowrap;
+}
+
+/* Hide on mobile when toggled off */
+.xmaison_sticky-atc--desktop-only {
+  display: none;
+}
+@media (min-width: 769px) {
+  .xmaison_sticky-atc--desktop-only {
+    display: block;
+  }
+}
+
+/* Mobile tuning */
+@media (max-width: 600px) {
+  .xmaison_sticky-atc {
+    width: calc(100% - 24px);
+    bottom: 12px;
+  }
+
+  .xmaison_sticky-atc-inner {
+    gap: 10px;
+    padding: 10px 10px 10px 12px;
+    border-radius: 16px;
+  }
+
+  .xmaison_sticky-atc-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .xmaison_sticky-atc-title {
+    font-size: 15px;
+  }
+
+  .xmaison_sticky-atc-social-text {
+    font-size: 12px;
+  }
+
+  .xmaison_sticky-atc-action {
+    gap: 8px;
+  }
+
+  .xmaison_sticky-atc-price-current {
+    font-size: 16px;
+  }
+
+  .xmaison_sticky-atc-button {
+    height: 44px;
+    padding: 0 18px;
+  }
+
+  .xmaison_sticky-atc-button-text {
+    font-size: 14px;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .xmaison_sticky-atc-trans {
+    transition: opacity 0.2s ease;
+  }
+  .xmaison_sticky-atc-offscreen {
+    transform: translateX(-50%);
+  }
+  .xmaison_sticky-atc-onscreen {
+    transform: translateX(-50%);
+  }
+}

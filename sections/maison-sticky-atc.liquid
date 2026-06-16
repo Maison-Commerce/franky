@@ -1,0 +1,251 @@
+{% schema %}
+{
+  "name": "Maison Sticky ATC",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "A floating add-to-cart bar that scrolls into view once the Maison PDP Hero is out of view. Add this section to the same product template, below the Maison PDP Hero."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add To Cart"
+    },
+    {
+      "type": "text",
+      "id": "button_loading_text",
+      "label": "Button text (loading)",
+      "default": "Adding..."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating / social proof",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Sticky ATC"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'maison-sticky-atc.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign sticky_has_reviews = false
+  assign sticky_rating_raw = 0
+  assign sticky_review_count = 0
+
+  if product.metafields.reviews.rating.value != blank
+    assign sticky_rating_raw = product.metafields.reviews.rating.value.rating | times: 1.0
+    assign sticky_has_reviews = true
+  elsif product.metafields.custom.rating != blank
+    assign sticky_rating_raw = product.metafields.custom.rating | times: 1.0
+    assign sticky_has_reviews = true
+  endif
+
+  if product.metafields.reviews.rating_count != blank
+    assign sticky_review_count = product.metafields.reviews.rating_count
+    assign sticky_has_reviews = true
+  elsif product.metafields.custom.review_count != blank
+    assign sticky_review_count = product.metafields.custom.review_count
+    assign sticky_has_reviews = true
+  endif
+
+  if sticky_review_count == 0 or sticky_review_count == blank
+    if product.metafields.custom.mc_stars != blank and product.metafields.custom.mc_reviews_count != blank and product.metafields.custom.mc_reviews_count > 0
+      assign sticky_mc_stars_str = product.metafields.custom.mc_stars | replace: ',', '.'
+      assign sticky_rating_raw = sticky_mc_stars_str | times: 1.0
+      assign sticky_review_count = product.metafields.custom.mc_reviews_count
+      assign sticky_has_reviews = true
+    endif
+  endif
+
+  if sticky_has_reviews == false
+    if section.settings.show_rating
+      assign sticky_rating_raw = 4.8
+      assign sticky_review_count = 0
+    endif
+  endif
+
+  assign sticky_filled_stars = sticky_rating_raw | floor
+  assign sticky_rating_remainder = sticky_rating_raw | minus: sticky_filled_stars
+  assign sticky_has_half_star = false
+  if sticky_rating_remainder > 0
+    assign sticky_has_half_star = true
+  endif
+  assign sticky_half_star_position = sticky_filled_stars | plus: 1
+
+  assign sticky_default_price = product.selected_or_first_available_variant.price | default: product.price
+  assign sticky_compare_price = product.selected_or_first_available_variant.compare_at_price | default: 0
+-%}
+
+<div
+  x-data="maisonStickyAtc()"
+  x-cloak
+  x-show="visible"
+  x-transition:enter="xmaison_sticky-atc-trans"
+  x-transition:enter-start="xmaison_sticky-atc-offscreen"
+  x-transition:enter-end="xmaison_sticky-atc-onscreen"
+  x-transition:leave="xmaison_sticky-atc-trans"
+  x-transition:leave-start="xmaison_sticky-atc-onscreen"
+  x-transition:leave-end="xmaison_sticky-atc-offscreen"
+  class="xmaison_sticky-atc{% unless section.settings.show_on_mobile %} xmaison_sticky-atc--desktop-only{% endunless %}"
+  role="region"
+  aria-label="Add {{ product.title | escape }} to cart"
+>
+  <div class="xmaison_sticky-atc-inner">
+    <button
+      type="button"
+      class="xmaison_sticky-atc-info"
+      @click="scrollToOffer()"
+      aria-label="Scroll back to the product offer"
+    >
+      {% if product.featured_image %}
+        <img
+          class="xmaison_sticky-atc-image"
+          src="{{ product.featured_image | image_url: width: 160 }}"
+          srcset="{{ product.featured_image | image_url: width: 160 }} 1x, {{ product.featured_image | image_url: width: 320 }} 2x"
+          alt="{{ product.title | escape }}"
+          width="48"
+          height="48"
+          loading="lazy"
+        >
+      {% endif %}
+      <span class="xmaison_sticky-atc-text">
+        <span class="xmaison_sticky-atc-title">{{ product.title }}</span>
+        {% if section.settings.show_rating and sticky_has_reviews %}
+          <span class="xmaison_sticky-atc-social">
+            <span class="xmaison_sticky-atc-stars">
+              {% for i in (1..5) %}
+                {% if i <= sticky_filled_stars %}
+                  <svg class="xmaison_sticky-atc-star" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1.33l1.79 3.62 4 .58-2.9 2.82.68 3.98L8 10.42l-3.57 1.88.68-3.98-2.9-2.82 4-.58L8 1.33z" fill="#FF8C00" stroke="#FF8C00" stroke-width="1"/>
+                  </svg>
+                {% elsif sticky_has_half_star and i == sticky_half_star_position %}
+                  <svg class="xmaison_sticky-atc-star" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <clipPath id="stickyHalfStar-{{ product.id }}-{{ i }}">
+                        <rect x="0" y="0" width="8" height="16"/>
+                      </clipPath>
+                    </defs>
+                    <path d="M8 1.33l1.79 3.62 4 .58-2.9 2.82.68 3.98L8 10.42l-3.57 1.88.68-3.98-2.9-2.82 4-.58L8 1.33z" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+                    <path clip-path="url(#stickyHalfStar-{{ product.id }}-{{ i }})" d="M8 1.33l1.79 3.62 4 .58-2.9 2.82.68 3.98L8 10.42l-3.57 1.88.68-3.98-2.9-2.82 4-.58L8 1.33z" fill="#FF8C00" stroke="#FF8C00" stroke-width="1"/>
+                  </svg>
+                {% else %}
+                  <svg class="xmaison_sticky-atc-star" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1.33l1.79 3.62 4 .58-2.9 2.82.68 3.98L8 10.42l-3.57 1.88.68-3.98-2.9-2.82 4-.58L8 1.33z" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+                  </svg>
+                {% endif %}
+              {% endfor %}
+            </span>
+            {% if sticky_review_count != 0 and sticky_review_count != blank %}
+              <span class="xmaison_sticky-atc-social-text">{{ sticky_review_count }} reviews</span>
+            {% endif %}
+          </span>
+        {% endif %}
+      </span>
+    </button>
+
+    <div class="xmaison_sticky-atc-action">
+      <div class="xmaison_sticky-atc-price">
+        <span class="xmaison_sticky-atc-price-current" x-text="formatMoney(displayPrice)"></span>
+        <span class="xmaison_sticky-atc-price-compare" x-show="comparePrice > displayPrice" x-text="formatMoney(comparePrice)" x-cloak></span>
+      </div>
+      <button
+        type="button"
+        class="xmaison_sticky-atc-button"
+        :disabled="loading"
+        @click="addToCart()"
+      >
+        <span class="xmaison_sticky-atc-button-text" x-text="loading ? {{ section.settings.button_loading_text | default: 'Adding...' | json }} : {{ section.settings.button_text | default: 'Add To Cart' | json }}"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function maisonStickyAtc() {
+    return {
+      visible: false,
+      loading: false,
+      displayPrice: {{ sticky_default_price | default: 0 }},
+      comparePrice: {{ sticky_compare_price | default: 0 }},
+
+      init() {
+        const setupObserver = () => {
+          const hero = document.querySelector('.xmaison_product-section');
+          if (!hero) return;
+          // Watch the hero's main add-to-cart area: the bar appears once the
+          // primary offer has scrolled out of view, and hides when it returns.
+          const target = hero.querySelector('.xmaison_add-to-cart-section') || hero;
+          const observer = new IntersectionObserver((entries) => {
+            this.visible = !entries[0].isIntersecting;
+          }, { threshold: 0 });
+          observer.observe(target);
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupObserver);
+        } else {
+          setupObserver();
+        }
+
+        // Mirror the hero's live price/selection and loading state.
+        document.addEventListener('maison:pdp-state-change', (e) => {
+          if (!e.detail) return;
+          this.displayPrice = e.detail.displayPrice;
+          this.comparePrice = e.detail.comparePrice || 0;
+        });
+        document.addEventListener('maison:pdp-loading', (e) => {
+          this.loading = !!e.detail;
+        });
+      },
+
+      scrollToOffer() {
+        const hero = document.querySelector('.xmaison_product-section');
+        if (hero) {
+          hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      },
+
+      addToCart() {
+        if (this.loading) return;
+        this.loading = true;
+        // Delegate to the PDP hero so pre-order, bundle and selling-plan
+        // logic stays in a single place. The hero echoes its loading state
+        // back via the 'maison:pdp-loading' event above.
+        document.dispatchEvent(new CustomEvent('maison:sticky-atc-add'));
+        // Safety net in case no hero is present to take over.
+        setTimeout(() => {
+          if (!document.querySelector('.xmaison_product-section')) {
+            this.loading = false;
+          }
+        }, 1500);
+      },
+
+      formatMoney(cents) {
+        if (window.Shopify && window.Shopify.formatMoney) {
+          return Shopify.formatMoney(cents);
+        }
+        const currency = (window.Shopify && Shopify.currency && Shopify.currency.active) || 'USD';
+        return (cents / 100).toLocaleString('en-US', {
+          style: 'currency',
+          currency: currency,
+        });
+      },
+    };
+  }
+</script>
