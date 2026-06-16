@@ -8,6 +8,21 @@
     },
     {
       "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "select",
+      "id": "button_action",
+      "label": "Button action",
+      "info": "Add to cart hides the bar as the cart drawer slides in. Scroll to offer jumps back up to the Maison PDP Hero.",
+      "options": [
+        { "value": "add", "label": "Add to cart" },
+        { "value": "scroll", "label": "Scroll to offer" }
+      ],
+      "default": "add"
+    },
+    {
+      "type": "header",
       "content": "Content"
     },
     {
@@ -334,7 +349,7 @@
         type="button"
         class="xmaison_sticky-atc-button"
         :disabled="loading"
-        @click="addToCart()"
+        @click="primaryAction()"
       >
         <span class="xmaison_sticky-atc-button-text" x-text="loading ? loadingText : buttonText"></span>
       </button>
@@ -345,12 +360,20 @@
 <script>
   function maisonStickyAtc() {
     return {
-      visible: false,
+      offerOutOfView: false,
+      cartOpen: false,
       loading: false,
       displayPrice: {{ sticky_default_price | default: 0 }},
       comparePrice: {{ sticky_compare_price | default: 0 }},
       buttonText: {{ section.settings.button_text | default: 'Add' | json }},
       loadingText: {{ section.settings.button_loading_text | default: 'Adding...' | json }},
+      buttonAction: {{ section.settings.button_action | default: 'add' | json }},
+
+      // The bar shows once the offer is out of view, but tucks itself back
+      // out of the way while the cart drawer is open so they don't overlap.
+      get visible() {
+        return this.offerOutOfView && !this.cartOpen;
+      },
 
       init() {
         const setupObserver = () => {
@@ -360,7 +383,7 @@
           // primary offer has scrolled out of view, and hides when it returns.
           const target = hero.querySelector('.xmaison_add-to-cart-section') || hero;
           const observer = new IntersectionObserver((entries) => {
-            this.visible = !entries[0].isIntersecting;
+            this.offerOutOfView = !entries[0].isIntersecting;
           }, { threshold: 0 });
           observer.observe(target);
         };
@@ -380,6 +403,23 @@
         document.addEventListener('maison:pdp-loading', (e) => {
           this.loading = !!e.detail;
         });
+
+        // Slide the bar away as the cart drawer comes in, bring it back when
+        // the drawer closes (if the offer is still out of view).
+        document.addEventListener('maison:cart-drawer-open', () => {
+          this.cartOpen = true;
+        });
+        document.addEventListener('maison:cart-drawer-close', () => {
+          this.cartOpen = false;
+        });
+      },
+
+      primaryAction() {
+        if (this.buttonAction === 'scroll') {
+          this.scrollToOffer();
+        } else {
+          this.addToCart();
+        }
       },
 
       scrollToOffer() {
