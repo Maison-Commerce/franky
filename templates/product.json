@@ -1799,6 +1799,16 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "maison_sticky_atc_AJVJq7": {
+      "type": "maison-sticky-atc",
+      "name": "Maison Sticky ATC",
+      "settings": {
+        "button_text": "Add To Cart",
+        "button_loading_text": "Adding...",
+        "show_rating": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
@@ -1817,6 +1827,7 @@
     "maison_collection_slider_icVqir",
     "maison_inst_img_XPMVhM",
     "related-products",
-    "17741821203b2fdc66"
+    "17741821203b2fdc66",
+    "maison_sticky_atc_AJVJq7"
   ]
 }
