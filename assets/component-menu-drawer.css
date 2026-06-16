@@ -198,7 +198,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-items: center;
   text-decoration: none;
   padding: 8px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(var(--color-foreground));
   margin-bottom: 0;
 }

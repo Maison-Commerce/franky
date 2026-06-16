@@ -296,7 +296,7 @@
     background-color: #1a2e1a;
     color: #ffffff;
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     font-style: italic;
     text-align: center;
@@ -395,7 +395,7 @@
     align-items: center;
     gap: 4px;
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--xmaison-text-secondary);
     line-height: var(--xmaison-line-height-normal);
@@ -512,7 +512,7 @@
   
   .xmaison_original-price {
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--xmaison-gray-500);
     text-decoration: line-through;
@@ -579,7 +579,7 @@
     align-items: center;
     gap: 10px;
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: #1a1a1a;
   }
@@ -816,7 +816,7 @@
   
   .xmaison_add-text {
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     line-height: var(--xmaison-line-height-normal);
     color: var(--xmaison-brand1-1800);
@@ -891,7 +891,7 @@
   
   .xmaison_total-original {
     font-family: var(--xmaison-font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: rgba(59, 43, 47, 0.75);
     text-decoration: line-through;
@@ -1132,7 +1132,7 @@
     }
   
     .xmaison_product-name {
-      font-size: 14px;
+      font-size: 16px;
     }
   
     .xmaison_product-meta {
@@ -1180,7 +1180,7 @@
   
     .xmaison_subscribe-btn {
       padding: 12px 20px;
-      font-size: 14px;
+      font-size: 16px;
     }
   
     .xmaison_trash-icon {
@@ -1203,7 +1203,7 @@
     .xmaison_qty-value {
       width: 32px;
       height: 32px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       padding: 4px 8px;
     }
@@ -1214,7 +1214,7 @@
     }
   
     .xmaison_sale-price {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--xmaison-text-primary);
     }
   
@@ -1235,7 +1235,7 @@
   
     .xmaison_upsell-title {
       font-family: var(--xmaison-font-system);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--xmaison-text-primary);
     }
@@ -1319,7 +1319,7 @@
   
     .xmaison_total-label {
       font-family: var(--xmaison-font-body);
-      font-size: 14px;
+      font-size: 16px;
     }
   
     /* Checkout Button - Mobile */
@@ -1329,7 +1329,7 @@
     }
   
     .xmaison_checkout-text {
-      font-size: 14px;
+      font-size: 16px;
     }
   
     .xmaison_lock-icon {

@@ -95,7 +95,7 @@ body {
 .xxmaison_rating-text {
   font-family: var(--font-neue);
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--text-primary);
 }
@@ -252,7 +252,7 @@ body {
   border-radius: 90px;
   font-family: var(--font-neue);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--text-secondary);
   cursor: pointer;
@@ -300,7 +300,7 @@ body {
 .xxmaison_attribute-label {
   display: flex;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -476,7 +476,7 @@ body {
 .xxmaison_stock-text {
   font-family: var(--font-cabin);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: #1a1a1a;
 }
@@ -503,7 +503,7 @@ body {
   width: 100%;
   font-family: var(--font-neue);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: #B9FCAB;
   transition: opacity 0.2s ease;
@@ -614,7 +614,7 @@ body {
 
 .xxmaison_accordion-content p {
   font-family: var(--font-neue);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -778,7 +778,7 @@ body {
   }
 
   .xxmaison_select-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* Pack Size Section */
@@ -800,7 +800,7 @@ body {
   }
 
   .xxmaison_pack-name {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* CTA Section */
@@ -814,7 +814,7 @@ body {
 
   /* Button - Mobile version */
   .xxmaison_add-to-cart {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .xxmaison_btn-text-desktop {
@@ -832,7 +832,7 @@ body {
   }
 
   .xxmaison_benefit-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* Accordions - outside card on mobile */
@@ -845,7 +845,7 @@ body {
   }
 
   .xxmaison_accordion-title {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .xxmaison_accordion-content p {
