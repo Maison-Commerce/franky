@@ -692,7 +692,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/awfawfawfw.png",
-            "title": "Natural Caffeine",
+            "title": "Natural Caffeine, 50mg",
             "description": "Supports clean, focused energy without the jitters.*"
           }
         },
@@ -700,7 +700,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/afawfawfwafawf.png",
-            "title": "Whey Protein",
+            "title": "Whey Protein, 10g",
             "description": "Supports satiety, keeps cravings in check and supports lean muscle.*"
           }
         },
@@ -708,7 +708,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/gwawgsbesgw.png",
-            "title": "Psyllium Husk Fiber",
+            "title": "Psyllium Husk Fiber, 1500mg",
             "description": "Supports digestion and helps you feel fuller for longer.*"
           }
         },
@@ -716,7 +716,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/aewgsebegwqg.png",
-            "title": "Probiotic Blend",
+            "title": "Probiotic Blend, 3 million CFU",
             "description": "Three clinically studied strains for a balanced, happy gut.*"
           }
         },
@@ -724,7 +724,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/wfagawgawg.png",
-            "title": "L-Theanine",
+            "title": "L-Theanine, 200mg",
             "description": "Smooths out the caffeine for calm, steady focus.*"
           }
         },
@@ -732,7 +732,7 @@
           "type": "ingredient",
           "settings": {
             "image": "shopify://shop_images/vdsvwegwebes.png",
-            "title": "Lion’s Mane",
+            "title": "Lion’s Mane, 300mg",
             "description": "Sharper thinking and mental clarity.*"
           }
         }
@@ -1804,10 +1804,25 @@
       "type": "maison-sticky-atc",
       "name": "Maison Sticky ATC",
       "settings": {
+        "button_action": "add",
         "button_text": "Add +",
         "button_loading_text": "Adding...",
         "show_rating": true,
-        "show_on_mobile": true
+        "show_on_mobile": true,
+        "title_font_size": 18,
+        "social_font_size": 13,
+        "price_font_size": 18,
+        "button_font_size": 15,
+        "max_width": 600,
+        "bottom_offset": 16,
+        "padding_y": 12,
+        "padding_x": 16,
+        "gap": 16,
+        "image_size": 48,
+        "card_radius": 18,
+        "button_radius": 12,
+        "button_padding_x": 28,
+        "button_height": 48
       }
     }
   },
