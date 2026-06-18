@@ -366,6 +366,15 @@
     "maison_pdp_hero_mfQLMr": {
       "type": "maison-pdp-hero",
       "blocks": {
+        "feature_item_CBhLMj": {
+          "type": "feature_item",
+          "disabled": true,
+          "settings": {
+            "icon_type": "checkmark",
+            "feature_text_bold": "Energizeswwwwwwwww",
+            "feature_text_regular": "with a spark of tart pomegranate"
+          }
+        },
         "nutritional_info_xpfTdY": {
           "type": "nutritional_info",
           "disabled": true,
@@ -595,6 +604,7 @@
         }
       },
       "block_order": [
+        "feature_item_CBhLMj",
         "nutritional_info_xpfTdY",
         "pack_option_GHhn3X",
         "pack_option_wRrbhV",
