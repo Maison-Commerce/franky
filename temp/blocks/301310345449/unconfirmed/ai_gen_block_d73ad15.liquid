@@ -1,6 +1,78 @@
+{% doc %}
+  @prompt
+    Add custom CSS to change the add to cart button background color to #145d4b only within the Maison PDP Hero section (section ID: template--21738229170409__maison_pdp_hero_mfQLMr) on the product page. The button text should be white for contrast.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-custom-css-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  #shopify-section-template--21738229170409__maison_pdp_hero_mfQLMr .product-form__submit,
+  #shopify-section-template--21738229170409__maison_pdp_hero_mfQLMr button[name="add"],
+  #shopify-section-template--21738229170409__maison_pdp_hero_mfQLMr .shopify-payment-button__button--unbranded {
+    background-color: {{ block.settings.button_bg_color }} !important;
+    color: {{ block.settings.button_text_color }} !important;
+  }
+
+  #shopify-section-template--21738229170409__maison_pdp_hero_mfQLMr .product-form__submit:hover,
+  #shopify-section-template--21738229170409__maison_pdp_hero_mfQLMr button[name="add"]:hover {
+    background-color: {{ block.settings.button_hover_bg_color }} !important;
+  }
+{% endstyle %}
+
+<div class="ai-custom-css-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_note %}
+    <div style="padding: 12px; background-color: #f0f0f0; border-radius: 4px; font-size: 14px; color: #666; text-align: center;">
+      Custom CSS applied to Maison PDP Hero section
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Maison PDP Hero CSS",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Add to cart button colors"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#145d4b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background",
+      "default": "#0f4a3a"
+    },
+    {
+      "type": "header",
+      "content": "Display options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "Show confirmation note",
+      "default": false,
+      "info": "Display a note confirming the CSS is active (for testing)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison PDP Hero CSS"
+    }
+  ]
+}
 {% endschema %}
