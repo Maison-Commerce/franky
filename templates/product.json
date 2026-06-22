@@ -1158,8 +1158,21 @@
             "video": "shopify://files/videos/Franky_Kayla_AD6_web_b0b62818-2dad-4a14-9ca6-dfcd1cdba739.mp4"
           }
         },
+        "review_WyUFjR": {
+          "type": "review",
+          "settings": {
+            "slider_position": "top",
+            "rating": 5,
+            "purchase_date": "Purchased on 18 Feb 2026",
+            "review_image": "shopify://shop_images/Customer_04.png",
+            "review_text": "<p>Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts</p>",
+            "reviewer_name": "Simone, 25",
+            "verified_buyer": true
+          }
+        },
         "review_z3MKXm": {
           "type": "review",
+          "disabled": true,
           "settings": {
             "slider_position": "top",
             "rating": 5,
@@ -1209,18 +1222,6 @@
             "review_image": "shopify://shop_images/Customer_06.png",
             "review_text": "<p>Didn't expect much. Most \"healthy\" products taste like cardboard. This actually tastes amazing. Smooth, clean, no fake sweetness. Look forward to it daily.</p>",
             "reviewer_name": "Sara, 26",
-            "verified_buyer": true
-          }
-        },
-        "review_WyUFjR": {
-          "type": "review",
-          "settings": {
-            "slider_position": "top",
-            "rating": 5,
-            "purchase_date": "Purchased on 18 Feb 2026",
-            "review_image": "shopify://shop_images/Customer_04.png",
-            "review_text": "<p>Great way to get my protein and caffeine fix without the sugar crash. It's a total game changer for my morning workouts</p>",
-            "reviewer_name": "Simone, 25",
             "verified_buyer": true
           }
         },
@@ -1291,12 +1292,12 @@
         "video_E6NaUR",
         "video_hnYthk",
         "video_3bqHpK",
+        "review_WyUFjR",
         "review_z3MKXm",
         "review_FT7eUG",
         "video_b6CnWJ",
         "review_FpXG9p",
         "review_UATFJa",
-        "review_WyUFjR",
         "review_fLFXEj",
         "review_4LdLKr",
         "review_W6bmRm",
