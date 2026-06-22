@@ -23,7 +23,7 @@
         "button_text": "Start Your Ritual",
         "button_link": "shopify://products/franky-protein-coffee",
         "product_image_desktop": "shopify://shop_images/Franky_07_238175aa-0cfd-4a21-8771-7dc73f7ef58e.jpg",
-        "product_image_mobile": "shopify://shop_images/Franky_04_28030801-32cc-4de9-9ff9-b7366b30fe06.jpg",
+        "product_image_mobile": "shopify://shop_images/Franky_01.jpg",
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 80,
         "padding_left_desktop": 40,
@@ -350,13 +350,13 @@
         "review_Y7BXCR": {
           "type": "review",
           "settings": {
-            "product_image": "shopify://shop_images/Review_04.jpg",
+            "product_image": "shopify://shop_images/Customer_06.png",
             "star_rating": 5,
             "purchase_date": "Purchased on 18 Feb 2026",
             "review_text": "<p>\"I've been using Franky for 6 weeks and the difference in my appetite is real. I used to snack constantly before lunch — now I barely think about food until 1pm. And it actually tastes like a proper iced coffee.\"</p>",
             "reviewer_name": "Sara",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
+            "reviewer_profession": "",
+            "reviewer_age": "26",
             "show_verified_badge": true
           }
         },
@@ -368,20 +368,7 @@
             "purchase_date": "Purchased on 11 March 2026",
             "review_text": "<p>\"I've tried every protein coffee out there. This is the only one with no weird aftertaste and no crash. It actually tastes super nice\"</p>",
             "reviewer_name": "Sam",
-            "reviewer_profession": "RN",
-            "reviewer_age": "45",
-            "show_verified_badge": true
-          }
-        },
-        "review_bk7tmm": {
-          "type": "review",
-          "settings": {
-            "product_image": "shopify://shop_images/Review_image.jpg",
-            "star_rating": 5,
-            "purchase_date": "Purchased on 03 March 2025",
-            "review_text": "<p>\"Finally something that helps with bloating and keeps me full at the same time. My digestion has been so much better since I started my morning with Franky. I wasn't expecting that at all.\"</p>",
-            "reviewer_name": "Hannah",
-            "reviewer_profession": "RN",
+            "reviewer_profession": "",
             "reviewer_age": "45",
             "show_verified_badge": true
           }
@@ -393,9 +380,22 @@
             "star_rating": 5,
             "purchase_date": "Purchased on 2 Feb 2026",
             "review_text": "<p>\"I was skeptical about protein coffee but this completely changed my mind. It tastes incredible, keeps my gut happy, and it helps me to reach my protein goals\"</p>",
-            "reviewer_name": "Patty",
+            "reviewer_name": "Charlotte",
             "reviewer_profession": "",
-            "reviewer_age": "48",
+            "reviewer_age": "42",
+            "show_verified_badge": true
+          }
+        },
+        "review_bk7tmm": {
+          "type": "review",
+          "settings": {
+            "product_image": "shopify://shop_images/Review_image.jpg",
+            "star_rating": 5,
+            "purchase_date": "Purchased on 03 March 2025",
+            "review_text": "<p>\"Finally something that helps with bloating and keeps me full at the same time. My digestion has been so much better since I started my morning with Franky. I wasn't expecting that at all.\"</p>",
+            "reviewer_name": "Hannah",
+            "reviewer_profession": "",
+            "reviewer_age": "45",
             "show_verified_badge": true
           }
         }
@@ -403,8 +403,8 @@
       "block_order": [
         "review_Y7BXCR",
         "review_gTmP6V",
-        "review_bk7tmm",
-        "review_MEcgQA"
+        "review_MEcgQA",
+        "review_bk7tmm"
       ],
       "name": "Maison Review Slider",
       "settings": {
